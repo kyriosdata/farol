@@ -1,0 +1,18 @@
+service: hello-java
+
+frameworkVersion: "2"
+
+provider:
+  name: aws
+  runtime: java8
+  stage: dev
+  lambdaHashingVersion: 20201221
+  profile: farol
+  region: sa-east-1
+
+package:
+  artifact: target/hello-dev.jar
+
+functions:
+  hello:
+    handler: com.serverless.Handler

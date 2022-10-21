@@ -1,0 +1,6 @@
+{
+  "usuarios": [
+    { "id": "23", "nome": "JoaoCunha", "tipo": "enfermeiro" },
+    { "id": "26", "nome": "jonas", "tipo": "citopatologista" }
+  ]
+}

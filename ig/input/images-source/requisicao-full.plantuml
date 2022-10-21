@@ -1,0 +1,43 @@
+@startuml conta
+
+hide circle
+hide methods
+hide empty members
+
+skinparam class {
+    BackgroundColor White
+    ArrowColor Black
+    BorderColor #505050
+}
+
+class RequestIntent {
+    proposal
+    plan
+    directive
+    order
+    original-order
+    reflex-order
+    filler-order
+    instance-order
+    option
+}
+
+class RequestStatus {
+    draft
+    active
+    on-hold
+    revoked
+    completed
+    entered-in-error
+    unknown
+}
+
+class Identifier {}
+
+class "=Requisição" as Requisicao <<ServiceRequest>> {}
+
+Requisicao --> "status" RequestStatus
+Requisicao --> "intent" RequestIntent
+Requisicao --> "identifier" Identifier
+
+@enduml

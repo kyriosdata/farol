@@ -1,0 +1,54 @@
+:root {
+  --ig-status-text-color: #002e70;
+
+  --navbar-bg-color: #002e70; /* 2. Header container color */
+
+  --footer-bg-color: #002e70; /* 3. Footer background color*/
+  --footer-container-color: #c2eb54; /* 4. Footer container color */
+  --footer-container-bg-color: #002e70;
+
+  --btn-hover-color: lightblue; /* 6. Menu button hover color */
+}
+
+/* Common content for section numbering */
+body {
+  counter-reset: section;
+}
+h2 {
+  counter-reset: sub-section;
+}
+h3 {
+  counter-reset: composite;
+}
+h4 {
+  counter-reset: detail;
+}
+h5 {
+  counter-reset: more-detail;
+}
+h2:before {
+  content: " " !important;
+}
+h3:before {
+  content: " " !important;
+}
+h4:before {
+  content: " " !important;
+}
+h5:before {
+  content: " " !important;
+}
+h6:before {
+  content: " " !important;
+}
+
+/*--------- smooth transitions ---------- */
+
+body {
+  opacity: 0;
+  transition: opacity 0.7s;
+  -webkit-transition: opacity 0.7s; /* Safari */
+  -ms-transition: opacity 0.7s; /* ie */
+  -o-transition: opacity 0.7s; /* opera */
+  -moz-transition: opacity 0.7s; /* firefox */
+}

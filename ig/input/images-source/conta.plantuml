@@ -1,0 +1,39 @@
+@startuml conta
+
+hide circle
+hide methods
+hide empty members
+
+skinparam class {
+    BackgroundColor White
+    ArrowColor Black
+    BorderColor #505050
+}
+
+class Papel {}
+class Administrar {}
+class Laudar {}
+class Consultar {}
+class GovBR {
+    username
+    password
+}
+
+Consultar -up-|> Papel
+Laudar -up-|> Papel
+Administrar -up-|> Papel
+
+class Usuária <<pessoa>> {} 
+class Citopatologista <<pessoa>> {}
+class Enfermeira <<pessoa>> {}
+
+Usuária -up-> GovBR : " autentica com"
+Enfermeira -down-> GovBR : " autentica com"
+Citopatologista -right-> GovBR : " autentica com"
+
+class Conta {}
+
+GovBR -right-> Conta : "autorizado por"
+Conta -right-> "1..*" Papel : "tem a permissão de"
+
+@enduml

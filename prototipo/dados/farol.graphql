@@ -1,0 +1,164 @@
+input CreateFarolInput {
+	title: String
+}
+
+input CreateUsuarioInput {
+	title: String!
+	content: String!
+	price: Int
+	rating: Float
+}
+
+input DeleteFarolInput {
+	id: ID!
+}
+
+input DeleteUsuarioInput {
+	id: ID!
+}
+
+type Farol {
+	id: ID!
+	title: String
+}
+
+type FarolConnection {
+	items: [Farol]
+	nextToken: String
+}
+
+type Mutation {
+	createFarol(input: CreateFarolInput!): Farol
+	updateFarol(input: UpdateFarolInput!): Farol
+	deleteFarol(input: DeleteFarolInput!): Farol
+	createUsuario(input: CreateUsuarioInput!): Usuario
+	updateUsuario(input: UpdateUsuarioInput!): Usuario
+	deleteUsuario(input: DeleteUsuarioInput!): Usuario
+}
+
+type Query {
+	getFarol(id: ID!): Farol
+	listFarols(filter: TableFarolFilterInput, limit: Int, nextToken: String): FarolConnection
+	getUsuario(id: ID!): Usuario
+	listUsuarios(filter: TableUsuarioFilterInput, limit: Int, nextToken: String): UsuarioConnection
+}
+
+type Subscription {
+	onCreateUsuario(
+		id: ID,
+		title: String,
+		content: String,
+		price: Int,
+		rating: Float
+	): Usuario
+
+  onUpdateUsuario(
+		id: ID,
+		title: String,
+		content: String,
+		price: Int,
+		rating: Float
+	): Usuario
+
+  onDeleteUsuario(
+		id: ID,
+		title: String,
+		content: String,
+		price: Int,
+		rating: Float
+	): Usuario
+}
+
+input TableBooleanFilterInput {
+	ne: Boolean
+	eq: Boolean
+}
+
+input TableFarolFilterInput {
+	id: TableIDFilterInput
+	title: TableStringFilterInput
+}
+
+input TableFloatFilterInput {
+	ne: Float
+	eq: Float
+	le: Float
+	lt: Float
+	ge: Float
+	gt: Float
+	contains: Float
+	notContains: Float
+	between: [Float]
+}
+
+input TableIDFilterInput {
+	ne: ID
+	eq: ID
+	le: ID
+	lt: ID
+	ge: ID
+	gt: ID
+	contains: ID
+	notContains: ID
+	between: [ID]
+	beginsWith: ID
+}
+
+input TableIntFilterInput {
+	ne: Int
+	eq: Int
+	le: Int
+	lt: Int
+	ge: Int
+	gt: Int
+	contains: Int
+	notContains: Int
+	between: [Int]
+}
+
+input TableStringFilterInput {
+	ne: String
+	eq: String
+	le: String
+	lt: String
+	ge: String
+	gt: String
+	contains: String
+	notContains: String
+	between: [String]
+	beginsWith: String
+}
+
+input TableUsuarioFilterInput {
+	id: TableIDFilterInput
+	title: TableStringFilterInput
+	content: TableStringFilterInput
+	price: TableIntFilterInput
+	rating: TableFloatFilterInput
+}
+
+input UpdateFarolInput {
+	id: ID!
+	title: String
+}
+
+input UpdateUsuarioInput {
+	id: ID!
+	title: String
+	content: String
+	price: Int
+	rating: Float
+}
+
+type Usuario {
+	id: ID!
+	title: String!
+	content: String!
+	price: Int
+	rating: Float
+}
+
+type UsuarioConnection {
+	items: [Usuario]
+	nextToken: String
+}

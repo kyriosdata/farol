@@ -1,0 +1,16 @@
+{
+  "name": "dados",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "json:server": "json-server --watch db.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "graphql": "^16.2.0",
+    "json-server": "^0.17.0"
+  }
+}

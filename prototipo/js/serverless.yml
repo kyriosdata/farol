@@ -1,0 +1,14 @@
+service: js
+
+frameworkVersion: "2 || 3"
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+  profile: farol
+  region: sa-east-1
+
+functions:
+  hello:
+    handler: handler.hello

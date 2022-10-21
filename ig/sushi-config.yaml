@@ -1,0 +1,63 @@
+# ╭─────────────────────────────────ImplementationGuide-fish.json──────────────────────────────────╮
+# │  The properties below are used to create the ImplementationGuide resource. For a list of       │
+# │  supported properties, see:                                                                    │
+# │  https://fshschool.org/docs/sushi/configuration/#full-configuration                            │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+id: ccu
+canonical: http://www.saude.gov.br/fhir/r4
+name: CancerColoDoUtero
+title: "Rastreamento de Câncer de Colo de Útero"
+description: "Inclui definições pertinentes ao exame citopatológico (requisição e resultado) conforme INCA, e correlatos."
+status: draft
+license: CC0-1.0
+version: 0.1.0
+fhirVersion: 4.0.1
+copyrightYear: 2022+
+releaseLabel: preliminar
+jurisdiction: urn:iso:std:iso:3166#BR "Brazil"
+experimental: false
+meta:
+  lastUpdated: 2021-10-22T14:56:14Z
+language: pt-BR
+text: "Rastreamento de câncer de colo de útero."
+publisher:
+  name: Comissão de Governança de Informação em Saúde (CGIS - UFG)
+  url: https://cgis.ufg.br
+  email: kyriosdata@ufg.br
+parameters:
+  apply-publisher: true
+  apply-contact: true
+  show-inherited-invariants: false
+  active-tables: "false"
+
+pages:
+  index.md:
+    title: Principal
+  downloads.xml:
+    title: Downloads
+  requisicao.md:
+    title: Requisição
+  dominio.md:
+    title: Modelagem do domínio
+  resultado.md:
+    title: Resultado
+  processos.md:
+    title: Processos de Negócio
+  requisitos.md:
+  artifacts.html:
+    title: Artefatos
+
+menu:
+  Principal: index.html
+  Documentos:
+    Requisitos: requisitos.html
+    Processos de Negócio: processos.html
+    Domínio: dominio.html
+    Requisição: requisicao.html
+    Resultado: resultado.html
+  Artefatos: artifacts.html
+  Downloads: downloads.html
+  Outros:
+    FHIR: http://hl7.org/fhir/R4/index.html
+    Github: https://github.com/Cancer-de-colo-de-utero/modelagem-fhir
+  Índice: toc.html

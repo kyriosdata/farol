@@ -1,0 +1,13 @@
+{
+  "name": "cgis.fhir.template",
+  "version": "0.1.0",
+  "type": "fhir.template",
+  "license": "CC0-1.0",
+  "description": "Template FHIR produzido pela CGIS",
+  "author": "CGIS",
+  "canonical": "http://fhir.org/templates/ihe.fhir.template",
+  "base": "fhir.base.template",
+  "dependencies": {
+    "fhir.base.template": "current"
+  }
+}

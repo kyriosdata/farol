@@ -6,11 +6,10 @@ Neste caso, o monitoramento e rastreamento do câncer de colo de útero.
 
 ## Desenvolvimento
 
-- Ferramentas:
-  - Java
-  - Node
-  - `npm install -g fsh-sushi`
-  - Ruby and Jekyll (`gem install bundler jekyll`)
+Várias ferramentas são necessárias. Para ambientes
+linux é suficiente executar o arquivo **gitpod.sh** para
+disponibilizar o ambiente de desenvolvimento.
+
 - `_updatePublisher`
 - `_genonce`
 - Abriar o arquivo `output\index.html`
@@ -36,7 +35,7 @@ Neste caso, o monitoramento e rastreamento do câncer de colo de útero.
 - JSON to FSH (FSH to JSON) : [online](https://fshschool.org/FSHOnline/#/)
 - Apenas converte XML to JSON e vice-versa (JSON to XML) : [online](https://fhir-formats.github.io/)
 - Validador online de instâncias de recursos
-  -  Documentação recomendada [aqui](https://fire.ly/blog/validate-fhir-resources-like-a-boss/#copy-paste-validation)
+  - Documentação recomendada [aqui](https://fire.ly/blog/validate-fhir-resources-like-a-boss/#copy-paste-validation)
   - [FHIR](https://validator.fhir.org/)
   - [Simplifier](https://simplifier.net/validate)
   - [clinFHIR](http://clinfhir.com/validateResource.html)

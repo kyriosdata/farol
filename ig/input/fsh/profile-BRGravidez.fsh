@@ -8,6 +8,7 @@ Description: "Você está grávida?"
 * ^meta.lastUpdated = "2015-02-07T13:28:17.239+02:00"
 * ^version = "0.1.0"
 * ^status = #draft
+* ^purpose = "Registrar estado de gravidez da paciente pela própria paciente"
 
 * category = $observation-category#survey
 
@@ -17,5 +18,6 @@ Description: "Você está grávida?"
 * value[x] 1..1
 * valueCodeableConcept 1..1
 * valueCodeableConcept.coding from $simnaonaosei (required)
+* valueCodeableConcept ^short = "Resposta da paciente"
 
 

@@ -9,7 +9,7 @@ Description: "Sujeito da assistência à saúde."
 * ^version = "01.10"
 * ^publisher = "Ministério da Saúde do Brasil"
 * ^purpose = """
-IMPORTANTE: redefinição exigida por acrescentar nível educacional.
+**IMPORTANTE**: redefinição exigida para acrescentar nível educacional.
 
 O indivíudo é o sujeito central para os processos informativos de dados em saúde. Não deve ser utilizado quando na condição de profissional.
 """

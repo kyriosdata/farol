@@ -7,7 +7,9 @@ O termo **farol** está associado à segurança e
 orientação, ambos pertinentes ao contexto
 do rastreamento do Câncer de Colo do Útero.
 
-Esta transformação exige modificação (manutenção) do SISCAN proposta à luz da Política Nacional de Informação e Informática em Saúde ([aqui](https://bvsms.saude.gov.br/bvs/saudelegis/gm/2021/prt1768_02_08_2021.html)) e a Estratégia de Saúde Digital 2020-2028 ([aqui](https://bvsms.saude.gov.br/bvs/publicacoes/estrategia_saude_digital_Brasil.pdf)). Em particular, o uso proposto do FHIR (padrão adotado pela RNDS) e seu "complemento" CDS Hooks, conforme o [Guia de Implementação](ig). Este Guia ainda
+Esta transformação exige modificação (manutenção) do SISCAN proposta à luz da Política Nacional de Informação e Informática em Saúde ([aqui](https://bvsms.saude.gov.br/bvs/saudelegis/gm/2021/prt1768_02_08_2021.html)) e da Estratégia de Saúde Digital 2020-2028 ([aqui](https://bvsms.saude.gov.br/bvs/publicacoes/estrategia_saude_digital_Brasil.pdf)). A evolução do SISCAN não faz parte do presente projeto.
+
+O uso proposto do FHIR (padrão adotado pela RNDS) e seu "complemento" CDS Hooks estão detalhados no [Guia de Implementação](ig). Este Guia ainda
 inclui os processos de negócio pertinentes, requisitos e análise dos requisitos.
 
 ## Resultados parciais

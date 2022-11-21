@@ -19,7 +19,7 @@ inclui os processos de negócio pertinentes, requisitos e análise dos requisito
 
 ## Resultados esperados
 
-- Projeto piloto demonstrando em produção a transformação digital proposta.
+- Projeto piloto demonstrando a viabilidade da solução proposta.
 - Submisssão de modelos para o Comitê Gestor da Estratégia de Saúde Digital. Conforme a [Resolução no. 46, de 29/08/2019](https://www.in.gov.br/en/web/dou/-/resolucao-n-46-de-29-de-agosto-de-2019-221309239), cabe a tal comitê, dentre outras, propor os "modelos de informação a serem adotados para a troca de informações em saúde".
 
 ## Realização

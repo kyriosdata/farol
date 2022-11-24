@@ -25,7 +25,29 @@ ao mesmo tempo que oferece contribuições em outros contextos.
 > a assinatura digital do laudo correspondente a serem apoiados pela RNDS,
 > em conformidade com a Estratégia de Saúde Digital 2000-2028.
 
-### Contexto da solução
+### Como chegamos até aqui?
+
+A [ficha](./requisicao-exame-citopatologico.pdf) do exame citopatológico foi
+analisada de forma criteriosa em toda a sua extensão. Para atender os
+<a href="requisitos.html">requisitos</a> no contexto dos <a href="processos.html">processos</a>
+considerados, esta ficha foi dividida em duas partes: a requisição de exame e o laudo correspondente.
+
+O modelo de informação que detalha cada item da requisição de exame encontra-se <a href="requisicao.html">aqui</a>.
+Enquanto os detalhes de cada item de informação do resultado (laudo) do exame
+encontra-se <a href="resultado.html">aqui</a>. Estes modelos seguem a mestra estrutura
+de outros já formalmente publicados por portarias do Ministério da Saúde.
+
+Tais modelos são insumos necessários para definição do que é conhecido por
+Guia de Implementação, o que é exatamente o conteúdo deste portal. Ou seja,
+o presente Guia detalha como o padrão FHIR, adotado pelo Brasil, pode ser empregado
+para viabilizar a integração com a RNDS.
+
+Os modelos de informação supracitados são para consumo de profissionais de
+saúde, enquanto o Guia de Implementação como um todo é um instrumento tecnológico
+empregado por engenheiros de software e outros da indústria da Tecnologia da Informação
+e Comunicação (TIC).
+
+### Organização
 
 - <a href="requisitos.html">Requisitos</a> definem casos de uso e requisitos de usuário.
 - <a href="processos.html">Processos</a> de negócio pertinentes aos casos de uso e requisitos.

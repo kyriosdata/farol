@@ -11,7 +11,6 @@ Description: "Definição de resultado (laudo) de exame citopatológico em confo
 * meta ^short = "Metadados do laudo"
 * meta.extension ..0
 * meta.lastUpdated ^short = "Quando o recurso foi atualizado pela última vez"
-* meta.profile = "http://www.saude.gov.br/fhir/r4/StructureDefinition/RequisicaoExameCitopalologico"
 * meta.profile ^short = "Perfil obrigatoriamente a ser atendido"
 * contained ..0
 

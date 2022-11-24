@@ -6,6 +6,6 @@ Description: "Consulta na qual a coleta é realizada e a requisição de exame c
 Usage: #example
 
 * status =  http://hl7.org/fhir/encounter-status#finished
-* class = #AMB
+* class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
 
 * serviceProvider = Reference(ubs)

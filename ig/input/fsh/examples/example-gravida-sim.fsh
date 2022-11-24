@@ -12,4 +12,5 @@ Usage: #example
 * code.text = "Você está grávida?"
 * subject = Reference(Patient/paciente1) "Usuária afirma estar grávida"
 * effectiveDateTime = "2022-08-29"
-* valueCodeableConcept.coding = $loinc#LA33-6 "Não sei"
+* valueCodeableConcept.text = "Sim"
+* valueCodeableConcept.coding = $loinc#LA33-6

@@ -1,6 +1,6 @@
 Profile: BRIndividuo
 Parent: Patient
-Id: 7ba7dc20-9251-417f-bc02-0a08c2986710
+Id: BRIndividuo-1.0
 Title: "Indivíduo"
 Description: "Sujeito da assistência à saúde."
 * ^meta.lastUpdated = "2020-03-13T19:47:50.646+00:00"

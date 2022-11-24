@@ -4,6 +4,8 @@ Title: "Requisição incompleta"
 Description: "Uma requisição incompleta."
 Usage: #example
 
+* intent = #order
+
 * identifier.type = $v2-0203#PLAC
 * identifier.type.text = "Placer"
 * identifier.system = "urn:oid:1.3.4.5.6.7"

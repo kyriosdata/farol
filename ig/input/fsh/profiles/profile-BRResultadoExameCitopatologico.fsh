@@ -33,7 +33,6 @@ Description: "Definição de resultado (laudo) de exame citopatológico em confo
 * identifier.period ..0
 * identifier.assigner ..0
 
-* status = #active
 * status ^label = "O status do laudo."
 * status ^short = "Identifica status do laudo."
 * status ^definition = "O status do laudo."

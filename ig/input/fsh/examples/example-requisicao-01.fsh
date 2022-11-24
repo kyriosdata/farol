@@ -1,8 +1,9 @@
-Instance: requisicao-exame-exemplo-tipico
+Instance: requisicao-tipica
 InstanceOf: BRRequisicaoExameCitopatologico
 Title: "Requisição típica"
 Description: "Requisição de example citopatológico"
 Usage: #example
+
 
 /*
 Substitui a narrativa gerada automaticamente, que é mais completa.

@@ -4,7 +4,6 @@ Title: "Requisição típica"
 Description: "Requisição de example citopatológico"
 Usage: #example
 
-
 /*
 Substitui a narrativa gerada automaticamente, que é mais completa.
 Daí segue o exemplo, mas comentado.
@@ -14,7 +13,6 @@ Daí segue o exemplo, mas comentado.
 
 */
 
-* meta.profile = "http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRequisicaoExameCitopalologico"
 * meta.lastUpdated = "2022-08-09T23:18:22.558Z"
 
 /*

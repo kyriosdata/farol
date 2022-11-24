@@ -27,15 +27,20 @@ ao mesmo tempo que oferece contribuições em outros contextos.
 
 ### Como chegamos até aqui?
 
-A [ficha](./requisicao-exame-citopatologico.pdf) do exame citopatológico foi
-analisada de forma criteriosa em toda a sua extensão, conforme [anotações](./requisicao-anotada.pdf) realizadas.
-Para atender os
-<a href="requisitos.html">requisitos</a> no contexto dos <a href="processos.html">processos</a>
-considerados, esta ficha foi dividida em duas partes: a requisição de exame e o laudo correspondente.
+Os <a href="requisitos.html">casos de uso</a> a serem atendidos,
+no contexto dos <a href="processos.html">processos</a>
+considerados, resultou na divisão da [ficha](./requisicao-exame-citopatologico.pdf)
+em duas partes: a requisição de exame e o laudo correspondente. De fato, a ficha
+original, em sua primeira "folha", contém a requisição, enquanto o "verso" detalha
+o resultado (laudo).
 
-O modelo de informação que detalha cada item da requisição de exame encontra-se <a href="requisicao.html">aqui</a>.
-Enquanto os detalhes de cada item de informação do resultado (laudo) do exame
-encontra-se <a href="resultado.html">aqui</a>. Estes modelos seguem a mestra estrutura
+Cada uma destas partes foi criteriosamente analisada, tanto
+a [requisição](./requisicao-anotada.pdf) quanto o
+[resultado](./laudo-anotado.pdf). Estas análises resultaram
+nos modelos de informação correspondentes, ou seja, o
+modelo de informação da <a href="requisicao.html">requisição</a>
+e o modelo de informação do <a href="resultado.html">resultado</a>.
+Estes modelos seguem a mesma estrutura
 de outros já formalmente publicados por portarias do Ministério da Saúde.
 
 Tais modelos são insumos necessários para definição do que é conhecido por

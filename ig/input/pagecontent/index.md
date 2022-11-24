@@ -28,7 +28,8 @@ ao mesmo tempo que oferece contribuições em outros contextos.
 ### Como chegamos até aqui?
 
 A [ficha](./requisicao-exame-citopatologico.pdf) do exame citopatológico foi
-analisada de forma criteriosa em toda a sua extensão. Para atender os
+analisada de forma criteriosa em toda a sua extensão, conforme [anotações](./requisicao-anotada.pdf) realizadas.
+Para atender os
 <a href="requisitos.html">requisitos</a> no contexto dos <a href="processos.html">processos</a>
 considerados, esta ficha foi dividida em duas partes: a requisição de exame e o laudo correspondente.
 

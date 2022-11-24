@@ -1,5 +1,5 @@
 ValueSet: BRNivelEducacional
-Id: NivelEducacional
+Id: BRNivelEducacional
 Title: "Nível educacional"
 Description: "Identifica o nível educacional do paciente (maior obtido)"
 * ^status = #draft

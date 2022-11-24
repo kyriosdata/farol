@@ -11,4 +11,4 @@ Alias: $loinc-yes-no-dontknow = http://loinc.org/vs/LL1643-7
 Alias: $simnaonaosei = http://www.saude.gov.br/fhir/r4/ValueSet/BRSimNaoNaoSei
 
 Alias: $br-tipo-documento-individuo = http://www.saude.gov.br/fhir/r4/ValueSet/BRTipoDocumentoIndividuo-1.0
-Alias: $br-nivel-educacional = http://www.saude.gov.br/fhir/r4/StructureDefinition/br-nivel-educacional
+Alias: $br-nivel-educacional-extension = http://www.saude.gov.br/fhir/r4/StructureDefinition/br-nivel-educacional-extension

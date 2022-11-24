@@ -26,6 +26,6 @@ O indivíudo é o sujeito central para os processos informativos de dados em sa�
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
-* extension contains $br-nivel-educacional named educationLevel 0..1 MS
+* extension contains $br-nivel-educacional-extension named educationLevel 0..1 MS
 * extension[educationLevel] ^definition = "Escolaridade máxima obtida pelo indivíduo"
 * extension[educationLevel] ^min = 0

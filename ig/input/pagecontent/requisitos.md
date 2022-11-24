@@ -1,5 +1,6 @@
-Abaixo segue a identificação do escopo do presente trabalho. Os cenários (casos) de uso
-e requisitos de usuário definem o que significa
+Abaixo segue a identificação do escopo do presente trabalho. Os casos de uso
+apresentados ocorrem no contexto dos <a href="processos.html">processos</a>
+executados por profissionais de saúde.
 
 ### Cenários (casos) de uso
 

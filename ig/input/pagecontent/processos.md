@@ -1,16 +1,21 @@
-Abaixo são identificados os processos que fazem parte do escopo do Farol.
-Estes processos definem o cenário desejado e não aquele corrente.
+Abaixo são identificados os processos pertinentes ao escopo dos
+<a href="requisitos.html">casos de uso</a> de interesse.
+Observe que estes processos definem o cenário desejado e não aquele corrente.
 Estão agrupados conforme o principal ator envolvido.
 
 ### Enfermeira(o)
 
-O profissional de saúde que assiste a mulher (usuário) não tem suas atribuições alteradas,
+O profissional de saúde que assiste a mulher (paciente) não tem suas atribuições alteradas,
 conforme ilustrado abaixo.
 
 <div>
-<img src="enfermeira.png" width="600px">
+<img src="enfermeira.png" width="700px">
 </div>
 <br clear="all"/>
+
+Contudo, a proposta inclui a possibilidade de outros sistemas de informação em
+saúde, quando integrados à RNDS, oferecerem as mesmas funcionalidades para
+registro de requisições, à semelhança do que ocorre com o atual SISCAN.
 
 ### Registro de laudo e a assinatura digital (citopatologista)
 
@@ -18,7 +23,7 @@ O citopatologista tem suas atribuições ampliadas. Abaixo segue o que é acresc
 atividades destacadas, além do que este profissional já faz atualmente por meio do SISCAN.
 
 <div>
-<img src="citopatologista.png" width="500px">
+<img src="citopatologista.png" width="700px">
 </div>
 <br clear="all"/>
 

@@ -2,12 +2,12 @@
 
 O exame citopatológico emprega uma [ficha](./requisicao-exame-citopatologico.pdf) (formulário) amplamente usada em todo o território nacional e cujos processos pertinentes são apoiados pelo SISCAN.
 
-A requisição deste exame, criada em um encontro por um profissional
-de saúde em um encontro, envolve a coleta de material (amostra) que é enviado a um laboratório
-para a produção do laudo correspondente. Cada laudo produzido é assinado manualmente
+A requisição deste exame é criada por um profissional, em um encontro com a paciente,
+no qual é feita a coleta de material (amostra) enviado a um laboratório
+para a produção do laudo correspondente. No sentido inverso, o laudo produzido e assinado à mão
 e transferido fisicamente do laboratório para o estabelecimento de saúde que o requisitou.
 
-O processo acima é desnecessariamente lento (problema principal), em particular, por exigir a assinatura manual do laudo e a subsequente transferência dele até o estabelecimento de saúde de
+O processo acima é lento (problema principal), em particular, por exigir a assinatura manual do laudo e a subsequente transferência dele até o estabelecimento de saúde de
 origem (onde a requisição foi criada).
 
 Este _Guia de Implementação_ oferece uma proposta de emprego do padrão FHIR visando a
@@ -19,7 +19,13 @@ ao mesmo tempo que oferece contribuições em outros contextos.
 > Reduzir ao mínimo o tempo entre a produção de laudo de exame citopatológico e a sua
 > disponibilidade no estabelecimento de saúde específico para a continuidade do cuidado.
 
-### Componentes da solução
+### Solução proposta
+
+Transformação digital dos <a href="requisitos.html">casos de uso</a> de submissão de requisição e
+a assinatura digital do laudo correspondente a serem apoiados pela RNDS,
+em conformidade com a Estratégia de Saúde Digital 2000-2028.
+
+### Contexto da solução
 
 - <a href="requisitos.html">Requisitos</a> definem casos de uso e requisitos de usuário.
 - <a href="processos.html">Processos</a> de negócio pertinentes aos casos de uso e requisitos.

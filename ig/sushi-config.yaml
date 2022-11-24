@@ -36,11 +36,11 @@ pages:
   downloads.xml:
     title: Downloads
   requisicao.md:
-    title: Requisição
+    title: Requisição de exame
   dominio.md:
     title: Modelagem do domínio
   resultado.md:
-    title: Resultado
+    title: Resultado (laudo)
   processos.md:
     title: Processos de Negócio
   requisitos.md:
@@ -53,8 +53,8 @@ menu:
     Requisitos: requisitos.html
     Processos de Negócio: processos.html
     Domínio: dominio.html
-    Requisição: requisicao.html
-    Resultado: resultado.html
+    Requisição de exame: requisicao.html
+    Resultado (laudo): resultado.html
   Artefatos: artifacts.html
   Downloads: downloads.html
   Outros:

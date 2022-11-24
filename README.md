@@ -3,11 +3,6 @@
 Este projeto inclui uma proposta de Transformação Digital do monitoramento e
 rastreamento do Câncer de Colo do Útero e a implementação correspondente.
 
-
-<iframe src="https://s.icepanel.io/VbViUpE48Q/wGZn" height="800" width="1200" title="Fábio Nogueira de Lucena's team - SISCAN + RNDS"></iframe>
-
-[![IMAGE ALT TEXT HERE]([https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg](https://s.icepanel.io/VbViUpE48Q/wGZn))]([https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE](https://s.icepanel.io/VbViUpE48Q/wGZn))
-
 O termo **farol** está associado à segurança e
 orientação, ambos pertinentes ao contexto
 do rastreamento do Câncer de Colo do Útero.

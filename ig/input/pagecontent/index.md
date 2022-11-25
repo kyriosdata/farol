@@ -30,12 +30,12 @@ ao mesmo tempo que oferece contribuições em outros contextos.
 Os <a href="requisitos.html">casos de uso</a> a serem atendidos,
 no contexto dos <a href="processos.html">processos</a>
 considerados, resultou na divisão da [ficha](./requisicao-exame-citopatologico.pdf)
-em duas partes: a requisição de exame e o laudo correspondente. De fato, a ficha
-original, em sua primeira "folha", contém a requisição, enquanto o "verso" detalha
+empregada em todo o país em duas partes: a requisição de exame e o laudo correspondente.
+Observe que a ficha definida pelo INCA, em sua primeira "folha", contém a requisição, enquanto o "verso" detalha
 o resultado (laudo).
 
-Cada uma destas partes foi criteriosamente analisada, tanto
-a [requisição](./requisicao-anotada.pdf) quanto o
+Cada uma destas partes foi criteriosamente analisada, conforme as anotações
+tanto na [requisição](./requisicao-anotada.pdf) quanto no
 [resultado](./laudo-anotado.pdf). Estas análises resultaram
 nos modelos de informação correspondentes, ou seja, o
 modelo de informação da <a href="requisicao.html">requisição</a>
@@ -46,7 +46,9 @@ de outros já formalmente publicados por portarias do Ministério da Saúde.
 Tais modelos são insumos necessários para definição do que é conhecido por
 Guia de Implementação, o que é exatamente o conteúdo deste portal. Ou seja,
 o presente Guia detalha como o padrão FHIR, adotado pelo Brasil, pode ser empregado
-para viabilizar a integração com a RNDS.
+para viabilizar a integração com a RNDS. Algumas informações foram incluídas,
+além do que se espera em um guia, apenas para manter um contexto e não apenas
+o resultado final.
 
 Os modelos de informação supracitados são para consumo de profissionais de
 saúde, enquanto o Guia de Implementação como um todo é um instrumento tecnológico

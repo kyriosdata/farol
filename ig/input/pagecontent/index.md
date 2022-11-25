@@ -21,9 +21,9 @@ ao mesmo tempo que oferece contribuições em outros contextos.
 
 ### Solução proposta
 
-> Transformação digital dos <a href="requisitos.html">casos de uso</a> de submissão de requisição e
-> a assinatura digital do laudo correspondente a serem apoiados pela RNDS,
-> em conformidade com a Estratégia de Saúde Digital 2000-2028.
+> Transformação digital dos <a href="requisitos.html">casos de uso</a> pertinentes à submissão de requisição e
+> à assinatura digital de laudo de exame citopatológico por meio da RNDS, e em conformidade
+> com a Estratégia de Saúde Digital 2000-2028.
 
 ### Como chegamos até aqui?
 

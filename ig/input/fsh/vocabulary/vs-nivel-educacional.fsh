@@ -1,7 +1,13 @@
 ValueSet: BRNivelEducacional
 Id: BRNivelEducacional
 Title: "Nível educacional"
-Description: "Identifica o nível educacional do paciente (maior obtido)"
+Description: """
+Identifica o nível educacional do paciente (maior obtido).
+
+**IMPORTANTE**: é preciso verificar a conformidade com a orientação formal
+do Ministério da Educação.
+"""
+
 * ^status = #draft
 * ^version = "1.0.0"
 

@@ -18,3 +18,4 @@ da ficha de exame citopatológico.
 * #4 "Já fez tratamento por radioterapia?" "Pergunta para identificar se a paciente já fez tratamento por radioterapia"
 * #5 "Tem ou teve algum sangramento após relações sexuais?" "Pergunta para identificar se a paciente tem ou já apresentou sangramento após relação sexual. Observe que a primeira relação sexual na vida da paciente não deve ser considerada para a resposta"
 * #6 "Tem ou teve algum sangramento após a menopausa?" "Pergunta para identificar se a paciente já teve ou tem algum sangramento após a menopausa. Não considerar o período em que houve reposição hormonal."
+* #7 "Há sinais sugestivos de doenças sexualmente transmissíveis?" "Exame no qual se verifica a presença ou não de sinais sugestivos de doenças sexualmente transmissíveis"

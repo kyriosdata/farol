@@ -4,7 +4,7 @@ Usage: #example
 Title: "Identificar paciente"
 Description: "Atividade necessária para identificação de paciente"
 
-* url = "http://www.saude.gov.br/fhir/r4/ActivityDefinition/IdentificarPaciente"
+* url = "http://rnds-fhir.saude.gov.br/ActivityDefinition/IdentificarPaciente"
 * name = "IdentificarPaciente"
 * title = "Identificação de paciente"
 * subtitle = "A mulher que está sendo assistida"

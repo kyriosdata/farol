@@ -1,3 +1,8 @@
+## IMPORTANTE
+
+- Versão 1.2.23 (mais recente) gera exceção. Usando 1.2.22 do
+  [IG Publisher](https://github.com/HL7/fhir-ig-publisher/releases).
+
 ## Guia de Implementação
 
 Guia de Implementação é o mecanismo empregado para explicar como usar

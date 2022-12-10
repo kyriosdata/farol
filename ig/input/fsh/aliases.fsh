@@ -1,4 +1,4 @@
-Alias: $cbo = http://www.saude.gov.br/fhir/r4/CodeSystem/BRCBO
+Alias: $cbo = http://rnds-fhir.saude.gov.br/CodeSystem/BRCBO
 Alias: $loinc = http://loinc.org
 Alias: $v2-0136 = http://terminology.hl7.org/CodeSystem/v2-0136
 Alias: $SCT = http://snomed.info/sct
@@ -8,7 +8,7 @@ Alias: $tests = http://acme.org/tests
 Alias: $icd-9 = http://hl7.org/fhir/sid/icd-9
 Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category
 Alias: $loinc-yes-no-dontknow = http://loinc.org/vs/LL1643-7
-Alias: $simnaonaosei = http://www.saude.gov.br/fhir/r4/ValueSet/BRSimNaoNaoSei
+Alias: $simnaonaosei = http://rnds-fhir.saude.gov.br/ValueSet/BRSimNaoNaoSei
 
-Alias: $br-tipo-documento-individuo = http://www.saude.gov.br/fhir/r4/ValueSet/BRTipoDocumentoIndividuo-1.0
-Alias: $br-nivel-educacional-extension = http://www.saude.gov.br/fhir/r4/StructureDefinition/br-nivel-educacional-extension
+Alias: $br-tipo-documento-individuo = http://rnds-fhir.saude.gov.br/ValueSet/BRTipoDocumentoIndividuo-1.0
+Alias: $br-nivel-educacional-extension = http://rnds-fhir.saude.gov.br/StructureDefinition/br-nivel-educacional-extension

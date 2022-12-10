@@ -1,6 +1,6 @@
 {
   "package-id": "ExameCitopatologico",
-  "canonical": "http://www.saude.gov.br/fhir/r4",
+  "canonical": "http://rnds-fhir.saude.gov.br",
   "title": "Exame Citopatológico",
   "introduction": "A definição da requisição e do resultado de um exame citopatológico",
   "category": "National base",

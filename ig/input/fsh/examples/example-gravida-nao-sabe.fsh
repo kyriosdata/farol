@@ -4,7 +4,7 @@ Title: "Usuária não sabe se está grávida"
 Description: "Ao ser perguntada, responde que não sabe se está grávida"
 Usage: #example
 
-* meta.profile = "http://www.saude.gov.br/fhir/r4/StructureDefinition/BRGravidez"
+* meta.profile = "http://rnds-fhir.saude.gov.br/StructureDefinition/BRGravidez"
 * status = #final
 
 * category = $observation-category#survey

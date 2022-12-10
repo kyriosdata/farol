@@ -8,4 +8,4 @@ definida ([LOINC LL836-8](https://loinc.org/LL836-8/)).
 """
 
 * value[x] only code
-* valueCode from http://www.saude.gov.br/fhir/r4/ValueSet/BRNivelEducacional (required)
+* valueCode from http://rnds-fhir.saude.gov.br/ValueSet/BRNivelEducacional (required)

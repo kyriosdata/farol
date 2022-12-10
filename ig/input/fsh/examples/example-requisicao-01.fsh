@@ -19,7 +19,7 @@ Daí segue o exemplo, mas comentado.
   O identificador do solicitante, neste exemplo, é 123456. 
 */
 * identifier[0]
-  * system = "http://www.saude.gov.br/fhir/r4/NamingSystem/BRRNDS-123456"
+  * system = "http://rnds-fhir.saude.gov.br/NamingSystem/BRRNDS-123456"
   * value = "codigo-gerado-pelo-solicitante-para-identificar-a-requisicao"
 
 * status = #active

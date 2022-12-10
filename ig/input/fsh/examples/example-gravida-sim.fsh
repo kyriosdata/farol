@@ -4,7 +4,7 @@ Title: "Usuária está grávida"
 Description: "Ao ser perguntada, informa que está grávida."
 Usage: #example
 
-* meta.profile = "http://www.saude.gov.br/fhir/r4/StructureDefinition/BRGravidez"
+* meta.profile = "http://rnds-fhir.saude.gov.br/StructureDefinition/BRGravidez"
 * status = #final
 * category = $observation-category#survey
 * category.text = "Informação fornecida pela usuária"

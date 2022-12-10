@@ -55,7 +55,7 @@ Tais modelos são insumos necessários para definição do que é conhecido por
 Guia de Implementação, o que é exatamente o conteúdo deste portal. Ou seja,
 o presente Guia detalha como o padrão FHIR, adotado pelo Brasil, pode ser empregado
 para viabilizar a integração com a RNDS. Algumas informações foram incluídas,
-além do que se espera em um guia, apenas para manter um contexto e não apenas
+além do que se espera em um guia, apenas para manter um histórico mínimo e não apenas
 o resultado final.
 
 Os modelos de informação supracitados são para consumo de profissionais de

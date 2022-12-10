@@ -13,7 +13,7 @@ Daí segue o exemplo, mas comentado.
 
 */
 
-// * meta.profile = "http://www.saude.gov.br/fhir/r4/StructureDefinition/BRProfissional-1.0"
+// * meta.profile = "http://rnds-fhir.saude.gov.br/StructureDefinition/BRProfissional-1.0"
 * meta.lastUpdated = "2022-08-09T23:18:22.558Z"
 
 * identifier[0]

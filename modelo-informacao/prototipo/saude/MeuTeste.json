@@ -1,0 +1,32 @@
+{
+  "resourceType": "Observation",
+  "meta": {
+    "profile": "https://www.saude.gov.br/fhir/r4/StructureDefinition/AnamneseExameCitopatologico"
+  },
+  "status": "final",
+  "code": {
+    "coding": {
+      "system": "http://loinc.org",
+      "code": "1-8",
+      "display": "parece remédio"
+    }
+  },
+  "component": [
+    {
+      "code": {
+        "coding" : {
+          "code" : "1"   
+        }
+      }
+    },
+    {
+      "code": {
+        "coding" : {
+          "system": "http://loinc.org",
+          "code" : "60432-2"   
+        },
+        "valueDateTime": "2022-11-30"
+      }
+    }
+  ]
+}

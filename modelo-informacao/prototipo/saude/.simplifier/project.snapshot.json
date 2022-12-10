@@ -1,0 +1,15 @@
+{
+  "Timestamp": "2022-11-30T20:45:06.5241541+00:00",
+  "Files": {
+    "AnamneseExameCitopatologico.StructureDefinition.xml": {
+      "Length": 8180,
+      "LastWriteTime": "2022-11-30T17:16:40+00:00",
+      "Hash": "6B90F77E23FF36D0A7ADE8D93CD90D78"
+    },
+    "MeuTeste.json": {
+      "Length": 627,
+      "LastWriteTime": "2022-11-30T17:18:06+00:00",
+      "Hash": "B13F448A2867E70D275EF29A7A3CD4FD"
+    }
+  }
+}

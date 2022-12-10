@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="br-anamnese-exame-citopatologico" />
+  <url value="https://www.saude.gov.br/fhir/r4/StructureDefinition/AnamneseExameCitopatologico" />
+  <name value="AnamneseExameCitopatologico" />
+  <title value="Anamnese para exame citopatológico" />
+  <status value="draft" />
+  <date value="2022-11-30T14:16:40.7969883+00:00" />
+  <publisher value="INCA/UFG" />
+  <contact>
+    <name value="Fábio Nogueira de Lucena" />
+    <telecom>
+      <system value="email" />
+      <value value="kyriosdata@ufg.br" />
+      <use value="work" />
+      <rank value="3" />
+    </telecom>
+  </contact>
+  <description value="Registra informações obtidas no momento da coleta de amostra e visando a elaboração do laudo correspondente do exame citopatológico. As informações aqui registradas são uma evolução da ficha de requisição (ficha de cor rosa)." />
+  <useContext>
+    <code>
+      <system value="http://hl7.org/fhir/ValueSet/usage-context-type" />
+      <code value="gender" />
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://hl7.org/fhir/ValueSet/administrative-gender" />
+        <code value="female" />
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <useContext>
+    <code>
+      <system value="http://hl7.org/fhir/ValueSet/usage-context-type" />
+      <code value="age" />
+    </code>
+    <valueRange>
+      <low>
+        <value value="15" />
+        <comparator value="&gt;=" />
+        <unit value="years" />
+        <system value="http://unitsofmeasure.org" />
+        <code value="a" />
+      </low>
+    </valueRange>
+  </useContext>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166" />
+      <code value="BR" />
+      <display value="Brasil" />
+    </coding>
+  </jurisdiction>
+  <purpose value="Reúne informações necessárias para que o laudo de exame citopatológico possa ser realizado adequadamente por citopatologista." />
+  <copyright value="Ministério da Saúde (Brasil)" />
+  <keyword>
+    <system value="http://terminology.hl7.org/CodeSystem/definition-use" />
+    <code value="template" />
+  </keyword>
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="ficha" />
+    <uri value="https://www.gov.br/inca/pt-br/assuntos/gestor-e-profissional-de-saude/envio-de-amostras-de-exames-citopatologico-e-histopatologico" />
+    <name value="ficha de requisição de exame citopatológico" />
+    <comment value="Informações sobre a ficha de exame citopatológico" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Observation" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Observation.component">
+      <path value="Observation.component" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code.coding.code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <comment value="Cada componente identifica um item de informação da requisição de exame citopatológico." />
+      <max value="2" />
+      <constraint>
+        <key value="c-1" />
+        <severity value="error" />
+        <human value="Data do último exame é admitida apenas quando informado que exame já foi feito." />
+        <expression value="code.coding.where(code = '1' and valueBoolean = true) implies exists(code.coding.code = '60432-2')" />
+      </constraint>
+    </element>
+    <element id="Observation.component.referenceRange">
+      <path value="Observation.component.referenceRange" />
+      <contentReference value="http://hl7.org/fhir/StructureDefinition/Observation#Observation.referenceRange" />
+    </element>
+    <element id="Observation.component:jaFezExamePreventivo">
+      <path value="Observation.component" />
+      <sliceName value="jaFezExamePreventivo" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Observation.component:jaFezExamePreventivo.code.coding.system">
+      <path value="Observation.component.code.coding.system" />
+      <max value="0" />
+    </element>
+    <element id="Observation.component:jaFezExamePreventivo.code.coding.version">
+      <path value="Observation.component.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Observation.component:jaFezExamePreventivo.code.coding.code">
+      <path value="Observation.component.code.coding.code" />
+      <short value="Identificador para a pergunta &quot;já fez exame preventivo?&quot;" />
+      <fixedCode value="1" />
+    </element>
+    <element id="Observation.component:jaFezExamePreventivo.code.coding.display">
+      <path value="Observation.component.code.coding.display" />
+      <short value="Já fez exame preventivo?" />
+      <definition value="A pergunta &quot;já fez exame preventivo?&quot;" />
+      <fixedString value="A pergunta: já fez exame preventivo?" />
+    </element>
+    <element id="Observation.component:jaFezExamePreventivo.code.coding.userSelected">
+      <path value="Observation.component.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Observation.component:jaFezExamePreventivo.code.text">
+      <path value="Observation.component.code.text" />
+      <fixedString value="Você já realizou o exame citopatológico?" />
+    </element>
+    <element id="Observation.component:jaFezExamePreventivo.value[x]">
+      <path value="Observation.component.value[x]" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <description value="http://www.saude.gov.br/fhir/r4/ValueSet/br-sim-nao-nao-sabe" />
+      </binding>
+    </element>
+    <element id="Observation.component:jaFezExamePreventivo.referenceRange">
+      <path value="Observation.component.referenceRange" />
+      <contentReference value="http://hl7.org/fhir/StructureDefinition/Observation#Observation.referenceRange" />
+    </element>
+    <element id="Observation.component:dataUltimoExame">
+      <path value="Observation.component" />
+      <sliceName value="dataUltimoExame" />
+      <short value="data do último exame citopatológico" />
+      <definition value="A data em que foi realizado pela última vez o exame citopatológico." />
+      <max value="1" />
+    </element>
+    <element id="Observation.component:dataUltimoExame.code.coding.system">
+      <path value="Observation.component.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Observation.component:dataUltimoExame.code.coding.version">
+      <path value="Observation.component.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Observation.component:dataUltimoExame.code.coding.code">
+      <path value="Observation.component.code.coding.code" />
+      <short value="data of previous pap smear" />
+      <definition value="Data da realização do último exame." />
+      <min value="1" />
+      <fixedCode value="60432-2" />
+    </element>
+    <element id="Observation.component:dataUltimoExame.code.coding.display">
+      <path value="Observation.component.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Observation.component:dataUltimoExame.code.coding.userSelected">
+      <path value="Observation.component.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Observation.component:dataUltimoExame.value[x]">
+      <path value="Observation.component.value[x]" />
+      <min value="1" />
+      <type>
+        <code value="dateTime" />
+      </type>
+    </element>
+    <element id="Observation.component:dataUltimoExame.referenceRange">
+      <path value="Observation.component.referenceRange" />
+      <contentReference value="http://hl7.org/fhir/StructureDefinition/Observation#Observation.referenceRange" />
+    </element>
+  </differential>
+</StructureDefinition>

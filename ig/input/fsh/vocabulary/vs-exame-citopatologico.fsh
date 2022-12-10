@@ -17,4 +17,4 @@ da ficha de exame citopatológico.
 * $loinc#66174-4 "Está grávida?"
 * $loinc#63873-4 "Já usou hormônio para sintomas da menopausa?"
 * $loinc#8665-2 "Data da última menstruação"
-* $loinc#12044-4 ""
+* $loinc#12044-4 "Cervix study observation inspection"

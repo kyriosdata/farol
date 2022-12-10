@@ -14,10 +14,9 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 * ^contact.telecom.value = "kyriosdata@ufg.br"
 * ^contact.telecom.use = #work
 * ^contact.telecom.rank = 3
-* ^useContext[0].code = http://hl7.org/fhir/ValueSet/usage-context-type#gender
-* ^useContext[=].valueCodeableConcept = http://hl7.org/fhir/ValueSet/administrative-gender#female
-* ^useContext[+].code = http://hl7.org/fhir/ValueSet/usage-context-type#age
-* ^useContext[=].valueRange.low.comparator = #>=
+* ^useContext[0].code = http://terminology.hl7.org/CodeSystem/usage-context-type#gender
+* ^useContext[=].valueCodeableConcept = http://hl7.org/fhir/administrative-gender#female
+* ^useContext[+].code = http://terminology.hl7.org/CodeSystem/usage-context-type#age
 * ^useContext[=].valueRange.low = 15 'a' "years"
 * ^jurisdiction = urn:iso:std:iso:3166#BR "Brasil"
 * ^purpose = "Reúne informações necessárias para que o laudo de exame citopatológico possa ser realizado adequadamente por citopatologista."

@@ -2,12 +2,17 @@
 
 O exame citopatológico emprega uma [ficha](./requisicao-exame-citopatologico.pdf) (formulário) amplamente usada em todo o território nacional e cujos processos pertinentes são apoiados pelo SISCAN.
 
-A requisição deste exame é criada por um profissional, em um encontro com a paciente,
+A requisição deste exame é criada por um profissional de saúde, em um encontro com a paciente,
 no qual é feita a coleta de material (amostra) enviado a um laboratório
-para a produção do laudo correspondente. No sentido inverso, o laudo produzido e assinado à mão
-e transferido fisicamente do laboratório para o estabelecimento de saúde que o requisitou.
+para a produção do laudo correspondente. No sentido inverso,
+o laudo produzido e assinado à mão pelo citopatologista e transferido fisicamente do
+laboratório até o estabelecimento de saúde que o requisitou.
 
-O processo acima é lento, em particular, por exigir a assinatura manual do laudo
+Esta transferência exige o transporte físico dos laudos e, naturalmente,
+o esforço administrativo correspondente tanto do laboratório quanto do
+estabelecimento.
+
+Esse processo é lento, em particular, por exigir a assinatura manual do laudo
 e a subsequente transferência dele até o estabelecimento de saúde de
 origem (onde a requisição foi criada). Este cenário cria uma oportunidade contemplada
 pelo presente _Guia de Implementação_.

@@ -4,7 +4,7 @@
 # │  https://fshschool.org/docs/sushi/configuration/#full-configuration                            │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: ccu
-canonical: http://rnds-fhir.saude.gov.br
+canonical: https://rnds-fhir.saude.gov.br
 name: CancerColoDoUtero
 title: "Rastreamento de Câncer de Colo de Útero"
 description: "Inclui definições pertinentes ao exame citopatológico (requisição e resultado) conforme INCA, e correlatos."

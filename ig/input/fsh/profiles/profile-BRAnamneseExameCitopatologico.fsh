@@ -73,6 +73,7 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 * component[jaFezExamePreventivo].interpretation ..0
 * component[jaFezExamePreventivo].referenceRange ..0
 * component[jaFezExamePreventivo].referenceRange ^contentReference = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.referenceRange"
+
 * component[dataUltimoExame] ^short = "Registra data do último exame, se for o caso"
 * component[dataUltimoExame] ^definition = "A data em que foi realizado pela última vez o exame citopatológico."
 * component[dataUltimoExame].code from $BRQuestoesExameCitopatologico (required)
@@ -94,6 +95,7 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 * component[dataUltimoExame].interpretation ..0
 * component[dataUltimoExame].referenceRange ..0
 * component[dataUltimoExame].referenceRange ^contentReference = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.referenceRange"
+
 * component[usaDIU].code from $BRQuestoesExameCitopatologico (required)
 * component[usaDIU].code ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
 * component[usaDIU].code ^binding.extension.valueString = "ObservationCode"
@@ -111,6 +113,7 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 * component[usaDIU].value[x] from $yesnodontknow (required)
 * component[usaDIU].value[x] ^short = "Informa se a paciente usa, não usa ou não sabe se usa DIU."
 * component[usaDIU].referenceRange ^contentReference = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.referenceRange"
+
 * component[estaGravida].code.coding.system 1..
 * component[estaGravida].code.coding.system = "http://loinc.org" (exactly)
 * component[estaGravida].code.coding.version ..0
@@ -123,6 +126,7 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 * component[estaGravida].value[x] from $yesnodontknow (required)
 * component[estaGravida].value[x] ^binding.description = "Informa se a paciente afirma estar grávida, afirma não estar grávida ou afirma que não sabe se está grávida."
 * component[estaGravida].referenceRange ^contentReference = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.referenceRange"
+
 * component[usaPilulaAnticoncepcional].code.coding.system 1..
 * component[usaPilulaAnticoncepcional].code.coding.system = "http://rnds-fhir.saude.gov.br/CodeSystem/BRQuestoesExameCitopatologico" (exactly)
 * component[usaPilulaAnticoncepcional].code.coding.version ..0
@@ -133,6 +137,7 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 * component[usaPilulaAnticoncepcional].value[x] only CodeableConcept
 * component[usaPilulaAnticoncepcional].value[x] from $yesnodontknow (required)
 * component[usaPilulaAnticoncepcional].referenceRange ^contentReference = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.referenceRange"
+
 * component[usaHormonioMenopausa].code.coding.system 1..
 * component[usaHormonioMenopausa].code.coding.system = "http://loinc.org" (exactly)
 * component[usaHormonioMenopausa].code.coding.code 1..

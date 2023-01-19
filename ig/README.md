@@ -1,6 +1,6 @@
 ## IMPORTANTE
 
-- Versão 1.2.23 (mais recente) gera exceção. Usando 1.2.22 do
+- Versão 1.2.28 (versão ok)
   [IG Publisher](https://github.com/HL7/fhir-ig-publisher/releases).
 
 ## Guia de Implementação
@@ -30,6 +30,7 @@ disponibilizar o ambiente de desenvolvimento.
 ## Publicar na AWS S3
 
 - `aws s3 sync modelagem-fhir\ig\output s3://farol-ig --profile farol-ig --delete`
+- `aws s2 cp diretorio s3://farol-ig/diretorio --profile farol-ig --recursive`
 - [http://farol-ig.s3-website-sa-east-1.amazonaws.com/](http://farol-ig.s3-website-sa-east-1.amazonaws.com/) para visitar a implementação publicada.
 
 # Ferramentas

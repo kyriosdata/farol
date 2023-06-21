@@ -1,81 +1,16 @@
 # Modelo de informação
 
-A requisição e resultado de exame citopatológico são apresentados
-abaixo pelos itens de informação
-pertinentes. Tais itens são definidos pelo formulário
+A requisição e resultado de exame citopatológico são definidos pelo formulário
 de [Requisição de Exame Citopatológico - Colo do útero](modelo-requisicao.pdf).
 
-Os itens estão divididos naqueles empregados pela
-requisição propriamente dita e naqueles utilizados para
-registro do resultado (laudo).
+Apesar do formulário apresentar a requisição juntamente
+com o laudo, aqui, ambos não são tratados como parte de um
+único documento.
 
 # Requisição de exame citopatológico
 
-## Nome de fantasia
-
-A "Requisição de exame citopatológico - Colo do útero" é o nome pelo qual a
-requisição é conhecida. Há um programa correspondente, "Viva Mulher" ou
-"Programa Nacional de Controle do Câncer do Colo do Útero e de Mama".
-
-Precisamos do código único deste
-exame, seja via tabela de procedimentos do SUS (SIGTAP) ou
-LOINC, por exemplo.
-
-:interrobang: código LOINC do exame citopatológico :interrobang:
-:interrobang: código Tabela SUS (Sigtap) do exame citopatológico :interrobang:
-
-## Unidade solicitante
-
-A unidade de saúde que faz a requisição é caracterizada por:
-
-- Nome da unidade
-- Município
-- UF
-- CNES
-
-#### Informações determinantes
-
-- CNES
-
-## Profissional solicitante e que faz a coleta
-
-- Profissional que realizou a coleta, além de preencher os dados da anamnese e do exame clínico.
-
-#### Informações determinantes
-
-- CNS do profissional
-- Este CNS deve estar lotado no CNES em questão com o papel compatível.
-
-## Data da requisição e da coleta
-
-A data da coleta pode ser diferente da data da requisição?
-
-- Data da coleta
-
-#### Informações determinantes
-
-- Data
-
-## Paciente
-
-- Nome (da mulher)
-- Nome da mãe
-- Apelido (da mulher)
-- Identidade + Órgão emissor + UF
-- CPF
-- Data de nascimento
-- Idade
-- CNS (cartão SUS)
-- Residência (logradouro, número, complemento, bairro, uf, município, cep)
-- Ponto de referência
-- telefone (com DDD)
-
-Observação: a idade é calculada com base na data de nascimento e
-a data em que a coleta é feita em um dado ano de interesse.
-
-#### Informações determinantes
-
-- CNS ou CPF
+Em várias partes abaixo é feita referência para o modelo de
+informação do Registro de Atendimento Clínico ([aqui](https://www.in.gov.br/en/web/dou/-/portaria-n-234-de-18-de-julho-de-2022-416506215)).
 
 ## Outras informações
 

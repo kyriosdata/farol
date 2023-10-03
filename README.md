@@ -10,9 +10,6 @@ do rastreamento do Câncer de Colo do Útero.
 
 Esta transformação exige modificação (manutenção) do SISCAN proposta à luz da Política Nacional de Informação e Informática em Saúde ([aqui](https://bvsms.saude.gov.br/bvs/saudelegis/gm/2021/prt1768_02_08_2021.html)) e da Estratégia de Saúde Digital 2020-2028 ([aqui](https://bvsms.saude.gov.br/bvs/publicacoes/estrategia_saude_digital_Brasil.pdf)). A manutenção do SISCAN não faz parte do presente projeto.
 
-O uso proposto do FHIR (padrão adotado pela RNDS) e seu "complemento" CDS Hooks estão detalhados no [Guia de Implementação](ig). Este Guia ainda
-inclui os processos de negócio pertinentes, requisitos e análise dos requisitos.
-
 ## Resultados parciais
 
 - Guia de Implementação ([aqui](http://farol-ig.s3-website-sa-east-1.amazonaws.com/))
@@ -25,8 +22,7 @@ inclui os processos de negócio pertinentes, requisitos e análise dos requisito
 
 ## Realização
 
-Este trabalho é realizado pela parceria entre UFG ([CGIS](https://cgis.ufg.br/)), [INCA](https://www.inca.gov.br/) e a Secretaria Municipal de Saúde
-de Goiânia.
+Este trabalho é realizado pela parceria entre UFG ([CGIS](https://cgis.ufg.br/)) e [INCA](https://www.inca.gov.br/).
 
 ## Tarefas (em ordem de prioridade)
 

@@ -49,5 +49,8 @@ Description: "Definição de requisição de exame citopatológico em conformida
 * category.coding = $SCT#108252007
 * category.coding.display ..0
 
+//Tipo da requisição
+// https://simplifier.net/redenacionaldedadosemsaude/tabelasus-codesystem
+
 * bodySite ..0
 * patientInstruction ..0

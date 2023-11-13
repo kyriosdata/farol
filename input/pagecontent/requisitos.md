@@ -13,8 +13,8 @@ executados por profissionais de saúde.
 - Requisições podem ser recuperadas pelo laboratório encarregado de produzir os laudos correspondentes.
 
 - O resultado de exame citopatológico, para uma dada requisição, é
-  produzido e assinado digitalmente por profissional lotado no estabelecimento atribuído
-  para produzir o laudo.
+  produzido e assinado digitalmente por profissional lotado no estabelecimento que
+  produziu o laudo.
 
 - Resultado, assinado digitalmente, torna-se acessível ao estabelecimento de saúde que o requisitou.
 

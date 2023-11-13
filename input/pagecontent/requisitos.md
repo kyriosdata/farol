@@ -4,15 +4,15 @@ executados por profissionais de saúde.
 
 ### Cenários (casos) de uso
 
-- Requisição de exame citopatológico é registrado com ou sem indicação do estabelecimento
+- Uma requisição de exame citopatológico é registrada com ou sem indicação do estabelecimento
   que irá produzir o laudo correspondente.
 
 - Órgão gestor realiza a atribuição ou alteração do estabelecimento que irá produzir
   o laudo correspondente.
 
-- Requisição pode ser recuperada pelo laboratório encarregado de produzir o laudo correspondente.
+- Requisições podem ser recuperadas pelo laboratório encarregado de produzir os laudos correspondentes.
 
-- Resultado de exame citopatológico, relacionado a uma requisição correspondente, é
+- O resultado de exame citopatológico, para uma dada requisição, é
   produzido e assinado digitalmente por profissional lotado no estabelecimento atribuído
   para produzir o laudo.
 

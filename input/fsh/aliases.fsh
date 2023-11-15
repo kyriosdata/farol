@@ -1,4 +1,6 @@
 Alias: $cbo = https://fhir.fabrica.inf.ufg.br/CodeSystem/BRCBO
+Alias: $ne = https://fhir.fabrica.inf.ufg.br/StructureDefinition/NivelEducacional
+
 
 Alias: $loinc = http://loinc.org
 Alias: $v2-0136 = http://terminology.hl7.org/CodeSystem/v2-0136

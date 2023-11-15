@@ -1,4 +1,4 @@
-Instance: paciente3
+Instance: Ciclana
 InstanceOf: BRIndividuo
 Title: "Mulher assistida (não sabe se está grávida)"
 Description: "Ao ser perguntada, informa que não sabe se está grávida."
@@ -14,5 +14,5 @@ Usage: #example
 * gender = #female
 * birthDate = "1987-10-14"
 
-* extension[0].url = "https://fhir.fabrica.inf.ufg.br/NivelEducacional"
+* extension[0].url = $ne
 * extension[0].valueCode = $loinc#LA12462-0

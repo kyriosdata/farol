@@ -18,14 +18,7 @@ O indivíudo é o sujeito central para os processos informativos de dados em sa�
 * . ^definition = "Dados demográficos sobre um indivíduo enquanto sujeito de ações e serviços de saúde."
 * . ^comment = "Redefinido porque exige acréscimo de extensão para registro do nível educacional."
 * . ^alias[0] = "Paciente"
-* . ^alias[+] = "Cidadão"
-* . ^alias[+] = "Pessoa"
-* . ^alias[+] = "Usuário"
+* . ^alias[1] = "Cidadão"
+* . ^alias[2] = "Pessoa"
+* . ^alias[3] = "Usuário"
 
-* extension 1..
-* extension ^slicing.discriminator.type = #value
-* extension ^slicing.discriminator.path = "url"
-* extension ^slicing.rules = #open
-* extension contains $br-nivel-educacional-extension named educationLevel 0..1 MS
-* extension[educationLevel] ^definition = "Escolaridade máxima obtida pelo indivíduo"
-* extension[educationLevel] ^min = 0

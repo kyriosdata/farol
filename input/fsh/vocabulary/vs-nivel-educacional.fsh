@@ -1,5 +1,5 @@
-ValueSet: BRNivelEducacional
-Id: BRNivelEducacional
+ValueSet: NivelEducacional
+Id: NivelEducacional
 Title: "Nível educacional"
 Description: """
 Identifica o nível educacional do paciente (maior obtido).

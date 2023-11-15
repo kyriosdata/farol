@@ -5,7 +5,8 @@
     <lastUpdated value="2020-03-12T13:22:07.223+00:00" />
   </meta>
   <language value="pt-BR" />
-  <url value="http://rnds-fhir.saude.gov.br/ValueSet/BROcupacao-1.0" />
+  <!-- ALTERACAO EM ORIGINAL (url) -->
+  <url value="https://fhir.fabrica.inf.ufg.br/ValueSet/BROcupacao-1.0" />
   <version value="1.0" />
   <title value="Classificação Brasileira de Ocupações - CBO" />
   <name value="BROcupacao" />
@@ -17,7 +18,8 @@
   <immutable value="false" />
   <compose>
     <include>
-      <system value="http://rnds-fhir.saude.gov.br/CodeSystem/BRCBO" />
+      <!-- ALTERACAO EM ORIGINAL (url) -->
+      <system value="https://fhir.fabrica.inf.ufg.br/CodeSystem/BRCBO" />
       <version value="*" />
     </include>
   </compose>

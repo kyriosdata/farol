@@ -1,6 +1,3 @@
-Alias: $BRQuestoesExameCitopatologico = http://rnds-fhir.saude.gov.br/ValueSet/BRQuestoesExameCitopatologico
-Alias: $yesnodontknow = http://hl7.org/fhir/ValueSet/yesnodontknow
-
 Profile: AnamneseExameCitopatologico
 Parent: Observation
 Id: br-anamnese-exame-citopatologico

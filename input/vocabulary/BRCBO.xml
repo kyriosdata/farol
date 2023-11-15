@@ -8,7 +8,8 @@
     <lastUpdated value="2020-03-11T12:05:01.176+00:00" />
   </meta>
   <language value="pt-BR" />
-  <url value="http://rnds-fhir.saude.gov.br/CodeSystem/BRCBO" />
+  <!-- ALTERACAO EM ORIGINAL (url) -->
+  <url value="https://fhir.fabrica.inf.ufg.br/CodeSystem/BRCBO" />
   <version value="201701A" />
   <status value="active" />
   <experimental value="false" />

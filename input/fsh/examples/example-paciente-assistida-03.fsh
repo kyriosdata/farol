@@ -14,4 +14,5 @@ Usage: #example
 * gender = #female
 * birthDate = "1987-10-14"
 
-* extension[educationLevel].valueCode = $loinc#LA12462-0
+* extension[0].url = "https://fhir.fabrica.inf.ufg.br/NivelEducacional"
+* extension[0].valueCode = $loinc#LA12462-0

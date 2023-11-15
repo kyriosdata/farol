@@ -1,5 +1,5 @@
-Extension: BRNivelEducacionalExtension
-Id:   br-nivel-educacional-extension
+Extension: NivelEducacional
+Id:   NivelEducacional
 Title:  "Nível educacional"
 Description: """
 Um código que identifica o maior nível educacional obtido pelo paciente. 
@@ -8,4 +8,4 @@ definida ([LOINC LL836-8](https://loinc.org/LL836-8/)).
 """
 
 * value[x] only code
-* valueCode from http://rnds-fhir.saude.gov.br/ValueSet/BRNivelEducacional (required)
+* valueCode from NivelEducacional (required)

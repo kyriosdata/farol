@@ -11,6 +11,6 @@ Usage: #example
 * category.text = "Informação fornecida pela usuária"
 * code = $loinc#66174-4
 * code.text = "Você está grávida?"
-* subject = Reference(Patient/paciente3)
+* subject = Reference(Patient/Ciclana)
 * effectiveDateTime = "2022-08-29"
 * valueCodeableConcept.coding = $loinc#LA12688-0

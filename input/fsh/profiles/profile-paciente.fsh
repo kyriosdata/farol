@@ -5,7 +5,6 @@ Title: "Indivíduo"
 Description: "Sujeito da assistência à saúde."
 * ^meta.lastUpdated = "2020-03-13T19:47:50.646+00:00"
 * ^language = #pt-BR
-* ^url = "http://rnds-fhir.saude.gov.br/StructureDefinition/BRIndividuo-1.0"
 * ^version = "01.10"
 * ^publisher = "Ministério da Saúde do Brasil"
 * ^purpose = """

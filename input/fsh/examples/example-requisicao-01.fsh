@@ -30,7 +30,7 @@ Daí segue o exemplo, mas comentado.
 
 * code = $loinc#19766-5
 
-* subject = Reference(paciente3)
+* subject = Reference(Ciclana)
 
 /*
   Consulta na qual a requisição foi criada

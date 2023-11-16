@@ -13,7 +13,7 @@ Usage: #example
 * intent = #original-order
 * category.coding.code = $SCT#108252007
 
-* subject = Reference(Patient/paciente1)
+* subject = Reference(Patient/Fulana)
 * occurrenceDateTime = "2013-05-02T16:16:00-07:00"
 * requester = Reference(enfermeira)
 * performer = Reference(enfermeiro)

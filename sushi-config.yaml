@@ -1,5 +1,5 @@
 id: ccu
-canonical: https://fhir.fabrica.inf.ufg.br
+canonical: https://fhir.fabrica.inf.ufg.br/ccu
 name: CancerColoDoUtero
 title: "Rastreamento de Câncer de Colo de Útero"
 description: "Inclui definições pertinentes ao exame citopatológico (requisição e resultado) conforme INCA, e correlatos."

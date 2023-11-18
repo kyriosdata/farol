@@ -8,13 +8,18 @@ Usage: #definition
 * status = #draft
 * kind = #identifier
 * date = "2023-07-31T14:24:34.711Z"
-* publisher = "Ministério da Saúde (Brasil)"
-* responsible = "SISCAN - Instituto Nacional do Câncer (INCA)"
+* publisher = "Ministério da Saúde (INCA)"
+* responsible = "Instituto Nacional do Câncer (SISCAN)"
 
 // identificador de preenchimento ou de espaço reservado (fornecido pelo SISCAN)
 * type.text = "O identificador nacional da requisição de exame citopatológico fornecido pelo SISCAN"
 * type.coding[0].system = "http://terminology.hl7.org/CodeSystem/v2-0203"
 * type.coding[0].code = #FILL
+
+* useContext.code.system = "http://terminology.hl7.org/CodeSystem/usage-context-type"
+* useContext.code.code = #task
+* useContext.valueCodeableConcept.coding[0].system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+* useContext.valueCodeableConcept.coding[0].code = #LABOE
 
 * description = """
 Número único gerado pelo **SISCAN** para cada requisição de exame citopatológico. 
@@ -25,7 +30,7 @@ encaminha a requisição para o SISCAN.
 """
 
 * jurisdiction[0].coding[0] = urn:iso:std:iso:3166#BR
-* usage = "Este código é empregado para identificar uma requisição de exame citopatológico emitida no Brasil."
+* usage = "Este código é empregado para identificar unicamente uma requisição de exame citopatológico emitida no Brasil."
 
 * uniqueId[0].type = #uri
 * uniqueId[0].value = "http://goias.gov.br/fhir/ns/siscan"

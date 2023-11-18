@@ -1,11 +1,13 @@
 Profile: RequisicaoExameCitopatologico
 Parent: ServiceRequest
-Id: BRRequisicaoExameCitopatologico
+Id: requisicao-exame-citopatologico
 Title: "Requisição de exame citopatológico"
 Description: "Definição de requisição de exame citopatológico em conformidade com padrão adotado pelo INCA."
 * ^meta.lastUpdated = "2015-02-07T13:28:17.239+02:00"
 * ^version = "1.0.0"
 * ^status = #draft
+
+* extension ..0
 
 * meta 1..
 * meta ^short = "Metadados da requisição"
@@ -16,17 +18,20 @@ Description: "Definição de requisição de exame citopatológico em conformida
 
 * identifier ..1
 * identifier ^label = "O rótulo (label)"
-* identifier ^short = "O identificador único atribuído pelo solicitante ao requerimento de exame citopatológico."
+* identifier ^short = "O identificador único atribuído pelo SISCAN ao requerimento de exame citopatológico."
 * identifier ^definition = "O identificador único da requisição para o solicitante."
 * identifier ^comment = "Não há nenhum formato esperado para este identificador senão uma sequência de caracteres."
 * identifier ^requirements = "Este identificador é necessário para facilitar a identificação do requerimento no contexto em que é gerado."
 * identifier ^alias[0] = "protocolo"
-* identifier ^alias[+] = "número"
+* identifier ^alias[1] = "número"
 * identifier.id ..0
 * identifier.extension ..0
 * identifier.use ..0
+* identifier.type ..0
+* identifier.system = "http://goias.gov.br/fhir/ns/siscan"
+* identifier.system ^short = "O nome (identificador) do número gerado pelo SISCAN."
 * identifier.value 1..1
-* identifier.value ^short = "O identificador único atribuído à requisição pelo solicitante usando o seu sistema de origem."
+* identifier.value ^short = "O identificador único atribuído à requisição pelo SISCAN."
 * identifier.period ..0
 * identifier.assigner ..0
 

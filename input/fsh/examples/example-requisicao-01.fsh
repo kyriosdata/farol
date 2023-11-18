@@ -1,5 +1,5 @@
 Instance: requisicao-tipica
-InstanceOf: BRRequisicaoExameCitopatologico
+InstanceOf: RequisicaoExameCitopatologico
 Title: "Requisição típica"
 Description: "Requisição de example citopatológico"
 Usage: #example
@@ -16,11 +16,11 @@ Daí segue o exemplo, mas comentado.
 * meta.lastUpdated = "2022-08-09T23:18:22.558Z"
 
 /*
-  O identificador do solicitante, neste exemplo, é 123456. 
+  O identificador da requisição
 */
 * identifier[0]
-  * system = "http://rnds-fhir.saude.gov.br/NamingSystem/BRRNDS-123456"
-  * value = "codigo-gerado-pelo-solicitante-para-identificar-a-requisicao"
+  * system = "http://goias.gov.br/fhir/ns/siscan"
+  * value = "12345678"
 
 * status = #active
 * intent = #order

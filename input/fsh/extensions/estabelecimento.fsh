@@ -15,6 +15,7 @@ Context: Reference
     municipio 0..1 and
     nome 0..1
 
-* extension[uf].value[x] only string
+* extension[uf].value[x] only code
+* extension[uf].valueCode from DivisaoGeografica
 * extension[municipio].value[x] only string
 * extension[nome].value[x] only string

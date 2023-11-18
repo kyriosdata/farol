@@ -1,0 +1,519 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "BRDivisaoGeograficaBrasil",
+  "caseSensitive": true,
+  "meta": {
+    "lastUpdated": "2020-03-11T19:12:55.862+00:00"
+  },
+  "language": "pt-BR",
+  "url": "http://www.saude.gov.br/fhir/r4/CodeSystem/BRDivisaoGeograficaBrasil",
+  "version": "201701A",
+  "name": "DivisaoGeografica",
+  "status": "active",
+  "experimental": false,
+  "date": "2020-03-11T19:13:16.339365+00:00",
+  "publisher": "Instituto Brasileiro de Geografia e Estatística",
+  "description": "As regiões geográficas, estados, distrito federal e municípios do Brasil.",
+  "content": "complete",
+  "property": [
+    {
+      "code": "type",
+      "description": "tipo",
+      "type": "code"
+    },
+    {
+      "code": "ethnical",
+      "description": "Gentílico",
+      "type": "string"
+    },
+    {
+      "code": "initials",
+      "description": "Sigla",
+      "type": "code"
+    }
+  ],
+  "concept": [
+    {
+      "code": "1",
+      "display": "Norte",
+      "property": [
+        {
+          "code": "type",
+          "valueCode": "region"
+        },
+        {
+          "code": "initials",
+          "valueCode": "N"
+        }
+      ],
+      "concept": [
+        {
+          "code": "11",
+          "display": "Rondônia",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "RO"
+            }
+          ]
+        },
+        {
+          "code": "12",
+          "display": "Acre",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "AC"
+            }
+          ]
+        },
+        {
+          "code": "13",
+          "display": "Amazonas",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "AM"
+            }
+          ]
+        },
+        {
+          "code": "14",
+          "display": "Roraima",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "RR"
+            }
+          ]
+        },
+        {
+          "code": "15",
+          "display": "Pará",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "PA"
+            }
+          ]
+        },
+        {
+          "code": "16",
+          "display": "Amapá",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "AP"
+            }
+          ]
+        },
+        {
+          "code": "17",
+          "display": "Tocantins",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "TO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "2",
+      "display": "Nordeste",
+      "property": [
+        {
+          "code": "type",
+          "valueCode": "region"
+        },
+        {
+          "code": "initials",
+          "valueCode": "NE"
+        }
+      ],
+      "concept": [
+        {
+          "code": "21",
+          "display": "Maranhão",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "MA"
+            }
+          ]
+        },
+        {
+          "code": "22",
+          "display": "Piauí",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "PI"
+            }
+          ]
+        },
+        {
+          "code": "23",
+          "display": "Ceará",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "CE"
+            }
+          ]
+        },
+        {
+          "code": "24",
+          "display": "Rio Grande do Norte",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "RN"
+            }
+          ]
+        },
+        {
+          "code": "25",
+          "display": "Paraíba",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "PB"
+            }
+          ]
+        },
+        {
+          "code": "26",
+          "display": "Pernambuco",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "PE"
+            }
+          ]
+        },
+        {
+          "code": "27",
+          "display": "Alagoas",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "AL"
+            }
+          ]
+        },
+        {
+          "code": "28",
+          "display": "Sergipe",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "SE"
+            }
+          ]
+        },
+        {
+          "code": "29",
+          "display": "Bahia",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "BA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "3",
+      "display": "Sudeste",
+      "property": [
+        {
+          "code": "type",
+          "valueCode": "region"
+        },
+        {
+          "code": "initials",
+          "valueCode": "SE"
+        }
+      ],
+      "concept": [
+        {
+          "code": "31",
+          "display": "Minas Gerais",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "MG"
+            },
+            {
+              "code": "ethnical",
+              "valueString": "mineiro"
+            }
+          ],
+          "concept": [
+            {
+              "code": "315780",
+              "display": "Santa Luzia",
+              "property": [
+                {
+                  "code": "type",
+                  "valueCode": "city"
+                },
+                {
+                  "code": "ethnical",
+                  "valueString": "luziense"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "code": "32",
+          "display": "Espírito Santo",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "ES"
+            }
+          ]
+        },
+        {
+          "code": "33",
+          "display": "Rio de Janeiro",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "RJ"
+            }
+          ]
+        },
+        {
+          "code": "34",
+          "display": "São Paulo",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "SP"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "4",
+      "display": "Sul",
+      "property": [
+        {
+          "code": "type",
+          "valueCode": "region"
+        },
+        {
+          "code": "initials",
+          "valueCode": "S"
+        }
+      ],
+      "concept": [
+        {
+          "code": "41",
+          "display": "Paraná",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "PR"
+            }
+          ]
+        },
+        {
+          "code": "42",
+          "display": "Santa Catarina",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "SC"
+            }
+          ]
+        },
+        {
+          "code": "43",
+          "display": "Rio Grande do Sul",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "RS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "5",
+      "display": "Centro-Oeste",
+      "property": [
+        {
+          "code": "type",
+          "valueCode": "region"
+        },
+        {
+          "code": "initials",
+          "valueCode": "CO"
+        }
+      ],
+      "concept": [
+        {
+          "code": "50",
+          "display": "Mato Grosso do Sul",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "MS"
+            }
+          ]
+        },
+        {
+          "code": "51",
+          "display": "Mato Grosso",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "MT"
+            }
+          ]
+        },
+        {
+          "code": "52",
+          "display": "Goiás",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "GO"
+            }
+          ]
+        },
+        {
+          "code": "53",
+          "display": "Distrito Federal",
+          "property": [
+            {
+              "code": "type",
+              "valueCode": "state"
+            },
+            {
+              "code": "initials",
+              "valueCode": "DF"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

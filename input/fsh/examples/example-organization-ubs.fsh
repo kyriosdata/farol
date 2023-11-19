@@ -3,7 +3,7 @@ Alias: $organization-type = http://terminology.hl7.org/CodeSystem/organization-t
 Instance: ubs
 InstanceOf: Organization
 Title: "Unidade Básica de Saúde"
-Description: "Local de encontro no qual requisição foi produzida"
+Description: "Estabelecimento no qual a requisição foi produzida"
 Usage: #example
 
 * active = true
@@ -13,7 +13,6 @@ Usage: #example
 
 * address.city = "Goiânia"
 * address.state = "GO"
-* address.postalCode = "74000-000"
-* address.line = "Rua Principal"
 
-* partOf = Reference(INCA)
+* identifier.system = "http://saude.gov.br/ns/CNES"
+* identifier.value = "código CNES do estabelecimento"

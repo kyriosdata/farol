@@ -1,4 +1,4 @@
-Instance: UBS1
+Instance: estabelecimento-requisitante
 InstanceOf: Organization
 Usage: #example
 Title: "UBS1"

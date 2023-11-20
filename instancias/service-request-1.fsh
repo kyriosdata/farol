@@ -1,4 +1,4 @@
-Instance: RequisicaoUm
+Instance: detalhes-requisicao
 InstanceOf: ServiceRequest
 Usage: #example
 Title: "Requisicao Um"

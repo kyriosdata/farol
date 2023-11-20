@@ -1,4 +1,4 @@
-Instance: ProfissionalRequisitante
+Instance: requisitante-1
 InstanceOf: Practitioner
 Usage: #example
 Title: "Profissional Requisitante"

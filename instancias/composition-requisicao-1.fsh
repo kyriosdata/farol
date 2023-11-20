@@ -1,4 +1,4 @@
-Instance: RequisicaoExameUm
+Instance: requisicao-1
 InstanceOf: Composition
 Usage: #example
 Title: "Requisicao Exame Citopatológico"

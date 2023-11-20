@@ -1,4 +1,4 @@
-Instance: RequisicaoExameUm
+Instance: laudo-1
 InstanceOf: Composition
 Usage: #example
 Title: "Requisicao Exame Citopatológico"

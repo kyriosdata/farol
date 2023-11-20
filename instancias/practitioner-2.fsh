@@ -1,4 +1,4 @@
-Instance: CitopatologistaUm
+Instance: citopatologista-1
 InstanceOf: Practitioner
 Usage: #example
 Title: "Profissional Requisitante"

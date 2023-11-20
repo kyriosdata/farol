@@ -1,4 +1,4 @@
-Instance: LaudoUm
+Instance: diagnostico-1
 InstanceOf: DiagnosticReport
 Usage: #example
 Title: "Laudo Um"

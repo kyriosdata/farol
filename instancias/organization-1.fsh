@@ -9,3 +9,6 @@ Description: "Unidade na qual exame citopatológico é requisitado"
 
 * name = "Unidade Básica do SUS"
 * alias[0] = "UBS Saúde"
+
+* identifier.system = "http://saude.gov.br/CNES"
+* identifier.value = "CNES da UBS"

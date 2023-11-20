@@ -21,6 +21,9 @@ Description: "Paciente assistida"
 
 // Opcionais
 
+* name[1].use = #nickname
+* name[1].text = "Rosinha"
+
 * identifier[1].system = "http://saude.gov.br/CPF"
 * identifier[1].value = "12334534553"
 
@@ -28,4 +31,11 @@ Description: "Paciente assistida"
 * extension[1].valueAge.value = 61
 * extension[1].valueAge.system = "http://unitsofmeasure.org"
 * extension[1].valueAge.code = #y
+
+// ERRO NA EXTENSAO (não deveria permitir raca e etnia indígena)
+* extension[2].url = "http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRacaCorEtnia-1.0"
+* extension[2].extension[0].url = "race"
+* extension[2].extension[0].valueCodeableConcept = http://www.saude.gov.br/fhir/r4/CodeSystem/BRRacaCor#02
+* extension[2].extension[1].url = "indigenousEthnicity"
+* extension[2].extension[1].valueCodeableConcept = http://www.saude.gov.br/fhir/r4/CodeSystem/BREtniaIndigena#0001
 

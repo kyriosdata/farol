@@ -1,0 +1,1614 @@
+{
+  "resourceType": "CodeSystem",
+  "meta": {
+    "lastUpdated": "2020-03-11T18:12:14.472+00:00"
+  },
+  "language": "pt-BR",
+  "url": "http://www.saude.gov.br/fhir/r4/CodeSystem/BREtniaIndigena",
+  "version": "201701A",
+  "name": "Etnia Indígena",
+  "status": "active",
+  "experimental": false,
+  "date": "2020-03-11T18:12:34.5209426+00:00",
+  "publisher": "Ministério da Saúde do Brasil",
+  "description": "Códigos para representação de etnias indígenas no Brasil.",
+  "content": "complete",
+  "concept": [
+    {
+      "code": "0001",
+      "display": "ACONA (WAKONAS, NACONAS, JAKONA, ACORA­NES)"
+    },
+    {
+      "code": "0002",
+      "display": "AIKANA (AIKANA, MAS SAKA,TUBARAO)"
+    },
+    {
+      "code": "0003",
+      "display": "AJURU"
+    },
+    {
+      "code": "0004",
+      "display": "AKUNSU (AKUNT'SU)"
+    },
+    {
+      "code": "0005",
+      "display": "AMANAYE"
+    },
+    {
+      "code": "0006",
+      "display": "AMONDAWA"
+    },
+    {
+      "code": "0007",
+      "display": "ANAMBE"
+    },
+    {
+      "code": "0008",
+      "display": "APARAI (APALAI)"
+    },
+    {
+      "code": "0009",
+      "display": "APIAKA (APIACA)"
+    },
+    {
+      "code": "0010",
+      "display": "APINAYE (APINAJE/APINAIE/APINAGE)"
+    },
+    {
+      "code": "0011",
+      "display": "APURINA (APORINA, IPURINA, IPURINA, IPURI­NAN)"
+    },
+    {
+      "code": "0012",
+      "display": "ARANA (ARACUAI DO VALE DO JEQUITINHONHA)"
+    },
+    {
+      "code": "0013",
+      "display": "ARAPASO (ARAPACO)"
+    },
+    {
+      "code": "0014",
+      "display": "ARARA DE RONDONIA (KARO, URUCU, URUKU)"
+    },
+    {
+      "code": "0015",
+      "display": "ARARA DO ACRE (SHAWANAUA, AMAWAKA)"
+    },
+    {
+      "code": "0016",
+      "display": "ARARA DO ARIPUANA (ARARA DO BEIRADAO/ARI­PUANA)"
+    },
+    {
+      "code": "0017",
+      "display": "ARARA DO PARA (UKARAGMA, UKARAMMA)"
+    },
+    {
+      "code": "0018",
+      "display": "ARAWETE (ARAUETE)"
+    },
+    {
+      "code": "0019",
+      "display": "ARIKAPU (ARICAPU, ARIKAPO, MASUBI, MAXUBI)"
+    },
+    {
+      "code": "0020",
+      "display": "ARIKEM (ARIQUEN, ARIQUEME, ARIKEME)"
+    },
+    {
+      "code": "0021",
+      "display": "ARIKOSE (ARICOBE)"
+    },
+    {
+      "code": "0022",
+      "display": "ARUA"
+    },
+    {
+      "code": "0023",
+      "display": "ARUAK (ARAWAK)"
+    },
+    {
+      "code": "0024",
+      "display": "ASHANINKA (KAMPA)"
+    },
+    {
+      "code": "0025",
+      "display": "ASURINI DO TOCANTINS (AKUAWA/AKWAWA)"
+    },
+    {
+      "code": "0026",
+      "display": "ASURINI DO XINGU (AWAETE)"
+    },
+    {
+      "code": "0027",
+      "display": "ATIKUM (ATICUM)"
+    },
+    {
+      "code": "0028",
+      "display": "AVA - CANOEIRO"
+    },
+    {
+      "code": "0029",
+      "display": "AWETI (AUETI/AUETO)"
+    },
+    {
+      "code": "0030",
+      "display": "BAKAIRI (KURA, BACAIRI)"
+    },
+    {
+      "code": "0031",
+      "display": "BANAWA YAFI (BANAWA, BANAWA-JAFI)"
+    },
+    {
+      "code": "0032",
+      "display": "BANIWA (BANIUA, BANIVA, WALIMANAI, WAKUE­NAI)"
+    },
+    {
+      "code": "0033",
+      "display": "BARA (WAIPINOMAKA)"
+    },
+    {
+      "code": "0034",
+      "display": "BARASANA (HANERA)"
+    },
+    {
+      "code": "0035",
+      "display": "BARE"
+    },
+    {
+      "code": "0036",
+      "display": "BORORO (BOE)"
+    },
+    {
+      "code": "0037",
+      "display": "BOTOCUDO (GEREN)"
+    },
+    {
+      "code": "0038",
+      "display": "CANOE"
+    },
+    {
+      "code": "0039",
+      "display": "CASSUPA"
+    },
+    {
+      "code": "0040",
+      "display": "CHAMACOCO"
+    },
+    {
+      "code": "0041",
+      "display": "CHIQUITANO (XIQUITANO)"
+    },
+    {
+      "code": "0042",
+      "display": "CIKIYANA (SIKIANA)"
+    },
+    {
+      "code": "0043",
+      "display": "CINTA LARGA (MATETAMAE)"
+    },
+    {
+      "code": "0044",
+      "display": "COLUMBIARA (CORUMBIARA)"
+    },
+    {
+      "code": "0045",
+      "display": "DENI"
+    },
+    {
+      "code": "0046",
+      "display": "DESANA (DESANA, DESANO, DESSANO, WIRA, UMUKOMASA)"
+    },
+    {
+      "code": "0047",
+      "display": "DIAHUI (JAHOI, JAHUI, DIARROI)"
+    },
+    {
+      "code": "0048",
+      "display": "ENAWENE-NAWE (SALUMA)"
+    },
+    {
+      "code": "0049",
+      "display": "FULNI-O"
+    },
+    {
+      "code": "0050",
+      "display": "GALIBI (GALIBI DO OIAPOQUE, KARINHA)"
+    },
+    {
+      "code": "0051",
+      "display": "GALIBI MARWORNO (GALIBI DO UACA, ARUA)"
+    },
+    {
+      "code": "0052",
+      "display": "GAVIAO DE RONDONIA (DIGUT)"
+    },
+    {
+      "code": "0053",
+      "display": "GAVIAO KRIKATEJE"
+    },
+    {
+      "code": "0054",
+      "display": "GAVIAO PARKATEJE (PARKATEJE)"
+    },
+    {
+      "code": "0055",
+      "display": "GAVIAO PUKOBIE (PUKOBIE, PYKOPJE, GAVIAO DO MARANHAO)"
+    },
+    {
+      "code": "0056",
+      "display": "GUAJA (AWA, AVA)"
+    },
+    {
+      "code": "0057",
+      "display": "GUAJAJARA (TENETEHARA)"
+    },
+    {
+      "code": "0058",
+      "display": "GUARANI KAIOWA (PAI TAVYTERA)"
+    },
+    {
+      "code": "0059",
+      "display": "GUARANI M'BYA"
+    },
+    {
+      "code": "0060",
+      "display": "GUARANI NANDEVA (AVAKATUETE, CHIRIPA, NHANDEWA, AVA GUARANI)"
+    },
+    {
+      "code": "0061",
+      "display": "GUATO"
+    },
+    {
+      "code": "0062",
+      "display": "HIMARIMA (HIMERIMA)"
+    },
+    {
+      "code": "0063",
+      "display": "INGARIKO (INGARICO, AKAWAIO, KAPON)"
+    },
+    {
+      "code": "0064",
+      "display": "IRANXE (IRANTXE)"
+    },
+    {
+      "code": "0065",
+      "display": "ISSE"
+    },
+    {
+      "code": "0066",
+      "display": "JABOTI (JABUTI, KIPIU, YABYTI)"
+    },
+    {
+      "code": "0067",
+      "display": "JAMAMADI (YAMAMADI, DJEOROMITXI)"
+    },
+    {
+      "code": "0068",
+      "display": "JARAWARA"
+    },
+    {
+      "code": "0069",
+      "display": "JIRIPANCO (JERIPANCO, GERIPANCO)"
+    },
+    {
+      "code": "0070",
+      "display": "JUMA (YUMA)"
+    },
+    {
+      "code": "0071",
+      "display": "JURUNA"
+    },
+    {
+      "code": "0072",
+      "display": "JURUTI (YURITI)"
+    },
+    {
+      "code": "0073",
+      "display": "KAAPOR (URUBU-KAAPOR, KA'APOR, KAAPORTE)"
+    },
+    {
+      "code": "0074",
+      "display": "KADIWEU (CADUVEO, CADIUEU)"
+    },
+    {
+      "code": "0075",
+      "display": "KAIABI (CAIABI, KAYABI)"
+    },
+    {
+      "code": "0076",
+      "display": "KAIMBE (CAIMBE)"
+    },
+    {
+      "code": "0077",
+      "display": "KAINGANG (CAINGANGUE)"
+    },
+    {
+      "code": "0078",
+      "display": "KAIXANA (CAIXANA)"
+    },
+    {
+      "code": "0079",
+      "display": "KALABASSA (CALABASSA, CALABACAS)"
+    },
+    {
+      "code": "0080",
+      "display": "KALANCO"
+    },
+    {
+      "code": "0081",
+      "display": "KALAPALO (CALAPALO)"
+    },
+    {
+      "code": "0082",
+      "display": "KAMAYURA (CAMAIURA, KAMAIURA)"
+    },
+    {
+      "code": "0083",
+      "display": "KAMBA (CAMBA)"
+    },
+    {
+      "code": "0084",
+      "display": "KAMBEBA (CAMBEBA, OMAGUA)"
+    },
+    {
+      "code": "0085",
+      "display": "KAMBIWA (CAMBIUA)"
+    },
+    {
+      "code": "0086",
+      "display": "KAMBIWA PIPIPA (PIPIPA)"
+    },
+    {
+      "code": "0087",
+      "display": "KAMPE"
+    },
+    {
+      "code": "0088",
+      "display": "KANAMANTI (KANAMATI, CANAMANTI)"
+    },
+    {
+      "code": "0089",
+      "display": "KANAMARI (CANAMARI, KANAMARY, TUKUNA)"
+    },
+    {
+      "code": "0090",
+      "display": "KANELA APANIEKRA (CANELA)"
+    },
+    {
+      "code": "0091",
+      "display": "KANELA RANKOKAMEKRA (CANELA)"
+    },
+    {
+      "code": "0092",
+      "display": "KANINDE"
+    },
+    {
+      "code": "0093",
+      "display": "KANOE (CANOE)"
+    },
+    {
+      "code": "0094",
+      "display": "KANTARURE (CANTARURE)"
+    },
+    {
+      "code": "0095",
+      "display": "KAPINAWA (CAPINAUA)"
+    },
+    {
+      "code": "0096",
+      "display": "KARAJA (CARAJA)"
+    },
+    {
+      "code": "0097",
+      "display": "KARAJA/JAVAE (JAVAE)"
+    },
+    {
+      "code": "0098",
+      "display": "KARAJA/XAMBIOA (KARAJA DO NORTE)"
+    },
+    {
+      "code": "0099",
+      "display": "KARAPANA (CARAPANA, MUTEAMASA, UKOPINO­PONA)"
+    },
+    {
+      "code": "0100",
+      "display": "KARAPOTO (CARAPOTO)"
+    },
+    {
+      "code": "0101",
+      "display": "KARIPUNA (CARIPUNA)"
+    },
+    {
+      "code": "0102",
+      "display": "KARIPUNA DO AMAPA (CARIPUNA)"
+    },
+    {
+      "code": "0103",
+      "display": "KARIRI (CARIRI)"
+    },
+    {
+      "code": "0104",
+      "display": "KARIRI-XOCO (CARIRI-CHOCO)"
+    },
+    {
+      "code": "0105",
+      "display": "KARITIANA (CARITIANA)"
+    },
+    {
+      "code": "0106",
+      "display": "KATAWIXI (KATAUIXI, KATAWIN, KATAWISI, CATAUICHI)"
+    },
+    {
+      "code": "0107",
+      "display": "KATUENA (CATUENA, KATWENA)"
+    },
+    {
+      "code": "0108",
+      "display": "KATUKINA (PEDA DJAPA)"
+    },
+    {
+      "code": "0109",
+      "display": "KATUKINA DO ACRE"
+    },
+    {
+      "code": "0110",
+      "display": "KAXARARI (CAXARARI)"
+    },
+    {
+      "code": "0111",
+      "display": "KAXINAWA (HUNI-KUIN, CASHINAUA, CAXINAUA)"
+    },
+    {
+      "code": "0112",
+      "display": "KAXIXO"
+    },
+    {
+      "code": "0113",
+      "display": "KAXUYANA (CAXUIANA)"
+    },
+    {
+      "code": "0114",
+      "display": "KAYAPO (CAIAPO)"
+    },
+    {
+      "code": "0115",
+      "display": "KAYAPO KARARAO (KARARAO)"
+    },
+    {
+      "code": "0116",
+      "display": "KAYAPO TXUKAHAMAE (TXUKAHAMAE)"
+    },
+    {
+      "code": "0117",
+      "display": "KAYAPO XICRIM (XIKRIN)"
+    },
+    {
+      "code": "0118",
+      "display": "KAYUISANA (CAIXANA, CAUIXANA, KAIXANA)"
+    },
+    {
+      "code": "0119",
+      "display": "KINIKINAWA (GUAN, KOINUKOEN, KINIKINAO)"
+    },
+    {
+      "code": "0120",
+      "display": "KIRIRI"
+    },
+    {
+      "code": "0121",
+      "display": "KOCAMA (COCAMA, KOKAMA)"
+    },
+    {
+      "code": "0122",
+      "display": "KOKUIREGATEJE"
+    },
+    {
+      "code": "0123",
+      "display": "KORUBO"
+    },
+    {
+      "code": "0124",
+      "display": "KRAHO (CRAO, KRAO)"
+    },
+    {
+      "code": "0125",
+      "display": "KREJE (KRENYE)"
+    },
+    {
+      "code": "0126",
+      "display": "KRENAK (BORUN, CRENAQUE)"
+    },
+    {
+      "code": "0127",
+      "display": "KRIKATI (KRINKATI)"
+    },
+    {
+      "code": "0128",
+      "display": "KUBEO (CUBEO, COBEWA, KUBEWA, PAMIWA, CU­BEU)"
+    },
+    {
+      "code": "0129",
+      "display": "KUIKURO (KUIKURU, CUICURO)"
+    },
+    {
+      "code": "0130",
+      "display": "KUJUBIM (KUYUBI, CUJUBIM)"
+    },
+    {
+      "code": "0131",
+      "display": "KULINA PANO (CULINA)"
+    },
+    {
+      "code": "0132",
+      "display": "KULINA/MADIHA (CULINA, MADIJA, MADIHA)"
+    },
+    {
+      "code": "0133",
+      "display": "KURIPAKO (CURIPACO, CURRIPACO, CORIPACO, WAKUENAI)"
+    },
+    {
+      "code": "0134",
+      "display": "KURUAIA (CURUAIA)"
+    },
+    {
+      "code": "0135",
+      "display": "KWAZA (COAIA, KOAIA)"
+    },
+    {
+      "code": "0136",
+      "display": "MACHINERI (MANCHINERI, MANXINERI)"
+    },
+    {
+      "code": "0137",
+      "display": "MACURAP (MAKURAP)"
+    },
+    {
+      "code": "0138",
+      "display": "MAKU DOW (DOW)"
+    },
+    {
+      "code": "0139",
+      "display": "MAKU HUPDA (HUPDA)"
+    },
+    {
+      "code": "0140",
+      "display": "MAKU NADEB (NADEB)"
+    },
+    {
+      "code": "0141",
+      "display": "MAKU YUHUPDE (YUHUPDE)"
+    },
+    {
+      "code": "0142",
+      "display": "MAKUNA (MACUNA, YEBA-MASA)"
+    },
+    {
+      "code": "0143",
+      "display": "MAKUXI (MACUXI, MACHUSI, PEMON)"
+    },
+    {
+      "code": "0144",
+      "display": "MARIMAM (MARIMA)"
+    },
+    {
+      "code": "0145",
+      "display": "MARUBO"
+    },
+    {
+      "code": "0146",
+      "display": "MATIPU"
+    },
+    {
+      "code": "0147",
+      "display": "MATIS"
+    },
+    {
+      "code": "0148",
+      "display": "MATSE (MAYORUNA)"
+    },
+    {
+      "code": "0149",
+      "display": "MAXAKALI (MAXACALI)"
+    },
+    {
+      "code": "0150",
+      "display": "MAYA (MAYA)"
+    },
+    {
+      "code": "0151",
+      "display": "MAYTAPU"
+    },
+    {
+      "code": "0152",
+      "display": "MEHINAKO (MEINAKU, MEINACU)"
+    },
+    {
+      "code": "0153",
+      "display": "MEKEN (MEQUEM, MEKHEM, MICHENS)"
+    },
+    {
+      "code": "0154",
+      "display": "MENKY (MYKY, MUNKU, MENKI, MYNKY)"
+    },
+    {
+      "code": "0155",
+      "display": "MIRANHA (MIRANHA, MIRANA)"
+    },
+    {
+      "code": "0156",
+      "display": "MIRITI TAPUIA (MIRITI-TAPUYA, BUIA-TAPUYA)"
+    },
+    {
+      "code": "0157",
+      "display": "MUNDURUKU (MUNDURUCU)"
+    },
+    {
+      "code": "0158",
+      "display": "MURA"
+    },
+    {
+      "code": "0159",
+      "display": "NAHUKWA (NAFUQUA)"
+    },
+    {
+      "code": "0160",
+      "display": "NAMBIKWARA DO CAMPO (HALOTESU, KITHAULU, WAKALITESU, SAWENTES, MANDUKA)"
+    },
+    {
+      "code": "0161",
+      "display": "NAMBIKWARA DO NORTE (NEGAROTE ,MAMAIN­DE, LATUNDE, SABANE E MANDUKA, TAWANDE)"
+    },
+    {
+      "code": "0162",
+      "display": "NAMBIKWARA DO SUL (WASUSU ,HAHAINTESU, ALANTESU, WAIKISU, ALAKETESU, WASUSU, SA­RARE)"
+    },
+    {
+      "code": "0163",
+      "display": "NARAVUTE (NARUVOTO)"
+    },
+    {
+      "code": "0164",
+      "display": "NAWA (NAUA)"
+    },
+    {
+      "code": "0165",
+      "display": "NUKINI (NUQUINI, NUKUINI)"
+    },
+    {
+      "code": "0166",
+      "display": "OFAIE (OFAYE-XAVANTE)"
+    },
+    {
+      "code": "0167",
+      "display": "ORO WIN"
+    },
+    {
+      "code": "0168",
+      "display": "PAIAKU (JENIPAPO-KANINDE)"
+    },
+    {
+      "code": "0169",
+      "display": "PAKAA NOVA (WARI, PACAAS NOVOS)"
+    },
+    {
+      "code": "0170",
+      "display": "PALIKUR (AUKWAYENE, AUKUYENE, PALIKU'ENE)"
+    },
+    {
+      "code": "0171",
+      "display": "PANARA (KRENHAKARORE , KRENAKORE, KRENA­KARORE)"
+    },
+    {
+      "code": "0172",
+      "display": "PANKARARE (PANCARARE)"
+    },
+    {
+      "code": "0173",
+      "display": "PANKARARU (PANCARARU)"
+    },
+    {
+      "code": "0174",
+      "display": "PANKARARU KALANKO (KALANKO)"
+    },
+    {
+      "code": "0175",
+      "display": "PANKARARU KARUAZU (KARUAZU)"
+    },
+    {
+      "code": "0176",
+      "display": "PANKARU (PANCARU)"
+    },
+    {
+      "code": "0177",
+      "display": "PARAKANA (PARACANA, APITEREWA, AWAETE)"
+    },
+    {
+      "code": "0178",
+      "display": "PARECI (PARESI, HALITI)"
+    },
+    {
+      "code": "0179",
+      "display": "PARINTINTIN"
+    },
+    {
+      "code": "0180",
+      "display": "PATAMONA (KAPON)"
+    },
+    {
+      "code": "0181",
+      "display": "PATAXO"
+    },
+    {
+      "code": "0182",
+      "display": "PATAXO HA-HA-HAE"
+    },
+    {
+      "code": "0183",
+      "display": "PAUMARI (PALMARI)"
+    },
+    {
+      "code": "0184",
+      "display": "PAUMELENHO"
+    },
+    {
+      "code": "0185",
+      "display": "PIRAHA (MURA PIRAHA)"
+    },
+    {
+      "code": "0186",
+      "display": "PIRATUAPUIA (PIRATAPUYA, PIRATAPUYO, PIRA­TAPUYA, WAIKANA)"
+    },
+    {
+      "code": "0187",
+      "display": "PITAGUARI"
+    },
+    {
+      "code": "0188",
+      "display": "POTIGUARA"
+    },
+    {
+      "code": "0189",
+      "display": "POYANAWA (POIANAUA)"
+    },
+    {
+      "code": "0190",
+      "display": "RIKBAKTSA (CANOEIROS, ERIGPAKTSA)"
+    },
+    {
+      "code": "0191",
+      "display": "SAKURABIAT (MEKENS, SAKIRABIAP, SAKIRABIAR)"
+    },
+    {
+      "code": "0192",
+      "display": "SATERE-MAWE (SATERE-MAUE)"
+    },
+    {
+      "code": "0193",
+      "display": "SHANENAWA (KATUKINA)"
+    },
+    {
+      "code": "0194",
+      "display": "SIRIANO (SIRIA-MASA)"
+    },
+    {
+      "code": "0195",
+      "display": "SURIANA"
+    },
+    {
+      "code": "0196",
+      "display": "SURUI DE RONDONIA (PAITER)"
+    },
+    {
+      "code": "0197",
+      "display": "SURUI DO PARA (AIKEWARA)"
+    },
+    {
+      "code": "0198",
+      "display": "SUYA (SUIA/KISEDJE)"
+    },
+    {
+      "code": "0199",
+      "display": "TAPAYUNA (BEICO-DE-PAU)"
+    },
+    {
+      "code": "0200",
+      "display": "TAPEBA"
+    },
+    {
+      "code": "0201",
+      "display": "TAPIRAPE (TAPI'IRAPE)"
+    },
+    {
+      "code": "0202",
+      "display": "TAPUIA (TAPUIA-XAVANTE, TAPUIO)"
+    },
+    {
+      "code": "0203",
+      "display": "TARIANO (TARIANA, TALIASERI)"
+    },
+    {
+      "code": "0204",
+      "display": "TAUREPANG (TAULIPANG, PEMON, AREKUNA, PA­GEYN)"
+    },
+    {
+      "code": "0205",
+      "display": "TEMBE"
+    },
+    {
+      "code": "0206",
+      "display": "TENHARIM"
+    },
+    {
+      "code": "0207",
+      "display": "TERENA"
+    },
+    {
+      "code": "0208",
+      "display": "TICUNA (TIKUNA, TUKUNA, MAGUTA)"
+    },
+    {
+      "code": "0209",
+      "display": "TINGUI BOTO"
+    },
+    {
+      "code": "0210",
+      "display": "TIRIYO EWARHUYANA (TIRIYO, TRIO, TARONA, YAWI, PIANOKOTO)"
+    },
+    {
+      "code": "0211",
+      "display": "TIRIYO KAH'YANA (TIRIYO, TRIO, TARONA, YAWI, PIANOKOTO)"
+    },
+    {
+      "code": "0212",
+      "display": "TIRIYO TSIKUYANA (TIRIYO, TRIO, TARONA, YAWI, PIANOKOTO)"
+    },
+    {
+      "code": "0213",
+      "display": "TORA"
+    },
+    {
+      "code": "0214",
+      "display": "TREMEMBE"
+    },
+    {
+      "code": "0215",
+      "display": "TRUKA"
+    },
+    {
+      "code": "0216",
+      "display": "TRUMAI"
+    },
+    {
+      "code": "0217",
+      "display": "TSOHOM DJAPA (TSUNHUM-DJAPA)"
+    },
+    {
+      "code": "0218",
+      "display": "TUKANO (TUCANO, YE'PA-MASA, DASEA)"
+    },
+    {
+      "code": "0219",
+      "display": "TUMBALALA"
+    },
+    {
+      "code": "0220",
+      "display": "TUNAYANA"
+    },
+    {
+      "code": "0221",
+      "display": "TUPARI"
+    },
+    {
+      "code": "0222",
+      "display": "TUPINAMBA"
+    },
+    {
+      "code": "0223",
+      "display": "TUPINIQUIM"
+    },
+    {
+      "code": "0224",
+      "display": "TURIWARA"
+    },
+    {
+      "code": "0225",
+      "display": "TUXA"
+    },
+    {
+      "code": "0226",
+      "display": "TUYUKA (TUIUCA, DOKAPUARA, UTAPINOMAKA­PHONA)"
+    },
+    {
+      "code": "0227",
+      "display": "TXIKAO (TXICAO, IKPENG)"
+    },
+    {
+      "code": "0228",
+      "display": "UMUTINA (OMOTINA, BARBADOS)"
+    },
+    {
+      "code": "0229",
+      "display": "URU-EU-WAU-WAU (URUEU-UAU-UAU, URUPAIN, URUPA)"
+    },
+    {
+      "code": "0230",
+      "display": "WAI WAI HIXKARYANA (HIXKARYANA)"
+    },
+    {
+      "code": "0231",
+      "display": "WAI WAI KARAFAWYANA (KARAFAWYANA, KARA­PAWYANA)"
+    },
+    {
+      "code": "0232",
+      "display": "WAI WAI XEREU (XEREU)"
+    },
+    {
+      "code": "0233",
+      "display": "WAI WAI KATUENA (KATUENA)"
+    },
+    {
+      "code": "0234",
+      "display": "WAI WAI MAWAYANA (MAWAYANA)"
+    },
+    {
+      "code": "0235",
+      "display": "WAIAPI (WAYAMPI, OYAMPI, WAYAPY, )"
+    },
+    {
+      "code": "0236",
+      "display": "WAIMIRI ATROARI (KINA)"
+    },
+    {
+      "code": "0237",
+      "display": "WANANO (UANANO, WANANA)"
+    },
+    {
+      "code": "0238",
+      "display": "WAPIXANA (UAPIXANA, VAPIDIANA, WAPISIANA, WAPISHANA)"
+    },
+    {
+      "code": "0239",
+      "display": "WAREKENA (UAREQUENA, WEREKENA)"
+    },
+    {
+      "code": "0240",
+      "display": "WASSU"
+    },
+    {
+      "code": "0241",
+      "display": "WAURA (UAURA, WAUJA)"
+    },
+    {
+      "code": "0242",
+      "display": "WAYANA (WAIANA, UAIANA)"
+    },
+    {
+      "code": "0243",
+      "display": "WITOTO (UITOTO, HUITOTO)"
+    },
+    {
+      "code": "0244",
+      "display": "XAKRIABA (XACRIABA)"
+    },
+    {
+      "code": "0245",
+      "display": "XAVANTE (A'UWE, AKWE, AWEN, AKWEN)"
+    },
+    {
+      "code": "0246",
+      "display": "XERENTE (AKWE, AWEN, AKWEN)"
+    },
+    {
+      "code": "0247",
+      "display": "XETA"
+    },
+    {
+      "code": "0248",
+      "display": "XIPAIA (SHIPAYA, XIPAYA)"
+    },
+    {
+      "code": "0249",
+      "display": "XOKLENG (SHOKLENG, XOCLENG)"
+    },
+    {
+      "code": "0250",
+      "display": "XOKO (XOCO, CHOCO)"
+    },
+    {
+      "code": "0251",
+      "display": "XUKURU (XUCURU)"
+    },
+    {
+      "code": "0252",
+      "display": "XUKURU KARIRI (XUCURU-KARIRI)"
+    },
+    {
+      "code": "0253",
+      "display": "YAIPIYANA"
+    },
+    {
+      "code": "0254",
+      "display": "YAMINAWA (JAMINAWA, IAMINAWA)"
+    },
+    {
+      "code": "0255",
+      "display": "YANOMAMI NINAM (IANOMAMI, IANOAMA, XIRIA­NA)"
+    },
+    {
+      "code": "0256",
+      "display": "YANOMAMI SANUMA (IANOMAMI, IANOAMA, XI­RIANA)"
+    },
+    {
+      "code": "0257",
+      "display": "YANOMAMI YANOMAM (IANOMAMI, IANOAMA, XI­RIANA)"
+    },
+    {
+      "code": "0258",
+      "display": "YAWALAPITI (IAUALAPITI)"
+    },
+    {
+      "code": "0259",
+      "display": "YAWANAWA (IAUANAUA)"
+    },
+    {
+      "code": "0260",
+      "display": "YEKUANA (MAIONGON, YE'KUANA, YEKWANA, MAYONGONG)"
+    },
+    {
+      "code": "0261",
+      "display": "YUDJA (JURUNA, YURUNA)"
+    },
+    {
+      "code": "0262",
+      "display": "ZO'E (POTURU)"
+    },
+    {
+      "code": "0263",
+      "display": "ZORO (PAGEYN)"
+    },
+    {
+      "code": "0264",
+      "display": "ZURUAHA (SOROWAHA, SURUWAHA)"
+    },
+    {
+      "code": "X265",
+      "display": "AHANENAWA"
+    },
+    {
+      "code": "X266",
+      "display": "AICABA"
+    },
+    {
+      "code": "X267",
+      "display": "AIKANÃ-KWASÁ"
+    },
+    {
+      "code": "X269",
+      "display": "ALANTESU"
+    },
+    {
+      "code": "X271",
+      "display": "AMAWÁKA"
+    },
+    {
+      "code": "X272",
+      "display": "ANACÉ"
+    },
+    {
+      "code": "X276",
+      "display": "ARARA APOLIMA"
+    },
+    {
+      "code": "X278",
+      "display": "ARIPUANÁ"
+    },
+    {
+      "code": "X279",
+      "display": "ASSURINI"
+    },
+    {
+      "code": "X280",
+      "display": "AWUARÁ"
+    },
+    {
+      "code": "X281",
+      "display": "BORBA"
+    },
+    {
+      "code": "X282",
+      "display": "CABIXI"
+    },
+    {
+      "code": "X283",
+      "display": "CAMARARÉ"
+    },
+    {
+      "code": "X284",
+      "display": "CAMASURI"
+    },
+    {
+      "code": "X285",
+      "display": "CARA PRETA"
+    },
+    {
+      "code": "X286",
+      "display": "CHARRUA"
+    },
+    {
+      "code": "X287",
+      "display": "CUJUBIM"
+    },
+    {
+      "code": "X288",
+      "display": "DAW"
+    },
+    {
+      "code": "X289",
+      "display": "GAVIÃO"
+    },
+    {
+      "code": "X290",
+      "display": "GUARANI"
+    },
+    {
+      "code": "X291",
+      "display": "HALANTESU"
+    },
+    {
+      "code": "X292",
+      "display": "HALOTESU"
+    },
+    {
+      "code": "X293",
+      "display": "HENGATÚ"
+    },
+    {
+      "code": "X294",
+      "display": "HIXKARYANA"
+    },
+    {
+      "code": "X295",
+      "display": "HUPDE"
+    },
+    {
+      "code": "X296",
+      "display": "HUPDES"
+    },
+    {
+      "code": "X297",
+      "display": "IAUANAUA"
+    },
+    {
+      "code": "X298",
+      "display": "IAUARETE AÇU"
+    },
+    {
+      "code": "X299",
+      "display": "IKPENG"
+    },
+    {
+      "code": "X300",
+      "display": "INAMBU"
+    },
+    {
+      "code": "X301",
+      "display": "INHABARANA"
+    },
+    {
+      "code": "X302",
+      "display": "JAVAE"
+    },
+    {
+      "code": "X303",
+      "display": "JENIPAPO"
+    },
+    {
+      "code": "X304",
+      "display": "JENIPAPO-KANINDE"
+    },
+    {
+      "code": "X305",
+      "display": "JIAHOI"
+    },
+    {
+      "code": "X306",
+      "display": "KAIOWA"
+    },
+    {
+      "code": "X307",
+      "display": "KAMPA"
+    },
+    {
+      "code": "X308",
+      "display": "KANELA"
+    },
+    {
+      "code": "X309",
+      "display": "KARAFAWYANA"
+    },
+    {
+      "code": "X310",
+      "display": "KARARAO"
+    },
+    {
+      "code": "X311",
+      "display": "KARUBO"
+    },
+    {
+      "code": "X312",
+      "display": "KASSUPÁ"
+    },
+    {
+      "code": "X313",
+      "display": "KATITHÃULU"
+    },
+    {
+      "code": "X314",
+      "display": "KATOKIN"
+    },
+    {
+      "code": "X315",
+      "display": "KATUKINA PANO"
+    },
+    {
+      "code": "X316",
+      "display": "KATUKINA PEDA DJAPA"
+    },
+    {
+      "code": "X317",
+      "display": "KATUKINA SHANENAUWA"
+    },
+    {
+      "code": "X318",
+      "display": "KAXAGO"
+    },
+    {
+      "code": "X319",
+      "display": "KAYABI"
+    },
+    {
+      "code": "X320",
+      "display": "KINÃ (WAIMIRI-ATROARI)"
+    },
+    {
+      "code": "X321",
+      "display": "KIRIRI-BARRA"
+    },
+    {
+      "code": "X322",
+      "display": "KITHÃULU"
+    },
+    {
+      "code": "X323",
+      "display": "KOIAIÁ"
+    },
+    {
+      "code": "X324",
+      "display": "KOIUPANKÁ"
+    },
+    {
+      "code": "X325",
+      "display": "KONTANAWA"
+    },
+    {
+      "code": "X326",
+      "display": "KRAHÔ KANELA"
+    },
+    {
+      "code": "X327",
+      "display": "KULINA"
+    },
+    {
+      "code": "X328",
+      "display": "LATUNDÊ"
+    },
+    {
+      "code": "X329",
+      "display": "MAKU"
+    },
+    {
+      "code": "X330",
+      "display": "MAKUNAMBÉ"
+    },
+    {
+      "code": "X331",
+      "display": "MAMAINDÊ"
+    },
+    {
+      "code": "X332",
+      "display": "MAMURI"
+    },
+    {
+      "code": "X333",
+      "display": "MANACAPURU"
+    },
+    {
+      "code": "X334",
+      "display": "MANAIRISSU"
+    },
+    {
+      "code": "X335",
+      "display": "MANCHINERI"
+    },
+    {
+      "code": "X336",
+      "display": "MANDUCA"
+    },
+    {
+      "code": "X337",
+      "display": "MARIBONDO"
+    },
+    {
+      "code": "X338",
+      "display": "MASSAKA"
+    },
+    {
+      "code": "X339",
+      "display": "MAWAYANA"
+    },
+    {
+      "code": "X340",
+      "display": "MAWÉ"
+    },
+    {
+      "code": "X341",
+      "display": "MAYORUNA"
+    },
+    {
+      "code": "X342",
+      "display": "MIQUELENO"
+    },
+    {
+      "code": "X343",
+      "display": "MOKURIÑ"
+    },
+    {
+      "code": "X344",
+      "display": "MON ORO WARAM"
+    },
+    {
+      "code": "X345",
+      "display": "MUTUM"
+    },
+    {
+      "code": "X346",
+      "display": "MYKY"
+    },
+    {
+      "code": "X347",
+      "display": "NADEB"
+    },
+    {
+      "code": "X348",
+      "display": "NAMBIKWARA"
+    },
+    {
+      "code": "X349",
+      "display": "NEGAROTÊ"
+    },
+    {
+      "code": "X350",
+      "display": "NHENGATU"
+    },
+    {
+      "code": "X351",
+      "display": "OFAIE XAVANTE"
+    },
+    {
+      "code": "X352",
+      "display": "ONÇA"
+    },
+    {
+      "code": "X353",
+      "display": "ORO AT"
+    },
+    {
+      "code": "X354",
+      "display": "ORO EO"
+    },
+    {
+      "code": "X355",
+      "display": "ORO JOWIN"
+    },
+    {
+      "code": "X356",
+      "display": "ORO MIYLIN"
+    },
+    {
+      "code": "X357",
+      "display": "ORO MON"
+    },
+    {
+      "code": "X358",
+      "display": "ORO NÁO"
+    },
+    {
+      "code": "X359",
+      "display": "ORO WAM"
+    },
+    {
+      "code": "X360",
+      "display": "ORO WARAM"
+    },
+    {
+      "code": "X361",
+      "display": "ORO WARAM XIJEIN"
+    },
+    {
+      "code": "X362",
+      "display": "PACA"
+    },
+    {
+      "code": "X363",
+      "display": "PANKARÁ"
+    },
+    {
+      "code": "X364",
+      "display": "PAPAGAIO"
+    },
+    {
+      "code": "X365",
+      "display": "PAYAYÁ"
+    },
+    {
+      "code": "X366",
+      "display": "PIPIPAN"
+    },
+    {
+      "code": "X367",
+      "display": "PIRATA"
+    },
+    {
+      "code": "X368",
+      "display": "PUROBORÁ"
+    },
+    {
+      "code": "X369",
+      "display": "SABANÊ"
+    },
+    {
+      "code": "X370",
+      "display": "SANUMA"
+    },
+    {
+      "code": "X371",
+      "display": "SAWENTESÚ"
+    },
+    {
+      "code": "X372",
+      "display": "SILCY-TAPUYA"
+    },
+    {
+      "code": "X373",
+      "display": "SIUCI"
+    },
+    {
+      "code": "X374",
+      "display": "TABAJARA"
+    },
+    {
+      "code": "X375",
+      "display": "TAKUARA"
+    },
+    {
+      "code": "X376",
+      "display": "TATU"
+    },
+    {
+      "code": "X377",
+      "display": "TAWANDÊ"
+    },
+    {
+      "code": "X378",
+      "display": "TEFÉ"
+    },
+    {
+      "code": "X379",
+      "display": "TIMBIRA"
+    },
+    {
+      "code": "X380",
+      "display": "TORÁ DO BAIXO GRANDE"
+    },
+    {
+      "code": "X381",
+      "display": "TSUNHUM-DJAPÁ"
+    },
+    {
+      "code": "X382",
+      "display": "TUBARÃO"
+    },
+    {
+      "code": "X383",
+      "display": "TUPAIU"
+    },
+    {
+      "code": "X384",
+      "display": "TUPI"
+    },
+    {
+      "code": "X385",
+      "display": "TUPINAMBÁ DE BELMONTE"
+    },
+    {
+      "code": "X386",
+      "display": "URUBU"
+    },
+    {
+      "code": "X387",
+      "display": "URUBU KAAPOR"
+    },
+    {
+      "code": "X388",
+      "display": "URUPÁ"
+    },
+    {
+      "code": "X389",
+      "display": "WAI WAI"
+    },
+    {
+      "code": "X390",
+      "display": "WAIKISU"
+    },
+    {
+      "code": "X391",
+      "display": "WAKALITESÚ"
+    },
+    {
+      "code": "X392",
+      "display": "WASSUSU"
+    },
+    {
+      "code": "X393",
+      "display": "XEREU"
+    },
+    {
+      "code": "X394",
+      "display": "XI EIN"
+    },
+    {
+      "code": "X395",
+      "display": "XICRIN"
+    },
+    {
+      "code": "X396",
+      "display": "XIPAYA"
+    },
+    {
+      "code": "X397",
+      "display": "XIRIANA"
+    },
+    {
+      "code": "X398",
+      "display": "XIRUAI"
+    },
+    {
+      "code": "X399",
+      "display": "YEPAMASSÃ"
+    },
+    {
+      "code": "X400",
+      "display": "TIRIYÓ"
+    },
+    {
+      "code": "X401",
+      "display": "YANOMAMI"
+    },
+    {
+      "code": "X402",
+      "display": "ARARA"
+    },
+    {
+      "code": "X403",
+      "display": "SAKIRIABAR"
+    },
+    {
+      "code": "X404",
+      "display": "TATZ"
+    },
+    {
+      "code": "X405",
+      "display": "SEM INFORMACAO"
+    }
+  ]
+}

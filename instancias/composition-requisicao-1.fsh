@@ -5,7 +5,7 @@ Title: "Requisicao Exame Citopatológico"
 Description: "Ilustra uma requisição"
 
 * text.status = #empty
-* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>empty</div>"
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Uma requisição de exame citopatológico</div>"
 
 * identifier.system = "http://saude.gov.br/SISCAN"
 * identifier.value = "código protocolo SISCAN"

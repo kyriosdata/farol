@@ -5,4 +5,4 @@ Title: "Profissional Requisitante"
 Description: "Profissional que requisita exame"
 
 * text.status = #empty
-* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>empty</div>"
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Profissional que requisita exame citopatológico</div>"

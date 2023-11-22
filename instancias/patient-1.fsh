@@ -1,8 +1,14 @@
+Alias: $racacorext = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRacaCorEtnia-1.0
+Alias: $racacor = http://www.saude.gov.br/fhir/r4/CodeSystem/BRRacaCor
+Alias: $etniaindigena = http://www.saude.gov.br/fhir/r4/CodeSystem/BREtniaIndigena
+
 Instance: paciente-rosa
 InstanceOf: Patient
 Usage: #example
 Title: "Rosa"
 Description: "Paciente assistida"
+
+* meta.profile[0] = "http://saude.gov.br/paciente"
 
 * text.status = #empty
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>A paciente para a qual o exame é solicitado.</div>"
@@ -29,13 +35,21 @@ Description: "Paciente assistida"
 
 * extension[1].url = "http://saude.gov.br/idade"
 * extension[1].valueAge.value = 61
+
+// Binding para http://hl7.org/fhir/ValueSet/age-units
 * extension[1].valueAge.system = "http://unitsofmeasure.org"
-* extension[1].valueAge.code = #y
+* extension[1].valueAge.code = #a
 
 // ERRO NA EXTENSAO (não deveria permitir raca e etnia indígena)
-* extension[2].url = "http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRacaCorEtnia-1.0"
+// EXTENSÃO PODE SER ESPECIALIZADA PARA CORRIGIR
+* extension[2].url = $racacorext
 * extension[2].extension[0].url = "race"
-* extension[2].extension[0].valueCodeableConcept = http://www.saude.gov.br/fhir/r4/CodeSystem/BRRacaCor#02
+* extension[2].extension[0].valueCodeableConcept = $racacor#02
 * extension[2].extension[1].url = "indigenousEthnicity"
-* extension[2].extension[1].valueCodeableConcept = http://www.saude.gov.br/fhir/r4/CodeSystem/BREtniaIndigena#0001
+* extension[2].extension[1].valueCodeableConcept = $etniaindigena#0001
 
+* address[0]
+  * use = #home
+  * type = #physical
+  * city = #315780
+  * state = #31

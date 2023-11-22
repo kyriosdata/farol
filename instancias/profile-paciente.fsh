@@ -25,7 +25,7 @@ Description: "Padronização de endereços no Brasil."
 * type ^definition = "physical: um endereço físico de um edificação ou espaço geográfico real, como de uma casa, prédio, loja, galpão, lote, etc.\r\npostal: um endereço virtual, como de uma Caixa Postal ou serviço de logística de mercadorias, p.ex."
 * text ..0
 * line 1.. MS
-* line ^slicing.discriminator.type = #value
+* line ^slicing.discriminator.type = #type
 * line ^slicing.discriminator.path = "line"
 * line ^slicing.rules = #open
 * line ^short = "Endereço"

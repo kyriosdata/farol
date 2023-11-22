@@ -53,3 +53,6 @@ Description: "Paciente assistida"
   * type = #physical
   * city = #315780
   * state = #31
+  * postalCode = "74000-000"
+  * line[0].id = "Address.line:street"
+  * line[0] = "Rua X"

@@ -4,11 +4,18 @@ Alias: $BRTipoLogradouro-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRTipoLo
 Alias: $BRMunicipio-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRMunicipio-1.0
 Alias: $BRUnidadeFederativa-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRUnidadeFederativa-1.0
 
-Profile: BREndereco
+Invariant: LinhasEndereco
+Description: "Endereço deve possuir street, number e neighborhood. Possivelmente inclui complement e streetType (vinculação de streetType não é verificada)"
+Expression: "line.select(id in ('streetType' | 'street' | 'number' | 'complement' | 'neighborhood')).allTrue() and line.where(id='number').exists() and line.where(id='neighborhood').exists() and line.where(id='street').exists()"
+Severity: #error
+
+
+Profile: Endereco
 Parent: Address
-Id: BREndereco
+Id: endereco
 Title: "Endereço"
 Description: "Padronização de endereços no Brasil."
+* ^status = #active
 * ^meta.lastUpdated = "2020-03-11T04:06:40.866+00:00"
 * ^language = #pt-BR
 * ^url = "http://www.saude.gov.br/fhir/r4/StructureDefinition/BREndereco-1.0"
@@ -24,29 +31,10 @@ Description: "Padronização de endereços no Brasil."
 * type ^short = "Tipo de Endereço"
 * type ^definition = "physical: um endereço físico de um edificação ou espaço geográfico real, como de uma casa, prédio, loja, galpão, lote, etc.\r\npostal: um endereço virtual, como de uma Caixa Postal ou serviço de logística de mercadorias, p.ex."
 * text ..0
+
 * line 1.. MS
-* line ^slicing.discriminator.type = #type
-* line ^slicing.discriminator.path = "line"
-* line ^slicing.rules = #open
-* line ^short = "Endereço"
-* line contains
-    streetType 0..1 MS and
-    street 1..1 MS and
-    number 1..1 MS and
-    complement 0..1 MS and
-    neighborhood 1..1 MS
-* line[streetType] from $BRTipoLogradouro-1.0 (required)
-* line[streetType] ^short = "Tipo de Logradouro"
-* line[streetType] ^definition = "Tipo de logradouro do endereço."
-* line[streetType] ^binding.description = "Tipo de Logradouro"
-* line[street] ^short = "Logradouro"
-* line[street] ^definition = "Logradouro do endereço (ex.: Visconde do Rio Branco, das Laranjeiras, QRSW 8 Bloco A-1) . Quando não for possível utilizar o elemento streetType, incluir textualmente no início do nome do logradouro o tipo de logradouro abreviado (ex.: R. Visconde do Rio Branco, Av. das Laranjeiras, Quadra QRSW 8 Bloco A-1)."
-* line[number] ^short = "Número"
-* line[number] ^definition = "Número do endereço."
-* line[complement] ^short = "Complemento"
-* line[complement] ^definition = "Complemento do endereço, como o nome do edifício, bloco, número do apartamento, número da sala etc."
-* line[neighborhood] ^short = "Bairro"
-* line[neighborhood] ^definition = "Bairro do endereço."
+* obeys LinhasEndereco
+
 * city 1..
 * city from $BRMunicipio-1.0 (required)
 * city ^short = "Município"
@@ -75,7 +63,7 @@ Description: "Padronização de endereços no Brasil."
 
 Profile: Paciente
 Parent: Patient
-Id: Paciente
+Id: paciente-perfil-siscan
 Title: "Paciente"
 Description: "Perfile adequado para Exame Citopatológico"
 

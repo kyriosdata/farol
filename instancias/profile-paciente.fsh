@@ -18,6 +18,8 @@ Title: "Endereço"
 Description: "Padronização de endereços no Brasil."
 * ^status = #active
 * ^meta.lastUpdated = "2020-03-11T04:06:40.866+00:00"
+* ^text.status = #empty
+* ^text.div = "<div xml:lang='pt-BR' lang='pt-BR' xmlns='http://www.w3.org/1999/xhtml'>Extensão para idade estimada de paciente</div>"
 * ^language = #pt-BR
 * ^url = "http://www.saude.gov.br/fhir/r4/StructureDefinition/BREndereco-1.0"
 * ^version = "1.0"
@@ -76,5 +78,7 @@ Description: "Perfile adequado para Exame Citopatológico"
 * ^status = #draft
 
 * address only $endereco
-* telecom only $BRMeioContato
+
+// Conversor de FSH para JSON nao aceita referencia abaixo.
+// * telecom only $BRMeioContato
 

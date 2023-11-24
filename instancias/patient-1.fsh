@@ -3,6 +3,7 @@ Alias: $racacor = http://www.saude.gov.br/fhir/r4/CodeSystem/BRRacaCor
 Alias: $etniaindigena = http://www.saude.gov.br/fhir/r4/CodeSystem/BREtniaIndigena
 Alias: $nacionalidade = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade
 Alias: $cs-nacionalidade = http://www.saude.gov.br/fhir/r4/CodeSystem/BRNacionalidade
+Alias: $pontoreferencia = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator
 
 Instance: paciente-rosa
 InstanceOf: Patient
@@ -65,6 +66,7 @@ Description: "Paciente assistida"
   * system = $cs-nacionalidade
   * code = #B
 
+
 * address[0]
   * use = #home
   * type = #physical
@@ -77,9 +79,12 @@ Description: "Paciente assistida"
   * line[1].id = "neighborhood"
   * line[2] = "23"
   * line[2].id = "number"
-  * line[3] = "próximo ao supermercado silva"
+  * line[3] = "bloco B"
   * line[3].id = "complement"
-
+  * line.extension[0].url = $pontoreferencia
+  * line.extension[0].valueString = "próximo ao supermercado"
+  
 * telecom[0]
   * system = #phone
+  * value = "99999-9999"
 

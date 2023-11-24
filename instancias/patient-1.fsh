@@ -66,6 +66,9 @@ Description: "Paciente assistida"
   * system = $cs-nacionalidade
   * code = #B
 
+// Nível de escolaridade
+* extension[4].url = "http://perfil.org/nivel-educational"
+* extension[4].valueCode = #LA12462-0
 
 * address[0]
   * use = #home
@@ -87,4 +90,3 @@ Description: "Paciente assistida"
 * telecom[0]
   * system = #phone
   * value = "99999-9999"
-

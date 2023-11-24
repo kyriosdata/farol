@@ -59,6 +59,7 @@ Description: "Paciente assistida"
 * extension[2].extension[1].url = "indigenousEthnicity"
 * extension[2].extension[1].valueCodeableConcept = $etniaindigena#0001
 
+// Nacionalidade (B - brasileiro, E - estrangeiro ou N - naturalizado)
 * extension[3].url = $nacionalidade
 * extension[3].valueCodeableConcept.coding[0]
   * system = $cs-nacionalidade
@@ -69,10 +70,16 @@ Description: "Paciente assistida"
   * type = #physical
   * city = #315780
   * state = #31
-  * postalCode = "74000-000"
+  * postalCode = "74000-000"  // Nao valida a máscara xxxxx-xxx
   * line[0] = "Rua"
   * line[0].id = "street"
   * line[1] = "Rua"
   * line[1].id = "neighborhood"
   * line[2] = "23"
   * line[2].id = "number"
+  * line[3] = "próximo ao supermercado silva"
+  * line[3].id = "complement"
+
+* telecom[0]
+  * system = #phone
+

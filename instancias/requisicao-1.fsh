@@ -24,6 +24,10 @@ Description: "Representa uma ficha preenchida de requisiçõa de exame citopatol
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb39"
   * resource = f142d5cf-6316-4ddd-b398-168af8aaeb39
 
+* entry[1]
+  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb41"
+  * resource = f142d5cf-6316-4ddd-b398-168af8aaeb41
+
 
 Instance: f142d5cf-6316-4ddd-b398-168af8aaeb39
 InstanceOf: Composition
@@ -46,6 +50,9 @@ Description: "Reúne dados de uma ficha de requisição"
 * author.identifier.value = "cns do profissional"
 
 * title = "Dados da requisição de Exame Citopatológico"
+
+* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb41)
+
 
 Alias: $racacorext = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRacaCorEtnia-1.0
 Alias: $racacor = http://www.saude.gov.br/fhir/r4/CodeSystem/BRRacaCor

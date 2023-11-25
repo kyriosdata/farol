@@ -21,12 +21,8 @@ Description: "Uma ficha preenchida de requisiçõa de exame citopatológico"
 * timestamp = "2023-11-24T09:08:23+03:00"
 
 * entry[0]
-  * fullUrl = "urn:uid:f142d5cf-6316-4ddd-b398-168af8aaeb39"
+  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb39"
   * resource = f142d5cf-6316-4ddd-b398-168af8aaeb39
-
-* entry[1]
-  * fullUrl = "urn:uid:f142d5cf-6316-4ddd-b398-168af8aaeb40"
-  * resource = f142d5cf-6316-4ddd-b398-168af8aaeb40
 
 
 Instance: f142d5cf-6316-4ddd-b398-168af8aaeb39
@@ -46,24 +42,10 @@ Description: "Reúne dados de uma ficha de requisição"
 * date = "2023-11-20"
 
 // Responsável
-* author = Reference(urn:uid:f142d5cf-6316-4ddd-b398-168af8aaeb40)
+* author.identifier.system = "http://perfil.org/cns"
+* author.identifier.value = "cns do profissional"
+
 * title = "Requisição de Exame Citopatológico"
-* section[0]
-  * title = "profissional requisitante"
-  * entry[0].reference = "urn:uid:f142d5cf-6316-4ddd-b398-168af8aaeb40"
 
-// ------------------------------------------------------
-// PROFISSIONAL REQUISITANTE
-// ------------------------------------------------------
 
-Instance: f142d5cf-6316-4ddd-b398-168af8aaeb40
-InstanceOf: Practitioner
-Usage: #example
-Title: "Profissional Requisitante"
-Description: "Profissional que requisita exame"
-
-* text.status = #empty
-* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>O profissional da UBS que elaborou e assina a requisição</div>"
-
-* name[0].text = "José da Silva"
 

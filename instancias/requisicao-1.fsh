@@ -20,10 +20,12 @@ Description: "Representa uma ficha preenchida de requisiçõa de exame citopatol
 // Data e hora em que a requisição foi submetida
 * timestamp = "2023-11-24T09:08:23+03:00"
 
+// Composition (dados da requisição)
 * entry[0]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb39"
   * resource = f142d5cf-6316-4ddd-b398-168af8aaeb39
 
+// Dados do paciente
 * entry[1]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb41"
   * resource = f142d5cf-6316-4ddd-b398-168af8aaeb41
@@ -42,7 +44,7 @@ Description: "Reúne dados de uma ficha de requisição"
 * status = #final
 * type = http://loinc.org#11485-0
 
-// Data da coleta
+// Data da coleta da amostra e dados da requisição
 * date = "2023-11-20"
 
 // Responsável

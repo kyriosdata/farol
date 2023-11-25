@@ -5,7 +5,12 @@ Alias: $nacionalidade = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNa
 Alias: $cs-nacionalidade = http://www.saude.gov.br/fhir/r4/CodeSystem/BRNacionalidade
 Alias: $pontoreferencia = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator
 
-Instance: paciente-rosa
+
+// ------------------------------------------------------
+// PACIENTE
+// ------------------------------------------------------
+
+Instance: f142d5cf-6316-4ddd-b398-168af8aaeb41
 InstanceOf: Patient
 Usage: #example
 Title: "Rosa"
@@ -90,3 +95,4 @@ Description: "Paciente assistida"
 * telecom[0]
   * system = #phone
   * value = "99999-9999"
+

@@ -5,7 +5,7 @@ Title: "Laboratório"
 Description: "Laboratório onde o laudo é realizado"
 
 * text.status = #empty
-* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Estabelecimento de saúde no qual é gerada a requisição de exame citopatológico.</div>"
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Laboratório que realiza o exame citopatológico.</div>"
 
 * name = "Laboratório de Análises Clínicas"
 

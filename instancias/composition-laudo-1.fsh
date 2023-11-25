@@ -10,5 +10,5 @@ Description: "Ilustra uma requisição"
 * status = #final
 * type = http://loinc.org#11485-0
 * date = "2023-11-20"
-* author = Reference(ProfissionalRequisitante)
+* author = Reference(Practitioner/practitioner-lab)
 * title = "Laudo de Exame Citopatológico"

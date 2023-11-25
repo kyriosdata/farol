@@ -11,11 +11,11 @@ Description: "Requisição de exame citopatológico"
 * status = #draft
 * intent = #order
 * subject = Reference(Rosa)
-* contained[0] = data-ultimo-exame
-* supportingInfo[0] = Reference(data-ultimo-exame)
+* contained[0] = data
+* supportingInfo[0] = Reference(data)
 
 
-Instance: data-ultimo-exame
+Instance: data
 InstanceOf: Observation
 Usage: #inline
 Title: "Data do último exame citopatológico"

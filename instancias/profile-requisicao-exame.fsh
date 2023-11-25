@@ -10,6 +10,13 @@ Title: "Requisicao Exame"
 
 * contained obeys ConteudoSuporte
 
+* supportingInfo ^slicing.discriminator.type = #pattern
+* supportingInfo ^slicing.discriminator.path = "reference"
+* supportingInfo ^slicing.rules = #open
+* supportingInfo ^slicing.ordered = false   // can be omitted, since false is the default
+* supportingInfo ^slicing.description = "Slice based on the component.code pattern"
+* supportingInfo contains data 1..1
+* supportingInfo[data].reference = "#data"
 
 Invariant: ConteudoSuporte
 Description: "Possui apenas instâncias predefinidas"

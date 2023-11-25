@@ -5,8 +5,8 @@ Alias: $niveis-escolaridade = http://perfil.org/vs/niveis-escolaridade
 Instance: requisicao-1
 InstanceOf: Bundle
 Usage: #example
-Title: "Ficha de requisição de exame citopatológico"
-Description: "Uma ficha preenchida de requisiçõa de exame citopatológico"
+Title: "Requisição de exame citopatológico"
+Description: "Representa uma ficha preenchida de requisiçõa de exame citopatológico, possivelmente assinada"
 
 * type = #document
 
@@ -45,7 +45,7 @@ Description: "Reúne dados de uma ficha de requisição"
 * author.identifier.system = "http://perfil.org/cns"
 * author.identifier.value = "cns do profissional"
 
-* title = "Requisição de Exame Citopatológico"
+* title = "Dados da requisição de Exame Citopatológico"
 
 
 

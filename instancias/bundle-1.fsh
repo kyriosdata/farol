@@ -2,7 +2,7 @@ Alias: $tipodocumento = http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoDocumen
 Alias: $niveis-escolaridade = http://perfil.org/vs/niveis-escolaridade
 
 
-Instance: requisicao-1
+Instance: bundle-1
 InstanceOf: Bundle
 Usage: #example
 Title: "Requisição de exame citopatológico"
@@ -22,16 +22,16 @@ Description: "Representa uma ficha preenchida de requisiçõa de exame citopatol
 
 // Composition (dados da requisição)
 * entry[0]
-  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb39"
-  * resource = f142d5cf-6316-4ddd-b398-168af8aaeb39
+  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb00"
+  * resource = composition-1
 
-// Dados do paciente
+// Paciente
 * entry[1]
-  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb41"
-  * resource = f142d5cf-6316-4ddd-b398-168af8aaeb41
+  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01"
+  * resource = paciente
 
 
-Instance: f142d5cf-6316-4ddd-b398-168af8aaeb39
+Instance: composition-1
 InstanceOf: Composition
 Usage: #example
 Title: "Dados da ficha de Exame Citopatológico"
@@ -53,8 +53,11 @@ Description: "Reúne dados de uma ficha de requisição"
 
 * title = "Dados da requisição de Exame Citopatológico"
 
-* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb41)
+* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
 
+// ------------------------------------------------------
+// PACIENTE
+// ------------------------------------------------------
 
 Alias: $racacorext = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRacaCorEtnia-1.0
 Alias: $racacor = http://www.saude.gov.br/fhir/r4/CodeSystem/BRRacaCor
@@ -63,12 +66,7 @@ Alias: $nacionalidade = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNa
 Alias: $cs-nacionalidade = http://www.saude.gov.br/fhir/r4/CodeSystem/BRNacionalidade
 Alias: $pontoreferencia = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator
 
-
-// ------------------------------------------------------
-// PACIENTE
-// ------------------------------------------------------
-
-Instance: f142d5cf-6316-4ddd-b398-168af8aaeb41
+Instance: paciente
 InstanceOf: Patient
 Usage: #example
 Title: "Rosa"

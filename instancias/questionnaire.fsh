@@ -49,7 +49,6 @@ Description: "Questões pertinentes à anamnese do exame citopatológico"
     * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * required = true
   * repeats = false
-  * readOnly = true
 
 * item[2]
   * linkId = "3"

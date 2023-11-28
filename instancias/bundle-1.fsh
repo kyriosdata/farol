@@ -127,6 +127,49 @@ Title: "Dados de anamnese"
   * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
   * answer[0].valueCoding.code = #Y
 
+* item[1]
+  * linkId = "2"
+  * answer[0].valueDate = "2023-10-11"
+
+* item[2]
+  * linkId = "3"
+  * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
+  * answer[0].valueCoding.code = #N
+
+* item[3]
+  * linkId = "4"
+  * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
+  * answer[0].valueCoding.code = #N
+
+* item[4]
+  * linkId = "5"
+  * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
+  * answer[0].valueCoding.code = #Y
+
+* item[5]
+  * linkId = "6"
+  * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
+  * answer[0].valueCoding.code = #Y
+
+* item[6]
+  * linkId = "7"
+  * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
+  * answer[0].valueCoding.code = #Y
+
+* item[7]
+  * linkId = "8"
+  * answer[0].valueDate = "2023-10-11"
+
+* item[8]
+  * linkId = "9"
+  * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
+  * answer[0].valueCoding.code = #Y
+
+* item[9]
+  * linkId = "10"
+  * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
+  * answer[0].valueCoding.code = #Y
+
 // ------------------------------------------------------
 // PACIENTE (subject da composition)
 // ------------------------------------------------------

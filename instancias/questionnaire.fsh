@@ -38,7 +38,6 @@ Description: "Questões pertinentes à anamnese do exame citopatológico"
   * repeats = false
   * readOnly = true
 
-
 * item[1]
   * linkId = "2"
   * type = #date
@@ -66,6 +65,61 @@ Description: "Questões pertinentes à anamnese do exame citopatológico"
   * type = #choice
   * code[0] = http://loinc.org#66174-4
   * text = "Está grávida?"
+  * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
+  * required = true
+  * repeats = false
+  * readOnly = true
+
+* item[4]
+  * linkId = "5"
+  * type = #choice
+  * text = "Usa pílula anticoncepcional?"
+  * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
+  * required = true
+  * repeats = false
+  * readOnly = true
+
+* item[5]
+  * linkId = "6"
+  * type = #choice
+  * text = "Usa hormônio/remédio para tratar a menopausa?"
+  * code[0] = http://loinc.org#63873-4
+  * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
+  * required = true
+  * repeats = false
+  * readOnly = true
+
+* item[6]
+  * linkId = "7"
+  * type = #choice
+  * text = "Já fez tratamento por radioterapia?"
+  * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
+  * required = true
+  * repeats = false
+  * readOnly = true
+
+* item[7]
+  * linkId = "8"
+  * type = #date
+  * text = "Data da última menstruação/regra"
+  * code[0] = http://loinc.org#8665-2
+  * required = true
+  * repeats = false
+  * readOnly = true
+
+* item[8]
+  * linkId = "9"
+  * type = #choice
+  * text = "Tem ou teve algum sangramento após relações sexuais? (não considerar a primeira relação sexual na vida)"
+  * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
+  * required = true
+  * repeats = false
+  * readOnly = true
+
+* item[9]
+  * linkId = "10"
+  * type = #choice
+  * text = "Tem ou teve algum sangramento após a menopausa? (não considerar o(s) sangramento(s) na vigência de reposição hormonal)"
   * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
   * required = true
   * repeats = false

@@ -8,4 +8,4 @@ Title: "Motivo Exame"
 * ^url = "http://perfil.org/vs-motivo-exame"
 * ^status = #draft
 
-* include codes from system http://perfil.org/motivo-exame
+* include codes from system http://perfil.org/cs-motivo-exame

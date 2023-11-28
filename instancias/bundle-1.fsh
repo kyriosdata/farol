@@ -2,7 +2,9 @@ Alias: $tipodocumento = http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoDocumen
 Alias: $niveis-escolaridade = http://perfil.org/vs/niveis-escolaridade
 
 // ------------------------------------------------------
+// 
 // bundle-1
+// 
 // ------------------------------------------------------
 
 Instance: bundle-1
@@ -42,6 +44,10 @@ Description: "Representa uma ficha preenchida de requisiçõa de exame citopatol
 * entry[3]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03"
   * resource = respostas
+
+* entry[4]
+  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04"
+  * resource = exame
 
 // ------------------------------------------------------
 // composition-1
@@ -87,6 +93,7 @@ Description: "Reúne dados de uma ficha de requisição"
   * title = "Exame clínico"
   * text.status = #empty
   * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Dados do exame clínico</div>"
+  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04)
 
 
 // ------------------------------------------------------
@@ -177,6 +184,20 @@ Title: "Dados de anamnese"
   * linkId = "10"
   * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
   * answer[0].valueCoding.code = #Y
+
+
+// ------------------------------------------------------
+// exame
+// ------------------------------------------------------
+
+Instance: exame
+InstanceOf: Observation
+Usage: #example
+Title: "Exame clínico visando laudo citopatológico"
+
+* meta.profile[0] = "http://perfil.org/exame-clinico"
+* status = #final
+* code = http://loinc.org#1-8 // Errado deve ser preenchido
 
 // ------------------------------------------------------
 // PACIENTE (subject da composition)

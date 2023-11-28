@@ -38,6 +38,11 @@ Description: "Representa uma ficha preenchida de requisiçõa de exame citopatol
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb02"
   * resource = requisicao
 
+// Dados da anamnese (respostas)
+* entry[3]
+  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03"
+  * resource = respostas
+
 // ------------------------------------------------------
 // composition-1
 // ------------------------------------------------------
@@ -75,7 +80,8 @@ Description: "Reúne dados de uma ficha de requisição"
 * section[1]
   * title = "Dados da anamnese"
   * text.status = #empty
-  * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Dados da anamnese</div>"
+  * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Dados da anamnese (respostas)</div>"
+  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
 
 * section[2]
   * title = "Exame clínico"
@@ -106,6 +112,8 @@ Description: "Requisição de exame citopatológico"
   * display = "EXAME CITOPATOLÓGICO CERVICO VAGINAL/MICROFLORA-RASTREAMENTO"
 
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
+* reasonCode[0].coding[0] = http://perfil.org/motivo-exame#rastreamento
+* supportingInfo[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
 
 // ------------------------------------------------------
 // respostas (anamnese)

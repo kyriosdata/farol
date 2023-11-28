@@ -24,19 +24,19 @@ Description: "Questões pertinentes à anamnese do exame citopatológico"
 * lastReviewDate = "2023-11-30"
 * effectivePeriod.start = "2024-01-01"
 
+// Como caracterizar o formulário? Código local (nacional)?
 * code[0]
-  * code = #0203010086
-  * system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTabelaSUS"
-  * display = "EXAME CITOPATOLÓGICO CERVICO VAGINAL/MICROFLORA-RASTREAMENTO"
+  * code = #74468-0
+  * system = "http://loinc.org"
+  * display = "Questionnaire form definition Document"
 
 * item[0]
   * linkId = "1"
   * type = #choice
   * text = "Fez o exame preventivo (Papanicolaou) alguma vez?"
-  * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
+  * answerValueSet = Canonical(http://hl7.org/fhir/ValueSet/yesnodontknow)
   * required = true
   * repeats = false
-  * readOnly = true
 
 * item[1]
   * linkId = "2"
@@ -55,6 +55,7 @@ Description: "Questões pertinentes à anamnese do exame citopatológico"
   * linkId = "3"
   * type = #choice
   * text = "Usa DIU?"
+  * code[0] = http://www.saude.gov.br/fhir/r4/CodeSystem/BRCIAP2#W12 // Contracepção intra-uterina
   * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
   * required = true
   * repeats = false
@@ -74,6 +75,8 @@ Description: "Questões pertinentes à anamnese do exame citopatológico"
   * linkId = "5"
   * type = #choice
   * text = "Usa pílula anticoncepcional?"
+  * code[0] = http://loinc.org#65931-8
+  * code[1] = http://www.saude.gov.br/fhir/r4/CodeSystem/BRCIAP2#W11 // Contracepção oral (CIAP-2)
   * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
   * required = true
   * repeats = false

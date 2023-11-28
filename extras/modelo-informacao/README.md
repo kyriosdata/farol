@@ -182,24 +182,3 @@ LL4578-2 Birth control methods
 CIAP-2 (Classificação Internacional da Atenção Primária)
 X86 Esfregaço Papanicolau anormal (CIAP-2) é pertinente para algum item?
 W11 Contracepção oral W12 Contracepção intra-uterina (CIAP-2)
-
-5. Usa hormônio/remédio para tratar a menopausa? (sim, não, não sabe)
-
-6. Já fez tratamento por radioterapia? (sim, não, não sabe)
-
-7. Data da última menstruação/regra (dia/mes/ano, não sabe/não lembra)
-
-8. Tem ou teve algum sangramento após relações sexuais? (não considerar a primeira relação sexual na vida) (sim, não/nãosabe/não lembra)
-
-9. Tem ou teve algum sangramento após a menopausa? (não considerar o(s) sangramento(s) na vigência de reposição hormonal) (sim, não/nãosabe/não lembra/não está na menopausa)
-
-Exame clínico
-
-10. Inspeção do colo
-    normal,
-    ausente (anomalias congênitas ou retirado cirurgicamente)
-    alterado
-    colo não visualizado
-
-11. Sinais sugestivos de doenças sexualmente transmissíveis?
-    (sim, não)

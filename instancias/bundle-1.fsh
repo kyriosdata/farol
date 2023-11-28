@@ -1,6 +1,9 @@
 Alias: $tipodocumento = http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoDocumento
 Alias: $niveis-escolaridade = http://perfil.org/vs/niveis-escolaridade
 
+// ------------------------------------------------------
+// bundle-1
+// ------------------------------------------------------
 
 Instance: bundle-1
 InstanceOf: Bundle
@@ -20,7 +23,7 @@ Description: "Representa uma ficha preenchida de requisiçõa de exame citopatol
 // Data e hora em que a requisição foi submetida
 * timestamp = "2023-11-24T09:08:23+03:00"
 
-// Composition (dados da requisição)
+// Composition (primeira entrada do bundle)
 * entry[0]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb00"
   * resource = composition-1
@@ -30,6 +33,14 @@ Description: "Representa uma ficha preenchida de requisiçõa de exame citopatol
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01"
   * resource = paciente
 
+// Requisição de exame (ServiceRequest)
+* entry[2]
+  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb02"
+  * resource = requisicao
+
+// ------------------------------------------------------
+// composition-1
+// ------------------------------------------------------
 
 Instance: composition-1
 InstanceOf: Composition
@@ -55,8 +66,69 @@ Description: "Reúne dados de uma ficha de requisição"
 
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
 
+* section[0]
+  * title = "Requisição de exame citopatológico"
+  * text.status = #empty
+  * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Requisição de Serviço</div>"
+  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb02)
+
+* section[1]
+  * title = "Dados da anamnese"
+  * text.status = #empty
+  * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Dados da anamnese</div>"
+
+* section[2]
+  * title = "Exame clínico"
+  * text.status = #empty
+  * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Dados do exame clínico</div>"
+
+
 // ------------------------------------------------------
-// PACIENTE
+// requisição
+// ------------------------------------------------------
+
+Instance: requisicao
+InstanceOf: ServiceRequest
+Usage: #example
+Title: "Requisicao Um"
+Description: "Requisição de exame citopatológico"
+
+* meta.profile[0] = "http://perfil.org/requisicao-exame-citopatologico"
+* text.status = #empty
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Detalhes de requisição de exame citopatológico</div>"
+
+* status = #draft
+* intent = #order
+
+* code.coding[0]
+  * code = #0203010086
+  * system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTabelaSUS"
+  * display = "EXAME CITOPATOLÓGICO CERVICO VAGINAL/MICROFLORA-RASTREAMENTO"
+
+* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
+
+// ------------------------------------------------------
+// respostas (anamnese)
+// ------------------------------------------------------
+
+Instance: respostas
+InstanceOf: QuestionnaireResponse
+Usage: #example
+Title: "Dados de anamnese"
+
+* text.status = #empty
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Respostas para o questionário (anamnese)</div>"
+
+* status = #completed
+* questionnaire = "http://perfil.org/anamnese-exame-citopatologico"
+
+* item[0]
+  * linkId = "1"
+  * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
+  * answer[0].valueCoding.code = #Y
+
+// ------------------------------------------------------
+// PACIENTE (subject da composition)
 // ------------------------------------------------------
 
 Alias: $racacorext = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRacaCorEtnia-1.0

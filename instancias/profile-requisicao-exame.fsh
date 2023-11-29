@@ -8,18 +8,7 @@ Title: "Requisicao Exame"
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Detalhes de requisição de exame citopatológico</div>"
 
-* contained obeys ConteudoSuporte
-
-* supportingInfo ^slicing.discriminator.type = #pattern
-* supportingInfo ^slicing.discriminator.path = "reference"
-* supportingInfo ^slicing.rules = #open
-* supportingInfo ^slicing.ordered = false   // can be omitted, since false is the default
-* supportingInfo ^slicing.description = "Slice based on the component.code pattern"
-
-* supportingInfo contains anamnese 1..1 MS and exame 1..1 MS
-
-* supportingInfo[anamnese].type = "QuestionnaireResponse"
-* supportingInfo[exame].type = "Observation"
+* supportingInfo obeys ConteudoSuporte
 
 Invariant: ConteudoSuporte
 Description: "Possui apenas instâncias predefinidas"

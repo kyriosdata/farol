@@ -119,8 +119,9 @@ Description: "Requisição de exame citopatológico"
   * display = "EXAME CITOPATOLÓGICO CERVICO VAGINAL/MICROFLORA-RASTREAMENTO"
 
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
-* reasonCode[0].coding[0] = http://perfil.org/motivo-exame#rastreamento
+* reasonCode[0].coding[0] = http://perfil.org/cs-motivo-exame#rastreamento
 * supportingInfo[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
+* supportingInfo[1] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04)
 
 // ------------------------------------------------------
 // respostas (anamnese)
@@ -196,8 +197,25 @@ Usage: #example
 Title: "Exame clínico visando laudo citopatológico"
 
 * meta.profile[0] = "http://perfil.org/exame-clinico"
+
+* text.status = #empty
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Exame clínico que faz parte da requisição</div>"
+
 * status = #final
 * code = http://loinc.org#1-8 // Errado deve ser preenchido
+
+* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
+* performer.identifier.system = "http://perfil.org/cns"
+* performer.identifier.value = "cns do profissional"
+* effectiveDateTime = "2023-11-10"
+
+* component[0]
+  * code = http://loinc.org#12044-4
+  * valueCodeableConcept.coding = http://perfil.org/cs-inspecao-colo#normal
+
+* component[1]
+  * code = http://loinc.org#45687-1
+  * valueBoolean = false
 
 // ------------------------------------------------------
 // PACIENTE (subject da composition)

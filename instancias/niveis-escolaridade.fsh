@@ -10,7 +10,7 @@ Identifica o nível educacional do paciente (maior obtido).
 do Ministério da Educação.
 """
 
-* ^url = "http://perfil.org/vs/niveis-escolaridade"
+* ^url = "http://perfil.org/vs-niveis-escolaridade"
 
 * ^status = #draft
 * ^text.status = #empty

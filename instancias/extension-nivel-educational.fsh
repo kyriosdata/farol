@@ -1,4 +1,4 @@
-Alias: $niveis-escolaridade = http://perfil.org/vs/niveis-escolaridade
+Alias: $niveis-escolaridade = http://perfil.org/vs-niveis-escolaridade
 
 Extension: NivelEducacional
 Id:   nivel-educacional

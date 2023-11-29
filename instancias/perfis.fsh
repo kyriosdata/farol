@@ -50,6 +50,8 @@ Title: "Respostas da anamnese da requisição de exame citopatológico"
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Exame clínico utilizado em exame citopatológico</div>"
 
 * questionnaire = "http://perfil.org/anamnese-exame-citopatologico" (exactly)
+* subject 1..
+* authored 1..
 
 * ^status = #draft
 

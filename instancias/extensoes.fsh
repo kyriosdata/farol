@@ -1,3 +1,7 @@
+// ------------------------------------------------------
+// nivel-educacional
+// ------------------------------------------------------
+
 Alias: $niveis-escolaridade = http://perfil.org/vs-niveis-escolaridade
 
 Extension: NivelEducacional
@@ -21,3 +25,23 @@ definida ([LOINC LL836-8](https://loinc.org/LL836-8/)).
 
 * value[x] only code
 * valueCode from $niveis-escolaridade (required)
+
+
+// ------------------------------------------------------
+// idade
+// ------------------------------------------------------
+
+Extension: Idade
+Id: idade
+Title: "Idade estimada do paciente"
+Description: "Idade fornecida no momento da requisição"
+Context: Patient
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Extensão para idade estimada de paciente</div>"
+
+* ^status = #draft
+
+* ^url = "http://perfil.org/idade"
+
+* value[x] only Age

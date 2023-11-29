@@ -99,6 +99,11 @@ Description: "Reúne dados de uma ficha de requisição"
   * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Dados do exame clínico</div>"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04)
 
+* section[3]
+  * title = "Unidade de Saúde Requisitante"
+  * text.status = #empty
+  * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Unidade de Saúde Requisitante</div>"
+  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05)
 
 // ------------------------------------------------------
 // requisição
@@ -111,6 +116,7 @@ Title: "Requisicao Um"
 Description: "Requisição de exame citopatológico"
 
 * meta.profile[0] = "http://perfil.org/requisicao-exame-citopatologico"
+
 * text.status = #empty
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Detalhes de requisição de exame citopatológico</div>"
 
@@ -274,7 +280,7 @@ Description: "Paciente assistida"
 * identifier[1].value = "12334534553"
 
 // Idade (binding para http://hl7.org/fhir/ValueSet/age-units)
-* extension[1].url = "http://saude.gov.br/idade"
+* extension[1].url = "http://perfil.org/idade"
 * extension[1].valueAge.value = 61
 * extension[1].valueAge.system = "http://unitsofmeasure.org"
 * extension[1].valueAge.code = #a
@@ -336,7 +342,6 @@ Description: "Unidade na qual exame citopatológico é requisitado"
 // CNES
 * identifier.system = "http://saude.gov.br/CNES"
 * identifier.value = "CNES da UBS"
-
 
 // UF e município
 * address.city = "Goiânia"

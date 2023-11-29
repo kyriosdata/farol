@@ -284,7 +284,7 @@ Description: "Paciente assistida"
 * identifier[1].value = "12334534553"
 
 // Idade (binding para http://hl7.org/fhir/ValueSet/age-units)
-* extension[1].url = "http://perfil.org/idade"
+* extension[1].url = Idade
 * extension[1].valueAge.value = 61
 * extension[1].valueAge.system = "http://unitsofmeasure.org"
 * extension[1].valueAge.code = #a

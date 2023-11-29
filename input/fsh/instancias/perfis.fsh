@@ -81,7 +81,7 @@ Expression: "select($this.code.coding[0].code in ('60432-2')).allTrue()"
 Severity: #error
 
 
-Alias: $endereco = http://www.saude.gov.br/fhir/r4/StructureDefinition/BREndereco-1.0
+Alias: $endereco = http://perfil.org/endereco
 
 Alias: $BRTipoLogradouro-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRTipoLogradouro-1.0
 Alias: $BRMunicipio-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRMunicipio-1.0
@@ -102,9 +102,9 @@ Description: "Padronização de endereços no Brasil."
 * ^status = #active
 * ^meta.lastUpdated = "2020-03-11T04:06:40.866+00:00"
 * ^text.status = #empty
-* ^text.div = "<div xml:lang='pt-BR' lang='pt-BR' xmlns='http://www.w3.org/1999/xhtml'>Extensão para idade estimada de paciente</div>"
+* ^text.div = "<div xml:lang='pt-BR' lang='pt-BR' xmlns='http://www.w3.org/1999/xhtml'>Adaptação de BREndereco (que provoca erros em validação)</div>"
 * ^language = #pt-BR
-* ^url = "http://www.saude.gov.br/fhir/r4/StructureDefinition/BREndereco-1.0"
+* ^url = "http://perfil.org/endereco"
 * ^version = "1.0"
 * ^publisher = "Ministério da Saúde do Brasil"
 * . MS

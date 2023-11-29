@@ -1,5 +1,4 @@
 Alias: $tipodocumento = http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoDocumento
-Alias: $niveis-escolaridade = http://perfil.org/vs/niveis-escolaridade
 
 // ------------------------------------------------------
 // 

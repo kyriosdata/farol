@@ -56,3 +56,6 @@ menu:
     FHIR: http://hl7.org/fhir/R4/index.html
     Github: https://github.com/kyriosdata/farol
   Índice: toc.html
+
+dependencies:
+  rnds.ajustes: 0.0.1

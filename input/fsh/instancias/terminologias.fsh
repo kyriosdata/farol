@@ -5,14 +5,16 @@
 CodeSystem: ResultadoInspecaoColo
 Id: cs-inspecao-colo
 Title: "Resultado da inspeção do colo"
+Description: "Os resultados para a inspeção de colo visando exame citopatológico."
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
 
-* ^url = "http://perfil.org/cs-inspecao-colo"
+//* ^url = "http://perfil.org/cs-inspecao-colo"
 
 * ^status = #draft
 * ^caseSensitive = true
+* ^experimental = false
 
 * #normal "Normal"
 * #ausente "Ausente" "Anomalias congênitas ou retirado cirurgicamente"
@@ -27,14 +29,16 @@ Title: "Resultado da inspeção do colo"
 CodeSystem: MotivoExame
 Id: cs-motivo-exame
 Title: "Motivo do Exame Citopatológico"
+Description: "Define os motivos pelos quais uma requisição de exame citopatológico é realizada"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
 
-* ^url = "http://perfil.org/cs-motivo-exame"
+// * ^url = "http://perfil.org/cs-motivo-exame"
 
 * ^status = #draft
 * ^caseSensitive = true
+* ^experimental = false
 
 * #rastreamento "Rastreamento" "Com a finalidade de rastreamento"
 * #repeticao "Repetição" "Exame alterado ASCUS/Baixo grau"

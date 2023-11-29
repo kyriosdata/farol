@@ -1,5 +1,5 @@
 CodeSystem: ResultadoInspecaoColo
-Id: resultado-inspecao-colo
+Id: cs-inspecao-colo
 Title: "Resultado da inspeção do colo"
 
 * ^text.status = #empty

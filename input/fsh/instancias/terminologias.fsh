@@ -87,7 +87,7 @@ Description: "Possíveis motivos para requisição de exame citopatológico"
 Alias: $loinc = http://loinc.org
 
 ValueSet: NivelEducacional
-Id: vs-niveis-escolaridade
+Id: nivel-educacional
 Title: "Nível educacional"
 Description: """
 Identifica o nível educacional do paciente (maior obtido).

@@ -2,7 +2,8 @@
 // nivel-educacional
 // ------------------------------------------------------
 
-Alias: $niveis-escolaridade = http://perfil.org/vs-niveis-escolaridade
+Alias: $nivel-educacional = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional
+
 
 Extension: NivelEducacional
 Id:   nivel-educacional
@@ -24,7 +25,7 @@ definida ([LOINC LL836-8](https://loinc.org/LL836-8/)).
 * ^context[0].expression = "Patient"
 
 * value[x] only code
-* valueCode from $niveis-escolaridade (required)
+* valueCode from $nivel-educacional (required)
 
 
 // ------------------------------------------------------

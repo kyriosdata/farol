@@ -1,4 +1,6 @@
 Alias: $tipodocumento = http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoDocumento
+Alias: $idade = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade
+Alias: $nivel-educacional = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional
 
 // ------------------------------------------------------
 // 
@@ -284,7 +286,7 @@ Description: "Paciente assistida"
 * identifier[1].value = "12334534553"
 
 // Idade (binding para http://hl7.org/fhir/ValueSet/age-units)
-* extension[1].url = Idade
+* extension[1].url = $idade
 * extension[1].valueAge.value = 61
 * extension[1].valueAge.system = "http://unitsofmeasure.org"
 * extension[1].valueAge.code = #a
@@ -304,7 +306,7 @@ Description: "Paciente assistida"
   * code = #B
 
 // Nível de escolaridade
-* extension[4].url = "http://perfil.org/nivel-educational"
+* extension[4].url = $nivel-educacional
 * extension[4].valueCode = #LA12462-0
 
 * address[0]

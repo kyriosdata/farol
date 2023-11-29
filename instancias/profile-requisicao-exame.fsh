@@ -1,6 +1,10 @@
 Alias: $anamnese = http://perfil.org/anamnese-exame-citopatologico
 Alias: $exame-clinico = http://perfil.org/exame-clinico
 
+// ------------------------------------------------------
+// exame-clinico
+// ------------------------------------------------------
+
 Profile: ExameClinicoParaLaudoCitopatologico
 Parent: Observation
 Id: exame-clinico
@@ -29,8 +33,9 @@ Description: "Exame clínico visando laudo de exame citopatológico"
 * component[sinais].code = http://loinc.org#45687-1 // DST
 * component[sinais].value[x] only boolean
 
-
-
+// ------------------------------------------------------
+// requisicao-exame
+// ------------------------------------------------------
 
 Profile: RequisicaoExame
 Parent: ServiceRequest

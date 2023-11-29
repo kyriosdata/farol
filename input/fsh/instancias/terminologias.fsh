@@ -51,14 +51,15 @@ Description: "Define os motivos pelos quais uma requisição de exame citopatol�
 ValueSet: ResultadoInspecaoColoValores
 Id: vs-inspecao-colo
 Title: "Valores de inspeção do colo"
+Description: "Possíveis resultados para inspeção de colo visando exame citopatológico"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
 
-* ^url = "http://perfil.org/vs-inspecao-colo"
+// * ^url = "http://perfil.org/vs-inspecao-colo"
 * ^status = #draft
 
-* include codes from system http://perfil.org/cs-inspecao-colo
+* include codes from system ResultadoInspecaoColo
 
 
 // ------------------------------------------------------
@@ -68,14 +69,15 @@ Title: "Valores de inspeção do colo"
 ValueSet: MotivoExame
 Id: vs-motivo-exame
 Title: "Motivo Exame"
+Description: "Possíveis motivos para requisição de exame citopatológico"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
 
-* ^url = "http://perfil.org/vs-motivo-exame"
+// * ^url = "http://perfil.org/vs-motivo-exame"
 * ^status = #draft
 
-* include codes from system http://perfil.org/cs-motivo-exame
+* include codes from system MotivoExame
 
 
 // ------------------------------------------------------
@@ -94,7 +96,7 @@ Identifica o nível educacional do paciente (maior obtido).
 do Ministério da Educação.
 """
 
-* ^url = "http://perfil.org/vs-niveis-escolaridade"
+// * ^url = "http://perfil.org/vs-niveis-escolaridade"
 
 * ^status = #draft
 * ^text.status = #empty

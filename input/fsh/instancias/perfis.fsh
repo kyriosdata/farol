@@ -1,6 +1,6 @@
 Alias: $anamnese = http://perfil.org/anamnese-exame-citopatologico
-Alias: $exame-clinico = http://perfil.org/exame-clinico
-Alias: $respostas-anamnese = http://perfil.org/respostas-anamnese
+Alias: $exame-clinico = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/exame-clinico
+Alias: $respostas-anamnese = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/respostas-anamnese
 
 // ------------------------------------------------------
 // exame-clinico
@@ -12,7 +12,7 @@ Id: exame-clinico
 Title: "Exame clínico"
 Description: "Exame clínico visando laudo de exame citopatológico"
 
-* ^url = "http://perfil.org/exame-clinico"
+// * ^url = "http://perfil.org/exame-clinico"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Exame clínico utilizado em exame citopatológico</div>"
@@ -43,11 +43,12 @@ Profile: RespostasAnamnese
 Parent: QuestionnaireResponse
 Id: respostas-anamnese
 Title: "Respostas da anamnese da requisição de exame citopatológico"
+Description: "Estabelece estrutura mínima para respostas da anamnese"
 
-* ^url = "http://perfil.org/respostas-anamnese"
+// * ^url = "http://perfil.org/respostas-anamnese"
 
 * ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Exame clínico utilizado em exame citopatológico</div>"
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Anamnese para exame citopatológico</div>"
 
 * questionnaire = "http://perfil.org/anamnese-exame-citopatologico" (exactly)
 * subject 1..
@@ -63,13 +64,15 @@ Profile: RequisicaoExame
 Parent: ServiceRequest
 Id: requisicao-exame
 Title: "Requisicao Exame"
+Description: "Requisição de exame citopatológico"
 
-* ^url = "http://perfil.org/requisicao-exame-citopatologico"
+// * ^url = "http://perfil.org/requisicao-exame-citopatologico"
 * ^status = #draft
 * ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Detalhes de requisição de exame citopatológico</div>"
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Detalha referência para anamnese e exame clínico.</div>"
 
 * supportingInfo only Reference($exame-clinico or $respostas-anamnese)
+* supportingInfo 2..2
 
 // ------------------------------------------------------
 // endereco
@@ -80,8 +83,6 @@ Description: "Possui apenas instâncias predefinidas"
 Expression: "select($this.code.coding[0].code in ('60432-2')).allTrue()"
 Severity: #error
 
-
-Alias: $endereco = http://perfil.org/endereco
 
 Alias: $BRTipoLogradouro-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRTipoLogradouro-1.0
 Alias: $BRMunicipio-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRMunicipio-1.0
@@ -98,13 +99,13 @@ Profile: Endereco
 Parent: Address
 Id: endereco
 Title: "Endereço"
-Description: "Padronização de endereços no Brasil."
+Description: "Padronização de endereços no Brasil (adaptação de BREndereco)."
 * ^status = #active
 * ^meta.lastUpdated = "2020-03-11T04:06:40.866+00:00"
 * ^text.status = #empty
 * ^text.div = "<div xml:lang='pt-BR' lang='pt-BR' xmlns='http://www.w3.org/1999/xhtml'>Adaptação de BREndereco (que provoca erros em validação)</div>"
 * ^language = #pt-BR
-* ^url = "http://perfil.org/endereco"
+// * ^url = "http://perfil.org/endereco"
 * ^version = "1.0"
 * ^publisher = "Ministério da Saúde do Brasil"
 * . MS
@@ -154,16 +155,16 @@ Profile: Paciente
 Parent: Patient
 Id: paciente-siscan
 Title: "Paciente"
-Description: "Perfile adequado para Exame Citopatológico"
+Description: "Dados demográficos de paciente para Exame Citopatológico"
 
-* ^url = "http://saude.gov.br/paciente"
+// * ^url = "http://saude.gov.br/paciente"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Extensão para idade estimada de paciente</div>"
 
 * ^status = #draft
 
-* address only $endereco
+* address only Endereco
 
 // Conversor de FSH para JSON nao aceita referencia abaixo.
 // * telecom only $BRMeioContato

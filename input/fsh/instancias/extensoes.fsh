@@ -18,7 +18,7 @@ definida ([LOINC LL836-8](https://loinc.org/LL836-8/)).
 
 * ^status = #draft
 
-* ^url = "http://perfil.org/nivel-educational"
+// * ^url = "http://perfil.org/nivel-educational"
 
 * ^context[0].type = #element
 * ^context[0].expression = "Patient"
@@ -42,6 +42,6 @@ Context: Patient
 
 * ^status = #draft
 
-* ^url = "http://perfil.org/idade"
+// * ^url = "http://perfil.org/idade"
 
 * value[x] only Age

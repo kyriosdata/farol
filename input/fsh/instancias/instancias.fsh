@@ -140,6 +140,7 @@ Instance: respostas
 InstanceOf: QuestionnaireResponse
 Usage: #example
 Title: "Dados de anamnese"
+Description: "Exemplo de respostas para anamnese de exame citopatológico"
 
 * text.status = #empty
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Respostas para o questionário (anamnese)</div>"

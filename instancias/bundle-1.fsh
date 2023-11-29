@@ -145,6 +145,8 @@ Title: "Dados de anamnese"
 * text.status = #empty
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Respostas para o questionário (anamnese)</div>"
 
+* meta.profile[0] = "http://perfil.org/respostas-anamnese"
+
 * status = #completed
 * questionnaire = "http://perfil.org/anamnese-exame-citopatologico"
 

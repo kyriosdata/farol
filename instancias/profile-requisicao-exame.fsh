@@ -1,5 +1,6 @@
 Alias: $anamnese = http://perfil.org/anamnese-exame-citopatologico
 Alias: $exame-clinico = http://perfil.org/exame-clinico
+Alias: $respostas-anamnese = http://perfil.org/respostas-anamnese
 
 // ------------------------------------------------------
 // exame-clinico
@@ -33,6 +34,25 @@ Description: "Exame clínico visando laudo de exame citopatológico"
 * component[sinais].code = http://loinc.org#45687-1 // DST
 * component[sinais].value[x] only boolean
 
+
+// ------------------------------------------------------
+// respostas-anamnese
+// ------------------------------------------------------
+
+Profile: RespostasAnamnese
+Parent: QuestionnaireResponse
+Id: respostas-anamnese
+Title: "Respostas da anamnese da requisição de exame citopatológico"
+
+* ^url = "http://perfil.org/respostas-anamnese"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Exame clínico utilizado em exame citopatológico</div>"
+
+* questionnaire = "http://perfil.org/anamnese-exame-citopatologico" (exactly)
+
+* ^status = #draft
+
 // ------------------------------------------------------
 // requisicao-exame
 // ------------------------------------------------------
@@ -47,7 +67,7 @@ Title: "Requisicao Exame"
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Detalhes de requisição de exame citopatológico</div>"
 
-* supportingInfo only Reference($exame-clinico or QuestionnaireResponse)
+* supportingInfo only Reference($exame-clinico or $respostas-anamnese)
 
 Invariant: ConteudoSuporte
 Description: "Possui apenas instâncias predefinidas"

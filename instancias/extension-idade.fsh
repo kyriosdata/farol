@@ -9,5 +9,6 @@ Context: Patient
 
 * ^status = #draft
 
-* ^url = "http://saude.gov.br/idade"
+* ^url = "http://perfil.org/idade"
+
 * value[x] only Age

@@ -1,4 +1,4 @@
-Instance: questionario
+Instance: anamnese-exame-citopatologico
 InstanceOf: Questionnaire
 Usage: #example
 Title: "Anamnese (exame citopatológico)"

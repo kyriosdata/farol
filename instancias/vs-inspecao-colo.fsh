@@ -1,5 +1,5 @@
 ValueSet: ResultadoInspecaoColoValores
-Id: vs-resultado-inspecao-colo
+Id: vs-inspecao-colo
 Title: "Valores de inspeção do colo"
 
 * ^text.status = #empty

@@ -1,7 +1,7 @@
 Alias: $loinc = http://loinc.org
 
 ValueSet: NivelEducacional
-Id: niveis-escolaridade
+Id: vs-niveis-escolaridade
 Title: "Nível educacional"
 Description: """
 Identifica o nível educacional do paciente (maior obtido).

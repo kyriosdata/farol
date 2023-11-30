@@ -65,8 +65,8 @@ Usage: #example
 Title: "Dados da ficha de Exame Citopatológico"
 Description: "Reúne dados de uma ficha de requisição"
 
-// * text.status = #empty
-// * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Um documento que inclui a requisição de exame citopatológico (informações pertinentes) e representa a coleta de material para o laudo requisitado.</div>"
+* text.status = #empty
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Um documento que inclui a requisição de exame citopatológico (informações pertinentes) e representa a coleta de material para o laudo requisitado.</div>"
 
 // REQUISIÇÃO DE EXAME (REX) a ser acrescentado?
 * status = #final
@@ -143,12 +143,14 @@ Description: "Requisição de exame citopatológico"
 // exame
 // ------------------------------------------------------
 
+Alias: $cs-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/inspecao-colo
+
 Instance: exame
 InstanceOf: Observation
 Usage: #example
 Title: "Exame clínico visando laudo citopatológico"
 
-* meta.profile[0] = "http://perfil.org/exame-clinico"
+* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/exame-clinico"
 
 * text.status = #empty
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Exame clínico que faz parte da requisição</div>"
@@ -163,7 +165,7 @@ Title: "Exame clínico visando laudo citopatológico"
 
 * component[0]
   * code = http://loinc.org#12044-4
-  * valueCodeableConcept.coding = http://perfil.org/cs-inspecao-colo#normal
+  * valueCodeableConcept.coding = $cs-inspecao-colo#normal
 
 * component[1]
   * code = http://loinc.org#45687-1

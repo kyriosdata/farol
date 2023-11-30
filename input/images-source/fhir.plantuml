@@ -19,7 +19,8 @@ VsInspecaoColo .up.> InspecaoColo
 MotivosExame .up.> MotivoExame
 
 class CPF <<NamingSystem>> {}
-class "SISCAN Protocolo" as SiscanProtocolo <<NamingSystem>> {}
+class "SISCAN" as SiscanProtocolo <<NamingSystem>> {}
+class "Laboratório" as Laboratorio <<NamingSystem>> {}
 
 class "Nivel Educacional" as NivelEducacional <<extension>> {
     Context: Patient

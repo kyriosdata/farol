@@ -1,5 +1,5 @@
 // ------------------------------------------------------
-// cs-inspecao-colo
+// inspecao-colo
 // ------------------------------------------------------
 
 CodeSystem: ResultadoInspecaoColo
@@ -23,7 +23,7 @@ Description: "Os resultados para a inspeção de colo visando exame citopatológ
 
 
 // ------------------------------------------------------
-// cs-motivo-exame
+// motivo-exame
 // ------------------------------------------------------
 
 CodeSystem: MotivoExame
@@ -59,6 +59,7 @@ Description: "Possíveis resultados para inspeção de colo visando exame citopa
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/vs-inspecao-colo"
 
 * ^status = #draft
+* ^experimental = false
 
 * include codes from system ResultadoInspecaoColo
 
@@ -68,7 +69,7 @@ Description: "Possíveis resultados para inspeção de colo visando exame citopa
 // ------------------------------------------------------
 
 ValueSet: MotivoExame
-Id: vs-motivo-exame
+Id: motivos-exame
 Title: "Motivo Exame"
 Description: "Possíveis motivos para requisição de exame citopatológico"
 
@@ -78,6 +79,7 @@ Description: "Possíveis motivos para requisição de exame citopatológico"
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivos-exame"
 
 * ^status = #draft
+* ^experimental = false
 
 * include codes from system MotivoExame
 

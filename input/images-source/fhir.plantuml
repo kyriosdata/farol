@@ -10,58 +10,22 @@ skinparam class {
     BorderColor #505050
 }
 
+class "inspecao-colo" as InspecaoColo <<CodeSystem>> {}
+class "motivo-exame" as MotivoExame <<CodeSystem>> {}
+class "vs-inspecao-colo" as VsInspecaoColo <<ValueSet>> {}
+class "motivos-exame" as MotivosExame <<ValueSet>> {}
+
+VsInspecaoColo .up.> InspecaoColo
+MotivosExame .up.> MotivoExame
+
 class "Nivel Educacional" as NivelEducacional <<extension>> {
     Context: Patient
 }
 
-class Enfermeira {
-    CNS
-}
-
-class Unidade {
-    CNES
-}
-
-class Citopatologista {
-    identificador: CNS
-    laboratorio: CNES
-}
-
-class Laboratório {
-    CNES
-}
-
-class Consulta {
-    data
-}
-
-class "Laudo Citopatológico" as Laudo {
-    data
-}
-
-class "Assinatura Digital" as Assinatura {
-    data
-}
-
-class "Certificado Digital" as Certificado {}
-
-
-' note top of Laboratório : Responsável pelo laudo
 
 Enfermeira -up-> Unidade: Lotado em
 Enfermeira -left-> GovBR : possui conta
 
-Usuária -left-> Consulta : Assistida em
-Consulta -up-> Coleta : Inclui
-Consulta -left-> Enfermeira: Realizada por
-Usuária --> Requisição: interessada
-Requisição -up-> Consulta : criado por
-
-Citopatologista "1" <-right- Laudo : Criado por
-Laudo -> Requisição: atende
-Laudo -down-> "comprovação" Assinatura
-Enfermeira <-down- Laudo : liberado por
-Citopatologista -left-> Laboratório : lotado em
 Citopatologista "titular" <-down- Certificado
 GovBR <-- Citopatologista: possui conta
 Assinatura -left-> "1" Certificado : Feita com

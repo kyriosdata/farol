@@ -3,14 +3,14 @@
 // ------------------------------------------------------
 
 CodeSystem: ResultadoInspecaoColo
-Id: cs-inspecao-colo
+Id: inspecao-colo
 Title: "Resultado da inspeção do colo"
 Description: "Os resultados para a inspeção de colo visando exame citopatológico."
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
 
-//* ^url = "http://perfil.org/cs-inspecao-colo"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/inspecao-colo"
 
 * ^status = #draft
 * ^caseSensitive = true
@@ -56,7 +56,8 @@ Description: "Possíveis resultados para inspeção de colo visando exame citopa
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
 
-// * ^url = "http://perfil.org/vs-inspecao-colo"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/vs-inspecao-colo"
+
 * ^status = #draft
 
 * include codes from system ResultadoInspecaoColo

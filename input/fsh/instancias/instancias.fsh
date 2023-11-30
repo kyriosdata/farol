@@ -1,6 +1,6 @@
 Alias: $tipodocumento = http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoDocumento
 Alias: $idade = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade
-Alias: $nivel-educacional = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional
+Alias: $nivel-educacional = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educational
 Alias: $respostas-anamnese = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/respostas-anamnese
 
 // ------------------------------------------------------
@@ -111,6 +111,8 @@ Description: "Reúne dados de uma ficha de requisição"
 // requisição
 // ------------------------------------------------------
 
+Alias: $motivo-exame = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-exame
+
 Instance: requisicao
 InstanceOf: ServiceRequest
 Usage: #example
@@ -131,7 +133,7 @@ Description: "Requisição de exame citopatológico"
   * display = "EXAME CITOPATOLÓGICO CERVICO VAGINAL/MICROFLORA-RASTREAMENTO"
 
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
-* reasonCode[0].coding[0] = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivos-exame#rastreamento
+* reasonCode[0].coding[0] = $motivo-exame#rastreamento
 * supportingInfo[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
 * supportingInfo[1] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04)
 

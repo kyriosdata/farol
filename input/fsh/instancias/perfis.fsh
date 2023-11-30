@@ -6,13 +6,15 @@ Alias: $respostas-anamnese = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefini
 // exame-clinico
 // ------------------------------------------------------
 
+Alias: $vs-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/vs-inspecao-colo
+
 Profile: ExameClinicoParaLaudoCitopatologico
 Parent: Observation
 Id: exame-clinico
 Title: "Exame clínico"
 Description: "Exame clínico visando laudo de exame citopatológico"
 
-// * ^url = "http://perfil.org/exame-clinico"
+* ^url = $exame-clinico
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Exame clínico utilizado em exame citopatológico</div>"
@@ -28,7 +30,7 @@ Description: "Exame clínico visando laudo de exame citopatológico"
 
 * component[inspecao].code = http://loinc.org#12044-4 // Inspeção do colo
 * component[inspecao].value[x] only CodeableConcept
-* component[inspecao].valueCodeableConcept from http://perfil.org/vs-inspecao-colo (required)
+* component[inspecao].valueCodeableConcept from $vs-inspecao-colo (required)
 * component[inspecao].valueCodeableConcept.coding 1..1
 
 * component[sinais].code = http://loinc.org#45687-1 // DST

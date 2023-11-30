@@ -1,6 +1,7 @@
 Alias: $tipodocumento = http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoDocumento
 Alias: $idade = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade
 Alias: $nivel-educacional = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional
+Alias: $respostas-anamnese = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/respostas-anamnese
 
 // ------------------------------------------------------
 // 
@@ -64,8 +65,8 @@ Usage: #example
 Title: "Dados da ficha de Exame Citopatológico"
 Description: "Reúne dados de uma ficha de requisição"
 
-* text.status = #empty
-* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Um documento que inclui a requisição de exame citopatológico (informações pertinentes) e representa a coleta de material para o laudo requisitado.</div>"
+// * text.status = #empty
+// * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Um documento que inclui a requisição de exame citopatológico (informações pertinentes) e representa a coleta de material para o laudo requisitado.</div>"
 
 // REQUISIÇÃO DE EXAME (REX) a ser acrescentado?
 * status = #final
@@ -116,7 +117,7 @@ Usage: #example
 Title: "Requisicao Um"
 Description: "Requisição de exame citopatológico"
 
-* meta.profile[0] = "http://perfil.org/requisicao-exame-citopatologico"
+* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
 
 * text.status = #empty
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Detalhes de requisição de exame citopatológico</div>"
@@ -130,77 +131,10 @@ Description: "Requisição de exame citopatológico"
   * display = "EXAME CITOPATOLÓGICO CERVICO VAGINAL/MICROFLORA-RASTREAMENTO"
 
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
-* reasonCode[0].coding[0] = http://perfil.org/cs-motivo-exame#rastreamento
+* reasonCode[0].coding[0] = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivos-exame#rastreamento
 * supportingInfo[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
 * supportingInfo[1] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04)
 
-// ------------------------------------------------------
-// respostas (anamnese)
-// ------------------------------------------------------
-
-Instance: respostas
-InstanceOf: QuestionnaireResponse
-Usage: #example
-Title: "Dados de anamnese"
-Description: "Exemplo de respostas para anamnese de exame citopatológico"
-
-* text.status = #empty
-* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Respostas para o questionário (anamnese)</div>"
-
-* meta.profile[0] = "http://perfil.org/respostas-anamnese"
-
-* status = #completed
-* questionnaire = "http://perfil.org/anamnese-exame-citopatologico"
-* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
-* authored = "2023-01-01"
-
-* item[0]
-  * linkId = "1"
-  * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
-  * answer[0].valueCoding.code = #Y
-
-* item[1]
-  * linkId = "2"
-  * answer[0].valueDate = "2023-10-11"
-
-* item[2]
-  * linkId = "3"
-  * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
-  * answer[0].valueCoding.code = #N
-
-* item[3]
-  * linkId = "4"
-  * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
-  * answer[0].valueCoding.code = #N
-
-* item[4]
-  * linkId = "5"
-  * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
-  * answer[0].valueCoding.code = #Y
-
-* item[5]
-  * linkId = "6"
-  * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
-  * answer[0].valueCoding.code = #Y
-
-* item[6]
-  * linkId = "7"
-  * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
-  * answer[0].valueCoding.code = #Y
-
-* item[7]
-  * linkId = "8"
-  * answer[0].valueDate = "2023-10-11"
-
-* item[8]
-  * linkId = "9"
-  * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
-  * answer[0].valueCoding.code = #Y
-
-* item[9]
-  * linkId = "10"
-  * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
-  * answer[0].valueCoding.code = #Y
 
 
 // ------------------------------------------------------
@@ -250,7 +184,7 @@ Usage: #example
 Title: "Rosa"
 Description: "Paciente assistida"
 
-* meta.profile[0] = "http://saude.gov.br/paciente"
+* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente-siscan"
 
 * text.status = #empty
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>A paciente para a qual o exame é solicitado.</div>"
@@ -367,7 +301,7 @@ Description: "Questões pertinentes à anamnese do exame citopatológico"
 * text.status = #empty
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Questões da anamnese da requisição de exame citopatológico</div>"
 
-* url = "http://perfil.org/anamnese-exame-citopatologico"
+* url = "https://fhir.fabrica.inf.ufg.br/ccu/anamnese-exame-citopatologico"
 
 * version = "0.0.1"
 * name = "AnamneseExameCitopatologico"
@@ -487,3 +421,71 @@ Description: "Questões pertinentes à anamnese do exame citopatológico"
   * required = true
   * repeats = false
   * readOnly = true
+
+// ------------------------------------------------------
+// respostas (anamnese)
+// ------------------------------------------------------
+
+Instance: respostas
+InstanceOf: QuestionnaireResponse
+Usage: #example
+Title: "Dados de anamnese"
+Description: "Exemplo de respostas para anamnese de exame citopatológico"
+
+* text.status = #empty
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Respostas para o questionário (anamnese)</div>"
+
+* meta.profile[0] = $respostas-anamnese
+
+* status = #completed
+* questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/anamnese-exame-citopatologico"
+* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
+* authored = "2023-01-01"
+
+* item[0]
+  * linkId = "1"
+  * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
+  * answer[0].valueCoding.code = #Y
+
+* item[1]
+  * linkId = "2"
+  * answer[0].valueDate = "2023-10-11"
+
+* item[2]
+  * linkId = "3"
+  * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
+  * answer[0].valueCoding.code = #N
+
+* item[3]
+  * linkId = "4"
+  * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
+  * answer[0].valueCoding.code = #N
+
+* item[4]
+  * linkId = "5"
+  * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
+  * answer[0].valueCoding.code = #Y
+
+* item[5]
+  * linkId = "6"
+  * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
+  * answer[0].valueCoding.code = #Y
+
+* item[6]
+  * linkId = "7"
+  * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
+  * answer[0].valueCoding.code = #Y
+
+* item[7]
+  * linkId = "8"
+  * answer[0].valueDate = "2023-10-11"
+
+* item[8]
+  * linkId = "9"
+  * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
+  * answer[0].valueCoding.code = #Y
+
+* item[9]
+  * linkId = "10"
+  * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
+  * answer[0].valueCoding.code = #Y

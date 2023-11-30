@@ -27,14 +27,14 @@ Description: "Os resultados para a inspeção de colo visando exame citopatológ
 // ------------------------------------------------------
 
 CodeSystem: MotivoExame
-Id: cs-motivo-exame
+Id: motivo-exame
 Title: "Motivo do Exame Citopatológico"
 Description: "Define os motivos pelos quais uma requisição de exame citopatológico é realizada"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
 
-// * ^url = "http://perfil.org/cs-motivo-exame"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-exame"
 
 * ^status = #draft
 * ^caseSensitive = true
@@ -74,7 +74,8 @@ Description: "Possíveis motivos para requisição de exame citopatológico"
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
 
-// * ^url = "http://perfil.org/vs-motivo-exame"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivos-exame"
+
 * ^status = #draft
 
 * include codes from system MotivoExame
@@ -87,8 +88,8 @@ Description: "Possíveis motivos para requisição de exame citopatológico"
 Alias: $loinc = http://loinc.org
 
 ValueSet: NivelEducacional
-Id: nivel-educacional
-Title: "Nível educacional"
+Id: niveis-educacionais
+Title: "Níveis educacionais"
 Description: """
 Identifica o nível educacional do paciente (maior obtido).
 
@@ -96,7 +97,7 @@ Identifica o nível educacional do paciente (maior obtido).
 do Ministério da Educação.
 """
 
-// * ^url = "http://perfil.org/vs-niveis-escolaridade"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/niveis-educacionais"
 
 * ^status = #draft
 * ^text.status = #empty

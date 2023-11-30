@@ -45,12 +45,12 @@ Id: respostas-anamnese
 Title: "Respostas da anamnese da requisição de exame citopatológico"
 Description: "Estabelece estrutura mínima para respostas da anamnese"
 
-// * ^url = "http://perfil.org/respostas-anamnese"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/respostas-anamnese"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Anamnese para exame citopatológico</div>"
 
-* questionnaire = "http://perfil.org/anamnese-exame-citopatologico" (exactly)
+* questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/anamnese-exame-citopatologico" (exactly)
 * subject 1..
 * authored 1..
 
@@ -66,12 +66,12 @@ Id: requisicao-exame
 Title: "Requisicao Exame"
 Description: "Requisição de exame citopatológico"
 
-// * ^url = "http://perfil.org/requisicao-exame-citopatologico"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
 * ^status = #draft
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Detalha referência para anamnese e exame clínico.</div>"
 
-* supportingInfo only Reference($exame-clinico or $respostas-anamnese)
+* supportingInfo only Reference(exame-clinico or respostas-anamnese)
 * supportingInfo 2..2
 
 // ------------------------------------------------------
@@ -157,7 +157,7 @@ Id: paciente-siscan
 Title: "Paciente"
 Description: "Dados demográficos de paciente para Exame Citopatológico"
 
-// * ^url = "http://saude.gov.br/paciente"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente-siscan"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Extensão para idade estimada de paciente</div>"

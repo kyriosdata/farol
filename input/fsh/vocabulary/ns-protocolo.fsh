@@ -30,7 +30,7 @@ de exame citopatológico.
 * usage = "Este código é empregado para identificar unicamente uma requisição de exame citopatológico emitida no Brasil."
 
 * uniqueId[0].type = #uri
-* uniqueId[0].value = "http://goias.gov.br/fhir/ns/siscan"
+* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ns/siscan"
 * uniqueId[0].preferred = true
 * uniqueId[0].comment = "Criado pela ausência de NamingSystem nacional para o código gerado pelo SISCAN"
 * uniqueId[0].period.start = "2023-11-13"

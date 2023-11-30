@@ -24,7 +24,7 @@ Usage: #definition
 * usage = "Fornecido pelo interessado como parte da identificação do paciente"
 
 * uniqueId[0].type = #uri
-* uniqueId[0].value = "http://goias.gov.br/fhir/ns/cpf"
+* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ns/cpf"
 * uniqueId[0].preferred = true
 * uniqueId[0].comment = "Criado pela ausência de NamingSystem nacional para o CPF"
 * uniqueId[0].period.start = "2023-11-13"

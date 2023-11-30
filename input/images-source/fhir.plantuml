@@ -18,6 +18,9 @@ class "motivos-exame" as MotivosExame <<ValueSet>> {}
 VsInspecaoColo .up.> InspecaoColo
 MotivosExame .up.> MotivoExame
 
+class CPF <<NamingSystem>> {}
+class "SISCAN Protocolo" as SiscanProtocolo <<NamingSystem>> {}
+
 class "Nivel Educacional" as NivelEducacional <<extension>> {
     Context: Patient
 }

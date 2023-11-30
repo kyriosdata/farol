@@ -1,7 +1,7 @@
-Instance: cpf
+Instance: ns-cpf
 InstanceOf: NamingSystem
-Title: "Cadastro de Pessoa Física"
-Description: "Número de inscrição no Cadastro de Pessoa Física"
+Title: "Identificador de Cadastro de Pessoa Física (CPF)"
+Description: "Declaração do identificador de números de inscrição no Cadastro de Pessoa Física"
 Usage: #definition
 
 * name = "CPF"
@@ -15,7 +15,7 @@ Usage: #definition
 * type.coding[0].code = #TAX
 * type.text = "Número de inscrição no Cadastro de Pessoa Física (CPF)"
 
-* description = "*Número de inscrição no Cadastro de Pessoas Físicas (CPF)"
+* description = "Identificador do número de inscrição no Cadastro de Pessoas Físicas (CPF)"
 
 * jurisdiction[0].coding[0].system = "urn:iso:std:iso:3166"
 * jurisdiction[0].coding[0].code = #BR

@@ -1,7 +1,7 @@
-Instance: SiscanProtocolo
+Instance: ns-protocolo
 InstanceOf: NamingSystem
-Title: "Números de protocolo gerados pelo SISCAN"
-Description: "Número único de identificação de exame citopatológico gerado pelo SISCAN"
+Title: "Identificador de números de protocolo gerados pelo SISCAN"
+Description: "Declaração do identificador de números únicos de identificação de requisição de exame citopatológico gerado pelo SISCAN"
 Usage: #definition
 
 * name = "SiscanProtocolo"
@@ -22,11 +22,8 @@ Usage: #definition
 * useContext.valueCodeableConcept.coding[0].code = #LABOE
 
 * description = """
-Número único gerado pelo **SISCAN** para cada requisição de exame citopatológico. 
-Este número é gerado automaticamente e atribuído como identificador da requisição
-em todo o território nacional. A requisição pode vir acompanhada de outro 
-identificador de requisição fornecido pelo sistema (estabelecimento) que 
-encaminha a requisição para o SISCAN.
+Identificador de número único gerado automaticamente pelo **SISCAN** para cada requisição 
+de exame citopatológico. 
 """
 
 * jurisdiction[0].coding[0] = urn:iso:std:iso:3166#BR

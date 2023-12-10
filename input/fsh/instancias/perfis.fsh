@@ -58,6 +58,7 @@ Description: "Estabelece estrutura mínima para respostas da anamnese"
 
 * ^status = #draft
 
+
 // ------------------------------------------------------
 // requisicao-exame
 // ------------------------------------------------------
@@ -171,3 +172,17 @@ Description: "Dados demográficos de paciente para Exame Citopatológico"
 // Conversor de FSH para JSON nao aceita referencia abaixo.
 // * telecom only $BRMeioContato
 
+
+Profile: QuestoesAnamnese
+Parent: Questionnaire
+Id: questoes
+Title: "Questões para anmnese do exame citopatológico"
+Description: "Descrição"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/questoes"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Extensão para idade estimada de paciente</div>"
+* ^status = #draft
+
+* version = "0.0.1"

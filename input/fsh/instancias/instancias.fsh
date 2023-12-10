@@ -435,11 +435,13 @@ Description: "Questões pertinentes à anamnese do exame citopatológico"
 Instance: respostas
 InstanceOf: QuestionnaireResponse
 Usage: #example
-Title: "Dados de anamnese"
-Description: "Exemplo de respostas para anamnese de exame citopatológico"
+Title: "Exemplo de anamnese preenchida para exame citopatológico."
+Description: "Respostas para anamnese de exame citopatológico"
 
 * text.status = #empty
-* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Respostas para o questionário (anamnese)</div>"
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Um exemplo de anamnese para 
+requisição de exame citopatológico devidamente preenchida. Este exemplo está em
+conformidade com as exigências estabelecidas pelo Ministério da Saúde (INCA)>.</div>"
 
 * meta.profile[0] = $respostas-anamnese
 

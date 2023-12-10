@@ -106,6 +106,7 @@ do Ministério da Educação.
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Extensão para idade estimada de paciente</div>"
 * ^version = "1.0.0"
+* ^experimental = false
 
 // Conforme https://www.hl7.org/fhir/loinc.html#4.3.3.2
 * ^copyright = "This content LOINC® is copyright © 1995 Regenstrief Institute, Inc. and the LOINC Committee, and available at no cost under the license at http://loinc.org/terms-of-use"

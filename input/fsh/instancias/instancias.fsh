@@ -455,7 +455,7 @@ conformidade com as exigências estabelecidas pelo Ministério da Saúde (INCA)>
 * meta.profile[0] = $respostas-anamnese
 
 * status = #completed
-* questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/anamnese-exame-citopatologico"
+* questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/questoes"
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
 * authored = "2023-01-01"
 

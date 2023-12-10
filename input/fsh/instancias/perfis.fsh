@@ -52,7 +52,7 @@ Description: "Estabelece estrutura mínima para respostas da anamnese"
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Anamnese para exame citopatológico</div>"
 
-* questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/anamnese-exame-citopatologico" (exactly)
+* questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/questoes" (exactly)
 * subject 1..
 * authored 1..
 

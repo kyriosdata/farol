@@ -428,6 +428,15 @@ Description: "Questões pertinentes à anamnese do exame citopatológico"
   * repeats = false
   * readOnly = true
 
+* item[10]
+  * linkId = "11"
+  * type = #integer
+  * text = "Qual a sua idade?"
+  * required = true
+  * repeats = false
+  * readOnly = true
+  * maxLength = 3
+
 // ------------------------------------------------------
 // respostas (anamnese)
 // ------------------------------------------------------
@@ -497,3 +506,7 @@ conformidade com as exigências estabelecidas pelo Ministério da Saúde (INCA)>
   * linkId = "10"
   * answer[0].valueCoding.system = "http://terminology.hl7.org/CodeSystem/v2-0136"
   * answer[0].valueCoding.code = #Y
+
+* item[10]
+  * linkId = "11"
+  * answer[0].valueInteger = -3

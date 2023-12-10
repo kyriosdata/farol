@@ -47,10 +47,12 @@ Description: "Representa uma ficha preenchida de requisiçõa de exame citopatol
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03"
   * resource = respostas
 
+// Dados do exame clínico
 * entry[4]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04"
   * resource = exame
 
+// Dados da unidade de saúde
 * entry[5]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05"
   * resource = unidade-saude
@@ -298,7 +300,7 @@ Description: "Unidade na qual exame citopatológico é requisitado"
 
 Instance: anamnese-exame-citopatologico
 InstanceOf: Questionnaire
-Usage: #example
+Usage: #definition
 Title: "Anamnese (exame citopatológico)"
 Description: "Questões pertinentes à anamnese do exame citopatológico"
 
@@ -309,15 +311,15 @@ Description: "Questões pertinentes à anamnese do exame citopatológico"
 
 * version = "0.0.1"
 * name = "AnamneseExameCitopatologico"
-* title = "Dados de Anamnese da requisição do exame citopatológico"
+* title = "Questionário (dados de Anamnese) da requisição do exame citopatológico"
 * status = #draft
 * experimental = false
 * subjectType = #Patient
 * date = "2023-11-27"
 * publisher = "Ministério da Saúde (INCA)"
-* description = "Identifica todas as perguntas definidas na ficha de requisição de exame citopatológico."
+* description = "Identifica todas as perguntas contidas na ficha de requisição de exame citopatológico e os possíveis valores para cada uma delas."
 * jurisdiction = urn:iso:std:iso:3166#BR
-* purpose = "Registro das questões da anamnese para coleta de dados empregados para produção do laudo correspondente"
+* purpose = "Definir conjunto específico de questões da anamnese para visando montar requisição de exame citopatológico conforme ficha definida pelo INCA (Ministério da Saúde)."
 * copyright = "Ministério da Saúde do Brasil"
 * approvalDate = "2023-12-15"
 * lastReviewDate = "2023-11-30"

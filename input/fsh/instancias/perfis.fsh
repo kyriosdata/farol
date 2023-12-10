@@ -186,3 +186,22 @@ Description: "Descrição"
 * ^status = #draft
 
 * version = "0.0.1"
+
+
+* item ^slicing.discriminator.type = #pattern
+* item ^slicing.discriminator.path = "linkId"
+* item ^slicing.rules = #open
+* item ^slicing.ordered = false 
+* item ^slicing.description = "item.linkId"
+
+* item contains fezExame 1..1 MS 
+
+* item[fezExame].linkId = "1" (exactly)
+* item[fezExame].linkId ^short = "O número da questão"
+* item[fezExame].text = "Fez exame preventivo (Papanicolau) alguma vez?" (exactly)
+* item[fezExame].text ^short = "O texto da questão"
+* item[fezExame] ^short = "Fez exame preventivo (Papanicolau) alguma vez?"
+* item[fezExame].type = #boolean (exactly)
+* item[fezExame].type ^short = "O tipo da resposta para a questão"
+
+

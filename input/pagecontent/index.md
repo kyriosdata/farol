@@ -1,37 +1,34 @@
 ### Contexto (processos e atores)
 
-O exame citopatológico emprega uma [ficha](./requisicao-exame-citopatologico.pdf) (formulário) amplamente usada em todo o território nacional e cujos processos pertinentes são apoiados pelo SISCAN.
+O exame citopatológico emprega uma [ficha](./requisicao-exame-citopatologico.pdf) 
+(formulário) amplamente usada em todo o território nacional e cujos processos 
+pertinentes são apoiados pelo SISCAN.
 
 A requisição deste exame é criada por um profissional de saúde, em um encontro com a paciente,
-no qual é feita a coleta de material (amostra) enviado a um laboratório
-para a produção do laudo correspondente. No sentido inverso,
-o laudo produzido e assinado à mão pelo citopatologista e transferido fisicamente do
+no qual são coletados dados relevantes e material (amostra) enviados a um laboratório
+para a produção do laudo correspondente. O laudo produzido 
+é então manualmente assinado pelo citopatologista e encaminhado fisicamente do
 laboratório até o estabelecimento de saúde que o requisitou.
 
-Esta transferência exige o transporte físico dos laudos e, naturalmente,
-o esforço administrativo correspondente tanto do laboratório quanto do
-estabelecimento.
+Este cenário cria uma oportunidade contemplada
+pelo presente _Guia de Implementação_, um instrumento formal 
+para mostrar como o padrão FHIR pode ser empregado em um dado cenário.
+Neste caso, para promover a integração entre o SISCAN e qualquer sistema
+de informação em saúde que emite requisições de exames citopatológicos
+ou produz laudos para estes exames. Em particular, laudos devem ser
+assinados digitalmente, o que permite o seu consumo imediato, o que 
+é imprescindível para ação rápida, se necessária.
 
-Esse processo é lento, em particular, por exigir a assinatura manual do laudo
-e a subsequente transferência dele até o estabelecimento de saúde de
-origem (onde a requisição foi criada). Este cenário cria uma oportunidade contemplada
-pelo presente _Guia de Implementação_.
-
-Este _Guia de Implementação_ oferece uma proposta de emprego do padrão FHIR visando a
-transformação digital deste processo lento, destacado acima,
-ao mesmo tempo que oferece alinhamento do SISCAN à Estratégia de Saúde Digital 2020-2028 (ESD28).
 
 ### Necessidade
 
 > Reduzir ao mínimo o tempo entre a produção de laudo de exame citopatológico e a sua
-> disponibilidade no estabelecimento de saúde específico para a continuidade do cuidado
-> e alinhamento do SISCAN à ESD28.
+> disponibilidade no estabelecimento de saúde específico para a continuidade do cuidado.
 
 ### Solução proposta
 
 > Transformação digital dos <a href="requisitos.html">casos de uso</a> pertinentes à submissão de requisição e
-> à assinatura digital de laudo de exame citopatológico com integração por meio da RNDS, e em conformidade
-> com a Estratégia de Saúde Digital 2000-2028.
+> ao registro de laudo de exame citopatológico com assinatura digital, realizados por todo e qualquer sistema de informação em saúde integrado à RNDS.
 
 ### Como chegamos até aqui?
 

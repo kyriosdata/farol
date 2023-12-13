@@ -3,6 +3,41 @@ Alias: $exame-clinico = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/
 Alias: $respostas-anamnese = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/respostas-anamnese
 
 // ------------------------------------------------------
+// questoes
+// ------------------------------------------------------
+
+Profile: QuestoesAnamnese
+Parent: Questionnaire
+Id: questoes
+Title: "Questões para anmnese do exame citopatológico"
+Description: "Descrição"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/questoes"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Extensão para idade estimada de paciente</div>"
+* ^status = #draft
+
+* version = "0.0.1"
+
+* item ^slicing.discriminator.type = #pattern
+* item ^slicing.discriminator.path = "linkId"
+* item ^slicing.rules = #open
+* item ^slicing.ordered = false 
+* item ^slicing.description = "item.linkId"
+
+* item contains fezExame 1..1 MS 
+
+* item[fezExame].linkId = "1" (exactly)
+* item[fezExame].linkId ^short = "O número da questão"
+* item[fezExame].text = "Fez exame preventivo (Papanicolau) alguma vez?" (exactly)
+* item[fezExame].text ^short = "O texto da questão"
+* item[fezExame] ^short = "Fez exame preventivo (Papanicolau) alguma vez?"
+* item[fezExame].type = #boolean (exactly)
+* item[fezExame].type ^short = "O tipo da resposta para a questão"
+
+
+// ------------------------------------------------------
 // exame-clinico
 // ------------------------------------------------------
 
@@ -45,14 +80,14 @@ Profile: RespostasAnamnese
 Parent: QuestionnaireResponse
 Id: respostas-anamnese
 Title: "Respostas da anamnese da requisição de exame citopatológico"
-Description: "Estabelece estrutura mínima para respostas da anamnese"
+Description: "Estabelece estrutura mínima para respostas da anamnese realizada como insumo para exame citopatológico"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/respostas-anamnese"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Anamnese para exame citopatológico</div>"
 
-* questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/questoes" (exactly)
+* questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/anamnese-exame-citopatologico" (exactly)
 * subject 1..
 * authored 1..
 
@@ -173,35 +208,5 @@ Description: "Dados demográficos de paciente para Exame Citopatológico"
 // * telecom only $BRMeioContato
 
 
-Profile: QuestoesAnamnese
-Parent: Questionnaire
-Id: questoes
-Title: "Questões para anmnese do exame citopatológico"
-Description: "Descrição"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/questoes"
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Extensão para idade estimada de paciente</div>"
-* ^status = #draft
-
-* version = "0.0.1"
-
-
-* item ^slicing.discriminator.type = #pattern
-* item ^slicing.discriminator.path = "linkId"
-* item ^slicing.rules = #open
-* item ^slicing.ordered = false 
-* item ^slicing.description = "item.linkId"
-
-* item contains fezExame 1..1 MS 
-
-* item[fezExame].linkId = "1" (exactly)
-* item[fezExame].linkId ^short = "O número da questão"
-* item[fezExame].text = "Fez exame preventivo (Papanicolau) alguma vez?" (exactly)
-* item[fezExame].text ^short = "O texto da questão"
-* item[fezExame] ^short = "Fez exame preventivo (Papanicolau) alguma vez?"
-* item[fezExame].type = #boolean (exactly)
-* item[fezExame].type ^short = "O tipo da resposta para a questão"
 
 

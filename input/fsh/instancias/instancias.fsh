@@ -113,7 +113,7 @@ Description: "Reúne dados de uma ficha de requisição"
 // requisição
 // ------------------------------------------------------
 
-Alias: $motivo-exame = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-exame
+Alias: $motivos-exame = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivos-exame
 
 Instance: requisicao
 InstanceOf: ServiceRequest
@@ -135,7 +135,7 @@ Description: "Requisição de exame citopatológico"
   * display = "EXAME CITOPATOLÓGICO CERVICO VAGINAL/MICROFLORA-RASTREAMENTO"
 
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
-* reasonCode[0].coding[0] = $motivo-exame#rastreamento
+* reasonCode[0].coding[0] = $motivos-exame#rastreamento
 * supportingInfo[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
 * supportingInfo[1] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04)
 
@@ -455,7 +455,7 @@ conformidade com as exigências estabelecidas pelo Ministério da Saúde (INCA)>
 * meta.profile[0] = $respostas-anamnese
 
 * status = #completed
-* questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/questoes"
+* questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/anamnese-exame-citopatologico"
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
 * authored = "2023-01-01"
 

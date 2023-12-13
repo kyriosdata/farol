@@ -165,3 +165,22 @@ Description: "Tipos de epitélios em amostra de exame citopatológico"
 * #escamoso "Escamoso" "Escamoso"
 * #grandular "Grandular" "Grandular"
 * #metaplasico "Metaplásico" "Metaplásico"
+
+// ------------------------------------------------------
+// tipo-epitelio
+// ------------------------------------------------------
+
+ValueSet: TipoEpitelio
+Id: tipo-epitelio
+Title: "Tipo epitélio"
+Description: "Possíveis motivos para requisição de exame citopatológico"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivos-exame"
+
+* ^status = #draft
+* ^experimental = false
+
+* include codes from system TiposDeEpitelios

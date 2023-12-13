@@ -92,6 +92,33 @@ Description: "Tipos de epitélios em amostra de exame citopatológico"
 * #grandular "Grandular" "Grandular"
 * #metaplasico "Metaplásico" "Metaplásico"
 
+// ------------------------------------------------------
+// tipos-adequabilidade
+// ------------------------------------------------------
+
+CodeSystem: TiposAdequabilidade
+Id: tipos-adequabilidade
+Title: "Classificação da adequabilidade do material"
+Description: "Definição da classificação da adequabilidade do material (amostra)"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-amostra-rejeitada"
+
+* ^status = #draft
+* ^caseSensitive = true
+* ^experimental = false
+
+* #satisfatoria "Satisfatória" "Satisfatória"
+* #material "Material acelular" "Material acelular em menos de 10% do esfregaço"
+* #sangue "Sangue" "Sangue em mais de 75% do esfregaço"
+* #piocitos "Piócitos" "Piócitos em mais de 75% do esfregaço"
+* #dessecamento "Dessecamento" "Artefatos de dessecamento em mais de 75% do esfregaço"
+* #contaminantes "Contaminantes" "Contaminantes externos em mais de 75% do esfregaço"
+* #superposicao "Superposição" "Intensa superposição celular em mais de 75% do esfregaço"
+* #outros "Outros" "Outros motivos"
+
 
 // ------------------------------------------------------
 // vs-inspecao-colo
@@ -204,3 +231,22 @@ Description: "Possíveis motivos pelos quais uma amostra é rejeitada"
 * ^experimental = false
 
 * include codes from system MotivoAmostraRejeitada
+
+// ------------------------------------------------------
+// adequabilidade-material
+// ------------------------------------------------------
+
+ValueSet: AdequabilidadeMaterial
+Id: adequabilidade-material
+Title: "Adequabilidade do material (amostra)"
+Description: "Caracterização da adequabilidade do material"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-rejeicao"
+
+* ^status = #draft
+* ^experimental = false
+
+* include codes from system TiposAdequabilidade

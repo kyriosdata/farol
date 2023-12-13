@@ -1,3 +1,6 @@
+
+Alias: $loinc = http://loinc.org
+
 // ------------------------------------------------------
 // inspecao-colo
 // ------------------------------------------------------
@@ -88,8 +91,6 @@ Description: "Possíveis motivos para requisição de exame citopatológico"
 // vs-motivo-exame
 // ------------------------------------------------------
 
-Alias: $loinc = http://loinc.org
-
 ValueSet: NivelEducacional
 Id: niveis-educacionais
 Title: "Níveis educacionais"
@@ -119,3 +120,48 @@ do Ministério da Educação.
 * $loinc#LA12461-2 "Mestrado"
 * $loinc#LA12462-0 "Doutorado"
 * $loinc#LA4489-6 "Desconhecido"
+
+// ------------------------------------------------------
+// motivo-amostra-rejeitada
+// ------------------------------------------------------
+
+CodeSystem: MotivoAmostraRejeitada
+Id: motivo-amostra-rejeitada
+Title: "Motivo de rejeição da amostra"
+Description: "Motivo pelo qual a amostra é rejeitada e o laudo inviável."
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-amostra-rejeitada"
+
+* ^status = #draft
+* ^caseSensitive = true
+* ^experimental = false
+
+* #identificacao "falha na identificação" "Ausência ou erro na identificação da lâmina, frasco ou requisição"
+* #dano "lâmina" "Lâmina danificada ou ausente"
+* #alheia "Causa alheia" "Causa alheia ao laboratório"
+* #outra "Outras causas" "Outras causas"
+
+// ------------------------------------------------------
+// tipos-epitelios
+// ------------------------------------------------------
+
+CodeSystem: TiposDeEpitelios
+Id: tipos-epitelios
+Title: "Tipos de epitélios"
+Description: "Tipos de epitélios em amostra de exame citopatológico"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-amostra-rejeitada"
+
+* ^status = #draft
+* ^caseSensitive = true
+* ^experimental = false
+
+* #escamoso "Escamoso" "Escamoso"
+* #grandular "Grandular" "Grandular"
+* #metaplasico "Metaplásico" "Metaplásico"

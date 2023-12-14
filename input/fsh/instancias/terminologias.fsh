@@ -195,6 +195,30 @@ Description: "Células atípicas"
 * #nao-neoplasicas "Possivelmente não neoplásicas"
 * #lesao-nao-descartavel "Não se pode afastar lesão de alto grau"
 
+
+// ------------------------------------------------------
+// atipias
+// ------------------------------------------------------
+
+CodeSystem: Atipias
+Id: atipias
+Title: "Atipias"
+Description: "Atipias"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/atipias"
+
+* ^status = #draft
+* ^caseSensitive = true
+* ^experimental = false
+
+* #baixo "Lesão baixo grau" "Lesão intra-epitelial de baixo grau (compreendendo efeito citopático pelo HPV e neoplasia intra-epitelial cervical grau I)"
+* #alto "Lesão alto grau" "Lesão intra-epitelial de alto grau (compreendendo neoplasias intraepiteliais cervicais graus II e III)"
+* #possivel-microinvasao "Lesão intra-epitelial de alto grau , não podendo excluir micro-invasão"
+* #carcinome "Carcinoma" "Carcinoma epidermóide invasor"
+
 // ------------------------------------------------------
 // vs-inspecao-colo
 // ------------------------------------------------------
@@ -370,8 +394,8 @@ Description: "Microbiologia"
 
 ValueSet: CelulaAtipica
 Id: celula-atipica
-Title: "Cálula atípica"
-Description: "Microbiologia"
+Title: "Célula atípica"
+Description: "Célula atípica"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
@@ -383,3 +407,21 @@ Description: "Microbiologia"
 
 * include codes from system CelulasAtipicas
 
+// ------------------------------------------------------
+// atipia
+// ------------------------------------------------------
+
+ValueSet: Atipia
+Id: atipia
+Title: "Atipia"
+Description: "Atipia"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/atipia"
+
+* ^status = #draft
+* ^experimental = false
+
+* include codes from system Atipias

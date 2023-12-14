@@ -1,5 +1,5 @@
 Alias: $cbo = https://fhir.fabrica.inf.ufg.br/CodeSystem/BRCBO
-Alias: $ne = https://fhir.fabrica.inf.ufg.br/StructureDefinition/NivelEducacional
+Alias: $ne = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educational
 
 
 Alias: $loinc = http://loinc.org
@@ -19,4 +19,3 @@ Alias: $yesnodontknow = http://hl7.org/fhir/ValueSet/yesnodontknow
 
 
 Alias: $br-tipo-documento-individuo = https://rnds-fhir.saude.gov.br/ValueSet/BRTipoDocumentoIndividuo-1.0
-Alias: $br-nivel-educacional-extension = https://rnds-fhir.saude.gov.br/StructureDefinition/br-nivel-educacional-extension

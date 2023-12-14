@@ -17,14 +17,14 @@ Daí segue o exemplo, mas comentado.
 * meta.lastUpdated = "2022-08-09T23:18:22.558Z"
 
 * identifier[0]
-  * system = "http://rnds.saude.gov.br/fhir/r4/NamingSystem/cns"
+  * system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
   * use = #usual
-  * value = "cns2345234234234"
+  * value = "2345234234234"
 
 * identifier[1]
   * system = "https://fhir.fabrica.inf.ufg.br/ns/cpf"
   * use = #usual
-  * value = "cpf2345234234234"
+  * value = "234.523.423-42"
 
 * active = true
 

@@ -3,7 +3,7 @@ Parent: Observation
 Id: br-anamnese-exame-citopatologico
 Title: "Anamnese para exame citopatológico"
 Description: "Registra informações obtidas no momento da coleta de amostra para exame citopatológico. As informações aqui registradas são uma evolução da ficha de requisição (ficha de cor rosa)."
-* ^url = "https://rnds-fhir.saude.gov.br/StructureDefinition/AnamneseExameCitopatologico"
+* ^url = "https://rnds-fhir.saude.gov.br/StructureDefinition/br-anamnese-exame-citopatologico"
 * ^status = #draft
 * ^publisher = "INCA/UFG"
 * ^contact.name = "Fábio Nogueira de Lucena"
@@ -49,11 +49,9 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
     sangramentoAposMenopausa 1..1
 * component[jaFezExamePreventivo] ^short = "Registra se a paciente já fez exame preventivo"
 * component[jaFezExamePreventivo] ^definition = "É preciso localizar um código pertinente ou criar CodeSystem correspondente. Saber se já fez é útil, mesmo que não se saiba qual a data?"
-* component[jaFezExamePreventivo].code from $BRQuestoesExameCitopatologico (required)
 * component[jaFezExamePreventivo].code ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
 * component[jaFezExamePreventivo].code ^binding.extension.valueString = "ObservationCode"
-* component[jaFezExamePreventivo].code.coding.system 1..
-* component[jaFezExamePreventivo].code.coding.system = "http://rnds-fhir.saude.gov.br/CodeSystem/BRQuestoesExameCitopatologico" (exactly)
+* component[jaFezExamePreventivo].code.coding.system ..0
 * component[jaFezExamePreventivo].code.coding.version ..0
 * component[jaFezExamePreventivo].code.coding.code 1..
 * component[jaFezExamePreventivo].code.coding.code = #1 (exactly)
@@ -66,6 +64,7 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 * component[jaFezExamePreventivo].code.text = "Você já realizou o exame citopatológico?" (exactly)
 * component[jaFezExamePreventivo].value[x] 1..
 * component[jaFezExamePreventivo].value[x] only boolean
+* component[jaFezExamePreventivo].value[x] ^short = "O valor true para sim, já fez o exame ou false (caso não tenha feito o exame)"
 * component[jaFezExamePreventivo].dataAbsentReason ..0
 * component[jaFezExamePreventivo].interpretation ..0
 * component[jaFezExamePreventivo].referenceRange ..0

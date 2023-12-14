@@ -1,4 +1,4 @@
-Alias: $cbo = https://fhir.fabrica.inf.ufg.br/CodeSystem/BRCBO
+Alias: $cbo = http://www.saude.gov.br/fhir/r4/CodeSystem/BRCBO
 Alias: $ne = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional
 
 

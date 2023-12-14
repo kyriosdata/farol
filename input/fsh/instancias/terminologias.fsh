@@ -82,7 +82,7 @@ Description: "Tipos de epitélios em amostra de exame citopatológico"
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-amostra-rejeitada"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-epitelios"
 
 * ^status = #draft
 * ^caseSensitive = true
@@ -104,7 +104,7 @@ Description: "Definição da classificação da adequabilidade do material (amos
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-amostra-rejeitada"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-adequabilidade"
 
 * ^status = #draft
 * ^caseSensitive = true
@@ -119,6 +119,81 @@ Description: "Definição da classificação da adequabilidade do material (amos
 * #superposicao "Superposição" "Intensa superposição celular em mais de 75% do esfregaço"
 * #outros "Outros" "Outros motivos"
 
+
+// ------------------------------------------------------
+// tipos-adequabilidade
+// ------------------------------------------------------
+
+CodeSystem: AlteracoesCelularesBenignas
+Id: alteracoes-celulares-benignas
+Title: "Classificação da alterações celulares"
+Description: "Definição das várias alterações celulares benignas relevantes para o exame citopatológico"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/alteracoes-celulares-benignas"
+
+* ^status = #draft
+* ^caseSensitive = true
+* ^experimental = false
+
+* #inflamacao "Inflamação" "Inflamação"
+* #metaplasia "Metaplasia" "Metaplasia escamosa imatura"
+* #reparacao "Reparação" "Reparação"
+* #atrofia "Atrofia" "Atrofia com inflamação"
+* #radiacao "Radiação" "Radiação"
+* #outros "Outros" "Outros"
+
+// ------------------------------------------------------
+// microbiologias
+// ------------------------------------------------------
+
+CodeSystem: Microbiologias
+Id: microbiologias
+Title: "Microbiologias"
+Description: "Microbiologias"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/microbiologias"
+
+* ^status = #draft
+* ^caseSensitive = true
+* ^experimental = false
+
+* #lactobacillus "Lactobacillus sp"
+* #cocos "Cocos"
+* #chlamydia "Sugestivo de Chlamydia sp"
+* #actinomyces "Actinomyces sp"
+* #candida "Candida sp"
+* #trichomonas "Trichomonas vaginalis"
+* #herpes "Grupo Herpes" "Efeito citopático compatível com vírus do grupo Herpes"
+* #bacilos-supracitoplasmaticos "Bacilos" "Bacilos supracitoplasmáticos (sugestivos de Gardnerella/Mobiluncus)"
+* #bacilos-outros "Outros bacilos"
+* #outros "Outros"
+
+// ------------------------------------------------------
+// celulas-atipicas
+// ------------------------------------------------------
+
+CodeSystem: CelulasAtipicas
+Id: celulas-atipicas
+Title: "Células atípicas"
+Description: "Células atípicas"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/celulas-atipicas"
+
+* ^status = #draft
+* ^caseSensitive = true
+* ^experimental = false
+
+* #nao-neoplasicas "Possivelmente não neoplásicas"
+* #lesao-nao-descartavel "Não se pode afastar lesão de alto grau"
 
 // ------------------------------------------------------
 // vs-inspecao-colo
@@ -244,9 +319,67 @@ Description: "Caracterização da adequabilidade do material"
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-rejeicao"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/adequabilidade-material"
 
 * ^status = #draft
 * ^experimental = false
 
 * include codes from system TiposAdequabilidade
+
+// ------------------------------------------------------
+// alteracao-celular-benigna
+// ------------------------------------------------------
+
+ValueSet: AlteracaoCelularBenigna
+Id: alteracao-celular-benigna
+Title: "Alteração celular benigna"
+Description: "Identifica alteração celular benigna relevante para exame citopatológico"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/alteracao-celular-benigna"
+
+* ^status = #draft
+* ^experimental = false
+
+* include codes from system AlteracoesCelularesBenignas
+
+// ------------------------------------------------------
+// microbiologias
+// ------------------------------------------------------
+
+ValueSet: Microbiologia
+Id: microbiologia
+Title: "Microbiologia"
+Description: "Microbiologia"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/microbiologia"
+
+* ^status = #draft
+* ^experimental = false
+
+* include codes from system Microbiologias
+
+// ------------------------------------------------------
+// celula-atipica
+// ------------------------------------------------------
+
+ValueSet: CelulaAtipica
+Id: celula-atipica
+Title: "Cálula atípica"
+Description: "Microbiologia"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/celula-atipica"
+
+* ^status = #draft
+* ^experimental = false
+
+* include codes from system CelulasAtipicas
+

@@ -15,7 +15,7 @@ definida ([LOINC LL836-8](https://loinc.org/LL836-8/)).
 """
 
 * ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Extensão para idade estimada de paciente</div>"
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Extensão para registro do nível educacional</div>"
 
 * ^status = #draft
 

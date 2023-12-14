@@ -22,7 +22,7 @@ Daí segue o exemplo, mas comentado.
   * value = "cns2345234234234"
 
 * identifier[1]
-  * system = "http://rnds.saude.gov.br/fhir/r4/NamingSystem/cpf"
+  * system = "https://fhir.fabrica.inf.ufg.br/ns/cpf"
   * use = #usual
   * value = "cpf2345234234234"
 

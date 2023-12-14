@@ -164,13 +164,13 @@ Description: "Padronização de endereços no Brasil (adaptação de BREndereco)
 * city from $BRMunicipio-1.0 (required)
 * city ^short = "Município"
 * city ^definition = "Município do endereço."
-* city ^binding.description = "Município"
+* city ^binding.description = "Municípios brasileiros"
 * district ..0
 * state 1.. MS
 * state from $BRUnidadeFederativa-1.0 (required)
 * state ^short = "UF"
 * state ^definition = "Unidade Federativa (estados ou Distrito Federal) do endereço."
-* state ^binding.description = "Unidade Federativa"
+* state ^binding.description = "Estados brasileiros"
 * postalCode 1.. MS
 * postalCode ^short = "CEP"
 * postalCode ^definition = "Código de Endereçamento Postal. Utilizar a máscara XXXXX-XXXX."
@@ -198,7 +198,7 @@ Description: "Dados demográficos de paciente para Exame Citopatológico"
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente-siscan"
 
 * ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Extensão para idade estimada de paciente</div>"
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Perfil de paciente alinhado com a definição de BRIndividuo (perfil) definido pelo Ministério da Saúde (Brasil).</div>"
 
 * ^status = #draft
 

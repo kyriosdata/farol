@@ -1,7 +1,8 @@
 Alias: $tipodocumento = http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoDocumento
 Alias: $idade = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade
-Alias: $nivel-educacional = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educational
+Alias: $nivel-educacional = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional
 Alias: $respostas-anamnese = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/respostas-anamnese
+Alias: $siscan = http://saude.gov.br/SISCAN
 
 // ------------------------------------------------------
 // 
@@ -21,7 +22,7 @@ Description: "Representa uma ficha preenchida de requisiçõa de exame citopatol
 // Associado ao Bundle porque o SISCAN (INCA) atribui
 // este valor a todo o conjunto de informações, inclusive
 // com a assinatura, que é fornecida no Bundle
-* identifier.system = "http://saude.gov.br/SISCAN"
+* identifier.system = $siscan
 * identifier.value = "código protocolo SISCAN"
 
 // Data e hora em que a requisição foi submetida
@@ -183,6 +184,10 @@ Alias: $etniaindigena = http://www.saude.gov.br/fhir/r4/CodeSystem/BREtniaIndige
 Alias: $nacionalidade = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade
 Alias: $cs-nacionalidade = http://www.saude.gov.br/fhir/r4/CodeSystem/BRNacionalidade
 Alias: $pontoreferencia = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator
+Alias: $nome-mae = http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName
+Alias: $cns = http://saude.gov.br/CNS
+Alias: $cpf = http://saude.gov.br/CPF
+Alias: $paciente-siscan = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente-siscan
 
 Instance: paciente
 InstanceOf: Patient
@@ -190,7 +195,7 @@ Usage: #example
 Title: "Rosa"
 Description: "Paciente assistida"
 
-* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente-siscan"
+* meta.profile[0] = $paciente-siscan
 
 * text.status = #empty
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>A paciente para a qual o exame é solicitado.</div>"
@@ -200,14 +205,14 @@ Description: "Paciente assistida"
 // ------------
 
 // Cartão SUS
-* identifier[0].system = "http://saude.gov.br/CNS"
+* identifier[0].system = $cns
 * identifier[0].value = "cns da dona Rosa"
 
 // Nome completo da mulher
 * name[0].text = "Rosa Silva"
 
 // Nome da mãe
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName"
+* extension[0].url = $nome-mae
 * extension[0].valueString = "Rosa Monteiro Silva"
 
 // Data de nascimento
@@ -222,7 +227,7 @@ Description: "Paciente assistida"
 * name[1].text = "Rosinha"
 
 // CPF
-* identifier[1].system = "http://saude.gov.br/CPF"
+* identifier[1].system = $cpf
 * identifier[1].value = "12334534553"
 
 // Idade (binding para http://hl7.org/fhir/ValueSet/age-units)

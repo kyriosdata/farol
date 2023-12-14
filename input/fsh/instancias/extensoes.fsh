@@ -19,7 +19,7 @@ definida ([LOINC LL836-8](https://loinc.org/LL836-8/)).
 
 * ^status = #draft
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educational"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional"
 
 * ^context[0].type = #element
 * ^context[0].expression = "Patient"

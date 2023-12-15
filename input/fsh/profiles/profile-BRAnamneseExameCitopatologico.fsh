@@ -5,7 +5,7 @@ Parent: Observation
 Id: br-anamnese-exame-citopatologico
 Title: "Anamnese para exame citopatológico"
 Description: "Registra informações obtidas no momento da coleta de amostra para exame citopatológico. As informações aqui registradas são uma evolução da ficha de requisição (ficha de cor rosa)."
-* ^url = "https://rnds-fhir.saude.gov.br/StructureDefinition/br-anamnese-exame-citopatologico"
+* ^url = "https://fhir.fabrica.inf.ufg.br/StructureDefinition/br-anamnese-exame-citopatologico"
 * ^status = #draft
 * ^publisher = "INCA/UFG"
 * ^contact.name = "Fábio Nogueira de Lucena"
@@ -95,7 +95,6 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 * component[dataUltimoExame].referenceRange ..0
 
 * component[usaDIU].code ^short = "Registra se a paciente faz uso de DIU"
-* component[usaDIU].code from $BRQuestoesExameCitopatologico (required)
 * component[usaDIU].code ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
 * component[usaDIU].code ^binding.extension.valueString = "ObservationCode"
 * component[usaDIU].code.coding.id ..0

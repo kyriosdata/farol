@@ -75,7 +75,6 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 
 * component[dataUltimoExame] ^short = "Registra data do último exame, se for o caso"
 * component[dataUltimoExame] ^definition = "A data em que foi realizado pela última vez o exame citopatológico."
-* component[dataUltimoExame].code from $BRQuestoesExameCitopatologico (required)
 * component[dataUltimoExame].code ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
 * component[dataUltimoExame].code ^binding.extension.valueString = "ObservationCode"
 * component[dataUltimoExame].code ^binding.description = "Códigos para informações fornecidas pela paciente"

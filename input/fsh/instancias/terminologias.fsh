@@ -219,6 +219,55 @@ Description: "Atipias"
 * #possivel-microinvasao "Lesão intra-epitelial de alto grau , não podendo excluir micro-invasão"
 * #carcinome "Carcinoma" "Carcinoma epidermóide invasor"
 
+
+// ------------------------------------------------------
+// questoes-anamnese
+// ------------------------------------------------------
+
+CodeSystem: AnamneseCitopatologia
+Id: anamnese-citopatologia
+Title: "Informações da anamnese de exame citopatológico"
+Description: "Identificação dos itens de informação coletados na anamnese de exame citopatológico"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/anamnese-citopatologia"
+
+* ^status = #draft
+* ^caseSensitive = true
+* ^experimental = false
+
+* #ja-fez "Você já realizou o exame citopatológico?"
+* #diu "Usa DIU?"
+* #pilula "Usa pílula anticoncepcional?"
+* #radioterapia "Já fez tratamento por radioterapia?"
+* #sangramento-relacao "Tem ou teve sangramento após relação?"
+* #sangramento-menopausa "Tem ou teve sangramento após menopausa?"
+
+// ------------------------------------------------------
+// vs-inspecao-colo
+// ------------------------------------------------------
+
+ValueSet: QuestoesAnamnese
+Id: questoes-anamnese
+Title: "Informação coletada na anamnese de exame citopatógico"
+Description: "Identificação de item de informação coletado pela anamnese de exame citopatológico"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/vs-inspecao-colo"
+
+* ^status = #draft
+* ^experimental = false
+
+* include codes from system AnamneseCitopatologia
+* $loinc#60432-2 "Data do último exame"
+* $loinc#66174-4 "Está grávida?"
+* $loinc#63873-4 "Usa hormônio na menopausa?"
+* $loinc#8665-2 "Data da última menstruação"
+
 // ------------------------------------------------------
 // vs-inspecao-colo
 // ------------------------------------------------------

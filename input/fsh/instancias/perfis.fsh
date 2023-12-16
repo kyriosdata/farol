@@ -274,6 +274,7 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 * component[jaFezExamePreventivo] ^definition = "É preciso localizar um código pertinente ou criar CodeSystem correspondente. Saber se já fez é útil, mesmo que não se saiba qual a data?"
 * component[jaFezExamePreventivo].code ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
 * component[jaFezExamePreventivo].code ^binding.extension.valueString = "ObservationCode"
+* component[jaFezExamePreventivo].code.coding 1..1
 * component[jaFezExamePreventivo].code.coding.system 1..
 * component[jaFezExamePreventivo].code.coding.system = $anamnese-citopatologia (exactly)
 * component[jaFezExamePreventivo].code.coding.version ..0
@@ -286,8 +287,9 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 * component[jaFezExamePreventivo].code.coding.display ^definition = "A pergunta \"já fez exame preventivo?\""
 * component[jaFezExamePreventivo].code.coding.userSelected ..0
 * component[jaFezExamePreventivo].code.text ..0
-* component[jaFezExamePreventivo].value[x] 1..
-* component[jaFezExamePreventivo].value[x] only boolean
+* component[jaFezExamePreventivo].value[x] 1..1
+* component[jaFezExamePreventivo].value[x] only CodeableConcept
+* component[jaFezExamePreventivo].value[x] from $yesnodontknow (required)
 * component[jaFezExamePreventivo].value[x] ^short = "O valor true para sim, já fez o exame ou false (caso não tenha feito o exame)"
 * component[jaFezExamePreventivo].dataAbsentReason ..0
 * component[jaFezExamePreventivo].interpretation ..0
@@ -301,7 +303,7 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 * component[dataUltimoExame].code.coding.system 1..
 * component[dataUltimoExame].code.coding.system = $loinc (exactly)
 * component[dataUltimoExame].code.coding.version ..0
-* component[dataUltimoExame].code.coding.code 1..
+* component[dataUltimoExame].code.coding.code 1..1
 * component[dataUltimoExame].code.coding.code = #60432-2 (exactly)
 * component[dataUltimoExame].code.coding.code ^short = "data of previous pap smear"
 * component[dataUltimoExame].code.coding.code ^definition = "Data da realização do último exame."
@@ -433,9 +435,9 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 
 
 Invariant: com-1
-Description: "Se fornecida data do último exame, então o exame preventivo já foi realizado anteriormente."
+Description: "Se fornecida data do último exame, então deve ter sido confirmada a realização de exame anteriormente."
 Severity: #error
-Expression: "component.code.coding.where(code = '60432-2').empty().not() implies component.select(code.coding.code = 'ja-fez' and value = true).allTrue()"
+Expression: "component.code.coding.where(code = '60432-2').empty().not() implies component.where(code.coding.code = 'ja-fez' and value.coding.code = 'Y').exists()"
 
 Mapping: ficha
 Id: ficha

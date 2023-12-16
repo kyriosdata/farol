@@ -15,16 +15,16 @@ Usage: #definition
 * type.coding[0].code = #TAX
 * type.text = "Número de inscrição no Cadastro de Pessoa Física (CPF)"
 
-* description = "Identificador do número de inscrição no Cadastro de Pessoas Físicas (CPF)"
+* usage = "Fornecido pelo interessado como parte da identificação do paciente"
 
 * jurisdiction[0].coding[0].system = "urn:iso:std:iso:3166"
 * jurisdiction[0].coding[0].code = #BR
 * jurisdiction[0].text = "Em todo o território nacional (brasileiro)"
-
-* usage = "Fornecido pelo interessado como parte da identificação do paciente"
 
 * uniqueId[0].type = #uri
 * uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ns/cpf"
 * uniqueId[0].preferred = true
 * uniqueId[0].comment = "Criado pela ausência de NamingSystem nacional para o CPF"
 * uniqueId[0].period.start = "2023-11-13"
+
+* description = "Identificador do número de inscrição no Cadastro de Pessoas Físicas (CPF)"

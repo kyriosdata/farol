@@ -11,25 +11,26 @@ Usage: #definition
 * publisher = "Ministério da Saúde (INCA)"
 * responsible = "Instituto Nacional do Câncer (SISCAN)"
 
-// identificador de preenchimento ou de espaço reservado (fornecido pelo laboratório)
-* type.text = "O identificador único do exame realizado pelo laboratório"
 * type.coding[0].system = "http://terminology.hl7.org/CodeSystem/v2-0203"
 * type.coding[0].code = #FILL
+* type.text = "O identificador único do exame realizado pelo laboratório"
 
-* useContext.code.system = "http://terminology.hl7.org/CodeSystem/usage-context-type"
-* useContext.code.code = #task
-* useContext.valueCodeableConcept.coding[0].system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
-* useContext.valueCodeableConcept.coding[0].code = #LABOE
-
-* description = """
-Identificador de código único gerado pelo laboratório que realiza exame. 
-"""
-
-* jurisdiction[0].coding[0] = urn:iso:std:iso:3166#BR
 * usage = "Este código é único e emitido pelo laboratório que realiza o exame."
+
+* jurisdiction[0].coding[0].system = "urn:iso:std:iso:3166"
+* jurisdiction[0].coding[0].code = #BR
+* jurisdiction[0].text = "Em todo o território nacional (brasileiro)"
 
 * uniqueId[0].type = #uri
 * uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ns/laboratorio"
 * uniqueId[0].preferred = true
 * uniqueId[0].comment = "Criado pela ausência de NamingSystem nacional para o código gerado por laboratório"
 * uniqueId[0].period.start = "2023-11-13"
+
+* description = "Identificador de código único gerado pelo laboratório que realiza exame."
+
+* useContext.code.system = "http://terminology.hl7.org/CodeSystem/usage-context-type"
+* useContext.code.code = #task
+* useContext.valueCodeableConcept.coding[0].system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+* useContext.valueCodeableConcept.coding[0].code = #LABOE
+

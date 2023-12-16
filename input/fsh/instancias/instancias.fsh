@@ -6,7 +6,7 @@ Alias: $siscan = http://saude.gov.br/SISCAN
 
 // ------------------------------------------------------
 // 
-// bundle-1
+// Requisição de Exame Citopatológico
 // 
 // ------------------------------------------------------
 
@@ -14,7 +14,7 @@ Instance: bundle-1
 InstanceOf: Bundle
 Usage: #example
 Title: "Requisição de exame citopatológico"
-Description: "Representa uma ficha preenchida de requisiçõa de exame citopatológico, possivelmente assinada"
+Description: "Todos os dados pertinentes a uma ficha de requisição de exame citopatológico."
 
 * type = #document
 
@@ -36,7 +36,7 @@ Description: "Representa uma ficha preenchida de requisiçõa de exame citopatol
 // Paciente
 * entry[1]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01"
-  * resource = paciente
+  * resource = rosa
 
 // Requisição de exame (ServiceRequest)
 * entry[2]
@@ -68,9 +68,6 @@ Usage: #example
 Title: "Dados da ficha de Exame Citopatológico"
 Description: "Reúne dados de uma ficha de requisição"
 
-* text.status = #empty
-* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Um documento que inclui a requisição de exame citopatológico (informações pertinentes) e representa a coleta de material para o laudo requisitado.</div>"
-
 // REQUISIÇÃO DE EXAME (REX) a ser acrescentado?
 * status = #final
 * type = http://loinc.org#11485-0
@@ -90,12 +87,13 @@ Description: "Reúne dados de uma ficha de requisição"
   * title = "Requisição de exame citopatológico"
   * text.status = #empty
   * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Requisição de Serviço</div>"
-  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb02)
+  //* entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb02)
+  * entry[0] = Reference(requisicao-tipica)
 
 * section[1]
   * title = "Dados da anamnese"
   * text.status = #empty
-  * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Dados da anamnese (respostas)</div>"
+  * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Dados da anamnese para requisição de exame citopatológico</div>"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
 
 * section[2]
@@ -118,28 +116,24 @@ Alias: $motivos-exame = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivos-e
 
 Instance: requisicao
 InstanceOf: ServiceRequest
+Title: "Pedido de exame citopatológico"
+Description: "Pedido de exame citopatológico"
 Usage: #example
-Title: "Requisicao Um"
-Description: "Requisição de exame citopatológico"
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
 
-* text.status = #empty
-* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Detalhes de requisição de exame citopatológico</div>"
-
 * status = #draft
-* intent = #order
+* intent = #original-order
 
 * code.coding[0]
   * code = #0203010086
   * system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTabelaSUS"
   * display = "EXAME CITOPATOLÓGICO CERVICO VAGINAL/MICROFLORA-RASTREAMENTO"
 
-* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
+* subject = Reference(paciente)
 * reasonCode[0].coding[0] = $motivos-exame#rastreamento
 * supportingInfo[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
 * supportingInfo[1] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04)
-
 
 
 // ------------------------------------------------------
@@ -154,9 +148,6 @@ Usage: #example
 Title: "Exame clínico visando laudo citopatológico"
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/exame-clinico"
-
-* text.status = #empty
-* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Exame clínico que faz parte da requisição</div>"
 
 * status = #final
 * code = http://loinc.org#1-8 // Errado deve ser preenchido
@@ -175,7 +166,7 @@ Title: "Exame clínico visando laudo citopatológico"
   * valueBoolean = false
 
 // ------------------------------------------------------
-// PACIENTE (subject da composition)
+// paciente (subject da composition)
 // ------------------------------------------------------
 
 Alias: $racacorext = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRacaCorEtnia-1.0
@@ -189,16 +180,13 @@ Alias: $cns = http://saude.gov.br/CNS
 Alias: $cpf = http://saude.gov.br/CPF
 Alias: $paciente-siscan = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente-siscan
 
-Instance: paciente
+Instance: rosa
 InstanceOf: Patient
 Usage: #example
 Title: "Rosa"
 Description: "Paciente assistida"
 
 * meta.profile[0] = $paciente-siscan
-
-* text.status = #empty
-* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>A paciente para a qual o exame é solicitado.</div>"
 
 // ------------
 // OBRIGATÓRIOS 
@@ -254,6 +242,9 @@ Description: "Paciente assistida"
 * extension[4].url = $nivel-educacional
 * extension[4].valueCode = #LA12462-0
 
+// ERRO: 
+// Atributo id foi removido pois gerador de Narrativas gera erro
+
 * address[0]
   * use = #home
   * type = #physical
@@ -261,13 +252,13 @@ Description: "Paciente assistida"
   * state = #31
   * postalCode = "74000-000"  // Nao valida a máscara xxxxx-xxx
   * line[0] = "Rua"
-  * line[0].id = "street"
+//  * line[0].id = "street"
   * line[1] = "Rua"
-  * line[1].id = "neighborhood"
+//  * line[1].id = "neighborhood"
   * line[2] = "23"
-  * line[2].id = "number"
+//  * line[2].id = "number"
   * line[3] = "bloco B"
-  * line[3].id = "complement"
+//  * line[3].id = "complement"
   * line.extension[0].url = $pontoreferencia
   * line.extension[0].valueString = "próximo ao supermercado"
   
@@ -284,9 +275,6 @@ InstanceOf: Organization
 Usage: #example
 Title: "UBS1"
 Description: "Unidade na qual exame citopatológico é requisitado"
-
-* text.status = #empty
-* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Unidade na qual é elaborada a requisição do exame.</div>"
 
 * name = "Unidade Básica do SUS"
 
@@ -308,9 +296,6 @@ InstanceOf: Questionnaire
 Usage: #definition
 Title: "Anamnese (exame citopatológico)"
 Description: "Questões pertinentes à anamnese do exame citopatológico"
-
-* text.status = #empty
-* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Questões da anamnese da requisição de exame citopatológico</div>"
 
 * url = "https://fhir.fabrica.inf.ufg.br/ccu/anamnese-exame-citopatologico"
 
@@ -452,11 +437,6 @@ Usage: #example
 Title: "Exemplo de anamnese preenchida para exame citopatológico."
 Description: "Respostas para anamnese de exame citopatológico"
 
-* text.status = #empty
-* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Um exemplo de anamnese para 
-requisição de exame citopatológico devidamente preenchida. Este exemplo está em
-conformidade com as exigências estabelecidas pelo Ministério da Saúde (INCA)>.</div>"
-
 * meta.profile[0] = $respostas-anamnese
 
 * status = #completed
@@ -515,3 +495,49 @@ conformidade com as exigências estabelecidas pelo Ministério da Saúde (INCA)>
 * item[10]
   * linkId = "11"
   * answer[0].valueInteger = -3
+
+
+// ------------------------------------------------------
+// requisicao-tipica
+// ------------------------------------------------------
+
+Instance: requisicao-tipica
+InstanceOf: ServiceRequest
+Title: "Requisição típica"
+Description: "Requisição de example citopatológico"
+Usage: #example
+
+* meta.lastUpdated = "2022-08-09T23:18:22.558Z"
+
+/*
+  O identificador da requisição
+*/
+* identifier[0]
+  * system = "http://goias.gov.br/fhir/ns/siscan"
+  * value = "12345678"
+
+* status = #active
+* intent = #order
+
+* instantiatesCanonical = "http://farol-ig.s3-website-sa-east-1.amazonaws.com/ActivityDefinition-coleta.html"
+* instantiatesUri = "http://farol-ig.s3-website-sa-east-1.amazonaws.com/ActivityDefinition-coleta.html"
+
+* code = http://loinc.org#19766-5
+
+* subject = Reference(paciente)
+
+/*
+  Consulta na qual a requisição foi criada
+*/
+
+//* encounter = Reference(consulta)
+
+* authoredOn = "2022-08-09T23:18:22.558Z"
+
+/*
+  Unidade que requisita
+*/
+
+* requester = Reference(enfermeira)
+
+

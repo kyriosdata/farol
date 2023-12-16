@@ -435,7 +435,7 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 Invariant: com-1
 Description: "Se fornecida data do último exame, então o exame preventivo já foi realizado anteriormente."
 Severity: #error
-Expression: "component.code.coding.where(code = '60432-2').exists() implies component.where(code.coding.code = '1' and valueBoolean = true).exists()"
+Expression: "component.code.coding.where(code = '60432-2').empty().not() implies component.select(code.coding.code = 'ja-fez' and value = true).allTrue()"
 
 Mapping: ficha
 Id: ficha

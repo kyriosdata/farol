@@ -130,8 +130,8 @@ Alias: $BRUnidadeFederativa-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRUni
 Alias: $BRMeioContato = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRMeioContato-1.0
 
 Invariant: LinhasEndereco
-Description: "Endereço deve possuir street, number e neighborhood. Possivelmente inclui complement e streetType (vinculação de streetType não é verificada)"
-Expression: "line.select(id in ('streetType' | 'street' | 'number' | 'complement' | 'neighborhood')).allTrue() and line.where(id='number').exists() and line.where(id='neighborhood').exists() and line.where(id='street').exists()"
+Description: "Endereço não pode ser vazio"
+Expression: "line != ''"
 Severity: #error
 
 

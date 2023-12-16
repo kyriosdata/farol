@@ -23,7 +23,7 @@ Description: "Todos os dados pertinentes a uma ficha de requisição de exame ci
 // este valor a todo o conjunto de informações, inclusive
 // com a assinatura, que é fornecida no Bundle
 * identifier.system = $siscan
-* identifier.value = "código protocolo SISCAN"
+* identifier.value = "123.456.789"
 
 // Data e hora em que a requisição foi submetida
 * timestamp = "2023-11-24T09:08:23+03:00"
@@ -68,16 +68,16 @@ Usage: #example
 Title: "Dados da ficha de Exame Citopatológico"
 Description: "Reúne dados de uma ficha de requisição"
 
-// REQUISIÇÃO DE EXAME (REX) a ser acrescentado?
 * status = #final
-* type = http://loinc.org#11485-0
+
+* type = http://loinc.org#80568-9 // LOINC para FORM  (desencorajado por ser genérico)
 
 // Data da coleta da amostra e dados da requisição
 * date = "2023-11-20"
 
 // Responsável
-* author.identifier.system = "http://perfil.org/cns"
-* author.identifier.value = "cns do profissional"
+* author.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
+* author.identifier.value = "95034430023111167"
 
 * title = "Dados da requisição de Exame Citopatológico"
 
@@ -87,8 +87,7 @@ Description: "Reúne dados de uma ficha de requisição"
   * title = "Requisição de exame citopatológico"
   * text.status = #empty
   * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Requisição de Serviço</div>"
-  //* entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb02)
-  * entry[0] = Reference(requisicao-tipica)
+  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb02)
 
 * section[1]
   * title = "Dados da anamnese"
@@ -130,7 +129,7 @@ Usage: #example
   * system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTabelaSUS"
   * display = "EXAME CITOPATOLÓGICO CERVICO VAGINAL/MICROFLORA-RASTREAMENTO"
 
-* subject = Reference(paciente)
+* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
 * reasonCode[0].coding[0] = $motivos-exame#rastreamento
 * supportingInfo[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
 * supportingInfo[1] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04)
@@ -194,10 +193,11 @@ Description: "Paciente assistida"
 
 // Cartão SUS
 * identifier[0].system = $cns
-* identifier[0].value = "cns da dona Rosa"
+* identifier[0].value = "8934543431218990"
 
 // Nome completo da mulher
 * name[0].text = "Rosa Silva"
+* name[0].use = #official
 
 // Nome da mãe
 * extension[0].url = $nome-mae
@@ -267,20 +267,20 @@ Description: "Paciente assistida"
   * value = "99999-9999"
 
 // ------------------------------------------------------
-// Organization (unidade de saúde requisitante)
+// unidade-saude
 // ------------------------------------------------------
 
 Instance: unidade-saude
 InstanceOf: Organization
 Usage: #example
-Title: "UBS1"
+Title: "Unidade Básica de Saúde"
 Description: "Unidade na qual exame citopatológico é requisitado"
 
 * name = "Unidade Básica do SUS"
 
 // CNES
-* identifier.system = "http://saude.gov.br/CNES"
-* identifier.value = "CNES da UBS"
+* identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
+* identifier.value = "123456"
 
 // UF e município
 * address.city = "Goiânia"
@@ -524,7 +524,7 @@ Usage: #example
 
 * code = http://loinc.org#19766-5
 
-* subject = Reference(paciente)
+* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
 
 /*
   Consulta na qual a requisição foi criada

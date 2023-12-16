@@ -85,26 +85,26 @@ Description: "Reúne dados de uma ficha de requisição"
 
 * section[0]
   * title = "Requisição de exame citopatológico"
-  * text.status = #empty
-  * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Requisição de Serviço</div>"
+  // * text.status = #empty
+  // * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Requisição de Serviço</div>"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb02)
 
 * section[1]
   * title = "Dados da anamnese"
-  * text.status = #empty
-  * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Dados da anamnese para requisição de exame citopatológico</div>"
+  // * text.status = #empty
+  // * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Dados da anamnese para requisição de exame citopatológico</div>"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
 
 * section[2]
   * title = "Exame clínico"
-  * text.status = #empty
-  * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Dados do exame clínico</div>"
+  // * text.status = #empty
+  // * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Dados do exame clínico</div>"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04)
 
 * section[3]
   * title = "Unidade de Saúde Requisitante"
-  * text.status = #empty
-  * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Unidade de Saúde Requisitante</div>"
+  // * text.status = #empty
+  // * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Unidade de Saúde Requisitante</div>"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05)
 
 // ------------------------------------------------------

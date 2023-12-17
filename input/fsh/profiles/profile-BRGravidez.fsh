@@ -6,7 +6,7 @@ Description: "Você está grávida?"
 
 // Metadados do perfil
 * ^meta.lastUpdated = "2015-02-07T13:28:17.239+02:00"
-* ^version = "0.1.0"
+* ^version = "0.0.1"
 * ^status = #draft
 * ^purpose = "Registrar estado de gravidez da paciente pela própria paciente"
 

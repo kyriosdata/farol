@@ -13,4 +13,4 @@ Usage: #example
 * photo.url = "https://randomuser.me/api/portraits/med/men/75.jpg"
 * photo.title = "foto pequena"
 
-* qualification.code.coding = http://rnds-fhir.saude.gov.br/CodeSystem/BRCBO#225305
+* qualification.code.coding = http://www.saude.gov.br/fhir/r4/CodeSystem/BRCBO#225305

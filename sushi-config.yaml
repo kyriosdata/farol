@@ -5,7 +5,7 @@ title: "Rastreamento de Câncer de Colo de Útero"
 description: "Inclui definições pertinentes ao exame citopatológico (requisição e resultado) conforme INCA, e correlatos."
 status: draft
 license: CC0-1.0
-version: 0.1.0
+version: 0.0.1
 fhirVersion: 4.0.1
 copyrightYear: 2022+
 releaseLabel: preliminar

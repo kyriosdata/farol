@@ -257,7 +257,7 @@ Description: "Identificação de item de informação coletado pela anamnese de 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/vs-inspecao-colo"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/questoes-anamnese"
 
 * ^status = #draft
 * ^experimental = false

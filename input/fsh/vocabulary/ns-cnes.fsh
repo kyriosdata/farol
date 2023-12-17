@@ -27,4 +27,4 @@ Usage: #definition
 * uniqueId[0].comment = "Criado pela ausência de NamingSystem nacional para o CNES"
 * uniqueId[0].period.start = "2023-11-13"
 
-* description = "Identificador do Cadastro Nacional de Estabelecimentos de Saúde (CNES)"
+* description = "Identificador do Cadastro Nacional de Estabelecimentos de Saúde (CNES). Ou seja, o nome pelo qual é identificado um código CNES. Os códigos atribuídos a estabelecimentos de saúde podem ser consultados em [https://cnes.datasus.gov.br/](https://cnes.datasus.gov.br/)"

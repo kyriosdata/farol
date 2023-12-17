@@ -295,7 +295,7 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 * component[jaFezExamePreventivo].code.text ..0
 * component[jaFezExamePreventivo].value[x] 1..1
 * component[jaFezExamePreventivo].value[x] ^short = "Informa se a paciente já fez exame preventivo (Y), se não fez (N) ou se ela não sabe (unknown)."
-* component[jaFezExamePreventivo].value[x] only string
+* component[jaFezExamePreventivo].value[x] only CodeableConcept
 * component[jaFezExamePreventivo].value[x] from $yesnodontknow (required)
 * component[jaFezExamePreventivo].dataAbsentReason ..0
 * component[jaFezExamePreventivo].interpretation ..0
@@ -343,7 +343,7 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 * component[usaDIU].code.text ..0
 * component[usaDIU].value[x] 1..
 * component[usaDIU].value[x] ^short = "Indica se a paciente usa DIU (Y), não usa (N) ou não sabe (unknown)"
-* component[usaDIU].value[x] only string
+* component[usaDIU].value[x] only CodeableConcept
 * component[usaDIU].value[x] from $yesnodontknow (required)
 * component[usaDIU].value[x] ^short = "Informa se a paciente usa, não usa ou não sabe se usa DIU."
 * component[usaDIU].dataAbsentReason ..0
@@ -364,7 +364,7 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 * component[estaGravida].code.text ..0
 * component[estaGravida].value[x] 1..
 * component[estaGravida].value[x] ^short = "Indica se a paciente está grávida (Y), não está grávida (N) ou não sabe (unknwon)"
-* component[estaGravida].value[x] only string
+* component[estaGravida].value[x] only CodeableConcept
 * component[estaGravida].value[x] from $yesnodontknow (required)
 * component[estaGravida].value[x] ^binding.description = "Informa se a paciente afirma estar grávida, afirma não estar grávida ou afirma que não sabe se está grávida."
 * component[estaGravida].dataAbsentReason ..0
@@ -384,7 +384,7 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 * component[usaPilulaAnticoncepcional].code.text ..0
 * component[usaPilulaAnticoncepcional].value[x] 1..
 * component[usaPilulaAnticoncepcional].value[x] ^short = "Indica se a paciente usa pílula anticoncepcional (Y), não usa (N) ou não sabe (unknwon)"
-* component[usaPilulaAnticoncepcional].value[x] only string
+* component[usaPilulaAnticoncepcional].value[x] only CodeableConcept
 * component[usaPilulaAnticoncepcional].value[x] from $yesnodontknow (required)
 * component[usaPilulaAnticoncepcional].interpretation ..0
 * component[usaPilulaAnticoncepcional].dataAbsentReason ..0
@@ -401,7 +401,7 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 * component[usaHormonioMenopausa].code.text ..0
 * component[usaHormonioMenopausa].value[x] 1..
 * component[usaHormonioMenopausa].value[x] ^short = "O valor Y se a paciente faz uso de hormônio para tratar a menopausa, N para não faz ou unknwon caso a paciente não saiba."
-* component[usaHormonioMenopausa].value[x] only string
+* component[usaHormonioMenopausa].value[x] only CodeableConcept
 * component[usaHormonioMenopausa].value[x] from $yesnodontknow (required)
 * component[usaHormonioMenopausa].dataAbsentReason ..0
 * component[usaHormonioMenopausa].interpretation ..0
@@ -418,7 +418,7 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 * component[jaFezTratamentoPorRadioterapia].code.text ..0
 * component[jaFezTratamentoPorRadioterapia].value[x] 1..
 * component[jaFezTratamentoPorRadioterapia].value[x] ^short = "O valor Y se tratamento por radioterapia já foi realizado pela paciente, N se nunca realizou, e unknown se ela não sabe."
-* component[jaFezTratamentoPorRadioterapia].value[x] only string
+* component[jaFezTratamentoPorRadioterapia].value[x] only CodeableConcept
 * component[jaFezTratamentoPorRadioterapia].value[x] from $yesnodontknow (required)
 * component[jaFezTratamentoPorRadioterapia].dataAbsentReason ..0
 * component[jaFezTratamentoPorRadioterapia].interpretation ..0
@@ -451,7 +451,7 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 * component[sangramentoAposRelacao].code.text ..0
 * component[sangramentoAposRelacao].value[x] 1..
 * component[sangramentoAposRelacao].value[x] ^short = "O valor Y se tem ou já teve sangramento após relação sexual, N caso contrário e unknown caso não saiba."
-* component[sangramentoAposRelacao].value[x] only string
+* component[sangramentoAposRelacao].value[x] only CodeableConcept
 * component[sangramentoAposRelacao].value[x] from $yesnodontknow (required)
 * component[sangramentoAposRelacao].dataAbsentReason ..0
 * component[sangramentoAposRelacao].interpretation ..0
@@ -468,7 +468,7 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 * component[sangramentoAposMenopausa].code.text ..0
 * component[sangramentoAposMenopausa].value[x] 1..
 * component[sangramentoAposMenopausa].value[x] ^short = "O valor Y se a paciente tem ou teve sangramento, N caso contrário e unknown caso não saiba."
-* component[sangramentoAposMenopausa].value[x] only string
+* component[sangramentoAposMenopausa].value[x] only CodeableConcept
 * component[sangramentoAposMenopausa].value[x] from $yesnodontknow (required)
 * component[sangramentoAposMenopausa].dataAbsentReason ..0
 * component[sangramentoAposMenopausa].interpretation ..0

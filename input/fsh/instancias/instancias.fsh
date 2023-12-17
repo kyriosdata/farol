@@ -59,7 +59,7 @@ Description: "Todos os dados pertinentes a uma ficha de requisição de exame ci
   * resource = unidade-saude
 
 // ------------------------------------------------------
-// composition-1
+// composition-1 0
 // ------------------------------------------------------
 
 Instance: composition-1
@@ -108,7 +108,7 @@ Description: "Reúne dados de uma ficha de requisição"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05)
 
 // ------------------------------------------------------
-// requisição
+// requisição 2
 // ------------------------------------------------------
 
 Alias: $motivos-exame = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivos-exame
@@ -165,7 +165,7 @@ Title: "Exame clínico visando laudo citopatológico"
   * valueBoolean = false
 
 // ------------------------------------------------------
-// paciente (subject da composition)
+// rosa (subject da composition)
 // ------------------------------------------------------
 
 Alias: $racacorext = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRacaCorEtnia-1.0
@@ -431,7 +431,7 @@ Description: "Questões pertinentes à anamnese do exame citopatológico"
 // respostas (anamnese)
 // ------------------------------------------------------
 
-Instance: respostas
+Instance: respostas-antigas
 InstanceOf: QuestionnaireResponse
 Usage: #example
 Title: "Exemplo de anamnese preenchida para exame citopatológico."
@@ -541,3 +541,47 @@ Usage: #example
 * requester = Reference(enfermeira)
 
 
+// ------------------------------------------------------
+// respostas
+// ------------------------------------------------------
+
+Alias: $anamnese-citopatologia = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/anamnese-citopatologia
+
+Instance: respostas
+InstanceOf: Observation
+
+* meta.profile = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/br-anamnese-exame-citopatologico"
+
+* status = #final
+* code = http://loinc.org#1-8
+* category = http://terminology.hl7.org/CodeSystem/observation-category#survey
+
+* component[0].code = $anamnese-citopatologia#ja-fez
+* component[0].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
+
+* component[1].code = http://loinc.org#60432-2
+* component[1].valueDateTime = "2023-01-01"
+
+* component[2].code = $anamnese-citopatologia#diu
+* component[2].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
+
+* component[3].code = http://loinc.org#66174-4
+* component[3].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
+
+* component[4].code = $anamnese-citopatologia#pilula
+* component[4].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
+
+* component[5].code = http://loinc.org#63873-4
+* component[5].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
+
+* component[6].code = $anamnese-citopatologia#radioterapia
+* component[6].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
+
+* component[7].code = http://loinc.org#8665-2
+* component[7].valueDateTime =	"2023-10-10"
+
+* component[8].code = $anamnese-citopatologia#sangramento-menopausa
+* component[8].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
+
+* component[9].code = $anamnese-citopatologia#sangramento-relacao
+* component[9].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y

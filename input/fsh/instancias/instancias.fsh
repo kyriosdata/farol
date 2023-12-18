@@ -481,6 +481,7 @@ Alias: $anamnese-citopatologia = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/
 
 Instance: respostas
 InstanceOf: Observation
+Description: "Anamnese realizada para o exame citopatológico"
 
 * meta.profile = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/br-anamnese-exame-citopatologico"
 

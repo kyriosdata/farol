@@ -1,7 +1,7 @@
 Instance: ns-cpf
 InstanceOf: NamingSystem
 Title: "Identificador de Cadastro de Pessoa Física (CPF)"
-Description: "Declaração do identificador de números de inscrição no Cadastro de Pessoa Física"
+Description: "Declaração do identificador de números de inscrição no Cadastro de Pessoa Física (CPF)"
 Usage: #definition
 
 * name = "CPF"

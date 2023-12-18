@@ -1,7 +1,7 @@
 Instance: ns-laboratorio
 InstanceOf: NamingSystem
 Title: "Identificador de exame gerado por laboratório"
-Description: "Declaração do identificador único de exame gerado por laboratório"
+Description: "Declaração do identificador único de exame gerado por laboratório. Observe que não identifica unicamente um laboratório, mas que se trata de código único gerado por laboratório."
 Usage: #definition
 
 * name = "LaboratorioProtocolo"

@@ -1,6 +1,5 @@
 Alias: $anamnese = http://perfil.org/anamnese-exame-citopatologico
 Alias: $exame-clinico = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/exame-clinico
-Alias: $respostas-anamnese = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/respostas-anamnese
 Alias: $loinc = http://loinc.org
 Alias: $yesnodontknow = http://hl7.org/fhir/ValueSet/yesnodontknow
 
@@ -75,28 +74,6 @@ Description: "Exame clínico visando laudo de exame citopatológico"
 
 
 // ------------------------------------------------------
-// respostas-anamnese (remover)
-// ------------------------------------------------------
-
-Profile: RespostasAnamnese
-Parent: QuestionnaireResponse
-Id: respostas-anamnese
-Title: "Respostas da anamnese da requisição de exame citopatológico"
-Description: "Estabelece estrutura mínima para respostas da anamnese realizada como insumo para exame citopatológico"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/respostas-anamnese"
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Anamnese para exame citopatológico</div>"
-
-* questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico" (exactly)
-* subject 1..
-* authored 1..
-
-* ^status = #draft
-
-
-// ------------------------------------------------------
 // requisicao-exame-citopatologico
 // ------------------------------------------------------
 
@@ -131,7 +108,7 @@ Alias: $BRMeioContato = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRMe
 
 Invariant: LinhasEndereco
 Description: "Endereço não pode ser vazio"
-Expression: "line != ''"
+Expression: "line.select($this.length() > 0).allTrue()"
 Severity: #error
 
 

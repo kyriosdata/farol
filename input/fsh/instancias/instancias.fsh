@@ -556,6 +556,9 @@ InstanceOf: Observation
 * code = http://loinc.org#1-8
 * category = http://terminology.hl7.org/CodeSystem/observation-category#survey
 
+* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
+* effectiveDateTime = "2023-01-01"
+
 * component[0].code = $anamnese-citopatologia#ja-fez
 * component[0].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
 

@@ -257,13 +257,9 @@ Description: "Paciente assistida"
   * state = #31
   * postalCode = "74000-000"  // Nao valida a máscara xxxxx-xxx
   * line[0] = "Rua"
-//  * line[0].id = "street"
   * line[1] = "Rua"
-//  * line[1].id = "neighborhood"
   * line[2] = "23"
-//  * line[2].id = "number"
   * line[3] = "bloco B"
-//  * line[3].id = "complement"
   * line.extension[0].url = $pontoreferencia
   * line.extension[0].valueString = "próximo ao supermercado"
   
@@ -533,6 +529,7 @@ InstanceOf: Observation
 
 Instance: profissional
 InstanceOf: Practitioner
+Description: "Profissional responsável pela requisição"
 
 * identifier[0]
   * use = #official

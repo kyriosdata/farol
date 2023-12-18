@@ -478,7 +478,7 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 Invariant: com-1
 Description: "Se fornecida data do último exame, então deve ter sido confirmada a realização de exame anteriormente."
 Severity: #error
-Expression: "component.code.coding.where(code = '60432-2').empty().not() implies component.where(code.coding.code = 'ja-fez' and value.coding.code = 'Y').exists()"
+Expression: "component.code.coding.where(code = '60432-2').empty().not() implies component.where($this.code.coding[0].code = 'ja-fez' and $this.value.coding[0].code = 'Y').exists()"
 
 Mapping: ficha
 Id: ficha

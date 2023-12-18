@@ -10,14 +10,17 @@ skinparam class {
     BorderColor #505050
 }
 
+class "anamnese-citopatologia" as AnamneseCitopatologia <<CodeSystem>> {}
 class "inspecao-colo" as InspecaoColo <<CodeSystem>> {}
-class "motivo-exame" as MotivoExame <<CodeSystem>> {}
+class "motivos-exame" as MotivosExame <<CodeSystem>> {}
 class "vs-inspecao-colo" as VsInspecaoColo <<ValueSet>> {}
-class "motivos-exame" as MotivosExame <<ValueSet>> {}
+class "motivo-exame" as MotivoExame <<ValueSet>> {}
+class "questoes-anamnese" as QuestoesAnamnese <<ValueSet>> {}
 
 VsInspecaoColo .up.> InspecaoColo
-MotivosExame .up.> MotivoExame
+MotivoExame .up.> MotivosExame
 
+class CNES <<NamingSystem>> {}
 class CPF <<NamingSystem>> {}
 class "SISCAN" as SiscanProtocolo <<NamingSystem>> {}
 class "Laboratório" as Laboratorio <<NamingSystem>> {}
@@ -26,12 +29,14 @@ class "Nivel Educacional" as NivelEducacional <<extension>> {
     Context: Patient
 }
 
+package "<<Bundle>>\nRequisição" as Bundle <<Rectangle>> {
+    package "entry[0]\nComposition" as Composition <<Rectangle>> {
 
-Enfermeira -up-> Unidade: Lotado em
-Enfermeira -left-> GovBR : possui conta
+    }
 
-Citopatologista "titular" <-down- Certificado
-GovBR <-- Citopatologista: possui conta
-Assinatura -left-> "1" Certificado : Feita com
+    class "entry[1]\nRosa" as paciente {}
+    class "entry[2]\nRequisição" as requisicao {}
+}
+
 
 @enduml

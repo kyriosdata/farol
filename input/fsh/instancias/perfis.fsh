@@ -75,7 +75,7 @@ Description: "Exame clínico visando laudo de exame citopatológico"
 
 
 // ------------------------------------------------------
-// respostas-anamnese
+// respostas-anamnese (remover)
 // ------------------------------------------------------
 
 Profile: RespostasAnamnese
@@ -89,7 +89,7 @@ Description: "Estabelece estrutura mínima para respostas da anamnese realizada 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Anamnese para exame citopatológico</div>"
 
-* questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/anamnese-exame-citopatologico" (exactly)
+* questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico" (exactly)
 * subject 1..
 * authored 1..
 
@@ -97,12 +97,12 @@ Description: "Estabelece estrutura mínima para respostas da anamnese realizada 
 
 
 // ------------------------------------------------------
-// requisicao-exame
+// requisicao-exame-citopatologico
 // ------------------------------------------------------
 
 Profile: RequisicaoExame
 Parent: ServiceRequest
-Id: requisicao-exame
+Id: requisicao-exame-citopatologico
 Title: "Requisicao Exame"
 Description: "Requisição de exame citopatológico"
 
@@ -111,7 +111,7 @@ Description: "Requisição de exame citopatológico"
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Detalha referência para anamnese e exame clínico.</div>"
 
-* supportingInfo only Reference(exame-clinico or respostas-anamnese)
+* supportingInfo only Reference(exame-clinico or br-anamnese-exame-citopatologico)
 * supportingInfo 2..2
 
 // ------------------------------------------------------

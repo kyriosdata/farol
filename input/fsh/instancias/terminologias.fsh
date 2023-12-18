@@ -26,7 +26,7 @@ Description: "Os resultados para a inspeção de colo visando exame citopatológ
 
 
 // ------------------------------------------------------
-// motivo-exame
+// motivos-exame
 // ------------------------------------------------------
 
 CodeSystem: MotivosExame
@@ -121,7 +121,7 @@ Description: "Definição da classificação da adequabilidade do material (amos
 
 
 // ------------------------------------------------------
-// tipos-adequabilidade
+// alteracoes-celulares-benignas
 // ------------------------------------------------------
 
 CodeSystem: AlteracoesCelularesBenignas

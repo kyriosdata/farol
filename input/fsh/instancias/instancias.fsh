@@ -33,17 +33,17 @@ Description: "Todos os dados pertinentes a uma ficha de requisição de exame ci
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb00"
   * resource = composition-1
 
-// Paciente
+// rosa (paciente)
 * entry[1]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01"
   * resource = rosa
 
-// Requisição de exame (ServiceRequest)
+// requisicao (requisição de exame - ServiceRequest)
 * entry[2]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb02"
   * resource = requisicao
 
-// Dados da anamnese (respostas)
+// respostas (anamnese)
 * entry[3]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03"
   * resource = respostas
@@ -108,7 +108,7 @@ Description: "Reúne dados de uma ficha de requisição"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05)
 
 // ------------------------------------------------------
-// requisição 2
+// requisicao (ServiceRequest)
 // ------------------------------------------------------
 
 Alias: $motivos-exame = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivos-exame
@@ -297,7 +297,7 @@ Usage: #definition
 Title: "Anamnese (exame citopatológico)"
 Description: "Questões pertinentes à anamnese do exame citopatológico"
 
-* url = "https://fhir.fabrica.inf.ufg.br/ccu/anamnese-exame-citopatologico"
+* url = "https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico"
 
 * version = "0.0.1"
 * name = "AnamneseExameCitopatologico"
@@ -440,7 +440,7 @@ Description: "Respostas para anamnese de exame citopatológico"
 * meta.profile[0] = $respostas-anamnese
 
 * status = #completed
-* questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/anamnese-exame-citopatologico"
+* questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico"
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
 * authored = "2023-01-01"
 

@@ -15,7 +15,6 @@ Description: "Definição de resultado (laudo) de exame citopatológico em confo
 * contained ..0
 
 * basedOn 1..1
-* basedOn[BRRequisicaoExameCitopatologico]
 
 * identifier ..1
 * identifier ^label = "O rótulo (label)"

@@ -58,6 +58,11 @@ Description: "Todos os dados pertinentes a uma ficha de requisição de exame ci
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05"
   * resource = unidade-saude
 
+// profissional (responsável pela requisição)
+* entry[6]
+  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06"
+  * resource = profissional
+
 // ------------------------------------------------------
 // composition-1 0
 // ------------------------------------------------------
@@ -558,6 +563,7 @@ InstanceOf: Observation
 
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
 * effectiveDateTime = "2023-01-01"
+* performer = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06)
 
 * component[0].code = $anamnese-citopatologia#ja-fez
 * component[0].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
@@ -588,3 +594,18 @@ InstanceOf: Observation
 
 * component[9].code = $anamnese-citopatologia#sangramento-relacao
 * component[9].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
+
+
+// ------------------------------------------------------
+// profissional
+// ------------------------------------------------------
+
+Instance: profissional
+InstanceOf: Practitioner
+
+* identifier[0]
+  * use = #official
+  * system = "https://fhir.fabrica.inf.ufg.br/ns/coren"
+  * value = "12.34.56.78"
+
+* name[0].text = "João da Silva"

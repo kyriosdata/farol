@@ -2,27 +2,23 @@ Abaixo segue a identificação do escopo do presente trabalho. Os casos de uso
 apresentados ocorrem no contexto dos <a href="processos.html">processos</a>
 executados por profissionais de saúde.
 
-### Cenários (casos) de uso
+### Regras de negócio
 
-- Uma requisição de exame citopatológico é registrada com ou sem indicação do estabelecimento
-  que irá produzir o laudo correspondente.
-
-- Órgão gestor realiza a atribuição ou alteração do estabelecimento que irá produzir
-  o laudo correspondente.
-
-- Requisições podem ser recuperadas pelo laboratório encarregado de produzir os laudos correspondentes.
-
-- O resultado de exame citopatológico, para uma dada requisição, é
-  produzido e assinado digitalmente por profissional lotado no estabelecimento que
-  produziu o laudo.
-
-- Resultado, assinado digitalmente, torna-se acessível ao estabelecimento de saúde que o requisitou.
+- Quais os requisitos mínimos para uma requisição ser cadastrada no SISCAN? O preenchimento adequado da "ficha" é suficiente? Ou há outras regras, por exemplo,
+limite de requisições por estabelecimento, por paciente, limite por prazo entre 
+uma requisição de uma paciente e outra requisição, há idade máxima, mínima? 
+- O que não está escrito na "ficha" mas que é considerado relevante para a requisição ser considerada válida?
+- Quando uma requisição é criada automaticamente um laboratório já está encarregado
+da produção do laudo correspondente?
+- Requisições só podem ser recuperadas pelo laboratório encarregado de produzir os laudos correspondentes?
+- Um laudo pode ser alterado após produzido? Um laudo pode ser removido? Como tratar estes casos?
+- Há alguma verificação da pertinência (pertencimento) do profissional que assina o laudo e o estabelecimento (laboratório) em questão?
 
 ### Requisitos de usuário
 
 #### Administração de acesso (contas)
 
-1. _Como administrador eu desejo cadastrar os profissionais de saúde (usuários) e o papel de cada um deles, para que possam usar o Farol._
+1. _Como administrador de um estabelecimento de saúde eu desejo cadastrar os profissionais de saúde (usuários) e o papel de cada um deles, para que possam usar o SISCAN._
 
 1. _Como administrador de laboratório eu desejo cadastrar os citopatologistas autorizados a acessar o Farol, para que possam assinar digitalmente resultados de exames citopatológicos_.
 

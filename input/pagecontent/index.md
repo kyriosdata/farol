@@ -10,14 +10,22 @@ para a produção do laudo correspondente. O laudo produzido
 é então manualmente assinado pelo citopatologista e encaminhado fisicamente do
 laboratório até o estabelecimento de saúde que o requisitou.
 
-Este cenário cria uma oportunidade contemplada
+Este processo é lento e oneroso quando comparado com a
+alternativa tecnológica adotada pelo Brasil para troca de
+informação em saúde. Tal cenário cria a oportunidade contemplada
 pelo presente _Guia de Implementação_, um instrumento formal 
-para mostrar como o padrão FHIR pode ser empregado em um dado cenário.
-Neste caso, para promover a integração entre o SISCAN e qualquer sistema
+que define como o padrão FHIR pode ser empregado para reduzir os custos
+e acelerar os processos envolvendo os exames citopatológicos no Brasil.
+
+O presente _Guia de Implementação_ promove a integração entre o SISCAN e qualquer sistema
 de informação em saúde que emite requisições de exames citopatológicos
-ou produz laudos para estes exames. Em particular, laudos devem ser
-assinados digitalmente, o que permite o seu consumo imediato, o que 
-é imprescindível para ação rápida, se necessária.
+ou produz laudos para estes exames.
+
+### Pontos importantes
+
+- Custos são reduzidos pela substituição do trânsito físico de papel por dados em formato digital.
+- A segurança do laudo é estabelecida pela assinatura digital dos laudos via certificados ICP-Brasil.
+- A agilidade, imprescindível para o combate ao câncer, é assegurada pelo trânsito digital dos dados (praticamente instantâneo).
 
 
 ### Necessidade

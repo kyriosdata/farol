@@ -477,8 +477,6 @@ Usage: #example
 // respostas
 // ------------------------------------------------------
 
-Alias: $anamnese-citopatologia = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/anamnese-citopatologia
-
 Instance: respostas
 InstanceOf: Observation
 Description: "Anamnese realizada para o exame citopatológico"
@@ -538,3 +536,5 @@ Description: "Profissional responsável pela requisição"
   * value = "12.34.56.78"
 
 * name[0].text = "João da Silva"
+
+

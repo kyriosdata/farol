@@ -1,15 +1,20 @@
 id: ccu
 canonical: https://fhir.fabrica.inf.ufg.br/ccu
 name: CancerColoDoUtero
-title: "Rastreamento de Câncer de Colo de Útero"
-description: "Inclui definições pertinentes ao exame citopatológico (requisição e resultado) conforme INCA, e correlatos."
+title: Rastreamento de Câncer de Colo de Útero
 status: draft
+description: >- 
+  Definição de requisição e laudo de exame citopatológico, conforme INCA (Ministério da Saúde), visando interoperabilidade destas informações entre atores da saúde em todo o território nacional.
+
+  Estas definições estabelecem o conjunto de informações a serem trocados com o Ministério da Saúde e, não necessariamente, identifica todas as informações que podem ser relevantes.
+
 license: CC0-1.0
 version: 0.0.1
 fhirVersion: 4.0.1
+copyright: 'Todos os direitos reservados. Creative Commons License'
 copyrightYear: 2022+
 releaseLabel: preliminar
-jurisdiction: urn:iso:std:iso:3166#BR "Brazil"
+jurisdiction: 'urn:iso:std:iso:3166#BR "Brazil"'
 experimental: false
 meta:
   lastUpdated: 2021-10-22T14:56:14Z

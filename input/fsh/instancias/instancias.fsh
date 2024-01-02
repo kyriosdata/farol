@@ -54,14 +54,14 @@ Description: "Todos os dados pertinentes a uma ficha de requisição de exame ci
   * resource = exame
 
 // Dados da unidade de saúde
-* entry[5]
-  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05"
-  * resource = unidade-saude
+//* entry[5]
+//  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05"
+//  * resource = unidade-saude
 
 // profissional (responsável pela requisição)
-* entry[6]
-  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06"
-  * resource = profissional
+//* entry[6]
+//  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06"
+//  * resource = enfermeira
 
 // ------------------------------------------------------
 // composition-1 0
@@ -70,7 +70,7 @@ Description: "Todos os dados pertinentes a uma ficha de requisição de exame ci
 Instance: composition-1
 InstanceOf: Composition
 Usage: #example
-Title: "Dados da ficha de Exame Citopatológico"
+Title: "Agrupador dos dados da requisição de Exame Citopatológico"
 Description: "Reúne dados de uma ficha de requisição"
 
 * status = #final
@@ -110,7 +110,9 @@ Description: "Reúne dados de uma ficha de requisição"
   * title = "Unidade de Saúde Requisitante"
   // * text.status = #empty
   // * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Unidade de Saúde Requisitante</div>"
-  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05)
+  //* entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05)
+  * entry[0].identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
+  * entry[0].identifier.value = "123456"
 
 // ------------------------------------------------------
 // requisicao (ServiceRequest)
@@ -157,8 +159,8 @@ Title: "Exame clínico visando laudo citopatológico"
 * code = http://loinc.org#1-8 // Errado deve ser preenchido
 
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer.identifier.system = "http://perfil.org/cns"
-* performer.identifier.value = "cns do profissional"
+* performer.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
+* performer.identifier.value = "234.234.567"
 * effectiveDateTime = "2023-11-10"
 
 * component[0]
@@ -210,6 +212,9 @@ Description: "Paciente assistida"
 
 // Data de nascimento
 * birthDate = "1990-10-23"
+
+// Exigido por regra de negócio?
+* gender = #female
 
 // ------------
 // opcionais
@@ -470,7 +475,9 @@ Usage: #example
   Unidade que requisita
 */
 
-* requester = Reference(enfermeira)
+//* requester = Reference(enfermeira)
+* requester.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
+* requester.identifier.value = "234.234.567"
 
 
 // ------------------------------------------------------
@@ -489,7 +496,8 @@ Description: "Anamnese realizada para o exame citopatológico"
 
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
 * effectiveDateTime = "2023-01-01"
-* performer = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06)
+* performer.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
+* performer.identifier.value = "234.234.567"
 
 * component[0].code = $anamnese-citopatologia#ja-fez
 * component[0].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
@@ -562,7 +570,7 @@ Daí segue o exemplo, mas comentado.
 * identifier[0]
   * system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
   * use = #usual
-  * value = "2345234234234"
+  * value = "234.234.567"
 
 * identifier[1]
   * system = "https://fhir.fabrica.inf.ufg.br/ns/cpf"

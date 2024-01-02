@@ -278,7 +278,7 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 
 * component[dataUltimoExame] ^short = "Registra data do último exame, se for o caso"
 * component[dataUltimoExame] ^definition = "A data em que foi realizado pela última vez o exame citopatológico."
-* component[dataUltimoExame].code ^short = "Identifica a pergunta 'qual a data do último exame?'"
+* component[dataUltimoExame].code ^short = "Qual a data do último exame?"
 * component[dataUltimoExame].code ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
 * component[dataUltimoExame].code ^binding.extension.valueString = "ObservationCode"
 * component[dataUltimoExame].code ^binding.description = "Códigos para informações fornecidas pela paciente"
@@ -293,7 +293,7 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 * component[dataUltimoExame].code.coding.display ..0
 * component[dataUltimoExame].code.coding.userSelected ..0
 * component[dataUltimoExame].code.text ..0
-* component[dataUltimoExame].value[x] 1..
+* component[dataUltimoExame].value[x] 1..1
 * component[dataUltimoExame].value[x] ^short = "A data em que a paciente realizou o último exame citopatológico"
 * component[dataUltimoExame].value[x] only dateTime
 * component[dataUltimoExame].dataAbsentReason ..0
@@ -453,7 +453,7 @@ Description: "Registra informações obtidas no momento da coleta de amostra par
 Invariant: com-1
 Description: "Se fornecida data do último exame, então deve ter sido confirmada a realização de exame anteriormente."
 Severity: #error
-Expression: "component.code.coding.where(code = '60432-2').empty().not() implies component.where($this.code.coding[0].code = 'ja-fez' and $this.value.coding[0].code = 'Y').exists()"
+Expression: "component.code.coding.where(code = '60432-2').empty().not() implies component.where($this.code.coding.single().code = 'ja-fez' and $this.value.coding.single().code = 'Y').exists()"
 
 Mapping: ficha
 Id: ficha

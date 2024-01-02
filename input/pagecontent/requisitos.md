@@ -2,6 +2,16 @@ Abaixo segue a identificação do escopo do presente trabalho. Os casos de uso
 apresentados ocorrem no contexto dos <a href="processos.html">processos</a>
 executados por profissionais de saúde.
 
+> **IMPORTANTE**: os casos de uso delimitam o escopo a ser oferecido pela
+transformação digital da saúde por meio de uma API padrão que os vibiliza. 
+Não inclui, portanto, o software que faz uso desta API. 
+
+Por exemplo, para contemplar o interesse da usuária em consultar seus resultados de exames, a API deve oferecer mecanismo para busca de resultados por usuário. Isto não
+inclui o software que recebe a identificação da usuária e requisita a busca por exames
+disponíveis. O escopo inclui o que está "do outro lado", respondendo a esta demanda, 
+neste caso, pronto para localizar e retornar todos os exames disponíveis para uma 
+dada usuária. 
+
 ### Regras de negócio
 
 - Quais os requisitos mínimos para uma requisição ser cadastrada no SISCAN? O preenchimento adequado da "ficha" é suficiente? Ou há outras regras, por exemplo,

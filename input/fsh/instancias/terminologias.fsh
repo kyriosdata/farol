@@ -226,7 +226,7 @@ Description: "Atipias"
 
 CodeSystem: AnamneseCitopatologia
 Id: anamnese-citopatologia
-Title: "Informações da anamnese de exame citopatológico"
+Title: "Identificação do item de informação da anamnese de exame citopatológico"
 Description: "Identificação dos itens de informação coletados na anamnese de exame citopatológico"
 
 * ^text.status = #empty

@@ -11,15 +11,13 @@ para a produção do laudo correspondente. O laudo produzido
 laboratório até o estabelecimento de saúde que o requisitou.
 
 Este processo é lento e oneroso quando comparado com a
-alternativa tecnológica adotada pelo Brasil para troca de
-informação em saúde. Tal cenário cria a oportunidade contemplada
-pelo presente _Guia de Implementação_, um instrumento formal 
-que define como o padrão FHIR pode ser empregado para reduzir os custos
-e acelerar os processos envolvendo os exames citopatológicos no Brasil.
+alternativa tecnológica baseada no padrão FHIR, aqui documentada
+pelo presente _Guia de Implementação_. O Guia é um instrumento formal 
+que define como empregar este padrão para acelerar os processos e reduzir os custos envolvendo os exames citopatológicos no Brasil.
 
-O presente _Guia de Implementação_ promove a integração entre o SISCAN e qualquer sistema
-de informação em saúde que emite requisições de exames citopatológicos
-ou produz laudos para estes exames.
+A alternativa proposta não substitui o SISCAN, nem causa ruptura no ecossistema
+existente. A proposta agrega ao que está disponível uma interface de 
+programação adicional sem causar rupturas.
 
 ### Pontos importantes
 

@@ -1,70 +1,62 @@
 ### Contexto (processos e atores)
 
-O exame citopatológico emprega uma [ficha](./requisicao-exame-citopatologico.pdf) 
-(formulário) amplamente usada em todo o território nacional e cujos processos 
+O exame citopatológico emprega uma [ficha](./nova-requisicao-anotada.pdf) 
+(formulário) usada em todo o território nacional e cujos processos 
 pertinentes são apoiados pelo SISCAN.
 
-A requisição deste exame é criada por um profissional de saúde, em um encontro com a paciente,
-no qual são coletados dados relevantes e material (amostra) enviados a um laboratório
+A requisição deste exame é criada por um profissional de saúde que
+coleta dados relevantes e material (amostra) enviados a um laboratório
 para a produção do laudo correspondente. O laudo produzido 
-é então manualmente assinado pelo citopatologista e encaminhado fisicamente do
+é assinado manualmente pelo citopatologista e então encaminhado fisicamente do
 laboratório até o estabelecimento de saúde que o requisitou.
 
 Este processo é lento e oneroso quando comparado com a
-alternativa tecnológica baseada no padrão FHIR, aqui documentada
-pelo presente _Guia de Implementação_. O Guia é um instrumento formal 
-que define como empregar este padrão para acelerar os processos e reduzir os custos envolvendo os exames citopatológicos no Brasil.
+proposta aqui apresentada, por meio de um instrumento formal, _Guia de Implementação_,
+que define como o padrão tecnológico FHIR pode ser empregado para a troca de dados em saúde neste contexto.
 
-A alternativa proposta não substitui o SISCAN, nem causa ruptura no ecossistema
-existente. A proposta agrega ao que está disponível uma interface de 
-programação adicional sem causar rupturas.
+> A alternativa proposta não substitui o SISCAN, mas o estende sem causar ruptura com o ecossistema existente.
 
 ### Pontos importantes
 
-- Custos são reduzidos pela substituição do trânsito físico de papel por dados em formato digital.
-- A segurança do laudo é estabelecida pela assinatura digital dos laudos via certificados ICP-Brasil.
-- A agilidade, imprescindível para o combate ao câncer, é assegurada pelo trânsito digital dos dados (praticamente instantâneo).
+- Custos são reduzidos pela substituição do trânsito físico de papel pelo trânsito eletrônico de dados em formato digital.
+- A segurança do laudo é estabelecida pela assinatura digital via certificados ICP-Brasil.
+- A agilidade, imprescindível para uma resposta adequada ao câncer, é assegurada pelo trânsito digital dos dados (praticamente instantâneo).
 
 
 ### Necessidade
 
-> Reduzir ao mínimo o tempo entre a produção de laudo de exame citopatológico e a sua
-> disponibilidade no estabelecimento de saúde específico para a continuidade do cuidado.
+> Gerar valor para a saúde por meio de transformação digital do SISCAN, em particular,
+> pela agilidade, segurança e custos nos processos envolvendo os exames citopatológicos.
 
 ### Solução proposta
 
-> Transformação digital dos <a href="requisitos.html">casos de uso</a> pertinentes à submissão de requisição e
-> ao registro de laudo de exame citopatológico com assinatura digital, realizados por todo e qualquer sistema de informação em saúde integrado à RNDS.
+> Estender o SISCAN com o uso do padrão FHIR para assegurar interoperabilidade em todo o
+> território nacional no que diz respeito à requisição e disponibilidade de laudo de 
+> exame citopatológico. 
 
-### Como chegamos até aqui?
+### O que foi feito?
 
 Os <a href="requisitos.html">casos de uso</a> a serem atendidos,
 no contexto dos <a href="processos.html">processos</a>
-considerados, resultou na divisão da [ficha](./requisicao-exame-citopatologico.pdf)
-empregada em todo o país em duas partes: a requisição de exame e o laudo correspondente.
-Observe que a ficha definida pelo INCA, em sua primeira "folha", contém a requisição, enquanto o "verso" detalha
-o resultado (laudo).
+considerados, resultou na divisão da [ficha](./nova-requisicao-anotada.pdf) em duas partes: a requisição de exame (primeira "folha" da ficha) e o laudo correspondente ("verso").
 
-Cada uma destas partes foi criteriosamente analisada, conforme as anotações
-tanto na [requisição](./requisicao-anotada.pdf) quanto no
-[resultado](./laudo-anotado.pdf). Estas análises resultaram
+Cada uma destas partes foi criteriosamente analisada, o que resultou
 nos modelos de informação correspondentes, ou seja, o
 modelo de informação da <a href="requisicao.html">requisição</a>
 e o modelo de informação do <a href="resultado.html">resultado</a>.
 Estes modelos seguem a mesma estrutura
 de outros já formalmente publicados por portarias do Ministério da Saúde.
 
-Tais modelos são insumos necessários para definição do que é conhecido por
-Guia de Implementação, o que é exatamente o conteúdo deste portal. Ou seja,
-o presente Guia detalha como o padrão FHIR, adotado pelo Brasil, pode ser empregado
-para viabilizar a integração com a RNDS. Algumas informações foram incluídas,
-além do que se espera em um guia, apenas para manter um histórico mínimo e não apenas
-o resultado final.
+Tais modelos foram empregado na produção de artefatos tecnológicos 
+conforme o uso esperado do padrão FHIR, estabelecido pela HL7, conhecido por
+_Guia de Implementação_. Em tempo, FHIR é o padrão
+adotado pelo Ministério da Saúde para troca de dados em saúde. 
 
-Os modelos de informação supracitados são para consumo de profissionais de
-saúde, enquanto o Guia de Implementação como um todo é um instrumento tecnológico
-empregado por engenheiros de software e outros da indústria da Tecnologia da Informação
-e Comunicação (TIC).
+O _Guia de Implementação_ é um documento. Para os requisitos citados acima
+serem realizados é preciso produzir software correspondente. 
+O _design_ de uma integração
+da implementação deste Guia com o SISCAN também foi proposta, e uma 
+prova de conceito se encontra em análise para posterior desenvolvimento.
 
 ### Organização
 

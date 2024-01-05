@@ -272,6 +272,7 @@ Description: "Paciente assistida"
   * system = #phone
   * value = "99999-9999"
 
+
 // ------------------------------------------------------
 // unidade-saude
 // ------------------------------------------------------
@@ -280,7 +281,7 @@ Instance: unidade-saude
 InstanceOf: Organization
 Usage: #example
 Title: "Unidade Básica de Saúde"
-Description: "Unidade na qual exame citopatológico é requisitado"
+Description: "Ilustra uma unidade na qual um exame citopatológico é requisitado"
 
 * name = "Unidade Básica do SUS"
 
@@ -292,6 +293,33 @@ Description: "Unidade na qual exame citopatológico é requisitado"
 * address.city = "Goiânia"
 * address.state = "GO"
 
+* type.coding.system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoEstabelecimentoSaude"
+* type.coding.code = #1
+* type.text = "POSTO DE SAUDE"
+
+// ------------------------------------------------------
+// laboratorio
+// ------------------------------------------------------
+
+Instance: laboratorio
+InstanceOf: Organization
+Usage: #example
+Title: "Laboratório que realiza exames citopatológicos"
+Description: "Ilustra uma unidade na qual um exame citopatológico é realizado"
+
+* name = "Laboratório Cito"
+
+// CNES
+* identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
+* identifier.value = "654321"
+
+// UF e município
+* address.city = "Goiânia"
+* address.state = "GO"
+
+* type.coding.system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoEstabelecimentoSaude"
+* type.coding.code = #80
+* type.text = "LABORATORIO DE SAUDE PUBLICA"
 
 // ------------------------------------------------------
 // anamnese-exame-citopatologico

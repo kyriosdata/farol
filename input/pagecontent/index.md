@@ -34,20 +34,20 @@ que define como o padrão tecnológico FHIR pode ser empregado para a troca de d
 > território nacional no que diz respeito à requisição e disponibilidade de laudo de 
 > exame citopatológico. 
 
-### O que foi feito?
+### Processo em andamento
 
 Os <a href="requisitos.html">casos de uso</a> a serem atendidos,
 no contexto dos <a href="processos.html">processos</a>
 considerados, resultou na divisão da [ficha](./nova-requisicao-anotada.pdf) em duas partes: a requisição de exame (primeira "folha" da ficha) e o laudo correspondente ("verso").
 
-Cada uma destas partes foi criteriosamente analisada, o que resultou
+Cada uma destas partes foi analisada, o que resultou
 nos modelos de informação correspondentes, ou seja, o
 modelo de informação da <a href="requisicao.html">requisição</a>
 e o modelo de informação do <a href="resultado.html">resultado</a>.
 Estes modelos seguem a mesma estrutura
 de outros já formalmente publicados por portarias do Ministério da Saúde.
 
-Tais modelos foram empregado na produção de artefatos tecnológicos 
+Tais modelos foram empregados na produção de artefatos tecnológicos 
 conforme o uso esperado do padrão FHIR, estabelecido pela HL7, conhecido por
 _Guia de Implementação_. Em tempo, FHIR é o padrão
 adotado pelo Ministério da Saúde para troca de dados em saúde. 

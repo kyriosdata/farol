@@ -3,6 +3,19 @@ Alias: $idade = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade
 Alias: $nivel-educacional = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional
 Alias: $respostas-anamnese = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/respostas-anamnese
 Alias: $siscan = http://saude.gov.br/SISCAN
+Alias: $racacorext = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRacaCorEtnia-1.0
+Alias: $racacor = http://www.saude.gov.br/fhir/r4/CodeSystem/BRRacaCor
+Alias: $etniaindigena = http://www.saude.gov.br/fhir/r4/CodeSystem/BREtniaIndigena
+Alias: $nacionalidade = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade
+Alias: $cs-nacionalidade = http://www.saude.gov.br/fhir/r4/CodeSystem/BRNacionalidade
+Alias: $pontoreferencia = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator
+Alias: $nome-mae = http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName
+Alias: $cns = https://fhir.fabrica.inf.ufg.br/ns/cns
+Alias: $cpf = https://fhir.fabrica.inf.ufg.br/ns/cpf
+Alias: $paciente-siscan = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente-siscan
+Alias: $motivos-exame = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivos-exame
+Alias: $cs-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/inspecao-colo
+
 
 // ------------------------------------------------------
 // 
@@ -53,16 +66,6 @@ Description: "Todos os dados pertinentes a uma ficha de requisição de exame ci
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04"
   * resource = exame
 
-// Dados da unidade de saúde
-//* entry[5]
-//  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05"
-//  * resource = unidade-saude
-
-// profissional (responsável pela requisição)
-//* entry[6]
-//  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06"
-//  * resource = enfermeira
-
 // ------------------------------------------------------
 // composition-1 0
 // ------------------------------------------------------
@@ -70,7 +73,7 @@ Description: "Todos os dados pertinentes a uma ficha de requisição de exame ci
 Instance: composition-1
 InstanceOf: Composition
 Usage: #example
-Title: "Agrupador dos dados da requisição de Exame Citopatológico"
+Title: "(Composition) Requisição de Exame Citopatológico"
 Description: "Reúne dados de uma ficha de requisição"
 
 * status = #final
@@ -90,35 +93,24 @@ Description: "Reúne dados de uma ficha de requisição"
 
 * section[0]
   * title = "Requisição de exame citopatológico"
-  // * text.status = #empty
-  // * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Requisição de Serviço</div>"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb02)
 
 * section[1]
   * title = "Dados da anamnese"
-  // * text.status = #empty
-  // * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Dados da anamnese para requisição de exame citopatológico</div>"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
 
 * section[2]
   * title = "Exame clínico"
-  // * text.status = #empty
-  // * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Dados do exame clínico</div>"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04)
 
 * section[3]
   * title = "Unidade de Saúde Requisitante"
-  // * text.status = #empty
-  // * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Unidade de Saúde Requisitante</div>"
-  //* entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05)
   * entry[0].identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
   * entry[0].identifier.value = "123456"
 
 // ------------------------------------------------------
 // requisicao (ServiceRequest)
 // ------------------------------------------------------
-
-Alias: $motivos-exame = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivos-exame
 
 Instance: requisicao
 InstanceOf: ServiceRequest
@@ -131,22 +123,31 @@ Usage: #example
 * status = #draft
 * intent = #original-order
 
+* instantiatesCanonical = "http://farol-ig.s3-website-sa-east-1.amazonaws.com/ActivityDefinition-coleta.html"
+* instantiatesUri = "http://farol-ig.s3-website-sa-east-1.amazonaws.com/ActivityDefinition-coleta.html"
+
 * code.coding[0]
   * code = #0203010086
   * system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTabelaSUS"
   * display = "EXAME CITOPATOLÓGICO CERVICO VAGINAL/MICROFLORA-RASTREAMENTO"
+
+* code.coding[1]
+  * code = #19766-5
+  * system = $loinc
 
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
 * reasonCode[0].coding[0] = $motivos-exame#rastreamento
 * supportingInfo[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
 * supportingInfo[1] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04)
 
+// CNS do responsável
+* requester.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
+* requester.identifier.value = "234.234.567"
+
 
 // ------------------------------------------------------
 // exame
 // ------------------------------------------------------
-
-Alias: $cs-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/inspecao-colo
 
 Instance: exame
 InstanceOf: Observation
@@ -174,17 +175,6 @@ Title: "Exame clínico visando laudo citopatológico"
 // ------------------------------------------------------
 // rosa (subject da composition)
 // ------------------------------------------------------
-
-Alias: $racacorext = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRacaCorEtnia-1.0
-Alias: $racacor = http://www.saude.gov.br/fhir/r4/CodeSystem/BRRacaCor
-Alias: $etniaindigena = http://www.saude.gov.br/fhir/r4/CodeSystem/BREtniaIndigena
-Alias: $nacionalidade = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade
-Alias: $cs-nacionalidade = http://www.saude.gov.br/fhir/r4/CodeSystem/BRNacionalidade
-Alias: $pontoreferencia = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator
-Alias: $nome-mae = http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName
-Alias: $cns = http://saude.gov.br/CNS
-Alias: $cpf = http://saude.gov.br/CPF
-Alias: $paciente-siscan = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente-siscan
 
 Instance: rosa
 InstanceOf: Patient
@@ -460,53 +450,6 @@ Description: "Questões pertinentes à anamnese do exame citopatológico"
   * repeats = false
   * readOnly = true
   * maxLength = 3
-
-
-// ------------------------------------------------------
-// requisicao-tipica
-// ------------------------------------------------------
-
-Instance: requisicao-tipica
-InstanceOf: ServiceRequest
-Title: "Requisição típica"
-Description: "Requisição de example citopatológico"
-Usage: #example
-
-* meta.lastUpdated = "2022-08-09T23:18:22.558Z"
-
-/*
-  O identificador da requisição
-*/
-* identifier[0]
-  * system = "http://goias.gov.br/fhir/ns/siscan"
-  * value = "12345678"
-
-* status = #active
-* intent = #order
-
-* instantiatesCanonical = "http://farol-ig.s3-website-sa-east-1.amazonaws.com/ActivityDefinition-coleta.html"
-* instantiatesUri = "http://farol-ig.s3-website-sa-east-1.amazonaws.com/ActivityDefinition-coleta.html"
-
-* code = http://loinc.org#19766-5
-
-* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
-
-/*
-  Consulta na qual a requisição foi criada
-*/
-
-//* encounter = Reference(consulta)
-
-* authoredOn = "2022-08-09T23:18:22.558Z"
-
-/*
-  Unidade que requisita
-*/
-
-//* requester = Reference(enfermeira)
-* requester.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
-* requester.identifier.value = "234.234.567"
-
 
 // ------------------------------------------------------
 // respostas

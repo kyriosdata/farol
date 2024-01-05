@@ -65,11 +65,15 @@ Description: "Exame clínico visando laudo de exame citopatológico"
 * component contains inspecao 1..1 MS and sinais 1..1 MS
 
 * component[inspecao].code = http://loinc.org#12044-4 // Inspeção do colo
+* component[inspecao].code ^short = "Inspeção do colo"
 * component[inspecao].value[x] only CodeableConcept
+* component[inspecao].value[x] ^short = "Um dos valores definidos"
 * component[inspecao].valueCodeableConcept from $vs-inspecao-colo (required)
 * component[inspecao].valueCodeableConcept.coding 1..1
 
 * component[sinais].code = http://loinc.org#45687-1 // DST
+* component[inspecao].code ^short = "Indica se há sinais de DST"
+* component[inspecao].value[x] ^short = "true se há sinal de DST ou false, caso contrário"
 * component[sinais].value[x] only boolean
 
 

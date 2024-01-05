@@ -72,8 +72,8 @@ Description: "Exame clínico visando laudo de exame citopatológico"
 * component[inspecao].valueCodeableConcept.coding 1..1
 
 * component[sinais].code = http://loinc.org#45687-1 // DST
-* component[inspecao].code ^short = "Indica se há sinais de DST"
-* component[inspecao].value[x] ^short = "true se há sinal de DST ou false, caso contrário"
+* component[sinais].code ^short = "Indica se há sinais de DST"
+* component[sinais].value[x] ^short = "true se há sinal de DST ou false, caso contrário"
 * component[sinais].value[x] only boolean
 
 

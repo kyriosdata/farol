@@ -1,27 +1,35 @@
 ### Contexto (processos e atores)
 
 O exame citopatológico emprega uma [ficha](./nova-requisicao-anotada.pdf) 
-(formulário) usada em todo o território nacional e cujos processos 
-pertinentes são apoiados pelo SISCAN.
+(formulário) usada em todo o território nacional. O 
+registro de requisições e de laudos correspondentes
+é apoiado pelo SISCAN.
 
-A requisição deste exame é criada por um profissional de saúde que
+De forma simplificada, a requisição de exame citopatológico é criada por um profissional de saúde que
 coleta dados relevantes e material (amostra) enviados a um laboratório
 para a produção do laudo correspondente. O laudo produzido 
 é assinado manualmente pelo citopatologista e então encaminhado fisicamente do
 laboratório até o estabelecimento de saúde que o requisitou.
 
-Este processo é lento e oneroso quando comparado com a
-proposta aqui apresentada, por meio de um instrumento formal, _Guia de Implementação_,
-que define como o padrão tecnológico FHIR pode ser empregado para a troca de dados em saúde neste contexto.
+Este fluxo é lento e oneroso quando comparado com a
+proposta apresentada no presente projeto. A proposta é registrada por meio de um instrumento formal, _Guia de Implementação_,
+que define como o padrão tecnológico FHIR pode ser empregado para a troca de dados em saúde neste contexto. Tal guia é produzido em conformidade com
+as orientações da HL7 para o registro deste tipo de informação.
 
-> A alternativa proposta não substitui o SISCAN, mas o estende sem causar ruptura com o ecossistema existente.
+### Requisitos
 
-### Pontos importantes
+- Reduzir custos pela substituição do trânsito físico de papel.
+- Reduzir o tempo entre a produção do laudo e o consumo efetivo do resultado.
+- Assegurar a validade legal do laudo digital.
 
-- Custos são reduzidos pela substituição do trânsito físico de papel pelo trânsito eletrônico de dados em formato digital.
-- A segurança do laudo é estabelecida pela assinatura digital via certificados ICP-Brasil.
-- A agilidade, imprescindível para uma resposta adequada ao câncer, é assegurada pelo trânsito digital dos dados (praticamente instantâneo).
 
+### Restrição
+
+Requisitos devem 
+estender as capacidades do SISCAN sem ruptura no funcionamento deste sistema e do ecossistem
+existente.
+
+Interpretação: o SISCAN não é substituído, mas passa a operar com uma nova capacidade, a ser usufruída paulatinamente por integrações de sistemas de terceiros com a funcionalidade ofertada.
 
 ### Necessidade
 

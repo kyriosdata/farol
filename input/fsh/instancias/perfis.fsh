@@ -2,6 +2,7 @@ Alias: $anamnese = http://perfil.org/anamnese-exame-citopatologico
 Alias: $exame-clinico = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/exame-clinico
 Alias: $loinc = http://loinc.org
 Alias: $yesnodontknow = http://hl7.org/fhir/ValueSet/yesnodontknow
+Alias: $anamnese-citopatologia = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/anamnese-citopatologia
 
 // ------------------------------------------------------
 // questoes

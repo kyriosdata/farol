@@ -15,6 +15,7 @@ Alias: $cpf = https://fhir.fabrica.inf.ufg.br/ns/cpf
 Alias: $paciente-siscan = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente-siscan
 Alias: $motivos-exame = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivos-exame
 Alias: $cs-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/inspecao-colo
+Alias: $anamnese-citopatologia = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/anamnese-citopatologia
 
 
 // ------------------------------------------------------
@@ -123,9 +124,6 @@ Usage: #example
 * status = #draft
 * intent = #original-order
 
-* instantiatesCanonical = "http://farol-ig.s3-website-sa-east-1.amazonaws.com/ActivityDefinition-coleta.html"
-* instantiatesUri = "http://farol-ig.s3-website-sa-east-1.amazonaws.com/ActivityDefinition-coleta.html"
-
 * code.coding[0]
   * code = #0203010086
   * system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTabelaSUS"
@@ -133,7 +131,7 @@ Usage: #example
 
 * code.coding[1]
   * code = #19766-5
-  * system = $loinc
+  * system = "http://loinc.org"
 
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
 * reasonCode[0].coding[0] = $motivos-exame#rastreamento
@@ -597,4 +595,23 @@ Daí segue o exemplo, mas comentado.
 * gender = #female
 * birthDate = "1987-10-14"
 
-* qualification.code.coding = $cbo#223505
+* qualification.code.coding = http://www.saude.gov.br/fhir/r4/CodeSystem/BRCBO#223505
+
+
+
+Instance: citopatologista
+InstanceOf: Practitioner
+Title: "Citopatologista"
+Description: "Profissional lotado em laboratório que elabora e assina digitalmente o exame citopatológico"
+Usage: #example
+
+* identifier.system = "http://rnds.saude.gov.br/fhir/r4/NamingSystem/cns"
+* identifier.value = "2345234234234"
+* name.text = "Beltrano da Silva"
+* gender = #male
+* birthDate = "1987-10-14"
+
+* photo.url = "https://randomuser.me/api/portraits/med/men/75.jpg"
+* photo.title = "foto pequena"
+
+* qualification.code.coding = http://www.saude.gov.br/fhir/r4/CodeSystem/BRCBO#225305

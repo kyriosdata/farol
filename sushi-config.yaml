@@ -14,7 +14,7 @@ fhirVersion: 4.0.1
 copyright: 'Todos os direitos reservados. INCA/UFG.'
 copyrightYear: 2022+
 releaseLabel: preliminar
-jurisdiction: 'urn:iso:std:iso:3166#BR "Brazil"'
+jurisdiction: urn:iso:std:iso:3166#BR "Brazil"
 experimental: false
 meta:
   lastUpdated: 2024-01-03T14:56:14Z

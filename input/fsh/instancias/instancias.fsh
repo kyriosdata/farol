@@ -91,7 +91,7 @@ Description: "Reúne dados de uma ficha de requisição"
 
 // Responsável (profissional de saúde)
 * author.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
-* author.identifier.value = "95034430023111167"
+* author.identifier.value = "234.234.567"
 
 * title = "Pacote contendo todos os dados da requisição de Exame Citopatológico para a Rosa"
 
@@ -118,7 +118,7 @@ Description: "Reúne dados de uma ficha de requisição"
 * section[4]
   * title = "Unidade de Saúde Requisitante"
   * entry[0].identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
-  * entry[0].identifier.value = "123456"
+  * entry[0].identifier.value = "234.234.567"
 
 // ------------------------------------------------------
 // requisicao (ServiceRequest)
@@ -286,6 +286,7 @@ Description: "Paciente assistida"
 * extension[3].valueCodeableConcept.coding[0]
   * system = $cs-nacionalidade
   * code = #B
+  * version = "01.00"
 
 // Nível de escolaridade
 * extension[4].url = $nivel-educacional
@@ -298,7 +299,7 @@ Description: "Paciente assistida"
   * use = #home
   * type = #physical
   * city = #315780
-  * state = #31
+  //* state = http://www.saude.gov.br/fhir/r4/CodeSystem/BRDivisaoGeograficaBrasil|2023-12-14#31
   * postalCode = "74000-000"  // Nao valida a máscara xxxxx-xxx
   * line[0] = "Rua"
   * line[1] = "Rua"
@@ -725,7 +726,9 @@ Daí segue o exemplo, mas comentado.
 
 * qualification.code.coding = http://www.saude.gov.br/fhir/r4/CodeSystem/BRCBO#223505
 
-
+// ------------------------------------------------------
+// citopatologista
+// ------------------------------------------------------
 
 Instance: citopatologista
 InstanceOf: Practitioner
@@ -743,3 +746,4 @@ Usage: #example
 * photo.title = "foto pequena"
 
 * qualification.code.coding = http://www.saude.gov.br/fhir/r4/CodeSystem/BRCBO#225305
+

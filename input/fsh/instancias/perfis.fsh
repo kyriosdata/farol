@@ -75,7 +75,9 @@ Description: "Exame clínico visando laudo de exame citopatológico"
 * component[sinais].code = http://loinc.org#45687-1 // DST
 * component[sinais].code ^short = "Indica se há sinais de DST"
 * component[sinais].value[x] ^short = "true se há sinal de DST ou false, caso contrário"
-* component[sinais].value[x] only boolean
+* component[sinais].value[x] only CodeableConcept
+* component[sinais].valueCodeableConcept from http://loinc.org/vs/LL50-6 (required)
+* component[sinais].valueCodeableConcept.coding 1..1
 
 
 // ------------------------------------------------------
@@ -93,8 +95,8 @@ Description: "Requisição de exame citopatológico"
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Detalha referência para anamnese e exame clínico.</div>"
 
-* supportingInfo only Reference(exame-clinico or br-anamnese-exame-citopatologico)
-* supportingInfo 2..2
+* supportingInfo only Reference(Observation or QuestionnaireResponse)
+* supportingInfo 3..3
 
 // ------------------------------------------------------
 // endereco

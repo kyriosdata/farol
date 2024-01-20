@@ -57,15 +57,20 @@ Description: "Todos os dados pertinentes a uma ficha de requisição de exame ci
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb02"
   * resource = requisicao
 
-// respostas - anamnese (Observation)
+// respostas - anamnese (QuestionnaireResponse)
 * entry[3]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03"
-  * resource = respostas
+  * resource = respostas-anamnese
 
 // exame (Observation)
 * entry[4]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04"
-  * resource = exame
+  * resource = exame-inspecao
+
+// exame (Observation)
+* entry[5]
+  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05"
+  * resource = exame-dst
 
 // ------------------------------------------------------
 // composition-1 0
@@ -99,14 +104,18 @@ Description: "Reúne dados de uma ficha de requisição"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb02)
 
 * section[1]
-  * title = "Dados da anamnese"
+  * title = "Respostas do questionário da anamnese"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
 
 * section[2]
-  * title = "Exame clínico"
+  * title = "Inspeção do colo"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04)
 
 * section[3]
+  * title = "Sinais sugestivos de doenças sexualmente transmissíveis"
+  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05)
+
+* section[4]
   * title = "Unidade de Saúde Requisitante"
   * entry[0].identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
   * entry[0].identifier.value = "123456"
@@ -138,7 +147,12 @@ Usage: #example
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
 * reasonCode[0].coding[0] = $motivos-exame#rastreamento
 * supportingInfo[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
+
+// exame-inspecao
 * supportingInfo[1] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04)
+
+// exame-dst
+* supportingInfo[2] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05)
 
 // CNS do responsável
 * requester.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
@@ -170,7 +184,42 @@ Title: "Exame clínico visando laudo citopatológico"
 
 * component[1]
   * code = http://loinc.org#45687-1
-  * valueBoolean = false
+  * valueCodeableConcept.coding = http://loinc.org#LA33-6
+
+Instance: exame-inspecao
+InstanceOf: Observation
+Usage: #example
+Title: "Inspeção do colo uterino"
+
+* status = #final
+
+// Cervix Study observation Inspection
+* code = http://loinc.org#12044-4
+
+* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
+* performer.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
+* performer.identifier.value = "234.234.567"
+* effectiveDateTime = "2023-11-10"
+
+* valueCodeableConcept.coding = $cs-inspecao-colo#normal
+
+Instance: exame-dst
+InstanceOf: Observation
+Usage: #example
+Title: "Sinais sugestivos de doença sexualmente transmissíveis"
+
+* status = #final
+
+// Sexually transmitted diseases
+* code = http://loinc.org#45687-1
+
+* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
+* performer.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
+* performer.identifier.value = "234.234.567"
+* effectiveDateTime = "2023-11-10"
+
+// ValueSet http://loinc.org/vs/LL50-6
+* valueCodeableConcept.coding = http://loinc.org#LA33-6
 
 // ------------------------------------------------------
 // rosa (subject da composition)

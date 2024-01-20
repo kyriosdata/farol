@@ -93,7 +93,7 @@ Description: "Reúne dados de uma ficha de requisição"
 * author.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
 * author.identifier.value = "95034430023111167"
 
-* title = "Dados da requisição de Exame Citopatológico"
+* title = "Pacote contendo todos os dados da requisição de Exame Citopatológico para a Rosa"
 
 // Patient
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
@@ -206,7 +206,7 @@ Title: "Inspeção do colo uterino"
 Instance: exame-dst
 InstanceOf: Observation
 Usage: #example
-Title: "Sinais sugestivos de doença sexualmente transmissíveis"
+Title: "Sinais sugestivos de doença sexualmente transmissível"
 
 * status = #final
 

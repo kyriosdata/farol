@@ -47,22 +47,22 @@ Description: "Todos os dados pertinentes a uma ficha de requisição de exame ci
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb00"
   * resource = composition-1
 
-// rosa (paciente)
+// rosa (Patient)
 * entry[1]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01"
   * resource = rosa
 
-// requisicao (requisição de exame - ServiceRequest)
+// requisicao (ServiceRequest)
 * entry[2]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb02"
   * resource = requisicao
 
-// respostas (anamnese)
+// respostas - anamnese (Observation)
 * entry[3]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03"
   * resource = respostas
 
-// Dados do exame clínico
+// exame (Observation)
 * entry[4]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04"
   * resource = exame
@@ -84,14 +84,16 @@ Description: "Reúne dados de uma ficha de requisição"
 // Data da coleta da amostra e dados da requisição
 * date = "2023-11-20"
 
-// Responsável
+// Responsável (profissional de saúde)
 * author.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
 * author.identifier.value = "95034430023111167"
 
 * title = "Dados da requisição de Exame Citopatológico"
 
+// Patient
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
 
+// ServiceRequest
 * section[0]
   * title = "Requisição de exame citopatológico"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb02)
@@ -315,7 +317,7 @@ Description: "Ilustra uma unidade na qual um exame citopatológico é realizado"
 
 Instance: anamnese-exame-citopatologico
 InstanceOf: Questionnaire
-Usage: #definition
+Usage: #example
 Title: "Anamnese (exame citopatológico)"
 Description: "Questões pertinentes à anamnese do exame citopatológico"
 
@@ -323,15 +325,23 @@ Description: "Questões pertinentes à anamnese do exame citopatológico"
 
 * version = "0.0.1"
 * name = "AnamneseExameCitopatologico"
-* title = "Questionário (dados de Anamnese) da requisição do exame citopatológico"
+* title = "Questionário (dados de Anamnese) da ficha de requisição do exame citopatológico"
 * status = #draft
 * experimental = false
 * subjectType = #Patient
-* date = "2023-11-27"
+* date = "2024-01-20"
 * publisher = "Ministério da Saúde (INCA)"
-* description = "Identifica todas as perguntas contidas na ficha de requisição de exame citopatológico e os possíveis valores para cada uma delas."
+* contact[0].name = "Renata (INCA)"
+* contact[0].telecom[0].system = #email
+* contact[0].telecom[0].value = "renata.email@inca.saude.br"
+* contact[0].telecom[0].use = #work
+* contact[0].telecom[0].period.start = "2024"
+* description = "Questões contidas na ficha de requisição de exame citopatológico."
+* useContext.code[0].system = "http://terminology.hl7.org/ValueSet/v3-ActEncounterCode"
+* useContext.code[0].code = #AMB
+* useContext.valueCodeableConcept.text = "Estabelecimento de saúde. Unidade básica de saúde."
 * jurisdiction = urn:iso:std:iso:3166#BR
-* purpose = "Definir conjunto específico de questões da anamnese para visando montar requisição de exame citopatológico conforme ficha definida pelo INCA (Ministério da Saúde)."
+* purpose = "Estas questões orientam a coleta de dados relevantes para a elaboração do laudo citopatológico. Convém ressaltar que os dados pertinentes a este questionário não são suficientes. Também há informações necessárias coletadas por meio de exame clínico."
 * copyright = "Ministério da Saúde do Brasil"
 * approvalDate = "2023-12-15"
 * lastReviewDate = "2023-11-30"
@@ -448,6 +458,75 @@ Description: "Questões pertinentes à anamnese do exame citopatológico"
   * repeats = false
   * readOnly = true
   * maxLength = 3
+
+// ------------------------------------------------------
+// anamnese-exame-citopatologico
+// ------------------------------------------------------
+
+Instance: respostas-anamnese
+InstanceOf: QuestionnaireResponse
+Description: "Respostas para anamnese de exame citopatológico"
+
+* questionnaire = Canonical(anamnese-exame-citopatologico)
+* status = #completed
+* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
+* author.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
+* author.identifier.value = "234.234.567"
+
+* item[0]
+  * linkId = "1"
+  * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
+
+* item[1]
+  * linkId = "2"
+  * answer[0].valueDate = "2024-01-01"
+
+* item[2]
+  * linkId = "3"
+  * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
+  * text = "Usa DIU?"
+
+* item[3]
+  * linkId = "4"
+  * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
+  * text = "Está grávida?"
+
+* item[4]
+  * linkId = "5"
+  * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
+  * text = "Usa pílula anticoncepcional?"
+
+* item[5]
+  * linkId = "6"
+  * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
+  * text = "Usa hormônio/remédio para tratar a menopausa?"
+
+* item[6]
+  * linkId = "7"
+  * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
+  * text = "Já fez tratamento por radioterapia?"
+
+* item[7]
+  * linkId = "8"
+  * answer[0].valueDate = "2024-01-01"
+  * text = "Data da última menstruação/regra"
+
+* item[8]
+  * linkId = "9"
+  * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
+  * text = "Tem ou teve algum sangramento após relações sexuais? (não considerar a primeira relação sexual na vida)"
+
+* item[9]
+  * linkId = "10"
+  * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
+  * text = "Tem ou teve algum sangramento após a menopausa? (não considerar o(s) sangramento(s) na vigência de reposição hormonal)"
+
+* item[10]
+  * linkId = "11"
+  * answer[0].valueInteger = 60
+  * text = "Qual a sua idade?"
+
+
 
 // ------------------------------------------------------
 // respostas

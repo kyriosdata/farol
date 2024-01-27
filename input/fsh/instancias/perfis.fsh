@@ -14,8 +14,8 @@ Alias: $vs-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/vs-inspe
 Profile: ExameClinicoParaLaudoCitopatologico
 Parent: Observation
 Id: exame-clinico
-Title: "Exame clínico"
-Description: "Exame clínico visando laudo de exame citopatológico"
+Title: "Exame clínico (parte de requisição)"
+Description: "Exame clínico para coleta de informações necessárias para a requisição de exame citopatológico."
 
 * ^url = $exame-clinico
 
@@ -31,19 +31,21 @@ Description: "Exame clínico visando laudo de exame citopatológico"
 
 * component contains inspecao 1..1 MS and sinais 1..1 MS
 
+* component[inspecao] ^short = "Registra o resultado da inspeção do colo"
 * component[inspecao].code = http://loinc.org#12044-4 // Inspeção do colo
-* component[inspecao].code ^short = "Inspeção do colo"
+* component[inspecao].code ^short = "Código para inspeção do colo"
+* component[inspecao].code.coding ^short = "Código definido por uma terminologia"
 * component[inspecao].value[x] only CodeableConcept
-* component[inspecao].value[x] ^short = "Um dos valores definidos"
+* component[inspecao].value[x] ^short = "O código correspondente ao resultado da inspeção"
 * component[inspecao].valueCodeableConcept from $vs-inspecao-colo (required)
 * component[inspecao].valueCodeableConcept.coding 1..1
+* component[inspecao].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
 
+* component[inspecao] ^short = "Registra presença ou não de sinais de DST"
 * component[sinais].code = http://loinc.org#45687-1 // DST
-* component[sinais].code ^short = "Indica se há sinais de DST"
+* component[sinais].code ^short = "Código para presença ou não de sinais de DST"
 * component[sinais].value[x] ^short = "true se há sinal de DST ou false, caso contrário"
-* component[sinais].value[x] only CodeableConcept
-* component[sinais].valueCodeableConcept from http://hl7.org/fhir/ValueSet/yesnodontknow (required)
-* component[sinais].valueCodeableConcept.coding 1..1
+* component[sinais].value[x] only boolean
 
 
 // ------------------------------------------------------
@@ -61,6 +63,7 @@ Description: "Requisição de exame citopatológico"
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Detalha referência para anamnese e exame clínico.</div>"
 
+* supportingInfo ^short = "O laudo de exame citopatológico depende de dois grupos principais de informações: dados da anamnese e de exame clínico."
 * supportingInfo only Reference(Observation or QuestionnaireResponse)
 * supportingInfo 3..3
 

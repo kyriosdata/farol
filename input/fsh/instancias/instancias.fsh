@@ -184,13 +184,13 @@ Title: "Exame clínico visando laudo citopatológico"
 
 * component[1]
   * code = http://loinc.org#45687-1
-  * valueCodeableConcept.coding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
+  * valueBoolean = false
 
 Instance: exame-inspecao
 InstanceOf: Observation
 Usage: #example
 Title: "Inspeção do colo uterino"
-
+Description: "Exame clínico que identifica o resultado da inspeção do colo uterino."
 * status = #final
 
 // Cervix Study observation Inspection
@@ -207,6 +207,7 @@ Instance: exame-dst
 InstanceOf: Observation
 Usage: #example
 Title: "Sinais sugestivos de doença sexualmente transmissível"
+Description: "Exame clínico que identifica se há presença ou não de sinais de doença sexualmente transmissível"
 
 * status = #final
 
@@ -414,8 +415,8 @@ Description: "Questões pertinentes à anamnese do exame citopatológico"
 * item[1]
   * linkId = "2"
   * type = #date
-  * code[0] = http://loinc.org#60432-2
   * text = "Quando fez o último exame?"
+  * code[0] = http://loinc.org#60432-2
   * enableWhen[0]
     * question = "1"
     * operator = #=
@@ -526,10 +527,12 @@ Description: "Respostas para anamnese de exame citopatológico"
 * item[0]
   * linkId = "1"
   * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
+  * text = "Já fez o exame preventivo alguma vez?"
 
 * item[1]
   * linkId = "2"
   * answer[0].valueDate = "2024-01-01"
+  * text = "Quando fez o último exame?"
 
 * item[2]
   * linkId = "3"

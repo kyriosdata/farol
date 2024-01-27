@@ -42,7 +42,7 @@ Description: "Exame clínico visando laudo de exame citopatológico"
 * component[sinais].code ^short = "Indica se há sinais de DST"
 * component[sinais].value[x] ^short = "true se há sinal de DST ou false, caso contrário"
 * component[sinais].value[x] only CodeableConcept
-* component[sinais].valueCodeableConcept from http://loinc.org/vs/LL50-6 (required)
+* component[sinais].valueCodeableConcept from http://hl7.org/fhir/ValueSet/yesnodontknow (required)
 * component[sinais].valueCodeableConcept.coding 1..1
 
 

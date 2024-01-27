@@ -184,7 +184,7 @@ Title: "Exame clínico visando laudo citopatológico"
 
 * component[1]
   * code = http://loinc.org#45687-1
-  * valueCodeableConcept.coding = http://loinc.org#LA33-6
+  * valueCodeableConcept.coding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
 
 Instance: exame-inspecao
 InstanceOf: Observation

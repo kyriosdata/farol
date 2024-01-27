@@ -1,9 +1,9 @@
 ## Projeto Farol
 
-Este projeto é uma proposta de Transformação Digital do monitoramento e rastreamento do Câncer de Colo do Útero por meio de um Guia de Implementação FHIR
-com foco na requisição e laudo de exame citopatológico.
+Este projeto é uma proposta de Transformação Digital do monitoramento e rastreamento do Câncer de Colo do Útero por meio de um Guia de Implementação FHIR com foco na requisição e laudo de exame citopatológico. Ou seja,
+viabilizar a integração de qualquer Sistema de Informação em Saúde (SIS) com o SISCAN, ou seja, oferecer interoperabilidade padronizada, visando o registro de requisições e de laudos correspondentes.
 
-A proposta é feita à luz da Política Nacional de Informação e Informática em Saúde ([aqui](https://bvsms.saude.gov.br/bvs/saudelegis/gm/2021/prt1768_02_08_2021.html)) e da Estratégia de Saúde Digital 2020-2028 ([aqui](https://bvsms.saude.gov.br/bvs/publicacoes/estrategia_saude_digital_Brasil.pdf)). A manutenção do SISCAN não faz parte do presente projeto.
+A proposta é feita à luz da Política Nacional de Informação e Informática em Saúde ([aqui](https://bvsms.saude.gov.br/bvs/saudelegis/gm/2021/prt1768_02_08_2021.html)) e da Estratégia de Saúde Digital 2020-2028 ([aqui](https://bvsms.saude.gov.br/bvs/publicacoes/estrategia_saude_digital_Brasil.pdf)). A manutenção do SISCAN faz-se necessária para a realização desta interface de software adicional.
 
 O termo **farol** está associado à segurança e
 orientação, ambos pertinentes ao contexto

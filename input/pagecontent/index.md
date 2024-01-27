@@ -1,9 +1,8 @@
 ### Contexto (processos e atores)
 
-O exame citopatológico emprega uma [ficha](./nova-requisicao-anotada.pdf) 
-(formulário) usada em todo o território nacional. O 
-registro de requisições e de laudos correspondentes
-é apoiado pelo SISCAN.
+A requisição e o laudo de exame citopatológico emprega uma [ficha](./nova-requisicao-anotada.pdf) 
+(formulário) usada em todo o território nacional. O registro tanto de 
+requisições quanto de laudos é apoiado pelo SISCAN.
 
 De forma simplificada, a requisição de exame citopatológico é criada por um profissional de saúde que
 coleta dados relevantes e material (amostra) enviados a um laboratório
@@ -12,9 +11,16 @@ para a produção do laudo correspondente. O laudo produzido
 laboratório até o estabelecimento de saúde que o requisitou.
 
 Este fluxo é lento e oneroso quando comparado com a
-proposta apresentada no presente projeto. A proposta é registrada por meio de um instrumento formal, _Guia de Implementação_,
-que define como o padrão tecnológico FHIR pode ser empregado para a troca de dados em saúde neste contexto. Tal guia é produzido em conformidade com
-as orientações da HL7 para o registro deste tipo de informação.
+proposta apresentada no presente projeto. A proposta baseia-se na oferta
+de um mecanismo de integração com o SISCAN baseado no padrão FHIR, o que está
+alinhado com a vigente Política Nacional de Informação e Informática em Saúde e com a Estratégia de Saúde Digital. 
+
+A realização desta proposta exige manutenção no SISCAN com o propósito
+de estendê-lo com esta nova interface de integração ao mesmo tempo em que 
+o ecossistema existente é mantido operacional.
+
+O registro da proposta é um instrumento formal definido pela HL7,
+o _Guia de Implementação_, que descreve de forma rigorosa o "contrato" entre o que é oferecido pelo SISCAN para integração com outros sistemas.
 
 ### Requisitos
 

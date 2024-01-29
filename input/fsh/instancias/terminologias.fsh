@@ -317,18 +317,16 @@ Id: niveis-educacionais
 Title: "Níveis educacionais"
 Description: """
 Identifica o nível educacional do paciente (maior obtido).
-
-**IMPORTANTE**: é preciso verificar a conformidade com a orientação formal
-do Ministério da Educação.
 """
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/niveis-educacionais"
 
 * ^status = #draft
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Extensão para idade estimada de paciente</div>"
 * ^version = "1.0.0"
 * ^experimental = false
+* ^purpose = """Permite identificar o nível educacional do paciente e, desta forma, análises e ações decorrentes.
+Esta classificação foi realizada com base em códigos disponíveis LOINC. **IMPORTANTE**: ajuste para manter coerência com o Ministério da Educação pode ser necessário.
+"""
 
 // Conforme https://www.hl7.org/fhir/loinc.html#4.3.3.2
 * ^copyright = "This content LOINC® is copyright © 1995 Regenstrief Institute, Inc. and the LOINC Committee, and available at no cost under the license at http://loinc.org/terms-of-use"

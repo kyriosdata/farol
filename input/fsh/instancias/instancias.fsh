@@ -527,7 +527,7 @@ Description: "Respostas para anamnese de exame citopatológico"
 * item[0]
   * linkId = "1"
   * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
-  * text = "Já fez o exame preventivo alguma vez?"
+  * text = "Fez o exame preventivo (Papanicolaou) alguma vez?"
 
 * item[1]
   * linkId = "2"

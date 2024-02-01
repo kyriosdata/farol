@@ -65,9 +65,8 @@ Description: "Motivo pelo qual a amostra é rejeitada e o laudo inviável."
 * ^caseSensitive = true
 * ^experimental = false
 
-* #identificacao "falha na identificação" "Ausência ou erro na identificação da lâmina, frasco ou requisição"
-* #dano "lâmina" "Lâmina danificada ou ausente"
-* #alheia "Causa alheia" "Causa alheia ao laboratório"
+* #identificacao-invalida "falha na identificação" "Ausência ou erro na identificação da lâmina, frasco ou requisição"
+* #lamina-invalida "lâmina" "Lâmina danificada ou ausente"
 * #outra "Outras causas" "Outras causas"
 
 // ------------------------------------------------------
@@ -171,7 +170,6 @@ Description: "Microbiologias"
 * #trichomonas "Trichomonas vaginalis"
 * #herpes "Grupo Herpes" "Efeito citopático compatível com vírus do grupo Herpes"
 * #bacilos-supracitoplasmaticos "Bacilos" "Bacilos supracitoplasmáticos (sugestivos de Gardnerella/Mobiluncus)"
-* #bacilos-outros "Outros bacilos"
 * #outros "Outros"
 
 // ------------------------------------------------------
@@ -192,23 +190,27 @@ Description: "Células atípicas"
 * ^caseSensitive = true
 * ^experimental = false
 
-* #nao-neoplasicas "Possivelmente não neoplásicas"
-* #lesao-nao-descartavel "Não se pode afastar lesão de alto grau"
+* #escamosas-1 "Possivelmente não neoplásicas (ASC-US)"
+* #escamosas-2 "Não se pode afastar lesão de alto grau (ASC-H)"
+* #grandulares-1 "Possivelmente não neoplásicas"
+* #grandulares-2 "Não se pode afastar lesão de alto grau"
+* #indefinida-1 "Possivelmente não neoplásicas"
+* #indefinida-2 "Não se pode afastar lesão de alto grau"
 
 
 // ------------------------------------------------------
-// atipias
+// atipias-escamosas
 // ------------------------------------------------------
 
-CodeSystem: Atipias
-Id: atipias
-Title: "Atipias"
-Description: "Atipias"
+CodeSystem: AtipiasEscamosas
+Id: atipias-escamosas
+Title: "Atipias em células escamosas"
+Description: "Classificação de atipias em células escamosas"
 
 * ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Classificação de atipias em células escamosas</div>"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/atipias"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/atipias-escamosas"
 
 * ^status = #draft
 * ^caseSensitive = true
@@ -217,56 +219,60 @@ Description: "Atipias"
 * #baixo "Lesão baixo grau" "Lesão intra-epitelial de baixo grau (compreendendo efeito citopático pelo HPV e neoplasia intra-epitelial cervical grau I)"
 * #alto "Lesão alto grau" "Lesão intra-epitelial de alto grau (compreendendo neoplasias intraepiteliais cervicais graus II e III)"
 * #possivel-microinvasao "Lesão intra-epitelial de alto grau , não podendo excluir micro-invasão"
-* #carcinome "Carcinoma" "Carcinoma epidermóide invasor"
-
+* #carcinoma "Carcinoma" "Carcinoma epidermóide invasor"
 
 // ------------------------------------------------------
-// questoes-anamnese
+// atipias-glandulares
 // ------------------------------------------------------
 
-CodeSystem: AnamneseCitopatologia
-Id: anamnese-citopatologia
-Title: "Identificação do item de informação da anamnese de exame citopatológico"
-Description: "Identificação dos itens de informação coletados na anamnese de exame citopatológico"
+CodeSystem: AtipiasGrandulares
+Id: atipias-grandulares
+Title: "Atipias em células grandulares"
+Description: "Classificação de atipias em células glandulares"
 
 * ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Classificação de atipias em células glandulares</div>"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/anamnese-citopatologia"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/atipias-glandulares"
 
 * ^status = #draft
 * ^caseSensitive = true
 * ^experimental = false
 
-* #ja-fez "Você já realizou o exame citopatológico?"
-* #diu "Usa DIU?"
-* #pilula "Usa pílula anticoncepcional?"
-* #radioterapia "Já fez tratamento por radioterapia?"
-* #sangramento-relacao "Tem ou teve sangramento após relação?"
-* #sangramento-menopausa "Tem ou teve sangramento após menopausa?"
+* #in-situ "Adenocarcinoma in situ"
+* #cervical "Adenocarcinoma invasor cervical"
+* #endometrial "Adenocarcinoma invasor endometrial"
+* #sem-especificacao "Adenocarcinoma sem outras especificações"
 
 // ------------------------------------------------------
-// vs-inspecao-colo
+// laudo-exame-citopatologico
 // ------------------------------------------------------
 
-ValueSet: QuestoesAnamnese
-Id: questoes-anamnese
-Title: "Informação coletada na anamnese de exame citopatógico"
-Description: "Identificação de item de informação coletado pela anamnese de exame citopatológico"
+CodeSystem: LaudoExameCitopatologico
+Id: laudo-exame-citopatologico
+Title: "Itens avaliados no laudo de exame citopatológico"
+Description: "Tipos de avaliação de exame citopatológico"
 
 * ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Itens avaliados no laudo de exame citopatológico</div>"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/questoes-anamnese"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-exame-citopatologico"
 
 * ^status = #draft
+* ^caseSensitive = true
 * ^experimental = false
 
-* include codes from system AnamneseCitopatologia
-* $loinc#60432-2 "Data do último exame"
-* $loinc#66174-4 "Está grávida?"
-* $loinc#63873-4 "Usa hormônio na menopausa?"
-* $loinc#8665-2 "Data da última menstruação"
+* #motivo-rejeicao "Motivo de rejeição de amostra"
+* #epitelios-na-amostra "Epitélios representados na amostra"
+* #adequabilidade "Adequabilidade do material"
+* #normalidade "Dentro dos limites da normalidade no material examinado?"
+* #alteracoes-benignas "Alterações celulares benignas reativas ou reparativas"
+* #microbiologia "Microbiologia"
+* #significado-indeterminado "Células atípicas de significado indeterminado"
+* #atipias-escamosas "Atipias em células escamosas"
+* #atipias-glandulares "Atipias em células glandulares"
+* #neoplasias-malignas "Outras neoplasias malignas"
+* #celulas-endometriais "Presença de células endometriais (na pós-menopausa ou acima de 40 anos, fora do período menstrual)"
 
 // ------------------------------------------------------
 // vs-inspecao-colo

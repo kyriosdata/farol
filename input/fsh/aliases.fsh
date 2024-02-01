@@ -1,6 +1,5 @@
 Alias: $cbo = http://www.saude.gov.br/fhir/r4/CodeSystem/BRCBO
 Alias: $ne = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional
-Alias: $anamnese-citopatologia = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/anamnese-citopatologia
 
 
 Alias: $loinc = http://loinc.org

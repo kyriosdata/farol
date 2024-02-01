@@ -444,3 +444,21 @@ Usage: #example
 * identifier.value = "2345234234234"
 * name.text = "Beltrano da Silva"
 
+// ------------------------------------------------------
+// diagnostico
+// ------------------------------------------------------
+
+Instance: diagnostico
+InstanceOf: DiagnosticReport
+Title: "Laudo de Exame Citopatológico"
+Description: "Laudo da requisição de exame da paciente Rosa"
+
+* status = #final
+* code.text = "Microscopic observation [Identifier] in Cervix by Cyto stain"
+* code.coding[0].system = "https://loinc.org"
+* code.coding[0].code = #10524-7
+
+* identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ns/laboratorio"
+* identifier[0].value = "cito-exame-123"
+
+* basedOn = Reference(requisicao)

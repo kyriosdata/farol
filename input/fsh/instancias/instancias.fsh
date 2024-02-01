@@ -558,55 +558,6 @@ Description: "Respostas para anamnese de exame citopatológico"
 
 
 
-// ------------------------------------------------------
-// respostas
-// ------------------------------------------------------
-
-Instance: respostas
-InstanceOf: Observation
-Description: "Anamnese realizada para o exame citopatológico"
-
-* meta.profile = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/br-anamnese-exame-citopatologico"
-
-* status = #final
-* code = http://loinc.org#1-8
-* category = http://terminology.hl7.org/CodeSystem/observation-category#survey
-
-* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
-* effectiveDateTime = "2023-01-01"
-* performer.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
-* performer.identifier.value = "234.234.567"
-
-* component[0].code = $anamnese-citopatologia#ja-fez
-* component[0].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
-
-* component[1].code = http://loinc.org#60432-2
-* component[1].valueDateTime = "2023-01-01"
-
-* component[2].code = $anamnese-citopatologia#diu
-* component[2].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
-
-* component[3].code = http://loinc.org#66174-4
-* component[3].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
-
-* component[4].code = $anamnese-citopatologia#pilula
-* component[4].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
-
-* component[5].code = http://loinc.org#63873-4
-* component[5].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
-
-* component[6].code = $anamnese-citopatologia#radioterapia
-* component[6].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
-
-* component[7].code = http://loinc.org#8665-2
-* component[7].valueDateTime =	"2023-10-10"
-
-* component[8].code = $anamnese-citopatologia#sangramento-menopausa
-* component[8].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
-
-* component[9].code = $anamnese-citopatologia#sangramento-relacao
-* component[9].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
-
 
 // ------------------------------------------------------
 // profissional

@@ -328,21 +328,16 @@ Instance: laboratorio
 InstanceOf: Organization
 Usage: #example
 Title: "Laboratório que realiza exames citopatológicos"
-Description: "Ilustra uma unidade na qual um exame citopatológico é realizado"
+Description: "Laboratório que emite o laudo do exame da paciente Rosa"
 
 * name = "Laboratório Cito"
-
-// CNES
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
 * identifier.value = "654321"
 
-// UF e município
-* address.city = "Goiânia"
-* address.state = "GO"
-
-* type.coding.system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoEstabelecimentoSaude"
-* type.coding.code = #80
-* type.text = "LABORATORIO DE SAUDE PUBLICA"
+// As informações abaixo não são registradas no laudo
+//* type.coding.system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoEstabelecimentoSaude"
+//* type.coding.code = #80
+//* type.text = "LABORATORIO DE SAUDE PUBLICA"
 
 // ------------------------------------------------------
 // anamnese-exame-citopatologico

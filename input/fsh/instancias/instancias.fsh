@@ -52,23 +52,28 @@ Description: "Todos os dados pertinentes a uma ficha de requisição de exame ci
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01"
   * resource = rosa
 
-// requisicao (ServiceRequest)
+// unidade-saude (Organization)
 * entry[2]
+  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06"
+  * resource = rosa
+
+// requisicao (ServiceRequest)
+* entry[3]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb02"
   * resource = requisicao
 
 // respostas - anamnese (QuestionnaireResponse)
-* entry[3]
+* entry[4]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03"
   * resource = respostas-anamnese
 
 // exame (Observation)
-* entry[4]
+* entry[5]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04"
   * resource = exame-inspecao
 
 // exame (Observation)
-* entry[5]
+* entry[6]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05"
   * resource = exame-dst
 
@@ -86,14 +91,14 @@ Description: "Reúne dados de uma ficha de requisição"
 
 * type = http://loinc.org#80568-9 // LOINC para FORM  (desencorajado por ser genérico)
 
-// Data da coleta da amostra e dados da requisição
-* date = "2023-11-20"
-
 // Responsável (profissional de saúde)
 * author.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
 * author.identifier.value = "234.234.567"
 
 * title = "Pacote contendo todos os dados da requisição de Exame Citopatológico para a Rosa"
+
+// Data em que a composição foi montada
+* date = "2024-01-20"
 
 // Patient
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
@@ -117,8 +122,9 @@ Description: "Reúne dados de uma ficha de requisição"
 
 * section[4]
   * title = "Unidade de Saúde Requisitante"
-  * entry[0].identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
-  * entry[0].identifier.value = "234.234.567"
+  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06)
+//  * entry[0].identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
+//  * entry[0].identifier.value = "234.234.567"
 
 // ------------------------------------------------------
 // requisicao (ServiceRequest)
@@ -134,6 +140,9 @@ Usage: #example
 
 * status = #draft
 * intent = #original-order
+
+// Data da coleta da amostra e dados da requisição
+* authoredOn = "2024-01-23"
 
 * code.coding[0]
   * code = #0203010086
@@ -162,29 +171,6 @@ Usage: #example
 // ------------------------------------------------------
 // exame
 // ------------------------------------------------------
-
-Instance: exame
-InstanceOf: Observation
-Usage: #example
-Title: "Exame clínico visando laudo citopatológico"
-
-* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/exame-clinico"
-
-* status = #final
-* code = http://loinc.org#1-8 // Errado deve ser preenchido
-
-* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
-* performer.identifier.value = "234.234.567"
-* effectiveDateTime = "2023-11-10"
-
-* component[0]
-  * code = http://loinc.org#12044-4
-  * valueCodeableConcept.coding = $cs-inspecao-colo#normal
-
-* component[1]
-  * code = http://loinc.org#45687-1
-  * valueBoolean = false
 
 Instance: exame-inspecao
 InstanceOf: Observation
@@ -219,8 +205,7 @@ Description: "Exame clínico que identifica se há presença ou não de sinais d
 * performer.identifier.value = "234.234.567"
 * effectiveDateTime = "2023-11-10"
 
-// ValueSet http://loinc.org/vs/LL50-6
-* valueCodeableConcept.coding = http://loinc.org#LA33-6
+* valueBoolean = false
 
 // ------------------------------------------------------
 // rosa (subject da composition)
@@ -293,9 +278,6 @@ Description: "Paciente assistida"
 * extension[4].url = $nivel-educacional
 * extension[4].valueCode = #LA12462-0
 
-// ERRO: 
-// Atributo id foi removido pois gerador de Narrativas gera erro
-
 * address[0]
   * use = #home
   * type = #physical
@@ -322,7 +304,7 @@ Instance: unidade-saude
 InstanceOf: Organization
 Usage: #example
 Title: "Unidade Básica de Saúde"
-Description: "Ilustra uma unidade na qual um exame citopatológico é requisitado"
+Description: "A unidade de saúde na qual o exame citopatológico da paciente Rosa é requisitado"
 
 * name = "Unidade Básica do SUS"
 

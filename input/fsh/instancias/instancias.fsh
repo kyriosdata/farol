@@ -57,23 +57,28 @@ Description: "Todos os dados pertinentes a uma ficha de requisição de exame ci
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06"
   * resource = rosa
 
-// requisicao (ServiceRequest)
+// profissional (Practitioner)
 * entry[3]
+  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07"
+  * resource = profissional
+
+// requisicao (ServiceRequest)
+* entry[4]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb02"
   * resource = requisicao
 
 // respostas - anamnese (QuestionnaireResponse)
-* entry[4]
+* entry[5]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03"
   * resource = respostas-anamnese
 
 // exame (Observation)
-* entry[5]
+* entry[6]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04"
   * resource = exame-inspecao
 
 // exame (Observation)
-* entry[6]
+* entry[7]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05"
   * resource = exame-dst
 
@@ -91,9 +96,7 @@ Description: "Reúne dados de uma ficha de requisição"
 
 * type = http://loinc.org#80568-9 // LOINC para FORM  (desencorajado por ser genérico)
 
-// Responsável (profissional de saúde)
-* author.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
-* author.identifier.value = "234.234.567"
+* author = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07)
 
 * title = "Pacote contendo todos os dados da requisição de Exame Citopatológico para a Rosa"
 
@@ -123,8 +126,6 @@ Description: "Reúne dados de uma ficha de requisição"
 * section[4]
   * title = "Unidade de Saúde Requisitante"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06)
-//  * entry[0].identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
-//  * entry[0].identifier.value = "234.234.567"
 
 // ------------------------------------------------------
 // requisicao (ServiceRequest)
@@ -321,23 +322,19 @@ Description: "A unidade de saúde na qual o exame citopatológico da paciente Ro
 * type.text = "POSTO DE SAUDE"
 
 // ------------------------------------------------------
-// laboratorio
+// profissional
 // ------------------------------------------------------
 
-Instance: laboratorio
-InstanceOf: Organization
-Usage: #example
-Title: "Laboratório que realiza exames citopatológicos"
-Description: "Laboratório que emite o laudo do exame da paciente Rosa"
+Instance: profissional
+InstanceOf: Practitioner
+Description: "Profissional responsável pela requisição de exame da paciente Rosa"
 
-* name = "Laboratório Cito"
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
-* identifier.value = "654321"
+* identifier[0]
+  * use = #official
+  * system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
+  * value = "234.234.567"
 
-// As informações abaixo não são registradas no laudo
-//* type.coding.system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoEstabelecimentoSaude"
-//* type.coding.code = #80
-//* type.text = "LABORATORIO DE SAUDE PUBLICA"
+* name[0].text = "João da Silva"
 
 // ------------------------------------------------------
 // anamnese-exame-citopatologico
@@ -408,106 +405,30 @@ Description: "Respostas para anamnese de exame citopatológico"
   * answer[0].valueInteger = 60
   * text = "Qual a sua idade?"
 
+// ------------------------------------------------------
+// LAUDO
+// ------------------------------------------------------
 
 
 
 // ------------------------------------------------------
-// profissional
+// laboratorio
 // ------------------------------------------------------
 
-Instance: profissional
-InstanceOf: Practitioner
-Description: "Profissional responsável pela requisição"
-
-* identifier[0]
-  * use = #official
-  * system = "https://fhir.fabrica.inf.ufg.br/ns/coren"
-  * value = "12.34.56.78"
-
-* name[0].text = "João da Silva"
-
-// ------------------------------------------------------
-// profissional
-// ------------------------------------------------------
-
-Instance: enfermeira
-InstanceOf: Practitioner
-Title: "Enfermeira"
-Description: "Profissional lotada na UBS que oferece rastreamento"
+Instance: laboratorio
+InstanceOf: Organization
 Usage: #example
+Title: "Laboratório que realiza exames citopatológicos"
+Description: "Laboratório que emite o laudo do exame da paciente Rosa"
 
-/*
-Substitui a narrativa gerada automaticamente, que é mais completa.
-Daí segue o exemplo, mas comentado.
+* name = "Laboratório Cito"
+* identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
+* identifier.value = "654321"
 
-* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Practitioner</b></p></div>"
-* text.status = #additional
-
-*/
-
-// * meta.profile = "http://rnds-fhir.saude.gov.br/StructureDefinition/BRProfissional-1.0"
-* meta.lastUpdated = "2022-08-09T23:18:22.558Z"
-
-* identifier[0]
-  * system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
-  * use = #usual
-  * value = "234.234.567"
-
-* identifier[1]
-  * system = "https://fhir.fabrica.inf.ufg.br/ns/cpf"
-  * use = #usual
-  * value = "234.523.423-42"
-
-* active = true
-
-* name[0]
-  * text = "Maria José"
-  * use = #official
-
-* name[1]
-  * text = "Dama da Lamparina"
-  * use = #nickname
-
-* telecom[0]
-  * system = #fax
-  * value = "2345-6789"
-  * use = #work
-  * rank = 3
-
-* telecom[1]
-  * system = #phone
-  * value = "1111-2222"
-  * use = #home
-  * rank = 1
-
-* telecom[2]
-  * system = #email
-  * value = "maria.jose.enfermeira@posto-saude.sus.br"
-  * use = #work
-  * rank = 2  
-
-* address[0]
-  * use = #home
-  * type = #postal
-  * line = #008
-  * line = "Av. T2"
-  * city = "Goiânia"
-  * state = "Goiás"
-  * postalCode = "74215-010"
-
-* address[1]
-  * use = #work
-  * type = #postal
-  * line = #008
-  * line = "Rua do Hospital"
-  * city = "Aparecida de Goiânia"
-  * state = "Goiás"
-  * postalCode = "74215-010"
-
-* gender = #female
-* birthDate = "1987-10-14"
-
-* qualification.code.coding = http://www.saude.gov.br/fhir/r4/CodeSystem/BRCBO#223505
+// As informações abaixo não são registradas no laudo
+//* type.coding.system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoEstabelecimentoSaude"
+//* type.coding.code = #80
+//* type.text = "LABORATORIO DE SAUDE PUBLICA"
 
 // ------------------------------------------------------
 // citopatologista
@@ -516,17 +437,10 @@ Daí segue o exemplo, mas comentado.
 Instance: citopatologista
 InstanceOf: Practitioner
 Title: "Citopatologista"
-Description: "Profissional lotado em laboratório que elabora e assina digitalmente o exame citopatológico"
+Description: "Profissional responsável pelo laudo de exame da paciente Rosa"
 Usage: #example
 
 * identifier.system = "http://rnds.saude.gov.br/fhir/r4/NamingSystem/cns"
 * identifier.value = "2345234234234"
 * name.text = "Beltrano da Silva"
-* gender = #male
-* birthDate = "1987-10-14"
-
-* photo.url = "https://randomuser.me/api/portraits/med/men/75.jpg"
-* photo.title = "foto pequena"
-
-* qualification.code.coding = http://www.saude.gov.br/fhir/r4/CodeSystem/BRCBO#225305
 

@@ -78,7 +78,6 @@ prova de conceito se encontra em análise para posterior desenvolvimento.
 - <a href="processos.html">Processos</a> de negócio pertinentes aos casos de uso e requisitos.
 - Modelo de informação de <a href="requisicao.html">requisição</a> de exame citopatológico.
 - Modelo de informação de <a href="resultado.html">resultado</a> de exame citopatológico.
-- Perfil [Resultado de Exame Citopatológico](StructureDefinition-BRResultadoExameCitopatologico.html)
 
 ### Realização
 

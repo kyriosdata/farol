@@ -67,6 +67,7 @@ Description: "Motivo pelo qual a amostra é rejeitada e o laudo inviável."
 
 * #identificacao-invalida "falha na identificação" "Ausência ou erro na identificação da lâmina, frasco ou requisição"
 * #lamina-invalida "lâmina" "Lâmina danificada ou ausente"
+* #alheias "Causas alheias" "Causas alheias ao laboratório"
 * #outra "Outras causas" "Outras causas"
 
 // ------------------------------------------------------
@@ -88,7 +89,7 @@ Description: "Tipos de epitélios em amostra de exame citopatológico"
 * ^experimental = false
 
 * #escamoso "Escamoso" "Escamoso"
-* #grandular "Grandular" "Grandular"
+* #glandular "Glandular" "Glandular"
 * #metaplasico "Metaplásico" "Metaplásico"
 
 // ------------------------------------------------------
@@ -170,6 +171,7 @@ Description: "Microbiologias"
 * #trichomonas "Trichomonas vaginalis"
 * #herpes "Grupo Herpes" "Efeito citopático compatível com vírus do grupo Herpes"
 * #bacilos-supracitoplasmaticos "Bacilos" "Bacilos supracitoplasmáticos (sugestivos de Gardnerella/Mobiluncus)"
+* #outros-bacilos "Outros bacilos" "Outros bacilos"
 * #outros "Outros"
 
 // ------------------------------------------------------
@@ -192,8 +194,8 @@ Description: "Células atípicas"
 
 * #escamosas-1 "Possivelmente não neoplásicas (ASC-US)"
 * #escamosas-2 "Não se pode afastar lesão de alto grau (ASC-H)"
-* #grandulares-1 "Possivelmente não neoplásicas"
-* #grandulares-2 "Não se pode afastar lesão de alto grau"
+* #glandulares-1 "Possivelmente não neoplásicas"
+* #glandulares-2 "Não se pode afastar lesão de alto grau"
 * #indefinida-1 "Possivelmente não neoplásicas"
 * #indefinida-2 "Não se pode afastar lesão de alto grau"
 
@@ -225,9 +227,9 @@ Description: "Classificação de atipias em células escamosas"
 // atipias-glandulares
 // ------------------------------------------------------
 
-CodeSystem: AtipiasGrandulares
-Id: atipias-grandulares
-Title: "Atipias em células grandulares"
+CodeSystem: AtipiasGlandulares
+Id: atipias-glandulares
+Title: "Atipias em células glandulares"
 Description: "Classificação de atipias em células glandulares"
 
 * ^text.status = #empty
@@ -477,4 +479,4 @@ Description: "Atipia"
 * ^status = #draft
 * ^experimental = false
 
-* include codes from system Atipias
+* include codes from system AtipiasEscamosas

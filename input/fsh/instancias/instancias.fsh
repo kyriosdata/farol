@@ -461,3 +461,219 @@ Description: "Laudo da requisição de exame da paciente Rosa"
 * identifier[0].value = "cito-exame-123"
 
 * basedOn = Reference(requisicao)
+
+* category.coding = http://terminology.hl7.org/CodeSystem/v2-0074#CP
+* subject = Reference(rosa)
+* effectiveDateTime = "2024-01-01"
+* issued = "2017-01-01T00:00:00Z"
+
+* result[0] = Reference(laudo-rejeitado)
+* result[1] = Reference(laudo-epitelios)
+* result[2] = Reference(laudo-adequabilidade)
+* result[3] = Reference(laudo-normalidade)
+* result[4] = Reference(laudo-alteracoes-benignas)
+* result[5] = Reference(laudo-microbiologia)
+* result[6] = Reference(laudo-celulas-atipicas)
+* result[7] = Reference(laudo-atipias-escamosas)
+* result[8] = Reference(laudo-atipias-glandulares)
+* result[9] = Reference(laudo-outras-neoplasias-malignas)
+* result[10] = Reference(laudo-celulas-endometriais)
+
+* performer[0] = Reference(laboratorio)
+* resultsInterpreter[0] = Reference(citopatologista)
+
+* conclusion = "Aqui seguem as observações gerais"
+
+// ------------------------------------------------------
+// rejeicao
+// ------------------------------------------------------
+
+Instance: laudo-rejeitado
+InstanceOf: Observation
+Usage: #example
+Title: "Motivo da rejeição da amostra"
+Description: "Motivo pelo qual, se for o caso, a amostra para exame citopatológico foi rejeitada"
+
+* status = #final
+* code.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-exame-citopatologico#motivo-rejeicao 
+* valueCodeableConcept.coding[0]
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-amostra-rejeitada"
+  * code = #alheias
+* note[0].text = "reagente vencido"
+
+// ------------------------------------------------------
+// epitelios
+// ------------------------------------------------------
+
+Instance: laudo-epitelios
+InstanceOf: Observation
+Usage: #example
+Title: "Epitélios representados na amostra"
+Description: "Tipo de epitélio presente na amostra"
+
+* status = #final
+* code.coding
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-exame-citopatologico"
+  * code = #epitelios-na-amostra
+* valueCodeableConcept.coding[0]
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-epitelios"
+  * code = #escamoso
+
+// ------------------------------------------------------
+// adequabilidade
+// ------------------------------------------------------
+
+Instance: laudo-adequabilidade
+InstanceOf: Observation
+Usage: #example
+Title: "Adequabilidade do material"
+Description: "Identifica adequabilidade ou não da amostra"
+
+* status = #final
+* code.coding
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-exame-citopatologico"
+  * code = #adequabilidade
+* valueCodeableConcept.coding[0]
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-adequabilidade"
+  * code = #outros
+* note[0].text = "deve vir especificação aqui"
+
+// ------------------------------------------------------
+// limites-normalidade
+// ------------------------------------------------------
+
+Instance: laudo-normalidade
+InstanceOf: Observation
+Usage: #example
+Title: "Limites de normalidade"
+Description: "Indica se material examinado está dentro dos limites de normalidade"
+
+* status = #final
+* code.coding
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-exame-citopatologico"
+  * code = #normalidade
+* valueBoolean = true
+
+// ------------------------------------------------------
+// alteracoes-benignas
+// ------------------------------------------------------
+
+Instance: laudo-alteracoes-benignas
+InstanceOf: Observation
+Usage: #example
+Title: "Alterações celulares benignas"
+Description: "Alterações celulares benignas reativas ou reparativas"
+
+* status = #final
+* code.coding
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-exame-citopatologico"
+  * code = #alteracoes-benignas
+* valueCodeableConcept.coding[0]
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-adequabilidade"
+  * code = #outros
+* note[0].text = "deve vir especificação aqui"
+
+// ------------------------------------------------------
+// microbiologia
+// ------------------------------------------------------
+
+Instance: laudo-microbiologia
+InstanceOf: Observation
+Usage: #example
+Title: "Microbiologia"
+Description: "Microbiologia"
+
+* status = #final
+* code.coding
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-exame-citopatologico"
+  * code = #microbiologia
+* valueCodeableConcept.coding[0]
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/microbiologias"
+  * code = #outros-bacilos
+* note[0].text = "deve vir especificação aqui"
+
+// ------------------------------------------------------
+// laudo-celulas-atipicas
+// ------------------------------------------------------
+
+Instance: laudo-celulas-atipicas
+InstanceOf: Observation
+Usage: #example
+Title: "Células atípicas de significado indeterminado"
+Description: "Células atípicas de significado indeterminado"
+
+* status = #final
+* code.coding
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-exame-citopatologico"
+  * code = #significado-indeterminado
+* valueCodeableConcept.coding[0]
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/celulas-atipicas"
+  * code = #escamosas-1
+
+// ------------------------------------------------------
+// laudo-atipias
+// ------------------------------------------------------
+
+Instance: laudo-atipias-escamosas
+InstanceOf: Observation
+Usage: #example
+Title: "Atipias em células escamosas"
+Description: "Atipias em células escamosas"
+
+* status = #final
+* code.coding
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-exame-citopatologico"
+  * code = #atipias-escamosas
+* valueCodeableConcept.coding[0]
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/atipias-escamosas"
+  * code = #baixo
+
+// ------------------------------------------------------
+// laudo-atipias
+// ------------------------------------------------------
+
+Instance: laudo-atipias-glandulares
+InstanceOf: Observation
+Usage: #example
+Title: "Atipias em células glandulares"
+Description: "Atipias em células glandulares"
+
+* status = #final
+* code.coding
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-exame-citopatologico"
+  * code = #atipias-glandulares
+* valueCodeableConcept.coding[0]
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/atipias-glandulares"
+  * code = #in-situ
+
+// ------------------------------------------------------
+// laudo-atipias
+// ------------------------------------------------------
+
+Instance: laudo-outras-neoplasias-malignas
+InstanceOf: Observation
+Usage: #example
+Title: "Atipias em células escamosas"
+Description: "Atipias em células escamosas"
+
+* status = #final
+* code.coding
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-exame-citopatologico"
+  * code = #neoplasias-malignas
+* note[0].text = "deve vir as neoplasias aqui"
+
+// ------------------------------------------------------
+// laudo-celulas-endometriais
+// ------------------------------------------------------
+
+Instance: laudo-celulas-endometriais
+InstanceOf: Observation
+Usage: #example
+Title: "Células endometriais"
+Description: "Células endometriais"
+
+* status = #final
+* code.coding
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-exame-citopatologico"
+  * code = #celulas-endometriais
+* valueBoolean = true

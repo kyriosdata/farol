@@ -2,7 +2,7 @@ Alias: $anamnese = http://perfil.org/anamnese-exame-citopatologico
 Alias: $exame-clinico = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/exame-clinico
 Alias: $loinc = http://loinc.org
 Alias: $yesnodontknow = http://hl7.org/fhir/ValueSet/yesnodontknow
-
+Alias: $laudo-tipo-item = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item
 
 // ------------------------------------------------------
 // exame-clinico
@@ -313,6 +313,12 @@ Description: "Questões pertinentes à anamnese do exame citopatológico"
 // laudo-exame
 // ------------------------------------------------------
 
+Alias: $loinc = http://loinc.org
+Alias: $cholesterol = http://hl7.org/fhir/StructureDefinition/cholesterol
+Alias: $triglyceride = http://hl7.org/fhir/StructureDefinition/triglyceride
+Alias: $hdlcholesterol = http://hl7.org/fhir/StructureDefinition/hdlcholesterol
+Alias: $ldlcholesterol = http://hl7.org/fhir/StructureDefinition/ldlcholesterol
+
 Profile: LaudoCitopatologico
 Parent: DiagnosticReport
 Id: laudo-citopatologico
@@ -359,10 +365,62 @@ Description: "Definição de resultado (laudo) de exame citopatológico em confo
 * category ^definition = "Código que classifica a requisição com a finalidade de busca, ordenação e exibição."
 * category ^comment = "Classificação da requisição com a finalidade de busca, ordenação e exibição."
 * category.coding 1..1
-* category.coding = http://terminology.hl7.org/CodeSystem/v2-0074#CP
+* category.coding = http://terminology.hl7.org/CodeSystem/v2-0074#CP (exactly)
 * category.coding.display ..0
 * encounter ..0
 
+* result ..11
+
 * result ^slicing.discriminator.type = #value
 * result ^slicing.discriminator.path = "resolve().code"
-* result ^slicing.rules = #open
+* result ^slicing.ordered = false
+* result ^slicing.rules = #closed
+* result contains
+    Cholesterol 1..1 MS and
+    Triglyceride 1..1 MS and
+    HDLCholesterol 1..1 MS and
+    LDLCholesterol 0..1 MS
+* result[Cholesterol] only Reference(MotivoRejeicao)
+* result[Cholesterol] ^short = "Cholesterol Result"
+* result[Cholesterol] ^definition = "Reference to Cholesterol Result."
+* result[Triglyceride] only Reference($triglyceride)
+* result[Triglyceride] ^short = "Triglyceride Result"
+* result[Triglyceride] ^definition = "Group of elements for Triglyceride result."
+* result[HDLCholesterol] only Reference($hdlcholesterol)
+* result[HDLCholesterol] ^short = "HDL Cholesterol Result"
+* result[HDLCholesterol] ^definition = "Group of elements for HDL Cholesterol result."
+* result[LDLCholesterol] only Reference($ldlcholesterol)
+* result[LDLCholesterol] ^short = "LDL Cholesterol result, if reported"
+* result[LDLCholesterol] ^definition = "LDL Cholesterol result, if reported."
+
+// ------------------------------------------------------
+// motivo-rejeicao
+// ------------------------------------------------------
+
+Profile: MotivoRejeicao
+Parent: Observation
+Id: motivo-rejeicao
+Title: "Motivo Rejeicao"
+Description: "Define estrutura para registro do motivo da rejeição"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-rejeicao"
+* ^status = #draft
+* code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#motivo-rejeicao (exactly)
+* value[x] only CodeableConcept
+* valueCodeableConcept.coding.system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-amostra-rejeitada"
+
+// ------------------------------------------------------
+// epitelios
+// ------------------------------------------------------
+
+Profile: LaudoEpitelios
+Parent: Observation
+Id: laudo-epitelios
+Title: "Observação sobre epitélios"
+Description: "Define estrtutura para registro de epitélios"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/laudo-epitelios"
+* ^status = #draft
+* code.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelios-na-amostra
+* value[x] only CodeableConcept
+* valueCodeableConcept.coding.system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-epitelios"

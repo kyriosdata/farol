@@ -455,7 +455,7 @@ Description: "Laudo da requisição de exame da paciente Rosa"
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/laudo-citopatologico"
 * status = #final
 * code.text = "Microscopic observation [Identifier] in Cervix by Cyto stain"
-* code.coding[0].system = "https://loinc.org"
+* code.coding[0].system = "http://loinc.org"
 * code.coding[0].code = #10524-7
 
 * identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ns/laboratorio"
@@ -495,8 +495,10 @@ Usage: #example
 Title: "Motivo da rejeição da amostra"
 Description: "Motivo pelo qual, se for o caso, a amostra para exame citopatológico foi rejeitada"
 
+* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-rejeicao"
+
 * status = #final
-* code.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#motivo-rejeicao 
+* code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#motivo-rejeicao (exactly)
 * valueCodeableConcept.coding[0]
   * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-amostra-rejeitada"
   * code = #alheias

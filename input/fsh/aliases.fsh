@@ -4,7 +4,6 @@ Alias: $ne = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educa
 
 Alias: $loinc = http://loinc.org
 Alias: $v2-0136 = http://terminology.hl7.org/CodeSystem/v2-0136
-Alias: $SCT = http://snomed.info/sct
 Alias: $v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
 
 Alias: $yesNo =  http://loinc.org

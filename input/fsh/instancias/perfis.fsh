@@ -313,16 +313,16 @@ Description: "Questões pertinentes à anamnese do exame citopatológico"
 // laudo-exame
 // ------------------------------------------------------
 
-Profile: LaudoExameCitopatologico
+Profile: LaudoCitopatologico
 Parent: DiagnosticReport
-Id: laudo-exame
+Id: laudo-citopatologico
 Title: "Resultado (laudo) de exame citopatológico"
 Description: "Definição de resultado (laudo) de exame citopatológico em conformidade com padrão adotado pelo INCA."
 * ^meta.lastUpdated = "2015-02-07T13:28:17.239+02:00"
 * ^version = "1.0.0"
 * ^status = #draft
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/laudo-exame"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/laudo-citopatologico"
 
 * meta 1..
 * meta ^short = "Metadados do laudo"
@@ -363,3 +363,6 @@ Description: "Definição de resultado (laudo) de exame citopatológico em confo
 * category.coding.display ..0
 * encounter ..0
 
+* result ^slicing.discriminator.type = #value
+* result ^slicing.discriminator.path = "resolve().code"
+* result ^slicing.rules = #open

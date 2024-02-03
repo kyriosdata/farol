@@ -247,18 +247,18 @@ Description: "Classificação de atipias em células glandulares"
 * #sem-especificacao "Adenocarcinoma sem outras especificações"
 
 // ------------------------------------------------------
-// laudo-exame-citopatologico
+// laudo-tipo-item
 // ------------------------------------------------------
 
-CodeSystem: LaudoExameCitopatologico
-Id: laudo-exame-citopatologico
+CodeSystem: LaudoTipoItem
+Id: laudo-tipo-item
 Title: "Itens avaliados no laudo de exame citopatológico"
 Description: "Tipos de avaliação de exame citopatológico"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Itens avaliados no laudo de exame citopatológico</div>"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-exame-citopatologico"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
 
 * ^status = #draft
 * ^caseSensitive = true

@@ -452,6 +452,7 @@ InstanceOf: DiagnosticReport
 Title: "Laudo de Exame Citopatológico"
 Description: "Laudo da requisição de exame da paciente Rosa"
 
+* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/laudo-citopatologico"
 * status = #final
 * code.text = "Microscopic observation [Identifier] in Cervix by Cyto stain"
 * code.coding[0].system = "https://loinc.org"
@@ -495,7 +496,7 @@ Title: "Motivo da rejeição da amostra"
 Description: "Motivo pelo qual, se for o caso, a amostra para exame citopatológico foi rejeitada"
 
 * status = #final
-* code.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-exame-citopatologico#motivo-rejeicao 
+* code.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#motivo-rejeicao 
 * valueCodeableConcept.coding[0]
   * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-amostra-rejeitada"
   * code = #alheias
@@ -513,7 +514,7 @@ Description: "Tipo de epitélio presente na amostra"
 
 * status = #final
 * code.coding
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-exame-citopatologico"
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
   * code = #epitelios-na-amostra
 * valueCodeableConcept.coding[0]
   * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-epitelios"
@@ -531,7 +532,7 @@ Description: "Identifica adequabilidade ou não da amostra"
 
 * status = #final
 * code.coding
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-exame-citopatologico"
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
   * code = #adequabilidade
 * valueCodeableConcept.coding[0]
   * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-adequabilidade"
@@ -550,7 +551,7 @@ Description: "Indica se material examinado está dentro dos limites de normalida
 
 * status = #final
 * code.coding
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-exame-citopatologico"
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
   * code = #normalidade
 * valueBoolean = true
 
@@ -566,7 +567,7 @@ Description: "Alterações celulares benignas reativas ou reparativas"
 
 * status = #final
 * code.coding
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-exame-citopatologico"
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
   * code = #alteracoes-benignas
 * valueCodeableConcept.coding[0]
   * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-adequabilidade"
@@ -585,7 +586,7 @@ Description: "Microbiologia"
 
 * status = #final
 * code.coding
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-exame-citopatologico"
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
   * code = #microbiologia
 * valueCodeableConcept.coding[0]
   * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/microbiologias"
@@ -604,7 +605,7 @@ Description: "Células atípicas de significado indeterminado"
 
 * status = #final
 * code.coding
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-exame-citopatologico"
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
   * code = #significado-indeterminado
 * valueCodeableConcept.coding[0]
   * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/celulas-atipicas"
@@ -622,7 +623,7 @@ Description: "Atipias em células escamosas"
 
 * status = #final
 * code.coding
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-exame-citopatologico"
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
   * code = #atipias-escamosas
 * valueCodeableConcept.coding[0]
   * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/atipias-escamosas"
@@ -640,7 +641,7 @@ Description: "Atipias em células glandulares"
 
 * status = #final
 * code.coding
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-exame-citopatologico"
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
   * code = #atipias-glandulares
 * valueCodeableConcept.coding[0]
   * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/atipias-glandulares"
@@ -658,7 +659,7 @@ Description: "Atipias em células escamosas"
 
 * status = #final
 * code.coding
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-exame-citopatologico"
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
   * code = #neoplasias-malignas
 * note[0].text = "deve vir as neoplasias aqui"
 
@@ -674,6 +675,6 @@ Description: "Células endometriais"
 
 * status = #final
 * code.coding
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-exame-citopatologico"
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
   * code = #celulas-endometriais
 * valueBoolean = true

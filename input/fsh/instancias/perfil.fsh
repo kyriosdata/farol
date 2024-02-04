@@ -9,17 +9,9 @@ Parent: DiagnosticReport
 Id: lipidprofile
 Description: "Lipid Lab Report"
 
-* ^url = "http://testando.com/perfil"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/lipidprofile"
 
 * ^name = "DiagnosticReportLipidProfile"
-* ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-summary"
-* ^extension[=].valueMarkdown = "This is a test summary [lipids](observation.html)"
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
-* ^extension[=].valueInteger = 1
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension[=].valueCode = #oo
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
-* ^extension[=].valueCode = #trial-use
 * ^status = #draft
 * ^experimental = true
 * ^date = "2012-05-12"
@@ -37,8 +29,9 @@ Description: "Lipid Lab Report"
 * code ^definition = "LOINC Code for Lipid Panel with LDL."
 * code ^comment = "LOINC code includes \"direct\" LDL - does this mean LDL derived by measuring VLDL by ultracentrifugation? This panel includes both measured and calculated LDL."
 * result ..4
-* result ^slicing.discriminator.type = #value
-* result ^slicing.discriminator.path = "resolve().code"
+* result only Reference($cholesterol or $triglyceride or $hdlcholesterol or $ldlcholesterol)
+* result ^slicing.discriminator.type = #profile
+* result ^slicing.discriminator.path = "resolve()"
 //* result ^slicing.ordered = true
 * result ^slicing.rules = #closed
 * result contains

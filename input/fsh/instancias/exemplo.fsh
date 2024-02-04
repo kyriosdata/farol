@@ -11,10 +11,7 @@ Usage: #example
 * entry[=].resource = cholesterol
 * entry[+].fullUrl = "https://example.com/base/Observation/triglyceride"
 * entry[=].resource = triglyceride
-* entry[+].fullUrl = "https://example.com/base/Observation/hdlcholesterol"
-* entry[=].resource = hdlcholesterol
-* entry[+].fullUrl = "https://example.com/base/Observation/ldlcholesterol"
-* entry[=].resource = ldlcholesterol
+
 
 Instance: Inline-Instance-for-lipids-1
 InstanceOf: DiagnosticReport
@@ -30,58 +27,53 @@ Usage: #inline
 * effectiveDateTime = "2011-03-04T08:30:00+11:00"
 * issued = "2013-01-27T11:45:33+11:00"
 * performer = Reference(laboratorio)
-* result[0].id = "1"
-* result[=] = Reference(cholesterol)
-* result[+].id = "2"
-* result[=] = Reference(triglyceride)
-* result[+].id = "3"
-* result[=] = Reference(hdlcholesterol)
-* result[+].id = "4"
-* result[=] = Reference(ldlcholesterol)
+* result[0] = Reference(cholesterol)
+* result[1] = Reference(triglyceride)
+* result[2] = Reference(EstranhoExemplo)
+
 
 Instance: cholesterol
 InstanceOf: Observation
 Usage: #inline
-* meta.profile[0] = "http://hl7.org/fhir/StructureDefinition/cholesterol"
+* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-rejeicao"
 * status = #final
-* code = $loinc#35200-5 "Cholesterol [Moles/volume] in Serum or Plasma"
+* code = $loinc#35200-5
 * subject = Reference(rosa)
-* performer = Reference(laboratorio)
-* valueQuantity = 6.3 'mmol/L' "mmol/L"
-* referenceRange.high.value = 4.5
+* performer = Reference(Organization/laboratorio)
+* valueBoolean = true
 
 Instance: triglyceride
 InstanceOf: Observation
 Usage: #inline
-* meta.profile[0] = "http://hl7.org/fhir/StructureDefinition/triglyceride"
+* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/laudo-epitelios"
 * status = #final
-* code = $loinc#35217-9 "Level"
-* code.text = "Triglyceride"
+* code = $loinc#35217-9 
 * subject = Reference(rosa)
 * performer = Reference(laboratorio)
-* valueQuantity = 1.3 'mmol/L' "mmol/L"
-* referenceRange.high = 2 'mmol/L' "mmol/L"
+* valueInteger = 10
 
-Instance: hdlcholesterol
+
+Instance: EstranhoExemplo
 InstanceOf: Observation
 Usage: #inline
-* meta.profile[0] = "http://hl7.org/fhir/StructureDefinition/hdlcholesterol"
+* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/estranho-perfil"
 * status = #final
-* code = $loinc#2085-9 "Level"
-* code.text = "Cholesterol in HDL"
+* code = $loinc#2085-9 
 * subject = Reference(rosa)
 * performer = Reference(laboratorio)
-* valueQuantity = 1.3 'mmol/L' "mmol/L"
-* referenceRange.low = 1.5 'mmol/L' "mmol/L"
+* valueString = "ok, string"
 
-Instance: ldlcholesterol
-InstanceOf: Observation
-Usage: #inline
-* meta.profile[0] = "http://hl7.org/fhir/StructureDefinition/ldlcholesterol"
-* status = #final
-* code = $loinc#13457-7 "Level"
-* code.text = "LDL Chol. (Calc)"
-* subject = Reference(rosa)
-* performer = Reference(laboratorio)
-* valueQuantity = 4.6 'mmol/L' "mmol/L"
-* referenceRange.high = 3 'mmol/L' "mmol/L"
+Instance: rosa
+InstanceOf: Patient
+Usage: #example
+Title: "rosa"
+Description: "um exemplo"
+* active = true
+
+Instance: laboratorio
+InstanceOf: Organization
+Usage: #example
+Title: "laboratorio"
+Description: "lab"
+
+* name = "lab"

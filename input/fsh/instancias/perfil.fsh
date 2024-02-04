@@ -1,8 +1,4 @@
 Alias: $loinc = http://loinc.org
-Alias: $cholesterol = http://hl7.org/fhir/StructureDefinition/cholesterol
-Alias: $triglyceride = http://hl7.org/fhir/StructureDefinition/triglyceride
-Alias: $hdlcholesterol = http://hl7.org/fhir/StructureDefinition/hdlcholesterol
-Alias: $ldlcholesterol = http://hl7.org/fhir/StructureDefinition/ldlcholesterol
 
 Profile: DiagnosticReportLipidProfile
 Parent: DiagnosticReport
@@ -29,28 +25,19 @@ Description: "Lipid Lab Report"
 * code ^definition = "LOINC Code for Lipid Panel with LDL."
 * code ^comment = "LOINC code includes \"direct\" LDL - does this mean LDL derived by measuring VLDL by ultracentrifugation? This panel includes both measured and calculated LDL."
 * result ..4
-* result only Reference($cholesterol or $triglyceride or $hdlcholesterol or $ldlcholesterol)
-* result ^slicing.discriminator.type = #profile
-* result ^slicing.discriminator.path = "resolve()"
+* result only Reference(motivo-rejeicao or laudo-epitelios)
+* result ^slicing.discriminator.type = #value
+* result ^slicing.discriminator.path = "resolve().code"
 //* result ^slicing.ordered = true
 * result ^slicing.rules = #closed
 * result contains
-    Cholesterol 1..1 MS and
-    Triglyceride 1..1 MS and
-    HDLCholesterol 1..1 MS and
-    LDLCholesterol 0..1 MS
-* result[Cholesterol] only Reference($cholesterol)
-* result[Cholesterol] ^short = "Cholesterol Result"
-* result[Cholesterol] ^definition = "Reference to Cholesterol Result."
-* result[Triglyceride] only Reference($triglyceride)
-* result[Triglyceride] ^short = "Triglyceride Result"
-* result[Triglyceride] ^definition = "Group of elements for Triglyceride result."
-* result[HDLCholesterol] only Reference($hdlcholesterol)
-* result[HDLCholesterol] ^short = "HDL Cholesterol Result"
-* result[HDLCholesterol] ^definition = "Group of elements for HDL Cholesterol result."
-* result[LDLCholesterol] only Reference($ldlcholesterol)
-* result[LDLCholesterol] ^short = "LDL Cholesterol result, if reported"
-* result[LDLCholesterol] ^definition = "LDL Cholesterol result, if reported."
+    motivo 1..1 MS and
+    epitelios 1..1 MS 
+* result[motivo] only Reference(motivo-rejeicao)
+* result[epitelios] only Reference(laudo-epitelios)
+* result[epitelios] ^short = "epitelios Result"
+* result[epitelios] ^definition = "Group of elements for Triglyceride result."
+
 * conclusion 0..1 MS
 * conclusion only string
 * conclusion ^short = "Clinical Interpretation of Lipid Panel"
@@ -61,3 +48,45 @@ Description: "Lipid Lab Report"
 * conclusionCode ^short = "No codes for a lipid panel"
 * conclusionCode ^definition = "No codes for a lipid panel."
 * conclusionCode ^comment = "Not used in this context."
+
+// ------------------------------------------------------
+// motivo-rejeicao
+// ------------------------------------------------------
+
+Profile: MotivoRejeicao
+Parent: Observation
+Id: motivo-rejeicao
+Title: "Motivo Rejeicao"
+Description: "Define estrutura para registro do motivo da rejeição"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-rejeicao"
+* ^status = #draft
+* code = $loinc#35200-5
+* value[x] only boolean
+
+// ------------------------------------------------------
+// epitelios
+// ------------------------------------------------------
+
+Profile: LaudoEpitelios
+Parent: Observation
+Id: laudo-epitelios
+Title: "Observação sobre epitélios"
+Description: "Define estrtutura para registro de epitélios"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/laudo-epitelios"
+* ^status = #draft
+* code = $loinc#35217-9 
+* value[x] only integer
+
+
+Profile: Estranho
+Parent: Observation
+Id: estranho-perfil
+Title: "estranho-perfil"
+Description: "Define estrtutura para registro de epitélios"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/estranho-perfil"
+* ^status = #draft
+* code = $loinc#2085-9
+* value[x] only string

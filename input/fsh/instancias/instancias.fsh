@@ -1,7 +1,6 @@
 Alias: $tipodocumento = http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoDocumento
 Alias: $idade = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade
 Alias: $nivel-educacional = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional
-Alias: $respostas-anamnese = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/respostas-anamnese
 Alias: $siscan = http://saude.gov.br/SISCAN
 Alias: $racacorext = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRacaCorEtnia-1.0
 Alias: $racacor = http://www.saude.gov.br/fhir/r4/CodeSystem/BRRacaCor
@@ -93,7 +92,7 @@ Description: "Reúne dados de uma ficha de requisição"
 * author.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
 * author.identifier.value = "234.234.567"
 
-* title = "Pacote contendo todos os dados da requisição de Exame Citopatológico para a Rosa"
+* title = "Pacote contendo todos os dados da requisição de Exame Citopatológico para a paciente fictícia Rosa"
 
 // Patient
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
@@ -516,7 +515,8 @@ Description: "Questões pertinentes à anamnese do exame citopatológico"
 
 Instance: respostas-anamnese
 InstanceOf: QuestionnaireResponse
-Description: "Respostas para anamnese de exame citopatológico"
+Title: "Respostas para a anamnese de exame citopatológico"
+Description: "Respostas para anamnese de exame citopatológico de uma requisição para a paciente Rosa"
 
 * questionnaire = Canonical(anamnese-exame-citopatologico)
 * status = #completed

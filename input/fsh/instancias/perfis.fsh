@@ -2,8 +2,7 @@ Alias: $anamnese = http://perfil.org/anamnese-exame-citopatologico
 Alias: $exame-clinico = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/exame-clinico
 Alias: $loinc = http://loinc.org
 Alias: $yesnodontknow = http://hl7.org/fhir/ValueSet/yesnodontknow
-Alias: $anamnese-citopatologia = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/anamnese-citopatologia
-
+Alias: $laudo-tipo-item = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item
 
 // ------------------------------------------------------
 // exame-clinico
@@ -162,3 +161,266 @@ Description: "Dados demográficos de paciente para Exame Citopatológico"
 // Conversor de FSH para JSON nao aceita referencia abaixo.
 // * telecom only $BRMeioContato
 
+// ------------------------------------------------------
+// anamnese-exame-citopatologico
+// ------------------------------------------------------
+
+Instance: anamnese-exame-citopatologico
+InstanceOf: Questionnaire
+Usage: #example
+Title: "Anamnese (exame citopatológico)"
+Description: "Questões pertinentes à anamnese do exame citopatológico"
+
+* url = "https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico"
+
+* version = "0.0.1"
+* name = "AnamneseExameCitopatologico"
+* title = "Questionário (dados de Anamnese) da ficha de requisição do exame citopatológico"
+* status = #draft
+* experimental = false
+* subjectType = #Patient
+* date = "2024-01-20"
+* publisher = "Ministério da Saúde (INCA)"
+* contact[0].name = "Renata (INCA)"
+* contact[0].telecom[0].system = #email
+* contact[0].telecom[0].value = "renata.email@inca.saude.br"
+* contact[0].telecom[0].use = #work
+* contact[0].telecom[0].period.start = "2024"
+* description = "Questões contidas na ficha de requisição de exame citopatológico."
+* useContext.code[0].system = "http://terminology.hl7.org/ValueSet/v3-ActEncounterCode"
+* useContext.code[0].code = #AMB
+* useContext.valueCodeableConcept.text = "Estabelecimento de saúde. Unidade básica de saúde."
+* jurisdiction = urn:iso:std:iso:3166#BR
+* purpose = "Estas questões orientam a coleta de dados relevantes para a elaboração do laudo citopatológico. Convém ressaltar que os dados pertinentes a este questionário não são suficientes. Também há informações necessárias coletadas por meio de exame clínico."
+* copyright = "Ministério da Saúde do Brasil"
+* approvalDate = "2023-12-15"
+* lastReviewDate = "2023-11-30"
+* effectivePeriod.start = "2024-01-01"
+
+// Como caracterizar o formulário? Código local (nacional)?
+* code[0]
+  * code = #74468-0
+  * system = "http://loinc.org"
+  * display = "Questionnaire form definition Document"
+
+* item[0]
+  * linkId = "1"
+  * type = #choice
+  * text = "Fez o exame preventivo (Papanicolaou) alguma vez?"
+  * answerValueSet = Canonical(http://hl7.org/fhir/ValueSet/yesnodontknow)
+  * required = true
+  * repeats = false
+
+* item[1]
+  * linkId = "2"
+  * type = #date
+  * text = "Quando fez o último exame?"
+  * code[0] = http://loinc.org#60432-2
+  * enableWhen[0]
+    * question = "1"
+    * operator = #=
+    * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
+  * required = true
+  * repeats = false
+
+* item[2]
+  * linkId = "3"
+  * type = #choice
+  * text = "Usa DIU?"
+  * code[0] = http://www.saude.gov.br/fhir/r4/CodeSystem/BRCIAP2#W12 // Contracepção intra-uterina
+  * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
+  * required = true
+  * repeats = false
+  * readOnly = true
+
+* item[3]
+  * linkId = "4"
+  * type = #choice
+  * code[0] = http://loinc.org#66174-4
+  * text = "Está grávida?"
+  * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
+  * required = true
+  * repeats = false
+  * readOnly = true
+
+* item[4]
+  * linkId = "5"
+  * type = #choice
+  * text = "Usa pílula anticoncepcional?"
+  * code[0] = http://loinc.org#65931-8
+  * code[1] = http://www.saude.gov.br/fhir/r4/CodeSystem/BRCIAP2#W11 // Contracepção oral (CIAP-2)
+  * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
+  * required = true
+  * repeats = false
+  * readOnly = true
+
+* item[5]
+  * linkId = "6"
+  * type = #choice
+  * text = "Usa hormônio/remédio para tratar a menopausa?"
+  * code[0] = http://loinc.org#63873-4
+  * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
+  * required = true
+  * repeats = false
+  * readOnly = true
+
+* item[6]
+  * linkId = "7"
+  * type = #choice
+  * text = "Já fez tratamento por radioterapia?"
+  * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
+  * required = true
+  * repeats = false
+  * readOnly = true
+
+* item[7]
+  * linkId = "8"
+  * type = #date
+  * text = "Data da última menstruação/regra"
+  * code[0] = http://loinc.org#8665-2
+  * required = true
+  * repeats = false
+  * readOnly = true
+
+* item[8]
+  * linkId = "9"
+  * type = #choice
+  * text = "Tem ou teve algum sangramento após relações sexuais? (não considerar a primeira relação sexual na vida)"
+  * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
+  * required = true
+  * repeats = false
+  * readOnly = true
+
+* item[9]
+  * linkId = "10"
+  * type = #choice
+  * text = "Tem ou teve algum sangramento após a menopausa? (não considerar o(s) sangramento(s) na vigência de reposição hormonal)"
+  * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
+  * required = true
+  * repeats = false
+  * readOnly = true
+
+* item[10]
+  * linkId = "11"
+  * type = #integer
+  * text = "Qual a sua idade?"
+  * required = true
+  * repeats = false
+  * readOnly = true
+  * maxLength = 3
+
+// ------------------------------------------------------
+// laudo-exame
+// ------------------------------------------------------
+
+Alias: $loinc = http://loinc.org
+Alias: $cholesterol = http://hl7.org/fhir/StructureDefinition/cholesterol
+Alias: $triglyceride = http://hl7.org/fhir/StructureDefinition/triglyceride
+Alias: $hdlcholesterol = http://hl7.org/fhir/StructureDefinition/hdlcholesterol
+Alias: $ldlcholesterol = http://hl7.org/fhir/StructureDefinition/ldlcholesterol
+
+Profile: LaudoCitopatologico
+Parent: DiagnosticReport
+Id: laudo-citopatologico
+Title: "Resultado (laudo) de exame citopatológico"
+Description: "Definição de resultado (laudo) de exame citopatológico em conformidade com padrão adotado pelo INCA."
+* ^meta.lastUpdated = "2015-02-07T13:28:17.239+02:00"
+* ^version = "1.0.0"
+* ^status = #draft
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/laudo-citopatologico"
+
+* meta 1..
+* meta ^short = "Metadados do laudo"
+* meta.extension ..0
+* meta.lastUpdated ^short = "Quando o recurso foi atualizado pela última vez"
+* meta.profile ^short = "Perfil obrigatoriamente a ser atendido"
+* contained ..0
+
+* basedOn 1..1
+
+* identifier ..1
+* identifier ^label = "O rótulo (label)"
+* identifier ^short = "O identificador único atribuído pelo solicitante ao requerimento de exame citopatológico."
+* identifier ^definition = "O identificador único da requisição para o solicitante."
+* identifier ^comment = "Não há nenhum formato esperado para este identificador senão uma sequência de caracteres."
+* identifier ^requirements = "Este identificador é necessário para facilitar a identificação do requerimento no contexto em que é gerado."
+* identifier ^alias[0] = "protocolo"
+* identifier ^alias[+] = "número"
+* identifier.id ..0
+* identifier.extension ..0
+* identifier.use ..0
+* identifier.value 1..1
+* identifier.value ^short = "O identificador único atribuído à requisição pelo solicitante usando o seu sistema de origem."
+* identifier.period ..0
+* identifier.assigner ..0
+
+* status ^label = "O status do laudo."
+* status ^short = "Identifica status do laudo."
+* status ^definition = "O status do laudo."
+* status ^comment = "O status é fixo, final, e só é alterado para indicar que foi substituído, provavelmente por entrada fornecida de forma equivocada, contendo erros ou omissões, por exemplo."
+
+* category ^label = "Classificação da requisição com a finalidade de busca, ordenação e exibição."
+* category ^short = "Classificação da requisição com a finalidade de busca, ordenação e exibição."
+* category ^definition = "Código que classifica a requisição com a finalidade de busca, ordenação e exibição."
+* category ^comment = "Classificação da requisição com a finalidade de busca, ordenação e exibição."
+* category.coding 1..1
+* category.coding = http://terminology.hl7.org/CodeSystem/v2-0074#CP (exactly)
+* category.coding.display ..0
+* encounter ..0
+
+* result ..11
+
+* result ^slicing.discriminator.type = #value
+* result ^slicing.discriminator.path = "resolve().code"
+* result ^slicing.ordered = false
+* result ^slicing.rules = #closed
+* result contains
+    Cholesterol 1..1 MS and
+    Triglyceride 1..1 MS and
+    HDLCholesterol 1..1 MS and
+    LDLCholesterol 0..1 MS
+* result[Cholesterol] only Reference(MotivoRejeicao)
+* result[Cholesterol] ^short = "Cholesterol Result"
+* result[Cholesterol] ^definition = "Reference to Cholesterol Result."
+* result[Triglyceride] only Reference($triglyceride)
+* result[Triglyceride] ^short = "Triglyceride Result"
+* result[Triglyceride] ^definition = "Group of elements for Triglyceride result."
+* result[HDLCholesterol] only Reference($hdlcholesterol)
+* result[HDLCholesterol] ^short = "HDL Cholesterol Result"
+* result[HDLCholesterol] ^definition = "Group of elements for HDL Cholesterol result."
+* result[LDLCholesterol] only Reference($ldlcholesterol)
+* result[LDLCholesterol] ^short = "LDL Cholesterol result, if reported"
+* result[LDLCholesterol] ^definition = "LDL Cholesterol result, if reported."
+
+// ------------------------------------------------------
+// motivo-rejeicao
+// ------------------------------------------------------
+
+Profile: MotivoRejeicao
+Parent: Observation
+Id: motivo-rejeicao
+Title: "Motivo Rejeicao"
+Description: "Define estrutura para registro do motivo da rejeição"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-rejeicao"
+* ^status = #draft
+* code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#motivo-rejeicao (exactly)
+* value[x] only CodeableConcept
+* valueCodeableConcept.coding.system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-amostra-rejeitada"
+
+// ------------------------------------------------------
+// epitelios
+// ------------------------------------------------------
+
+Profile: LaudoEpitelios
+Parent: Observation
+Id: laudo-epitelios
+Title: "Observação sobre epitélios"
+Description: "Define estrtutura para registro de epitélios"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/laudo-epitelios"
+* ^status = #draft
+* code.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelios-na-amostra
+* value[x] only CodeableConcept
+* valueCodeableConcept.coding.system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-epitelios"

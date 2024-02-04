@@ -14,8 +14,7 @@ Alias: $cpf = https://fhir.fabrica.inf.ufg.br/ns/cpf
 Alias: $paciente-siscan = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente-siscan
 Alias: $motivos-exame = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivos-exame
 Alias: $cs-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/inspecao-colo
-Alias: $anamnese-citopatologia = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/anamnese-citopatologia
-
+Alias: $anamnese-exame-citopatologico = https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico
 
 // ------------------------------------------------------
 // 
@@ -51,23 +50,33 @@ Description: "Todos os dados pertinentes a uma ficha de requisição de exame ci
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01"
   * resource = rosa
 
-// requisicao (ServiceRequest)
+// unidade-saude (Organization)
 * entry[2]
+  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06"
+  * resource = rosa
+
+// profissional (Practitioner)
+* entry[3]
+  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07"
+  * resource = profissional
+
+// requisicao (ServiceRequest)
+* entry[4]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb02"
   * resource = requisicao
 
 // respostas - anamnese (QuestionnaireResponse)
-* entry[3]
+* entry[5]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03"
   * resource = respostas-anamnese
 
 // exame (Observation)
-* entry[4]
+* entry[6]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04"
   * resource = exame-inspecao
 
 // exame (Observation)
-* entry[5]
+* entry[7]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05"
   * resource = exame-dst
 
@@ -85,14 +94,12 @@ Description: "Reúne dados de uma ficha de requisição"
 
 * type = http://loinc.org#80568-9 // LOINC para FORM  (desencorajado por ser genérico)
 
-// Data da coleta da amostra e dados da requisição
-* date = "2023-11-20"
-
-// Responsável (profissional de saúde)
-* author.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
-* author.identifier.value = "234.234.567"
+* author = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07)
 
 * title = "Pacote contendo todos os dados da requisição de Exame Citopatológico para a paciente fictícia Rosa"
+
+// Data em que a composição foi montada
+* date = "2024-01-20"
 
 // Patient
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
@@ -116,8 +123,7 @@ Description: "Reúne dados de uma ficha de requisição"
 
 * section[4]
   * title = "Unidade de Saúde Requisitante"
-  * entry[0].identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
-  * entry[0].identifier.value = "234.234.567"
+  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06)
 
 // ------------------------------------------------------
 // requisicao (ServiceRequest)
@@ -133,6 +139,9 @@ Usage: #example
 
 * status = #draft
 * intent = #original-order
+
+// Data da coleta da amostra e dados da requisição
+* authoredOn = "2024-01-23"
 
 * code.coding[0]
   * code = #0203010086
@@ -161,29 +170,6 @@ Usage: #example
 // ------------------------------------------------------
 // exame
 // ------------------------------------------------------
-
-Instance: exame
-InstanceOf: Observation
-Usage: #example
-Title: "Exame clínico visando laudo citopatológico"
-
-* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/exame-clinico"
-
-* status = #final
-* code = http://loinc.org#1-8 // Errado deve ser preenchido
-
-* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
-* performer.identifier.value = "234.234.567"
-* effectiveDateTime = "2023-11-10"
-
-* component[0]
-  * code = http://loinc.org#12044-4
-  * valueCodeableConcept.coding = $cs-inspecao-colo#normal
-
-* component[1]
-  * code = http://loinc.org#45687-1
-  * valueBoolean = false
 
 Instance: exame-inspecao
 InstanceOf: Observation
@@ -218,8 +204,7 @@ Description: "Exame clínico que identifica se há presença ou não de sinais d
 * performer.identifier.value = "234.234.567"
 * effectiveDateTime = "2023-11-10"
 
-// ValueSet http://loinc.org/vs/LL50-6
-* valueCodeableConcept.coding = http://loinc.org#LA33-6
+* valueBoolean = false
 
 // ------------------------------------------------------
 // rosa (subject da composition)
@@ -292,9 +277,6 @@ Description: "Paciente assistida"
 * extension[4].url = $nivel-educacional
 * extension[4].valueCode = #LA12462-0
 
-// ERRO: 
-// Atributo id foi removido pois gerador de Narrativas gera erro
-
 * address[0]
   * use = #home
   * type = #physical
@@ -321,7 +303,7 @@ Instance: unidade-saude
 InstanceOf: Organization
 Usage: #example
 Title: "Unidade Básica de Saúde"
-Description: "Ilustra uma unidade na qual um exame citopatológico é requisitado"
+Description: "A unidade de saúde na qual o exame citopatológico da paciente Rosa é requisitado"
 
 * name = "Unidade Básica do SUS"
 
@@ -338,176 +320,19 @@ Description: "Ilustra uma unidade na qual um exame citopatológico é requisitad
 * type.text = "POSTO DE SAUDE"
 
 // ------------------------------------------------------
-// laboratorio
+// profissional
 // ------------------------------------------------------
 
-Instance: laboratorio
-InstanceOf: Organization
-Usage: #example
-Title: "Laboratório que realiza exames citopatológicos"
-Description: "Ilustra uma unidade na qual um exame citopatológico é realizado"
+Instance: profissional
+InstanceOf: Practitioner
+Description: "Profissional responsável pela requisição de exame da paciente Rosa"
 
-* name = "Laboratório Cito"
+* identifier[0]
+  * use = #official
+  * system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
+  * value = "234.234.567"
 
-// CNES
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
-* identifier.value = "654321"
-
-// UF e município
-* address.city = "Goiânia"
-* address.state = "GO"
-
-* type.coding.system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoEstabelecimentoSaude"
-* type.coding.code = #80
-* type.text = "LABORATORIO DE SAUDE PUBLICA"
-
-// ------------------------------------------------------
-// anamnese-exame-citopatologico
-// ------------------------------------------------------
-
-Instance: anamnese-exame-citopatologico
-InstanceOf: Questionnaire
-Usage: #example
-Title: "Anamnese (exame citopatológico)"
-Description: "Questões pertinentes à anamnese do exame citopatológico"
-
-* url = "https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico"
-
-* version = "0.0.1"
-* name = "AnamneseExameCitopatologico"
-* title = "Questionário (dados de Anamnese) da ficha de requisição do exame citopatológico"
-* status = #draft
-* experimental = false
-* subjectType = #Patient
-* date = "2024-01-20"
-* publisher = "Ministério da Saúde (INCA)"
-* contact[0].name = "Renata (INCA)"
-* contact[0].telecom[0].system = #email
-* contact[0].telecom[0].value = "renata.email@inca.saude.br"
-* contact[0].telecom[0].use = #work
-* contact[0].telecom[0].period.start = "2024"
-* description = "Questões contidas na ficha de requisição de exame citopatológico."
-* useContext.code[0].system = "http://terminology.hl7.org/ValueSet/v3-ActEncounterCode"
-* useContext.code[0].code = #AMB
-* useContext.valueCodeableConcept.text = "Estabelecimento de saúde. Unidade básica de saúde."
-* jurisdiction = urn:iso:std:iso:3166#BR
-* purpose = "Estas questões orientam a coleta de dados relevantes para a elaboração do laudo citopatológico. Convém ressaltar que os dados pertinentes a este questionário não são suficientes. Também há informações necessárias coletadas por meio de exame clínico."
-* copyright = "Ministério da Saúde do Brasil"
-* approvalDate = "2023-12-15"
-* lastReviewDate = "2023-11-30"
-* effectivePeriod.start = "2024-01-01"
-
-// Como caracterizar o formulário? Código local (nacional)?
-* code[0]
-  * code = #74468-0
-  * system = "http://loinc.org"
-  * display = "Questionnaire form definition Document"
-
-* item[0]
-  * linkId = "1"
-  * type = #choice
-  * text = "Fez o exame preventivo (Papanicolaou) alguma vez?"
-  * answerValueSet = Canonical(http://hl7.org/fhir/ValueSet/yesnodontknow)
-  * required = true
-  * repeats = false
-
-* item[1]
-  * linkId = "2"
-  * type = #date
-  * text = "Quando fez o último exame?"
-  * code[0] = http://loinc.org#60432-2
-  * enableWhen[0]
-    * question = "1"
-    * operator = #=
-    * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
-  * required = true
-  * repeats = false
-
-* item[2]
-  * linkId = "3"
-  * type = #choice
-  * text = "Usa DIU?"
-  * code[0] = http://www.saude.gov.br/fhir/r4/CodeSystem/BRCIAP2#W12 // Contracepção intra-uterina
-  * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
-  * required = true
-  * repeats = false
-  * readOnly = true
-
-* item[3]
-  * linkId = "4"
-  * type = #choice
-  * code[0] = http://loinc.org#66174-4
-  * text = "Está grávida?"
-  * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
-  * required = true
-  * repeats = false
-  * readOnly = true
-
-* item[4]
-  * linkId = "5"
-  * type = #choice
-  * text = "Usa pílula anticoncepcional?"
-  * code[0] = http://loinc.org#65931-8
-  * code[1] = http://www.saude.gov.br/fhir/r4/CodeSystem/BRCIAP2#W11 // Contracepção oral (CIAP-2)
-  * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
-  * required = true
-  * repeats = false
-  * readOnly = true
-
-* item[5]
-  * linkId = "6"
-  * type = #choice
-  * text = "Usa hormônio/remédio para tratar a menopausa?"
-  * code[0] = http://loinc.org#63873-4
-  * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
-  * required = true
-  * repeats = false
-  * readOnly = true
-
-* item[6]
-  * linkId = "7"
-  * type = #choice
-  * text = "Já fez tratamento por radioterapia?"
-  * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
-  * required = true
-  * repeats = false
-  * readOnly = true
-
-* item[7]
-  * linkId = "8"
-  * type = #date
-  * text = "Data da última menstruação/regra"
-  * code[0] = http://loinc.org#8665-2
-  * required = true
-  * repeats = false
-  * readOnly = true
-
-* item[8]
-  * linkId = "9"
-  * type = #choice
-  * text = "Tem ou teve algum sangramento após relações sexuais? (não considerar a primeira relação sexual na vida)"
-  * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
-  * required = true
-  * repeats = false
-  * readOnly = true
-
-* item[9]
-  * linkId = "10"
-  * type = #choice
-  * text = "Tem ou teve algum sangramento após a menopausa? (não considerar o(s) sangramento(s) na vigência de reposição hormonal)"
-  * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
-  * required = true
-  * repeats = false
-  * readOnly = true
-
-* item[10]
-  * linkId = "11"
-  * type = #integer
-  * text = "Qual a sua idade?"
-  * required = true
-  * repeats = false
-  * readOnly = true
-  * maxLength = 3
+* name[0].text = "João da Silva"
 
 // ------------------------------------------------------
 // anamnese-exame-citopatologico
@@ -518,7 +343,7 @@ InstanceOf: QuestionnaireResponse
 Title: "Respostas para a anamnese de exame citopatológico"
 Description: "Respostas para anamnese de exame citopatológico de uma requisição para a paciente Rosa"
 
-* questionnaire = Canonical(anamnese-exame-citopatologico)
+* questionnaire = $anamnese-exame-citopatologico
 * status = #completed
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
 * author.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
@@ -579,155 +404,30 @@ Description: "Respostas para anamnese de exame citopatológico de uma requisiç�
   * answer[0].valueInteger = 60
   * text = "Qual a sua idade?"
 
+// ------------------------------------------------------
+// LAUDO
+// ------------------------------------------------------
+
 
 
 // ------------------------------------------------------
-// respostas
+// laboratorio
 // ------------------------------------------------------
 
-Instance: respostas
-InstanceOf: Observation
-Description: "Anamnese realizada para o exame citopatológico"
-
-* meta.profile = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/br-anamnese-exame-citopatologico"
-
-* status = #final
-* code = http://loinc.org#1-8
-* category = http://terminology.hl7.org/CodeSystem/observation-category#survey
-
-* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
-* effectiveDateTime = "2023-01-01"
-* performer.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
-* performer.identifier.value = "234.234.567"
-
-* component[0].code = $anamnese-citopatologia#ja-fez
-* component[0].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
-
-* component[1].code = http://loinc.org#60432-2
-* component[1].valueDateTime = "2023-01-01"
-
-* component[2].code = $anamnese-citopatologia#diu
-* component[2].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
-
-* component[3].code = http://loinc.org#66174-4
-* component[3].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
-
-* component[4].code = $anamnese-citopatologia#pilula
-* component[4].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
-
-* component[5].code = http://loinc.org#63873-4
-* component[5].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
-
-* component[6].code = $anamnese-citopatologia#radioterapia
-* component[6].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
-
-* component[7].code = http://loinc.org#8665-2
-* component[7].valueDateTime =	"2023-10-10"
-
-* component[8].code = $anamnese-citopatologia#sangramento-menopausa
-* component[8].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
-
-* component[9].code = $anamnese-citopatologia#sangramento-relacao
-* component[9].valueCodeableConcept =	http://terminology.hl7.org/CodeSystem/v2-0136#Y
-
-
-// ------------------------------------------------------
-// profissional
-// ------------------------------------------------------
-
-Instance: profissional
-InstanceOf: Practitioner
-Description: "Profissional responsável pela requisição"
-
-* identifier[0]
-  * use = #official
-  * system = "https://fhir.fabrica.inf.ufg.br/ns/coren"
-  * value = "12.34.56.78"
-
-* name[0].text = "João da Silva"
-
-// ------------------------------------------------------
-// profissional
-// ------------------------------------------------------
-
-Instance: enfermeira
-InstanceOf: Practitioner
-Title: "Enfermeira"
-Description: "Profissional lotada na UBS que oferece rastreamento"
+Instance: laboratorio
+InstanceOf: Organization
 Usage: #example
+Title: "Laboratório que realiza exames citopatológicos"
+Description: "Laboratório que emite o laudo do exame da paciente Rosa"
 
-/*
-Substitui a narrativa gerada automaticamente, que é mais completa.
-Daí segue o exemplo, mas comentado.
+* name = "Laboratório Cito"
+* identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
+* identifier.value = "654321"
 
-* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Practitioner</b></p></div>"
-* text.status = #additional
-
-*/
-
-// * meta.profile = "http://rnds-fhir.saude.gov.br/StructureDefinition/BRProfissional-1.0"
-* meta.lastUpdated = "2022-08-09T23:18:22.558Z"
-
-* identifier[0]
-  * system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
-  * use = #usual
-  * value = "234.234.567"
-
-* identifier[1]
-  * system = "https://fhir.fabrica.inf.ufg.br/ns/cpf"
-  * use = #usual
-  * value = "234.523.423-42"
-
-* active = true
-
-* name[0]
-  * text = "Maria José"
-  * use = #official
-
-* name[1]
-  * text = "Dama da Lamparina"
-  * use = #nickname
-
-* telecom[0]
-  * system = #fax
-  * value = "2345-6789"
-  * use = #work
-  * rank = 3
-
-* telecom[1]
-  * system = #phone
-  * value = "1111-2222"
-  * use = #home
-  * rank = 1
-
-* telecom[2]
-  * system = #email
-  * value = "maria.jose.enfermeira@posto-saude.sus.br"
-  * use = #work
-  * rank = 2  
-
-* address[0]
-  * use = #home
-  * type = #postal
-  * line = #008
-  * line = "Av. T2"
-  * city = "Goiânia"
-  * state = "Goiás"
-  * postalCode = "74215-010"
-
-* address[1]
-  * use = #work
-  * type = #postal
-  * line = #008
-  * line = "Rua do Hospital"
-  * city = "Aparecida de Goiânia"
-  * state = "Goiás"
-  * postalCode = "74215-010"
-
-* gender = #female
-* birthDate = "1987-10-14"
-
-* qualification.code.coding = http://www.saude.gov.br/fhir/r4/CodeSystem/BRCBO#223505
+// As informações abaixo não são registradas no laudo
+//* type.coding.system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoEstabelecimentoSaude"
+//* type.coding.code = #80
+//* type.text = "LABORATORIO DE SAUDE PUBLICA"
 
 // ------------------------------------------------------
 // citopatologista
@@ -736,17 +436,247 @@ Daí segue o exemplo, mas comentado.
 Instance: citopatologista
 InstanceOf: Practitioner
 Title: "Citopatologista"
-Description: "Profissional lotado em laboratório que elabora e assina digitalmente o exame citopatológico"
+Description: "Profissional responsável pelo laudo de exame da paciente Rosa"
 Usage: #example
 
 * identifier.system = "http://rnds.saude.gov.br/fhir/r4/NamingSystem/cns"
 * identifier.value = "2345234234234"
 * name.text = "Beltrano da Silva"
-* gender = #male
-* birthDate = "1987-10-14"
 
-* photo.url = "https://randomuser.me/api/portraits/med/men/75.jpg"
-* photo.title = "foto pequena"
+// ------------------------------------------------------
+// diagnostico
+// ------------------------------------------------------
 
-* qualification.code.coding = http://www.saude.gov.br/fhir/r4/CodeSystem/BRCBO#225305
+Instance: diagnostico
+InstanceOf: DiagnosticReport
+Title: "Laudo de Exame Citopatológico"
+Description: "Laudo da requisição de exame da paciente Rosa"
 
+* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/laudo-citopatologico"
+* status = #final
+* code.text = "Microscopic observation [Identifier] in Cervix by Cyto stain"
+* code.coding[0].system = "http://loinc.org"
+* code.coding[0].code = #10524-7
+
+* identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ns/laboratorio"
+* identifier[0].value = "cito-exame-123"
+
+* basedOn = Reference(requisicao)
+
+* category.coding = http://terminology.hl7.org/CodeSystem/v2-0074#CP
+* subject = Reference(rosa)
+* effectiveDateTime = "2024-01-01"
+* issued = "2017-01-01T00:00:00Z"
+
+* result[0] = Reference(laudo-rejeitado)
+* result[1] = Reference(laudo-epitelios)
+* result[2] = Reference(laudo-adequabilidade)
+* result[3] = Reference(laudo-normalidade)
+* result[4] = Reference(laudo-alteracoes-benignas)
+* result[5] = Reference(laudo-microbiologia)
+* result[6] = Reference(laudo-celulas-atipicas)
+* result[7] = Reference(laudo-atipias-escamosas)
+* result[8] = Reference(laudo-atipias-glandulares)
+* result[9] = Reference(laudo-outras-neoplasias-malignas)
+* result[10] = Reference(laudo-celulas-endometriais)
+
+* performer[0] = Reference(laboratorio)
+* resultsInterpreter[0] = Reference(citopatologista)
+
+* conclusion = "Aqui seguem as observações gerais"
+
+// ------------------------------------------------------
+// rejeicao
+// ------------------------------------------------------
+
+Instance: laudo-rejeitado
+InstanceOf: Observation
+Usage: #example
+Title: "Motivo da rejeição da amostra"
+Description: "Motivo pelo qual, se for o caso, a amostra para exame citopatológico foi rejeitada"
+
+* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-rejeicao"
+
+* status = #final
+* code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#motivo-rejeicao (exactly)
+* valueCodeableConcept.coding[0]
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-amostra-rejeitada"
+  * code = #alheias
+* note[0].text = "reagente vencido"
+
+// ------------------------------------------------------
+// epitelios
+// ------------------------------------------------------
+
+Instance: laudo-epitelios
+InstanceOf: Observation
+Usage: #example
+Title: "Epitélios representados na amostra"
+Description: "Tipo de epitélio presente na amostra"
+
+* status = #final
+* code.coding
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
+  * code = #epitelios-na-amostra
+* valueCodeableConcept.coding[0]
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-epitelios"
+  * code = #escamoso
+
+// ------------------------------------------------------
+// adequabilidade
+// ------------------------------------------------------
+
+Instance: laudo-adequabilidade
+InstanceOf: Observation
+Usage: #example
+Title: "Adequabilidade do material"
+Description: "Identifica adequabilidade ou não da amostra"
+
+* status = #final
+* code.coding
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
+  * code = #adequabilidade
+* valueCodeableConcept.coding[0]
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-adequabilidade"
+  * code = #outros
+* note[0].text = "deve vir especificação aqui"
+
+// ------------------------------------------------------
+// limites-normalidade
+// ------------------------------------------------------
+
+Instance: laudo-normalidade
+InstanceOf: Observation
+Usage: #example
+Title: "Limites de normalidade"
+Description: "Indica se material examinado está dentro dos limites de normalidade"
+
+* status = #final
+* code.coding
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
+  * code = #normalidade
+* valueBoolean = true
+
+// ------------------------------------------------------
+// alteracoes-benignas
+// ------------------------------------------------------
+
+Instance: laudo-alteracoes-benignas
+InstanceOf: Observation
+Usage: #example
+Title: "Alterações celulares benignas"
+Description: "Alterações celulares benignas reativas ou reparativas"
+
+* status = #final
+* code.coding
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
+  * code = #alteracoes-benignas
+* valueCodeableConcept.coding[0]
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-adequabilidade"
+  * code = #outros
+* note[0].text = "deve vir especificação aqui"
+
+// ------------------------------------------------------
+// microbiologia
+// ------------------------------------------------------
+
+Instance: laudo-microbiologia
+InstanceOf: Observation
+Usage: #example
+Title: "Microbiologia"
+Description: "Microbiologia"
+
+* status = #final
+* code.coding
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
+  * code = #microbiologia
+* valueCodeableConcept.coding[0]
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/microbiologias"
+  * code = #outros-bacilos
+* note[0].text = "deve vir especificação aqui"
+
+// ------------------------------------------------------
+// laudo-celulas-atipicas
+// ------------------------------------------------------
+
+Instance: laudo-celulas-atipicas
+InstanceOf: Observation
+Usage: #example
+Title: "Células atípicas de significado indeterminado"
+Description: "Células atípicas de significado indeterminado"
+
+* status = #final
+* code.coding
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
+  * code = #significado-indeterminado
+* valueCodeableConcept.coding[0]
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/celulas-atipicas"
+  * code = #escamosas-1
+
+// ------------------------------------------------------
+// laudo-atipias
+// ------------------------------------------------------
+
+Instance: laudo-atipias-escamosas
+InstanceOf: Observation
+Usage: #example
+Title: "Atipias em células escamosas"
+Description: "Atipias em células escamosas"
+
+* status = #final
+* code.coding
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
+  * code = #atipias-escamosas
+* valueCodeableConcept.coding[0]
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/atipias-escamosas"
+  * code = #baixo
+
+// ------------------------------------------------------
+// laudo-atipias
+// ------------------------------------------------------
+
+Instance: laudo-atipias-glandulares
+InstanceOf: Observation
+Usage: #example
+Title: "Atipias em células glandulares"
+Description: "Atipias em células glandulares"
+
+* status = #final
+* code.coding
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
+  * code = #atipias-glandulares
+* valueCodeableConcept.coding[0]
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/atipias-glandulares"
+  * code = #in-situ
+
+// ------------------------------------------------------
+// laudo-atipias
+// ------------------------------------------------------
+
+Instance: laudo-outras-neoplasias-malignas
+InstanceOf: Observation
+Usage: #example
+Title: "Atipias em células escamosas"
+Description: "Atipias em células escamosas"
+
+* status = #final
+* code.coding
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
+  * code = #neoplasias-malignas
+* note[0].text = "deve vir as neoplasias aqui"
+
+// ------------------------------------------------------
+// laudo-celulas-endometriais
+// ------------------------------------------------------
+
+Instance: laudo-celulas-endometriais
+InstanceOf: Observation
+Usage: #example
+Title: "Células endometriais"
+Description: "Células endometriais"
+
+* status = #final
+* code.coding
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
+  * code = #celulas-endometriais
+* valueBoolean = true

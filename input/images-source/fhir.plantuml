@@ -10,7 +10,6 @@ skinparam class {
     BorderColor #505050
 }
 
-class "anamnese-citopatologia" as AnamneseCitopatologia <<CodeSystem>> {}
 class "inspecao-colo" as InspecaoColo <<CodeSystem>> {}
 class "motivos-exame" as MotivosExame <<CodeSystem>> {}
 class "vs-inspecao-colo" as VsInspecaoColo <<ValueSet>> {}

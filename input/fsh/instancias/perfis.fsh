@@ -187,8 +187,8 @@ Description: "Questões pertinentes à anamnese do exame citopatológico"
 * contact[0].telecom[0].use = #work
 * contact[0].telecom[0].period.start = "2024"
 * description = "Questões contidas na ficha de requisição de exame citopatológico."
-* useContext.code[0].system = "http://terminology.hl7.org/ValueSet/v3-ActEncounterCode"
-* useContext.code[0].code = #AMB
+* useContext.code[0].system = "http://terminology.hl7.org/CodeSystem/usage-context-type"
+* useContext.code[0].code = #gender
 * useContext.valueCodeableConcept.text = "Estabelecimento de saúde. Unidade básica de saúde."
 * jurisdiction = urn:iso:std:iso:3166#BR
 * purpose = "Estas questões orientam a coleta de dados relevantes para a elaboração do laudo citopatológico. Convém ressaltar que os dados pertinentes a este questionário não são suficientes. Também há informações necessárias coletadas por meio de exame clínico."
@@ -369,45 +369,71 @@ Description: "Definição de resultado (laudo) de exame citopatológico em confo
 * category.coding.display ..0
 * encounter ..0
 
-* result ..11
+* result 1..1
+* result only Reference(componentes-laudo-citopatologico)
 
-* result ^slicing.discriminator.type = #value
-* result ^slicing.discriminator.path = "resolve().code"
-* result ^slicing.ordered = false
-* result ^slicing.rules = #closed
-* result contains
-    Cholesterol 1..1 MS and
-    Triglyceride 1..1 MS and
-    HDLCholesterol 1..1 MS and
-    LDLCholesterol 0..1 MS
-* result[Cholesterol] only Reference(MotivoRejeicao)
-* result[Cholesterol] ^short = "Cholesterol Result"
-* result[Cholesterol] ^definition = "Reference to Cholesterol Result."
-* result[Triglyceride] only Reference($triglyceride)
-* result[Triglyceride] ^short = "Triglyceride Result"
-* result[Triglyceride] ^definition = "Group of elements for Triglyceride result."
-* result[HDLCholesterol] only Reference($hdlcholesterol)
-* result[HDLCholesterol] ^short = "HDL Cholesterol Result"
-* result[HDLCholesterol] ^definition = "Group of elements for HDL Cholesterol result."
-* result[LDLCholesterol] only Reference($ldlcholesterol)
-* result[LDLCholesterol] ^short = "LDL Cholesterol result, if reported"
-* result[LDLCholesterol] ^definition = "LDL Cholesterol result, if reported."
 
 // ------------------------------------------------------
-// motivo-rejeicao
+// componentes-laudo-citopatologico
 // ------------------------------------------------------
 
-Profile: MotivoRejeicao
+Profile: ComponentesLaudoCitopatologico
 Parent: Observation
-Id: motivo-rejeicao
-Title: "Motivo Rejeicao"
-Description: "Define estrutura para registro do motivo da rejeição"
+Id: componentes-laudo-citopatologico
+Title: "Itens de resultado do laudo citopatológico"
+Description: "Componentes do resultado do laudo citopatológico"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-rejeicao"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/componentes-laudo-citopatologico"
 * ^status = #draft
 * code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#motivo-rejeicao (exactly)
-* value[x] only CodeableConcept
-* valueCodeableConcept.coding.system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-amostra-rejeitada"
+
+* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #closed
+* component ^slicing.description = "Identificação dos componentes do laudo"
+
+* component contains 
+    motivo 0..1 MS and 
+    causasAlheias 0..1 MS and
+    outrasCausas 0..1 MS and
+    epitelios 0..1 MS
+
+* component[motivo] ^short = "Registra o motivo da rejeição da amostra"
+* component[motivo].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#motivo-rejeicao (exactly)
+* component[motivo].code ^short = "Código para motivo da rejeição da amostra"
+* component[motivo].code.coding ^short = "Código definido por uma terminologia"
+* component[motivo].value[x] only CodeableConcept
+* component[motivo].value[x] ^short = "O código que identifica o motivo da rejeição da amostra"
+* component[motivo].valueCodeableConcept from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-rejeicao (required)
+* component[motivo].valueCodeableConcept.coding 1..1
+* component[motivo].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
+
+* component[causasAlheias] ^short = "Especifica causa alheia para rejeição da amostra"
+* component[causasAlheias].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#motivo-rejeicao (exactly)
+* component[causasAlheias].code ^short = "Código para motivo da rejeição da amostra"
+* component[causasAlheias].code.coding ^short = "Código definido por uma terminologia"
+* component[causasAlheias].value[x] 1..1
+* component[causasAlheias].value[x] only string
+* component[causasAlheias].value[x] ^short = "O código que identifica o motivo da rejeição da amostra"
+
+* component[outrasCausas] ^short = "Especifica outras causas para rejeição da amostra"
+* component[outrasCausas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#motivo-rejeicao (exactly)
+* component[outrasCausas].code ^short = "Código para motivo da rejeição da amostra"
+* component[outrasCausas].code.coding ^short = "Código definido por uma terminologia"
+* component[outrasCausas].value[x] 1..1
+* component[outrasCausas].value[x] only string
+* component[outrasCausas].value[x] ^short = "O código que identifica o motivo da rejeição da amostra"
+
+* component[epitelios] ^short = "Epitélios representados na amostra"
+* component[epitelios].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelios-na-amostra (exactly)
+* component[epitelios].code ^short = "Código que identifica tipos epitélios na amostra"
+* component[epitelios].code.coding ^short = "Código definido por uma terminologia"
+* component[epitelios].value[x] 1..1
+* component[epitelios].value[x] only CodeableConcept
+* component[epitelios].valueCodeableConcept.coding 1..1
+* component[epitelios].valueCodeableConcept ^short = "O conjunto de códigos que identifica tipo de epitélio na amostra"
+* component[epitelios].valueCodeableConcept.coding.system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-epitelios"
+* component[epitelios].valueCodeableConcept.coding.code 1..1
 
 // ------------------------------------------------------
 // epitelios

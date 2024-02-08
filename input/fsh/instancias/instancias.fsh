@@ -468,132 +468,47 @@ Description: "Laudo da requisição de exame da paciente Rosa"
 * effectiveDateTime = "2024-01-01"
 * issued = "2017-01-01T00:00:00Z"
 
-* result[0] = Reference(laudo-rejeitado)
-* result[1] = Reference(laudo-epitelios)
-* result[2] = Reference(laudo-adequabilidade)
-* result[3] = Reference(laudo-normalidade)
-* result[4] = Reference(laudo-alteracoes-benignas)
-* result[5] = Reference(laudo-microbiologia)
-* result[6] = Reference(laudo-celulas-atipicas)
-* result[7] = Reference(laudo-atipias-escamosas)
-* result[8] = Reference(laudo-atipias-glandulares)
-* result[9] = Reference(laudo-outras-neoplasias-malignas)
-* result[10] = Reference(laudo-celulas-endometriais)
+* result[0] = Reference(laudo-componentes)
 
 * performer[0] = Reference(laboratorio)
 * resultsInterpreter[0] = Reference(citopatologista)
-
-* conclusion = "Aqui seguem as observações gerais"
 
 // ------------------------------------------------------
 // rejeicao
 // ------------------------------------------------------
 
-Instance: laudo-rejeitado
+Instance: laudo-componentes
 InstanceOf: Observation
 Usage: #example
-Title: "Motivo da rejeição da amostra"
-Description: "Motivo pelo qual, se for o caso, a amostra para exame citopatológico foi rejeitada"
+Title: "Componentes do laudo da paciente Rosa"
+Description: "Itens que definem o laudo da paciente Rosa"
 
-* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-rejeicao"
-
-* status = #final
-* code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#motivo-rejeicao (exactly)
-* valueCodeableConcept.coding[0]
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-amostra-rejeitada"
-  * code = #alheias
-* note[0].text = "reagente vencido"
-
-// ------------------------------------------------------
-// epitelios
-// ------------------------------------------------------
-
-Instance: laudo-epitelios
-InstanceOf: Observation
-Usage: #example
-Title: "Epitélios representados na amostra"
-Description: "Tipo de epitélio presente na amostra"
+* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/componentes-laudo-citopatologico"
 
 * status = #final
-* code.coding
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
-  * code = #epitelios-na-amostra
-* valueCodeableConcept.coding[0]
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-epitelios"
-  * code = #escamoso
+* code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan#citopatologico
 
-// ------------------------------------------------------
-// adequabilidade
-// ------------------------------------------------------
+* component[0].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelios-na-amostra
+* component[0].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-epitelios#escamoso
 
-Instance: laudo-adequabilidade
-InstanceOf: Observation
-Usage: #example
-Title: "Adequabilidade do material"
-Description: "Identifica adequabilidade ou não da amostra"
+* component[1].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#adequabilidade
+* component[1].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-adequabilidade#outros
+* component[1].valueCodeableConcept.text = "Aqui segue a especificação para o item 'Outros'"
 
-* status = #final
-* code.coding
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
-  * code = #adequabilidade
-* valueCodeableConcept.coding[0]
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-adequabilidade"
-  * code = #outros
-* note[0].text = "deve vir especificação aqui"
+* component[2].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#normalidade
+* component[2].valueBoolean = true
 
-// ------------------------------------------------------
-// limites-normalidade
-// ------------------------------------------------------
+* component[3].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#alteracoes-benignas
+* component[3].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/alteracoes-celulares-benignas#radiacao
+* component[3].valueCodeableConcept.text = "Raios Gama"
 
-Instance: laudo-normalidade
-InstanceOf: Observation
-Usage: #example
-Title: "Limites de normalidade"
-Description: "Indica se material examinado está dentro dos limites de normalidade"
+* component[4].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia
+* component[4].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/microbiologias#outros-bacilos
+* component[4].valueCodeableConcept.text = "Aqui segue a especificação dos outros bacilos"
 
-* status = #final
-* code.coding
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
-  * code = #normalidade
-* valueBoolean = true
 
-// ------------------------------------------------------
-// alteracoes-benignas
-// ------------------------------------------------------
+* note[0].text = "Aqui seguem as observações gerais"
 
-Instance: laudo-alteracoes-benignas
-InstanceOf: Observation
-Usage: #example
-Title: "Alterações celulares benignas"
-Description: "Alterações celulares benignas reativas ou reparativas"
-
-* status = #final
-* code.coding
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
-  * code = #alteracoes-benignas
-* valueCodeableConcept.coding[0]
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-adequabilidade"
-  * code = #outros
-* note[0].text = "deve vir especificação aqui"
-
-// ------------------------------------------------------
-// microbiologia
-// ------------------------------------------------------
-
-Instance: laudo-microbiologia
-InstanceOf: Observation
-Usage: #example
-Title: "Microbiologia"
-Description: "Microbiologia"
-
-* status = #final
-* code.coding
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
-  * code = #microbiologia
-* valueCodeableConcept.coding[0]
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/microbiologias"
-  * code = #outros-bacilos
-* note[0].text = "deve vir especificação aqui"
 
 // ------------------------------------------------------
 // laudo-celulas-atipicas

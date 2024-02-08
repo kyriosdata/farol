@@ -24,6 +24,25 @@ Description: "Os resultados para a inspeção de colo visando exame citopatológ
 * #alterado "Alterado" 
 * #nao-visualizado "Colo não visualizado"
 
+// ------------------------------------------------------
+// laudos-siscan
+// ------------------------------------------------------
+
+CodeSystem: LaudosSiscan
+Id: laudos-siscan
+Title: "Laudos gerenciados pelo SISCAN"
+Description: "Tipos de laudos gerenciados pelo SISCAN"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan"
+
+* ^status = #draft
+* ^caseSensitive = true
+* ^experimental = false
+
+* #citopatologico "Exame citopatológico"
 
 // ------------------------------------------------------
 // motivos-exame
@@ -68,7 +87,7 @@ Description: "Motivo pelo qual a amostra é rejeitada e o laudo inviável."
 * #identificacao-invalida "falha na identificação" "Ausência ou erro na identificação da lâmina, frasco ou requisição"
 * #lamina-invalida "lâmina" "Lâmina danificada ou ausente"
 * #alheias "Causas alheias" "Causas alheias ao laboratório"
-* #outra "Outras causas" "Outras causas"
+* #outras "Outras causas" "Outras causas"
 
 // ------------------------------------------------------
 // tipos-epitelios

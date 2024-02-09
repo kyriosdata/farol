@@ -8,23 +8,42 @@ Usage: #definition
 * status = #draft
 * kind = #identifier
 * date = "2023-11-13"
-* publisher = "Ministério da Saúde (Brasil)"
+* publisher = "Receita Federal do Brasil"
+* contact[0].name = "Renata INCA"
+* contact[0]
+  * telecom[0]
+    * system = #phone
+    * value = "+55 62 98765-4321"
+    * use = #work
+    * rank = 1
+  * telecom[1]
+    * system = #email
+    * value = "renata@inca.gov.br"
+    * rank = 2
+
 * responsible = "Receita Federal do Brasil"
 
 * type.coding[0].system = "http://terminology.hl7.org/CodeSystem/v2-0203"
 * type.coding[0].code = #TAX
 * type.text = "Número de inscrição no Cadastro de Pessoa Física (CPF)"
 
-* usage = "Fornecido pelo interessado como parte da identificação do paciente"
+* description = "Identificador do número de inscrição no Cadastro de Pessoas Físicas (CPF)"
+
+* useContext[0]
+  * code.system = "http://terminology.hl7.org/CodeSystem/usage-context-type"
+  * code.code = #workflow
+  * valueCodeableConcept.coding = urn:iso:std:iso:3166#BRA
+  * valueCodeableConcept.text = "Identificação de estabelecimentos no território brasileiro"
 
 * jurisdiction[0].coding[0].system = "urn:iso:std:iso:3166"
 * jurisdiction[0].coding[0].code = #BR
 * jurisdiction[0].text = "Em todo o território nacional (brasileiro)"
 
+* usage = "Usado quando se deseja declarar a origem do código que o acompanha. Desta forma, o interlocutor saberá que o código em questão identifica unicamente um cidadão "
+
 * uniqueId[0].type = #uri
 * uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ns/cpf"
 * uniqueId[0].preferred = true
-* uniqueId[0].comment = "Criado pela ausência de NamingSystem nacional para o CPF"
+* uniqueId[0].comment = "Criado pela ausência de declaração nacional para o CNES. Este valor deverá ser substituído por sequência produzida pelo órgão federal competente."
 * uniqueId[0].period.start = "2023-11-13"
 
-* description = "Identificador do número de inscrição no Cadastro de Pessoas Físicas (CPF)"

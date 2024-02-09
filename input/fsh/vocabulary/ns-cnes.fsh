@@ -7,8 +7,8 @@ Usage: #definition
 * name = "CNES"
 * status = #draft
 * kind = #identifier
-* date = "2023-11-13"
-* publisher = "Ministério da Saúde do Brasil (INCA)"
+* date = "2024-02-09"
+* publisher = "Ministério da Saúde do Brasil"
 * contact[0].name = "Renata INCA"
 * contact[0]
   * telecom[0]
@@ -21,7 +21,7 @@ Usage: #definition
     * value = "renata@inca.gov.br"
     * rank = 2
 
-* responsible = "Ministério da Saúde do Brasil (INCA)"
+* responsible = "Ministério da Saúde do Brasil"
 
 * type.coding[0].system = "http://terminology.hl7.org/CodeSystem/v2-0203"
 * type.coding[0].code = #FI // Facility ID
@@ -44,6 +44,6 @@ Usage: #definition
 * uniqueId[0].type = #uri
 * uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
 * uniqueId[0].preferred = true
-* uniqueId[0].comment = "Criado pela ausência de NamingSystem nacional para o CNES"
+* uniqueId[0].comment = "Criado pela ausência de declaração nacional para o CNES. Este valor deverá ser substituído por sequência produzida pelo órgão federal competente."
 * uniqueId[0].period.start = "2023-11-13"
 

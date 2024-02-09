@@ -1,51 +1,12 @@
 Alias: $anamnese = http://perfil.org/anamnese-exame-citopatologico
-Alias: $exame-clinico = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/exame-clinico
-Alias: $loinc = http://loinc.org
-Alias: $yesnodontknow = http://hl7.org/fhir/ValueSet/yesnodontknow
+Alias: $BRTipoLogradouro-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRTipoLogradouro-1.0
+Alias: $BRMunicipio-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRMunicipio-1.0
+Alias: $BRUnidadeFederativa-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRUnidadeFederativa-1.0
+Alias: $BRMeioContato = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRMeioContato-1.0
 Alias: $laudo-tipo-item = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item
-
-// ------------------------------------------------------
-// exame-clinico
-// ------------------------------------------------------
-
+Alias: $loinc = http://loinc.org
 Alias: $vs-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/vs-inspecao-colo
-
-Profile: ExameClinicoParaLaudoCitopatologico
-Parent: Observation
-Id: exame-clinico
-Title: "Exame clínico (parte de requisição)"
-Description: "Exame clínico para coleta de informações necessárias para a requisição de exame citopatológico."
-
-* ^url = $exame-clinico
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Exame clínico utilizado em exame citopatológico</div>"
-* ^status = #draft
-
-* component ^slicing.discriminator.type = #pattern
-* component ^slicing.discriminator.path = "code"
-* component ^slicing.rules = #open
-* component ^slicing.ordered = false   // can be omitted, since false is the default
-* component ^slicing.description = "Slice based on the component.code pattern"
-
-* component contains inspecao 1..1 MS and sinais 1..1 MS
-
-* component[inspecao] ^short = "Registra o resultado da inspeção do colo"
-* component[inspecao].code = http://loinc.org#12044-4 // Inspeção do colo
-* component[inspecao].code ^short = "Código para inspeção do colo"
-* component[inspecao].code.coding ^short = "Código definido por uma terminologia"
-* component[inspecao].value[x] only CodeableConcept
-* component[inspecao].value[x] ^short = "O código correspondente ao resultado da inspeção"
-* component[inspecao].valueCodeableConcept from $vs-inspecao-colo (required)
-* component[inspecao].valueCodeableConcept.coding 1..1
-* component[inspecao].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
-
-* component[inspecao] ^short = "Registra presença ou não de sinais de DST"
-* component[sinais].code = http://loinc.org#45687-1 // DST
-* component[sinais].code ^short = "Código para presença ou não de sinais de DST"
-* component[sinais].value[x] ^short = "true se há sinal de DST ou false, caso contrário"
-* component[sinais].value[x] only boolean
-
+Alias: $yesnodontknow = http://hl7.org/fhir/ValueSet/yesnodontknow
 
 // ------------------------------------------------------
 // requisicao-exame-citopatologico
@@ -74,12 +35,6 @@ Invariant: ConteudoSuporte
 Description: "Possui apenas instâncias predefinidas"
 Expression: "select($this.code.coding[0].code in ('60432-2')).allTrue()"
 Severity: #error
-
-
-Alias: $BRTipoLogradouro-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRTipoLogradouro-1.0
-Alias: $BRMunicipio-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRMunicipio-1.0
-Alias: $BRUnidadeFederativa-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRUnidadeFederativa-1.0
-Alias: $BRMeioContato = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRMeioContato-1.0
 
 Invariant: LinhasEndereco
 Description: "Endereço não pode ser vazio"
@@ -520,18 +475,3 @@ Description: "Componentes do resultado do laudo citopatológico"
 * note.author[x] 0..0
 * note.time 0..0
 
-// ------------------------------------------------------
-// epitelios
-// ------------------------------------------------------
-
-Profile: LaudoEpitelios
-Parent: Observation
-Id: laudo-epitelios
-Title: "Observação sobre epitélios"
-Description: "Define estrtutura para registro de epitélios"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/laudo-epitelios"
-* ^status = #draft
-* code.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelios-na-amostra
-* value[x] only CodeableConcept
-* valueCodeableConcept.coding.system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-epitelios"

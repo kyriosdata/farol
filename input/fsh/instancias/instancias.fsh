@@ -12,7 +12,7 @@ Alias: $nome-mae = http://hl7.org/fhir/StructureDefinition/patient-mothersMaiden
 Alias: $cns = https://fhir.fabrica.inf.ufg.br/ns/cns
 Alias: $cpf = https://fhir.fabrica.inf.ufg.br/ns/cpf
 Alias: $paciente-siscan = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente-siscan
-Alias: $motivos-exame = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivos-exame
+Alias: $motivos-exame = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivos-exame-citopatologico
 Alias: $cs-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/inspecao-colo
 Alias: $anamnese-exame-citopatologico = https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico
 

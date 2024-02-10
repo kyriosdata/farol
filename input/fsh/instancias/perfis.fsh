@@ -23,6 +23,9 @@ Description: "Requisição de exame citopatológico"
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Detalha referência para anamnese e exame clínico.</div>"
 
+* reasonCode 1..1
+* reasonCode.coding 1..1
+* reasonCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-exame-citopatologico (required)
 * supportingInfo ^short = "O laudo de exame citopatológico depende de dois grupos principais de informações: dados da anamnese e de exame clínico."
 * supportingInfo only Reference(Observation or QuestionnaireResponse)
 * supportingInfo 3..3

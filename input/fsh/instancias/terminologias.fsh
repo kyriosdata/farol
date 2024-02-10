@@ -50,21 +50,32 @@ Description: "Tipos de laudos gerenciados pelo SISCAN"
 
 CodeSystem: MotivosExame
 Id: motivos-exame
-Title: "Motivo do Exame Citopatológico"
+Title: "Motivo do exame citopatológico"
 Description: "Define os motivos pelos quais uma requisição de exame citopatológico é realizada"
 
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivos-exame"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivos-exame-citopatologico"
 
 * ^status = #draft
 * ^caseSensitive = true
 * ^experimental = false
 
 * #rastreamento "Rastreamento" "Com a finalidade de rastreamento"
-* #repeticao "Repetição" "Exame alterado ASCUS/Baixo grau"
-* #seguimento "Seguimento" "Pós diagnóstico colposcópico/tratamento"
+* #repeticao "Repetição" "Repetição (exame alterado ASCUS/Baixo grau)"
+* #seguimento "Seguimento" "Seguimento (pós diagnóstico colposcópico/tratamento)"
+
+// --------------------------
+
+ValueSet: MotivoExame
+Id: motivo-exame
+Title: "Motivo exame"
+Description: "Possíveis motivos para requisição de exame citopatológico"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-exame-citopatologico"
+
+* ^status = #draft
+* ^experimental = false
+
+* include codes from system MotivosExame
 
 // ------------------------------------------------------
 // motivo-amostra-rejeitada
@@ -313,26 +324,6 @@ Description: "Possíveis resultados para inspeção de colo visando exame citopa
 * ^experimental = false
 
 * include codes from system ResultadoInspecaoColo
-
-
-// ------------------------------------------------------
-// vs-motivo-exame
-// ------------------------------------------------------
-
-ValueSet: MotivoExame
-Id: motivo-exame
-Title: "Motivo Exame"
-Description: "Possíveis motivos para requisição de exame citopatológico"
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-exame"
-
-* ^status = #draft
-* ^experimental = false
-
-* include codes from system MotivosExame
 
 
 // ------------------------------------------------------

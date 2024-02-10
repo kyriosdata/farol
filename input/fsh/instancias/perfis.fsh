@@ -69,8 +69,11 @@ Description: "Exame clínico para identificar presença ou não de DST"
 
 * ^status = #draft
 
-* code = http://loinc.org#45687-1 // DST
+* . ^short = "Registra detecção de DST ao realizar inspeção de colo"
+* code = http://loinc.org#45687-1
 * code ^short = "Código para presença ou não de sinais de DST"
+* code.coding ^short = "Código LOINC para DST"
+* code.coding.code ^short = "Sexually transmitted diseases"
 * value[x] 1..1
 * value[x] ^short = "true se há sinal de DST ou false, caso contrário"
 * value[x] only boolean

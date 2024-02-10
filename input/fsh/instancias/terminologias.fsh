@@ -123,6 +123,23 @@ Description: "Tipos de epitélios em amostra de exame citopatológico"
 * #metaplasico "Metaplásico" "Metaplásico"
 
 // ------------------------------------------------------
+
+ValueSet: TipoEpitelio
+Id: tipo-epitelio
+Title: "Tipo epitélio"
+Description: "Possíveis motivos para requisição de exame citopatológico"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipo-epitelio"
+
+* ^status = #draft
+* ^experimental = false
+
+* include codes from system TiposDeEpitelios
+
+// ------------------------------------------------------
 // tipos-adequabilidade
 // ------------------------------------------------------
 
@@ -149,6 +166,19 @@ Description: "Definição da classificação da adequabilidade do material (amos
 * #superposicao "Superposição" "Intensa superposição celular em mais de 75% do esfregaço"
 * #outros "Outros" "Outros motivos"
 
+// ------------------------------------------------------
+
+ValueSet: AdequabilidadeMaterial
+Id: tipo-adequabilidade
+Title: "Adequabilidade do material (amostra)"
+Description: "Caracterização da adequabilidade do material"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipo-adequabilidade"
+
+* ^status = #draft
+* ^experimental = false
+
+* include codes from system TiposAdequabilidade
 
 // ------------------------------------------------------
 // alteracoes-celulares-benignas
@@ -174,6 +204,23 @@ Description: "Definição das várias alterações celulares benignas relevantes
 * #atrofia "Atrofia" "Atrofia com inflamação"
 * #radiacao "Radiação" "Radiação"
 * #outros "Outros" "Outros"
+
+// ------------------------------------------------------
+
+ValueSet: AlteracaoCelularBenigna
+Id: alteracao-celular-benigna
+Title: "Alteração celular benigna"
+Description: "Identifica alteração celular benigna relevante para exame citopatológico"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/alteracao-celular-benigna"
+
+* ^status = #draft
+* ^experimental = false
+
+* include codes from system AlteracoesCelularesBenignas
 
 // ------------------------------------------------------
 // microbiologias
@@ -205,6 +252,23 @@ Description: "Microbiologias"
 * #outros "Outros"
 
 // ------------------------------------------------------
+
+ValueSet: Microbiologia
+Id: microbiologia
+Title: "Microbiologia"
+Description: "Microbiologia"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/microbiologia"
+
+* ^status = #draft
+* ^experimental = false
+
+* include codes from system Microbiologias
+
+// ------------------------------------------------------
 // celulas-atipicas
 // ------------------------------------------------------
 
@@ -229,6 +293,22 @@ Description: "Células atípicas"
 * #indefinida-1 "Possivelmente não neoplásicas"
 * #indefinida-2 "Não se pode afastar lesão de alto grau"
 
+// ------------------------------------------------------
+
+ValueSet: CelulaAtipica
+Id: celula-atipica
+Title: "Célula atípica"
+Description: "Célula atípica"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/celula-atipica"
+
+* ^status = #draft
+* ^experimental = false
+
+* include codes from system CelulasAtipicas
 
 // ------------------------------------------------------
 // atipias-escamosas
@@ -254,6 +334,23 @@ Description: "Classificação de atipias em células escamosas"
 * #carcinoma "Carcinoma" "Carcinoma epidermóide invasor"
 
 // ------------------------------------------------------
+
+ValueSet: AtipiaEscamosa
+Id: atipia-escamosa
+Title: "Atipia"
+Description: "Atipia"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/atipia-escamosa"
+
+* ^status = #draft
+* ^experimental = false
+
+* include codes from system AtipiasEscamosas
+
+// ------------------------------------------------------
 // atipias-glandulares
 // ------------------------------------------------------
 
@@ -275,6 +372,23 @@ Description: "Classificação de atipias em células glandulares"
 * #cervical "Adenocarcinoma invasor cervical"
 * #endometrial "Adenocarcinoma invasor endometrial"
 * #sem-especificacao "Adenocarcinoma sem outras especificações"
+
+// ------------------------------------------------------
+
+ValueSet: AtipiaGlandular
+Id: atipia-glandular
+Title: "Atipia em célula glandular"
+Description: "Atipia em célula glandular"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/atipia-glandular"
+
+* ^status = #draft
+* ^experimental = false
+
+* include codes from system AtipiasGlandulares
 
 // ------------------------------------------------------
 // laudo-tipo-item
@@ -359,25 +473,6 @@ Esta classificação foi realizada com base em códigos disponíveis LOINC. **IM
 * $loinc#LA4489-6 "Desconhecido"
 
 // ------------------------------------------------------
-// tipo-epitelio
-// ------------------------------------------------------
-
-ValueSet: TipoEpitelio
-Id: tipo-epitelio
-Title: "Tipo epitélio"
-Description: "Possíveis motivos para requisição de exame citopatológico"
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipo-epitelio"
-
-* ^status = #draft
-* ^experimental = false
-
-* include codes from system TiposDeEpitelios
-
-// ------------------------------------------------------
 // motivo-rejeicao
 // ------------------------------------------------------
 
@@ -395,98 +490,3 @@ Description: "Possíveis motivos pelos quais uma amostra é rejeitada"
 * ^experimental = false
 
 * include codes from system MotivoAmostraRejeitada
-
-// ------------------------------------------------------
-// adequabilidade-material
-// ------------------------------------------------------
-
-ValueSet: AdequabilidadeMaterial
-Id: adequabilidade-material
-Title: "Adequabilidade do material (amostra)"
-Description: "Caracterização da adequabilidade do material"
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/adequabilidade-material"
-
-* ^status = #draft
-* ^experimental = false
-
-* include codes from system TiposAdequabilidade
-
-// ------------------------------------------------------
-// alteracao-celular-benigna
-// ------------------------------------------------------
-
-ValueSet: AlteracaoCelularBenigna
-Id: alteracao-celular-benigna
-Title: "Alteração celular benigna"
-Description: "Identifica alteração celular benigna relevante para exame citopatológico"
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/alteracao-celular-benigna"
-
-* ^status = #draft
-* ^experimental = false
-
-* include codes from system AlteracoesCelularesBenignas
-
-// ------------------------------------------------------
-// microbiologias
-// ------------------------------------------------------
-
-ValueSet: Microbiologia
-Id: microbiologia
-Title: "Microbiologia"
-Description: "Microbiologia"
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/microbiologia"
-
-* ^status = #draft
-* ^experimental = false
-
-* include codes from system Microbiologias
-
-// ------------------------------------------------------
-// celula-atipica
-// ------------------------------------------------------
-
-ValueSet: CelulaAtipica
-Id: celula-atipica
-Title: "Célula atípica"
-Description: "Célula atípica"
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/celula-atipica"
-
-* ^status = #draft
-* ^experimental = false
-
-* include codes from system CelulasAtipicas
-
-// ------------------------------------------------------
-// atipia
-// ------------------------------------------------------
-
-ValueSet: Atipia
-Id: atipia
-Title: "Atipia"
-Description: "Atipia"
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/atipia"
-
-* ^status = #draft
-* ^experimental = false
-
-* include codes from system AtipiasEscamosas

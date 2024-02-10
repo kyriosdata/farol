@@ -365,114 +365,125 @@ Description: "Componentes do resultado do laudo citopatológico"
 
 * component[motivo] ^short = "Registra o motivo da rejeição da amostra"
 * component[motivo].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#motivo-rejeicao (exactly)
-* component[motivo].code ^short = "Código para motivo da rejeição da amostra"
+* component[motivo].code ^short = "Identifica a informação fornecida: motivo da rejeição da amostra"
 * component[motivo].code.coding ^short = "Código definido por uma terminologia"
+* component[motivo].value[x] 1..1
 * component[motivo].value[x] only CodeableConcept
 * component[motivo].value[x] ^short = "O código que identifica o motivo da rejeição da amostra"
-* component[motivo].valueCodeableConcept from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-rejeicao (required)
 * component[motivo].valueCodeableConcept.coding 1..1
 * component[motivo].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
+* component[motivo].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-rejeicao (required)
+* component[motivo].valueCodeableConcept.coding.code 1..1
+* component[motivo].valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da rejeição da amostra"
 
-* component[epitelios] ^short = "Epitélios representados na amostra"
+* component[epitelios] ^short = "Registra epitélios representados na amostra"
 * component[epitelios].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelios-na-amostra (exactly)
-* component[epitelios].code ^short = "Código que identifica tipos epitélios na amostra"
+* component[epitelios].code ^short = "Identifica a informação fornecida: tipos epitélios na amostra"
 * component[epitelios].code.coding ^short = "Código definido por uma terminologia"
 * component[epitelios].value[x] 1..1
 * component[epitelios].value[x] only CodeableConcept
 * component[epitelios].valueCodeableConcept.coding 1..1
 * component[epitelios].valueCodeableConcept ^short = "O conjunto de códigos que identifica tipo de epitélio na amostra"
-* component[epitelios].valueCodeableConcept.coding.system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-epitelios"
+* component[epitelios].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipo-epitelio (required)
 * component[epitelios].valueCodeableConcept.coding.code 1..1
+* component[epitelios].valueCodeableConcept.coding.code ^short = "Código correspondente ao tipo de epitélio representado na amostra"
 
 * component[adequabilidade] ^short = "Adequabilidade do material"
 * component[adequabilidade].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#adequabilidade (exactly)
-* component[adequabilidade].code ^short = "Informa sobre a adequabilidade do material"
+* component[adequabilidade].code ^short = "Identifica a informação fornecida: adequabilidade do material"
 * component[adequabilidade].code.coding ^short = "Código definido por uma terminologia"
 * component[adequabilidade].value[x] 1..1
 * component[adequabilidade].value[x] only CodeableConcept
 * component[adequabilidade].valueCodeableConcept.coding 1..1
 * component[adequabilidade].valueCodeableConcept ^short = "O conjunto de códigos que identifica tipo de epitélio na amostra"
-* component[adequabilidade].valueCodeableConcept.coding.system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-adequabilidade"
+* component[adequabilidade].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipo-adequabilidade (required)
+* component[adequabilidade].valueCodeableConcept.coding.code 1..1
+* component[adequabilidade].valueCodeableConcept.coding.code ^short = "Código correspondente à adequabilidade da amostra"
 
 * component[normalidade] ^short = "Dentro dos limites da normalidade no material"
 * component[normalidade].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#normalidade (exactly)
-* component[normalidade].code ^short = "Informa sobre a normalidade do material"
+* component[normalidade].code ^short = "Identifica a informação fornecida: normalidade do material"
 * component[normalidade].code.coding ^short = "Código definido por uma terminologia"
 * component[normalidade].value[x] 1..1
 * component[normalidade].value[x] only boolean
 
 * component[benigno] ^short = "Alterações celulares benignas reativas ou reparativas"
 * component[benigno].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#alteracoes-benignas (exactly)
-* component[benigno].code ^short = "Informa sobre a benigno do material"
+* component[benigno].code ^short = "Identifica a informação fornecida: alterações benignas do material"
 * component[benigno].code.coding ^short = "Código definido por uma terminologia"
 * component[benigno].value[x] 1..1
 * component[benigno].value[x] only CodeableConcept
 * component[benigno].valueCodeableConcept.coding 1..1
 * component[benigno].valueCodeableConcept ^short = "O conjunto de códigos que identifica tipo de epitélio na amostra"
-* component[benigno].valueCodeableConcept.coding.system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/alteracoes-celulares-benignas"
+* component[benigno].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/alteracao-celular-benigna (required)
 * component[benigno].valueCodeableConcept.coding.code 1..1
+* component[benigno].valueCodeableConcept.coding.code ^short = "Código correspondente ao tipo de alteração celular benigna"
 
 * component[microbiologia] ^short = "Microbiologia"
 * component[microbiologia].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia (exactly)
-* component[microbiologia].code ^short = "Microbiologia"
+* component[microbiologia].code ^short = "Identifica a informação fornecida: microbiologia"
 * component[microbiologia].code.coding ^short = "Código definido por uma terminologia"
 * component[microbiologia].value[x] 1..1
 * component[microbiologia].value[x] only CodeableConcept
 * component[microbiologia].valueCodeableConcept.coding 1..1
 * component[microbiologia].valueCodeableConcept ^short = "O conjunto de códigos que identifica tipo de epitélio na amostra"
-* component[microbiologia].valueCodeableConcept.coding.system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/microbiologias"
+* component[microbiologia].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/microbiologia (required)
 * component[microbiologia].valueCodeableConcept.coding.code 1..1
+* component[microbiologia].valueCodeableConcept.coding.code ^short = "Código correspondente para a microbiologia"
 
 * component[atipicas] ^short = "Células atípicas de significado indeterminado"
 * component[atipicas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#significado-indeterminado (exactly)
-* component[atipicas].code ^short = "Células atípicas"
+* component[atipicas].code ^short = "Identifica a informação fornecida: células atípicas"
 * component[atipicas].code.coding ^short = "Código definido por uma terminologia"
 * component[atipicas].value[x] 1..1
 * component[atipicas].value[x] only CodeableConcept
 * component[atipicas].valueCodeableConcept.coding 1..1
 * component[atipicas].valueCodeableConcept ^short = "O conjunto de códigos que identifica tipo de epitélio na amostra"
-* component[atipicas].valueCodeableConcept.coding.system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/celulas-atipicas"
+* component[atipicas].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/celula-atipica (required)
 * component[atipicas].valueCodeableConcept.coding.code 1..1
+* component[atipicas].valueCodeableConcept.coding.code ^short = "Código correspondente para tipo de célula atípica de significado indeterminado."
 * component[atipicas].valueCodeableConcept.text 0..0
 
 * component[escamosas] ^short = "Atipias em células escamosas"
 * component[escamosas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#atipias-escamosas (exactly)
-* component[escamosas].code ^short = "Atipias em células escamosas"
+* component[escamosas].code ^short = "Identifica a informação fornecida: atipias em células escamosas"
 * component[escamosas].code.coding ^short = "Código definido por uma terminologia"
 * component[escamosas].value[x] 1..1
 * component[escamosas].value[x] only CodeableConcept
 * component[escamosas].valueCodeableConcept.coding 1..1
 * component[escamosas].valueCodeableConcept ^short = "O conjunto de códigos que identifica tipo de epitélio na amostra"
-* component[escamosas].valueCodeableConcept.coding.system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/atipias-escamosas"
+* component[escamosas].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/atipia-escamosa (required)
 * component[escamosas].valueCodeableConcept.coding.code 1..1
+* component[escamosas].valueCodeableConcept.coding.code ^short = "Código correspondente para a atipia celular escamosa"
 * component[escamosas].valueCodeableConcept.text 0..0
 
 * component[glandulares] ^short = "Atipias em células glandulares"
 * component[glandulares].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#atipias-glandulares (exactly)
-* component[glandulares].code ^short = "Atipias em células escamosas"
+* component[glandulares].code ^short = "Identifica a informação fornecida: atipias em células escamosas"
 * component[glandulares].code.coding ^short = "Código definido por uma terminologia"
 * component[glandulares].value[x] 1..1
 * component[glandulares].value[x] only CodeableConcept
 * component[glandulares].valueCodeableConcept.coding 1..1
 * component[glandulares].valueCodeableConcept ^short = "O conjunto de códigos que identifica tipo de epitélio na amostra"
-* component[glandulares].valueCodeableConcept.coding.system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/atipias-glandulares"
+* component[glandulares].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/atipia-glandular (required)
 * component[glandulares].valueCodeableConcept.coding.code 1..1
+* component[glandulares].valueCodeableConcept.coding.code ^short = "Código correspondente ao tipo de atipia celular glandular"
 * component[glandulares].valueCodeableConcept.text 0..0
 
 * component[outrasMalignas] ^short = "Outras neoplasias malignas"
 * component[outrasMalignas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#neoplasias-malignas (exactly)
-* component[outrasMalignas].code ^short = "Informa sobre a normalidade do material"
+* component[outrasMalignas].code ^short = "Identifica a informação fornecida: outras neoplasias malignas"
 * component[outrasMalignas].code.coding ^short = "Código definido por uma terminologia"
 * component[outrasMalignas].value[x] 1..1
 * component[outrasMalignas].value[x] only string
 
 * component[endometriais] ^short = "Células endometriais"
 * component[endometriais].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#celulas-endometriais (exactly)
-* component[endometriais].code ^short = "Informa sobre a normalidade do material"
+* component[endometriais].code ^short = "Identifica a informação fornecida: células endometriais"
 * component[endometriais].code.coding ^short = "Código definido por uma terminologia"
 * component[endometriais].value[x] 1..1
 * component[endometriais].value[x] only boolean
-* component[endometriais].valueBoolean = true
+* component[endometriais].valueBoolean ^short = "Se true, indica presença de células endometriais e false, caso contrário"
 
 * note ^short = "Observaçõe gerais"
 * note.author[x] 0..0

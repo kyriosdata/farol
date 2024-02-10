@@ -23,10 +23,15 @@ Description: "Definição das informações que devem constar em toda e qualquer
 //* ^text.status = #empty
 //* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Detalha referência para anamnese e exame clínico.</div>"
 
+* . ^short = "Requisição de exame citopatológico"
 * reasonCode 1..1
+* reasonCode ^short = "Contexto no qual a requisição é criada"
 * reasonCode.coding 1..1
 * reasonCode.coding ^short = "Código que identifica o motivo do exame"
 * reasonCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-exame-citopatologico (required)
+
+* authoredOn 1..1
+
 * supportingInfo ^short = "O laudo de exame citopatológico depende de dois grupos principais de informações: dados da anamnese e de exame clínico."
 * supportingInfo only Reference(inspecao-colo or presenca-dst or QuestionnaireResponse)
 * supportingInfo 3..3
@@ -41,16 +46,18 @@ Alias: $vs-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/vs-inspe
 Profile: InspecaoColo
 Parent: Observation
 Id: inspecao-colo
-Title: "Exame clínico (inspeção do colo)"
-Description: "Exame clínico para coleta de informações necessárias para a requisição de exame citopatológico."
+Title: "Inspeção do colo"
+Description: "Característica geral para inspeção do colo"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/inspecao-colo"
 
 * ^status = #draft
 
+* . ^short = "Registra resultado obtido da inspeção do colo"
 * code = http://loinc.org#12044-4 
 * code ^short = "Código para inspeção do colo"
 * code.coding ^short = "Código definido por uma terminologia"
+* code.coding.code ^short = "Cervix Study observation Inspection"
 * value[x] 1..1
 * value[x] only CodeableConcept
 * value[x] ^short = "O código correspondente ao resultado da inspeção"

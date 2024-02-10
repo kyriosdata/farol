@@ -27,7 +27,7 @@ Usage: #definition
 * type.coding[0].code = #HC // Health Card Number
 * type.text = "Número do Cartão Nacional de Saúde (CNS)"
 
-* description = "Declara o identificador empregado para se referir a um indivíduo (paciente) em todo o território nacional (Brasil). Desta forma, este identificar quando acompanhado de um código, de forma não ambígua declara que tal código é o código único de um indivíduo (paciente), também conhecido por CNS."
+* description = "Declara o identificador empregado para se referir a um indivíduo (paciente ou profissional de saúde) em todo o território nacional (Brasil). Desta forma, este identificar quando acompanhado de um código, de forma não ambígua declara que tal código é o código único de um indivíduo (paciente), também conhecido por CNS."
 
 * useContext[0]
   * code.system = "http://terminology.hl7.org/CodeSystem/usage-context-type"

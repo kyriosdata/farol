@@ -49,7 +49,7 @@ Description: "Tipos de laudos gerenciados pelo SISCAN"
 // ------------------------------------------------------
 
 CodeSystem: MotivosExame
-Id: motivos-exame
+Id: motivos-exame-citopatologico
 Title: "Motivo do exame citopatológico"
 Description: "Define os motivos pelos quais uma requisição de exame citopatológico é realizada"
 
@@ -66,7 +66,7 @@ Description: "Define os motivos pelos quais uma requisição de exame citopatol�
 // --------------------------
 
 ValueSet: MotivoExame
-Id: motivo-exame
+Id: motivo-exame-citopatologico
 Title: "Motivo exame"
 Description: "Possíveis motivos para requisição de exame citopatológico"
 

@@ -12,23 +12,68 @@ Alias: $yesnodontknow = http://hl7.org/fhir/ValueSet/yesnodontknow
 // requisicao-exame-citopatologico
 // ------------------------------------------------------
 
-Profile: RequisicaoExame
+Profile: RequisicaoExameCitopatologico
 Parent: ServiceRequest
 Id: requisicao-exame-citopatologico
-Title: "Requisicao Exame"
-Description: "Requisição de exame citopatológico"
+Title: "Requisicao de exame citopatológico"
+Description: "Definição das informações que devem constar em toda e qualquer requisição de exame citopatológico conforme orientações do INCA (MS)."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
 * ^status = #draft
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Detalha referência para anamnese e exame clínico.</div>"
+//* ^text.status = #empty
+//* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Detalha referência para anamnese e exame clínico.</div>"
 
 * reasonCode 1..1
 * reasonCode.coding 1..1
+* reasonCode.coding ^short = "Código que identifica o motivo do exame"
 * reasonCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-exame-citopatologico (required)
 * supportingInfo ^short = "O laudo de exame citopatológico depende de dois grupos principais de informações: dados da anamnese e de exame clínico."
-* supportingInfo only Reference(Observation or QuestionnaireResponse)
+* supportingInfo only Reference(inspecao-colo or presenca-dst or QuestionnaireResponse)
 * supportingInfo 3..3
+
+// ------------------------------------------------------
+// exame-clinico
+// ------------------------------------------------------
+
+Alias: $exame-clinico = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/inspecao-colo
+Alias: $vs-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/vs-inspecao-colo
+
+Profile: InspecaoColo
+Parent: Observation
+Id: inspecao-colo
+Title: "Exame clínico (inspeção do colo)"
+Description: "Exame clínico para coleta de informações necessárias para a requisição de exame citopatológico."
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/inspecao-colo"
+
+* ^status = #draft
+
+* code = http://loinc.org#12044-4 
+* code ^short = "Código para inspeção do colo"
+* code.coding ^short = "Código definido por uma terminologia"
+* value[x] 1..1
+* value[x] only CodeableConcept
+* value[x] ^short = "O código correspondente ao resultado da inspeção"
+* valueCodeableConcept from $vs-inspecao-colo (required)
+* valueCodeableConcept.coding 1..1
+* valueCodeableConcept.coding ^short = "Código que caracteriza o resultado da inspeção do colo"
+
+
+Profile: PresencaDST
+Parent: Observation
+Id: presenca-dst
+Title: "Observação sobre presença de DST"
+Description: "Exame clínico para identificar presença ou não de DST"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/presenca-dst"
+
+* ^status = #draft
+
+* code = http://loinc.org#45687-1 // DST
+* code ^short = "Código para presença ou não de sinais de DST"
+* value[x] 1..1
+* value[x] ^short = "true se há sinal de DST ou false, caso contrário"
+* value[x] only boolean
 
 // ------------------------------------------------------
 // endereco
@@ -338,8 +383,8 @@ Description: "Definição de resultado (laudo) de exame citopatológico em confo
 Profile: ComponentesLaudoCitopatologico
 Parent: Observation
 Id: componentes-laudo-citopatologico
-Title: "Itens de resultado do laudo citopatológico"
-Description: "Componentes do resultado do laudo citopatológico"
+Title: "Composição do laudo citopatológico"
+Description: "Observação cujos componentes definem o resultado de laudo citopatológico"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/componentes-laudo-citopatologico"
 * ^status = #draft
@@ -353,9 +398,9 @@ Description: "Componentes do resultado do laudo citopatológico"
 * component contains 
     motivo 0..1 MS and 
     epitelios 0..1 MS and
-    adequabilidade 0..1 MS and
+    adequabilidade 1..1 MS and
     normalidade 1..1 MS and
-    benigno 1..1 MS and
+    benigno 0..1 MS and
     microbiologia 0..1 MS and
     atipicas 0..1 MS and
     escamosas 0..1 MS and 

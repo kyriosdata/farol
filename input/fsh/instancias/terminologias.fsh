@@ -10,8 +10,8 @@ Id: inspecao-colo
 Title: "Resultado da inspeção do colo"
 Description: "Os resultados para a inspeção de colo visando exame citopatológico."
 
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
+//* ^text.status = #empty
+//* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/inspecao-colo"
 
@@ -23,6 +23,23 @@ Description: "Os resultados para a inspeção de colo visando exame citopatológ
 * #ausente "Ausente" "Anomalias congênitas ou retirado cirurgicamente"
 * #alterado "Alterado" 
 * #nao-visualizado "Colo não visualizado"
+
+// ------------------------------------------------------
+
+ValueSet: ResultadoInspecaoColoValores
+Id: vs-inspecao-colo
+Title: "Valores de inspeção do colo"
+Description: "Possíveis resultados para inspeção de colo visando exame citopatológico"
+
+//* ^text.status = #empty
+//* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/vs-inspecao-colo"
+
+* ^status = #draft
+* ^experimental = false
+
+* include codes from system ResultadoInspecaoColo
 
 // ------------------------------------------------------
 // laudos-siscan
@@ -419,25 +436,6 @@ Description: "Tipos de avaliação de exame citopatológico"
 * #atipias-glandulares "Atipias em células glandulares"
 * #neoplasias-malignas "Outras neoplasias malignas"
 * #celulas-endometriais "Presença de células endometriais (na pós-menopausa ou acima de 40 anos, fora do período menstrual)"
-
-// ------------------------------------------------------
-// vs-inspecao-colo
-// ------------------------------------------------------
-
-ValueSet: ResultadoInspecaoColoValores
-Id: vs-inspecao-colo
-Title: "Valores de inspeção do colo"
-Description: "Possíveis resultados para inspeção de colo visando exame citopatológico"
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/vs-inspecao-colo"
-
-* ^status = #draft
-* ^experimental = false
-
-* include codes from system ResultadoInspecaoColo
 
 
 // ------------------------------------------------------

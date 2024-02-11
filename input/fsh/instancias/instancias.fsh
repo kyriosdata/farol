@@ -259,11 +259,11 @@ Description: "Paciente assistida"
 
 // ERRO NA EXTENSAO (não deveria permitir raca e etnia indígena)
 // EXTENSÃO PODE SER ESPECIALIZADA PARA CORRIGIR
-* extension[2].url = $racacoretnia
+* extension[2].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/etnia"
 * extension[2].extension[0].url = "race"
-* extension[2].extension[0].valueCodeableConcept = $racacor#02
+* extension[2].extension[0].valueCoding = $racacor#02
 * extension[2].extension[1].url = "indigenousEthnicity"
-* extension[2].extension[1].valueCodeableConcept = $etniaindigena#0001
+* extension[2].extension[1].valueString = "karajá" // $etniaindigena#0001
 
 // Nacionalidade (B - brasileiro, E - estrangeiro ou N - naturalizado)
 * extension[3].url = $nacionalidade

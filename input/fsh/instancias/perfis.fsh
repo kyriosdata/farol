@@ -9,6 +9,35 @@ Alias: $vs-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/vs-inspe
 Alias: $yesnodontknow = http://hl7.org/fhir/ValueSet/yesnodontknow
 Alias: $niveis-educacionais = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/niveis-educacionais
 
+Extension: Etnia
+Id:   etnia
+Title:  "Etnia"
+Description: """
+Um código que identifica o maior nível educacional obtido pelo paciente. 
+O domínio de valores de código é definido por lista bem 
+definida ([LOINC LL836-8](https://loinc.org/LL836-8/)).
+"""
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Extensão para registro do nível educacional</div>"
+
+* ^status = #draft
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/etnia"
+
+* ^context[0].type = #element
+* ^context[0].expression = "Patient"
+
+* extension contains
+    race 0..1 MS and
+    indigenousEthnicity 0..1 MS
+
+* extension[race].value[x] only Coding
+* extension[race].valueCoding 1..1
+* extension[race].valueCoding from http://www.saude.gov.br/fhir/r4/ValueSet/BRRacaCor-1.0 (required)
+* extension[indigenousEthnicity].value[x] only string
+
+
 
 Extension: NivelEducacional
 Id:   nivel-educacional
@@ -216,7 +245,8 @@ Description: "Dados demográficos de paciente para Exame Citopatológico"
     http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName named mae 1..1 MS and
     http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade named pais 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade named idade 0..1 MS and
-    https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional named educacao 0..1 MS
+    https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional named educacao 0..1 MS and
+    https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/etnia named etnia 0..1 MS
 
     
 * ^status = #draft

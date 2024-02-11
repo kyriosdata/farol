@@ -2,13 +2,11 @@ Alias: $tipodocumento = http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoDocumen
 Alias: $idade = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade
 Alias: $nivel-educacional = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional
 Alias: $siscan = http://saude.gov.br/SISCAN
-Alias: $racacorext = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRacaCorEtnia-1.0
 Alias: $racacor = http://www.saude.gov.br/fhir/r4/CodeSystem/BRRacaCor
 Alias: $etniaindigena = http://www.saude.gov.br/fhir/r4/CodeSystem/BREtniaIndigena
 Alias: $nacionalidade = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade
 Alias: $cs-nacionalidade = http://www.saude.gov.br/fhir/r4/CodeSystem/BRNacionalidade
 Alias: $pontoreferencia = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator
-Alias: $nome-mae = http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName
 Alias: $cns = https://fhir.fabrica.inf.ufg.br/ns/cns
 Alias: $cpf = https://fhir.fabrica.inf.ufg.br/ns/cpf
 Alias: $paciente-siscan = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente-siscan
@@ -231,7 +229,7 @@ Description: "Paciente assistida"
 * name[0].use = #official
 
 // Nome da mãe
-* extension[0].url = $nome-mae
+* extension[0].url = "http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName"
 * extension[0].valueString = "Rosa Monteiro Silva"
 
 // Data de nascimento
@@ -260,7 +258,7 @@ Description: "Paciente assistida"
 
 // ERRO NA EXTENSAO (não deveria permitir raca e etnia indígena)
 // EXTENSÃO PODE SER ESPECIALIZADA PARA CORRIGIR
-* extension[2].url = $racacorext
+* extension[2].url = "http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRacaCorEtnia-1.0"
 * extension[2].extension[0].url = "race"
 * extension[2].extension[0].valueCodeableConcept = $racacor#02
 * extension[2].extension[1].url = "indigenousEthnicity"

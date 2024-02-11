@@ -70,7 +70,7 @@ Description: "Resultado da inspeção do colo"
 Profile: PresencaDST
 Parent: Observation
 Id: presenca-dst
-Title: "Observação sobre presença de DST"
+Title: "Presença de DST"
 Description: "Exame clínico para identificar presença ou não de DST"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/presenca-dst"
@@ -168,6 +168,10 @@ Description: "Dados demográficos de paciente para Exame Citopatológico"
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Perfil de paciente alinhado com a definição de BRIndividuo (perfil) definido pelo Ministério da Saúde (Brasil).</div>"
 
+* extension contains 
+    http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName named mae 1..1 MS and
+    http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade named pais 0..1 MS
+    
 * ^status = #draft
 
 * address only Endereco

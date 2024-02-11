@@ -43,6 +43,6 @@ Usage: #definition
 * uniqueId[0].type = #uri
 * uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ns/laboratorio"
 * uniqueId[0].preferred = true
-* uniqueId[0].comment = "Criado pela ausência de declaração nacional para o CNES. Este valor deverá ser substituído por sequência produzida pelo órgão federal competente."
+* uniqueId[0].comment = "Criado pela ausência de catálogo nacional de identificadores. Este valor provavelmente será substituído por sequência produzida pela autoridade competente."
 * uniqueId[0].period.start = "2023-11-13"
 

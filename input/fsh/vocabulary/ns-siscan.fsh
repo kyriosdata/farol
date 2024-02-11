@@ -47,6 +47,6 @@ se refere a uma requisição unicamente identificada pelo SISCAN.
 * uniqueId[0].type = #uri
 * uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ns/siscan"
 * uniqueId[0].preferred = true
-* uniqueId[0].comment = "Criado pela ausência de identificador nacional para o número de requisição de exame gerado pelo SISCAN. Este identificador deverá ser substituído por versão produzida pelo órgão federal competente."
+* uniqueId[0].comment = "Criado pela ausência de catálogo nacional de identificadores. Este valor provavelmente será substituído por sequência produzida pela autoridade competente."
 * uniqueId[0].period.start = "2023-11-13"
 

@@ -1,7 +1,7 @@
 Instance: loinc
 InstanceOf: NamingSystem
 Title: "LOINC"
-Description: "Conjunto de códigos LOINC"
+Description: "Terminologia LOINC (https://loinc.org)"
 Usage: #definition
 
 * name = "LOINC"
@@ -46,6 +46,7 @@ de códigos e também um significativo conjunto de _ValueSets_.
 * uniqueId[0].type = #uri
 * uniqueId[0].value = "http://loinc.org"
 * uniqueId[0].preferred = true
+* uniqueId[0].comment = "Identificador utilizado internacionalmente inclusive pelo FHIR 4.0.1."
 
 * uniqueId[1].type = #oid
 * uniqueId[1].value = "2.16.840.1.113883.6.1"

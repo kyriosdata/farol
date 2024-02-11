@@ -47,17 +47,18 @@ Profile: InspecaoColo
 Parent: Observation
 Id: inspecao-colo
 Title: "Inspeção do colo"
-Description: "Característica geral para inspeção do colo"
+Description: "Resultado da inspeção do colo"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/inspecao-colo"
 
 * ^status = #draft
 
 * . ^short = "Registra resultado obtido da inspeção do colo"
-* code = http://loinc.org#12044-4 
+
+* code.coding 1..1
+* code = http://loinc.org#12044-4 (exactly)
 * code ^short = "Código para inspeção do colo"
-* code.coding ^short = "Código definido por uma terminologia"
-* code.coding.code ^short = "Cervix Study observation Inspection"
+
 * value[x] 1..1
 * value[x] only CodeableConcept
 * value[x] ^short = "O código correspondente ao resultado da inspeção"

@@ -291,7 +291,7 @@ Description: "Paciente assistida"
   
 * telecom[0]
   * system = #phone
-  * value = "99999-9999"
+  * value = "+55 21 99999-9999"
 
 
 // ------------------------------------------------------

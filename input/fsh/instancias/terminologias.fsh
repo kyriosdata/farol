@@ -28,8 +28,8 @@ Description: "Os resultados para a inspeção de colo visando exame citopatológ
 
 ValueSet: ResultadoInspecaoColoValores
 Id: vs-inspecao-colo
-Title: "Valores de inspeção do colo"
-Description: "Possíveis resultados para inspeção de colo visando exame citopatológico"
+Title: "Situação do colo"
+Description: "Situação do colo"
 
 //* ^text.status = #empty
 //* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
@@ -126,9 +126,6 @@ Id: tipos-epitelios
 Title: "Tipos de epitélios"
 Description: "Tipos de epitélios em amostra de exame citopatológico"
 
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
-
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-epitelios"
 
 * ^status = #draft
@@ -144,10 +141,7 @@ Description: "Tipos de epitélios em amostra de exame citopatológico"
 ValueSet: TipoEpitelio
 Id: tipo-epitelio
 Title: "Tipo epitélio"
-Description: "Possíveis motivos para requisição de exame citopatológico"
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
+Description: "Tipo de epitélio na amostra"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipo-epitelio"
 
@@ -187,7 +181,7 @@ Description: "Definição da classificação da adequabilidade do material (amos
 
 ValueSet: AdequabilidadeMaterial
 Id: tipo-adequabilidade
-Title: "Adequabilidade do material (amostra)"
+Title: "Adequabilidade do material"
 Description: "Caracterização da adequabilidade do material"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipo-adequabilidade"
@@ -413,7 +407,7 @@ Description: "Atipia em célula glandular"
 
 CodeSystem: LaudoTipoItem
 Id: laudo-tipo-item
-Title: "Itens avaliados no laudo de exame citopatológico"
+Title: "Informações do laudo citopatológico"
 Description: "Tipos de avaliação de exame citopatológico"
 
 * ^text.status = #empty

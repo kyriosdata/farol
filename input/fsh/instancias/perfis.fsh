@@ -100,8 +100,20 @@ Description: "Definição das informações que devem constar em toda e qualquer
 * authoredOn 1..1
 
 * supportingInfo ^short = "O laudo de exame citopatológico depende de dois grupos principais de informações: dados da anamnese e de exame clínico."
-* supportingInfo only Reference(inspecao-colo or presenca-dst or QuestionnaireResponse)
+* supportingInfo only Reference(inspecao-colo or presenca-dst or AnamneseQuestionario)
 * supportingInfo 3..3
+
+
+Profile: AnamneseQuestionario
+Parent: QuestionnaireResponse
+Id: anamnese-questionario
+Title: "Anamnese Para Exame Citopatologico"
+
+* ^status = #draft
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/anamnese-questionario"
+
+* questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico"
 
 // ------------------------------------------------------
 // exame-clinico

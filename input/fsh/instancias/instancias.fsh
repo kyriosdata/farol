@@ -153,6 +153,8 @@ Usage: #example
 
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
 * reasonCode[0].coding[0] = $motivos-exame#rastreamento
+
+// respostas-anamnese
 * supportingInfo[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
 
 // exame-inspecao
@@ -342,6 +344,7 @@ InstanceOf: QuestionnaireResponse
 Title: "Respostas para a anamnese de exame citopatológico"
 Description: "Respostas para anamnese de exame citopatológico de uma requisição para a paciente Rosa"
 
+* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/anamnese-questionario"
 * questionnaire = $anamnese-exame-citopatologico
 * status = #completed
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
@@ -403,11 +406,10 @@ Description: "Respostas para anamnese de exame citopatológico de uma requisiç�
   * answer[0].valueInteger = 60
   * text = "Qual a sua idade?"
 
+
 // ------------------------------------------------------
 // LAUDO
 // ------------------------------------------------------
-
-
 
 // ------------------------------------------------------
 // laboratorio

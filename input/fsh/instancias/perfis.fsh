@@ -7,11 +7,6 @@ Alias: $laudo-tipo-item = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-t
 Alias: $loinc = http://loinc.org
 Alias: $vs-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/vs-inspecao-colo
 Alias: $yesnodontknow = http://hl7.org/fhir/ValueSet/yesnodontknow
-
-// ------------------------------------------------------
-// nivel-educacional
-// ------------------------------------------------------
-
 Alias: $niveis-educacionais = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/niveis-educacionais
 
 
@@ -222,6 +217,7 @@ Description: "Dados demográficos de paciente para Exame Citopatológico"
     http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade named pais 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade named idade 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional named educacao 0..1 MS
+
     
 * ^status = #draft
 

@@ -35,9 +35,10 @@ definida ([LOINC LL836-8](https://loinc.org/LL836-8/)).
 * extension[race].value[x] only Coding
 * extension[race].valueCoding 1..1
 * extension[race].valueCoding from http://www.saude.gov.br/fhir/r4/ValueSet/BRRacaCor-1.0 (required)
-* extension[indigenousEthnicity].value[x] only string
 
-
+* extension[indigenousEthnicity].value[x] only Coding
+* extension[indigenousEthnicity].valueCoding 1..1
+* extension[indigenousEthnicity].valueCoding from http://www.saude.gov.br/fhir/r4/ValueSet/BREtniaIndigena-1.0 (required)
 
 Extension: NivelEducacional
 Id:   nivel-educacional

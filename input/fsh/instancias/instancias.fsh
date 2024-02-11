@@ -263,7 +263,7 @@ Description: "Paciente assistida"
 * extension[2].extension[0].url = "race"
 * extension[2].extension[0].valueCoding = $racacor#02
 * extension[2].extension[1].url = "indigenousEthnicity"
-* extension[2].extension[1].valueString = "karajá" // $etniaindigena#0001
+* extension[2].extension[1].valueCoding = $etniaindigena#0001
 
 // Nacionalidade (B - brasileiro, E - estrangeiro ou N - naturalizado)
 * extension[3].url = $nacionalidade

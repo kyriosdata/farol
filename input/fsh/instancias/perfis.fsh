@@ -13,9 +13,7 @@ Extension: Etnia
 Id:   etnia
 Title:  "Etnia"
 Description: """
-Um código que identifica o maior nível educacional obtido pelo paciente. 
-O domínio de valores de código é definido por lista bem 
-definida ([LOINC LL836-8](https://loinc.org/LL836-8/)).
+Similar ao perfil BRRacaCorEtnia (atualmente, 11/02/2924, incompleto).
 """
 
 * ^text.status = #empty
@@ -44,9 +42,7 @@ Extension: NivelEducacional
 Id:   nivel-educacional
 Title:  "Nível educacional"
 Description: """
-Um código que identifica o maior nível educacional obtido pelo paciente. 
-O domínio de valores de código é definido por lista bem 
-definida ([LOINC LL836-8](https://loinc.org/LL836-8/)).
+Identificação do maior nível educacional obtido pelo paciente.
 """
 
 * ^text.status = #empty
@@ -70,11 +66,8 @@ definida ([LOINC LL836-8](https://loinc.org/LL836-8/)).
 Extension: Idade
 Id: idade
 Title: "Idade estimada do paciente"
-Description: "Idade fornecida no momento da requisição"
+Description: "Idade fornecida no momento da requisição de exame citopatológico. Mantida apenas por conformidade com formulário impresso."
 Context: Patient
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Extensão para idade estimada de paciente</div>"
 
 * ^status = #draft
 

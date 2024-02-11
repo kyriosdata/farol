@@ -9,6 +9,55 @@ Alias: $vs-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/vs-inspe
 Alias: $yesnodontknow = http://hl7.org/fhir/ValueSet/yesnodontknow
 
 // ------------------------------------------------------
+// nivel-educacional
+// ------------------------------------------------------
+
+Alias: $niveis-educacionais = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/niveis-educacionais
+
+
+Extension: NivelEducacional
+Id:   nivel-educacional
+Title:  "Nível educacional"
+Description: """
+Um código que identifica o maior nível educacional obtido pelo paciente. 
+O domínio de valores de código é definido por lista bem 
+definida ([LOINC LL836-8](https://loinc.org/LL836-8/)).
+"""
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Extensão para registro do nível educacional</div>"
+
+* ^status = #draft
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional"
+
+* ^context[0].type = #element
+* ^context[0].expression = "Patient"
+
+* value[x] only code
+* valueCode from $niveis-educacionais (required)
+
+
+// ------------------------------------------------------
+// idade
+// ------------------------------------------------------
+
+Extension: Idade
+Id: idade
+Title: "Idade estimada do paciente"
+Description: "Idade fornecida no momento da requisição"
+Context: Patient
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Extensão para idade estimada de paciente</div>"
+
+* ^status = #draft
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade"
+
+* value[x] only Age
+
+// ------------------------------------------------------
 // requisicao-exame-citopatologico
 // ------------------------------------------------------
 
@@ -170,7 +219,9 @@ Description: "Dados demográficos de paciente para Exame Citopatológico"
 
 * extension contains 
     http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName named mae 1..1 MS and
-    http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade named pais 0..1 MS
+    http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade named pais 0..1 MS and
+    https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade named idade 0..1 MS and
+    https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional named educacao 0..1 MS
     
 * ^status = #draft
 

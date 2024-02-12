@@ -33,8 +33,8 @@ parameters:
 pages:
   index.md:
     title: Principal
-  downloads.md:
-    title: Downloads
+  integrador.md:
+    title: Integrador
   requisicao.md:
     title: Requisição de exame
   dominio.md:
@@ -56,7 +56,7 @@ menu:
     Requisição de exame: requisicao.html
     Resultado (laudo): resultado.html
   Artefatos: artifacts.html
-  Downloads: downloads.html
+  Integrador: integrador.html
   Outros:
     FHIR: http://hl7.org/fhir/R4/index.html
     Github: https://github.com/kyriosdata/farol

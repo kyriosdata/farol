@@ -8,6 +8,13 @@ Alias: $loinc = http://loinc.org
 Alias: $vs-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/vs-inspecao-colo
 Alias: $yesnodontknow = http://hl7.org/fhir/ValueSet/yesnodontknow
 Alias: $niveis-educacionais = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/niveis-educacionais
+Alias: $cholesterol = http://hl7.org/fhir/StructureDefinition/cholesterol
+Alias: $triglyceride = http://hl7.org/fhir/StructureDefinition/triglyceride
+Alias: $hdlcholesterol = http://hl7.org/fhir/StructureDefinition/hdlcholesterol
+Alias: $ldlcholesterol = http://hl7.org/fhir/StructureDefinition/ldlcholesterol
+Alias: $exame-clinico = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/inspecao-colo
+Alias: $vs-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/vs-inspecao-colo
+
 
 Extension: Etnia
 Id:   etnia
@@ -107,7 +114,8 @@ Description: "Definição das informações que devem constar em toda e qualquer
 Profile: AnamneseQuestionario
 Parent: QuestionnaireResponse
 Id: anamnese-questionario
-Title: "Anamnese Para Exame Citopatologico"
+Title: "Anamnese para exame citopatologico"
+Description: "Perfil para respostas de questionário da anamnese"
 
 * ^status = #draft
 
@@ -118,9 +126,6 @@ Title: "Anamnese Para Exame Citopatologico"
 // ------------------------------------------------------
 // exame-clinico
 // ------------------------------------------------------
-
-Alias: $exame-clinico = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/inspecao-colo
-Alias: $vs-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/vs-inspecao-colo
 
 Profile: InspecaoColo
 Parent: Observation
@@ -233,16 +238,16 @@ Description: "Padronização de endereços no Brasil (adaptação de BREndereco)
 * period.end ^definition = "Data em que o endereço foi desativado ou parou de ser utilizado."
 
 // ------------------------------------------------------
-// paciente-siscan
+// paciente
 // ------------------------------------------------------
 
 Profile: Paciente
 Parent: Patient
-Id: paciente-siscan
+Id: paciente
 Title: "Paciente"
-Description: "Dados demográficos de paciente para Exame Citopatológico"
+Description: "Dados demográficos de paciente"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente-siscan"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Perfil de paciente alinhado com a definição de BRIndividuo (perfil) definido pelo Ministério da Saúde (Brasil).</div>"
@@ -253,14 +258,10 @@ Description: "Dados demográficos de paciente para Exame Citopatológico"
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade named idade 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional named educacao 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/etnia named etnia 0..1 MS
-
-    
+   
 * ^status = #draft
 
 * address only Endereco
-
-// Conversor de FSH para JSON nao aceita referencia abaixo.
-// * telecom only $BRMeioContato
 
 // ------------------------------------------------------
 // anamnese-exame-citopatologico
@@ -268,7 +269,7 @@ Description: "Dados demográficos de paciente para Exame Citopatológico"
 
 Instance: anamnese-exame-citopatologico
 InstanceOf: Questionnaire
-Usage: #example
+Usage: #definition
 Title: "Anamnese (exame citopatológico)"
 Description: "Questões pertinentes à anamnese do exame citopatológico"
 
@@ -292,7 +293,7 @@ Description: "Questões pertinentes à anamnese do exame citopatológico"
 * useContext.code[0].code = #gender
 * useContext.valueCodeableConcept.text = "Estabelecimento de saúde. Unidade básica de saúde."
 * jurisdiction = urn:iso:std:iso:3166#BR
-* purpose = "Estas questões orientam a coleta de dados relevantes para a elaboração do laudo citopatológico. Convém ressaltar que os dados pertinentes a este questionário não são suficientes. Também há informações necessárias coletadas por meio de exame clínico."
+* purpose = "A execução do exame citopatológico depende das respostas para as várias questões definidas neste questionário, todas elas em conformidade com a tradicional ficha de requisição de exame citopatológico empregada em todo o território nacional."
 * copyright = "Ministério da Saúde do Brasil"
 * approvalDate = "2023-12-15"
 * lastReviewDate = "2023-11-30"
@@ -413,12 +414,6 @@ Description: "Questões pertinentes à anamnese do exame citopatológico"
 // ------------------------------------------------------
 // laudo-exame
 // ------------------------------------------------------
-
-Alias: $loinc = http://loinc.org
-Alias: $cholesterol = http://hl7.org/fhir/StructureDefinition/cholesterol
-Alias: $triglyceride = http://hl7.org/fhir/StructureDefinition/triglyceride
-Alias: $hdlcholesterol = http://hl7.org/fhir/StructureDefinition/hdlcholesterol
-Alias: $ldlcholesterol = http://hl7.org/fhir/StructureDefinition/ldlcholesterol
 
 Profile: LaudoCitopatologico
 Parent: DiagnosticReport

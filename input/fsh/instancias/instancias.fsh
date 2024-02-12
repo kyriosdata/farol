@@ -80,7 +80,7 @@ Description: "Todos os dados pertinentes a uma ficha de requisição de exame ci
   * resource = exame-dst
 
 // ------------------------------------------------------
-// composition-1 0
+// composition-1 (requisição)
 // ------------------------------------------------------
 
 Instance: composition-1
@@ -94,7 +94,7 @@ Description: "Reúne dados de uma ficha de requisição"
 * type = http://loinc.org#80568-9 // LOINC para FORM  (desencorajado por ser genérico)
 
 * author = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07)
-
+  
 * title = "Pacote contendo todos os dados da requisição de Exame Citopatológico para a paciente fictícia Rosa"
 
 // Data em que a composição foi montada
@@ -411,6 +411,48 @@ Description: "Respostas para anamnese de exame citopatológico de uma requisiç�
 // LAUDO
 // ------------------------------------------------------
 
+Instance: composition-2
+InstanceOf: Composition
+Usage: #example
+Title: "(Composition) Laudo de Exame Citopatológico"
+Description: "Laudo de exame citopatológico da paciente Rosa"
+
+* status = #final
+
+// Laboratory report
+* type = http://loinc.org#11502-2
+
+* author = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07)
+
+* title = "Pacote contendo todos os dados da requisição de Exame Citopatológico para a paciente fictícia Rosa"
+
+// Data em que a composição foi montada
+* date = "2024-01-20"
+
+// Patient
+* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
+
+// ServiceRequest
+* section[0]
+  * title = "Requisição de exame citopatológico"
+  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb02)
+
+* section[1]
+  * title = "Respostas do questionário da anamnese"
+  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
+
+* section[2]
+  * title = "Inspeção do colo"
+  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04)
+
+* section[3]
+  * title = "Sinais sugestivos de doenças sexualmente transmissíveis"
+  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05)
+
+* section[4]
+  * title = "Unidade de Saúde Requisitante"
+  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06)
+
 // ------------------------------------------------------
 // laboratorio
 // ------------------------------------------------------
@@ -509,90 +551,3 @@ Description: "Itens que definem o laudo da paciente Rosa"
 
 
 * note[0].text = "Aqui seguem as observações gerais"
-
-
-// ------------------------------------------------------
-// laudo-celulas-atipicas
-// ------------------------------------------------------
-
-Instance: laudo-celulas-atipicas
-InstanceOf: Observation
-Usage: #example
-Title: "Células atípicas de significado indeterminado"
-Description: "Células atípicas de significado indeterminado"
-
-* status = #final
-* code.coding
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
-  * code = #significado-indeterminado
-* valueCodeableConcept.coding[0]
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/celulas-atipicas"
-  * code = #escamosas-1
-
-// ------------------------------------------------------
-// laudo-atipias
-// ------------------------------------------------------
-
-Instance: laudo-atipias-escamosas
-InstanceOf: Observation
-Usage: #example
-Title: "Atipias em células escamosas"
-Description: "Atipias em células escamosas"
-
-* status = #final
-* code.coding
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
-  * code = #atipias-escamosas
-* valueCodeableConcept.coding[0]
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/atipias-escamosas"
-  * code = #baixo
-
-// ------------------------------------------------------
-// laudo-atipias
-// ------------------------------------------------------
-
-Instance: laudo-atipias-glandulares
-InstanceOf: Observation
-Usage: #example
-Title: "Atipias em células glandulares"
-Description: "Atipias em células glandulares"
-
-* status = #final
-* code.coding
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
-  * code = #atipias-glandulares
-* valueCodeableConcept.coding[0]
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/atipias-glandulares"
-  * code = #in-situ
-
-// ------------------------------------------------------
-// laudo-atipias
-// ------------------------------------------------------
-
-Instance: laudo-outras-neoplasias-malignas
-InstanceOf: Observation
-Usage: #example
-Title: "Atipias em células escamosas"
-Description: "Atipias em células escamosas"
-
-* status = #final
-* code.coding
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
-  * code = #neoplasias-malignas
-* note[0].text = "deve vir as neoplasias aqui"
-
-// ------------------------------------------------------
-// laudo-celulas-endometriais
-// ------------------------------------------------------
-
-Instance: laudo-celulas-endometriais
-InstanceOf: Observation
-Usage: #example
-Title: "Células endometriais"
-Description: "Células endometriais"
-
-* status = #final
-* code.coding
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
-  * code = #celulas-endometriais
-* valueBoolean = true

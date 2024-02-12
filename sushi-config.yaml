@@ -33,7 +33,7 @@ parameters:
 pages:
   index.md:
     title: Principal
-  downloads.xml:
+  downloads.md:
     title: Downloads
   requisicao.md:
     title: Requisição de exame
@@ -56,7 +56,7 @@ menu:
     Requisição de exame: requisicao.html
     Resultado (laudo): resultado.html
   Artefatos: artifacts.html
-  Downloads: downloads.html
+  Downloads: downloads.md
   Outros:
     FHIR: http://hl7.org/fhir/R4/index.html
     Github: https://github.com/kyriosdata/farol

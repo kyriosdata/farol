@@ -55,19 +55,19 @@
   <description value="These are profiles on resources or data types that describe patterns used by other profiles, but cannot be instantiated directly.  I.e. instances can conform to profiles *based* on these abstract profiles, but do not declare conformance to the abstract profiles themselves."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-str-profile">
-  <name value="Estruturas: Perfis (profiles) de recursos"/>
+  <name value="Estruturas: perfis (profiles) de recursos"/>
   <description value="Definições de restrições sobre recursos empregados por sistemas em conformidade com o presente Guia."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-str-datatype">
-  <name value="Estruturas: Perfis (profiles) para estruturas de dados"/>
+  <name value="Estruturas: perfis (profiles) para estruturas de dados"/>
   <description value="Definições de restrições sobre tipos de dados para conformidade de sistemas com o presente Guia."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-str-extension">
-  <name value="Estruturas: Definições de extensões"/>
+  <name value="Estruturas: extensões"/>
   <description value="Definições de restrições sobre tipos de dados empregados como extensões pelo presente Guia."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-term-valueset">
-  <name value="Terminologia: conjunto de valores"/>
+  <name value="Terminologia: conjuntos de valores"/>
   <description value="Definições de novos conjuntos de valores usados por sistemas em conformidade com o presente Guia."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-term-codesystem">
@@ -75,7 +75,7 @@
   <description value="Definições de novos sistemas de codificação usados no presente Guia."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-term-namingsystem">
-  <name value="Terminologia: Definições de identificadores de sistemas de codificação e de identificação"/>
+  <name value="Terminologia: identificadores de sistemas de codificação e de identificação"/>
   <description value="Definição de identificadores de sistemas de identificação e de sistemas de codificação para conformidade com o presente Guia de Implementação. Estes identificadores devem fazer parte de um catálogo nacional."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-map-structuremap">

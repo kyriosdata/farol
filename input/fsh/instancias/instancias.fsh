@@ -303,10 +303,10 @@ Description: "Paciente assistida"
 Instance: unidade-saude
 InstanceOf: Organization
 Usage: #example
-Title: "Unidade Básica de Saúde"
+Title: "UBS"
 Description: "A unidade de saúde na qual o exame citopatológico da paciente Rosa é requisitado"
 
-* name = "Unidade Básica do SUS"
+* name = "Unidade Básica Santa Tatiana"
 
 // CNES
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
@@ -326,7 +326,8 @@ Description: "A unidade de saúde na qual o exame citopatológico da paciente Ro
 
 Instance: profissional
 InstanceOf: Practitioner
-Description: "Profissional responsável pela requisição de exame da paciente Rosa"
+Title: "Profissional de Saúde"
+Description: "Profissional responsável pela requisição do exame citopatológico para a paciente Rosa"
 
 * identifier[0]
   * use = #official
@@ -341,15 +342,16 @@ Description: "Profissional responsável pela requisição de exame da paciente R
 
 Instance: respostas-anamnese
 InstanceOf: QuestionnaireResponse
-Title: "Respostas para a anamnese de exame citopatológico"
-Description: "Respostas para anamnese de exame citopatológico de uma requisição para a paciente Rosa"
+Title: "Anamnese (exemplo)"
+Description: "Exemplo de respostas para anamnese de exame citopatológico de uma requisição para a paciente Rosa"
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/anamnese-questionario"
 * questionnaire = $anamnese-exame-citopatologico
+
 * status = #completed
-* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
-* author.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
-* author.identifier.value = "234.234.567"
+//* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
+//* author.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
+//* author.identifier.value = "234.234.567"
 
 * item[0]
   * linkId = "1"

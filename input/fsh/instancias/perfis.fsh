@@ -114,14 +114,21 @@ Description: "Definição das informações que devem constar em toda e qualquer
 Profile: AnamneseQuestionario
 Parent: QuestionnaireResponse
 Id: anamnese-questionario
-Title: "Anamnese para exame citopatologico"
-Description: "Perfil para respostas de questionário da anamnese"
+Title: "Informações sobre a anamnese"
+Description: "Estrutura exigida da anamnese pela requisição de exame citopatológico"
 
 * ^status = #draft
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/anamnese-questionario"
 
 * questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico"
+* status = #completed
+* subject 0..0
+* author 0..0
+* basedOn 0..0
+* partOf 0..0
+* encounter 0..0
+* authored 0..0
 
 // ------------------------------------------------------
 // exame-clinico
@@ -270,8 +277,8 @@ Description: "Dados demográficos de paciente"
 Instance: anamnese-exame-citopatologico
 InstanceOf: Questionnaire
 Usage: #definition
-Title: "Anamnese (exame citopatológico)"
-Description: "Questões pertinentes à anamnese do exame citopatológico"
+Title: "Questões da anamnese"
+Description: "Definição das questões que fazem parte da anamnese para requisição de exame citopatológico"
 
 * url = "https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico"
 

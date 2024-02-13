@@ -48,7 +48,7 @@
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-str-questionnaire">
   <name value="Structures: Questionnaires"/>
-  <description value="These define forms used by systems conforming to this implementation guide to capture or expose data to end users."/>
+  <description value="Definem formulários em conformidade com o presente Guia para captura ou exposição de dados."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-str-abstractprofile">
   <name value="Structures: Abstract Profiles"/>
@@ -67,23 +67,23 @@
   <description value="These define constraints on FHIR data types for systems conforming to this implementation guide."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-term-valueset">
-  <name value="Terminology: Value Sets"/>
+  <name value="Terminologia: Value Sets"/>
   <description value="These define sets of codes used by systems conforming to this implementation guide."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-term-codesystem">
-  <name value="Terminology: Code Systems"/>
+  <name value="Terminologia: Code Systems"/>
   <description value="These define new code systems used by systems conforming to this implementation guide."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-term-namingsystem">
-  <name value="Terminology: Naming Systems"/>
+  <name value="Terminologia: Naming Systems"/>
   <description value="Definição de identificadores de sistemas de identificação e de sistemas de codificação para conformidade com o presente Guia de Implementação. Estes identificadores devem fazer parte de um catálogo nacional."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-map-structuremap">
-  <name value="Terminology: Structure Maps"/>
+  <name value="Terminologia: Structure Maps"/>
   <description value="These define transformations to convert between data structures used by systems conforming to this implementation guide."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-map-conceptmap">
-  <name value="Terminology: Concept Maps"/>
+  <name value="Terminologia: Concept Maps"/>
   <description value="These define transformations to convert between codes by systems conforming with this implementation guide."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-test-testplan">

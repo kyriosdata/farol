@@ -39,43 +39,43 @@
   <description value="These define logic, asset collections and other libraries as part of content in this implementation guide."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-str-graphdefinition">
-  <name value="Structures: Graph Definitions"/>
+  <name value="Estruturas: Graph Definitions"/>
   <description value="These define collections of interrelated resources that are useful to pass around as a group."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-str-logicalmodel">
-  <name value="Structures: Logical Models"/>
+  <name value="Estruturas: Logical Models"/>
   <description value="These define data models that represent the domain covered by this implementation guide in more business-friendly terms than the underlying FHIR resources."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-str-questionnaire">
-  <name value="Structures: Questionnaires"/>
+  <name value="Estruturas: Questionnaires"/>
   <description value="Definem formulários em conformidade com o presente Guia para captura ou exposição de dados."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-str-abstractprofile">
-  <name value="Structures: Abstract Profiles"/>
+  <name value="Estruturas: Abstract Profiles"/>
   <description value="These are profiles on resources or data types that describe patterns used by other profiles, but cannot be instantiated directly.  I.e. instances can conform to profiles *based* on these abstract profiles, but do not declare conformance to the abstract profiles themselves."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-str-profile">
-  <name value="Structures: Resource Profiles"/>
-  <description value="These define constraints on FHIR resources for systems conforming to this implementation guide."/>
+  <name value="Estruturas: Perfis (profiles) de recursos"/>
+  <description value="Definições de restrições sobre recursos empregados por sistemas em conformidade com o presente Guia."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-str-datatype">
-  <name value="Structures: Data Type Profiles"/>
-  <description value="These define constraints on FHIR data types for systems conforming to this implementation guide."/>
+  <name value="Estruturas: Perfis (profiles) para estruturas de dados"/>
+  <description value="Definições de restrições sobre tipos de dados para conformidade de sistemas com o presente Guia."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-str-extension">
-  <name value="Structures: Extension Definitions"/>
-  <description value="These define constraints on FHIR data types for systems conforming to this implementation guide."/>
+  <name value="Estruturas: Definições de extensões"/>
+  <description value="Definições de restrições sobre tipos de dados empregados como extensões pelo presente Guia."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-term-valueset">
-  <name value="Terminologia: Value Sets"/>
-  <description value="These define sets of codes used by systems conforming to this implementation guide."/>
+  <name value="Terminologia: conjunto de valores"/>
+  <description value="Definições de novos conjuntos de valores usados por sistemas em conformidade com o presente Guia."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-term-codesystem">
-  <name value="Terminologia: Code Systems"/>
-  <description value="These define new code systems used by systems conforming to this implementation guide."/>
+  <name value="Terminologia: sistemas de codificação"/>
+  <description value="Definições de novos sistemas de codificação usados no presente Guia."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-term-namingsystem">
-  <name value="Terminologia: Naming Systems"/>
+  <name value="Terminologia: Definições de identificadores de sistemas de codificação e de identificação"/>
   <description value="Definição de identificadores de sistemas de identificação e de sistemas de codificação para conformidade com o presente Guia de Implementação. Estes identificadores devem fazer parte de um catálogo nacional."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-map-structuremap">
@@ -99,8 +99,8 @@
   <description value="These define groups of interrelated examples that demonstrate one or more of the workflows supported by this implementation guide."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-ex-example">
-  <name value="Example: Example Instances"/>
-  <description value="These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like."/>
+  <name value="Exemplos: instâncias de recursos"/>
+  <description value="Instâncias que ilustram dados produzidos e consumidos por sistemas em conformidade com este Guia."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-ex-examplesup">
   <name value="Example: Example Supporting Instances"/>

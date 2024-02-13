@@ -497,7 +497,7 @@ InstanceOf: DiagnosticReport
 Title: "Laudo de Exame Citopatológico"
 Description: "Laudo da requisição de exame da paciente Rosa"
 
-* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/laudo-citopatologico"
+* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/diagnostico-citopatologico"
 * status = #final
 * code.text = "Microscopic observation [Identifier] in Cervix by Cyto stain"
 * code.coding[0].system = "http://loinc.org"

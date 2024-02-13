@@ -422,22 +422,24 @@ Description: "Definição das questões que fazem parte da anamnese para requisi
 // laudo-exame
 // ------------------------------------------------------
 
-Profile: LaudoCitopatologico
+Profile: DiagnosticoCitopatologico
 Parent: DiagnosticReport
-Id: laudo-citopatologico
-Title: "Resultado (laudo) de exame citopatológico"
-Description: "Definição de resultado (laudo) de exame citopatológico em conformidade com padrão adotado pelo INCA."
+Id: diagnostico-citopatologico
+Title: "Diagnóstico citopatológico"
+Description: "Diagnóstico de exame citopatológico em conformidade com padrão adotado pelo INCA."
 * ^meta.lastUpdated = "2015-02-07T13:28:17.239+02:00"
 * ^version = "1.0.0"
 * ^status = #draft
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/laudo-citopatologico"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/diagnostico-citopatologico"
 
 * meta 1..
 * meta ^short = "Metadados do laudo"
 * meta.extension ..0
 * meta.lastUpdated ^short = "Quando o recurso foi atualizado pela última vez"
+* meta.profile 1..1
 * meta.profile ^short = "Perfil obrigatoriamente a ser atendido"
+* meta.profile = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/diagnostico-citopatologico"
 * contained ..0
 
 * basedOn 1..1

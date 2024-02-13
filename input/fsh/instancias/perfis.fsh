@@ -97,6 +97,9 @@ Description: "Definição das informações que devem constar em toda e qualquer
 //* ^text.status = #empty
 //* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Detalha referência para anamnese e exame clínico.</div>"
 
+* code.coding = http://www.saude.gov.br/fhir/r4/CodeSystem/BRTabelaSUS#0203010086 (exactly)
+//* display = "EXAME CITOPATOLÓGICO CERVICO VAGINAL/MICROFLORA-RASTREAMENTO"
+
 * . ^short = "Requisição de exame citopatológico"
 * reasonCode 1..1
 * reasonCode ^short = "Contexto no qual a requisição é criada"

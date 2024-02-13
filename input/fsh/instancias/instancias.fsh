@@ -479,10 +479,10 @@ Description: "Laboratório que emite o laudo do exame da paciente Rosa"
 Instance: citopatologista
 InstanceOf: Practitioner
 Title: "Citopatologista"
-Description: "Profissional responsável pelo laudo de exame da paciente Rosa"
+Description: "Profissional responsável pelo laudo do exame citopatológico da paciente Rosa"
 Usage: #example
 
-* identifier.system = "http://rnds.saude.gov.br/fhir/r4/NamingSystem/cns"
+* identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
 * identifier.value = "2345234234234"
 * name.text = "Beltrano da Silva"
 

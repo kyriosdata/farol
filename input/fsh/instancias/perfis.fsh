@@ -455,6 +455,8 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 * identifier.id ..0
 * identifier.extension ..0
 * identifier.use ..0
+* identifier.system 1..1
+* identifier.system ^short = "O identificador do sistema de identificação"
 * identifier.value 1..1
 * identifier.value ^short = "O identificador único atribuído à requisição pelo solicitante usando o seu sistema de origem."
 * identifier.period ..0

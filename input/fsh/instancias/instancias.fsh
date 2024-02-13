@@ -52,7 +52,7 @@ Description: "Todos os dados pertinentes a uma ficha de requisição de exame ci
 // unidade-saude (Organization)
 * entry[2]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06"
-  * resource = rosa
+  * resource = unidade-saude
 
 // profissional (Practitioner)
 * entry[3]
@@ -302,7 +302,7 @@ Description: "Paciente assistida"
 
 Instance: unidade-saude
 InstanceOf: Organization
-Usage: #example
+Usage: #inline
 Title: "UBS"
 Description: "A unidade de saúde na qual o exame citopatológico da paciente Rosa é requisitado"
 
@@ -461,9 +461,9 @@ Description: "Laudo de exame citopatológico da paciente Rosa"
 
 Instance: laboratorio
 InstanceOf: Organization
-Usage: #example
-Title: "Laboratório que realiza exames citopatológicos"
-Description: "Laboratório que emite o laudo do exame da paciente Rosa"
+Usage: #inline
+Title: "Laboratório Citopatológico"
+Description: "Laboratório que emite o laudo de exame citopatológico"
 
 * name = "Laboratório Cito"
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cnes"

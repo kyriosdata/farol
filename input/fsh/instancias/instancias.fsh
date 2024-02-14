@@ -39,44 +39,44 @@ Description: "Pacote que reúne todos os dados pertinentes à requisição de ex
 * timestamp = "2023-11-24T09:08:23+03:00"
 
 // Composition (primeira entrada do bundle)
-* entry[0]
+* entry[+]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb00"
   * resource = requisicao-rosa
 
 // rosa (Patient)
-* entry[1]
+* entry[+]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01"
   * resource = rosa
 
-// unidade-saude (Organization)
-* entry[2]
-  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06"
-  * resource = unidade-saude
-
-// profissional (Practitioner)
-* entry[3]
-  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07"
-  * resource = profissional
-
 // requisicao (ServiceRequest)
-* entry[4]
+* entry[+]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb02"
   * resource = requisicao
 
 // respostas - anamnese (QuestionnaireResponse)
-* entry[5]
+* entry[+]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03"
   * resource = respostas-anamnese
 
 // exame (Observation)
-* entry[6]
+* entry[+]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04"
   * resource = exame-inspecao
 
 // exame (Observation)
-* entry[7]
+* entry[+]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05"
   * resource = exame-dst
+
+// unidade-saude (Organization)
+* entry[+]
+  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06"
+  * resource = unidade-saude
+
+// profissional (Practitioner)
+* entry[+]
+  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07"
+  * resource = profissional
 
 // ------------------------------------------------------
 // requisicao-rosa (requisição)
@@ -103,23 +103,23 @@ Description: "Requisição de Exame Citopatológico da paciente Rosa"
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
 
 // ServiceRequest
-* section[0]
+* section[+]
   * title = "Requisição de exame citopatológico"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb02)
 
-* section[1]
+* section[+]
   * title = "Respostas do questionário da anamnese"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
 
-* section[2]
+* section[+]
   * title = "Inspeção do colo"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04)
 
-* section[3]
+* section[+]
   * title = "Sinais sugestivos de doenças sexualmente transmissíveis"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05)
 
-* section[4]
+* section[+]
   * title = "Unidade de Saúde Requisitante"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06)
 
@@ -438,23 +438,23 @@ Description: "Laudo de exame citopatológico da paciente Rosa"
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
 
 // ServiceRequest
-* section[0]
+* section[+]
   * title = "Requisição de exame citopatológico"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb02)
 
-* section[1]
+* section[+]
   * title = "Respostas do questionário da anamnese"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
 
-* section[2]
+* section[+]
   * title = "Inspeção do colo"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04)
 
-* section[3]
+* section[+]
   * title = "Sinais sugestivos de doenças sexualmente transmissíveis"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05)
 
-* section[4]
+* section[+]
   * title = "Unidade de Saúde Requisitante"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06)
 

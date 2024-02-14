@@ -23,8 +23,8 @@ Alias: $anamnese-exame-citopatologico = https://fhir.fabrica.inf.ufg.br/ccu/Ques
 Instance: bundle-rosa
 InstanceOf: Bundle
 Usage: #example
-Title: "Requisição de exame citopatológico"
-Description: "Todos os dados pertinentes a uma ficha de requisição de exame citopatológico."
+Title: "(Bundle) Requisição de exame citopatológico (Rosa)"
+Description: "Pacote que reúne todos os dados pertinentes à requisição de exame citopatológico da paciente Rosa"
 
 * type = #document
 
@@ -41,7 +41,7 @@ Description: "Todos os dados pertinentes a uma ficha de requisição de exame ci
 // Composition (primeira entrada do bundle)
 * entry[0]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb00"
-  * resource = composition-1
+  * resource = requisicao-rosa
 
 // rosa (Patient)
 * entry[1]
@@ -79,14 +79,14 @@ Description: "Todos os dados pertinentes a uma ficha de requisição de exame ci
   * resource = exame-dst
 
 // ------------------------------------------------------
-// composition-1 (requisição)
+// requisicao-rosa (requisição)
 // ------------------------------------------------------
 
-Instance: composition-1
+Instance: requisicao-rosa
 InstanceOf: Composition
 Usage: #example
-Title: "(Composition) Requisição de Exame Citopatológico"
-Description: "Reúne dados de uma ficha de requisição"
+Title: "Requisição de Exame Citopatológico da paciente Rosa"
+Description: "Requisição de Exame Citopatológico da paciente Rosa"
 
 * status = #final
 

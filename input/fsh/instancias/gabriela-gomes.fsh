@@ -26,8 +26,8 @@ Alias: $anamnese-exame-citopatologico = https://fhir.fabrica.inf.ufg.br/ccu/Ques
 Instance: bundle-gabriela-gomes
 InstanceOf: Bundle
 Usage: #example
-Title: "Requisição de exame citopatológico"
-Description: "Requisição de exame citopatológico para a Gabriela Gomes"
+Title: "(Bundle) Requisição de exame citopatológico (Gabriela)"
+Description: "Pacote que reúne todos os dados pertinentes à requisição de exame citopatológico da paciente Gabriela"
 
 * type = #document
 
@@ -41,7 +41,7 @@ Description: "Requisição de exame citopatológico para a Gabriela Gomes"
 // Composition (primeira entrada do bundle)
 * entry[0]
   * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb00"
-  * resource = composition-01
+  * resource = requisicao-gabriela
 
 // gabriela (Patient)
 * entry[1]
@@ -79,14 +79,14 @@ Description: "Requisição de exame citopatológico para a Gabriela Gomes"
   * resource = exame-dst-01
 
 // ------------------------------------------------------
-// composition-01 (requisição)
+// requisicao-gabriela
 // ------------------------------------------------------
 
-Instance: composition-01
+Instance: requisicao-gabriela
 InstanceOf: Composition
 Usage: #example
-Title: "(Composition) Requisição de Exame Citopatológico"
-Description: "Reúne dados da requisição de exame da Gabriela Gomes"
+Title: "Requisição de Exame Citopatológico da paciente Gabriela"
+Description: "Requisição de Exame Citopatológico da paciente Gabriela"
 
 * status = #final
 

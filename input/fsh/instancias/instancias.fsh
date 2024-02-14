@@ -12,7 +12,6 @@ Alias: $cns = https://fhir.fabrica.inf.ufg.br/ns/cns
 Alias: $cpf = https://fhir.fabrica.inf.ufg.br/ns/cpf
 Alias: $paciente-siscan = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente
 Alias: $motivos-exame = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivos-exame-citopatologico
-Alias: $cs-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/inspecao-colo
 Alias: $anamnese-exame-citopatologico = https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico
 
 // ------------------------------------------------------
@@ -21,7 +20,7 @@ Alias: $anamnese-exame-citopatologico = https://fhir.fabrica.inf.ufg.br/ccu/Ques
 // 
 // ------------------------------------------------------
 
-Instance: bundle-1
+Instance: bundle-rosa
 InstanceOf: Bundle
 Usage: #example
 Title: "Requisição de exame citopatológico"
@@ -145,11 +144,12 @@ Usage: #example
 * code.coding[0]
   * code = #0203010086
   * system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTabelaSUS"
-  * display = "EXAME CITOPATOLÓGICO CERVICO VAGINAL/MICROFLORA-RASTREAMENTO"
+//  * display = "EXAME CITOPATOLÓGICO CERVICO VAGINAL/MICROFLORA-RASTREAMENTO"
 
-* code.coding[1]
-  * code = #19766-5
-  * system = "http://loinc.org"
+// Microscopic observation [Identifier] in Cervical or vaginal smear or scraping by Cyto stain Narrative
+//* code.coding[1]
+//  * code = #19766-5
+//  * system = "http://loinc.org"
 
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
 * reasonCode[0].coding[0] = $motivos-exame#rastreamento
@@ -175,8 +175,11 @@ Usage: #example
 Instance: exame-inspecao
 InstanceOf: Observation
 Usage: #example
-Title: "Inspeção do colo uterino"
-Description: "Exame clínico que identifica o resultado da inspeção do colo uterino."
+Title: "Rosa (inspeção do colo uterino)"
+Description: "Resultado da inspeção do colo uterino da paciente Rosa"
+
+* meta.profile = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/inspecao-colo"
+
 * status = #final
 
 // Cervix Study observation Inspection
@@ -187,12 +190,12 @@ Description: "Exame clínico que identifica o resultado da inspeção do colo ut
 * performer.identifier.value = "234.234.567"
 * effectiveDateTime = "2023-11-10"
 
-* valueCodeableConcept.coding = $cs-inspecao-colo#normal
+* valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo#normal
 
 Instance: exame-dst
 InstanceOf: Observation
 Usage: #example
-Title: "Sinais sugestivos de doença sexualmente transmissível"
+Title: "Rosa possui sinais sugestivos de DST?"
 Description: "Exame clínico que identifica se há presença ou não de sinais de doença sexualmente transmissível"
 
 * status = #final
@@ -214,8 +217,8 @@ Description: "Exame clínico que identifica se há presença ou não de sinais d
 Instance: rosa
 InstanceOf: Patient
 Usage: #example
-Title: "Rosa"
-Description: "Paciente assistida"
+Title: "Rosa (paciente)"
+Description: "Paciente para a qual há requisição e laudo de exame citopatológico"
 
 * meta.profile[0] = $paciente-siscan
 
@@ -456,12 +459,12 @@ Description: "Laudo de exame citopatológico da paciente Rosa"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06)
 
 // ------------------------------------------------------
-// laboratorio
+// lab
 // ------------------------------------------------------
 
-Instance: laboratorio
+Instance: lab
 InstanceOf: Organization
-Usage: #inline
+Usage: #example
 Title: "Laboratório Citopatológico"
 Description: "Laboratório que emite o laudo de exame citopatológico"
 
@@ -495,6 +498,7 @@ Usage: #example
 Instance: diagnostico
 InstanceOf: DiagnosticReport
 Title: "Laudo de Exame Citopatológico"
+Usage: #inline
 Description: "Laudo da requisição de exame da paciente Rosa"
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/diagnostico-citopatologico"
@@ -515,7 +519,7 @@ Description: "Laudo da requisição de exame da paciente Rosa"
 
 * result[0] = Reference(laudo-componentes)
 
-* performer[0] = Reference(laboratorio)
+* performer[0] = Reference(lab)
 * resultsInterpreter[0] = Reference(citopatologista)
 
 // ------------------------------------------------------

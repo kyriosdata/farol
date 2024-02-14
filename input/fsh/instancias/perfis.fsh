@@ -5,15 +5,13 @@ Alias: $BRUnidadeFederativa-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRUni
 Alias: $BRMeioContato = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRMeioContato-1.0
 Alias: $laudo-tipo-item = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item
 Alias: $loinc = http://loinc.org
-Alias: $vs-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/vs-inspecao-colo
 Alias: $yesnodontknow = http://hl7.org/fhir/ValueSet/yesnodontknow
 Alias: $niveis-educacionais = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/niveis-educacionais
 Alias: $cholesterol = http://hl7.org/fhir/StructureDefinition/cholesterol
 Alias: $triglyceride = http://hl7.org/fhir/StructureDefinition/triglyceride
 Alias: $hdlcholesterol = http://hl7.org/fhir/StructureDefinition/hdlcholesterol
 Alias: $ldlcholesterol = http://hl7.org/fhir/StructureDefinition/ldlcholesterol
-Alias: $exame-clinico = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/inspecao-colo
-Alias: $vs-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/vs-inspecao-colo
+Alias: $resultado-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/resultado-inspecao-colo
 
 
 Extension: Etnia
@@ -94,8 +92,9 @@ Description: "Definição das informações que devem constar em toda e qualquer
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
 * ^status = #draft
-//* ^text.status = #empty
-//* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Detalha referência para anamnese e exame clínico.</div>"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Evita warning</div>"
 
 * code.coding = http://www.saude.gov.br/fhir/r4/CodeSystem/BRTabelaSUS#0203010086 (exactly)
 //* display = "EXAME CITOPATOLÓGICO CERVICO VAGINAL/MICROFLORA-RASTREAMENTO"
@@ -156,7 +155,7 @@ Description: "Resultado da inspeção do colo"
 * value[x] 1..1
 * value[x] only CodeableConcept
 * value[x] ^short = "O código correspondente ao resultado da inspeção"
-* valueCodeableConcept from $vs-inspecao-colo (required)
+* valueCodeableConcept from $resultado-inspecao-colo (required)
 * valueCodeableConcept.coding 1..1
 * valueCodeableConcept.coding ^short = "Código que caracteriza o resultado da inspeção do colo"
 
@@ -492,6 +491,9 @@ Parent: Observation
 Id: componentes-laudo-citopatologico
 Title: "Composição do laudo citopatológico"
 Description: "Observação cujos componentes definem o resultado de laudo citopatológico"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Componentes de laudo citopatológico</div>"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/componentes-laudo-citopatologico"
 * ^status = #draft

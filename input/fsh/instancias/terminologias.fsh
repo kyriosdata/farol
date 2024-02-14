@@ -2,20 +2,20 @@
 Alias: $loinc = http://loinc.org
 
 // ------------------------------------------------------
-// inspecao-colo
+// resultados-inspecao-colo
 // ------------------------------------------------------
 
-CodeSystem: ResultadoInspecaoColo
-Id: inspecao-colo
+CodeSystem: ResultadosInspecaoColo
+Id: resultados-inspecao-colo
 Title: "Resultado da inspeção do colo"
 Description: "Os resultados para a inspeção de colo visando exame citopatológico."
 
 //* ^text.status = #empty
 //* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/inspecao-colo"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo"
 
-* ^status = #draft
+* ^status = #unknown
 * ^caseSensitive = true
 * ^experimental = false
 
@@ -26,20 +26,20 @@ Description: "Os resultados para a inspeção de colo visando exame citopatológ
 
 // ------------------------------------------------------
 
-ValueSet: ResultadoInspecaoColoValores
-Id: vs-inspecao-colo
+ValueSet: ResultadoInspecaoColo
+Id: resultado-inspecao-colo
 Title: "Situação do colo"
 Description: "Situação do colo"
 
 //* ^text.status = #empty
 //* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/vs-inspecao-colo"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/resultado-inspecao-colo"
 
 * ^status = #draft
 * ^experimental = false
 
-* include codes from system ResultadoInspecaoColo
+* include codes from system ResultadosInspecaoColo
 
 // ------------------------------------------------------
 // laudos-siscan
@@ -55,7 +55,7 @@ Description: "Tipos de laudos gerenciados pelo SISCAN"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan"
 
-* ^status = #draft
+* ^status = #unknown
 * ^caseSensitive = true
 * ^experimental = false
 
@@ -72,7 +72,7 @@ Description: "Define os motivos pelos quais uma requisição de exame citopatol�
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivos-exame-citopatologico"
 
-* ^status = #draft
+* ^status = #unknown
 * ^caseSensitive = true
 * ^experimental = false
 
@@ -108,7 +108,7 @@ Description: "Motivo pelo qual a amostra é rejeitada e o laudo inviável."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-amostra-rejeitada"
 
-* ^status = #draft
+* ^status = #unknown
 * ^caseSensitive = true
 * ^experimental = false
 
@@ -128,7 +128,7 @@ Description: "Tipos de epitélios em amostra de exame citopatológico"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-epitelios"
 
-* ^status = #draft
+* ^status = #unknown
 * ^caseSensitive = true
 * ^experimental = false
 
@@ -164,7 +164,7 @@ Description: "Definição da classificação da adequabilidade do material (amos
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-adequabilidade"
 
-* ^status = #draft
+* ^status = #unknown
 * ^caseSensitive = true
 * ^experimental = false
 
@@ -205,7 +205,7 @@ Description: "Definição das várias alterações celulares benignas relevantes
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/alteracoes-celulares-benignas"
 
-* ^status = #draft
+* ^status = #unknown
 * ^caseSensitive = true
 * ^experimental = false
 
@@ -247,7 +247,7 @@ Description: "Microbiologias"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/microbiologias"
 
-* ^status = #draft
+* ^status = #unknown
 * ^caseSensitive = true
 * ^experimental = false
 
@@ -293,7 +293,7 @@ Description: "Células atípicas"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/celulas-atipicas"
 
-* ^status = #draft
+* ^status = #unknown
 * ^caseSensitive = true
 * ^experimental = false
 
@@ -335,7 +335,7 @@ Description: "Classificação de atipias em células escamosas"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/atipias-escamosas"
 
-* ^status = #draft
+* ^status = #unknown
 * ^caseSensitive = true
 * ^experimental = false
 
@@ -375,7 +375,7 @@ Description: "Classificação de atipias em células glandulares"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/atipias-glandulares"
 
-* ^status = #draft
+* ^status = #unknown
 * ^caseSensitive = true
 * ^experimental = false
 
@@ -415,7 +415,7 @@ Description: "Tipos de avaliação de exame citopatológico"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
 
-* ^status = #draft
+* ^status = #unknown
 * ^caseSensitive = true
 * ^experimental = false
 

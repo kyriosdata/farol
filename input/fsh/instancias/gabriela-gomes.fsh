@@ -12,13 +12,15 @@ Alias: $cns = https://fhir.fabrica.inf.ufg.br/ns/cns
 Alias: $cpf = https://fhir.fabrica.inf.ufg.br/ns/cpf
 Alias: $paciente-siscan = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente
 Alias: $motivos-exame = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivos-exame-citopatologico
-Alias: $cs-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/inspecao-colo
+Alias: $cs-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo
 Alias: $anamnese-exame-citopatologico = https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico
 
 // ------------------------------------------------------
 // 
-// Requisição de Exame Citopatológico
-// 
+// Bundle de requisição de Exame Citopatológico
+// Conforme https://www.hl7.org/fhir/r4/bundle.html#bundle-unique
+// Where a resource is not assigned a persistent identity that can be used in the Bundle, 
+// a UUID should be used (urn:uuid:...).
 // ------------------------------------------------------
 
 Instance: bundle-gabriela-gomes
@@ -38,42 +40,42 @@ Description: "Requisição de exame citopatológico para a Gabriela Gomes"
 
 // Composition (primeira entrada do bundle)
 * entry[0]
-  * fullUrl = "urn:uuid:01-6316-4ddd-b398-168af8aaeb00"
+  * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb00"
   * resource = composition-01
 
 // gabriela (Patient)
 * entry[1]
-  * fullUrl = "urn:uuid:01-6316-4ddd-b398-168af8aaeb01"
+  * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01"
   * resource = gabriela
 
 // unidade-saude (Organization)
 * entry[2]
-  * fullUrl = "urn:uuid:01-6316-4ddd-b398-168af8aaeb06"
+  * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb06"
   * resource = unidade-saude-01
 
 // profissional (Practitioner)
 * entry[3]
-  * fullUrl = "urn:uuid:01-6316-4ddd-b398-168af8aaeb07"
+  * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb07"
   * resource = profissional-01
 
 // requisicao (ServiceRequest)
 * entry[4]
-  * fullUrl = "urn:uuid:01-6316-4ddd-b398-168af8aaeb02"
+  * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb02"
   * resource = requisicao-01
 
 // respostas - anamnese (QuestionnaireResponse)
 * entry[5]
-  * fullUrl = "urn:uuid:01-6316-4ddd-b398-168af8aaeb03"
+  * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb03"
   * resource = respostas-anamnese-01
 
 // exame (Observation)
 * entry[6]
-  * fullUrl = "urn:uuid:01-6316-4ddd-b398-168af8aaeb04"
+  * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb04"
   * resource = exame-inspecao-01
 
 // exame (Observation)
 * entry[7]
-  * fullUrl = "urn:uuid:01-6316-4ddd-b398-168af8aaeb05"
+  * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb05"
   * resource = exame-dst-01
 
 // ------------------------------------------------------
@@ -90,7 +92,7 @@ Description: "Reúne dados da requisição de exame da Gabriela Gomes"
 
 * type = http://loinc.org#80568-9 // LOINC para FORM  (desencorajado por ser genérico)
 
-* author = Reference(urn:uuid:01-6316-4ddd-b398-168af8aaeb07)
+* author = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb07)
   
 * title = "Pacote contendo todos os dados da requisição de Exame Citopatológico para a paciente fictícia Gabriela Gomes"
 
@@ -98,28 +100,28 @@ Description: "Reúne dados da requisição de exame da Gabriela Gomes"
 * date = "2023-12-23"
 
 // Patient
-* subject = Reference(urn:uuid:01-6316-4ddd-b398-168af8aaeb01)
+* subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
 
 // ServiceRequest
 * section[0]
   * title = "Requisição de exame citopatológico"
-  * entry[0] = Reference(urn:uuid:01-6316-4ddd-b398-168af8aaeb02)
+  * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb02)
 
 * section[1]
   * title = "Respostas do questionário da anamnese"
-  * entry[0] = Reference(urn:uuid:01-6316-4ddd-b398-168af8aaeb03)
+  * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb03)
 
 * section[2]
   * title = "Inspeção do colo"
-  * entry[0] = Reference(urn:uuid:01-6316-4ddd-b398-168af8aaeb04)
+  * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb04)
 
 * section[3]
   * title = "Sinais sugestivos de doenças sexualmente transmissíveis"
-  * entry[0] = Reference(urn:uuid:01-6316-4ddd-b398-168af8aaeb05)
+  * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb05)
 
 * section[4]
   * title = "Unidade de Saúde Requisitante"
-  * entry[0] = Reference(urn:uuid:01-6316-4ddd-b398-168af8aaeb06)
+  * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb06)
 
 // ------------------------------------------------------
 // requisicao (ServiceRequest)
@@ -142,23 +144,19 @@ Usage: #inline
 * code.coding[0]
   * code = #0203010086
   * system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTabelaSUS"
-  * display = "EXAME CITOPATOLÓGICO CERVICO VAGINAL/MICROFLORA-RASTREAMENTO"
+//  * display = "EXAME CITOPATOLÓGICO CERVICO VAGINAL/MICROFLORA-RASTREAMENTO"
 
-* code.coding[1]
-  * code = #19766-5
-  * system = "http://loinc.org"
-
-* subject = Reference(urn:uuid:01-6316-4ddd-b398-168af8aaeb01)
+* subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
 * reasonCode[0].coding[0] = $motivos-exame#rastreamento
 
 // respostas-anamnese
-* supportingInfo[0] = Reference(urn:uuid:01-6316-4ddd-b398-168af8aaeb03)
+* supportingInfo[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb03)
 
 // exame-inspecao
-* supportingInfo[1] = Reference(urn:uuid:01-6316-4ddd-b398-168af8aaeb04)
+* supportingInfo[1] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb04)
 
 // exame-dst
-* supportingInfo[2] = Reference(urn:uuid:01-6316-4ddd-b398-168af8aaeb05)
+* supportingInfo[2] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb05)
 
 // CNS do responsável
 * requester.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
@@ -172,24 +170,25 @@ Usage: #inline
 Instance: exame-inspecao-01
 InstanceOf: Observation
 Usage: #example
-Title: "Inspeção do colo uterino"
-Description: "Exame clínico que identifica o resultado da inspeção do colo uterino."
+Title: "Gabriela (inspeção do colo uterino)"
+Description: "Resultado da inspeção do colo uterino da paciente Gabriela"
 * status = #final
 
 // Cervix Study observation Inspection
 * code = http://loinc.org#12044-4
 
-* subject = Reference(urn:uuid:01-6316-4ddd-b398-168af8aaeb01)
+* subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
 * performer.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
 * performer.identifier.value = "234.234.567"
 * effectiveDateTime = "2023-11-10"
 
 * valueCodeableConcept.coding = $cs-inspecao-colo#normal
 
+
 Instance: exame-dst-01
 InstanceOf: Observation
 Usage: #example
-Title: "Sinais sugestivos de doença sexualmente transmissível"
+Title: "Gabriela possui sinais sugestivos de DST?"
 Description: "Exame clínico que identifica se há presença ou não de sinais de doença sexualmente transmissível"
 
 * status = #final
@@ -197,7 +196,7 @@ Description: "Exame clínico que identifica se há presença ou não de sinais d
 // Sexually transmitted diseases
 * code = http://loinc.org#45687-1
 
-* subject = Reference(urn:uuid:01-6316-4ddd-b398-168af8aaeb01)
+* subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
 * performer.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
 * performer.identifier.value = "234.234.567"
 * effectiveDateTime = "2023-11-10"
@@ -211,8 +210,8 @@ Description: "Exame clínico que identifica se há presença ou não de sinais d
 Instance: gabriela
 InstanceOf: Patient
 Usage: #example
-Title: "Gabriela Gomes"
-Description: "Paciente assistida"
+Title: "Gabriela Gomes (paciente)"
+Description: "Paciente para a qual há requisição e laudo de exame citopatológico"
 
 * meta.profile[0] = $paciente-siscan
 
@@ -307,7 +306,7 @@ Description: "Exemplo de respostas para anamnese de exame citopatológico de uma
 * questionnaire = $anamnese-exame-citopatologico
 
 * status = #completed
-//* subject = Reference(urn:uuid:01-6316-4ddd-b398-168af8aaeb01)
+//* subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
 //* author.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
 //* author.identifier.value = "234.234.567"
 
@@ -382,7 +381,7 @@ Description: "Laudo de exame citopatológico da paciente Rosa"
 // Laboratory report
 * type = http://loinc.org#11502-2
 
-* author = Reference(urn:uuid:01-6316-4ddd-b398-168af8aaeb07)
+* author = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb07)
 
 * title = "Pacote contendo todos os dados da requisição de Exame Citopatológico para a paciente fictícia Rosa"
 
@@ -390,36 +389,36 @@ Description: "Laudo de exame citopatológico da paciente Rosa"
 * date = "2024-01-20"
 
 // Patient
-* subject = Reference(urn:uuid:01-6316-4ddd-b398-168af8aaeb01)
+* subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
 
 // ServiceRequest
 * section[0]
   * title = "Requisição de exame citopatológico"
-  * entry[0] = Reference(urn:uuid:01-6316-4ddd-b398-168af8aaeb02)
+  * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb02)
 
 * section[1]
   * title = "Respostas do questionário da anamnese"
-  * entry[0] = Reference(urn:uuid:01-6316-4ddd-b398-168af8aaeb03)
+  * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb03)
 
 * section[2]
   * title = "Inspeção do colo"
-  * entry[0] = Reference(urn:uuid:01-6316-4ddd-b398-168af8aaeb04)
+  * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb04)
 
 * section[3]
   * title = "Sinais sugestivos de doenças sexualmente transmissíveis"
-  * entry[0] = Reference(urn:uuid:01-6316-4ddd-b398-168af8aaeb05)
+  * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb05)
 
 * section[4]
   * title = "Unidade de Saúde Requisitante"
-  * entry[0] = Reference(urn:uuid:01-6316-4ddd-b398-168af8aaeb06)
+  * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb06)
 
 // ------------------------------------------------------
 // laboratorio
 // ------------------------------------------------------
 
-Instance: laboratorio-01
+Instance: laboratorio-gabriela
 InstanceOf: Organization
-Usage: #inline
+Usage: #example
 Title: "Laboratório Citopatológico"
 Description: "Laboratório que emite o laudo de exame citopatológico"
 
@@ -453,6 +452,7 @@ Usage: #example
 Instance: diagnostico-01
 InstanceOf: DiagnosticReport
 Title: "Laudo de Exame Citopatológico"
+Usage: #example
 Description: "Laudo da requisição de exame da paciente Rosa"
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/diagnostico-citopatologico"
@@ -473,7 +473,7 @@ Description: "Laudo da requisição de exame da paciente Rosa"
 
 * result[0] = Reference(laudo-componentes)
 
-* performer[0] = Reference(laboratorio)
+* performer[0] = Reference(laboratorio-gabriela)
 * resultsInterpreter[0] = Reference(citopatologista)
 
 // ------------------------------------------------------

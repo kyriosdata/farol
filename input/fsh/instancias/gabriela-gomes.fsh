@@ -129,7 +129,7 @@ Description: "Requisição de Exame Citopatológico da paciente Gabriela"
 
 Instance: requisicao-01
 InstanceOf: ServiceRequest
-Title: "Pedido de exame citopatológico"
+Title: "Pedido de exame citopatológico da paciente Gabriela Gomes"
 Description: "Pedido de exame citopatológico"
 Usage: #inline
 
@@ -139,7 +139,7 @@ Usage: #inline
 * intent = #original-order
 
 // Data da coleta da amostra e dados da requisição
-* authoredOn = "2024-01-23"
+* authoredOn = "2023-12-23"
 
 * code.coding[0]
   * code = #0203010086
@@ -147,7 +147,7 @@ Usage: #inline
 //  * display = "EXAME CITOPATOLÓGICO CERVICO VAGINAL/MICROFLORA-RASTREAMENTO"
 
 * subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
-* reasonCode[0].coding[0] = $motivos-exame#rastreamento
+* reasonCode[0].coding[0] = $motivos-exame#seguimento
 
 // respostas-anamnese
 * supportingInfo[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb03)
@@ -291,7 +291,7 @@ Description: "Profissional responsável pela requisição do exame citopatológi
   * system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
   * value = "234.234.567"
 
-* name[0].text = "João da Silva"
+* name[0].text = "Leonarda Faria"
 
 // ------------------------------------------------------
 // anamnese-exame-citopatologico
@@ -310,59 +310,54 @@ Description: "Exemplo de respostas para anamnese de exame citopatológico de uma
 //* author.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
 //* author.identifier.value = "234.234.567"
 
-* item[0]
+* item[+]
   * linkId = "1"
-  * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
+  * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/data-absent-reason#asked-unknown
   * text = "Fez o exame preventivo (Papanicolaou) alguma vez?"
 
-* item[1]
-  * linkId = "2"
-  * answer[0].valueDate = "2024-01-01"
-  * text = "Quando fez o último exame?"
-
-* item[2]
+* item[+]
   * linkId = "3"
-  * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
+  * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#N
   * text = "Usa DIU?"
 
-* item[3]
+* item[+]
   * linkId = "4"
   * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * text = "Está grávida?"
 
-* item[4]
+* item[+]
   * linkId = "5"
   * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * text = "Usa pílula anticoncepcional?"
 
-* item[5]
+* item[+]
   * linkId = "6"
   * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * text = "Usa hormônio/remédio para tratar a menopausa?"
 
-* item[6]
+* item[+]
   * linkId = "7"
   * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * text = "Já fez tratamento por radioterapia?"
 
-* item[7]
+* item[+]
   * linkId = "8"
   * answer[0].valueDate = "2024-01-01"
   * text = "Data da última menstruação/regra"
 
-* item[8]
+* item[+]
   * linkId = "9"
   * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * text = "Tem ou teve algum sangramento após relações sexuais? (não considerar a primeira relação sexual na vida)"
 
-* item[9]
+* item[+]
   * linkId = "10"
   * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * text = "Tem ou teve algum sangramento após a menopausa? (não considerar o(s) sangramento(s) na vigência de reposição hormonal)"
 
-* item[10]
+* item[+]
   * linkId = "11"
-  * answer[0].valueInteger = 60
+  * answer[0].valueInteger = 38
   * text = "Qual a sua idade?"
 
 

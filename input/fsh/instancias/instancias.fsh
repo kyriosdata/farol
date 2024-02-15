@@ -107,17 +107,17 @@ Description: "Requisição de Exame Citopatológico da paciente Rosa"
   * title = "Requisição de exame citopatológico"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb02)
 
-* section[+]
-  * title = "Respostas do questionário da anamnese"
-  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
+// * section[+]
+//   * title = "Respostas do questionário da anamnese"
+//   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
 
-* section[+]
-  * title = "Inspeção do colo"
-  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04)
+// * section[+]
+//   * title = "Inspeção do colo"
+//   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04)
 
-* section[+]
-  * title = "Sinais sugestivos de doenças sexualmente transmissíveis"
-  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05)
+// * section[+]
+//   * title = "Sinais sugestivos de doenças sexualmente transmissíveis"
+//   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05)
 
 * section[+]
   * title = "Unidade de Saúde Requisitante"
@@ -152,7 +152,10 @@ Usage: #example
 //  * system = "http://loinc.org"
 
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
+
 * reasonCode[0].coding[0] = $motivos-exame#rastreamento
+
+* encounter = Reference(encontro)
 
 // respostas-anamnese
 * supportingInfo[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
@@ -167,6 +170,17 @@ Usage: #example
 * requester.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
 * requester.identifier.value = "234.234.567"
 
+
+Instance: encontro
+InstanceOf: Encounter
+Usage: #example
+Title: "Interação com a paciente Rosa"
+Description: "Neste encontro foi coletada a amostra e criada a requisição de exame citopatológico"
+
+* status = #finished
+* class.system = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
+* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
+* serviceProvider = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06)
 
 // ------------------------------------------------------
 // exame

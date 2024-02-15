@@ -331,7 +331,7 @@ Description: "Definição das questões que fazem parte da anamnese para requisi
     * question = "1"
     * operator = #=
     * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
-  * required = true
+  * required = false
   * repeats = false
 
 * item[2]

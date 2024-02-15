@@ -27,7 +27,7 @@ Instance: bundle-gabriela-gomes
 InstanceOf: Bundle
 Usage: #example
 Title: "(Bundle) Requisição de exame citopatológico (Gabriela)"
-Description: "Pacote que reúne todos os dados pertinentes à requisição de exame citopatológico da paciente Gabriela"
+Description: "Pacote que reúne todos os dados pertinentes à requisição de exame citopatológico da paciente Gabriela. Veja a [ficha](gabriela-gomes.jpg) de requisição correspondente."
 
 * type = #document
 
@@ -221,7 +221,7 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 
 // Cartão SUS
 * identifier[0].system = $cns
-* identifier[0].value = "8934543431218901"
+* identifier[0].value = "7384287632"
 
 // Nome completo da mulher
 * name[0].text = "Gabriela Gomes"
@@ -239,7 +239,7 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 
 // CPF
 * identifier[1].system = $cpf
-* identifier[1].value = "12334534501"
+* identifier[1].value = "03287297344"
 
 // Idade (binding para http://hl7.org/fhir/ValueSet/age-units)
 * extension[1].url = $idade

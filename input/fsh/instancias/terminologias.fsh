@@ -1,4 +1,331 @@
 
+// ------------------------------------------------------
+// NamingSystem
+// ------------------------------------------------------
+
+Instance: ns-laboratorio
+InstanceOf: NamingSystem
+Title: "Identificador de exame gerado por laboratório"
+Description: "Declaração do identificador de código único de exame gerado por laboratório. Observe que este identificador não discrimina qual o laboratório em questão, ou seja, apenas sabe-se que se trata de um identificador gerado por um laboratório. O contexto em questão deve incluir a informação de qual laboratório o código faz parte."
+Usage: #definition
+
+* text.status = #empty
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Identificador para código de exame gerado por laboratório. Não identifica o laboratório.</div>"
+
+* name = "LaboratorioProtocolo"
+* status = #draft
+* kind = #identifier
+* date = "2023-07-31T14:24:34.711Z"
+* publisher = "Ministério da Saúde (INCA)"
+* contact[0].name = "Renata INCA"
+* contact[0]
+  * telecom[0]
+    * system = #phone
+    * value = "+55 62 98765-4321"
+    * use = #work
+    * rank = 1
+  * telecom[1]
+    * system = #email
+    * value = "renata@inca.gov.br"
+    * rank = 2
+
+* responsible = "Instituto Nacional do Câncer (SISCAN)"
+
+* type.coding[0].system = "http://terminology.hl7.org/CodeSystem/v2-0203"
+* type.coding[0].code = #FILL
+* type.text = "O identificador único do exame realizado por laboratório"
+
+* description = "Identificador para código único gerado pelo laboratório que realiza exame. Observe que este identificador não identifica um laboratório. Em vez disso, apenas estabelece que um dado código é único no contexto de um laboratório, identificado em outra parte do registro de um laudo, por exemplo."
+
+* useContext.code.system = "http://terminology.hl7.org/CodeSystem/usage-context-type"
+* useContext.code.code = #task
+* useContext.valueCodeableConcept.coding[0].system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+* useContext.valueCodeableConcept.coding[0].code = #LABOE
+
+* jurisdiction[0].coding[0].system = "urn:iso:std:iso:3166"
+* jurisdiction[0].coding[0].code = #BR
+* jurisdiction[0].text = "Em todo o território nacional (brasileiro)"
+
+* usage = "Código usado pelo laboratório para identificar unicamente um laudo, no domínio do laboratório. Ou seja, não se trata de um código único nacional."
+
+* uniqueId[0].type = #uri
+* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ns/laboratorio"
+* uniqueId[0].preferred = true
+* uniqueId[0].comment = "Criado pela ausência de catálogo nacional de identificadores. Este valor provavelmente será substituído por sequência produzida pela autoridade competente."
+* uniqueId[0].period.start = "2023-11-13"
+
+
+Instance: ns-cnes
+InstanceOf: NamingSystem
+Title: "Identificador do Cadastro Nacional de Estabelecimentos de Saúde (CNES)"
+Description: "Declaração do identificador do Cadastro Nacional de Estabelecimentos de Saúde (CNES)"
+Usage: #definition
+
+* text.status = #empty
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Identificador do código CNES.</div>"
+
+* name = "CNES"
+* status = #draft
+* kind = #identifier
+* date = "2024-02-09"
+* publisher = "Ministério da Saúde do Brasil"
+* contact[0].name = "Renata INCA"
+* contact[0]
+  * telecom[0]
+    * system = #phone
+    * value = "+55 62 98765-4321"
+    * use = #work
+    * rank = 1
+  * telecom[1]
+    * system = #email
+    * value = "renata@inca.gov.br"
+    * rank = 2
+
+* responsible = "Ministério da Saúde do Brasil"
+
+* type.coding[0].system = "http://terminology.hl7.org/CodeSystem/v2-0203"
+* type.coding[0].code = #PRN // Provider number
+* type.text = "Cadastro Nacional de Estabelecimentos de Saúde (CNES)"
+
+* description = "Declara o identificador empregado para se referir ao códigos do Cadastro Nacional de Estabelecimentos de Saúde (CNES) atribuídos aos estabelecimentos de saúde. Ou seja, o nome pelo qual é identificado um código CNES. Os códigos atribuídos a estabelecimentos de saúde podem ser consultados em [https://cnes.datasus.gov.br/](https://cnes.datasus.gov.br/)"
+
+* useContext[0]
+  * code.system = "http://terminology.hl7.org/CodeSystem/usage-context-type"
+  * code.code = #workflow
+  * valueCodeableConcept.coding = urn:iso:std:iso:3166#BRA
+  * valueCodeableConcept.text = "Identificação de estabelecimentos no território brasileiro"
+
+* jurisdiction[0].coding[0].system = "urn:iso:std:iso:3166"
+* jurisdiction[0].coding[0].code = #BR
+* jurisdiction[0].text = "Em todo o território nacional (brasileiro)"
+
+* usage = "Usado quando se deseja indicar que um dado código é único e atribuído a um estabelecimento de saúde pelo Ministério da Saúde do Brasil."
+
+* uniqueId[0].type = #uri
+* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
+* uniqueId[0].preferred = true
+* uniqueId[0].comment = "Criado pela ausência de catálogo nacional de identificadores. Este valor provavelmente será substituído por sequência produzida pela autoridade competente."
+* uniqueId[0].period.start = "2023-11-13"
+
+Instance: ns-cns
+InstanceOf: NamingSystem
+Title: "Identificador do Cartão Nacional de Saúde (CNS)"
+Description: "Declaração do identificador de números de Cartão Nacional de Saúde (CNS)"
+Usage: #definition
+
+* text.status = #empty
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Identificador do código CNES.</div>"
+
+* name = "CNS"
+* status = #draft
+* kind = #identifier
+* date = "2024-02-09"
+* publisher = "Ministério da Saúde do Brasil"
+* contact[0].name = "Renata INCA"
+* contact[0]
+  * telecom[0]
+    * system = #phone
+    * value = "+55 62 98765-4321"
+    * use = #work
+    * rank = 1
+  * telecom[1]
+    * system = #email
+    * value = "renata@inca.gov.br"
+    * rank = 2
+
+* responsible = "Ministério da Saúde (Brasil)"
+
+* type.coding[0].system = "http://terminology.hl7.org/CodeSystem/v2-0203"
+* type.coding[0].code = #SB // Social Beneficiary Identifier
+* type.text = "Número do Cartão Nacional de Saúde (CNS)"
+
+* description = "Declara o identificador empregado para se referir a um indivíduo (paciente ou profissional de saúde) em todo o território nacional (Brasil). Desta forma, este identificar quando acompanhado de um código, de forma não ambígua declara que tal código é o código único de um indivíduo (paciente), também conhecido por CNS."
+
+* useContext[0]
+  * code.system = "http://terminology.hl7.org/CodeSystem/usage-context-type"
+  * code.code = #workflow
+  * valueCodeableConcept.coding = urn:iso:std:iso:3166#BRA
+  * valueCodeableConcept.text = "Identificação de estabelecimentos no território brasileiro"
+
+* jurisdiction[0].coding[0].system = "urn:iso:std:iso:3166"
+* jurisdiction[0].coding[0].code = #BR
+* jurisdiction[0].text = "Em todo o território nacional (brasileiro)"
+
+* usage = "Definido pelo Ministério da Saúde (Brasil)"
+
+* uniqueId[0].type = #uri
+* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ns/cns"
+* uniqueId[0].preferred = true
+* uniqueId[0].comment = "Criado pela ausência de catálogo nacional de identificadores. Este valor provavelmente será substituído por sequência produzida pela autoridade competente."
+* uniqueId[0].period.start = "2024-02-09"
+
+
+Instance: ns-cpf
+InstanceOf: NamingSystem
+Title: "Identificador de Cadastro de Pessoa Física (CPF)"
+Description: "Declaração do identificador de números de inscrição no Cadastro de Pessoa Física (CPF)"
+Usage: #definition
+
+* text.status = #empty
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Identificador do número de CPF.</div>"
+
+* name = "CPF"
+* status = #draft
+* kind = #identifier
+* date = "2023-11-13"
+* publisher = "Receita Federal do Brasil"
+* contact[0].name = "Renata INCA"
+* contact[0]
+  * telecom[0]
+    * system = #phone
+    * value = "+55 62 98765-4321"
+    * use = #work
+    * rank = 1
+  * telecom[1]
+    * system = #email
+    * value = "renata@inca.gov.br"
+    * rank = 2
+
+* responsible = "Receita Federal do Brasil"
+
+* type.coding[0].system = "http://terminology.hl7.org/CodeSystem/v2-0203"
+* type.coding[0].code = #TAX
+* type.text = "Número de inscrição no Cadastro de Pessoa Física (CPF)"
+
+* description = "Identificador do número de inscrição no Cadastro de Pessoas Físicas (CPF)"
+
+* useContext[0]
+  * code.system = "http://terminology.hl7.org/CodeSystem/usage-context-type"
+  * code.code = #workflow
+  * valueCodeableConcept.coding = urn:iso:std:iso:3166#BRA
+  * valueCodeableConcept.text = "Identificação de estabelecimentos no território brasileiro"
+
+* jurisdiction[0].coding[0].system = "urn:iso:std:iso:3166"
+* jurisdiction[0].coding[0].code = #BR
+* jurisdiction[0].text = "Em todo o território nacional (brasileiro)"
+
+* usage = "Usado quando se deseja declarar a origem do código que o acompanha. Desta forma, o interlocutor saberá que o código em questão identifica unicamente um cidadão."
+
+* uniqueId[0].type = #uri
+* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ns/cpf"
+* uniqueId[0].preferred = true
+* uniqueId[0].comment = "Criado pela ausência de catálogo nacional de identificadores. Este valor provavelmente será substituído por sequência produzida pela autoridade competente."
+* uniqueId[0].period.start = "2023-11-13"
+
+Instance: loinc
+InstanceOf: NamingSystem
+Title: "LOINC"
+Description: "Terminologia LOINC (https://loinc.org)"
+Usage: #definition
+
+* text.status = #empty
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Declaração do identificador do código LOINC. Criado para montagem de catálogo de nomes utilizados pela solução.</div>"
+
+* name = "LOINC"
+* status = #active
+* kind = #codesystem
+* date = "2023-07-31T14:24:34.711Z"
+* publisher = "Ministério da Saúde (INCA)"
+* contact[0].name = "Renata INCA"
+* contact[0]
+  * telecom[0]
+    * system = #phone
+    * value = "+55 62 98765-4321"
+    * use = #work
+    * rank = 1
+  * telecom[1]
+    * system = #email
+    * value = "renata@inca.gov.br"
+    * rank = 2
+
+* responsible = "LOINC and Health Data Standards, Regenstrief Institute, Inc."
+
+* type.text = "O identificador de códigos LOINC conforme sugerido pela HL7 FHIR"
+* type.coding[0].system = "http://terminology.hl7.org/CodeSystem/v2-0203"
+* type.coding[0].code = #FILL
+
+* description = """
+O sistema de codificação conhecido por LOINC é bem-definido e inclui dezenas de milhares
+de códigos e também um significativo conjunto de _ValueSets_.
+"""
+
+* useContext.code.system = "http://terminology.hl7.org/CodeSystem/usage-context-type"
+* useContext.code.code = #task
+* useContext.valueCodeableConcept.coding[0].system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+* useContext.valueCodeableConcept.coding[0].code = #LABOE
+
+* jurisdiction[0].coding[0].system = "urn:iso:std:iso:3166"
+* jurisdiction[0].coding[0].code = #BR
+* jurisdiction[0].text = "Em todo o território nacional (brasileiro)"
+
+* usage = "Este identificador é empregado para definir que um dado código refere-se ao código único gerado pelo SISCAN para requisições de exame citopatológico no Brasil."
+
+* uniqueId[0].type = #uri
+* uniqueId[0].value = "http://loinc.org"
+* uniqueId[0].preferred = true
+* uniqueId[0].comment = "Identificador utilizado internacionalmente inclusive pelo FHIR 4.0.1."
+
+* uniqueId[1].type = #oid
+* uniqueId[1].value = "2.16.840.1.113883.6.1"
+* uniqueId[1].preferred = true
+
+
+Instance: siscan
+InstanceOf: NamingSystem
+Title: "Identificador de protocolo (código único) gerado pelo SISCAN"
+Description: "Declaração do identificador de números únicos gerados pelo SISCAN"
+Usage: #definition
+
+* text.status = #empty
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Declaração do identificador de requisição de exame citopatológico gerado pelo SISCAN.</div>"
+
+* name = "SiscanProtocolo"
+* status = #draft
+* kind = #identifier
+* date = "2023-07-31T14:24:34.711Z"
+* publisher = "Ministério da Saúde (INCA)"
+* contact[0].name = "Renata INCA"
+* contact[0]
+  * telecom[0]
+    * system = #phone
+    * value = "+55 62 98765-4321"
+    * use = #work
+    * rank = 1
+  * telecom[1]
+    * system = #email
+    * value = "renata@inca.gov.br"
+    * rank = 2
+
+* responsible = "Instituto Nacional do Câncer (SISCAN)"
+
+* type.text = "O identificador nacional da requisição de exame citopatológico fornecido pelo SISCAN"
+* type.coding[0].system = "http://terminology.hl7.org/CodeSystem/v2-0203"
+* type.coding[0].code = #FILL
+
+* description = """
+Identificador de número único gerado automaticamente pelo **SISCAN** para cada requisição 
+de exame citopatológico. O identificador, portanto, apenas indica que o código que o acompanha
+se refere a uma requisição unicamente identificada pelo SISCAN.
+"""
+
+* useContext.code.system = "http://terminology.hl7.org/CodeSystem/usage-context-type"
+* useContext.code.code = #task
+* useContext.valueCodeableConcept.coding[0].system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+* useContext.valueCodeableConcept.coding[0].code = #LABOE
+
+* jurisdiction[0].coding[0].system = "urn:iso:std:iso:3166"
+* jurisdiction[0].coding[0].code = #BR
+* jurisdiction[0].text = "Em todo o território nacional (brasileiro)"
+
+* usage = "Este identificador é empregado para definir que um dado código refere-se ao código único gerado pelo SISCAN para requisições de exame citopatológico no Brasil."
+
+* uniqueId[0].type = #uri
+* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ns/siscan"
+* uniqueId[0].preferred = true
+* uniqueId[0].comment = "Criado pela ausência de catálogo nacional de identificadores. Este valor provavelmente será substituído por sequência produzida pela autoridade competente."
+* uniqueId[0].period.start = "2023-11-13"
+
+
 Alias: $loinc = http://loinc.org
 
 // ------------------------------------------------------
@@ -10,8 +337,8 @@ Id: resultados-inspecao-colo
 Title: "Resultado da inspeção do colo"
 Description: "Os resultados para a inspeção de colo visando exame citopatológico."
 
-//* ^text.status = #empty
-//* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Código para resultado da inspeção do colo.</div>"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo"
 
@@ -31,8 +358,8 @@ Id: resultado-inspecao-colo
 Title: "Situação do colo"
 Description: "Situação do colo"
 
-//* ^text.status = #empty
-//* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Código admitidos para resultado da inspeção do colo.</div>"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/resultado-inspecao-colo"
 
@@ -51,7 +378,7 @@ Title: "Laudos gerenciados pelo SISCAN"
 Description: "Tipos de laudos gerenciados pelo SISCAN"
 
 * ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de tipos de laudos gerenciados pelo SISCAN</div>"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan"
 
@@ -70,6 +397,9 @@ Id: motivos-exame-citopatologico
 Title: "Motivo do exame citopatológico"
 Description: "Define os motivos pelos quais uma requisição de exame citopatológico é realizada"
 
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos para motivo de exame citopatológico.</div>"
+
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivos-exame-citopatologico"
 
 * ^status = #unknown
@@ -86,6 +416,9 @@ ValueSet: MotivoExame
 Id: motivo-exame-citopatologico
 Title: "Motivo exame"
 Description: "Possíveis motivos para requisição de exame citopatológico"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos admitidos para motivo de exame citopatológico.</div>"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-exame-citopatologico"
 
@@ -104,7 +437,7 @@ Title: "Motivo de rejeição da amostra"
 Description: "Motivo pelo qual a amostra é rejeitada e o laudo inviável."
 
 * ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos para os motivos pelos quais uma amostra pode ser rejeitada.</div>"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-amostra-rejeitada"
 
@@ -126,6 +459,9 @@ Id: tipos-epitelios
 Title: "Tipos de epitélios"
 Description: "Tipos de epitélios em amostra de exame citopatológico"
 
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos para tipos de epitélios.</div>"
+
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-epitelios"
 
 * ^status = #unknown
@@ -142,6 +478,9 @@ ValueSet: TipoEpitelio
 Id: tipo-epitelio
 Title: "Tipo epitélio"
 Description: "Tipo de epitélio na amostra"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para tipo de epitélio.</div>"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipo-epitelio"
 
@@ -160,7 +499,7 @@ Title: "Classificação da adequabilidade do material"
 Description: "Definição da classificação da adequabilidade do material (amostra)"
 
 * ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos para classificação da adequabilidade do material</div>"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-adequabilidade"
 
@@ -184,6 +523,9 @@ Id: tipo-adequabilidade
 Title: "Adequabilidade do material"
 Description: "Caracterização da adequabilidade do material"
 
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Domínio de valores admitido para adequabilidade de amostra de exame citopatológico.</div>"
+
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipo-adequabilidade"
 
 * ^status = #draft
@@ -201,7 +543,7 @@ Title: "Classificação da alterações celulares"
 Description: "Definição das várias alterações celulares benignas relevantes para o exame citopatológico"
 
 * ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos para classificação de alterações celulares benigcas</div>"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/alteracoes-celulares-benignas"
 
@@ -224,7 +566,7 @@ Title: "Alteração celular benigna"
 Description: "Identifica alteração celular benigna relevante para exame citopatológico"
 
 * ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para alterações celulares benignas.</div>"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/alteracao-celular-benigna"
 
@@ -243,7 +585,7 @@ Title: "Microbiologias"
 Description: "Microbiologias"
 
 * ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos para microbiologia</div>"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/microbiologias"
 
@@ -270,7 +612,7 @@ Title: "Microbiologia"
 Description: "Microbiologia"
 
 * ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para microbiologia</div>"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/microbiologia"
 
@@ -289,7 +631,7 @@ Title: "Células atípicas"
 Description: "Células atípicas"
 
 * ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Motivo pelo qual é feita a requisição de exame citopatológico</div>"
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos para classificação de células atípicas.</div>"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/celulas-atipicas"
 
@@ -312,7 +654,7 @@ Title: "Célula atípica"
 Description: "Célula atípica"
 
 * ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para células atípicas.</div>"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/celula-atipica"
 
@@ -331,7 +673,7 @@ Title: "Atipias em células escamosas"
 Description: "Classificação de atipias em células escamosas"
 
 * ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Classificação de atipias em células escamosas</div>"
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Classificação de atipias em células escamosas.</div>"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/atipias-escamosas"
 
@@ -352,7 +694,7 @@ Title: "Atipia"
 Description: "Atipia"
 
 * ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para atipias em células escamosas.</div>"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/atipia-escamosa"
 
@@ -371,7 +713,7 @@ Title: "Atipias em células glandulares"
 Description: "Classificação de atipias em células glandulares"
 
 * ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Classificação de atipias em células glandulares</div>"
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Classificação de atipias em células glandulares.</div>"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/atipias-glandulares"
 
@@ -392,7 +734,7 @@ Title: "Atipia em célula glandular"
 Description: "Atipia em célula glandular"
 
 * ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para atipias em células glandulares.</div>"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/atipia-glandular"
 
@@ -443,6 +785,9 @@ Description: """
 Identifica o nível educacional do paciente (maior obtido).
 """
 
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos para classificação de níveis educacionais.</div>"
+
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/niveis-educacionais"
 
 * ^status = #draft
@@ -474,7 +819,7 @@ Title: "Motivo de rejeição de amostra"
 Description: "Possíveis motivos pelos quais uma amostra é rejeitada"
 
 * ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para identificar o motivo do exame citopatológico</div>"
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para níveis educacionais.</div>"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-rejeicao"
 

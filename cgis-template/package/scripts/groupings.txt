@@ -100,7 +100,7 @@
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-ex-example">
   <name value="Exemplos: instâncias de recursos"/>
-  <description value="Instâncias que ilustram dados produzidos e consumidos por sistemas em conformidade com este Guia. TODOS OS EXEMPLOS SÃO FICTÍCIOS. Foram fabricados arbitrariamente. Qualquer semelhança com algum cenário real será mera coincidência."/>
+  <description value="Instâncias que ilustram dados produzidos e consumidos por sistemas em conformidade com este Guia. **TODOS OS EXEMPLOS SÃO FICTÍCIOS**. Foram fabricados arbitrariamente. Qualquer semelhança com algum cenário real será mera coincidência."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-ex-examplesup">
   <name value="Example: Example Supporting Instances"/>

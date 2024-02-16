@@ -96,7 +96,8 @@ Description: "Definição das informações que devem constar em toda e qualquer
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Evita warning</div>"
 
-* code.coding = http://www.saude.gov.br/fhir/r4/CodeSystem/BRTabelaSUS#0203010086 (exactly)
+* code.coding 1..1
+* code.coding = http://www.saude.gov.br/fhir/r4/CodeSystem/BRTabelaSUS#0203010086
 //* display = "EXAME CITOPATOLÓGICO CERVICO VAGINAL/MICROFLORA-RASTREAMENTO"
 
 * . ^short = "Requisição de exame citopatológico"

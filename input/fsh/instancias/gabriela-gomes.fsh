@@ -483,6 +483,10 @@ Description: "Itens que definem o laudo da paciente Rosa"
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/componentes-laudo-citopatologico"
 
+* subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
+* performer = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb07)
+* effectiveDateTime = "2023-11-10"
+
 * status = #final
 * code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan#citopatologico
 

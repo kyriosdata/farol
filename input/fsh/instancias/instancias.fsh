@@ -200,8 +200,7 @@ Description: "Resultado da inspeção do colo uterino da paciente Rosa"
 * code = http://loinc.org#12044-4
 
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
-* performer.identifier.value = "234.234.567"
+* performer = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07)
 * effectiveDateTime = "2023-11-10"
 
 * valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo#normal
@@ -547,6 +546,11 @@ Title: "Componentes do laudo da paciente Rosa"
 Description: "Itens que definem o laudo da paciente Rosa"
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/componentes-laudo-citopatologico"
+
+* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
+* performer.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
+* performer.identifier.value = "234.234.567"
+* effectiveDateTime = "2023-11-10"
 
 * status = #final
 * code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan#citopatologico

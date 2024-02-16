@@ -15,6 +15,7 @@ Esta transformação exige modificação (manutenção) do SISCAN
 ## Resultados parciais
 
 - Guia de Implementação ([versão em desenvolvimento](https://build.fhir.org/ig/kyriosdata/farol/))
+- Builds [dashboard](https://fhir.github.io/auto-ig-builder/)
 
 ## Resultados esperados
 

@@ -339,7 +339,6 @@ Description: "Definição das questões que fazem parte da anamnese para requisi
   * linkId = "3"
   * type = #choice
   * text = "Usa DIU?"
-  * code[0] = http://www.saude.gov.br/fhir/r4/CodeSystem/BRCIAP2#W12 // Contracepção intra-uterina
   * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
   * required = true
   * repeats = false
@@ -360,7 +359,6 @@ Description: "Definição das questões que fazem parte da anamnese para requisi
   * type = #choice
   * text = "Usa pílula anticoncepcional?"
   * code[0] = http://loinc.org#65931-8
-  * code[1] = http://www.saude.gov.br/fhir/r4/CodeSystem/BRCIAP2#W11 // Contracepção oral (CIAP-2)
   * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
   * required = true
   * repeats = false

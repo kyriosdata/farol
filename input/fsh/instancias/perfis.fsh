@@ -518,7 +518,7 @@ Description: "Observação cujos componentes definem o resultado de laudo citopa
     endometriais 0..1 MS
 
 * component[motivo] ^short = "Registra o motivo da rejeição da amostra"
-* component[motivo].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#motivo-rejeicao (exactly)
+* component[motivo].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#motivo-rejeicao
 * component[motivo].code ^short = "Identifica a informação fornecida: motivo da rejeição da amostra"
 * component[motivo].code.coding ^short = "Código definido por uma terminologia"
 * component[motivo].value[x] 1..1
@@ -531,7 +531,7 @@ Description: "Observação cujos componentes definem o resultado de laudo citopa
 * component[motivo].valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da rejeição da amostra"
 
 * component[epitelios] ^short = "Registra epitélios representados na amostra"
-* component[epitelios].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelios-na-amostra (exactly)
+* component[epitelios].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelios-na-amostra 
 * component[epitelios].code ^short = "Identifica a informação fornecida: tipos epitélios na amostra"
 * component[epitelios].code.coding ^short = "Código definido por uma terminologia"
 * component[epitelios].value[x] 1..1
@@ -543,7 +543,7 @@ Description: "Observação cujos componentes definem o resultado de laudo citopa
 * component[epitelios].valueCodeableConcept.coding.code ^short = "Código correspondente ao tipo de epitélio representado na amostra"
 
 * component[adequabilidade] ^short = "Adequabilidade do material"
-* component[adequabilidade].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#adequabilidade (exactly)
+* component[adequabilidade].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#adequabilidade 
 * component[adequabilidade].code ^short = "Identifica a informação fornecida: adequabilidade do material"
 * component[adequabilidade].code.coding ^short = "Código definido por uma terminologia"
 * component[adequabilidade].value[x] 1..1
@@ -555,14 +555,14 @@ Description: "Observação cujos componentes definem o resultado de laudo citopa
 * component[adequabilidade].valueCodeableConcept.coding.code ^short = "Código correspondente à adequabilidade da amostra"
 
 * component[normalidade] ^short = "Dentro dos limites da normalidade no material"
-* component[normalidade].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#normalidade (exactly)
+* component[normalidade].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#normalidade 
 * component[normalidade].code ^short = "Identifica a informação fornecida: normalidade do material"
 * component[normalidade].code.coding ^short = "Código definido por uma terminologia"
 * component[normalidade].value[x] 1..1
 * component[normalidade].value[x] only boolean
 
 * component[benigno] ^short = "Alterações celulares benignas reativas ou reparativas"
-* component[benigno].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#alteracoes-benignas (exactly)
+* component[benigno].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#alteracoes-benignas 
 * component[benigno].code ^short = "Identifica a informação fornecida: alterações benignas do material"
 * component[benigno].code.coding ^short = "Código definido por uma terminologia"
 * component[benigno].value[x] 1..1
@@ -574,7 +574,7 @@ Description: "Observação cujos componentes definem o resultado de laudo citopa
 * component[benigno].valueCodeableConcept.coding.code ^short = "Código correspondente ao tipo de alteração celular benigna"
 
 * component[microbiologia] ^short = "Microbiologia"
-* component[microbiologia].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia (exactly)
+* component[microbiologia].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia 
 * component[microbiologia].code ^short = "Identifica a informação fornecida: microbiologia"
 * component[microbiologia].code.coding ^short = "Código definido por uma terminologia"
 * component[microbiologia].value[x] 1..1
@@ -586,7 +586,7 @@ Description: "Observação cujos componentes definem o resultado de laudo citopa
 * component[microbiologia].valueCodeableConcept.coding.code ^short = "Código correspondente para a microbiologia"
 
 * component[atipicas] ^short = "Células atípicas de significado indeterminado"
-* component[atipicas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#significado-indeterminado (exactly)
+* component[atipicas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#significado-indeterminado 
 * component[atipicas].code ^short = "Identifica a informação fornecida: células atípicas"
 * component[atipicas].code.coding ^short = "Código definido por uma terminologia"
 * component[atipicas].value[x] 1..1
@@ -599,7 +599,7 @@ Description: "Observação cujos componentes definem o resultado de laudo citopa
 * component[atipicas].valueCodeableConcept.text 0..0
 
 * component[escamosas] ^short = "Atipias em células escamosas"
-* component[escamosas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#atipias-escamosas (exactly)
+* component[escamosas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#atipias-escamosas 
 * component[escamosas].code ^short = "Identifica a informação fornecida: atipias em células escamosas"
 * component[escamosas].code.coding ^short = "Código definido por uma terminologia"
 * component[escamosas].value[x] 1..1
@@ -612,7 +612,7 @@ Description: "Observação cujos componentes definem o resultado de laudo citopa
 * component[escamosas].valueCodeableConcept.text 0..0
 
 * component[glandulares] ^short = "Atipias em células glandulares"
-* component[glandulares].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#atipias-glandulares (exactly)
+* component[glandulares].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#atipias-glandulares 
 * component[glandulares].code ^short = "Identifica a informação fornecida: atipias em células escamosas"
 * component[glandulares].code.coding ^short = "Código definido por uma terminologia"
 * component[glandulares].value[x] 1..1
@@ -625,14 +625,14 @@ Description: "Observação cujos componentes definem o resultado de laudo citopa
 * component[glandulares].valueCodeableConcept.text 0..0
 
 * component[outrasMalignas] ^short = "Outras neoplasias malignas"
-* component[outrasMalignas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#neoplasias-malignas (exactly)
+* component[outrasMalignas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#neoplasias-malignas 
 * component[outrasMalignas].code ^short = "Identifica a informação fornecida: outras neoplasias malignas"
 * component[outrasMalignas].code.coding ^short = "Código definido por uma terminologia"
 * component[outrasMalignas].value[x] 1..1
 * component[outrasMalignas].value[x] only string
 
 * component[endometriais] ^short = "Células endometriais"
-* component[endometriais].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#celulas-endometriais (exactly)
+* component[endometriais].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#celulas-endometriais 
 * component[endometriais].code ^short = "Identifica a informação fornecida: células endometriais"
 * component[endometriais].code.coding ^short = "Código definido por uma terminologia"
 * component[endometriais].value[x] 1..1

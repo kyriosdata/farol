@@ -150,7 +150,7 @@ Description: "Resultado da inspeção do colo"
 * . ^short = "Registra resultado obtido da inspeção do colo"
 
 * code.coding 1..1
-* code = http://loinc.org#12044-4 (exactly)
+* code = http://loinc.org#12044-4
 * code ^short = "Código para inspeção do colo"
 
 * value[x] 1..1
@@ -475,7 +475,7 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 * category ^definition = "Código que classifica a requisição com a finalidade de busca, ordenação e exibição."
 * category ^comment = "Classificação da requisição com a finalidade de busca, ordenação e exibição."
 * category.coding 1..1
-* category.coding = http://terminology.hl7.org/CodeSystem/v2-0074#CP (exactly)
+* category.coding = http://terminology.hl7.org/CodeSystem/v2-0074#CP
 * category.coding.display ..0
 * encounter ..0
 
@@ -498,7 +498,7 @@ Description: "Observação cujos componentes definem o resultado de laudo citopa
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/componentes-laudo-citopatologico"
 * ^status = #draft
-* code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan#citopatologico (exactly)
+* code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan#citopatologico
 
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"

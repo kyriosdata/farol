@@ -215,6 +215,8 @@ Usage: #example
 Title: "Rosa possui sinais sugestivos de DST?"
 Description: "Exame clínico que identifica se há presença ou não de sinais de doença sexualmente transmissível"
 
+* meta.profile = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/presenca-dst"
+
 * status = #final
 
 // Sexually transmitted diseases

@@ -78,6 +78,11 @@ Description: "Pacote que reúne todos os dados pertinentes à requisição de ex
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07"
   * resource = profissional
 
+// encontro (Encounter)
+* entry[+]
+  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb08"
+  * resource = encontro
+
 // ------------------------------------------------------
 // requisicao-rosa (requisição)
 // ------------------------------------------------------
@@ -119,9 +124,9 @@ Description: "Requisição de Exame Citopatológico da paciente Rosa"
 //   * title = "Sinais sugestivos de doenças sexualmente transmissíveis"
 //   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05)
 
-* section[+]
-  * title = "Unidade de Saúde Requisitante"
-  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06)
+//* section[+]
+//  * title = "Unidade de Saúde Requisitante"
+//  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06)
 
 // ------------------------------------------------------
 // requisicao (ServiceRequest)
@@ -155,7 +160,7 @@ Usage: #example
 
 * reasonCode[0].coding[0] = $motivos-exame#rastreamento
 
-* encounter = Reference(encontro)
+* encounter = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb08)
 
 // respostas-anamnese
 * supportingInfo[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
@@ -167,8 +172,7 @@ Usage: #example
 * supportingInfo[2] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05)
 
 // CNS do responsável
-* requester.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
-* requester.identifier.value = "234.234.567"
+* requester = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07)
 
 
 Instance: encontro

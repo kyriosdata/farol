@@ -177,7 +177,7 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 Instance: exame-inspecao
 InstanceOf: Observation
 Usage: #example
-Title: "Inspeção do colo (Rosa)"
+Title: "Inspeção colo (Rosa)"
 Description: "Resultado da inspeção do colo uterino da paciente Rosa"
 
 * meta.profile = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/inspecao-colo"
@@ -449,7 +449,7 @@ Description: "Laudo de exame citopatológico da paciente Rosa"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
 
 * section[+]
-  * title = "Inspeção do colo"
+  * title = "Inspeção colo"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04)
 
 * section[+]

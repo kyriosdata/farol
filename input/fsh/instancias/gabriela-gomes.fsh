@@ -117,7 +117,7 @@ Description: "Requisição de Exame Citopatológico da paciente Gabriela"
   * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb03)
 
 * section[+]
-  * title = "Inspeção do colo (Gabriela Gomes)"
+  * title = "Inspeção colo (Gabriela Gomes)"
   * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb04)
 
 * section[+]
@@ -185,7 +185,7 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 Instance: exame-inspecao-01
 InstanceOf: Observation
 Usage: #example
-Title: "Inspeção do colo (Gabriela Gomes)"
+Title: "Inspeção colo (Gabriela Gomes)"
 Description: "Resultado da inspeção do colo uterino da paciente Gabriela"
 * status = #final
 
@@ -194,9 +194,9 @@ Description: "Resultado da inspeção do colo uterino da paciente Gabriela"
 
 * subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
 * performer = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb07)
-* effectiveDateTime = "2023-11-10"
+* effectiveDateTime = "2023-12-23"
 
-* valueCodeableConcept.coding = $cs-inspecao-colo#normal
+* valueCodeableConcept.coding = $cs-inspecao-colo#alterado
 
 
 Instance: exame-dst-01
@@ -212,7 +212,7 @@ Description: "Exame clínico que identifica se há presença ou não de sinais d
 
 * subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
 * performer = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb07)
-* effectiveDateTime = "2023-11-10"
+* effectiveDateTime = "2023-12-23"
 
 * valueBoolean = false
 
@@ -334,7 +334,7 @@ Description: "Exemplo de respostas para anamnese de exame citopatológico de uma
 
 * item[+]
   * linkId = "4"
-  * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
+  * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#N
   * text = "Está grávida?"
 
 * item[+]
@@ -344,7 +344,7 @@ Description: "Exemplo de respostas para anamnese de exame citopatológico de uma
 
 * item[+]
   * linkId = "6"
-  * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
+  * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#N
   * text = "Usa hormônio/remédio para tratar a menopausa?"
 
 * item[+]
@@ -353,18 +353,13 @@ Description: "Exemplo de respostas para anamnese de exame citopatológico de uma
   * text = "Já fez tratamento por radioterapia?"
 
 * item[+]
-  * linkId = "8"
-  * answer[0].valueDate = "2024-01-01"
-  * text = "Data da última menstruação/regra"
-
-* item[+]
   * linkId = "9"
   * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * text = "Tem ou teve algum sangramento após relações sexuais? (não considerar a primeira relação sexual na vida)"
 
 * item[+]
   * linkId = "10"
-  * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
+  * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#N
   * text = "Tem ou teve algum sangramento após a menopausa? (não considerar o(s) sangramento(s) na vigência de reposição hormonal)"
 
 * item[+]
@@ -379,9 +374,9 @@ Description: "Exemplo de respostas para anamnese de exame citopatológico de uma
 
 Instance: composition-01-2
 InstanceOf: Composition
-Usage: #example
+Usage: #inline
 Title: "Laudo (Gabriela Gomes)"
-Description: "Laudo de exame citopatológico da paciente Rosa"
+Description: "Laudo de exame citopatológico da paciente Gabriela Gomes. Veja a [ficha](gabriela-gomes-laudo.jpg) correspondente ao laudo."
 
 * status = #final
 
@@ -398,9 +393,9 @@ Description: "Laudo de exame citopatológico da paciente Rosa"
 // Patient
 * subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
 
-// ServiceRequest
+// DiagnosticReport
 * section[+]
-  * title = "Requisição de exame citopatológico (Gabriela Gomes)"
+  * title = "Laudo (Gabriela Gomes)"
   * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb02)
 
 * section[+]
@@ -433,11 +428,6 @@ Description: "Laboratório que emite o laudo de exame citopatológico"
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
 * identifier.value = "654321"
 
-// As informações abaixo não são registradas no laudo
-//* type.coding.system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoEstabelecimentoSaude"
-//* type.coding.code = #80
-//* type.text = "LABORATORIO DE SAUDE PUBLICA"
-
 // ------------------------------------------------------
 // citopatologista
 // ------------------------------------------------------
@@ -458,7 +448,7 @@ Usage: #example
 
 Instance: diagnostico-01
 InstanceOf: DiagnosticReport
-Title: "Detalhes do laudo (Gabriela Gomes)"
+Title: "Laudo (Gabriela Gomes)"
 Usage: #example
 Description: "Laudo da requisição de exame da paciente Rosa"
 
@@ -469,7 +459,7 @@ Description: "Laudo da requisição de exame da paciente Rosa"
 * code.coding[0].code = #10524-7
 
 * identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ns/laboratorio"
-* identifier[0].value = "cito-exame-123"
+* identifier[0].value = "cito-gabriela-gomes-123"
 
 * basedOn = Reference(requisicao)
 

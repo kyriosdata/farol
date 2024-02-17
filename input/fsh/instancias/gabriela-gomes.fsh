@@ -89,7 +89,7 @@ Description: "Pacote que reúne todos os dados pertinentes à requisição de ex
 
 Instance: requisicao-gabriela
 InstanceOf: Composition
-Usage: #example
+Usage: #inline
 Title: "Requisição (Gabriela)"
 Description: "Requisição de Exame Citopatológico da paciente Gabriela"
 
@@ -136,7 +136,7 @@ Instance: requisicao-01
 InstanceOf: ServiceRequest
 Title: "Detalhes da requisição (Gabriela Gomes)"
 Description: "Detalhes da requisição de exame citopatológico da Gabriela Gomes"
-Usage: #inline
+Usage: #example
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
 
@@ -202,7 +202,7 @@ Description: "Resultado da inspeção do colo uterino da paciente Gabriela"
 Instance: exame-dst-01
 InstanceOf: Observation
 Usage: #example
-Title: "Gabriela possui sinais sugestivos de DST?"
+Title: "DST (Gabriela Gomes)"
 Description: "Exame clínico que identifica se há presença ou não de sinais de doença sexualmente transmissível"
 
 * status = #final
@@ -223,7 +223,7 @@ Description: "Exame clínico que identifica se há presença ou não de sinais d
 Instance: gabriela
 InstanceOf: Patient
 Usage: #example
-Title: "Gabriela Gomes (paciente)"
+Title: "Paciente (Gabriela Gomes)"
 Description: "Paciente para a qual há requisição e laudo de exame citopatológico"
 
 * meta.profile[0] = $paciente-siscan
@@ -296,7 +296,7 @@ Description: "A unidade de saúde na qual o exame citopatológico da paciente Ga
 
 Instance: profissional-01
 InstanceOf: Practitioner
-Title: "Profissional de Saúde (que faz a requisição)"
+Title: "Profissional de Saúde (requisição)"
 Description: "Profissional responsável pela requisição do exame citopatológico"
 
 * identifier[0]
@@ -380,7 +380,7 @@ Description: "Exemplo de respostas para anamnese de exame citopatológico de uma
 Instance: composition-01-2
 InstanceOf: Composition
 Usage: #example
-Title: "(Composition) Laudo de Exame Citopatológico"
+Title: "Laudo (Gabriela Gomes)"
 Description: "Laudo de exame citopatológico da paciente Rosa"
 
 * status = #final
@@ -458,7 +458,7 @@ Usage: #example
 
 Instance: diagnostico-01
 InstanceOf: DiagnosticReport
-Title: "Laudo de Exame Citopatológico"
+Title: "Detalhes do laudo (Gabriela Gomes)"
 Usage: #example
 Description: "Laudo da requisição de exame da paciente Rosa"
 
@@ -490,8 +490,8 @@ Description: "Laudo da requisição de exame da paciente Rosa"
 Instance: laudo-componentes-01
 InstanceOf: Observation
 Usage: #example
-Title: "Componentes do laudo da paciente Rosa"
-Description: "Itens que definem o laudo da paciente Rosa"
+Title: "Itens do laudo (Gabriela Gomes)"
+Description: "Itens que definem o laudo da paciente Gabriela Gomes"
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/componentes-laudo-citopatologico"
 

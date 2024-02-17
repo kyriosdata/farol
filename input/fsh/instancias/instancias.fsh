@@ -89,7 +89,7 @@ Description: "Pacote que reúne todos os dados pertinentes à requisição de ex
 
 Instance: requisicao-rosa
 InstanceOf: Composition
-Usage: #example
+Usage: #inline
 Title: "Requisição (Rosa)"
 Description: "Requisição de Exame Citopatológico da paciente Rosa"
 
@@ -220,7 +220,7 @@ Description: "Exame clínico que identifica se há presença ou não de sinais d
 Instance: rosa
 InstanceOf: Patient
 Usage: #example
-Title: "Rosa (paciente)"
+Title: "Paciente (Rosa)"
 Description: "Paciente para a qual há requisição e laudo de exame citopatológico"
 
 * meta.profile[0] = $paciente-siscan
@@ -332,7 +332,7 @@ Description: "A unidade de saúde na qual o exame citopatológico da paciente Ro
 
 Instance: profissional
 InstanceOf: Practitioner
-Title: "Profissional de Saúde"
+Title: "Profissional de Saúde (requisição)"
 Description: "Profissional responsável pela requisição do exame citopatológico para a paciente Rosa"
 
 * identifier[0]
@@ -421,7 +421,7 @@ Description: "Exemplo de respostas para anamnese de exame citopatológico de uma
 Instance: composition-2
 InstanceOf: Composition
 Usage: #example
-Title: "(Composition) Laudo de Exame Citopatológico"
+Title: "Laudo (Rosa)"
 Description: "Laudo de exame citopatológico da paciente Rosa"
 
 * status = #final
@@ -499,7 +499,7 @@ Usage: #example
 
 Instance: diagnostico
 InstanceOf: DiagnosticReport
-Title: "Laudo de Exame Citopatológico"
+Title: "Detalhes do laudo (Rosa)"
 Usage: #inline
 Description: "Laudo da requisição de exame da paciente Rosa"
 
@@ -531,7 +531,7 @@ Description: "Laudo da requisição de exame da paciente Rosa"
 Instance: laudo-componentes
 InstanceOf: Observation
 Usage: #example
-Title: "Componentes do laudo da paciente Rosa"
+Title: "Itens do laudo (Rosa)"
 Description: "Itens que definem o laudo da paciente Rosa"
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/componentes-laudo-citopatologico"

@@ -78,6 +78,11 @@ Description: "Pacote que reúne todos os dados pertinentes à requisição de ex
   * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb07"
   * resource = profissional-01
 
+// encontro (Encounter)
+* entry[+]
+  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb08"
+  * resource = encontro-01
+
 // ------------------------------------------------------
 // requisicao-gabriela
 // ------------------------------------------------------
@@ -149,6 +154,8 @@ Usage: #inline
 * subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
 * reasonCode[0].coding[0] = $motivos-exame#seguimento
 
+* encounter = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb08)
+
 // respostas-anamnese
 * supportingInfo[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb03)
 
@@ -162,6 +169,16 @@ Usage: #inline
 * requester.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
 * requester.identifier.value = "234.234.567"
 
+Instance: encontro-01
+InstanceOf: Encounter
+Usage: #example
+Title: "Interação com a paciente Gabriela Gomes"
+Description: "Neste encontro foi coletada a amostra e criada a requisição de exame citopatológico"
+
+* status = #finished
+* class.system = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
+* subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
+* serviceProvider = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb06)
 
 // ------------------------------------------------------
 // exame

@@ -112,22 +112,6 @@ Description: "Requisição de Exame Citopatológico da paciente Rosa"
   * title = "Requisição de exame citopatológico"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb02)
 
-// * section[+]
-//   * title = "Respostas do questionário da anamnese"
-//   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
-
-// * section[+]
-//   * title = "Inspeção do colo"
-//   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04)
-
-// * section[+]
-//   * title = "Sinais sugestivos de doenças sexualmente transmissíveis"
-//   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05)
-
-//* section[+]
-//  * title = "Unidade de Saúde Requisitante"
-//  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06)
-
 // ------------------------------------------------------
 // requisicao (ServiceRequest)
 // ------------------------------------------------------

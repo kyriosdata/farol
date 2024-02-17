@@ -1,16 +1,10 @@
-Alias: $anamnese = http://perfil.org/anamnese-exame-citopatologico
 Alias: $BRTipoLogradouro-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRTipoLogradouro-1.0
 Alias: $BRMunicipio-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRMunicipio-1.0
 Alias: $BRUnidadeFederativa-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRUnidadeFederativa-1.0
 Alias: $BRMeioContato = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRMeioContato-1.0
 Alias: $laudo-tipo-item = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item
-Alias: $loinc = http://loinc.org
 Alias: $yesnodontknow = http://hl7.org/fhir/ValueSet/yesnodontknow
 Alias: $niveis-educacionais = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/niveis-educacionais
-Alias: $cholesterol = http://hl7.org/fhir/StructureDefinition/cholesterol
-Alias: $triglyceride = http://hl7.org/fhir/StructureDefinition/triglyceride
-Alias: $hdlcholesterol = http://hl7.org/fhir/StructureDefinition/hdlcholesterol
-Alias: $ldlcholesterol = http://hl7.org/fhir/StructureDefinition/ldlcholesterol
 Alias: $resultado-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/resultado-inspecao-colo
 
 

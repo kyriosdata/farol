@@ -170,7 +170,7 @@ Usage: #inline
 Instance: encontro-01
 InstanceOf: Encounter
 Usage: #example
-Title: "Interação com a paciente Gabriela Gomes"
+Title: "Interação (Gabriela Gomes)"
 Description: "Neste encontro foi coletada a amostra e criada a requisição de exame citopatológico"
 
 * status = #finished
@@ -185,7 +185,7 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 Instance: exame-inspecao-01
 InstanceOf: Observation
 Usage: #example
-Title: "Gabriela (inspeção do colo uterino)"
+Title: "Inspeção do colo (Gabriela Gomes)"
 Description: "Resultado da inspeção do colo uterino da paciente Gabriela"
 * status = #final
 

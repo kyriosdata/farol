@@ -23,8 +23,8 @@ Alias: $anamnese-exame-citopatologico = https://fhir.fabrica.inf.ufg.br/ccu/Ques
 Instance: bundle-rosa
 InstanceOf: Bundle
 Usage: #example
-Title: "(Bundle) Requisição de exame citopatológico (Rosa)"
-Description: "Pacote que reúne todos os dados pertinentes à requisição de exame citopatológico da paciente Rosa"
+Title: "Pacote (Rosa)"
+Description: "Pacote que reúne todos os dados pertinentes à requisição de exame citopatológico da paciente Rosa. Trata-se de um mecanismo tecnológico para reunir todas as partes de um documento."
 
 * type = #document
 

@@ -376,7 +376,7 @@ Instance: composition-01-2
 InstanceOf: Composition
 Usage: #inline
 Title: "Laudo (Gabriela Gomes)"
-Description: "Laudo de exame citopatológico da paciente Gabriela Gomes. Veja a [ficha](gabriela-gomes-laudo.jpg) correspondente ao laudo."
+Description: "Laudo de exame citopatológico da paciente Gabriela Gomes"
 
 * status = #final
 
@@ -432,6 +432,10 @@ Description: "Laboratório que emite o laudo de exame citopatológico"
 // citopatologista
 // ------------------------------------------------------
 
+// ------------------------------------------------------
+// citopatologista
+// ------------------------------------------------------
+
 Instance: citopatologista-01
 InstanceOf: Practitioner
 Title: "Citopatologista"
@@ -440,7 +444,7 @@ Usage: #example
 
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
 * identifier.value = "2345234234234"
-* name.text = "Beltrano da Silva"
+* name.text = "Rita Goreti"
 
 // ------------------------------------------------------
 // diagnostico
@@ -450,7 +454,7 @@ Instance: diagnostico-01
 InstanceOf: DiagnosticReport
 Title: "Laudo (Gabriela Gomes)"
 Usage: #example
-Description: "Laudo da requisição de exame da paciente Rosa"
+Description: "Laudo da requisição de exame da paciente Gabriela Gomes. Veja a [ficha](gabriela-gomes-laudo.jpg) correspondente ao laudo"
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/diagnostico-citopatologico"
 * status = #final
@@ -461,17 +465,24 @@ Description: "Laudo da requisição de exame da paciente Rosa"
 * identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ns/laboratorio"
 * identifier[0].value = "cito-gabriela-gomes-123"
 
-* basedOn = Reference(requisicao)
+* basedOn = Reference(requisicao-01)
 
 * category.coding = http://terminology.hl7.org/CodeSystem/v2-0074#CP
-* subject = Reference(gabriela)
-* effectiveDateTime = "2024-01-01"
-* issued = "2017-01-01T00:00:00Z"
 
-* result[0] = Reference(laudo-componentes)
+* subject = Reference(gabriela)
+
+// Data em que foi recebido o pedido
+* effectiveDateTime = "2024-01-03"
+
+// Data em que o laudo foi produzido (UTC)
+// No Brasil, UTC-3, seria 8h da manhã
+* issued = "2024-02-01T11:00:00Z"
+
+* result[0] = Reference(laudo-componentes-01)
 
 * performer[0] = Reference(laboratorio-gabriela)
-* resultsInterpreter[0] = Reference(citopatologista)
+* resultsInterpreter[0] = Reference(citopatologista-01)
+
 
 // ------------------------------------------------------
 // rejeicao
@@ -492,23 +503,32 @@ Description: "Itens que definem o laudo da paciente Gabriela Gomes"
 * status = #final
 * code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan#citopatologico
 
-* component[0].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelios-na-amostra
-* component[0].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-epitelios#escamoso
+// Modelar presença de epitélios representativos como presente ou não
+// Para cada tipo de epitélio um componente correspondente. 
+// Remover CS e VS de tipo de epitélio
 
-* component[1].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#adequabilidade
-* component[1].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-adequabilidade#outros
-* component[1].valueCodeableConcept.text = "Aqui segue a especificação para o item 'Outros'"
+* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelio-escamoso-na-amostra
+* component[=].valueBoolean = true
 
-* component[2].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#normalidade
-* component[2].valueBoolean = true
+* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelio-glandular-na-amostra
+* component[=].valueBoolean = true
 
-* component[3].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#alteracoes-benignas
-* component[3].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/alteracoes-celulares-benignas#radiacao
-* component[3].valueCodeableConcept.text = "Raios Gama"
+* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelio-metaplasico-na-amostra
+* component[=].valueBoolean = true
 
-* component[4].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia
-* component[4].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/microbiologias#outros-bacilos
-* component[4].valueCodeableConcept.text = "Aqui segue a especificação dos outros bacilos"
+* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#adequabilidade
+* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-adequabilidade#outros
+* component[=].valueCodeableConcept.text = "Aqui segue a especificação para o item 'Outros'"
 
+* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#normalidade
+* component[=].valueBoolean = true
 
-* note[0].text = "Aqui seguem as observações gerais"
+* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#alteracoes-benignas
+* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/alteracoes-celulares-benignas#radiacao
+* component[=].valueCodeableConcept.text = "Raios Gama"
+
+* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia
+* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/microbiologias#outros-bacilos
+* component[=].valueCodeableConcept.text = "Aqui segue a especificação dos outros bacilos"
+
+* note[0].text = "Amostra parcialmente dessecada."

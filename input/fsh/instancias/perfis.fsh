@@ -499,7 +499,9 @@ Description: "Observação cujos componentes definem o resultado de laudo citopa
 
 * component contains 
     motivo 0..1 MS and 
-    epitelios 0..1 MS and
+    escamoso 0..1 MS and
+    glandular 0..1 MS and
+    metaplasico 0..1 MS and
     adequabilidade 1..1 MS and
     normalidade 1..1 MS and
     benigno 0..1 MS and
@@ -523,17 +525,29 @@ Description: "Observação cujos componentes definem o resultado de laudo citopa
 * component[motivo].valueCodeableConcept.coding.code 1..1
 * component[motivo].valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da rejeição da amostra"
 
-* component[epitelios] ^short = "Registra epitélios representados na amostra"
-* component[epitelios].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelios-na-amostra 
-* component[epitelios].code ^short = "Identifica a informação fornecida: tipos epitélios na amostra"
-* component[epitelios].code.coding ^short = "Código definido por uma terminologia"
-* component[epitelios].value[x] 1..1
-* component[epitelios].value[x] only CodeableConcept
-* component[epitelios].valueCodeableConcept.coding 1..1
-* component[epitelios].valueCodeableConcept ^short = "O conjunto de códigos que identifica tipo de epitélio na amostra"
-* component[epitelios].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipo-epitelio (required)
-* component[epitelios].valueCodeableConcept.coding.code 1..1
-* component[epitelios].valueCodeableConcept.coding.code ^short = "Código correspondente ao tipo de epitélio representado na amostra"
+* component[escamoso] ^short = "Registra presença ou não de epitélios escamoso na amostra"
+* component[escamoso].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelio-escamoso-na-amostra 
+* component[escamoso].code ^short = "Identifica a informação fornecida: presença ou não de epitélio escamoso"
+* component[escamoso].code.coding ^short = "Código definido por uma terminologia"
+* component[escamoso].value[x] 1..1
+* component[escamoso].value[x] only boolean
+* component[escamoso].value[x] ^short = "true se há presença de epitélio escamoso ou falso, caso contrário."
+
+* component[glandular] ^short = "Registra presença ou não de epitélios glandular na amostra"
+* component[glandular].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelio-glandular-na-amostra 
+* component[glandular].code ^short = "Identifica a informação fornecida: presença ou não de epitélio glandular"
+* component[glandular].code.coding ^short = "Código definido por uma terminologia"
+* component[glandular].value[x] 1..1
+* component[glandular].value[x] only boolean
+* component[glandular].value[x] ^short = "true se há presença de epitélio glandular ou falso, caso contrário."
+
+* component[metaplasico] ^short = "Registra presença ou não de epitélios metaplasico na amostra"
+* component[metaplasico].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelio-metaplasico-na-amostra 
+* component[metaplasico].code ^short = "Identifica a informação fornecida: presença ou não de epitélio metaplásico"
+* component[metaplasico].code.coding ^short = "Código definido por uma terminologia"
+* component[metaplasico].value[x] 1..1
+* component[metaplasico].value[x] only boolean
+* component[metaplasico].value[x] ^short = "true se há presença de epitélio metaplásico ou falso, caso contrário."
 
 * component[adequabilidade] ^short = "Adequabilidade do material"
 * component[adequabilidade].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#adequabilidade 

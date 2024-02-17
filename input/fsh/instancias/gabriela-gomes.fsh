@@ -26,7 +26,7 @@ Alias: $anamnese-exame-citopatologico = https://fhir.fabrica.inf.ufg.br/ccu/Ques
 Instance: bundle-gabriela-gomes
 InstanceOf: Bundle
 Usage: #example
-Title: "(Bundle) Requisição de exame citopatológico (Gabriela)"
+Title: "Pacote (Gabriela Gomes)"
 Description: "Pacote que reúne todos os dados pertinentes à requisição de exame citopatológico da paciente Gabriela. Veja a [ficha](gabriela-gomes.jpg) de requisição correspondente."
 
 * type = #document
@@ -90,7 +90,7 @@ Description: "Pacote que reúne todos os dados pertinentes à requisição de ex
 Instance: requisicao-gabriela
 InstanceOf: Composition
 Usage: #example
-Title: "Requisição de Exame Citopatológico da paciente Gabriela"
+Title: "Requisição (Gabriela)"
 Description: "Requisição de Exame Citopatológico da paciente Gabriela"
 
 * status = #final
@@ -109,23 +109,23 @@ Description: "Requisição de Exame Citopatológico da paciente Gabriela"
 
 // ServiceRequest
 * section[+]
-  * title = "Requisição de exame citopatológico"
+  * title = "Detalhes da requisição (Gabriela Gomes)"
   * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb02)
 
 * section[+]
-  * title = "Respostas do questionário da anamnese"
+  * title = "Anamnese (Gabriela Gomes - composition)"
   * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb03)
 
 * section[+]
-  * title = "Inspeção do colo"
+  * title = "Inspeção do colo (Gabriela Gomes)"
   * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb04)
 
 * section[+]
-  * title = "Sinais sugestivos de doenças sexualmente transmissíveis"
+  * title = "DST (Gabriela Gomes)"
   * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb05)
 
 * section[+]
-  * title = "Unidade de Saúde Requisitante"
+  * title = "UBS (Gabriela Gomes)"
   * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb06)
 
 // ------------------------------------------------------
@@ -134,8 +134,8 @@ Description: "Requisição de Exame Citopatológico da paciente Gabriela"
 
 Instance: requisicao-01
 InstanceOf: ServiceRequest
-Title: "Pedido de exame citopatológico da paciente Gabriela Gomes"
-Description: "Pedido de exame citopatológico"
+Title: "Detalhes da requisição (Gabriela Gomes)"
+Description: "Detalhes da requisição de exame citopatológico da Gabriela Gomes"
 Usage: #inline
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
@@ -149,7 +149,6 @@ Usage: #inline
 * code.coding[0]
   * code = #0203010086
   * system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTabelaSUS"
-//  * display = "EXAME CITOPATOLÓGICO CERVICO VAGINAL/MICROFLORA-RASTREAMENTO"
 
 * subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
 * reasonCode[0].coding[0] = $motivos-exame#seguimento
@@ -166,8 +165,7 @@ Usage: #inline
 * supportingInfo[2] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb05)
 
 // CNS do responsável
-* requester.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
-* requester.identifier.value = "234.234.567"
+* requester = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb07)
 
 Instance: encontro-01
 InstanceOf: Encounter
@@ -195,8 +193,7 @@ Description: "Resultado da inspeção do colo uterino da paciente Gabriela"
 * code = http://loinc.org#12044-4
 
 * subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
-* performer.identifier.value = "234.234.567"
+* performer = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb07)
 * effectiveDateTime = "2023-11-10"
 
 * valueCodeableConcept.coding = $cs-inspecao-colo#normal
@@ -214,8 +211,7 @@ Description: "Exame clínico que identifica se há presença ou não de sinais d
 * code = http://loinc.org#45687-1
 
 * subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
-* performer.identifier.value = "234.234.567"
+* performer = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb07)
 * effectiveDateTime = "2023-11-10"
 
 * valueBoolean = false
@@ -300,8 +296,8 @@ Description: "A unidade de saúde na qual o exame citopatológico da paciente Ga
 
 Instance: profissional-01
 InstanceOf: Practitioner
-Title: "Profissional de Saúde"
-Description: "Profissional responsável pela requisição do exame citopatológico para a paciente Rosa"
+Title: "Profissional de Saúde (que faz a requisição)"
+Description: "Profissional responsável pela requisição do exame citopatológico"
 
 * identifier[0]
   * use = #official
@@ -316,16 +312,15 @@ Description: "Profissional responsável pela requisição do exame citopatológi
 
 Instance: respostas-anamnese-01
 InstanceOf: QuestionnaireResponse
-Title: "Anamnese (exemplo)"
+Title: "Anamnese (Gabriela Gomes)"
 Description: "Exemplo de respostas para anamnese de exame citopatológico de uma requisição para a paciente Rosa"
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/anamnese-questionario"
 * questionnaire = $anamnese-exame-citopatologico
 
 * status = #completed
-//* subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
-//* author.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
-//* author.identifier.value = "234.234.567"
+* subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
+* author = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb07)
 
 * item[+]
   * linkId = "1"
@@ -405,11 +400,11 @@ Description: "Laudo de exame citopatológico da paciente Rosa"
 
 // ServiceRequest
 * section[+]
-  * title = "Requisição de exame citopatológico"
+  * title = "Requisição de exame citopatológico (Gabriela Gomes)"
   * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb02)
 
 * section[+]
-  * title = "Respostas do questionário da anamnese"
+  * title = "Questionário da anamnese (Gabriela Gomes)"
   * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb03)
 
 * section[+]

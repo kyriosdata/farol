@@ -90,7 +90,7 @@ Description: "Pacote que reúne todos os dados pertinentes à requisição de ex
 Instance: requisicao-rosa
 InstanceOf: Composition
 Usage: #example
-Title: "Requisição de Exame Citopatológico da paciente Rosa"
+Title: "Requisição (Rosa)"
 Description: "Requisição de Exame Citopatológico da paciente Rosa"
 
 * status = #final
@@ -118,7 +118,7 @@ Description: "Requisição de Exame Citopatológico da paciente Rosa"
 
 Instance: requisicao
 InstanceOf: ServiceRequest
-Title: "Pedido de exame citopatológico"
+Title: "Detalhes da requisição (Rosa)"
 Description: "Pedido de exame citopatológico"
 Usage: #example
 
@@ -162,7 +162,7 @@ Usage: #example
 Instance: encontro
 InstanceOf: Encounter
 Usage: #example
-Title: "Interação com a paciente Rosa"
+Title: "Interação (Rosa)"
 Description: "Neste encontro foi coletada a amostra e criada a requisição de exame citopatológico"
 
 * status = #finished
@@ -177,7 +177,7 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 Instance: exame-inspecao
 InstanceOf: Observation
 Usage: #example
-Title: "Rosa (inspeção do colo uterino)"
+Title: "Inspeção do colo (Rosa)"
 Description: "Resultado da inspeção do colo uterino da paciente Rosa"
 
 * meta.profile = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/inspecao-colo"
@@ -196,7 +196,7 @@ Description: "Resultado da inspeção do colo uterino da paciente Rosa"
 Instance: exame-dst
 InstanceOf: Observation
 Usage: #example
-Title: "Rosa possui sinais sugestivos de DST?"
+Title: "DST (Rosa)"
 Description: "Exame clínico que identifica se há presença ou não de sinais de doença sexualmente transmissível"
 
 * meta.profile = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/presenca-dst"
@@ -207,8 +207,8 @@ Description: "Exame clínico que identifica se há presença ou não de sinais d
 * code = http://loinc.org#45687-1
 
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
-* performer.identifier.value = "234.234.567"
+* performer = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb7)
+
 * effectiveDateTime = "2023-11-10"
 
 * valueBoolean = false
@@ -348,16 +348,15 @@ Description: "Profissional responsável pela requisição do exame citopatológi
 
 Instance: respostas-anamnese
 InstanceOf: QuestionnaireResponse
-Title: "Anamnese (exemplo)"
+Title: "Anamnese (Rosa)"
 Description: "Exemplo de respostas para anamnese de exame citopatológico de uma requisição para a paciente Rosa"
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/anamnese-questionario"
 * questionnaire = $anamnese-exame-citopatologico
 
 * status = #completed
-//* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
-//* author.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
-//* author.identifier.value = "234.234.567"
+* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
+* author = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07)
 
 * item[0]
   * linkId = "1"

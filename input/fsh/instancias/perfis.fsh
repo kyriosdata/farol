@@ -120,8 +120,6 @@ Description: "Estrutura exigida da anamnese pela requisição de exame citopatol
 
 * questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico"
 * status = #completed
-* subject 0..0
-* author 0..0
 * basedOn 0..0
 * partOf 0..0
 * encounter 0..0
@@ -382,7 +380,7 @@ Description: "Definição das questões que fazem parte da anamnese para requisi
   * type = #date
   * text = "Data da última menstruação/regra"
   * code[0] = http://loinc.org#8665-2
-  * required = true
+  * required = false
   * repeats = false
   * readOnly = true
 

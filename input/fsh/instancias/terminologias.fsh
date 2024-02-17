@@ -449,45 +449,6 @@ Description: "Motivo pelo qual a amostra é rejeitada e o laudo inviável."
 * #outras "Outras causas" "Outras causas"
 
 // ------------------------------------------------------
-// tipos-epitelios
-// ------------------------------------------------------
-
-CodeSystem: TiposDeEpitelios
-Id: tipos-epitelios
-Title: "Tipos de epitélios"
-Description: "Tipos de epitélios em amostra de exame citopatológico"
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos para tipos de epitélios.</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-epitelios"
-
-* ^status = #unknown
-* ^caseSensitive = true
-* ^experimental = false
-
-* #escamoso "Escamoso" "Escamoso"
-* #glandular "Glandular" "Glandular"
-* #metaplasico "Metaplásico" "Metaplásico"
-
-// ------------------------------------------------------
-
-ValueSet: TipoEpitelio
-Id: tipo-epitelio
-Title: "Tipo epitélio"
-Description: "Tipo de epitélio na amostra"
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para tipo de epitélio.</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipo-epitelio"
-
-* ^status = #draft
-* ^experimental = false
-
-* include codes from system TiposDeEpitelios
-
-// ------------------------------------------------------
 // tipos-adequabilidade
 // ------------------------------------------------------
 

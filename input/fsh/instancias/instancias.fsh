@@ -63,7 +63,7 @@ Description: "Pacote que reúne todos os dados pertinentes à requisição de ex
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04"
   * resource = exame-inspecao
 
-// exame (Observation)
+// exame-dst (Observation)
 * entry[+]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05"
   * resource = exame-dst
@@ -193,6 +193,7 @@ Description: "Resultado da inspeção do colo uterino da paciente Rosa"
 
 * valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo#normal
 
+
 Instance: exame-dst
 InstanceOf: Observation
 Usage: #example
@@ -207,7 +208,7 @@ Description: "Exame clínico que identifica se há presença ou não de sinais d
 * code = http://loinc.org#45687-1
 
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb7)
+* performer = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07)
 
 * effectiveDateTime = "2023-11-10"
 

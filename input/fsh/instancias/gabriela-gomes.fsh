@@ -161,7 +161,7 @@ Usage: #example
 // exame-inspecao
 * supportingInfo[1] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb04)
 
-// exame-dst
+// exame-dst-01
 * supportingInfo[2] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb05)
 
 // CNS do responsável

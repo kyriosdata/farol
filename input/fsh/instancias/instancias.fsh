@@ -1,7 +1,6 @@
 Alias: $tipodocumento = http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoDocumento
 Alias: $idade = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade
 Alias: $nivel-educacional = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional
-Alias: $siscan = http://saude.gov.br/SISCAN
 Alias: $racacor = http://www.saude.gov.br/fhir/r4/CodeSystem/BRRacaCor
 Alias: $racacoretnia = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRacaCorEtnia-1.0
 Alias: $etniaindigena = http://www.saude.gov.br/fhir/r4/CodeSystem/BREtniaIndigena
@@ -32,7 +31,7 @@ Description: "Pacote que reúne todos os dados pertinentes à requisição de ex
 // Associado ao Bundle porque o SISCAN (INCA) atribui
 // este valor a todo o conjunto de informações, inclusive
 // com a assinatura, que é fornecida no Bundle
-* identifier.system = $siscan
+* identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/siscan"
 * identifier.value = "123.456.789"
 
 // Data e hora em que a requisição foi submetida

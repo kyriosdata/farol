@@ -1,7 +1,6 @@
 Alias: $tipodocumento = http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoDocumento
 Alias: $idade = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade
 Alias: $nivel-educacional = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional
-Alias: $siscan = http://saude.gov.br/SISCAN
 Alias: $racacor = http://www.saude.gov.br/fhir/r4/CodeSystem/BRRacaCor
 Alias: $racacoretnia = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRacaCorEtnia-1.0
 Alias: $etniaindigena = http://www.saude.gov.br/fhir/r4/CodeSystem/BREtniaIndigena
@@ -32,7 +31,7 @@ Description: "Pacote que reúne todos os dados pertinentes à requisição de ex
 * type = #document
 
 // Protocolo SISCAN
-* identifier.system = $siscan
+* identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/siscan"
 * identifier.value = "123.456.001"
 
 // Data e hora em que a requisição foi submetida
@@ -80,7 +79,7 @@ Description: "Pacote que reúne todos os dados pertinentes à requisição de ex
 
 // encontro (Encounter)
 * entry[+]
-  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb08"
+  * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb08"
   * resource = encontro-01
 
 // ------------------------------------------------------
@@ -153,7 +152,7 @@ Usage: #example
 * subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
 * reasonCode[0].coding[0] = $motivos-exame#seguimento
 
-* encounter = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb08)
+* encounter = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb08)
 
 // respostas-anamnese
 * supportingInfo[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb03)
@@ -381,7 +380,7 @@ Description: "Pacote que reúne todos os dados pertinentes ao laudo de exame cit
 * type = #document
 
 // Como identificar unicamente o laudo?
-* identifier.system = $siscan
+* identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/siscan"
 * identifier.value = "laudo-gabriela-123"
 
 // Data e hora em que o pacote (Bundle) do laudo foi criado

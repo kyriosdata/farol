@@ -372,6 +372,52 @@ Description: "Exemplo de respostas para anamnese de exame citopatológico de uma
 // LAUDO
 // ------------------------------------------------------
 
+Instance: bundle-gabriela-gomes-laudo
+InstanceOf: Bundle
+Usage: #example
+Title: "Pacote laudo (Gabriela Gomes)"
+Description: "Pacote que reúne todos os dados pertinentes ao laudo de exame citopatológico da paciente Gabriela. Veja a [ficha](gabriela-gomes-laudo.jpg) de requisição correspondente."
+
+* type = #document
+
+// Como identificar unicamente o laudo?
+* identifier.system = $siscan
+* identifier.value = "laudo-gabriela-123"
+
+// Data e hora em que o pacote (Bundle) do laudo foi criado
+* timestamp = "2023-12-23T09:08:23+03:00"
+
+// Composition (primeira entrada do bundle)
+* entry[+]
+  * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb09"
+  * resource = composition-01-2
+
+// Patient
+* entry[+]
+  * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01"
+  * resource = gabriela
+
+// DiagnosticReport (diagnostico)
+* entry[+]
+  * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb10"
+  * resource = diagnostico-01
+
+// laudo (Observation - componentes do laudo)
+* entry[+]
+  * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb11"
+  * resource = laudo-componentes-01
+
+// unidade-saude (Organization)
+* entry[+]
+  * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb12"
+  * resource = laboratorio-gabriela
+
+// citopatologista (Practitioner)
+* entry[+]
+  * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb13"
+  * resource = citopatologista-01
+
+
 Instance: composition-01-2
 InstanceOf: Composition
 Usage: #inline
@@ -383,7 +429,7 @@ Description: "Laudo de exame citopatológico da paciente Gabriela Gomes"
 // Laboratory report
 * type = http://loinc.org#11502-2
 
-* author = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb07)
+* author = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb13)
 
 * title = "Pacote contendo todos os dados da requisição de Exame Citopatológico para a paciente fictícia Rosa"
 
@@ -396,23 +442,7 @@ Description: "Laudo de exame citopatológico da paciente Gabriela Gomes"
 // DiagnosticReport
 * section[+]
   * title = "Laudo (Gabriela Gomes)"
-  * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb02)
-
-* section[+]
-  * title = "Questionário da anamnese (Gabriela Gomes)"
-  * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb03)
-
-* section[+]
-  * title = "Inspeção do colo"
-  * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb04)
-
-* section[+]
-  * title = "Sinais sugestivos de doenças sexualmente transmissíveis"
-  * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb05)
-
-* section[+]
-  * title = "Unidade de Saúde Requisitante"
-  * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb06)
+  * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb10)
 
 // ------------------------------------------------------
 // laboratorio
@@ -427,10 +457,6 @@ Description: "Laboratório que emite o laudo de exame citopatológico"
 * name = "Laboratório Cito"
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
 * identifier.value = "654321"
-
-// ------------------------------------------------------
-// citopatologista
-// ------------------------------------------------------
 
 // ------------------------------------------------------
 // citopatologista
@@ -469,7 +495,7 @@ Description: "Laudo da requisição de exame da paciente Gabriela Gomes. Veja a 
 
 * category.coding = http://terminology.hl7.org/CodeSystem/v2-0074#CP
 
-* subject = Reference(gabriela)
+* subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
 
 // Data em que foi recebido o pedido
 * effectiveDateTime = "2024-01-03"
@@ -478,14 +504,15 @@ Description: "Laudo da requisição de exame da paciente Gabriela Gomes. Veja a 
 // No Brasil, UTC-3, seria 8h da manhã
 * issued = "2024-02-01T11:00:00Z"
 
-* result[0] = Reference(laudo-componentes-01)
+// Observation (componentes do laudo)
+* result[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb11)
 
-* performer[0] = Reference(laboratorio-gabriela)
-* resultsInterpreter[0] = Reference(citopatologista-01)
+* performer[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb12)
+* resultsInterpreter[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb13)
 
 
 // ------------------------------------------------------
-// rejeicao
+// componentes do laudo
 // ------------------------------------------------------
 
 Instance: laudo-componentes-01
@@ -497,7 +524,7 @@ Description: "Itens que definem o laudo da paciente Gabriela Gomes"
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/componentes-laudo-citopatologico"
 
 * subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb07)
+* performer = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb13)
 * effectiveDateTime = "2024-02-01T11:00:00Z"
 
 * status = #final

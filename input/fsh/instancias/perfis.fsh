@@ -636,9 +636,9 @@ Description: "Observação cujos componentes definem o resultado de laudo citopa
 * component[outrasMalignas].value[x] 1..1
 * component[outrasMalignas].value[x] only string
 
-* component[endometriais] ^short = "Células endometriais"
+* component[endometriais] ^short = "Presença de células endometriais"
 * component[endometriais].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#celulas-endometriais 
-* component[endometriais].code ^short = "Identifica a informação fornecida: células endometriais"
+* component[endometriais].code ^short = "Identifica presença ou não de células endometriais"
 * component[endometriais].code.coding ^short = "Código definido por uma terminologia"
 * component[endometriais].value[x] 1..1
 * component[endometriais].value[x] only boolean

@@ -304,7 +304,7 @@ Description: "Profissional responsável pela requisição do exame citopatológi
   * system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
   * value = "234.234.567"
 
-* name[0].text = "Leonarda Faria"
+* name[0].text = "Rita Goreti"
 
 // ------------------------------------------------------
 // anamnese-exame-citopatologico
@@ -498,14 +498,10 @@ Description: "Itens que definem o laudo da paciente Gabriela Gomes"
 
 * subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
 * performer = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb07)
-* effectiveDateTime = "2023-11-10"
+* effectiveDateTime = "2024-02-01T11:00:00Z"
 
 * status = #final
 * code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan#citopatologico
-
-// Modelar presença de epitélios representativos como presente ou não
-// Para cada tipo de epitélio um componente correspondente. 
-// Remover CS e VS de tipo de epitélio
 
 * component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelio-escamoso-na-amostra
 * component[=].valueBoolean = true
@@ -517,18 +513,9 @@ Description: "Itens que definem o laudo da paciente Gabriela Gomes"
 * component[=].valueBoolean = true
 
 * component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#adequabilidade
-* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-adequabilidade#outros
-* component[=].valueCodeableConcept.text = "Aqui segue a especificação para o item 'Outros'"
+* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-adequabilidade#satisfatoria
 
 * component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#normalidade
-* component[=].valueBoolean = true
-
-* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#alteracoes-benignas
-* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/alteracoes-celulares-benignas#radiacao
-* component[=].valueCodeableConcept.text = "Raios Gama"
-
-* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia
-* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/microbiologias#outros-bacilos
-* component[=].valueCodeableConcept.text = "Aqui segue a especificação dos outros bacilos"
+* component[=].valueBoolean = false
 
 * note[0].text = "Amostra parcialmente dessecada."

@@ -333,7 +333,7 @@ Description: "A unidade de saúde na qual o exame citopatológico da paciente Ro
 
 Instance: profissional
 InstanceOf: Practitioner
-Title: "Profissional de Saúde (requisição)"
+Title: "Requisitante (João da Silva)"
 Description: "Profissional responsável pela requisição do exame citopatológico para a paciente Rosa"
 
 * identifier[0]
@@ -468,7 +468,7 @@ Description: "Laudo de exame citopatológico da paciente Rosa"
 Instance: lab
 InstanceOf: Organization
 Usage: #example
-Title: "Laboratório Citopatológico"
+Title: "Laboratório Cito"
 Description: "Laboratório que emite o laudo de exame citopatológico"
 
 * name = "Laboratório Cito"
@@ -486,7 +486,7 @@ Description: "Laboratório que emite o laudo de exame citopatológico"
 
 Instance: citopatologista
 InstanceOf: Practitioner
-Title: "Citopatologista"
+Title: "Citopatologista Beltrano"
 Description: "Profissional responsável pelo laudo do exame citopatológico da paciente Rosa"
 Usage: #example
 

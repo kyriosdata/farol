@@ -273,7 +273,7 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 Instance: unidade-saude-01
 InstanceOf: Organization
 Usage: #inline
-Title: "UBS"
+Title: "UBS Vida Saudável"
 Description: "A unidade de saúde na qual o exame citopatológico da paciente Gabriela Gomes é requisitado"
 
 * name = "Unidade Básica Santa Tatiana"
@@ -296,7 +296,7 @@ Description: "A unidade de saúde na qual o exame citopatológico da paciente Ga
 
 Instance: profissional-01
 InstanceOf: Practitioner
-Title: "Profissional de Saúde (requisição)"
+Title: "Requisitante (Rita)"
 Description: "Profissional responsável pela requisição do exame citopatológico"
 
 * identifier[0]
@@ -407,7 +407,7 @@ Description: "Pacote que reúne todos os dados pertinentes ao laudo de exame cit
   * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb11"
   * resource = laudo-componentes-01
 
-// unidade-saude (Organization)
+// laboratorio (Organization)
 * entry[+]
   * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb12"
   * resource = laboratorio-gabriela
@@ -420,7 +420,7 @@ Description: "Pacote que reúne todos os dados pertinentes ao laudo de exame cit
 
 Instance: composition-01-2
 InstanceOf: Composition
-Usage: #inline
+Usage: #example
 Title: "Laudo (Gabriela Gomes)"
 Description: "Laudo de exame citopatológico da paciente Gabriela Gomes"
 
@@ -451,7 +451,7 @@ Description: "Laudo de exame citopatológico da paciente Gabriela Gomes"
 Instance: laboratorio-gabriela
 InstanceOf: Organization
 Usage: #example
-Title: "Laboratório Citopatológico"
+Title: "Laboratório Premium"
 Description: "Laboratório que emite o laudo de exame citopatológico"
 
 * name = "Laboratório Cito"
@@ -464,7 +464,7 @@ Description: "Laboratório que emite o laudo de exame citopatológico"
 
 Instance: citopatologista-01
 InstanceOf: Practitioner
-Title: "Citopatologista"
+Title: "Citopatologista Rita"
 Description: "Profissional responsável pelo laudo do exame citopatológico da paciente Rosa"
 Usage: #example
 
@@ -491,7 +491,8 @@ Description: "Laudo da requisição de exame da paciente Gabriela Gomes. Veja a 
 * identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ns/laboratorio"
 * identifier[0].value = "cito-gabriela-gomes-123"
 
-* basedOn = Reference(requisicao-01)
+* basedOn.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/siscan"
+* basedOn.identifier.value = "codigo-siscan-requisicao-123"
 
 * category.coding = http://terminology.hl7.org/CodeSystem/v2-0074#CP
 

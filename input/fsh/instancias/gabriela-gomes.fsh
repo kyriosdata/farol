@@ -478,7 +478,7 @@ Usage: #example
 
 Instance: diagnostico-01
 InstanceOf: DiagnosticReport
-Title: "Laudo (Gabriela Gomes)"
+Title: "Relatório (Gabriela Gomes)"
 Usage: #example
 Description: "Laudo da requisição de exame da paciente Gabriela Gomes. Veja a [ficha](gabriela-gomes-laudo.jpg) correspondente ao laudo"
 

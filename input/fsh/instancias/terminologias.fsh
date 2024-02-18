@@ -598,12 +598,8 @@ Description: "Células atípicas"
 * ^caseSensitive = true
 * ^experimental = false
 
-* #escamosas-1 "Possivelmente não neoplásicas (ASC-US)"
-* #escamosas-2 "Não se pode afastar lesão de alto grau (ASC-H)"
-* #glandulares-1 "Possivelmente não neoplásicas"
-* #glandulares-2 "Não se pode afastar lesão de alto grau"
-* #indefinida-1 "Possivelmente não neoplásicas"
-* #indefinida-2 "Não se pode afastar lesão de alto grau"
+* #neoplasicas "Possivelmente não neoplásicas"
+* #alto-grau "Não se pode afastar lesão de alto grau"
 
 // ------------------------------------------------------
 
@@ -621,6 +617,41 @@ Description: "Célula atípica"
 * ^experimental = false
 
 * include codes from system CelulasAtipicas
+
+
+CodeSystem: CelulasAtipicasEscamosas
+Id: celulas-atipicas-escamosas
+Title: "Classificação de células atípicas escamosas"
+Description: "Tipos de células atípicas escamosas"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos para classificação de células atípicas escamosas.</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/celulas-atipicas-escamosas"
+
+* ^status = #unknown
+* ^caseSensitive = true
+* ^experimental = false
+
+* #asc-us "Possivelmente não neoplásicas (ASC-US)"
+* #asc-h "Não se pode afastar lesão de alto grau (ASC-H)"
+
+// ------------------------------------------------------
+
+ValueSet: CelulaAtipicaEscamosa
+Id: celula-atipica-escamosa
+Title: "Célula atípica escamosa"
+Description: "Célula atípica escamosa"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para células atípicas escamosas.</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/celula-atipica-escamosa"
+
+* ^status = #draft
+* ^experimental = false
+
+* include codes from system CelulasAtipicasEscamosas
 
 // ------------------------------------------------------
 // atipias-escamosas
@@ -729,7 +760,9 @@ Description: "Tipos de avaliação de exame citopatológico"
 * #normalidade "Dentro dos limites da normalidade no material examinado?"
 * #alteracoes-benignas "Alterações celulares benignas reativas ou reparativas"
 * #microbiologia "Microbiologia"
-* #significado-indeterminado "Células atípicas de significado indeterminado"
+* #indeterminado-escamosas "Células atípicas escamosas de significado indeterminado"
+* #indeterminado-glandulares "Células atípicas glandulares de significado indeterminado"
+* #indeterminado-desconhecida "Células atípicas de significado indeterminado de origem indefinida"
 * #atipias-escamosas "Atipias em células escamosas"
 * #atipias-glandulares "Atipias em células glandulares"
 * #neoplasias-malignas "Outras neoplasias malignas"

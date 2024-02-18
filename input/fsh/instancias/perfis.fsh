@@ -504,7 +504,9 @@ Description: "Observação cujos componentes definem o resultado de laudo citopa
     normalidade 1..1 MS and
     benigno 0..1 MS and
     microbiologia 0..1 MS and
-    atipicas 0..1 MS and
+    atipicasEscamosas 0..1 MS and
+    atipicasGlandulares 0..1 MS and
+    atipicasOrigemIndefinida 0..1 MS and
     escamosas 0..1 MS and 
     glandulares 0..1 MS and
     outrasMalignas 0..1 MS and
@@ -590,18 +592,44 @@ Description: "Observação cujos componentes definem o resultado de laudo citopa
 * component[microbiologia].valueCodeableConcept.coding.code 1..1
 * component[microbiologia].valueCodeableConcept.coding.code ^short = "Código correspondente para a microbiologia"
 
-* component[atipicas] ^short = "Células atípicas de significado indeterminado"
-* component[atipicas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#significado-indeterminado 
-* component[atipicas].code ^short = "Identifica a informação fornecida: células atípicas"
-* component[atipicas].code.coding ^short = "Código definido por uma terminologia"
-* component[atipicas].value[x] 1..1
-* component[atipicas].value[x] only CodeableConcept
-* component[atipicas].valueCodeableConcept.coding 1..1
-* component[atipicas].valueCodeableConcept ^short = "O conjunto de códigos que identifica tipo de epitélio na amostra"
-* component[atipicas].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/celula-atipica (required)
-* component[atipicas].valueCodeableConcept.coding.code 1..1
-* component[atipicas].valueCodeableConcept.coding.code ^short = "Código correspondente para tipo de célula atípica de significado indeterminado."
-* component[atipicas].valueCodeableConcept.text 0..0
+* component[atipicasEscamosas] ^short = "Células atípicas escamosas de significado indeterminado"
+* component[atipicasEscamosas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#indeterminado-escamosas
+* component[atipicasEscamosas].code ^short = "Identifica a informação fornecida: células atípicas"
+* component[atipicasEscamosas].code.coding ^short = "Código definido por uma terminologia"
+* component[atipicasEscamosas].value[x] 1..1
+* component[atipicasEscamosas].value[x] only CodeableConcept
+* component[atipicasEscamosas].valueCodeableConcept.coding 1..1
+* component[atipicasEscamosas].valueCodeableConcept ^short = "O conjunto de códigos que identifica tipo de epitélio na amostra"
+* component[atipicasEscamosas].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/celula-atipica-escamosa (required)
+* component[atipicasEscamosas].valueCodeableConcept.coding.code 1..1
+* component[atipicasEscamosas].valueCodeableConcept.coding.code ^short = "Código correspondente para tipo de célula atípica de significado indeterminado."
+* component[atipicasEscamosas].valueCodeableConcept.text 0..0
+
+* component[atipicasGlandulares] ^short = "Células atípicas glandulares de significado indeterminado"
+* component[atipicasGlandulares].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#indeterminado-glandulares
+* component[atipicasGlandulares].code ^short = "Identifica tipo de células atípicas glandulares de significado indeterminado"
+* component[atipicasGlandulares].code.coding ^short = "Código definido por uma terminologia"
+* component[atipicasGlandulares].value[x] 1..1
+* component[atipicasGlandulares].value[x] only CodeableConcept
+* component[atipicasGlandulares].valueCodeableConcept.coding 1..1
+* component[atipicasGlandulares].valueCodeableConcept ^short = "O conjunto de códigos que identifica tipo de epitélio na amostra"
+* component[atipicasGlandulares].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/celula-atipica (required)
+* component[atipicasGlandulares].valueCodeableConcept.coding.code 1..1
+* component[atipicasGlandulares].valueCodeableConcept.coding.code ^short = "Código correspondente para tipo de célula atípica de significado indeterminado."
+* component[atipicasGlandulares].valueCodeableConcept.text 0..0
+
+* component[atipicasOrigemIndefinida] ^short = "Células atípicas de origem indefinida de significado indeterminado"
+* component[atipicasOrigemIndefinida].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#indeterminado-desconhecida
+* component[atipicasOrigemIndefinida].code ^short = "Identifica tipo de células atípicas de origem indefinida de significado indeterminado"
+* component[atipicasOrigemIndefinida].code.coding ^short = "Código definido por uma terminologia"
+* component[atipicasOrigemIndefinida].value[x] 1..1
+* component[atipicasOrigemIndefinida].value[x] only CodeableConcept
+* component[atipicasOrigemIndefinida].valueCodeableConcept.coding 1..1
+* component[atipicasOrigemIndefinida].valueCodeableConcept ^short = "O conjunto de códigos que identifica tipo de epitélio na amostra"
+* component[atipicasOrigemIndefinida].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/celula-atipica (required)
+* component[atipicasOrigemIndefinida].valueCodeableConcept.coding.code 1..1
+* component[atipicasOrigemIndefinida].valueCodeableConcept.coding.code ^short = "Código correspondente para tipo de célula atípica de significado indeterminado."
+* component[atipicasOrigemIndefinida].valueCodeableConcept.text 0..0
 
 * component[escamosas] ^short = "Atipias em células escamosas"
 * component[escamosas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#atipias-escamosas 

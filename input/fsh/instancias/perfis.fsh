@@ -502,7 +502,12 @@ Description: "Observação cujos componentes definem o resultado de laudo citopa
     metaplasico 0..1 MS and
     adequabilidade 1..1 MS and
     normalidade 1..1 MS and
-    benigno 0..1 MS and
+    benignaInflamacao 0..1 MS and
+    benignaMetaplasia 0..1 MS and
+    benignaReparacao 0..1 MS and
+    benignaAtrofia 0..1 MS and
+    benignaRadiacao 0..1 MS and
+    benignaOutra 0..1 MS and
     microbiologia 0..1 MS and
     atipicasEscamosas 0..1 MS and
     atipicasGlandulares 0..1 MS and
@@ -568,17 +573,55 @@ Description: "Observação cujos componentes definem o resultado de laudo citopa
 * component[normalidade].value[x] 1..1
 * component[normalidade].value[x] only boolean
 
-* component[benigno] ^short = "Alterações celulares benignas reativas ou reparativas"
-* component[benigno].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#alteracoes-benignas 
-* component[benigno].code ^short = "Identifica a informação fornecida: alterações benignas do material"
-* component[benigno].code.coding ^short = "Código definido por uma terminologia"
-* component[benigno].value[x] 1..1
-* component[benigno].value[x] only CodeableConcept
-* component[benigno].valueCodeableConcept.coding 1..1
-* component[benigno].valueCodeableConcept ^short = "O conjunto de códigos que identifica tipo de epitélio na amostra"
-* component[benigno].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/alteracao-celular-benigna (required)
-* component[benigno].valueCodeableConcept.coding.code 1..1
-* component[benigno].valueCodeableConcept.coding.code ^short = "Código correspondente ao tipo de alteração celular benigna"
+* component[benignaInflamacao] ^short = "Alterações celulares benignas reativas ou reparativas (inflamação)"
+* component[benignaInflamacao].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#benigna-inflamacao
+* component[benignaInflamacao].code ^short = "Identifica a presença ou não de inflamação (alteração benigna)"
+* component[benignaInflamacao].code.coding ^short = "Código definido por uma terminologia"
+* component[benignaInflamacao].value[x] 0..1
+* component[benignaInflamacao].value[x] only boolean
+
+* component[benignaMetaplasia] ^short = "Alterações celulares benignas reativas ou reparativas (metaplasia)"
+* component[benignaMetaplasia].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#benigna-metaplasia
+* component[benignaMetaplasia].code ^short = "Identifica a presença ou não de metaplasia (alteração benigna)"
+* component[benignaMetaplasia].code.coding ^short = "Código definido por uma terminologia"
+* component[benignaMetaplasia].value[x] 0..1
+* component[benignaMetaplasia].value[x] only boolean
+
+* component[benignaReparacao] ^short = "Alterações celulares benignas reativas ou reparativas (reparação)"
+* component[benignaReparacao].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#benigna-reparacao
+* component[benignaReparacao].code ^short = "Identifica a presença ou não de reparação (alteração benigna)"
+* component[benignaReparacao].code.coding ^short = "Código definido por uma terminologia"
+* component[benignaReparacao].value[x] 0..1
+* component[benignaReparacao].value[x] only boolean
+
+* component[benignaAtrofia] ^short = "Alterações celulares benignas reativas ou reparativas (atrofia com inflamação)"
+* component[benignaAtrofia].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#benigna-atrofia
+* component[benignaAtrofia].code ^short = "Identifica a presença ou não de atrofia com inflamação (alteração benigna)"
+* component[benignaAtrofia].code.coding ^short = "Código definido por uma terminologia"
+* component[benignaAtrofia].value[x] 0..1
+* component[benignaAtrofia].value[x] only boolean
+
+* component[benignaRadiacao] ^short = "Alterações celulares benignas reativas ou reparativas (radiação)"
+* component[benignaRadiacao].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#benigna-radiacao
+* component[benignaRadiacao].code ^short = "Identifica a presença ou não de atrofia com radiação (alteração benigna)"
+* component[benignaRadiacao].code.coding ^short = "Código definido por uma terminologia"
+* component[benignaRadiacao].value[x] 1..1
+* component[benignaRadiacao].value[x] only CodeableConcept
+* component[benignaRadiacao].valueCodeableConcept ^short = "O conjunto de códigos que identifica tipo de epitélio na amostra"
+* component[benignaRadiacao].valueCodeableConcept.coding 0..0
+* component[benignaRadiacao].valueCodeableConcept.text 1..1
+* component[benignaRadiacao].valueCodeableConcept.text ^short = "Especificação da radiação" 
+
+* component[benignaOutra] ^short = "Alterações celulares benignas reativas ou reparativas (outra a ser especificada)"
+* component[benignaOutra].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#benigna-outra
+* component[benignaOutra].code ^short = "Identifica a presença ou não de outra alteração não especificada previamente (alteração benigna)"
+* component[benignaOutra].code.coding ^short = "Código definido por uma terminologia"
+* component[benignaOutra].value[x] 1..1
+* component[benignaOutra].value[x] only CodeableConcept
+* component[benignaOutra].valueCodeableConcept ^short = "O conjunto de códigos que identifica tipo de epitélio na amostra"
+* component[benignaOutra].valueCodeableConcept.coding 0..0
+* component[benignaOutra].valueCodeableConcept.text 1..1
+* component[benignaOutra].valueCodeableConcept.text ^short = "Especificação da radiação" 
 
 * component[microbiologia] ^short = "Microbiologia"
 * component[microbiologia].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia 

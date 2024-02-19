@@ -284,7 +284,7 @@ Description: "Exemplo de respostas para anamnese de exame citopatológico de uma
 * item[+]
   * linkId = "8"
   * answer[0].valueDate = "2023-11-27"
-  * text = "Data da última menstruação"
+//  * text = "Data da última menstruação/regra"
 
 * item[+]
   * linkId = "9"

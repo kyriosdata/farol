@@ -500,8 +500,8 @@ Description: "Observação cujos componentes definem o resultado de laudo citopa
     escamoso 0..1 MS and
     glandular 0..1 MS and
     metaplasico 0..1 MS and
-    adequabilidade 1..1 MS and
-    normalidade 1..1 MS and
+    adequabilidade 0..1 MS and
+    normalidade 0..1 MS and
     benignaInflamacao 0..1 MS and
     benignaMetaplasia 0..1 MS and
     benignaReparacao 0..1 MS and

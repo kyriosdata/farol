@@ -12,7 +12,7 @@ Extension: Etnia
 Id:   etnia
 Title:  "Etnia"
 Description: """
-Similar ao perfil BRRacaCorEtnia (atualmente, 11/02/2924, incompleto).
+Similar ao perfil BRRacaCorEtnia (RNDS), mas inclompleto em 19/02/2024.
 """
 
 * ^text.status = #empty

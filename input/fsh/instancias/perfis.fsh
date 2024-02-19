@@ -105,7 +105,7 @@ Description: "Definição das informações que devem constar em toda e qualquer
 
 * supportingInfo ^short = "O laudo de exame citopatológico depende de dois grupos principais de informações: dados da anamnese e de exame clínico."
 * supportingInfo only Reference(inspecao-colo or presenca-dst or AnamneseQuestionario)
-* supportingInfo 3..3
+* supportingInfo 1..3
 
 
 Profile: AnamneseQuestionario

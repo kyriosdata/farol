@@ -776,7 +776,6 @@ Description: "Tipos de avaliação de exame citopatológico"
 * #microbiologia-bacilos "Bacilos supracitoplasmáticos (sugestivos de Gordnerella/Mobiluncus)"
 * #microbiologia-outros-bacilos "Outros bacilos"
 * #microbiologia-outros "Outros"
-
 * #indeterminado-escamosas "Células atípicas escamosas de significado indeterminado"
 * #indeterminado-glandulares "Células atípicas glandulares de significado indeterminado"
 * #indeterminado-desconhecida "Células atípicas de significado indeterminado de origem indefinida"

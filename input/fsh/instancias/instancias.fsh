@@ -1,6 +1,5 @@
 Alias: $tipodocumento = http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoDocumento
 Alias: $idade = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade
-Alias: $nivel-educacional = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional
 Alias: $racacor = http://www.saude.gov.br/fhir/r4/CodeSystem/BRRacaCor
 Alias: $racacoretnia = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRacaCorEtnia-1.0
 Alias: $etniaindigena = http://www.saude.gov.br/fhir/r4/CodeSystem/BREtniaIndigena
@@ -281,7 +280,7 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
   * version = "01.00"
 
 // Nível de escolaridade
-* extension[4].url = $nivel-educacional
+* extension[4].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional"
 * extension[4].valueCode = #LA12462-0
 
 * address[0]

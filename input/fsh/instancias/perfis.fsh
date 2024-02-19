@@ -508,7 +508,16 @@ Description: "Observação cujos componentes definem o resultado de laudo citopa
     benignaAtrofia 0..1 MS and
     benignaRadiacao 0..1 MS and
     benignaOutra 0..1 MS and
-    microbiologia 0..1 MS and
+    microbiologiaLactobaciluus 0..1 MS and
+    microbiologiaCocos 0..1 MS and
+    microbiologiaChlamydia 0..1 MS and
+    microbiologiaActinomyces 0..1 MS and
+    microbiologiaCandida 0..1 MS and
+    microbiologiaTrichomonas 0..1 MS and
+    microbiologiaHerpes 0..1 MS and
+    microbiologiaBacilos 0..1 MS and
+    microbiologiaOutrosBacilos 0..1 MS and
+    microbiologiaOutros 0..1 MS and
     atipicasEscamosas 0..1 MS and
     atipicasGlandulares 0..1 MS and
     atipicasOrigemIndefinida 0..1 MS and
@@ -623,17 +632,83 @@ Description: "Observação cujos componentes definem o resultado de laudo citopa
 * component[benignaOutra].valueCodeableConcept.text 1..1
 * component[benignaOutra].valueCodeableConcept.text ^short = "Especificação da radiação" 
 
-* component[microbiologia] ^short = "Microbiologia"
-* component[microbiologia].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia 
-* component[microbiologia].code ^short = "Identifica a informação fornecida: microbiologia"
-* component[microbiologia].code.coding ^short = "Código definido por uma terminologia"
-* component[microbiologia].value[x] 1..1
-* component[microbiologia].value[x] only CodeableConcept
-* component[microbiologia].valueCodeableConcept.coding 1..1
-* component[microbiologia].valueCodeableConcept ^short = "O conjunto de códigos que identifica tipo de epitélio na amostra"
-* component[microbiologia].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/microbiologia (required)
-* component[microbiologia].valueCodeableConcept.coding.code 1..1
-* component[microbiologia].valueCodeableConcept.coding.code ^short = "Código correspondente para a microbiologia"
+* component[microbiologiaLactobaciluus] ^short = "Microbiologia - Lactobacillus sp"
+* component[microbiologiaLactobaciluus].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia-lactobacillus 
+* component[microbiologiaLactobaciluus].code ^short = "Identifica a informação fornecida: microbiologia"
+* component[microbiologiaLactobaciluus].code.coding ^short = "Código definido por uma terminologia"
+* component[microbiologiaLactobaciluus].value[x] 1..1
+* component[microbiologiaLactobaciluus].value[x] only boolean
+
+* component[microbiologiaCocos] ^short = "Microbiologia - Cocos"
+* component[microbiologiaCocos].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia-cocos 
+* component[microbiologiaCocos].code ^short = "Identifica a informação fornecida: microbiologia"
+* component[microbiologiaCocos].code.coding ^short = "Código definido por uma terminologia"
+* component[microbiologiaCocos].value[x] 1..1
+* component[microbiologiaCocos].value[x] only boolean
+
+* component[microbiologiaChlamydia] ^short = "Microbiologia - Chlamydia"
+* component[microbiologiaChlamydia].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia-chlamydia 
+* component[microbiologiaChlamydia].code ^short = "Identifica a informação fornecida: microbiologia"
+* component[microbiologiaChlamydia].code.coding ^short = "Código definido por uma terminologia"
+* component[microbiologiaChlamydia].value[x] 1..1
+* component[microbiologiaChlamydia].value[x] only boolean
+
+* component[microbiologiaActinomyces] ^short = "Microbiologia - Actinomyces"
+* component[microbiologiaActinomyces].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia-actinomyces 
+* component[microbiologiaActinomyces].code ^short = "Identifica a informação fornecida: microbiologia"
+* component[microbiologiaActinomyces].code.coding ^short = "Código definido por uma terminologia"
+* component[microbiologiaActinomyces].value[x] 1..1
+* component[microbiologiaActinomyces].value[x] only boolean
+
+* component[microbiologiaCandida] ^short = "Microbiologia - Candida"
+* component[microbiologiaCandida].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia-candida 
+* component[microbiologiaCandida].code ^short = "Identifica a informação fornecida: microbiologia"
+* component[microbiologiaCandida].code.coding ^short = "Código definido por uma terminologia"
+* component[microbiologiaCandida].value[x] 1..1
+* component[microbiologiaCandida].value[x] only boolean
+
+* component[microbiologiaTrichomonas] ^short = "Microbiologia - Trichomonas"
+* component[microbiologiaTrichomonas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia-trichomonas
+* component[microbiologiaTrichomonas].code ^short = "Identifica a informação fornecida: microbiologia"
+* component[microbiologiaTrichomonas].code.coding ^short = "Código definido por uma terminologia"
+* component[microbiologiaTrichomonas].value[x] 1..1
+* component[microbiologiaTrichomonas].value[x] only boolean
+
+* component[microbiologiaHerpes] ^short = "Microbiologia - Herpes"
+* component[microbiologiaHerpes].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia-herpes 
+* component[microbiologiaHerpes].code ^short = "Identifica a informação fornecida: microbiologia"
+* component[microbiologiaHerpes].code.coding ^short = "Código definido por uma terminologia"
+* component[microbiologiaHerpes].value[x] 1..1
+* component[microbiologiaHerpes].value[x] only boolean
+
+* component[microbiologiaBacilos] ^short = "Microbiologia - Bacilos"
+* component[microbiologiaBacilos].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia-bacilos 
+* component[microbiologiaBacilos].code ^short = "Identifica a informação fornecida: microbiologia"
+* component[microbiologiaBacilos].code.coding ^short = "Código definido por uma terminologia"
+* component[microbiologiaBacilos].value[x] 1..1
+* component[microbiologiaBacilos].value[x] only boolean
+
+* component[microbiologiaOutrosBacilos] ^short = "Microbiologia - Outros bacilos"
+* component[microbiologiaOutrosBacilos].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia-outros-bacilos 
+* component[microbiologiaOutrosBacilos].code ^short = "Identifica a informação fornecida: microbiologia"
+* component[microbiologiaOutrosBacilos].code.coding ^short = "Código definido por uma terminologia"
+* component[microbiologiaOutrosBacilos].value[x] 1..1
+* component[microbiologiaOutrosBacilos].value[x] only CodeableConcept
+* component[microbiologiaOutrosBacilos].valueCodeableConcept.coding 0..0
+* component[microbiologiaOutrosBacilos].valueCodeableConcept ^short = "O conjunto de códigos que identifica tipo de epitélio na amostra"
+* component[microbiologiaOutrosBacilos].valueCodeableConcept.text 1..1
+* component[microbiologiaOutrosBacilos].valueCodeableConcept.text ^short = "Identificação dos outros bacilos"
+
+* component[microbiologiaOutros] ^short = "Microbiologia - Outros"
+* component[microbiologiaOutros].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia-outros 
+* component[microbiologiaOutros].code ^short = "Identifica a informação fornecida: microbiologia"
+* component[microbiologiaOutros].code.coding ^short = "Código definido por uma terminologia"
+* component[microbiologiaOutros].value[x] 1..1
+* component[microbiologiaOutros].value[x] only CodeableConcept
+* component[microbiologiaOutros].valueCodeableConcept.coding 0..0
+* component[microbiologiaOutros].valueCodeableConcept ^short = "O conjunto de códigos que identifica tipo de epitélio na amostra"
+* component[microbiologiaOutros].valueCodeableConcept.text 1..1
+* component[microbiologiaOutros].valueCodeableConcept.text ^short = "Identificação de outros elementos microbiológicos"
 
 * component[atipicasEscamosas] ^short = "Células atípicas escamosas de significado indeterminado"
 * component[atipicasEscamosas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#indeterminado-escamosas

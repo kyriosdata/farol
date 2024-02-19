@@ -563,9 +563,8 @@ Description: "Itens que definem o laudo da paciente Rosa"
 * component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#benigna-radiacao
 * component[=].valueCodeableConcept.text = "Raios Gama"
 
-* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia
-* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/microbiologias#outros-bacilos
-* component[=].valueCodeableConcept.text = "Aqui segue a especificação dos outros bacilos"
+* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia-candida
+* component[=].valueBoolean = true
 
 
 * note[0].text = "Aqui seguem as observações gerais"

@@ -4,7 +4,7 @@
 
 Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb01
 InstanceOf: Patient
-Usage: #example
+Usage: #inline
 Title: "Paciente (Talita)"
 Description: "Paciente fictícia para requisição e laudo de exame citopatológico"
 
@@ -50,7 +50,7 @@ Description: "Paciente fictícia para requisição e laudo de exame citopatológ
 
 Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb06
 InstanceOf: Organization
-Usage: #example
+Usage: #inline
 Title: "UBS 5"
 Description: "A unidade de saúde na qual o exame citopatológico da paciente Talita é requisitado"
 
@@ -76,6 +76,7 @@ Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb07
 InstanceOf: Practitioner
 Title: "Requisitante (Leonarda)"
 Description: "Profissional responsável pela requisição do exame citopatológico"
+Usage: #inline
 
 * identifier[0]
   * use = #official
@@ -90,7 +91,7 @@ Description: "Profissional responsável pela requisição do exame citopatológi
 
 Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb04
 InstanceOf: Observation
-Usage: #example
+Usage: #inline
 Title: "Inspeção colo (Talita)"
 Description: "Resultado da inspeção do colo uterino da paciente Talita"
 
@@ -108,7 +109,7 @@ Description: "Resultado da inspeção do colo uterino da paciente Talita"
 
 Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb05
 InstanceOf: Observation
-Usage: #example
+Usage: #inline
 Title: "DST (Talita)"
 Description: "Exame clínico que identifica se há presença ou não de sinais de doença sexualmente transmissível"
 
@@ -130,7 +131,8 @@ Description: "Exame clínico que identifica se há presença ou não de sinais d
 Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb03
 InstanceOf: QuestionnaireResponse
 Title: "Anamnese (Talita)"
-Description: "Exemplo de respostas para anamnese de exame citopatológico de uma requisição para a paciente Talita"
+Description: "Anamnese da paciente Talita"
+Usage: #inline
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/anamnese-questionario"
 * questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico"
@@ -197,7 +199,7 @@ Description: "Exemplo de respostas para anamnese de exame citopatológico de uma
 
 Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb08
 InstanceOf: Encounter
-Usage: #example
+Usage: #inline
 Title: "Interação (Talita)"
 Description: "Neste encontro foi coletada a amostra e criada a requisição de exame citopatológico da paciente Talita"
 
@@ -219,9 +221,9 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 
 Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb02
 InstanceOf: ServiceRequest
-Title: "Detalhes da requisição (Talita)"
-Description: "Detalhes da requisição de exame citopatológico da Talita"
-Usage: #example
+Title: "Requisição (Talita)"
+Description: "Requisição de exame citopatológico da Talita"
+Usage: #inline
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
 
@@ -259,7 +261,7 @@ Usage: #example
 
 Instance: composition-talita
 InstanceOf: Composition
-Usage: #example
+Usage: #inline
 Title: "Requisição (Talita)"
 Description: "Requisição de Exame Citopatológico da paciente Talita"
 
@@ -292,8 +294,8 @@ Description: "Requisição de Exame Citopatológico da paciente Talita"
 Instance: bundle-talita
 InstanceOf: Bundle
 Usage: #example
-Title: "Pacote (Talita)"
-Description: "Pacote que reúne todos os dados pertinentes à requisição de exame citopatológico da paciente Talita. Veja a [ficha](talita-moreira.jpg) de requisição correspondente."
+Title: "Requisição (Talita)"
+Description: "Requisição de exame citopatológico (Talita). Veja a [ficha](talita-moreira.jpg) correspondente."
 
 * type = #document
 
@@ -362,7 +364,7 @@ Description: "Pacote que reúne todos os dados pertinentes à requisição de ex
 
 Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb12
 InstanceOf: Organization
-Usage: #example
+Usage: #inline
 Title: "Laboratório Quali"
 Description: "Laboratório que emite o laudo de exame citopatológico"
 
@@ -378,7 +380,7 @@ Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb13
 InstanceOf: Practitioner
 Title: "Citopatologista Rita"
 Description: "Profissional responsável pelo laudo do exame citopatológico da paciente Talita"
-Usage: #example
+Usage: #inline
 
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
 * identifier.value = "2345234234234"
@@ -390,7 +392,7 @@ Usage: #example
 
 Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb11
 InstanceOf: Observation
-Usage: #example
+Usage: #inline
 Title: "Itens do laudo (Talita)"
 Description: "Itens que definem o laudo da paciente Talita"
 
@@ -431,7 +433,7 @@ Description: "Itens que definem o laudo da paciente Talita"
 Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb10
 InstanceOf: DiagnosticReport
 Title: "Relatório (Talita)"
-Usage: #example
+Usage: #inline
 Description: "Laudo da requisição de exame da paciente Talita. Veja a [ficha](talita-moreira-laudo.jpg) correspondente ao laudo"
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/diagnostico-citopatologico"
@@ -474,7 +476,7 @@ Description: "Laudo da requisição de exame da paciente Talita. Veja a [ficha](
 
 Instance: composition-05-2
 InstanceOf: Composition
-Usage: #example
+Usage: #inline
 Title: "Laudo (Talita)"
 Description: "Laudo de exame citopatológico da paciente Talita"
 
@@ -507,8 +509,8 @@ Description: "Laudo de exame citopatológico da paciente Talita"
 Instance: bundle-talita-laudo
 InstanceOf: Bundle
 Usage: #example
-Title: "Pacote laudo (Talita)"
-Description: "Pacote que reúne todos os dados pertinentes ao laudo de exame citopatológico da paciente Bruna. Veja a [ficha](talita-moreira-laudo.jpg) de requisição correspondente."
+Title: "Laudo (Talita)"
+Description: "Laudo de exame citopatológico (Talita). Veja a [ficha](talita-moreira-laudo.jpg) correspondente."
 
 * type = #document
 

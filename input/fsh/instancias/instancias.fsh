@@ -21,8 +21,8 @@ Alias: $anamnese-exame-citopatologico = https://fhir.fabrica.inf.ufg.br/ccu/Ques
 Instance: bundle-rosa
 InstanceOf: Bundle
 Usage: #example
-Title: "Pacote (Rosa)"
-Description: "Pacote que reúne todos os dados pertinentes à requisição de exame citopatológico da paciente Rosa. Trata-se de um mecanismo tecnológico para reunir todas as partes de um documento."
+Title: "Requisição (Rosa)"
+Description: "Requisição de exame citopatológico (Rosa)."
 
 * type = #document
 
@@ -116,9 +116,9 @@ Description: "Requisição de Exame Citopatológico da paciente Rosa"
 
 Instance: requisicao
 InstanceOf: ServiceRequest
-Title: "Detalhes da requisição (Rosa)"
-Description: "Pedido de exame citopatológico"
-Usage: #example
+Title: "Requisição (Rosa)"
+Description: "Requisição de exame citopatológico da Rosa"
+Usage: #inline
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
 
@@ -159,7 +159,7 @@ Usage: #example
 
 Instance: encontro
 InstanceOf: Encounter
-Usage: #example
+Usage: #inline
 Title: "Interação (Rosa)"
 Description: "Neste encontro foi coletada a amostra e criada a requisição de exame citopatológico"
 
@@ -174,7 +174,7 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 
 Instance: exame-inspecao
 InstanceOf: Observation
-Usage: #example
+Usage: #inline
 Title: "Inspeção colo (Rosa)"
 Description: "Resultado da inspeção do colo uterino da paciente Rosa"
 
@@ -194,7 +194,7 @@ Description: "Resultado da inspeção do colo uterino da paciente Rosa"
 
 Instance: exame-dst
 InstanceOf: Observation
-Usage: #example
+Usage: #inline
 Title: "DST (Rosa)"
 Description: "Exame clínico que identifica se há presença ou não de sinais de doença sexualmente transmissível"
 
@@ -218,7 +218,7 @@ Description: "Exame clínico que identifica se há presença ou não de sinais d
 
 Instance: rosa
 InstanceOf: Patient
-Usage: #example
+Usage: #inline
 Title: "Paciente (Rosa)"
 Description: "Paciente para a qual há requisição e laudo de exame citopatológico"
 
@@ -333,6 +333,7 @@ Instance: profissional
 InstanceOf: Practitioner
 Title: "Requisitante (João da Silva)"
 Description: "Profissional responsável pela requisição do exame citopatológico para a paciente Rosa"
+Usage: #inline
 
 * identifier[0]
   * use = #official
@@ -348,7 +349,8 @@ Description: "Profissional responsável pela requisição do exame citopatológi
 Instance: respostas-anamnese
 InstanceOf: QuestionnaireResponse
 Title: "Anamnese (Rosa)"
-Description: "Exemplo de respostas para anamnese de exame citopatológico de uma requisição para a paciente Rosa"
+Description: "Anamnese da paciente Rosa"
+Usage: #inline
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/anamnese-questionario"
 * questionnaire = $anamnese-exame-citopatologico
@@ -419,7 +421,7 @@ Description: "Exemplo de respostas para anamnese de exame citopatológico de uma
 
 Instance: composition-2
 InstanceOf: Composition
-Usage: #example
+Usage: #inline
 Title: "Laudo (Rosa)"
 Description: "Laudo de exame citopatológico da paciente Rosa"
 
@@ -465,7 +467,7 @@ Description: "Laudo de exame citopatológico da paciente Rosa"
 
 Instance: lab
 InstanceOf: Organization
-Usage: #example
+Usage: #inline
 Title: "Laboratório Cito"
 Description: "Laboratório que emite o laudo de exame citopatológico"
 
@@ -486,7 +488,7 @@ Instance: citopatologista
 InstanceOf: Practitioner
 Title: "Citopatologista Beltrano"
 Description: "Profissional responsável pelo laudo do exame citopatológico da paciente Rosa"
-Usage: #example
+Usage: #inline
 
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
 * identifier.value = "2345234234234"
@@ -529,7 +531,7 @@ Description: "Laudo da requisição de exame da paciente Rosa"
 
 Instance: laudo-componentes
 InstanceOf: Observation
-Usage: #example
+Usage: #inline
 Title: "Itens do laudo (Rosa)"
 Description: "Itens que definem o laudo da paciente Rosa"
 

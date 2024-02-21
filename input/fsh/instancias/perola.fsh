@@ -7,8 +7,8 @@
 Instance: bundle-perola
 InstanceOf: Bundle
 Usage: #example
-Title: "Pacote (Pérola)"
-Description: "Pacote que reúne todos os dados pertinentes à requisição de exame citopatológico da paciente Pérola. Veja a [ficha](perola-faria.jpg) de requisição correspondente."
+Title: "Requisição (Pérola)"
+Description: "Requisição de exame citopatológico (Pérola). Veja a [ficha](perola-faria.jpg) correspondente."
 
 * type = #document
 
@@ -90,9 +90,9 @@ Description: "Requisição de Exame Citopatológico da paciente Pérola"
 
 Instance: requisicao-04
 InstanceOf: ServiceRequest
-Title: "Detalhes da requisição (Pérola)"
-Description: "Detalhes da requisição de exame citopatológico da Pérola"
-Usage: #example
+Title: "Requisição (Pérola)"
+Description: "Requisição de exame citopatológico da Pérola"
+Usage: #inline
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
 
@@ -121,7 +121,7 @@ Usage: #example
 
 Instance: encontro-04
 InstanceOf: Encounter
-Usage: #example
+Usage: #inline
 Title: "Interação (Pérola)"
 Description: "Neste encontro foi coletada a amostra e criada a requisição de exame citopatológico da paciente Pérola"
 
@@ -144,7 +144,7 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 
 Instance: perola
 InstanceOf: Patient
-Usage: #example
+Usage: #inline
 Title: "Paciente (Pérola)"
 Description: "Paciente para a qual há requisição e laudo de exame citopatológico"
 
@@ -220,6 +220,7 @@ Instance: profissional-04
 InstanceOf: Practitioner
 Title: "Requisitante (Rita 3)"
 Description: "Profissional responsável pela requisição do exame citopatológico"
+Usage: #inline
 
 * identifier[0]
   * use = #official
@@ -235,7 +236,8 @@ Description: "Profissional responsável pela requisição do exame citopatológi
 Instance: respostas-anamnese-04
 InstanceOf: QuestionnaireResponse
 Title: "Anamnese (Pérola)"
-Description: "Exemplo de respostas para anamnese de exame citopatológico de uma requisição para a paciente Bruna"
+Description: "Anamnese da paciente Pérola"
+Usage: #inline
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/anamnese-questionario"
 * questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico"
@@ -302,8 +304,8 @@ Description: "Exemplo de respostas para anamnese de exame citopatológico de uma
 Instance: bundle-perola-laudo
 InstanceOf: Bundle
 Usage: #example
-Title: "Pacote laudo (Pérola)"
-Description: "Pacote que reúne todos os dados pertinentes ao laudo de exame citopatológico da paciente Bruna. Veja a [ficha](perola-faria-laudo.jpg) de requisição correspondente."
+Title: "Laudo (Pérola)"
+Description: "Laudo de exame citopatológico (Pérola). Veja a [ficha](perola-faria-laudo.jpg) correspondente."
 
 * type = #document
 
@@ -351,7 +353,7 @@ Description: "Pacote que reúne todos os dados pertinentes ao laudo de exame cit
 
 Instance: composition-04-2
 InstanceOf: Composition
-Usage: #example
+Usage: #inline
 Title: "Laudo (Renata)"
 Description: "Laudo de exame citopatológico da paciente Renata"
 
@@ -381,7 +383,7 @@ Description: "Laudo de exame citopatológico da paciente Renata"
 
 Instance: laboratorio-perola
 InstanceOf: Organization
-Usage: #example
+Usage: #inline
 Title: "Laboratório Qualidade"
 Description: "Laboratório que emite o laudo de exame citopatológico"
 
@@ -397,7 +399,7 @@ Instance: citopatologista-04
 InstanceOf: Practitioner
 Title: "Citopatologista Tânia"
 Description: "Profissional responsável pelo laudo do exame citopatológico da paciente Pérola"
-Usage: #example
+Usage: #inline
 
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
 * identifier.value = "2345234234234"
@@ -410,7 +412,7 @@ Usage: #example
 Instance: diagnostico-perola
 InstanceOf: DiagnosticReport
 Title: "Relatório (Pérola)"
-Usage: #example
+Usage: #inline
 Description: "Laudo da requisição de exame da paciente Pérola. Veja a [ficha](perola-faria-laudo.jpg) correspondente ao laudo"
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/diagnostico-citopatologico"
@@ -449,7 +451,7 @@ Description: "Laudo da requisição de exame da paciente Pérola. Veja a [ficha]
 
 Instance: laudo-componentes-04
 InstanceOf: Observation
-Usage: #example
+Usage: #inline
 Title: "Itens do laudo (Pérola)"
 Description: "Itens que definem o laudo da paciente Pérola"
 

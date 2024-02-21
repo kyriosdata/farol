@@ -25,14 +25,14 @@ Alias: $anamnese-exame-citopatologico = https://fhir.fabrica.inf.ufg.br/ccu/Ques
 Instance: bundle-gabriela-gomes
 InstanceOf: Bundle
 Usage: #example
-Title: "Pacote (Gabriela Gomes)"
-Description: "Pacote que reúne todos os dados pertinentes à requisição de exame citopatológico da paciente Gabriela. Veja a [ficha](gabriela-gomes.jpg) de requisição correspondente."
+Title: "Requisição (Gabriela)"
+Description: "Requisição de exame citopatológico (Gabriela). Veja a [ficha](gabriela-gomes.jpg) correspondente."
 
 * type = #document
 
 // Protocolo SISCAN
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/siscan"
-* identifier.value = "123.456.001"
+* identifier.value = "000.000.001"
 
 // Data e hora em que a requisição foi submetida
 * timestamp = "2023-12-23T09:08:23+03:00"
@@ -133,9 +133,9 @@ Description: "Requisição de Exame Citopatológico da paciente Gabriela"
 
 Instance: requisicao-01
 InstanceOf: ServiceRequest
-Title: "Detalhes da requisição (Gabriela Gomes)"
-Description: "Detalhes da requisição de exame citopatológico da Gabriela Gomes"
-Usage: #example
+Title: "Requisição (Gabriela Gomes)"
+Description: "Requisição de exame citopatológico da Gabriela Gomes"
+Usage: #inline
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
 
@@ -168,7 +168,7 @@ Usage: #example
 
 Instance: encontro-01
 InstanceOf: Encounter
-Usage: #example
+Usage: #inline
 Title: "Interação (Gabriela Gomes)"
 Description: "Neste encontro foi coletada a amostra e criada a requisição de exame citopatológico"
 
@@ -183,7 +183,7 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 
 Instance: exame-inspecao-01
 InstanceOf: Observation
-Usage: #example
+Usage: #inline
 Title: "Inspeção colo (Gabriela Gomes)"
 Description: "Resultado da inspeção do colo uterino da paciente Gabriela"
 * status = #final
@@ -200,7 +200,7 @@ Description: "Resultado da inspeção do colo uterino da paciente Gabriela"
 
 Instance: exame-dst-01
 InstanceOf: Observation
-Usage: #example
+Usage: #inline
 Title: "DST (Gabriela Gomes)"
 Description: "Exame clínico que identifica se há presença ou não de sinais de doença sexualmente transmissível"
 
@@ -221,7 +221,7 @@ Description: "Exame clínico que identifica se há presença ou não de sinais d
 
 Instance: gabriela
 InstanceOf: Patient
-Usage: #example
+Usage: #inline
 Title: "Paciente (Gabriela Gomes)"
 Description: "Paciente para a qual há requisição e laudo de exame citopatológico"
 
@@ -297,6 +297,7 @@ Instance: profissional-01
 InstanceOf: Practitioner
 Title: "Requisitante (Rita)"
 Description: "Profissional responsável pela requisição do exame citopatológico"
+Usage: #inline
 
 * identifier[0]
   * use = #official
@@ -312,7 +313,8 @@ Description: "Profissional responsável pela requisição do exame citopatológi
 Instance: respostas-anamnese-01
 InstanceOf: QuestionnaireResponse
 Title: "Anamnese (Gabriela Gomes)"
-Description: "Exemplo de respostas para anamnese de exame citopatológico de uma requisição para a paciente Rosa"
+Description: "Anamnese da paciente Gabriela"
+Usage: #inline
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/anamnese-questionario"
 * questionnaire = $anamnese-exame-citopatologico
@@ -374,8 +376,8 @@ Description: "Exemplo de respostas para anamnese de exame citopatológico de uma
 Instance: bundle-gabriela-gomes-laudo
 InstanceOf: Bundle
 Usage: #example
-Title: "Pacote laudo (Gabriela Gomes)"
-Description: "Pacote que reúne todos os dados pertinentes ao laudo de exame citopatológico da paciente Gabriela. Veja a [ficha](gabriela-gomes-laudo.jpg) de requisição correspondente."
+Title: "Laudo (Gabriela)"
+Description: "Laudo de exame citopatológico (Gabriela). Veja a [ficha](gabriela-gomes-laudo.jpg) correspondente."
 
 * type = #document
 
@@ -419,7 +421,7 @@ Description: "Pacote que reúne todos os dados pertinentes ao laudo de exame cit
 
 Instance: composition-01-2
 InstanceOf: Composition
-Usage: #example
+Usage: #inline
 Title: "Laudo (Gabriela Gomes)"
 Description: "Laudo de exame citopatológico da paciente Gabriela Gomes"
 
@@ -449,7 +451,7 @@ Description: "Laudo de exame citopatológico da paciente Gabriela Gomes"
 
 Instance: laboratorio-gabriela
 InstanceOf: Organization
-Usage: #example
+Usage: #inline
 Title: "Laboratório Premium"
 Description: "Laboratório que emite o laudo de exame citopatológico"
 
@@ -465,7 +467,7 @@ Instance: citopatologista-01
 InstanceOf: Practitioner
 Title: "Citopatologista Rita"
 Description: "Profissional responsável pelo laudo do exame citopatológico da paciente Rosa"
-Usage: #example
+Usage: #inline
 
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
 * identifier.value = "2345234234234"
@@ -478,7 +480,7 @@ Usage: #example
 Instance: diagnostico-01
 InstanceOf: DiagnosticReport
 Title: "Relatório (Gabriela Gomes)"
-Usage: #example
+Usage: #inline
 Description: "Laudo da requisição de exame da paciente Gabriela Gomes. Veja a [ficha](gabriela-gomes-laudo.jpg) correspondente ao laudo"
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/diagnostico-citopatologico"
@@ -517,7 +519,7 @@ Description: "Laudo da requisição de exame da paciente Gabriela Gomes. Veja a 
 
 Instance: laudo-componentes-01
 InstanceOf: Observation
-Usage: #example
+Usage: #inline
 Title: "Itens do laudo (Gabriela Gomes)"
 Description: "Itens que definem o laudo da paciente Gabriela Gomes"
 

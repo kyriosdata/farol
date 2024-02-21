@@ -7,8 +7,8 @@
 Instance: bundle-renata
 InstanceOf: Bundle
 Usage: #example
-Title: "Pacote (Renata)"
-Description: "Pacote que reúne todos os dados pertinentes à requisição de exame citopatológico da paciente Renata. Veja a [ficha](renata-lima.jpg) de requisição correspondente."
+Title: "Requisição (Renata)"
+Description: "Requisição de exame citopatológico (Renata). Veja a [ficha](renata-lima.jpg) correspondente."
 
 * type = #document
 
@@ -89,9 +89,9 @@ Description: "Requisição de Exame Citopatológico da paciente Renata"
 
 Instance: requisicao-03
 InstanceOf: ServiceRequest
-Title: "Detalhes da requisição (Renata)"
-Description: "Detalhes da requisição de exame citopatológico da Renata"
-Usage: #example
+Title: "Requisição (Renata)"
+Description: "Requisição de exame citopatológico da Renata"
+Usage: #inline
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
 
@@ -119,7 +119,7 @@ Usage: #example
 
 Instance: encontro-03
 InstanceOf: Encounter
-Usage: #example
+Usage: #inline
 Title: "Interação (Renata)"
 Description: "Neste encontro foi coletada a amostra e criada a requisição de exame citopatológico da paciente Renata"
 
@@ -142,7 +142,7 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 
 Instance: renata
 InstanceOf: Patient
-Usage: #example
+Usage: #inline
 Title: "Paciente (Renata)"
 Description: "Paciente para a qual há requisição e laudo de exame citopatológico"
 
@@ -222,6 +222,7 @@ Instance: profissional-03
 InstanceOf: Practitioner
 Title: "Requisitante (Tereza)"
 Description: "Profissional responsável pela requisição do exame citopatológico"
+Usage: #inline
 
 * identifier[0]
   * use = #official
@@ -236,8 +237,9 @@ Description: "Profissional responsável pela requisição do exame citopatológi
 
 Instance: respostas-anamnese-03
 InstanceOf: QuestionnaireResponse
-Title: "Anamnese (Bruna)"
-Description: "Exemplo de respostas para anamnese de exame citopatológico de uma requisição para a paciente Bruna"
+Title: "Anamnese (Renata)"
+Description: "Anamnese da paciente Renata"
+Usage: #inline
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/anamnese-questionario"
 * questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico"
@@ -309,8 +311,8 @@ Description: "Exemplo de respostas para anamnese de exame citopatológico de uma
 Instance: bundle-renata-laudo
 InstanceOf: Bundle
 Usage: #example
-Title: "Pacote laudo (Renata)"
-Description: "Pacote que reúne todos os dados pertinentes ao laudo de exame citopatológico da paciente Bruna. Veja a [ficha](renata-lima-laudo.jpg) de requisição correspondente."
+Title: "Laudo (Renata)"
+Description: "Laudo de exame citopatológico (Renata). Veja a [ficha](renata-lima-laudo.jpg) correspondente."
 
 * type = #document
 
@@ -358,7 +360,7 @@ Description: "Pacote que reúne todos os dados pertinentes ao laudo de exame cit
 
 Instance: composition-03-2
 InstanceOf: Composition
-Usage: #example
+Usage: #inline
 Title: "Laudo (Renata)"
 Description: "Laudo de exame citopatológico da paciente Renata"
 
@@ -388,7 +390,7 @@ Description: "Laudo de exame citopatológico da paciente Renata"
 
 Instance: laboratorio-renata
 InstanceOf: Organization
-Usage: #example
+Usage: #inline
 Title: "Laboratório Qualidade"
 Description: "Laboratório que emite o laudo de exame citopatológico"
 
@@ -404,7 +406,7 @@ Instance: citopatologista-03
 InstanceOf: Practitioner
 Title: "Citopatologista Pedro"
 Description: "Profissional responsável pelo laudo do exame citopatológico da paciente Renata"
-Usage: #example
+Usage: #inline
 
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
 * identifier.value = "2345234234234"
@@ -417,7 +419,7 @@ Usage: #example
 Instance: diagnostico-renata
 InstanceOf: DiagnosticReport
 Title: "Relatório (Renata)"
-Usage: #example
+Usage: #inline
 Description: "Laudo da requisição de exame da paciente Renata. Veja a [ficha](renata-lima-laudo.jpg) correspondente ao laudo"
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/diagnostico-citopatologico"
@@ -456,7 +458,7 @@ Description: "Laudo da requisição de exame da paciente Renata. Veja a [ficha](
 
 Instance: laudo-componentes-03
 InstanceOf: Observation
-Usage: #example
+Usage: #inline
 Title: "Itens do laudo (Renata)"
 Description: "Itens que definem o laudo da paciente Renata"
 

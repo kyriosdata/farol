@@ -18,8 +18,8 @@ Alias: $anamnese-exame-citopatologico = https://fhir.fabrica.inf.ufg.br/ccu/Ques
 Instance: bundle-bruna
 InstanceOf: Bundle
 Usage: #example
-Title: "Pacote (Bruna)"
-Description: "Pacote que reúne todos os dados pertinentes à requisição de exame citopatológico da paciente Bruna. Veja a [ficha](bruna-faria.jpg) de requisição correspondente."
+Title: "Requisição (Bruna)"
+Description: "Requisição de exame citopatológico (Bruna). Veja a [ficha](bruna-faria.jpg) de requisição correspondente."
 
 * type = #document
 
@@ -110,9 +110,9 @@ Description: "Requisição de Exame Citopatológico da paciente Bruna"
 
 Instance: requisicao-02
 InstanceOf: ServiceRequest
-Title: "Detalhes da requisição (Bruna)"
-Description: "Detalhes da requisição de exame citopatológico da Bruna"
-Usage: #example
+Title: "Requisição (Bruna)"
+Description: "Requisição de exame citopatológico da Bruna"
+Usage: #inline
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
 
@@ -146,7 +146,7 @@ Usage: #example
 
 Instance: encontro-02
 InstanceOf: Encounter
-Usage: #example
+Usage: #inline
 Title: "Interação (Bruna)"
 Description: "Neste encontro foi coletada a amostra e criada a requisição de exame citopatológico da paciente Bruna"
 
@@ -168,7 +168,7 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 
 Instance: exame-inspecao-02
 InstanceOf: Observation
-Usage: #example
+Usage: #inline
 Title: "Inspeção colo (Bruna)"
 Description: "Resultado da inspeção do colo uterino da paciente Bruna"
 
@@ -186,7 +186,7 @@ Description: "Resultado da inspeção do colo uterino da paciente Bruna"
 
 Instance: exame-dst-02
 InstanceOf: Observation
-Usage: #example
+Usage: #inline
 Title: "DST (Bruna)"
 Description: "Exame clínico que identifica se há presença ou não de sinais de doença sexualmente transmissível"
 
@@ -207,7 +207,7 @@ Description: "Exame clínico que identifica se há presença ou não de sinais d
 
 Instance: bruna
 InstanceOf: Patient
-Usage: #example
+Usage: #inline
 Title: "Paciente (Bruna)"
 Description: "Paciente para a qual há requisição e laudo de exame citopatológico"
 
@@ -283,6 +283,7 @@ Instance: profissional-02
 InstanceOf: Practitioner
 Title: "Requisitante (Renata)"
 Description: "Profissional responsável pela requisição do exame citopatológico"
+Usage: #inline
 
 * identifier[0]
   * use = #official
@@ -298,7 +299,8 @@ Description: "Profissional responsável pela requisição do exame citopatológi
 Instance: respostas-anamnese-02
 InstanceOf: QuestionnaireResponse
 Title: "Anamnese (Bruna)"
-Description: "Exemplo de respostas para anamnese de exame citopatológico de uma requisição para a paciente Bruna"
+Description: "Anamnese da paciente Bruna"
+Usage: #inline
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/anamnese-questionario"
 * questionnaire = $anamnese-exame-citopatologico
@@ -365,8 +367,8 @@ Description: "Exemplo de respostas para anamnese de exame citopatológico de uma
 Instance: bundle-bruna-laudo
 InstanceOf: Bundle
 Usage: #example
-Title: "Pacote laudo (Bruna)"
-Description: "Pacote que reúne todos os dados pertinentes ao laudo de exame citopatológico da paciente Bruna. Veja a [ficha](bruna-faria-laudo.jpg) de requisição correspondente."
+Title: "Laudo (Bruna)"
+Description: "Laudo de exame citopatológico (Bruna). Veja a [ficha](bruna-faria-laudo.jpg) correspondente."
 
 * type = #document
 
@@ -414,7 +416,7 @@ Description: "Pacote que reúne todos os dados pertinentes ao laudo de exame cit
 
 Instance: composition-02-2
 InstanceOf: Composition
-Usage: #example
+Usage: #inline
 Title: "Laudo (Bruna)"
 Description: "Laudo de exame citopatológico da paciente Bruna"
 
@@ -444,7 +446,7 @@ Description: "Laudo de exame citopatológico da paciente Bruna"
 
 Instance: laboratorio-bruna
 InstanceOf: Organization
-Usage: #example
+Usage: #inline
 Title: "Laboratório Qualidade"
 Description: "Laboratório que emite o laudo de exame citopatológico"
 
@@ -460,7 +462,7 @@ Instance: citopatologista-02
 InstanceOf: Practitioner
 Title: "Citopatologista Joana"
 Description: "Profissional responsável pelo laudo do exame citopatológico da paciente Rosa"
-Usage: #example
+Usage: #inline
 
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
 * identifier.value = "2345234234234"
@@ -473,7 +475,7 @@ Usage: #example
 Instance: diagnostico-02
 InstanceOf: DiagnosticReport
 Title: "Relatório (Bruna)"
-Usage: #example
+Usage: #inline
 Description: "Laudo da requisição de exame da paciente Bruna. Veja a [ficha](bruna-faria-laudo.jpg) correspondente ao laudo"
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/diagnostico-citopatologico"
@@ -512,7 +514,7 @@ Description: "Laudo da requisição de exame da paciente Bruna. Veja a [ficha](b
 
 Instance: laudo-componentes-02
 InstanceOf: Observation
-Usage: #example
+Usage: #inline
 Title: "Itens do laudo (Bruna)"
 Description: "Itens que definem o laudo da paciente Bruna"
 

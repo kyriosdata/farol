@@ -344,7 +344,7 @@ Description: "As possibilidades da inspeção de colo visando o exame citopatol�
 * ^caseSensitive = true
 * ^experimental = false
 * ^date = "2024-04-15"
-* ^purpose = "Definido para caracterizar as possibilidades que resultam da inspeção do colo para preencher requisição de exame citopatológico."
+* ^purpose = "**Propósito**. Definido para caracterizar as possibilidades que resultam da inspeção do colo para preencher requisição de exame citopatológico."
 
 * #normal "Normal" "Normal"
 * #ausente "Ausente" "Anomalias congênitas ou retirado cirurgicamente"
@@ -366,6 +366,7 @@ Description: "Situação do colo"
 * ^status = #draft
 * ^experimental = false
 * ^date = "2024-04-15"
+* ^purpose = "**Propósito. Definição do conjunto de valores para resultado da inspeção de colo admitido para o item em questão da requisição de exame citopatológico."
 
 * include codes from system ResultadosInspecaoColo
 
@@ -387,7 +388,7 @@ Description: "Tipos de laudos gerenciados pelo SISCAN"
 * ^caseSensitive = true
 * ^experimental = false
 * ^date = "2024-04-15"
-* ^purpose = "Identificação única de todos os laudos geridos pelo SISCAN. Desta forma, por um código deste sistema de codificação, sabe-se exatamente o tipo de laudo em questão conforme classificado pelo INCA."
+* ^purpose = "**Propósito**. Identificação única de todos os laudos geridos pelo SISCAN. Desta forma, por um código deste sistema de codificação, sabe-se exatamente o tipo de laudo em questão conforme classificado pelo INCA."
 
 * #citopatologico "Exame citopatológico"
 
@@ -409,7 +410,8 @@ Description: "Define os motivos pelos quais uma requisição de exame citopatol�
 * ^caseSensitive = true
 * ^experimental = false
 * ^date = "2024-04-15"
-* ^purpose = "A identificação do motivo do exame é relevante para a implementação do rastreamento ágil."
+* ^purpose = """**Propósito**. A identificação do motivo do exame é relevante 
+para a implementação do rastreamento ágil."""
 
 * #rastreamento "Rastreamento" "Com a finalidade de rastreamento"
 * #repeticao "Repetição" "Repetição (exame alterado ASCUS/Baixo grau)"
@@ -429,6 +431,8 @@ Description: "Possíveis motivos para requisição de exame citopatológico"
 
 * ^status = #draft
 * ^experimental = false
+* ^date = "2024-04-15"
+* ^purpose = "**Propósito**. Definição de valores possíveis para o motivo do exame do item pertinente da requisição de exame citopatológico."
 
 * include codes from system MotivosExame
 
@@ -449,6 +453,8 @@ Description: "Motivo pelo qual a amostra é rejeitada e o laudo inviável."
 * ^status = #unknown
 * ^caseSensitive = true
 * ^experimental = false
+* ^date = "2024-04-15"
+* ^purpose = """**Propósito**. Identificação dos possíveis motivos pelos quais uma amostra pode ser rejeitada."
 
 * #identificacao-invalida "falha na identificação" "Ausência ou erro na identificação da lâmina, frasco ou requisição"
 * #lamina-invalida "lâmina" "Lâmina danificada ou ausente"
@@ -472,6 +478,8 @@ Description: "Definição da classificação da adequabilidade do material (amos
 * ^status = #unknown
 * ^caseSensitive = true
 * ^experimental = false
+* ^date = "2024-04-15"
+* ^purpose = """**Propósito**. Definição do conjunto de resultados possíveis para a averiguação da adequabilidade da amostra."
 
 * #satisfatoria "Satisfatória" "Satisfatória"
 * #material "Material acelular" "Material acelular em menos de 10% do esfregaço"
@@ -496,6 +504,8 @@ Description: "Caracterização da adequabilidade do material"
 
 * ^status = #draft
 * ^experimental = false
+* ^date = "2024-04-15"
+* ^purpose = """**Propósito**. Definição dos possíveis valores admitidos como resultado da adequabilidade da amostra para o item correspondente da requisição de exame citopatológico."
 
 * include codes from system TiposAdequabilidade
 
@@ -516,6 +526,8 @@ Description: "Definição das várias alterações celulares benignas relevantes
 * ^status = #unknown
 * ^caseSensitive = true
 * ^experimental = false
+* ^date = "2024-04-15"
+* ^purpose = """**Propósito**. Definição das possíveis alterações celulares consideradas benignas presentes na amostra de exame citopatológico."
 
 * #inflamacao "Inflamação" "Inflamação"
 * #metaplasia "Metaplasia" "Metaplasia escamosa imatura"
@@ -538,6 +550,8 @@ Description: "Identifica alteração celular benigna relevante para exame citopa
 
 * ^status = #draft
 * ^experimental = false
+* ^date = "2024-04-15"
+* ^purpose = """**Propósito**. Definição do conjunto de alterações celulares benignas admitidas para o item correspondente de laudo de exame citopatológico."
 
 * include codes from system AlteracoesCelularesBenignas
 
@@ -558,6 +572,8 @@ Description: "Microbiologias"
 * ^status = #unknown
 * ^caseSensitive = true
 * ^experimental = false
+* ^date = "2024-04-15"
+* ^purpose = """**Propósito**. Definição dos microorganismos encontrados na amostra de exame citopatológico."
 
 * #lactobacillus "Lactobacillus sp"
 * #cocos "Cocos"
@@ -584,6 +600,8 @@ Description: "Microbiologia"
 
 * ^status = #draft
 * ^experimental = false
+* ^date = "2024-04-15"
+* ^purpose = """**Propósito**. Definição do conjunto de microorganismos encontrados e que podem ser registrados no item do laudo de exame citopatológico."
 
 * include codes from system Microbiologias
 
@@ -604,6 +622,8 @@ Description: "Células atípicas"
 * ^status = #unknown
 * ^caseSensitive = true
 * ^experimental = false
+* ^date = "2024-04-15"
+* ^purpose = """**Propósito**. Definição das possíveis células atípicas de significado indeterminado relevantes para o laudo de exame citopatológico."
 
 * #neoplasicas "Possivelmente não neoplásicas"
 * #alto-grau "Não se pode afastar lesão de alto grau"

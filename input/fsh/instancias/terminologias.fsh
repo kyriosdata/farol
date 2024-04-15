@@ -15,7 +15,7 @@ Usage: #definition
 * name = "LaboratorioProtocolo"
 * status = #draft
 * kind = #identifier
-* date = "2023-07-31T14:24:34.711Z"
+* date = "2024-04-15"
 * publisher = "Ministério da Saúde (INCA)"
 * contact[0].name = "Renata INCA"
 * contact[0]
@@ -67,7 +67,7 @@ Usage: #definition
 * name = "CNES"
 * status = #draft
 * kind = #identifier
-* date = "2024-02-09"
+* date = "2024-04-15"
 * publisher = "Ministério da Saúde do Brasil"
 * contact[0].name = "Renata INCA"
 * contact[0]
@@ -119,7 +119,7 @@ Usage: #definition
 * name = "CNS"
 * status = #draft
 * kind = #identifier
-* date = "2024-02-09"
+* date = "2024-04-15"
 * publisher = "Ministério da Saúde do Brasil"
 * contact[0].name = "Renata INCA"
 * contact[0]
@@ -172,7 +172,7 @@ Usage: #definition
 * name = "CPF"
 * status = #draft
 * kind = #identifier
-* date = "2023-11-13"
+* date = "2024-04-15"
 * publisher = "Receita Federal do Brasil"
 * contact[0].name = "Renata INCA"
 * contact[0]
@@ -224,7 +224,7 @@ Usage: #definition
 * name = "LOINC"
 * status = #active
 * kind = #codesystem
-* date = "2023-07-31T14:24:34.711Z"
+* date = "2024-04-15"
 * publisher = "Ministério da Saúde (INCA)"
 * contact[0].name = "Renata INCA"
 * contact[0]
@@ -282,7 +282,7 @@ Usage: #definition
 * name = "SiscanProtocolo"
 * status = #draft
 * kind = #identifier
-* date = "2023-07-31T14:24:34.711Z"
+* date = "2024-04-15"
 * publisher = "Ministério da Saúde (INCA)"
 * contact[0].name = "Renata INCA"
 * contact[0]
@@ -333,7 +333,7 @@ se refere a uma requisição unicamente identificada pelo SISCAN.
 CodeSystem: ResultadosInspecaoColo
 Id: resultados-inspecao-colo
 Title: "Resultado da inspeção do colo"
-Description: "Os resultados para a inspeção de colo visando exame citopatológico."
+Description: "As possibilidades da inspeção de colo visando o exame citopatológico."
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Código para resultado da inspeção do colo.</div>"
@@ -343,11 +343,13 @@ Description: "Os resultados para a inspeção de colo visando exame citopatológ
 * ^status = #unknown
 * ^caseSensitive = true
 * ^experimental = false
+* ^date = "2024-04-15"
+* ^purpose = "Definido para caracterizar as possibilidades que resultam da inspeção do colo para preencher requisição de exame citopatológico."
 
-* #normal "Normal"
+* #normal "Normal" "Normal"
 * #ausente "Ausente" "Anomalias congênitas ou retirado cirurgicamente"
-* #alterado "Alterado" 
-* #nao-visualizado "Colo não visualizado"
+* #alterado "Alterado" "Alterado"
+* #nao-visualizado "Colo não visualizado" "Colo não visualizado"
 
 // ------------------------------------------------------
 
@@ -363,6 +365,7 @@ Description: "Situação do colo"
 
 * ^status = #draft
 * ^experimental = false
+* ^date = "2024-04-15"
 
 * include codes from system ResultadosInspecaoColo
 
@@ -383,6 +386,8 @@ Description: "Tipos de laudos gerenciados pelo SISCAN"
 * ^status = #unknown
 * ^caseSensitive = true
 * ^experimental = false
+* ^date = "2024-04-15"
+* ^purpose = "Identificação única de todos os laudos geridos pelo SISCAN. Desta forma, por um código deste sistema de codificação, sabe-se exatamente o tipo de laudo em questão conforme classificado pelo INCA."
 
 * #citopatologico "Exame citopatológico"
 
@@ -403,6 +408,8 @@ Description: "Define os motivos pelos quais uma requisição de exame citopatol�
 * ^status = #unknown
 * ^caseSensitive = true
 * ^experimental = false
+* ^date = "2024-04-15"
+* ^purpose = "A identificação do motivo do exame é relevante para a implementação do rastreamento ágil."
 
 * #rastreamento "Rastreamento" "Com a finalidade de rastreamento"
 * #repeticao "Repetição" "Repetição (exame alterado ASCUS/Baixo grau)"

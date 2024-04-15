@@ -49,7 +49,7 @@ Usage: #definition
 * usage = "Código usado pelo laboratório para identificar unicamente um laudo, no domínio do laboratório. Ou seja, não se trata de um código único nacional."
 
 * uniqueId[0].type = #uri
-* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ns/laboratorio"
+* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/inca/sid/laboratorio"
 * uniqueId[0].preferred = true
 * uniqueId[0].comment = "Criado pela ausência de catálogo nacional de identificadores. Este valor provavelmente será substituído por sequência produzida pela autoridade competente."
 * uniqueId[0].period.start = "2023-11-13"
@@ -102,7 +102,7 @@ Usage: #definition
 * usage = "Usado quando se deseja indicar que um dado código é único e atribuído a um estabelecimento de saúde pelo Ministério da Saúde do Brasil."
 
 * uniqueId[0].type = #uri
-* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
+* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/inca/sid/cnes"
 * uniqueId[0].preferred = true
 * uniqueId[0].comment = "Criado pela ausência de catálogo nacional de identificadores. Este valor provavelmente será substituído por sequência produzida pela autoridade competente."
 * uniqueId[0].period.start = "2023-11-13"
@@ -154,7 +154,7 @@ Usage: #definition
 * usage = "Definido pelo Ministério da Saúde (Brasil)"
 
 * uniqueId[0].type = #uri
-* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ns/cns"
+* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/inca/sid/cns"
 * uniqueId[0].preferred = true
 * uniqueId[0].comment = "Criado pela ausência de catálogo nacional de identificadores. Este valor provavelmente será substituído por sequência produzida pela autoridade competente."
 * uniqueId[0].period.start = "2024-02-09"
@@ -207,7 +207,7 @@ Usage: #definition
 * usage = "Usado quando se deseja declarar a origem do código que o acompanha. Desta forma, o interlocutor saberá que o código em questão identifica unicamente um cidadão."
 
 * uniqueId[0].type = #uri
-* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ns/cpf"
+* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/inca/sid/cpf"
 * uniqueId[0].preferred = true
 * uniqueId[0].comment = "Criado pela ausência de catálogo nacional de identificadores. Este valor provavelmente será substituído por sequência produzida pela autoridade competente."
 * uniqueId[0].period.start = "2023-11-13"
@@ -258,7 +258,7 @@ de códigos e também um significativo conjunto de _ValueSets_.
 * jurisdiction[0].coding[0].code = #BR
 * jurisdiction[0].text = "Em todo o território nacional (brasileiro)"
 
-* usage = "Este identificador é empregado para definir que um dado código refere-se ao código único gerado pelo SISCAN para requisições de exame citopatológico no Brasil."
+* usage = "Este identificador é empregado para definir que um dado código refere-se ao código único gerado pelo SISCAN para requisições de exame citopatológico no Brasil. Naturalmente, o LOINC é internacionalmente conhecido, a presença aqui permite que este identificador faça parte de um catálogo que inclua todas as terminologias e sistemas de identificação empregados."
 
 * uniqueId[0].type = #uri
 * uniqueId[0].value = "http://loinc.org"
@@ -320,7 +320,7 @@ se refere a uma requisição unicamente identificada pelo SISCAN.
 * usage = "Este identificador é empregado para definir que um dado código refere-se ao código único gerado pelo SISCAN para requisições de exame citopatológico no Brasil."
 
 * uniqueId[0].type = #uri
-* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ns/siscan"
+* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/inca/sid/siscan"
 * uniqueId[0].preferred = true
 * uniqueId[0].comment = "Criado pela ausência de catálogo nacional de identificadores. Este valor provavelmente será substituído por sequência produzida pela autoridade competente."
 * uniqueId[0].period.start = "2023-11-13"

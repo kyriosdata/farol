@@ -396,29 +396,28 @@ Usage: #inline
 
 * item[7]
   * linkId = "8"
+  * answer[0].valueBoolean = true
+  * text = "Sabe a data da última menstruação/regra?"
+
+* item[8]
+  * linkId = "8.1"
   * answer[0].valueDate = "2024-01-01"
   * text = "Data da última menstruação/regra"
 
-* item[8]
+* item[9]
   * linkId = "9"
   * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * text = "Tem ou teve algum sangramento após relações sexuais? (não considerar a primeira relação sexual na vida)"
 
-* item[9]
+* item[10]
   * linkId = "10"
   * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * text = "Tem ou teve algum sangramento após a menopausa? (não considerar o(s) sangramento(s) na vigência de reposição hormonal)"
 
-* item[10]
+* item[11]
   * linkId = "11"
   * answer[0].valueInteger = 60
   * text = "Qual a sua idade?"
-
-* item[11]
-  * linkId = "12"
-  * answer[0].valueBoolean = true
-  * text = "Sabe a data da última menstruação/regra?"
-
 
 // ------------------------------------------------------
 // LAUDO

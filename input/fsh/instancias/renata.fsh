@@ -285,6 +285,11 @@ Usage: #inline
 
 * item[+]
   * linkId = "8"
+  * answer[0].valueBoolean = true
+  * text = "Sabe a data da última menstruação/regra?"
+
+* item[+]
+  * linkId = "8.1"
   * answer[0].valueDate = "2023-11-27"
 //  * text = "Data da última menstruação/regra"
 
@@ -302,11 +307,6 @@ Usage: #inline
   * linkId = "11"
   * answer[0].valueInteger = 25
   * text = "Qual a sua idade?"
-
-* item[11]
-  * linkId = "12"
-  * answer[0].valueBoolean = true
-  * text = "Sabe a data da última menstruação/regra?"
 
 // ------------------------------------------------------
 // LAUDO

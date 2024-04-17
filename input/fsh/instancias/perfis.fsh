@@ -377,11 +377,19 @@ Description: "Anamnese para requisição de exame citopatológico"
 
 * item[+]
   * linkId = "8"
+  * type = #boolean
+  * text = "Sabe a data da última menstruação/regra?"
+  * required = false
+  * repeats = false
+  * readOnly = true
+
+* item[+]
+  * linkId = "8.1"
   * type = #date
   * text = "Data da última menstruação/regra"
   * code[0] = http://loinc.org#8665-2
   * enableWhen[0]
-    * question = "12"
+    * question = "8"
     * operator = #=
     * answerBoolean = true
   * required = false
@@ -414,14 +422,6 @@ Description: "Anamnese para requisição de exame citopatológico"
   * repeats = false
   * readOnly = true
   * maxLength = 3
-
-* item[+]
-  * linkId = "12"
-  * type = #boolean
-  * text = "Sabe a data da última menstruação/regra?"
-  * required = false
-  * repeats = false
-  * readOnly = true
 
 // ------------------------------------------------------
 // laudo-exame

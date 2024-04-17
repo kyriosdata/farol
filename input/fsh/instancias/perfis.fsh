@@ -191,26 +191,24 @@ Profile: Endereco
 Parent: Address
 Id: endereco
 Title: "Endereço"
-Description: "Padronização de endereços no Brasil (adaptação de BREndereco)."
+Description: "Endereço da paciente"
 * ^status = #active
 * ^meta.lastUpdated = "2020-03-11T04:06:40.866+00:00"
 * ^text.status = #empty
 * ^text.div = "<div xml:lang='pt-BR' lang='pt-BR' xmlns='http://www.w3.org/1999/xhtml'>Adaptação de BREndereco (que provoca erros em validação)</div>"
 * ^language = #pt-BR
-// * ^url = "http://perfil.org/endereco"
+* ^description = "Endereço da paciente formado por logradouro, número, complemente, bairro, município, unidade da federação, CEP e ponto de referência."
 * ^version = "1.0"
 * ^publisher = "Ministério da Saúde do Brasil"
 * . MS
-* . ^short = "Dados de Endereçamento"
-* . ^definition = "Dados do(s) endereço(s) onde o sujeito do endereço pode ser localizado."
-* use MS
-* use ^short = "Uso do Endereço"
-* use ^definition = "home: endereço residencial atual.\r\nwork: endereço comercial ou de trabalho atual.\r\ntemp: endereço temporário, como um hotel, a casa de amigos ou familiares, uma instalação/edificação provisória, etc.\r\nold: endereço anterior."
-* type MS
-* type ^short = "Tipo de Endereço"
-* type ^definition = "physical: um endereço físico de um edificação ou espaço geográfico real, como de uma casa, prédio, loja, galpão, lote, etc.\r\npostal: um endereço virtual, como de uma Caixa Postal ou serviço de logística de mercadorias, p.ex."
+* . ^short = "Dados do endereço"
+* . ^definition = "Dados do endereço da paciente."
+* use 0..0
+* type 0..0
 * text ..0
 
+* line ^short = "Logradouro, número, complemento e outros."
+* line ^definition = "Os vários elementos que compõem o endereço: logradouro, número, complemento, bairro, município, unidade da federação, CEP e ponto de referência. Nenhum destes elementos é obrigatório."
 * line 1.. MS
 * obeys LinhasEndereco
 
@@ -229,15 +227,7 @@ Description: "Padronização de endereços no Brasil (adaptação de BREndereco)
 * postalCode ^short = "CEP"
 * postalCode ^definition = "Código de Endereçamento Postal. Utilizar a máscara XXXXX-XXXX."
 * country ..0
-* period MS
-* period ^short = "Período do Endereço"
-* period ^definition = "Período em que o endereço foi utilizado."
-* period.start MS
-* period.start ^short = "Data de Inicio do Endereço"
-* period.start ^definition = "Data em que o endereço foi cadastrado ou começou a ser utilizado."
-* period.end MS
-* period.end ^short = "Data de Término do Endereço"
-* period.end ^definition = "Data em que o endereço foi desativado ou parou de ser utilizado."
+* period 0..0
 
 // ------------------------------------------------------
 // paciente

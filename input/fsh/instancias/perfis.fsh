@@ -290,12 +290,20 @@ Description: "Anamnese para requisição de exame citopatológico"
 * contact[0].telecom[0].value = "renata.email@inca.saude.br"
 * contact[0].telecom[0].use = #work
 * contact[0].telecom[0].period.start = "2024"
-* description = "Anamnese para requisição de exame citopatológico. Todas as questões são obrigatórias. Duas delas, a data do último exame (Papanicolau) e a data da última menstruação são condicionais, dependem de respostas para questões pertinentes."
+* description = """Anamnese para requisição de exame citopatológico. 
+Todas as questões são obrigatórias. Duas delas, 
+a data do último exame (Papanicolau) e a data da última menstruação são condicionais, 
+dependem de respostas para questões correlatas. 
+
+Adicionalmente, a primeira questão presente na ficha impressa da Requisição de Exame Citopatológico,
+'Motivo do exame', não segue na anamnese. Esta informação é registrada como parte das
+informações pertinentes à requisição e não será respondida pela paciente."""
+
 * useContext.code[0].system = "http://terminology.hl7.org/CodeSystem/usage-context-type"
 * useContext.code[0].code = #gender
 * useContext.valueCodeableConcept.text = "Estabelecimento de saúde. Unidade básica de saúde."
 * jurisdiction = urn:iso:std:iso:3166#BR
-* purpose = "Coletar informações relevantes para o exame citopatológico."
+* purpose = "**Propósito**. Coletar informações relevantes para o exame citopatológico."
 * copyright = "Ministério da Saúde do Brasil"
 * approvalDate = "2023-12-15"
 * lastReviewDate = "2023-11-30"

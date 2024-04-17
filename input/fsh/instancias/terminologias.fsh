@@ -9,9 +9,6 @@ Title: "Identificador de exame gerado por laboratório"
 Description: "Declaração do identificador de código único de exame gerado por laboratório. Observe que este identificador não discrimina qual o laboratório em questão, ou seja, apenas sabe-se que se trata de um identificador gerado por um laboratório. O contexto em questão deve incluir a informação de qual laboratório o código faz parte."
 Usage: #definition
 
-* text.status = #empty
-* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Identificador para código de exame gerado por laboratório. Não identifica o laboratório.</div>"
-
 * name = "LaboratorioProtocolo"
 * status = #draft
 * kind = #identifier
@@ -49,7 +46,7 @@ Usage: #definition
 * usage = "Código usado pelo laboratório para identificar unicamente um laudo, no domínio do laboratório. Ou seja, não se trata de um código único nacional."
 
 * uniqueId[0].type = #uri
-* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/inca/sid/laboratorio"
+* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ccu/sid/laboratorio"
 * uniqueId[0].preferred = true
 * uniqueId[0].comment = "Criado pela ausência de catálogo nacional de identificadores. Este valor provavelmente será substituído por sequência produzida pela autoridade competente."
 * uniqueId[0].period.start = "2023-11-13"
@@ -60,9 +57,6 @@ InstanceOf: NamingSystem
 Title: "Identificador do Cadastro Nacional de Estabelecimentos de Saúde (CNES)"
 Description: "Declaração do identificador do Cadastro Nacional de Estabelecimentos de Saúde (CNES)"
 Usage: #definition
-
-* text.status = #empty
-* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Identificador do código CNES.</div>"
 
 * name = "CNES"
 * status = #draft
@@ -102,7 +96,7 @@ Usage: #definition
 * usage = "Usado quando se deseja indicar que um dado código é único e atribuído a um estabelecimento de saúde pelo Ministério da Saúde do Brasil."
 
 * uniqueId[0].type = #uri
-* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/inca/sid/cnes"
+* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
 * uniqueId[0].preferred = true
 * uniqueId[0].comment = "Criado pela ausência de catálogo nacional de identificadores. Este valor provavelmente será substituído por sequência produzida pela autoridade competente."
 * uniqueId[0].period.start = "2023-11-13"
@@ -112,9 +106,6 @@ InstanceOf: NamingSystem
 Title: "Identificador do Cartão Nacional de Saúde (CNS)"
 Description: "Declaração do identificador de números de Cartão Nacional de Saúde (CNS)"
 Usage: #definition
-
-* text.status = #empty
-* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Identificador do código CNES.</div>"
 
 * name = "CNS"
 * status = #draft
@@ -154,7 +145,7 @@ Usage: #definition
 * usage = "Definido pelo Ministério da Saúde (Brasil)"
 
 * uniqueId[0].type = #uri
-* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/inca/sid/cns"
+* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
 * uniqueId[0].preferred = true
 * uniqueId[0].comment = "Criado pela ausência de catálogo nacional de identificadores. Este valor provavelmente será substituído por sequência produzida pela autoridade competente."
 * uniqueId[0].period.start = "2024-02-09"
@@ -165,9 +156,6 @@ InstanceOf: NamingSystem
 Title: "Identificador de Cadastro de Pessoa Física (CPF)"
 Description: "Declaração do identificador de números de inscrição no Cadastro de Pessoa Física (CPF)"
 Usage: #definition
-
-* text.status = #empty
-* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Identificador do número de CPF.</div>"
 
 * name = "CPF"
 * status = #draft
@@ -207,7 +195,7 @@ Usage: #definition
 * usage = "Usado quando se deseja declarar a origem do código que o acompanha. Desta forma, o interlocutor saberá que o código em questão identifica unicamente um cidadão."
 
 * uniqueId[0].type = #uri
-* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/inca/sid/cpf"
+* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
 * uniqueId[0].preferred = true
 * uniqueId[0].comment = "Criado pela ausência de catálogo nacional de identificadores. Este valor provavelmente será substituído por sequência produzida pela autoridade competente."
 * uniqueId[0].period.start = "2023-11-13"
@@ -217,9 +205,6 @@ InstanceOf: NamingSystem
 Title: "LOINC"
 Description: "Terminologia LOINC (https://loinc.org)"
 Usage: #definition
-
-* text.status = #empty
-* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Declaração do identificador do código LOINC. Criado para montagem de catálogo de nomes utilizados pela solução.</div>"
 
 * name = "LOINC"
 * status = #active
@@ -276,9 +261,6 @@ Title: "Identificador de protocolo (código único) gerado pelo SISCAN"
 Description: "Declaração do identificador de números únicos gerados pelo SISCAN"
 Usage: #definition
 
-* text.status = #empty
-* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Declaração do identificador de requisição de exame citopatológico gerado pelo SISCAN.</div>"
-
 * name = "SiscanProtocolo"
 * status = #draft
 * kind = #identifier
@@ -320,7 +302,7 @@ se refere a uma requisição unicamente identificada pelo SISCAN.
 * usage = "Este identificador é empregado para definir que um dado código refere-se ao código único gerado pelo SISCAN para requisições de exame citopatológico no Brasil."
 
 * uniqueId[0].type = #uri
-* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/inca/sid/siscan"
+* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ccu/sid/siscan"
 * uniqueId[0].preferred = true
 * uniqueId[0].comment = "Criado pela ausência de catálogo nacional de identificadores. Este valor provavelmente será substituído por sequência produzida pela autoridade competente."
 * uniqueId[0].period.start = "2023-11-13"

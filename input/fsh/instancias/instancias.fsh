@@ -475,10 +475,9 @@ Description: "Laboratório que emite o laudo de exame citopatológico"
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
 * identifier.value = "654321"
 
-// As informações abaixo não são registradas no laudo
-//* type.coding.system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoEstabelecimentoSaude"
-//* type.coding.code = #80
-//* type.text = "LABORATORIO DE SAUDE PUBLICA"
+* type.coding.system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoEstabelecimentoSaude"
+* type.coding.code = #80
+* type.text = "LABORATORIO DE SAUDE PUBLICA"
 
 // ------------------------------------------------------
 // citopatologista

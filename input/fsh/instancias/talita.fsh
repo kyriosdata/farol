@@ -64,10 +64,6 @@ Description: "A unidade de saúde na qual o exame citopatológico da paciente Ta
 * address.city = "Goiânia"
 * address.state = "GO"
 
-* type.coding.system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoEstabelecimentoSaude"
-* type.coding.code = #1
-* type.text = "POSTO DE SAUDE"
-
 // ------------------------------------------------------
 // profissional
 // ------------------------------------------------------

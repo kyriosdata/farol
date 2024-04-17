@@ -7,8 +7,8 @@ Alias: $etniaindigena = http://www.saude.gov.br/fhir/r4/CodeSystem/BREtniaIndige
 Alias: $nacionalidade = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade
 Alias: $cs-nacionalidade = http://www.saude.gov.br/fhir/r4/CodeSystem/BRNacionalidade
 Alias: $pontoreferencia = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator
-Alias: $cns = https://fhir.fabrica.inf.ufg.br/ns/cns
-Alias: $cpf = https://fhir.fabrica.inf.ufg.br/ns/cpf
+Alias: $cns = https://fhir.fabrica.inf.ufg.br/ccu/sid/cns
+Alias: $cpf = https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf
 Alias: $paciente-siscan = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente
 Alias: $motivos-exame = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivos-exame-citopatologico
 Alias: $cs-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo
@@ -31,7 +31,7 @@ Description: "Requisição de exame citopatológico (Gabriela). Veja a [ficha](g
 * type = #document
 
 // Protocolo SISCAN
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/siscan"
+* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/siscan"
 * identifier.value = "000.000.001"
 
 // Data e hora em que a requisição foi submetida
@@ -278,7 +278,7 @@ Description: "A unidade de saúde na qual o exame citopatológico da paciente Ga
 * name = "Unidade Básica Santa Tatiana"
 
 // CNES
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
+* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
 * identifier.value = "123456"
 
 // UF e município
@@ -301,7 +301,7 @@ Usage: #inline
 
 * identifier[0]
   * use = #official
-  * system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
   * value = "234.234.567"
 
 * name[0].text = "Rita Goreti"
@@ -382,7 +382,7 @@ Description: "Laudo de exame citopatológico (Gabriela). Veja a [ficha](gabriela
 * type = #document
 
 // Como identificar unicamente o laudo?
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/siscan"
+* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/siscan"
 * identifier.value = "laudo-gabriela-123"
 
 // Data e hora em que o pacote (Bundle) do laudo foi criado
@@ -456,7 +456,7 @@ Title: "Laboratório Premium"
 Description: "Laboratório que emite o laudo de exame citopatológico"
 
 * name = "Laboratório Cito"
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
+* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
 * identifier.value = "654321"
 
 // ------------------------------------------------------
@@ -469,7 +469,7 @@ Title: "Citopatologista Rita"
 Description: "Profissional responsável pelo laudo do exame citopatológico da paciente Rosa"
 Usage: #inline
 
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
+* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
 * identifier.value = "2345234234234"
 * name.text = "Rita Goreti"
 
@@ -489,10 +489,10 @@ Description: "Laudo da requisição de exame da paciente Gabriela Gomes. Veja a 
 * code.coding[0].system = "http://loinc.org"
 * code.coding[0].code = #10524-7
 
-* identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ns/laboratorio"
+* identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/laboratorio"
 * identifier[0].value = "cito-gabriela-gomes-123"
 
-* basedOn.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/siscan"
+* basedOn.identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/siscan"
 * basedOn.identifier.value = "codigo-siscan-requisicao-123"
 
 * category.coding = http://terminology.hl7.org/CodeSystem/v2-0074#CP

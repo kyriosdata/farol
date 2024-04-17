@@ -11,7 +11,7 @@ Description: "Paciente fictícia para requisição e laudo de exame citopatológ
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente"
 
 // Cartão SUS
-* identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
+* identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
 * identifier[0].value = "288274000123"
 
 // Nome completo da mulher
@@ -29,7 +29,7 @@ Description: "Paciente fictícia para requisição e laudo de exame citopatológ
 * gender = #female
 
 // CPF
-* identifier[1].system = "https://fhir.fabrica.inf.ufg.br/ns/cpf"
+* identifier[1].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
 * identifier[1].value = "73282472"
 
 // Idade (binding para http://hl7.org/fhir/ValueSet/age-units)
@@ -57,7 +57,7 @@ Description: "A unidade de saúde na qual o exame citopatológico da paciente Ta
 * name = "Unidade Básica 5"
 
 // CNES
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
+* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
 * identifier.value = "123456"
 
 // UF e município
@@ -76,7 +76,7 @@ Usage: #inline
 
 * identifier[0]
   * use = #official
-  * system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
   * value = "234.234.567"
 
 * name[0].text = "Leonarda Morais"
@@ -296,7 +296,7 @@ Description: "Requisição de exame citopatológico (Talita). Veja a [ficha](tal
 * type = #document
 
 // Protocolo SISCAN
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/siscan"
+* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/siscan"
 * identifier.value = "000.000.005"
 
 // Data e hora em que o bundle foi montado
@@ -365,7 +365,7 @@ Title: "Laboratório Quali"
 Description: "Laboratório que emite o laudo de exame citopatológico"
 
 * name = "Prevenção"
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cnes"
+* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
 * identifier.value = "654321"
 
 // ------------------------------------------------------
@@ -378,7 +378,7 @@ Title: "Citopatologista Rita"
 Description: "Profissional responsável pelo laudo do exame citopatológico da paciente Talita"
 Usage: #inline
 
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/cns"
+* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
 * identifier.value = "2345234234234"
 * name.text = "Rita Goreti"
 
@@ -438,10 +438,10 @@ Description: "Laudo da requisição de exame da paciente Talita. Veja a [ficha](
 * code.coding[0].system = "http://loinc.org"
 * code.coding[0].code = #10524-7
 
-* identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ns/laboratorio"
+* identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/laboratorio"
 * identifier[0].value = "243623"
 
-* basedOn.identifier.system = "https://fhir.fabrica.inf.ufg.br/ns/siscan"
+* basedOn.identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/siscan"
 * basedOn.identifier.value = "codigo-siscan-requisicao-005"
 
 * category.coding = http://terminology.hl7.org/CodeSystem/v2-0074#CP
@@ -515,7 +515,7 @@ Description: "Laudo de exame citopatológico (Talita). Veja a [ficha](talita-mor
 // o laboratório, não para o INCA.
 
 * identifier[0]
-  * system = "https://fhir.fabrica.inf.ufg.br/ns/laboratorio"
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/laboratorio"
   * value = "132423"
 
 // Data e hora em que o pacote (Bundle) do laudo foi criado

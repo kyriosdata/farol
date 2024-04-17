@@ -414,6 +414,11 @@ Usage: #inline
   * answer[0].valueInteger = 60
   * text = "Qual a sua idade?"
 
+* item[11]
+  * linkId = "12"
+  * answer[0].valueBoolean = true
+  * text = "Sabe a data da última menstruação/regra?"
+
 
 // ------------------------------------------------------
 // LAUDO

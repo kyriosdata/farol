@@ -187,6 +187,11 @@ Usage: #inline
   * answer[0].valueInteger = 24
   * text = "Qual a sua idade?"
 
+* item[+]
+  * linkId = "12"
+  * answer[0].valueBoolean = true
+  * text = "Sabe a data da última menstruação/regra?"  
+
 // ------------------------------------------------------
 //
 // consulta (encontro)

@@ -454,7 +454,7 @@ Description: "Motivo pelo qual a amostra é rejeitada e o laudo inviável."
 * ^caseSensitive = true
 * ^experimental = false
 * ^date = "2024-04-15"
-* ^purpose = """**Propósito**. Identificação dos possíveis motivos pelos quais uma amostra pode ser rejeitada."
+* ^purpose = """**Propósito**. Identificação dos possíveis motivos pelos quais uma amostra pode ser rejeitada."""
 
 * #identificacao-invalida "falha na identificação" "Ausência ou erro na identificação da lâmina, frasco ou requisição"
 * #lamina-invalida "lâmina" "Lâmina danificada ou ausente"
@@ -479,7 +479,7 @@ Description: "Definição da classificação da adequabilidade do material (amos
 * ^caseSensitive = true
 * ^experimental = false
 * ^date = "2024-04-15"
-* ^purpose = """**Propósito**. Definição do conjunto de resultados possíveis para a averiguação da adequabilidade da amostra."
+* ^purpose = """**Propósito**. Definição do conjunto de resultados possíveis para a averiguação da adequabilidade da amostra."""
 
 * #satisfatoria "Satisfatória" "Satisfatória"
 * #material "Material acelular" "Material acelular em menos de 10% do esfregaço"
@@ -505,7 +505,7 @@ Description: "Caracterização da adequabilidade do material"
 * ^status = #draft
 * ^experimental = false
 * ^date = "2024-04-15"
-* ^purpose = """**Propósito**. Definição dos possíveis valores admitidos como resultado da adequabilidade da amostra para o item correspondente da requisição de exame citopatológico."
+* ^purpose = """**Propósito**. Definição dos possíveis valores admitidos como resultado da adequabilidade da amostra para o item correspondente da requisição de exame citopatológico."""
 
 * include codes from system TiposAdequabilidade
 
@@ -527,7 +527,7 @@ Description: "Definição das várias alterações celulares benignas relevantes
 * ^caseSensitive = true
 * ^experimental = false
 * ^date = "2024-04-15"
-* ^purpose = """**Propósito**. Definição das possíveis alterações celulares consideradas benignas presentes na amostra de exame citopatológico."
+* ^purpose = """**Propósito**. Definição das possíveis alterações celulares consideradas benignas presentes na amostra de exame citopatológico."""
 
 * #inflamacao "Inflamação" "Inflamação"
 * #metaplasia "Metaplasia" "Metaplasia escamosa imatura"
@@ -551,7 +551,7 @@ Description: "Identifica alteração celular benigna relevante para exame citopa
 * ^status = #draft
 * ^experimental = false
 * ^date = "2024-04-15"
-* ^purpose = """**Propósito**. Definição do conjunto de alterações celulares benignas admitidas para o item correspondente de laudo de exame citopatológico."
+* ^purpose = """**Propósito**. Definição do conjunto de alterações celulares benignas admitidas para o item correspondente de laudo de exame citopatológico."""
 
 * include codes from system AlteracoesCelularesBenignas
 
@@ -573,7 +573,7 @@ Description: "Microbiologias"
 * ^caseSensitive = true
 * ^experimental = false
 * ^date = "2024-04-15"
-* ^purpose = """**Propósito**. Definição dos microorganismos encontrados na amostra de exame citopatológico."
+* ^purpose = """**Propósito**. Definição dos microorganismos encontrados na amostra de exame citopatológico."""
 
 * #lactobacillus "Lactobacillus sp"
 * #cocos "Cocos"
@@ -601,7 +601,7 @@ Description: "Microbiologia"
 * ^status = #draft
 * ^experimental = false
 * ^date = "2024-04-15"
-* ^purpose = """**Propósito**. Definição do conjunto de microorganismos encontrados e que podem ser registrados no item do laudo de exame citopatológico."
+* ^purpose = """**Propósito**. Definição do conjunto de microorganismos encontrados e que podem ser registrados no item do laudo de exame citopatológico."""
 
 * include codes from system Microbiologias
 
@@ -623,7 +623,7 @@ Description: "Células atípicas"
 * ^caseSensitive = true
 * ^experimental = false
 * ^date = "2024-04-15"
-* ^purpose = """**Propósito**. Definição das possíveis células atípicas de significado indeterminado relevantes para o laudo de exame citopatológico."
+* ^purpose = """**Propósito**. Definição das possíveis células atípicas de significado indeterminado relevantes para o laudo de exame citopatológico."""
 
 * #neoplasicas "Possivelmente não neoplásicas"
 * #alto-grau "Não se pode afastar lesão de alto grau"

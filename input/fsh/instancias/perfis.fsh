@@ -272,14 +272,14 @@ Description: "Dados demográficos de paciente"
 Instance: anamnese-exame-citopatologico
 InstanceOf: Questionnaire
 Usage: #definition
-Title: "Questões da anamnese"
-Description: "Definição das questões que fazem parte da anamnese para requisição de exame citopatológico"
+Title: "Anamnese"
+Description: "Anamnese para requisição de exame citopatológico"
 
 * url = "https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico"
 
 * version = "0.0.1"
 * name = "AnamneseExameCitopatologico"
-* title = "Questionário (dados de Anamnese) da ficha de requisição do exame citopatológico"
+* title = "Anamnese para a requisição do exame citopatológico"
 * status = #draft
 * experimental = false
 * subjectType = #Patient
@@ -290,22 +290,22 @@ Description: "Definição das questões que fazem parte da anamnese para requisi
 * contact[0].telecom[0].value = "renata.email@inca.saude.br"
 * contact[0].telecom[0].use = #work
 * contact[0].telecom[0].period.start = "2024"
-* description = "Questões contidas na ficha de requisição de exame citopatológico."
+* description = "Anamnese para requisição de exame citopatológico. Todas as questões são obrigatórias. Duas delas, a data do último exame (Papanicolau) e a data da última menstruação são condicionais, dependem de respostas para questões pertinentes."
 * useContext.code[0].system = "http://terminology.hl7.org/CodeSystem/usage-context-type"
 * useContext.code[0].code = #gender
 * useContext.valueCodeableConcept.text = "Estabelecimento de saúde. Unidade básica de saúde."
 * jurisdiction = urn:iso:std:iso:3166#BR
-* purpose = "A execução do exame citopatológico depende das respostas para as várias questões definidas neste questionário, todas elas em conformidade com a tradicional ficha de requisição de exame citopatológico empregada em todo o território nacional."
+* purpose = "Coletar informações relevantes para o exame citopatológico."
 * copyright = "Ministério da Saúde do Brasil"
 * approvalDate = "2023-12-15"
 * lastReviewDate = "2023-11-30"
 * effectivePeriod.start = "2024-01-01"
 
-// Como caracterizar o formulário? Código local (nacional)?
+// Qual o conceito representado no questionário?
 * code[0]
-  * code = #74468-0
+  * code = #64285-0
   * system = "http://loinc.org"
-  * display = "Questionnaire form definition Document"
+  * display = "Medical history screening form"
 
 * item[0]
   * linkId = "1"

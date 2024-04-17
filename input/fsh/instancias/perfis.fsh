@@ -307,7 +307,7 @@ Description: "Anamnese para requisição de exame citopatológico"
   * system = "http://loinc.org"
   * display = "Medical history screening form"
 
-* item[0]
+* item[+]
   * linkId = "1"
   * type = #choice
   * text = "Fez o exame preventivo (Papanicolaou) alguma vez?"
@@ -315,7 +315,7 @@ Description: "Anamnese para requisição de exame citopatológico"
   * required = true
   * repeats = false
 
-* item[1]
+* item[+]
   * linkId = "2"
   * type = #date
   * text = "Quando fez o último exame?"
@@ -327,7 +327,7 @@ Description: "Anamnese para requisição de exame citopatológico"
   * required = false
   * repeats = false
 
-* item[2]
+* item[+]
   * linkId = "3"
   * type = #choice
   * text = "Usa DIU?"
@@ -336,7 +336,7 @@ Description: "Anamnese para requisição de exame citopatológico"
   * repeats = false
   * readOnly = true
 
-* item[3]
+* item[+]
   * linkId = "4"
   * type = #choice
   * code[0] = http://loinc.org#66174-4
@@ -346,7 +346,7 @@ Description: "Anamnese para requisição de exame citopatológico"
   * repeats = false
   * readOnly = true
 
-* item[4]
+* item[+]
   * linkId = "5"
   * type = #choice
   * text = "Usa pílula anticoncepcional?"
@@ -356,7 +356,7 @@ Description: "Anamnese para requisição de exame citopatológico"
   * repeats = false
   * readOnly = true
 
-* item[5]
+* item[+]
   * linkId = "6"
   * type = #choice
   * text = "Usa hormônio/remédio para tratar a menopausa?"
@@ -366,7 +366,7 @@ Description: "Anamnese para requisição de exame citopatológico"
   * repeats = false
   * readOnly = true
 
-* item[6]
+* item[+]
   * linkId = "7"
   * type = #choice
   * text = "Já fez tratamento por radioterapia?"
@@ -375,7 +375,7 @@ Description: "Anamnese para requisição de exame citopatológico"
   * repeats = false
   * readOnly = true
 
-* item[7]
+* item[+]
   * linkId = "8"
   * type = #date
   * text = "Data da última menstruação/regra"
@@ -384,7 +384,7 @@ Description: "Anamnese para requisição de exame citopatológico"
   * repeats = false
   * readOnly = true
 
-* item[8]
+* item[+]
   * linkId = "9"
   * type = #choice
   * text = "Tem ou teve algum sangramento após relações sexuais? (não considerar a primeira relação sexual na vida)"
@@ -393,7 +393,7 @@ Description: "Anamnese para requisição de exame citopatológico"
   * repeats = false
   * readOnly = true
 
-* item[9]
+* item[+]
   * linkId = "10"
   * type = #choice
   * text = "Tem ou teve algum sangramento após a menopausa? (não considerar o(s) sangramento(s) na vigência de reposição hormonal)"
@@ -402,7 +402,7 @@ Description: "Anamnese para requisição de exame citopatológico"
   * repeats = false
   * readOnly = true
 
-* item[10]
+* item[+]
   * linkId = "11"
   * type = #integer
   * text = "Qual a sua idade?"

@@ -126,14 +126,15 @@ Description: "Estrutura exigida da anamnese pela requisição de exame citopatol
 * authored 0..0
 
 // ------------------------------------------------------
-// exame-clinico
+// exame-clinico (formado por duas observações)
 // ------------------------------------------------------
 
 Profile: InspecaoColo
 Parent: Observation
 Id: inspecao-colo
-Title: "Inspeção do colo"
-Description: "Resultado da inspeção do colo"
+Title: "Inspeção do colo (parte do exame clínico)"
+Description: "O resultado da inspeção do colo é elemento obrigatório
+da requisição de exame citopatológico e obtido do exame clínico da paciente."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/inspecao-colo"
 
@@ -143,8 +144,9 @@ Description: "Resultado da inspeção do colo"
 
 // Cervix Study observation Inspection (12044-4)
 * code.coding 1..1
-* code = http://loinc.org#12044-4
+* code.coding = http://loinc.org#12044-4 (exactly)
 * code ^short = "Código para inspeção do colo"
+* code.coding ^short = "A caracterização precisa da observação"
 
 * value[x] 1..1
 * value[x] only CodeableConcept
@@ -157,20 +159,23 @@ Description: "Resultado da inspeção do colo"
 Profile: PresencaDST
 Parent: Observation
 Id: presenca-dst
-Title: "Presença de DST"
-Description: "Exame clínico para identificar presença ou não de DST"
+Title: "Sinais sugestivos de doença sexualmente transmissível"
+Description: "A presença ou não de sinais sugestivos de doença sexualmente 
+transmissível é parte do exame clínico realizado como parte da requisição
+de exame citopatológico."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/presenca-dst"
 
 * ^status = #draft
 
 * . ^short = "Registra detecção de DST ao realizar inspeção de colo"
-* code = http://loinc.org#45687-1
+* code.coding 1..1
+* code.coding = http://loinc.org#45687-1 (exactly)
 * code ^short = "Código para presença ou não de sinais de DST"
 * code.coding ^short = "Código LOINC para DST"
 * code.coding.code ^short = "Sexually transmitted diseases"
 * value[x] 1..1
-* value[x] ^short = "true se há sinal de DST ou false, caso contrário"
+* value[x] ^short = "true se há sinal de doença sexualmente transmissível ou false, caso contrário"
 * value[x] only boolean
 
 // ------------------------------------------------------

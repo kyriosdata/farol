@@ -273,6 +273,8 @@ Description: "A unidade de saúde na qual o exame citopatológico da paciente Br
 
 * type.coding.system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoEstabelecimentoSaude"
 * type.coding.code = #1
+
+// Nome da unidade de saúde
 * type.text = "POSTO DE SAUDE"
 
 // ------------------------------------------------------

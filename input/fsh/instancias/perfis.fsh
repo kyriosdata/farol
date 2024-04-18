@@ -75,6 +75,39 @@ Context: Patient
 * value[x] only Age
 
 // ------------------------------------------------------
+// unidade de saúde
+// ------------------------------------------------------
+
+Profile: CNES
+Parent: Identifier
+Id: CNES
+Title: "CNES"
+Description: "Identificador CNES"
+
+* ^status = #draft
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/CNES"
+
+* id 0..0
+* extension 0..0
+* use 0..0
+* type 0..0
+* period 0..0
+* assigner 0..0
+
+* system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes" (exactly)
+* value 1..1
+
+
+Profile: UnidadeDeSaude
+Parent: Organization
+Id: unidade-de-saude
+Title: "Unidade de Saude"
+Description: "Unidade de Saúde para Requisição de Exame Citopatológico"
+
+* identifier 1..1 
+* identifier only https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/CNES
+
+// ------------------------------------------------------
 // requisicao-exame-citopatologico
 // ------------------------------------------------------
 
@@ -96,7 +129,7 @@ Description: "Definição das informações que devem constar em toda e qualquer
 
 * . ^short = "Requisição de exame citopatológico"
 * reasonCode 1..1
-* reasonCode ^short = "Contexto no qual a requisição é criada"
+* reasonCode ^short = "Motivo do exame"
 * reasonCode.coding 1..1
 * reasonCode.coding ^short = "Código que identifica o motivo do exame"
 * reasonCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-exame-citopatologico (required)
@@ -132,7 +165,7 @@ Description: "Estrutura exigida da anamnese pela requisição de exame citopatol
 Profile: InspecaoColo
 Parent: Observation
 Id: inspecao-colo
-Title: "Inspeção do colo (parte do exame clínico)"
+Title: "Inspeção do colo"
 Description: "O resultado da inspeção do colo é elemento obrigatório
 da requisição de exame citopatológico e obtido do exame clínico da paciente."
 
@@ -158,7 +191,7 @@ da requisição de exame citopatológico e obtido do exame clínico da paciente.
 Profile: PresencaDST
 Parent: Observation
 Id: presenca-dst
-Title: "Sinais sugestivos de doença sexualmente transmissível"
+Title: "Sinais sugestivos de DST"
 Description: "A presença ou não de sinais sugestivos de doença sexualmente 
 transmissível é parte do exame clínico realizado como parte da requisição
 de exame citopatológico."
@@ -169,7 +202,7 @@ de exame citopatológico."
 
 * . ^short = "Registra detecção de DST ao realizar inspeção de colo"
 * code.coding 1..1
-* code.coding.system = http://loinc.org#45687-1
+* code.coding = http://loinc.org#45687-1
 * code ^short = "Código para presença ou não de sinais de DST"
 * value[x] 1..1
 * value[x] ^short = "true se há sinal de doença sexualmente transmissível ou false, caso contrário"

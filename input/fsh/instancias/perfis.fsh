@@ -144,10 +144,7 @@ da requisição de exame citopatológico e obtido do exame clínico da paciente.
 
 // Cervix Study observation Inspection (12044-4)
 * code.coding 1..1
-* code.coding.system = "http://loinc.org"
-* code.coding.system ^short = "Identificador do sistema de codificação"
-* code.coding.code = #12044-4
-* code.coding.code ^short = "Código definido pelo sistema de codificação"
+* code.coding = http://loinc.org#12044-4
 * code ^short = "Código para inspeção do colo"
 
 * value[x] 1..1
@@ -172,11 +169,8 @@ de exame citopatológico."
 
 * . ^short = "Registra detecção de DST ao realizar inspeção de colo"
 * code.coding 1..1
-* code.coding.system = "http://loinc.org"
-* code.coding.code = #45687-1
+* code.coding.system = http://loinc.org#45687-1
 * code ^short = "Código para presença ou não de sinais de DST"
-* code.coding ^short = "Código LOINC para DST"
-* code.coding.code ^short = "Sexually transmitted diseases"
 * value[x] 1..1
 * value[x] ^short = "true se há sinal de doença sexualmente transmissível ou false, caso contrário"
 * value[x] only boolean

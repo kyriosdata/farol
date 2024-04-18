@@ -348,7 +348,7 @@ Description: "Situação do colo"
 * ^status = #draft
 * ^experimental = false
 * ^date = "2024-04-15"
-* ^purpose = "**Propósito. Definição do conjunto de valores para resultado da inspeção de colo admitido para o item em questão da requisição de exame citopatológico."
+* ^purpose = "**Propósito**. Definição do conjunto de valores para resultado da inspeção de colo admitido para o item em questão da requisição de exame citopatológico."
 
 * include codes from system ResultadosInspecaoColo
 

@@ -87,8 +87,8 @@ Description: "Definição das informações que devem constar em toda e qualquer
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
 * ^status = #draft
 
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Evita warning</div>"
+// * ^text.status = #empty
+// * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Evita warning</div>"
 
 * code.coding 1..1
 * code.coding = http://www.saude.gov.br/fhir/r4/CodeSystem/BRTabelaSUS#0203010086
@@ -144,9 +144,11 @@ da requisição de exame citopatológico e obtido do exame clínico da paciente.
 
 // Cervix Study observation Inspection (12044-4)
 * code.coding 1..1
-* code.coding = http://loinc.org#12044-4 (exactly)
+* code.coding.system = "http://loinc.org"
+* code.coding.system ^short = "Identificador do sistema de codificação"
+* code.coding.code = #12044-4
+* code.coding.code ^short = "Código definido pelo sistema de codificação"
 * code ^short = "Código para inspeção do colo"
-* code.coding ^short = "A caracterização precisa da observação"
 
 * value[x] 1..1
 * value[x] only CodeableConcept
@@ -170,7 +172,8 @@ de exame citopatológico."
 
 * . ^short = "Registra detecção de DST ao realizar inspeção de colo"
 * code.coding 1..1
-* code.coding = http://loinc.org#45687-1 (exactly)
+* code.coding.system = "http://loinc.org"
+* code.coding.code = #45687-1
 * code ^short = "Código para presença ou não de sinais de DST"
 * code.coding ^short = "Código LOINC para DST"
 * code.coding.code ^short = "Sexually transmitted diseases"

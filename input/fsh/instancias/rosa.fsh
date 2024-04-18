@@ -284,8 +284,6 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 * extension[4].valueCode = #LA12462-0
 
 * address[0]
-  * use = #home
-  * type = #physical
   * city = #315780
   //* state = http://www.saude.gov.br/fhir/r4/CodeSystem/BRDivisaoGeograficaBrasil|2023-12-14#31
   * postalCode = "74000-000"  // Nao valida a máscara xxxxx-xxx

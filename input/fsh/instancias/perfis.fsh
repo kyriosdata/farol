@@ -141,6 +141,7 @@ Description: "Resultado da inspeção do colo"
 
 * . ^short = "Registra resultado obtido da inspeção do colo"
 
+// Cervix Study observation Inspection (12044-4)
 * code.coding 1..1
 * code = http://loinc.org#12044-4
 * code ^short = "Código para inspeção do colo"
@@ -269,7 +270,9 @@ Description: "Anamnese para requisição de exame citopatológico"
 
 * version = "0.0.1"
 * name = "AnamneseExameCitopatologico"
-* title = "Anamnese para a requisição do exame citopatológico"
+* title = "Anamnese definida conforme
+a seção 'Dados da anamnese' da ficha de Requisição de Exame Citopatológico - Colo do útero mantida 
+pelo INCA, disponível [aqui](nova-requisicao-exame-citopatologico.pdf)."
 * status = #draft
 * experimental = false
 * subjectType = #Patient
@@ -280,17 +283,14 @@ Description: "Anamnese para requisição de exame citopatológico"
 * contact[0].telecom[0].value = "renata.email@inca.saude.br"
 * contact[0].telecom[0].use = #work
 * contact[0].telecom[0].period.start = "2024"
-* description = """Anamnese para requisição de exame citopatológico. Esta anamnese é definida em 
-conformidade com seção 'DADOS DA ANAMNESE' da ficha de Requisição de Exame Citopatológico - Colo do útero mantida 
-pelo INCA, disponível [aqui](nova-requisicao-exame-citopatologico.pdf).
-
-Todas as questões são obrigatórias. Duas delas, 
+* description = """As questões da anamnese são todas obrigatórias.
+Duas delas, 
 a data do último exame (Papanicolau) e a data da última menstruação são condicionais, 
 dependem de respostas para questões correlatas. 
 
-Adicionalmente, a primeira questão presente na ficha impressa da Requisição de Exame Citopatológico,
-'Motivo do exame', não segue na anamnese. Esta informação é registrada como parte das
-informações pertinentes à requisição e não será respondida pela paciente."""
+Adicionalmente, a primeira questão presente na seção 'Dados da anamense' da ficha 
+de requisição não segue na anamnese aqui definida. Esta informação é registrada como parte das
+informações pertinentes à requisição."""
 
 * useContext.code[0].system = "http://terminology.hl7.org/CodeSystem/usage-context-type"
 * useContext.code[0].code = #gender

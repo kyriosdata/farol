@@ -280,7 +280,10 @@ Description: "Anamnese para requisição de exame citopatológico"
 * contact[0].telecom[0].value = "renata.email@inca.saude.br"
 * contact[0].telecom[0].use = #work
 * contact[0].telecom[0].period.start = "2024"
-* description = """Anamnese para requisição de exame citopatológico. 
+* description = """Anamnese para requisição de exame citopatológico. Esta anamnese é definida em 
+conformidade com seção 'DADOS DA ANAMNESE' da ficha de Requisição de Exame Citopatológico - Colo do útero mantida 
+pelo INCA, disponível [aqui](nova-requisicao-exame-citopatologico.pdf).
+
 Todas as questões são obrigatórias. Duas delas, 
 a data do último exame (Papanicolau) e a data da última menstruação são condicionais, 
 dependem de respostas para questões correlatas. 

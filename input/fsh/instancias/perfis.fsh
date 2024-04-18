@@ -264,15 +264,15 @@ Instance: anamnese-exame-citopatologico
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "Anamnese"
-Description: "Anamnese para requisição de exame citopatológico"
+Description: "Anamnese definida conforme
+a seção 'Dados da anamnese' da ficha de Requisição de Exame Citopatológico - Colo do útero mantida 
+pelo INCA, disponível [aqui](nova-requisicao-exame-citopatologico.pdf)."
 
 * url = "https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico"
 
 * version = "0.0.1"
 * name = "AnamneseExameCitopatologico"
-* title = "Anamnese definida conforme
-a seção 'Dados da anamnese' da ficha de Requisição de Exame Citopatológico - Colo do útero mantida 
-pelo INCA, disponível [aqui](nova-requisicao-exame-citopatologico.pdf)."
+* title = "Anamnese para requisição de exame citopatológico"
 * status = #draft
 * experimental = false
 * subjectType = #Patient

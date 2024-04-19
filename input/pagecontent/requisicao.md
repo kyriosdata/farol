@@ -1,4 +1,5 @@
-Este modelo de informação foi produzido a partir da Ficha de Requisição de Exame Citopatológico - Colo do Útero. Uma versão desta ficha com seus compos enumerados encontra-se disponível [aqui](./nova-requisicao-enumerada.pdf). A enumeração abaixo reflete a enumeração fornecida nesta ficha.
+Este modelo de informação foi produzido a partir da Ficha de Requisição de Exame Citopatológico - Colo do Útero. Uma versão desta ficha onde cada item de informação segue enumerado encontra-se disponível [aqui](./nova-requisicao-enumerada.pdf). A enumeração é utilizada para relacionar o item de informação da ficha
+com o mapeamento apresentado abaixo. 
 
 
 > O modelo de informação é uma representação conceitual, na qual os elementos referentes a um documento específico são modelados em seções e blocos de dados, com seus respectivos tipos de dados a serem informados. Também são informadas as referências para o uso de recursos terminológicos. A tabela 1 apresenta os elementos que fazem parte do modelo de informação onde:

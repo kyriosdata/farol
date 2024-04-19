@@ -266,11 +266,11 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 
 // ERRO NA EXTENSAO (não deveria permitir raca e etnia indígena)
 // EXTENSÃO PODE SER ESPECIALIZADA PARA CORRIGIR
-* extension[2].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/etnia"
+* extension[2].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/raca-etnia"
 * extension[2].extension[0].url = "race"
-* extension[2].extension[0].valueCoding = $racacor#02
+* extension[2].extension[0].valueCode = #05
 * extension[2].extension[1].url = "indigenousEthnicity"
-* extension[2].extension[1].valueCoding = $etniaindigena#0001
+* extension[2].extension[1].valueCode = #0001
 
 // Nacionalidade (B - brasileiro, E - estrangeiro ou N - naturalizado)
 * extension[3].url = $nacionalidade

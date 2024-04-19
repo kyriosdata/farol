@@ -135,6 +135,7 @@ Id: unidade-executante
 Title: "Laboratório"
 Description: "Unidade de Saúde que produz laudo de Exame Citopatológico"
 
+* . ^short = "A unidade de saúde executante, aquela que produz o laudo de exame citopatológico."
 * ^description = "Laboratório que produz laudo de exame citopatológico."
 * ^status = #draft
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/unidade-executante"

@@ -78,34 +78,91 @@ Context: Patient
 // unidade de saúde
 // ------------------------------------------------------
 
-Profile: CNES
-Parent: Identifier
-Id: CNES
-Title: "CNES"
-Description: "Identificador CNES"
-
-* ^status = #draft
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/CNES"
-
-* id 0..0
-* extension 0..0
-* use 0..0
-* type 0..0
-* period 0..0
-* assigner 0..0
-
-* system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes" (exactly)
-* value 1..1
-
-
 Profile: UnidadeDeSaude
 Parent: Organization
-Id: unidade-de-saude
-Title: "Unidade de Saude"
+Id: unidade-requisitante
+Title: "Unidade requisitante"
 Description: "Unidade de Saúde para Requisição de Exame Citopatológico"
 
+* ^description = "Unidade de Saúde que requisita exame citopatológico"
+* ^status = #draft
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/unidade-requisitante"
+
 * identifier 1..1 
-* identifier only https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/CNES
+* identifier.id 0..0
+* identifier.extension 0..0
+* identifier.use 0..0
+* identifier.type 0..0
+* identifier.period 0..0
+* identifier.assigner 0..0
+* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes" (exactly)
+* identifier.value 1..1
+* identifier.value ^short = "O código CNES da unidade de saúde requisitante"
+
+* active 0..0
+* type 0..0
+* alias 0..0
+* telecom 0..0
+
+* address 0..1
+* address.use 0..0
+* address.type 0..0
+* address.text 0..0
+* address.line 0..0
+* address.city from $BRMunicipio-1.0 (required)
+* address.city ^short = "O código IBGE de 6 dígitos do município"
+* address.district 0..0
+* address.state from $BRUnidadeFederativa-1.0
+* address.state ^short = "O código da unidade federativa"
+* address.postalCode 0..0
+* address.country 0..0
+* address.period 0..0
+* address.extension 0..0
+* address.id 0..0
+
+* partOf 0..0
+* contact 0..0
+* endpoint 0..0
+* contained 0..0
+* extension 0..0
+* implicitRules 0..0
+* language 0..0
+* modifierExtension 0..0
+
+Profile: Laboratorio
+Parent: Organization
+Id: unidade-executante
+Title: "Laboratório"
+Description: "Unidade de Saúde que produz laudo de Exame Citopatológico"
+
+* ^description = "Laboratório que produz laudo de exame citopatológico."
+* ^status = #draft
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/unidade-executante"
+
+* identifier 1..1 
+* identifier.id 0..0
+* identifier.extension 0..0
+* identifier.use 0..0
+* identifier.type 0..0
+* identifier.period 0..0
+* identifier.assigner 0..0
+* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes" (exactly)
+* identifier.value 1..1
+* identifier.value ^short = "O código CNES da unidade de saúde requisitante"
+
+* active 0..0
+* type 0..0
+* alias 0..0
+* telecom 0..0
+* address 0..0
+* partOf 0..0
+* contact 0..0
+* endpoint 0..0
+* contained 0..0
+* extension 0..0
+* implicitRules 0..0
+* language 0..0
+* modifierExtension 0..0
 
 // ------------------------------------------------------
 // requisicao-exame-citopatologico

@@ -8,34 +8,82 @@ Alias: $niveis-educacionais = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/nivei
 Alias: $resultado-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/resultado-inspecao-colo
 
 
-Extension: Etnia
-Id:   etnia
-Title:  "Etnia"
-Description: """
-Similar ao perfil BRRacaCorEtnia (RNDS), mas inclompleto em 19/02/2024.
-"""
+Alias: $BRRacaCor-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRRacaCor-1.0
+Alias: $BREtniaIndigena-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BREtniaIndigena-1.0
 
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Extensão para registro do nível educacional</div>"
+// --- AVISO
+// --- AJUSTE NA EXTENSÃO PRODUZIDA PELA RNDS  
+// http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRacaCorEtnia-1.0
+// ---
+// Motivo: raça é obrigatória na extensão da RNDS, 
+// o que não é o caso da requisição de exame citopatológico.
+// Adicionalmente foram estabelecidas regras para fornecimento
+// de valor para etnia apenas conforme valor para raça/cor.
 
-* ^status = #draft
+Invariant: EtniaApenasSeRacaCorForIndigena
+Description: "Se etnia indígena é fornecida, então obrigatoriamente a raça/cor deve ser indígena."
+Expression: "extension.url = 'indigenousEthinicity implies extension.where(url = 'race').value = '05'"
+Severity: #error
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/etnia"
 
-* ^context[0].type = #element
-* ^context[0].expression = "Patient"
+Extension: BRRacaCorEtnia
+Id: raca-cor-etnia
+Title: "Raça/Cor e Etnina"
+Description: "Extensão para para representar dados relacionados à raça/cor e etnia de um indivíduo."
+Context: Patient
+* ^meta.lastUpdated = "2020-03-13T19:47:18.613+00:00"
+* ^language = #pt-BR
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/raca-cor-etnia"
+* . ..1
+* . ^short = "Identificação da Raça/Cor e, se for o caso, da etnia indígena."
+* . ^definition = "Dados relacionados à raça/cor e etnia de um indivíduo."
+* . ^alias[0] = "raça"
+* . ^alias[+] = "etnia"
+* . ^alias[+] = "cor"
+* . ^alias[+] = "cútis"
+
+* url only uri
+* url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/raca-cor-etnia" (exactly)
+
+
+// Regra acrescentada
+* extension obeys EtniaApenasSeRacaCorForIndigena
+
+* extension ^slicing.discriminator.type = #value
+* extension ^slicing.discriminator.path = "url"
+* extension ^slicing.rules = #closed
 
 * extension contains
-    race 0..1 MS and
-    indigenousEthnicity 0..1 MS
+    race 0..1 and
+    indigenousEthnicity 0..1
 
-* extension[race].value[x] only Coding
-* extension[race].valueCoding 1..1
-* extension[race].valueCoding from http://www.saude.gov.br/fhir/r4/ValueSet/BRRacaCor-1.0 (required)
+* extension[race] ^short = "Raça/Cor"
+* extension[race] ^definition = "Raça ou cor autorreferenciada por um indivíduo."
+* extension[race] ^binding.description = "Raça/Cor"
+* extension[race].url = "race" (exactly)
+* extension[race].value[x] 1..
+* extension[race].value[x] only CodeableConcept
+* extension[race].valueCodeableConcept from $BRRacaCor-1.0 (required)
+* extension[race].value[x].coding 1..1
+* extension[race].value[x].coding.system 1..
+* extension[race].value[x].coding.code 1..
+* extension[race].value[x].coding.display ..0
+* extension[race].value[x].coding.userSelected ..0
+* extension[race].value[x].text ..0
 
-* extension[indigenousEthnicity].value[x] only Coding
-* extension[indigenousEthnicity].valueCoding 1..1
-* extension[indigenousEthnicity].valueCoding from http://www.saude.gov.br/fhir/r4/ValueSet/BREtniaIndigena-1.0 (required)
+* extension[indigenousEthnicity] ^short = "Etnia Indígena"
+* extension[indigenousEthnicity] ^definition = "Etnia indígena atribuída a um indivíduo"
+* extension[indigenousEthnicity] ^binding.description = "Etnia Indígena"
+* extension[indigenousEthnicity].value[x] 1..
+* extension[indigenousEthnicity].value[x] only CodeableConcept
+* extension[indigenousEthnicity].valueCodeableConcept from $BREtniaIndigena-1.0 (required)
+* extension[indigenousEthnicity].value[x].coding 1..1
+* extension[indigenousEthnicity].value[x].coding.system 1..
+* extension[indigenousEthnicity].value[x].coding.code 1..
+* extension[indigenousEthnicity].value[x].coding.display ..0
+* extension[indigenousEthnicity].value[x].coding.userSelected ..0
+* extension[indigenousEthnicity].value[x].text ..0
+
 
 Extension: NivelEducacional
 Id:   nivel-educacional
@@ -344,7 +392,7 @@ Description: "Dados demográficos de paciente"
     http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade named pais 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade named idade 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional named educacao 0..1 MS and
-    https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/etnia named etnia 0..1 MS
+    https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/raca-cor-etnia named etnia 0..1 MS
    
 * ^status = #draft
 

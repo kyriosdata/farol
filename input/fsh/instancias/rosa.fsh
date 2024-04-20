@@ -281,7 +281,7 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 
 // Nível de escolaridade
 * extension[4].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional"
-* extension[4].valueCode = #LA12462-0
+* extension[4].valueCode = #fundamental-incompleto
 
 * address[0]
   * city = #315780

@@ -796,6 +796,26 @@ Description: "Tipos de avaliação de exame citopatológico"
 // niveis-educacionais
 // ------------------------------------------------------
 
+CodeSystem: NivelEducacional
+Id: escolaridade
+Title: "Informações do laudo citopatológico"
+Description: "Tipos de avaliação de exame citopatológico"
+
+* ^text.status = #empty
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Itens avaliados no laudo de exame citopatológico</div>"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/escolaridade"
+
+* ^status = #unknown
+* ^caseSensitive = true
+* ^experimental = false
+
+* #anafalbeto "Analfabeto"
+* #fundamental-incomplemento "Ensino fundamental incompleto"
+* #fundamental-completo "Ensino fundamental completo"
+* #medio-completo "Ensino médio completo"
+* #superior-completo "Ensino superior completo"
+
 ValueSet: NivelEducacional
 Id: niveis-educacionais
 Title: "Níveis educacionais"
@@ -815,17 +835,20 @@ Identifica o nível educacional do paciente (maior obtido).
 Esta classificação foi realizada com base em códigos disponíveis LOINC. **IMPORTANTE**: ajuste para manter coerência com o Ministério da Educação pode ser necessário.
 """
 
-// Conforme https://www.hl7.org/fhir/loinc.html#4.3.3.2
-* ^copyright = "This content LOINC® is copyright © 1995 Regenstrief Institute, Inc. and the LOINC Committee, and available at no cost under the license at http://loinc.org/terms-of-use"
+* include codes from system NivelEducacional
 
-* http://loinc.org#LA36-9 "Ensino infantil ou menos"
-* http://loinc.org#LA12456-2 "Ensino fundamental"
-* http://loinc.org#LA12457-0 "Ensino médio"
-* http://loinc.org#LA12458-8 "Curso técnico"
-* http://loinc.org#LA12460-4 "Graduação"
-* http://loinc.org#LA12461-2 "Mestrado"
-* http://loinc.org#LA12462-0 "Doutorado"
-* http://loinc.org#LA4489-6 "Desconhecido"
+// Conforme https://www.hl7.org/fhir/loinc.html#4.3.3.2
+// * ^copyright = "This content LOINC® is copyright © 1995 Regenstrief Institute, Inc. and the LOINC Committee, and available at no cost under the license at http://loinc.org/terms-of-use"
+
+
+// * http://loinc.org#LA36-9 "Ensino infantil ou menos"
+// * http://loinc.org#LA12456-2 "Ensino fundamental"
+// * http://loinc.org#LA12457-0 "Ensino médio"
+// * http://loinc.org#LA12458-8 "Curso técnico"
+// * http://loinc.org#LA12460-4 "Graduação"
+// * http://loinc.org#LA12461-2 "Mestrado"
+// * http://loinc.org#LA12462-0 "Doutorado"
+// * http://loinc.org#LA4489-6 "Desconhecido"
 
 // ------------------------------------------------------
 // motivo-rejeicao

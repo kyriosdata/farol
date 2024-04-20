@@ -50,14 +50,12 @@ Context: Patient
 
 * extension[race] ^short = "Raça/Cor"
 * extension[race] ^definition = "Raça ou cor autorreferenciada por um indivíduo."
-* extension[race] ^binding.description = "Raça/Cor"
 * extension[race].url = "race" (exactly)
 * extension[race].value[x] only code
 * extension[race].valueCode from $BRRacaCor-1.0 (required)
 
 * extension[indigenousEthnicity] ^short = "Etnia Indígena"
 * extension[indigenousEthnicity] ^definition = "Etnia indígena atribuída a um indivíduo"
-* extension[indigenousEthnicity] ^binding.description = "Etnia Indígena"
 * extension[indigenousEthnicity].url = "indigenousEthnicity" (exactly)
 * extension[indigenousEthnicity].value[x] only code
 * extension[indigenousEthnicity].valueCode from $BREtniaIndigena-1.0 (required)

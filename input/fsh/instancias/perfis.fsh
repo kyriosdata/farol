@@ -12,19 +12,6 @@ Alias: $BRRacaCor-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRRacaCor-1.0
 Alias: $BREtniaIndigena-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BREtniaIndigena-1.0
 
 
-RuleSet: Identificador(min, max, sid, descricao)
-* identifier {min}..{max}
-* identifier.id 0..0
-* identifier.extension 0..0
-* identifier.use 0..0
-* identifier.type 0..0
-* identifier.period 0..0
-* identifier.assigner 0..0
-* identifier.system = "{sid}" (exactly)
-* identifier.value 1..1
-* identifier.value ^short = "{descricao}"
-
-
 // --- AVISO
 // --- AJUSTE NA EXTENSÃO PRODUZIDA PELA RNDS  
 // http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRacaCorEtnia-1.0
@@ -128,7 +115,6 @@ Description: "Unidade de Saúde para Requisição de Exame Citopatológico"
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/unidade-requisitante"
 
 * identifier 0..1 
-* identifier.id 0..0
 * identifier.extension 0..0
 * identifier.use 0..0
 * identifier.type 0..0
@@ -370,6 +356,42 @@ Description: "Endereço da paciente"
 // paciente
 // ------------------------------------------------------
 
+Profile: IdentificadorCNS
+Parent: Identifier
+Id: identificador-cns
+Title: "Identificador CNS"
+Description: "O número do Cartão Nacional SUS"
+* id 0..0
+* extension 0..0
+* use 0..0
+* type 0..0
+* period 0..0
+* assigner 0..0
+* system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns" (exactly)
+* value 1..1
+* value ^short = "O número do cartão SUS da paciente"
+
+Profile: IdentificadorCPF
+Parent: Identifier
+Id: identificador-cpf
+Title: "CPF"
+Description: "O número do CPF da paciente"
+* id 0..0
+* extension 0..0
+* use 0..0
+* type 0..0
+* period 0..0
+* assigner 0..0
+* system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf" (exactly)
+* value 1..1
+* value ^short = "O número do CPF da paciente"
+
+Invariant: CNSObrigatorio
+Description: "O Cartão Nacional SUS da paciente é obrigatório"
+Expression: "identifier.where(system='https://fhir.fabrica.inf.ufg.br/ccu/sid/cns').exists()"
+Severity: #error
+
+
 Profile: Paciente
 Parent: Patient
 Id: paciente
@@ -378,8 +400,10 @@ Description: "Dados demográficos de paciente"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente"
 
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Perfil de paciente alinhado com a definição de BRIndividuo (perfil) definido pelo Ministério da Saúde (Brasil).</div>"
+* obeys CNSObrigatorio
+* identifier ^short = "A identificação da paciente. É obrigatório o Cartão Nacional SUS, o CPF é opcional."
+* identifier 1..2
+* identifier only IdentificadorCNS or IdentificadorCPF
 
 * extension contains 
     http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName named mae 1..1 MS and

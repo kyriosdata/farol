@@ -412,9 +412,14 @@ Description: "Dados demográficos de paciente"
 * identifier only IdentificadorCNS or IdentificadorCPF // #7 e #11
 
 // #8 e #10
+* name ^short = "O nome completo da paciente e, possivelmente, o apelido"
 * name 1..2
 * name.text 1..1
 * name.use 1..1
+* name.use ^short = "Está restrito ao uso oficial (official) ou apelido (nickname)"
+
+// #9 (Nome Completo da Mãe) extensão 'mae' abaixo
+// #12 (nacionalidade) extensão 'pais' abaixo
 
 * extension contains 
     http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName named mae 1..1 MS and
@@ -422,10 +427,18 @@ Description: "Dados demográficos de paciente"
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade named idade 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional named educacao 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/raca-etnia named etnia 0..1 MS
-   
+
+* extension[mae] ^short = "O nome da mãe"
+
 * ^status = #draft
 
 * address only Endereco
+
+* birthDate ^short = "A data de nascimento"
+* birthDate 1..1 // #13
+
+* active 0..0
+* deceased[x] 0..0
 
 // ------------------------------------------------------
 // anamnese-exame-citopatologico

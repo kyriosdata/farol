@@ -11,6 +11,20 @@ Alias: $resultado-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/r
 Alias: $BRRacaCor-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRRacaCor-1.0
 Alias: $BREtniaIndigena-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BREtniaIndigena-1.0
 
+
+RuleSet: Identificador(min, max, sid, descricao)
+* identifier {min}..{max}
+* identifier.id 0..0
+* identifier.extension 0..0
+* identifier.use 0..0
+* identifier.type 0..0
+* identifier.period 0..0
+* identifier.assigner 0..0
+* identifier.system = "{sid}" (exactly)
+* identifier.value 1..1
+* identifier.value ^short = "{descricao}"
+
+
 // --- AVISO
 // --- AJUSTE NA EXTENSÃO PRODUZIDA PELA RNDS  
 // http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRacaCorEtnia-1.0
@@ -99,10 +113,10 @@ Context: Patient
 * value[x] only Age
 
 // ------------------------------------------------------
-// unidade de saúde
+// estabelecimento (unidade de saúde)
 // ------------------------------------------------------
 
-Profile: UnidadeDeSaude
+Profile: Estabelecimento
 Parent: Organization
 Id: unidade-requisitante
 Title: "Unidade requisitante"
@@ -113,7 +127,7 @@ Description: "Unidade de Saúde para Requisição de Exame Citopatológico"
 * ^status = #draft
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/unidade-requisitante"
 
-* identifier 1..1 
+* identifier 0..1 
 * identifier.id 0..0
 * identifier.extension 0..0
 * identifier.use 0..0
@@ -121,7 +135,7 @@ Description: "Unidade de Saúde para Requisição de Exame Citopatológico"
 * identifier.period 0..0
 * identifier.assigner 0..0
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes" (exactly)
-* identifier.value 1..1
+* identifier.value 1..1 // #2 (CNES)
 * identifier.value ^short = "O código CNES da unidade de saúde requisitante"
 
 * active 0..0
@@ -129,14 +143,18 @@ Description: "Unidade de Saúde para Requisição de Exame Citopatológico"
 * alias 0..0
 * telecom 0..0
 
+* name 0..1 // #4 (Unidade de Saúde)
+
 * address 0..1
 * address.use 0..0
 * address.type 0..0
 * address.text 0..0
 * address.line 0..0
+* address.city 0..1 // #5 (Município)
 * address.city from $BRMunicipio-1.0 (required)
 * address.city ^short = "O código IBGE de 6 dígitos do município"
 * address.district 0..0
+* address.state 0..1  // #1 (UF)
 * address.state from $BRUnidadeFederativa-1.0
 * address.state ^short = "O código da unidade federativa"
 * address.postalCode 0..0

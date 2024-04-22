@@ -391,6 +391,11 @@ Description: "O Cartão Nacional SUS da paciente é obrigatório"
 Expression: "identifier.where(system='https://fhir.fabrica.inf.ufg.br/ccu/sid/cns').exists()"
 Severity: #error
 
+Invariant: NomeOficialApelidoOpcional
+Description: "O nome oficial é obrigatório, o apelido é opcional"
+Expression: "name.select(use='official' or use='nickname').allTrue() and name.where(use='official').exists() and name.use.isDistinct()"
+Severity: #error
+
 
 Profile: Paciente
 Parent: Patient
@@ -400,10 +405,16 @@ Description: "Dados demográficos de paciente"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente"
 
-* obeys CNSObrigatorio
+* obeys CNSObrigatorio and NomeOficialApelidoOpcional
+
 * identifier ^short = "A identificação da paciente. É obrigatório o Cartão Nacional SUS, o CPF é opcional."
 * identifier 1..2
-* identifier only IdentificadorCNS or IdentificadorCPF
+* identifier only IdentificadorCNS or IdentificadorCPF // #7 e #11
+
+// #8 e #10
+* name 1..2
+* name.text 1..1
+* name.use 1..1
 
 * extension contains 
     http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName named mae 1..1 MS and

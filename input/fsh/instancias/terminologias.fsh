@@ -811,10 +811,10 @@ Description: "Tipos de avaliação de exame citopatológico"
 * ^experimental = false
 
 * #anafalbeto "Analfabeto"
-* #fundamental-incomplemento "Ensino fundamental incompleto"
-* #fundamental-completo "Ensino fundamental completo"
-* #medio-completo "Ensino médio completo"
-* #superior-completo "Ensino superior completo"
+* #fundamental-incompleto "Ensino fundamental incompleto"
+* #fundamental "Ensino fundamental completo"
+* #medio "Ensino médio completo"
+* #superior "Ensino superior completo"
 
 ValueSet: NivelEducacional
 Id: niveis-educacionais

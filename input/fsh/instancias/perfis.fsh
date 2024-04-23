@@ -100,6 +100,7 @@ Context: Patient
 
 * value[x] only Age
 * valueAge 1..1
+* valueAge ^short = "A idade da paciente em anos"
 * valueAge.system = "http://unitsofmeasure.org" (exactly)
 * valueAge.code = #a (exactly)
 

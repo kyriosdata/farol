@@ -63,29 +63,41 @@ Context: Patient
 * extension[indigenousEthnicity].valueCode from $BREtniaIndigena-1.0 (required)
 
 
-Extension: NivelEducacional
-Id:   nivel-educacional
-Title:  "Nível educacional"
+Extension: Escolaridade
+Id:   escolaridade
+Title:  "Escolaridade"
 Description: """
-Identificação do maior nível educacional obtido pelo paciente.
+Identificação do maior nível educacional obtido pelo indivíduo.
 """
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Extensão para registro do nível educacional</div>"
 
 * ^status = #draft
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/escolaridade"
 
 * ^context[0].type = #element
 * ^context[0].expression = "Patient"
 
 * value[x] only code
+* valueCode 1..1
+* valueCode ^short = "O nível educacional"
 * valueCode from $niveis-educacionais (required)
 
+// ------------------------------------------------------
+// item-endereco
+// ------------------------------------------------------
+
+Extension: ItemEndereco
+Id: item-endereco
+Context: Address.line
+* ^status = #draft
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/item-endereco"
+
+* value[x] only code
+* valueCode 1..1
+* valueCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/componentes-endereco
 
 // ------------------------------------------------------
-// idade
+// idade // #14 (idade)
 // ------------------------------------------------------
 
 Extension: Idade
@@ -319,42 +331,63 @@ Profile: Endereco
 Parent: Address
 Id: endereco
 Title: "Endereço"
-Description: "Endereço da paciente"
+Description: "Endereço"
 * ^status = #active
 * ^meta.lastUpdated = "2020-03-11T04:06:40.866+00:00"
-* ^text.status = #empty
-* ^text.div = "<div xml:lang='pt-BR' lang='pt-BR' xmlns='http://www.w3.org/1999/xhtml'>Adaptação de BREndereco (que provoca erros em validação)</div>"
 * ^language = #pt-BR
-* ^description = "Endereço da paciente formado por logradouro, número, complemente, bairro, município, unidade da federação, CEP e ponto de referência."
-* ^version = "1.0"
-* ^publisher = "Ministério da Saúde do Brasil"
+* ^description = "Endereço formado por logradouro, número, complemente, bairro, município, unidade da federação, CEP e ponto de referência."
 * . MS
 * . ^short = "Dados do endereço"
 * . ^definition = "Dados do endereço da paciente."
 * use 0..0
 * type 0..0
-* text ..0
+* text 0..0
 
 * line ^short = "Logradouro, número, complemento e outros."
 * line ^definition = "Os vários elementos que compõem o endereço: logradouro, número, complemento, bairro, município, unidade da federação, CEP e ponto de referência. Nenhum destes elementos é obrigatório."
 * line 1.. MS
 * obeys LinhasEndereco
 
-* city 1..
+* line.extension.url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/item-endereco" 
+* line ^slicing.discriminator.type = #value
+* line ^slicing.discriminator.path = "extension.value"
+* line ^slicing.rules = #closed
+
+* line contains 
+    logradouro 0..1 and    // #16
+    numero 0..1 and        // #17
+    complemento 0..1 and   // #18
+    bairro 0..1 and        // #19
+    referencia 0..1        // #26
+
+* line[logradouro].extension.valueCode = #logradouro
+* line[numero].extension.valueCode = #numero
+* line[complemento].extension.valueCode = #complemento
+* line[bairro].extension.valueCode = #bairro
+* line[referencia].extension.valueCode = #referencia
+
+// #22
+* city 0..1
 * city from $BRMunicipio-1.0 (required)
 * city ^short = "Município"
 * city ^definition = "Município do endereço."
 * city ^binding.description = "Municípios brasileiros"
-* district ..0
-* state 0.. MS
+
+* district 0..0
+
+// #20
+* state 0..1 MS
 * state from $BRUnidadeFederativa-1.0 (required)
 * state ^short = "UF"
 * state ^definition = "Unidade Federativa (estados ou Distrito Federal) do endereço."
 * state ^binding.description = "Estados brasileiros"
+
+// #23
 * postalCode 1.. MS
 * postalCode ^short = "CEP"
 * postalCode ^definition = "Código de Endereçamento Postal. Utilizar a máscara XXXXX-XXXX."
-* country ..0
+
+* country 0..0
 * period 0..0
 
 // ------------------------------------------------------
@@ -428,18 +461,21 @@ Description: "Dados demográficos de paciente"
 // #9 (Nome Completo da Mãe) extensão 'mae' abaixo
 // #12 (nacionalidade) extensão 'pais' abaixo
 // #14 (idade)
+// #15 (Raça/cor)
+// #27 (Nível educacional)
 
 * extension contains 
     http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName named mae 1..1 MS and
     http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade named pais 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade named idade 0..1 MS and
-    https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional named educacao 0..1 MS and
+    https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/escolaridade named educacao 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/raca-etnia named etnia 0..1 MS
 
 * extension[mae] ^short = "O nome da mãe"
 
 * ^status = #draft
 
+* address 0..1
 * address only Endereco
 
 * birthDate ^short = "A data de nascimento"

@@ -868,3 +868,29 @@ Description: "Possíveis motivos pelos quais uma amostra é rejeitada"
 * ^experimental = false
 
 * include codes from system MotivoAmostraRejeitada
+
+// ------------------------------------------------------
+// componentes-endereco
+// ------------------------------------------------------
+
+CodeSystem: ComponentesEndereco
+Id: componentes-endereco
+Title: "Componentes de endereço"
+Description: "Componentes que fazem parte de um endereço"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/componentes-endereco"
+* ^status = #draft
+* ^caseSensitive = true
+* ^experimental = false
+* #logradouro "logradouro" "Logradouro, rua"
+* #numero "número" "Número"
+* #complemento "complemento" "Complemento do endereço"
+* #bairro "bairro" "Bairro ou setor"
+* #referencia "ponto de referência" "Ponto de referência"
+
+
+ValueSet: ComponentesEndereco
+Id: itens-endereco
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/componentes-endereco"
+* ^status = #draft
+* include codes from system ComponentesEndereco

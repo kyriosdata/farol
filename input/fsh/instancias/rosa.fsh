@@ -5,7 +5,6 @@ Alias: $racacoretnia = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRac
 Alias: $etniaindigena = http://www.saude.gov.br/fhir/r4/CodeSystem/BREtniaIndigena
 Alias: $nacionalidade = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade
 Alias: $cs-nacionalidade = http://www.saude.gov.br/fhir/r4/CodeSystem/BRNacionalidade
-Alias: $pontoreferencia = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator
 Alias: $cns = https://fhir.fabrica.inf.ufg.br/ccu/sid/cns
 Alias: $cpf = https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf
 Alias: $paciente-siscan = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente
@@ -277,22 +276,35 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 * extension[3].valueCodeableConcept.coding[0]
   * system = $cs-nacionalidade
   * code = #B
-  * version = "01.00"
 
 // Nível de escolaridade
-* extension[4].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional"
+* extension[4].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/escolaridade"
 * extension[4].valueCode = #fundamental-incompleto
 
-* address[0]
+* address
   * city = #315780
   //* state = http://www.saude.gov.br/fhir/r4/CodeSystem/BRDivisaoGeograficaBrasil|2023-12-14#31
   * postalCode = "74000-000"  // Nao valida a máscara xxxxx-xxx
-  * line[0] = "Rua"
-  * line[1] = "Rua"
-  * line[2] = "23"
-  * line[3] = "bloco B"
-  * line.extension[0].url = $pontoreferencia
-  * line.extension[0].valueString = "próximo ao supermercado"
+  * line[0] = "Rua 3"
+  * line[0].extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/item-endereco"
+  * line[0].extension[0].valueCode = #logradouro
+
+  * line[1] = "1441"
+  * line[1].extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/item-endereco"
+  * line[1].extension[0].valueCode = #numero
+
+  * line[2] = "São Leopoldo"
+  * line[2].extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/item-endereco"
+  * line[2].extension[0].valueCode = #bairro
+
+  * line[3] = "bloco B, apto. 2345"
+  * line[3].extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/item-endereco"
+  * line[3].extension[0].valueCode = #complemento
+
+  * line[4] = "Ao lado da Caixa"
+  * line[4].extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/item-endereco"
+  * line[4].extension[0].valueCode = #referencia
+
   
 * telecom[0]
   * system = #phone

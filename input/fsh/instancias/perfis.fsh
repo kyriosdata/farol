@@ -89,7 +89,7 @@ Identificação do maior nível educacional obtido pelo paciente.
 
 Extension: Idade
 Id: idade
-Title: "Idade estimada do paciente"
+Title: "Idade informada pela paciente"
 Description: "Idade fornecida no momento da requisição de exame citopatológico. Mantida apenas por conformidade com formulário impresso. A expectativa natural é que esta data seja calculada, por comodidade do usuário que a consulta, a partir da data de nascimento, em vez de ser informada."
 Context: Patient
 
@@ -420,6 +420,7 @@ Description: "Dados demográficos de paciente"
 
 // #9 (Nome Completo da Mãe) extensão 'mae' abaixo
 // #12 (nacionalidade) extensão 'pais' abaixo
+// #14 (idade)
 
 * extension contains 
     http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName named mae 1..1 MS and

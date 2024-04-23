@@ -1,19 +1,22 @@
 ## Transformação Digital do SISCAN
 
-Este projeto tem como foco a Transformação Digital do monitoramento e rastreamento do Câncer de Colo do Útero por meio de um Guia de Implementação FHIR com foco na requisição e laudo de exame citopatológico. 
+Este projeto promove
+o monitoramente e rastreamento do Câncer de Colo de Útero por 
+meio da integração de sistemas de informação em saúde
+com o SISCAN. 
 
-A proposta é feita à luz da Política Nacional de Informação e Informática em Saúde ([aqui](https://bvsms.saude.gov.br/bvs/saudelegis/gm/2021/prt1768_02_08_2021.html)) e da Estratégia de Saúde Digital 2020-2028 ([aqui](https://bvsms.saude.gov.br/bvs/publicacoes/estrategia_saude_digital_Brasil.pdf)). 
+A proposta de integração é feita à luz da Política Nacional de Informação e Informática em Saúde ([aqui](https://bvsms.saude.gov.br/bvs/saudelegis/gm/2021/prt1768_02_08_2021.html)) e da Estratégia de Saúde Digital 2020-2028 ([aqui](https://bvsms.saude.gov.br/bvs/publicacoes/estrategia_saude_digital_Brasil.pdf)). Isso significa o
+uso do padrão FHIR. 
 
-A manutenção do SISCAN faz-se necessária para receber as requisições e laudos 
-contemplados pelo Guia de Implementação proposto.
+A definição de uso do padrão FHIR é orientada por diretrizes 
+estabelecidas pela HL7. O conteúdo resultante, conforme tais
+diretrizes é depositado em um _Guia de Implementação_.
 
-O termo **farol** está associado à segurança e
-orientação, ambos pertinentes ao contexto
-do rastreamento do Câncer de Colo do Útero. Este é 
-apenas o identificador do projeto.
+Neste repositório está o _Guia de Implementação FHIR_ para o
+monitoramento e rastreamento do Câncer de Colo de Útero para 
+submissão de requisições e de laudos de exame citopatológico.
 
-
-## Resultados parciais
+## Resultados
 
 - Guia de Implementação ([versão em desenvolvimento](https://build.fhir.org/ig/kyriosdata/farol/))
 - Builds [dashboard](https://fhir.github.io/auto-ig-builder/)

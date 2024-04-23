@@ -8,7 +8,7 @@ com o SISCAN.
 A proposta de integração é feita à luz da Política Nacional de Informação e Informática em Saúde ([aqui](https://bvsms.saude.gov.br/bvs/saudelegis/gm/2021/prt1768_02_08_2021.html)) e da Estratégia de Saúde Digital 2020-2028 ([aqui](https://bvsms.saude.gov.br/bvs/publicacoes/estrategia_saude_digital_Brasil.pdf)). Isso significa o
 uso do padrão FHIR. 
 
-A definição de uso do padrão FHIR é orientada por diretrizes 
+A definição de proposta de uso do padrão FHIR para atender determinada necessidade é orientada por diretrizes 
 estabelecidas pela HL7. O conteúdo resultante, conforme tais
 diretrizes é depositado em um _Guia de Implementação_.
 

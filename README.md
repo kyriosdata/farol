@@ -27,7 +27,7 @@ apenas o identificador do projeto.
 
 Este trabalho é realizado pela parceria entre UFG ([CGIS](https://cgis.ufg.br/)) e [INCA](https://www.inca.gov.br/).
 
-## Tarefas (em ordem de prioridade)
+## Alguns links (possivelmente relevantes)
 
 - Concluir versão preliminar do modelo de informação.
 - Relacionar com https://github.com/ccsm-cds-tools/ccsm-cds-with-tests e também com https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9206487/.

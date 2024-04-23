@@ -1,4 +1,4 @@
-## Projeto Farol
+## Transformação Digital do SISCAN
 
 Este projeto tem como foco a Transformação Digital do monitoramento e rastreamento do Câncer de Colo do Útero por meio de um Guia de Implementação FHIR com foco na requisição e laudo de exame citopatológico. 
 

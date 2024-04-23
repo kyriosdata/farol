@@ -32,6 +32,7 @@ Id: raca-etnia
 Title: "Raça/Cor e Etnia"
 Description: "Extensão para para representar dados relacionados à raça/cor e etnia de um indivíduo."
 Context: Patient
+* ^status = #draft
 * ^language = #pt-BR
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/raca-etnia"
 * . ..1
@@ -89,7 +90,7 @@ Identificação do maior nível educacional obtido pelo paciente.
 
 Extension: Idade
 Id: idade
-Title: "Idade informada pela paciente"
+Title: "Idade informada pela paciente (em anos)"
 Description: "Idade fornecida no momento da requisição de exame citopatológico. Mantida apenas por conformidade com formulário impresso. A expectativa natural é que esta data seja calculada, por comodidade do usuário que a consulta, a partir da data de nascimento, em vez de ser informada."
 Context: Patient
 
@@ -98,6 +99,9 @@ Context: Patient
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade"
 
 * value[x] only Age
+* valueAge 1..1
+* valueAge.system = "http://unitsofmeasure.org" (exactly)
+* valueAge.code = #a (exactly)
 
 // ------------------------------------------------------
 // estabelecimento (unidade de saúde)
@@ -361,6 +365,7 @@ Parent: Identifier
 Id: identificador-cns
 Title: "Identificador CNS"
 Description: "O número do Cartão Nacional SUS"
+* ^status = #draft
 * id 0..0
 * extension 0..0
 * use 0..0
@@ -376,6 +381,7 @@ Parent: Identifier
 Id: identificador-cpf
 Title: "CPF"
 Description: "O número do CPF da paciente"
+* ^status = #draft
 * id 0..0
 * extension 0..0
 * use 0..0

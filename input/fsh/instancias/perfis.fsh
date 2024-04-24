@@ -484,6 +484,17 @@ Description: "Dados demográficos de paciente"
 * active 0..0
 * deceased[x] 0..0
 
+// #24 (DDD)
+// #25 (telefone)
+* telecom 0..1
+* telecom ^short = "Telefone para contato"
+* telecom.extension 0..0
+* telecom.id 0..0
+* telecom.period 0..0
+* telecom.system = #phone
+* telecom.value 1..1
+* telecom.use 0..0
+
 // ------------------------------------------------------
 // anamnese-exame-citopatologico
 // ------------------------------------------------------

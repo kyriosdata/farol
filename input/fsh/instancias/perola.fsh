@@ -54,6 +54,11 @@ Description: "Requisição de exame citopatológico (Pérola). Veja a [ficha](pe
   * fullUrl = "urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb08"
   * resource = encontro-04
 
+// supportingInfo (DST)
+* entry[+]
+  * fullUrl = "urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb14"
+  * resource = PresencaDST
+
 // ------------------------------------------------------
 // Composition (requisição)
 // ------------------------------------------------------
@@ -114,6 +119,9 @@ Usage: #inline
 
 // respostas-anamnese
 * supportingInfo[0] = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb03)
+
+// DST
+* supportingInfo[1] = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb14)
 
 // CNS do responsável
 * requester = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb07)
@@ -295,6 +303,18 @@ Usage: #inline
   * linkId = "11"
   * answer[0].valueInteger = 36
   * text = "Qual a sua idade?"
+
+
+Instance: DSTPerola
+InstanceOf: PresencaDST
+Usage: #inline
+Title: "DST Perola"
+Description: "Presença de DST?"
+
+* status = #final
+* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/presenca-dst"
+* code.coding = http://loinc.org#45687-1
+* valueBoolean = false
 
 
 // ------------------------------------------------------

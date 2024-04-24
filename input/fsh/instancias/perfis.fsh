@@ -94,7 +94,7 @@ Context: Address.line
 
 * value[x] only code
 * valueCode 1..1
-* valueCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/componentes-endereco
+* valueCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/itens-endereco
 
 // ------------------------------------------------------
 // idade // #14 (idade)
@@ -224,25 +224,31 @@ Description: "Definição das informações que devem constar em toda e qualquer
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
 * ^status = #draft
 
-// * ^text.status = #empty
-// * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Evita warning</div>"
-
+* code ^short = "A identificação precisa do serviço requisitado."
 * code.coding 1..1
 * code.coding = http://www.saude.gov.br/fhir/r4/CodeSystem/BRTabelaSUS#0203010086
-//* display = "EXAME CITOPATOLÓGICO CERVICO VAGINAL/MICROFLORA-RASTREAMENTO"
+* code.coding.display = "EXAME CITOPATOLÓGICO CERVICO VAGINAL/MICROFLORA-RASTREAMENTO"
+* code.coding.userSelected 0..0
 
 * . ^short = "Requisição de exame citopatológico"
+
+// Trata-se de uma ordem de serviço
+* intent = #order (exactly)
+* intent ^short = "Ordem de serviço"
+
+// #28
 * reasonCode 1..1
 * reasonCode ^short = "Motivo do exame"
 * reasonCode.coding 1..1
 * reasonCode.coding ^short = "Código que identifica o motivo do exame"
 * reasonCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-exame-citopatologico (required)
 
+// #42 (Data da coleta)
 * authoredOn 1..1
 
-* supportingInfo ^short = "O laudo de exame citopatológico depende de dois grupos principais de informações: dados da anamnese e de exame clínico."
-* supportingInfo only Reference(inspecao-colo or presenca-dst or AnamneseQuestionario)
-* supportingInfo 1..3
+* supportingInfo ^short = "Informações que são empregadas para realização do laudo de exame citopatológico."
+* supportingInfo only Reference(InspecaoColo or PresencaDST or AnamneseQuestionario)
+* supportingInfo 2..3
 
 
 Profile: AnamneseQuestionario

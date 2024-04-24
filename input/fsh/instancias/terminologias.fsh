@@ -889,8 +889,8 @@ Description: "Componentes que fazem parte de um endereço"
 * #referencia "ponto de referência" "Ponto de referência"
 
 
-ValueSet: ComponentesEndereco
+ValueSet: ItensEndereco
 Id: itens-endereco
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/componentes-endereco"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/itens-endereco"
 * ^status = #draft
 * include codes from system ComponentesEndereco

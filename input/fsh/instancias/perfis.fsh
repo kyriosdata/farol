@@ -478,7 +478,7 @@ Description: "Dados demográficos de paciente"
 * address 0..1
 * address only Endereco
 
-* birthDate ^short = "A data de nascimento"
+* birthDate ^short = "A data de nascimento (por exemplo, 2015-01-31)"
 * birthDate 1..1 // #13
 
 * active 0..0
@@ -491,8 +491,10 @@ Description: "Dados demográficos de paciente"
 * telecom.extension 0..0
 * telecom.id 0..0
 * telecom.period 0..0
-* telecom.system = #phone
+* telecom.system = #phone (exactly)
+* telecom.system ^short = "Apenas telefone é admitido"
 * telecom.value 1..1
+* telecom.value ^short = "O número do telefone (pode incluir DDD)"
 * telecom.use 0..0
 
 // ------------------------------------------------------

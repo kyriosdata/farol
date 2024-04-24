@@ -16,6 +16,12 @@ Neste repositório está o _Guia de Implementação FHIR_ para o
 monitoramento e rastreamento do Câncer de Colo de Útero para 
 submissão de requisições e de laudos de exame citopatológico.
 
+## IMPORTANTE
+O uso do FHIR não diz como sistemas de informação em saúde devem ser 
+construídos ou desenvolvidos, qual tecnologia deve ser empregada ou não. 
+O _Guia de Implementação_ aqui definido diz como a interação destes sistemas
+com o SISCAN deve ocorrer.
+
 ## Resultados
 
 - Guia de Implementação ([versão em desenvolvimento](https://build.fhir.org/ig/kyriosdata/farol/))

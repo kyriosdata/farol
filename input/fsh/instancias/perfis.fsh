@@ -88,6 +88,8 @@ Identificação do maior nível educacional obtido pelo indivíduo.
 
 Extension: ItemEndereco
 Id: item-endereco
+Title: "Item de endereço"
+Description: "Definição dos tipos de itens que podem compor um endereço"
 Context: Address.line
 * ^status = #draft
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/item-endereco"
@@ -158,7 +160,7 @@ Description: "Unidade de Saúde para Requisição de Exame Citopatológico"
 * address.city ^short = "O código IBGE de 6 dígitos do município"
 * address.district 0..0
 * address.state 0..1  // #1 (UF)
-* address.state from $BRUnidadeFederativa-1.0
+* address.state from $BRUnidadeFederativa-1.0 (required)
 * address.state ^short = "O código da unidade federativa"
 * address.postalCode 0..0
 * address.country 0..0

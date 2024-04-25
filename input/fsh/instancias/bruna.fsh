@@ -256,7 +256,7 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 // ------------------------------------------------------
 
 Instance: unidade-saude-02
-InstanceOf: Organization
+InstanceOf: Estabelecimento
 Usage: #inline
 Title: "UBS Bem-estar"
 Description: "A unidade de saúde na qual o exame citopatológico da paciente Bruna é requisitado"
@@ -271,7 +271,7 @@ Description: "A unidade de saúde na qual o exame citopatológico da paciente Br
 
 // UF e município
 * address.city = "520870" // IBGE para Goiânia
-* address.state = "52"    // IBGE para Goiás
+* address.state = #52    // IBGE para Goiás
 
 // ------------------------------------------------------
 // profissional

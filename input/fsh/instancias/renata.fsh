@@ -54,6 +54,11 @@ Description: "Requisição de exame citopatológico (Renata). Veja a [ficha](ren
   * fullUrl = "urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb08"
   * resource = encontro-03
 
+// inspeção colo (Observation)
+* entry[+]
+  * fullUrl = "urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb14"
+  * resource = inspecao-renata
+
 // ------------------------------------------------------
 // Composition (requisição)
 // ------------------------------------------------------
@@ -88,7 +93,7 @@ Description: "Requisição de Exame Citopatológico da paciente Renata"
 // ------------------------------------------------------
 
 Instance: requisicao-03
-InstanceOf: ServiceRequest
+InstanceOf: RequisicaoExameCitopatologico
 Title: "Requisição (Renata)"
 Description: "Requisição de exame citopatológico da Renata"
 Usage: #inline
@@ -113,6 +118,9 @@ Usage: #inline
 
 // respostas-anamnese
 * supportingInfo[0] = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb03)
+
+// inspeção colo
+* supportingInfo[1] = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb14)
 
 // CNS do responsável
 * requester = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb07)
@@ -307,6 +315,27 @@ Usage: #inline
   * linkId = "11"
   * answer[0].valueInteger = 25
   * text = "Qual a sua idade?"
+
+// ------------------------------------------------------
+// inspecao-colo
+// ------------------------------------------------------
+
+Instance: inspecao-renata
+InstanceOf: InspecaoColo
+Usage: #inline
+Title: "Inspeção colo (Renata)"
+Description: "Resultado da inspeção do colo uterino da paciente Renata"
+
+* status = #final
+
+// Cervix Study observation Inspection
+* code = http://loinc.org#12044-4
+
+* subject = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb01)
+* performer = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb07)
+* effectiveDateTime = "2023-12-13"
+
+* valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo#normal
 
 // ------------------------------------------------------
 // LAUDO

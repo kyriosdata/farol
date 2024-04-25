@@ -140,7 +140,7 @@ Usage: #inline
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
 
 * status = #draft
-* intent = #original-order
+* intent = #order
 
 // Data da coleta da amostra e dados da requisição
 * authoredOn = "2023-12-23"

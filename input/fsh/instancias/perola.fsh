@@ -57,7 +57,7 @@ Description: "Requisição de exame citopatológico (Pérola). Veja a [ficha](pe
 // supportingInfo (DST)
 * entry[+]
   * fullUrl = "urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb14"
-  * resource = PresencaDST
+  * resource = DSTPerola
 
 // ------------------------------------------------------
 // Composition (requisição)

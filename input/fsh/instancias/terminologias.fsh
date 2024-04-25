@@ -891,6 +891,9 @@ Description: "Componentes que fazem parte de um endereço"
 
 ValueSet: ItensEndereco
 Id: itens-endereco
+Title: "Itens de endereço"
+Description: "Tipos de itens de endereço que compõem um endereço"
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/itens-endereco"
 * ^status = #draft
+* ^experimental = false
 * include codes from system ComponentesEndereco

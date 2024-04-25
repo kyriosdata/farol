@@ -320,6 +320,81 @@ de exame citopatológico."
 * value[x] ^short = "true se há sinal de doença sexualmente transmissível ou false, caso contrário"
 * value[x] only boolean
 
+Profile: ExameClinico
+Parent: Observation
+Id: exame-clinico
+Title: "Exame Clinico"
+Description: "Exame clínico realizado durante coleta de material para exame citopatológico"
+
+* implicitRules 0..0
+* modifierExtension 0..0
+* identifier 0..0
+* basedOn 0..0
+* partOf 0..0
+* category 0..0
+* subject 0..0
+* focus 0..0
+* encounter 0..0
+* effective[x] 0..0
+* issued 0..0
+* performer 0..0
+* value[x] 0..0
+* dataAbsentReason 0..0
+* interpretation 0..0
+* note 0..0
+* bodySite 0..0
+* method 0..0
+* specimen 0..0
+* device 0..0
+* referenceRange 0..0
+* hasMember 0..0
+* derivedFrom 0..0
+
+* . ^short = "Exame clínico realizado durante coleta de material para exame citopatológico"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/exame-clinico"
+* ^status = #draft
+
+* status = #final (exactly)
+
+* code.coding 1..1
+* code.coding = http://loinc.org#32423-6
+* code.coding.display = "Pysical findings of Cervix"
+
+* component 1..2
+* component.modifierExtension 0..0
+
+* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.path = "code.coding"
+* component ^slicing.rules = #closed
+
+* component contains 
+    inspecao 1..1 and    // #16
+    dst 0..1
+
+* component[inspecao].code ^short = "Resultado da inspeção do colo"
+* component[inspecao].code.coding = http://loinc.org#12044-4 (exactly)
+* component[inspecao].dataAbsentReason 0..0
+* component[inspecao].interpretation 0..0
+* component[inspecao].referenceRange 0..0
+* component[inspecao].modifierExtension 0..0
+* component[inspecao].value[x] only CodeableConcept
+* component[inspecao].value[x] 1..1
+* component[inspecao].value[x] ^short = "O código correspondente ao resultado da inspeção"
+* component[inspecao].valueCodeableConcept from $resultado-inspecao-colo (required)
+* component[inspecao].valueCodeableConcept.coding 1..1
+* component[inspecao].valueCodeableConcept.coding ^short = "Código que caracteriza o resultado da inspeção do colo"
+
+* component[dst].code ^short = "Código para presença ou não de sinais de DST"
+* component[dst].code.coding = http://loinc.org#45687-1
+* component[dst].dataAbsentReason 0..0
+* component[dst].interpretation 0..0
+* component[dst].referenceRange 0..0
+* component[dst].modifierExtension 0..0
+* component[dst].value[x] only boolean
+* component[dst].value[x] 1..1
+* component[dst].value[x] ^short = "true se há sinal de doença sexualmente transmissível ou false, caso contrário"
+
+
 // ------------------------------------------------------
 // endereco
 // ------------------------------------------------------

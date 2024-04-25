@@ -58,12 +58,7 @@ Description: "Requisição de exame citopatológico (Rosa)."
 // exame (Observation)
 * entry[+]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04"
-  * resource = exame-inspecao
-
-// exame-dst (Observation)
-* entry[+]
-  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05"
-  * resource = exame-dst
+  * resource = ExameClinicoRosa
 
 // unidade-saude (Organization)
 * entry[+]
@@ -146,11 +141,8 @@ Usage: #inline
 // respostas-anamnese
 * supportingInfo[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
 
-// exame-inspecao
+// exame-clinico
 * supportingInfo[1] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04)
-
-// exame-dst
-* supportingInfo[2] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05)
 
 // CNS do responsável
 * requester = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07)
@@ -171,45 +163,58 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 // exame
 // ------------------------------------------------------
 
-Instance: exame-inspecao
-InstanceOf: Observation
-Usage: #inline
-Title: "Inspeção colo (Rosa)"
-Description: "Resultado da inspeção do colo uterino da paciente Rosa"
+// Instance: exame-inspecao
+// InstanceOf: Observation
+// Usage: #inline
+// Title: "Inspeção colo (Rosa)"
+// Description: "Resultado da inspeção do colo uterino da paciente Rosa"
 
-* meta.profile = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/inspecao-colo"
+// * meta.profile = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/inspecao-colo"
 
+// * status = #final
+
+// // Cervix Study observation Inspection
+// * code = http://loinc.org#12044-4
+
+// * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
+// * performer = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07)
+// * effectiveDateTime = "2023-11-10"
+
+// * valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo#normal
+
+
+// Instance: exame-dst
+// InstanceOf: Observation
+// Usage: #inline
+// Title: "DST (Rosa)"
+// Description: "Exame clínico que identifica se há presença ou não de sinais de doença sexualmente transmissível"
+
+// * meta.profile = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/presenca-dst"
+
+// * status = #final
+
+// // Sexually transmitted diseases
+// * code = http://loinc.org#45687-1
+
+// * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
+// * performer = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07)
+
+// * effectiveDateTime = "2023-11-10"
+
+// * valueBoolean = false
+
+Instance: ExameClinicoRosa
+InstanceOf: ExameClinico
+Usage: #example
+Title: "Exame Clinico Rosa"
+Description: "Exame clínico da Rosa"
 * status = #final
+* code = http://loinc.org#32423-6 
 
-// Cervix Study observation Inspection
-* code = http://loinc.org#12044-4
-
-* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07)
-* effectiveDateTime = "2023-11-10"
-
-* valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo#normal
-
-
-Instance: exame-dst
-InstanceOf: Observation
-Usage: #inline
-Title: "DST (Rosa)"
-Description: "Exame clínico que identifica se há presença ou não de sinais de doença sexualmente transmissível"
-
-* meta.profile = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/presenca-dst"
-
-* status = #final
-
-// Sexually transmitted diseases
-* code = http://loinc.org#45687-1
-
-* subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07)
-
-* effectiveDateTime = "2023-11-10"
-
-* valueBoolean = false
+* component[inspecao].code = http://loinc.org#12044-4
+* component[inspecao].valueCodeableConcept = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo#normal
+* component[dst].code = http://loinc.org#45687-1
+* component[dst].valueBoolean = false
 
 // ------------------------------------------------------
 // rosa (subject da composition)
@@ -464,7 +469,7 @@ Description: "Laudo de exame citopatológico da paciente Rosa"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
 
 * section[+]
-  * title = "Inspeção colo"
+  * title = "Exame clínico"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04)
 
 * section[+]

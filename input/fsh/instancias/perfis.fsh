@@ -249,8 +249,8 @@ Description: "Definição das informações que devem constar em toda e qualquer
 * authoredOn 1..1
 
 * supportingInfo ^short = "Informações que são empregadas para realização do laudo de exame citopatológico."
-* supportingInfo only Reference(InspecaoColo or PresencaDST or AnamneseQuestionario)
-* supportingInfo 2..3
+* supportingInfo only Reference(AnamneseQuestionario or ExameClinico)
+* supportingInfo 1..2
 
 
 Profile: AnamneseQuestionario
@@ -328,27 +328,27 @@ Description: "Exame clínico realizado durante coleta de material para exame cit
 
 * implicitRules 0..0
 * modifierExtension 0..0
-* identifier 0..0
-* basedOn 0..0
-* partOf 0..0
-* category 0..0
-* subject 0..0
-* focus 0..0
-* encounter 0..0
-* effective[x] 0..0
-* issued 0..0
-* performer 0..0
-* value[x] 0..0
-* dataAbsentReason 0..0
-* interpretation 0..0
-* note 0..0
-* bodySite 0..0
-* method 0..0
-* specimen 0..0
-* device 0..0
-* referenceRange 0..0
-* hasMember 0..0
-* derivedFrom 0..0
+// * identifier 0..0
+// * basedOn 0..0
+// * partOf 0..0
+// * category 0..0
+// * subject 0..0
+// * focus 0..0
+// * encounter 0..0
+// * effective[x] 0..0
+// * issued 0..0
+// * performer 0..0
+// * value[x] 0..0
+// * dataAbsentReason 0..0
+// * interpretation 0..0
+// * note 0..0
+// * bodySite 0..0
+// * method 0..0
+// * specimen 0..0
+// * device 0..0
+// * referenceRange 0..0
+// * hasMember 0..0
+// * derivedFrom 0..0
 
 * . ^short = "Exame clínico realizado durante coleta de material para exame citopatológico"
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/exame-clinico"
@@ -364,7 +364,7 @@ Description: "Exame clínico realizado durante coleta de material para exame cit
 * component.modifierExtension 0..0
 
 * component ^slicing.discriminator.type = #pattern
-* component ^slicing.discriminator.path = "code.coding"
+* component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #closed
 
 * component contains 
@@ -372,7 +372,7 @@ Description: "Exame clínico realizado durante coleta de material para exame cit
     dst 0..1
 
 * component[inspecao].code ^short = "Resultado da inspeção do colo"
-* component[inspecao].code.coding = http://loinc.org#12044-4 (exactly)
+* component[inspecao].code = http://loinc.org#12044-4
 * component[inspecao].dataAbsentReason 0..0
 * component[inspecao].interpretation 0..0
 * component[inspecao].referenceRange 0..0
@@ -381,11 +381,9 @@ Description: "Exame clínico realizado durante coleta de material para exame cit
 * component[inspecao].value[x] 1..1
 * component[inspecao].value[x] ^short = "O código correspondente ao resultado da inspeção"
 * component[inspecao].valueCodeableConcept from $resultado-inspecao-colo (required)
-* component[inspecao].valueCodeableConcept.coding 1..1
-* component[inspecao].valueCodeableConcept.coding ^short = "Código que caracteriza o resultado da inspeção do colo"
 
 * component[dst].code ^short = "Código para presença ou não de sinais de DST"
-* component[dst].code.coding = http://loinc.org#45687-1
+* component[dst].code = http://loinc.org#45687-1
 * component[dst].dataAbsentReason 0..0
 * component[dst].interpretation 0..0
 * component[dst].referenceRange 0..0

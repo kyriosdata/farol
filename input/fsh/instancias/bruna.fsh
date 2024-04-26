@@ -121,7 +121,9 @@ Usage: #inline
   * code = #0203010086
   * system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTabelaSUS"
 
+// bruna
 * subject = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb01)
+
 * reasonCode[0].coding[0] = $motivos-exame#rastreamento
 
 // Permite identificar o local (unidade requisitante)

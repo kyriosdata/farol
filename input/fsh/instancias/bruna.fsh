@@ -359,10 +359,10 @@ Usage: #inline
   * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#N
   * text = "Tem ou teve algum sangramento após a menopausa? (não considerar o(s) sangramento(s) na vigência de reposição hormonal)"
 
-* item[+]
-  * linkId = "11"
-  * answer[0].valueInteger = 26
-  * text = "Qual a sua idade?"
+// * item[+]
+//   * linkId = "11"
+//   * answer[0].valueInteger = 26
+//   * text = "Qual a sua idade?"
 
 
 // ------------------------------------------------------

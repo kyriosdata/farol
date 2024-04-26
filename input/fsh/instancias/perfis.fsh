@@ -593,7 +593,7 @@ pelo INCA, disponível [aqui](nova-requisicao-exame-citopatologico.pdf)."
 * url = "https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico"
 
 * version = "0.0.1"
-* name = "AnamneseExameCitopatologico"
+* name = "Anamnese"
 * title = "Anamnese para requisição de exame citopatológico"
 * status = #draft
 * experimental = false
@@ -615,10 +615,10 @@ de requisição não segue na anamnese aqui definida. Esta informação é regis
 informações pertinentes à requisição."""
 
 * useContext.code[0].system = "http://terminology.hl7.org/CodeSystem/usage-context-type"
-* useContext.code[0].code = #gender
-* useContext.valueCodeableConcept.text = "Estabelecimento de saúde. Unidade básica de saúde."
+* useContext.code[0].code = #program
+* useContext.valueCodeableConcept.text = "Programa de rastreamento organizado do câncer de colo de útero"
 * jurisdiction = urn:iso:std:iso:3166#BR
-* purpose = "**Propósito**. Coletar informações relevantes para o exame citopatológico."
+* purpose = "**Propósito**. Estas questões visam identificar as questões e as respostas, informações relevantes, visando a requisição do exame citopatológico."
 * copyright = "Ministério da Saúde do Brasil"
 * approvalDate = "2023-12-15"
 * lastReviewDate = "2023-11-30"
@@ -737,14 +737,14 @@ informações pertinentes à requisição."""
   * repeats = false
   * readOnly = true
 
-* item[+]
-  * linkId = "11"
-  * type = #integer
-  * text = "Qual a sua idade?"
-  * required = true
-  * repeats = false
-  * readOnly = true
-  * maxLength = 3
+// * item[+]
+//   * linkId = "11"
+//   * type = #integer
+//   * text = "Qual a sua idade?"
+//   * required = true
+//   * repeats = false
+//   * readOnly = true
+//   * maxLength = 3
 
 // ------------------------------------------------------
 // laudo-exame

@@ -702,7 +702,7 @@ informações pertinentes à requisição."""
   * linkId = "8"
   * type = #boolean
   * text = "Sabe a data da última menstruação/regra?"
-  * required = false
+  * required = true
   * repeats = false
   * readOnly = true
 

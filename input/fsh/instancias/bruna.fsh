@@ -350,6 +350,11 @@ Usage: #inline
   * text = "Já fez tratamento por radioterapia?"
 
 * item[+]
+  * linkId = "8"
+  * answer[0].valueBoolean = false
+  * text = "Sabe a data da última menstruação/regra?"
+
+* item[+]
   * linkId = "9"
   * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * text = "Tem ou teve algum sangramento após relações sexuais? (não considerar a primeira relação sexual na vida)"

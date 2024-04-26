@@ -61,7 +61,7 @@ Title: "Número do exame"
 Description: "Declaração do identificador de exame gerado por laboratório. Observe que este identificador não discrimina qual o laboratório em questão, ou seja, apenas sabe-se que se trata de um identificador gerado por um laboratório. O contexto em questão deve incluir a informação de qual laboratório o código faz parte."
 Usage: #definition
 
-* name = "LaboratorioProtocolo"
+* name = "NumeroExame"
 * status = #draft
 * kind = #identifier
 * date = "2024-04-15"

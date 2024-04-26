@@ -63,4 +63,4 @@ menu:
   Índice: toc.html
 
 dependencies:
-  br.ufg.cgis.rnds-lite: 0.1.2
+  br.ufg.cgis.rnds-lite: 0.1.3

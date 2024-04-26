@@ -60,12 +60,7 @@ Description: "Requisição de exame citopatológico (Gabriela). Veja a [ficha](g
 // exame (Observation)
 * entry[+]
   * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb04"
-  * resource = exame-inspecao-01
-
-// exame (Observation)
-* entry[+]
-  * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb05"
-  * resource = exame-dst-01
+  * resource = ExameClinicoGabriela
 
 // unidade-saude (Organization)
 * entry[+]
@@ -116,12 +111,8 @@ Description: "Requisição de Exame Citopatológico da paciente Gabriela"
   * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb03)
 
 * section[+]
-  * title = "Inspeção colo (Gabriela Gomes)"
+  * title = "Exame clínico"
   * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb04)
-
-* section[+]
-  * title = "DST (Gabriela Gomes)"
-  * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb05)
 
 * section[+]
   * title = "UBS (Gabriela Gomes)"
@@ -157,11 +148,8 @@ Usage: #inline
 // respostas-anamnese
 * supportingInfo[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb03)
 
-// exame-inspecao
+// exame-clinico
 * supportingInfo[1] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb04)
-
-// exame-dst-01
-* supportingInfo[2] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb05)
 
 // CNS do responsável
 * requester = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb07)
@@ -181,39 +169,54 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 // exame
 // ------------------------------------------------------
 
-Instance: exame-inspecao-01
-InstanceOf: Observation
-Usage: #inline
-Title: "Inspeção colo (Gabriela Gomes)"
-Description: "Resultado da inspeção do colo uterino da paciente Gabriela"
+// Instance: exame-inspecao-01
+// InstanceOf: Observation
+// Usage: #inline
+// Title: "Inspeção colo (Gabriela Gomes)"
+// Description: "Resultado da inspeção do colo uterino da paciente Gabriela"
+// * status = #final
+
+// // Cervix Study observation Inspection
+// * code = http://loinc.org#12044-4
+
+// * subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
+// * performer = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb07)
+// * effectiveDateTime = "2023-12-23"
+
+// * valueCodeableConcept.coding = $cs-inspecao-colo#alterado
+
+
+// Instance: exame-dst-01
+// InstanceOf: Observation
+// Usage: #inline
+// Title: "DST (Gabriela Gomes)"
+// Description: "Exame clínico que identifica se há presença ou não de sinais de doença sexualmente transmissível"
+
+// * status = #final
+
+// // Sexually transmitted diseases
+// * code = http://loinc.org#45687-1
+
+// * subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
+// * performer = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb07)
+// * effectiveDateTime = "2023-12-23"
+
+// * valueBoolean = false
+
+Instance: ExameClinicoGabriela
+InstanceOf: ExameClinico
+Usage: #example
+Title: "Exame Clinico Rosa"
+Description: "Exame clínico da Rosa"
 * status = #final
+* code = http://loinc.org#32423-6 
 
-// Cervix Study observation Inspection
-* code = http://loinc.org#12044-4
-
-* subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb07)
-* effectiveDateTime = "2023-12-23"
-
-* valueCodeableConcept.coding = $cs-inspecao-colo#alterado
+* component[inspecao].code = http://loinc.org#12044-4
+* component[inspecao].valueCodeableConcept = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo#alterado
+* component[dst].code = http://loinc.org#45687-1
+* component[dst].valueBoolean = false
 
 
-Instance: exame-dst-01
-InstanceOf: Observation
-Usage: #inline
-Title: "DST (Gabriela Gomes)"
-Description: "Exame clínico que identifica se há presença ou não de sinais de doença sexualmente transmissível"
-
-* status = #final
-
-// Sexually transmitted diseases
-* code = http://loinc.org#45687-1
-
-* subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb07)
-* effectiveDateTime = "2023-12-23"
-
-* valueBoolean = false
 
 // ------------------------------------------------------
 // gabriela (subject da composition)

@@ -57,7 +57,7 @@ Description: "Requisição de exame citopatológico (Pérola). Veja a [ficha](pe
 // supportingInfo (DST)
 * entry[+]
   * fullUrl = "urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb14"
-  * resource = DSTPerola
+  * resource = ExameClinicoPerola
 
 // ------------------------------------------------------
 // Composition (requisição)
@@ -305,16 +305,19 @@ Usage: #inline
   * text = "Qual a sua idade?"
 
 
-Instance: DSTPerola
-InstanceOf: PresencaDST
-Usage: #inline
-Title: "DST Perola"
-Description: "Presença de DST?"
-
+Instance: ExameClinicoPerola
+InstanceOf: ExameClinico
+Usage: #example
+Title: "Exame Clinico Rosa"
+Description: "Exame clínico da Rosa"
 * status = #final
-* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/presenca-dst"
-* code.coding = http://loinc.org#45687-1
-* valueBoolean = false
+* code = http://loinc.org#32423-6 
+
+* component[inspecao].code = http://loinc.org#12044-4
+* component[inspecao].valueCodeableConcept = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo#normal
+* component[dst].code = http://loinc.org#45687-1
+* component[dst].valueBoolean = false
+
 
 
 // ------------------------------------------------------

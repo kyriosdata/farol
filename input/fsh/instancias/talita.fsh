@@ -81,44 +81,63 @@ Usage: #inline
 
 * name[0].text = "Leonarda Morais"
 
+// // ------------------------------------------------------
+// // exame
+// // ------------------------------------------------------
+
+// Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb04
+// InstanceOf: Observation
+// Usage: #inline
+// Title: "Inspeção colo (Talita)"
+// Description: "Resultado da inspeção do colo uterino da paciente Talita"
+
+// * status = #final
+
+// // Cervix Study observation Inspection
+// * code = http://loinc.org#12044-4
+
+// * subject = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb01)
+// * performer = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb07)
+// * effectiveDateTime = "2023-12-07"
+
+// * valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo#normal
+
+
+// Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb05
+// InstanceOf: Observation
+// Usage: #inline
+// Title: "DST (Talita)"
+// Description: "Exame clínico que identifica se há presença ou não de sinais de doença sexualmente transmissível"
+
+// * status = #final
+
+// // Sexually transmitted diseases
+// * code = http://loinc.org#45687-1
+
+// * subject = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb01)
+// * performer = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb07)
+// * effectiveDateTime = "2023-12-07"
+
+// * valueBoolean = true
+
+
 // ------------------------------------------------------
-// exame
+// exame clínico
 // ------------------------------------------------------
 
 Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb04
-InstanceOf: Observation
-Usage: #inline
-Title: "Inspeção colo (Talita)"
-Description: "Resultado da inspeção do colo uterino da paciente Talita"
-
+InstanceOf: ExameClinico
+Usage: #example
+Title: "Exame Clinico Renata"
+Description: "Exame clínico da Renata"
 * status = #final
+* code = http://loinc.org#32423-6 
 
-// Cervix Study observation Inspection
-* code = http://loinc.org#12044-4
+* component[inspecao].code = http://loinc.org#12044-4
+* component[inspecao].valueCodeableConcept = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo#normal
+* component[dst].code = http://loinc.org#45687-1
+* component[dst].valueBoolean = false
 
-* subject = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb07)
-* effectiveDateTime = "2023-12-07"
-
-* valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo#normal
-
-
-Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb05
-InstanceOf: Observation
-Usage: #inline
-Title: "DST (Talita)"
-Description: "Exame clínico que identifica se há presença ou não de sinais de doença sexualmente transmissível"
-
-* status = #final
-
-// Sexually transmitted diseases
-* code = http://loinc.org#45687-1
-
-* subject = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb07)
-* effectiveDateTime = "2023-12-07"
-
-* valueBoolean = true
 
 // ------------------------------------------------------
 // anamnese
@@ -247,11 +266,8 @@ Usage: #inline
 // respostas-anamnese
 * supportingInfo[0] = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb03)
 
-// inspeção do colo
+// exame clínico
 * supportingInfo[1] = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb04)
-
-// DST
-* supportingInfo[2] = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb05)
 
 // profissional
 * requester = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb07)
@@ -327,15 +343,10 @@ Description: "Requisição de exame citopatológico (Talita). Veja a [ficha](tal
   * fullUrl = "urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb03"
   * resource = 0542d5cf-6316-4ddd-b398-168af8aaeb03
 
-// inspecao do colo
+// exame clínico
 * entry[+]
   * fullUrl = "urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb04"
   * resource = 0542d5cf-6316-4ddd-b398-168af8aaeb04
-
-// dst
-* entry[+]
-  * fullUrl = "urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb05"
-  * resource = 0542d5cf-6316-4ddd-b398-168af8aaeb05
 
 // unidade-saude (Organization)
 * entry[+]

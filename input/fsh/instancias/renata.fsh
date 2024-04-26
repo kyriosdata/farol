@@ -57,7 +57,7 @@ Description: "Requisição de exame citopatológico (Renata). Veja a [ficha](ren
 // inspeção colo (Observation)
 * entry[+]
   * fullUrl = "urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb14"
-  * resource = inspecao-renata
+  * resource = ExameClinicoRenata
 
 // ------------------------------------------------------
 // Composition (requisição)
@@ -317,25 +317,22 @@ Usage: #inline
   * text = "Qual a sua idade?"
 
 // ------------------------------------------------------
-// inspecao-colo
+// exame clínico
 // ------------------------------------------------------
 
-Instance: inspecao-renata
-InstanceOf: InspecaoColo
-Usage: #inline
-Title: "Inspeção colo (Renata)"
-Description: "Resultado da inspeção do colo uterino da paciente Renata"
-
+Instance: ExameClinicoRenata
+InstanceOf: ExameClinico
+Usage: #example
+Title: "Exame Clinico Renata"
+Description: "Exame clínico da Renata"
 * status = #final
+* code = http://loinc.org#32423-6 
 
-// Cervix Study observation Inspection
-* code = http://loinc.org#12044-4
+* component[inspecao].code = http://loinc.org#12044-4
+* component[inspecao].valueCodeableConcept = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo#normal
+* component[dst].code = http://loinc.org#45687-1
+* component[dst].valueBoolean = false
 
-* subject = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb07)
-* effectiveDateTime = "2023-12-13"
-
-* valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo#normal
 
 // ------------------------------------------------------
 // LAUDO

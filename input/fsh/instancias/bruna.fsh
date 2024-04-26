@@ -53,12 +53,7 @@ Description: "Requisição de exame citopatológico (Bruna). Veja a [ficha](brun
 // exame (Observation)
 * entry[+]
   * fullUrl = "urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb04"
-  * resource = exame-inspecao-02
-
-// exame (Observation)
-* entry[+]
-  * fullUrl = "urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb05"
-  * resource = exame-dst-02
+  * resource = ExameClinicoBruna
 
 // unidade-saude (Organization)
 * entry[+]
@@ -135,11 +130,8 @@ Usage: #inline
 // respostas-anamnese
 * supportingInfo[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb03)
 
-// exame-inspecao
+// ExameClinicoBruna
 * supportingInfo[1] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb04)
-
-// exame-dst-01
-* supportingInfo[2] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb05)
 
 // CNS do responsável
 * requester = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb07)
@@ -166,40 +158,55 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 // exame
 // ------------------------------------------------------
 
-Instance: exame-inspecao-02
-InstanceOf: Observation
-Usage: #inline
-Title: "Inspeção colo (Bruna)"
-Description: "Resultado da inspeção do colo uterino da paciente Bruna"
+// Instance: exame-inspecao-02
+// InstanceOf: Observation
+// Usage: #inline
+// Title: "Inspeção colo (Bruna)"
+// Description: "Resultado da inspeção do colo uterino da paciente Bruna"
 
+// * status = #final
+
+// // Cervix Study observation Inspection
+// * code = http://loinc.org#12044-4
+
+// * subject = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb01)
+// * performer = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb07)
+// * effectiveDateTime = "2023-12-13"
+
+// * valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo#normal
+
+
+// Instance: exame-dst-02
+// InstanceOf: Observation
+// Usage: #inline
+// Title: "DST (Bruna)"
+// Description: "Exame clínico que identifica se há presença ou não de sinais de doença sexualmente transmissível"
+
+// * status = #final
+
+// // Sexually transmitted diseases
+// * code = http://loinc.org#45687-1
+
+// * subject = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb01)
+// * performer = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb07)
+// * effectiveDateTime = "2023-12-13"
+
+// * valueBoolean = true
+
+
+Instance: ExameClinicoBruna
+InstanceOf: ExameClinico
+Usage: #example
+Title: "Exame Clinico Rosa"
+Description: "Exame clínico da Rosa"
 * status = #final
+* code = http://loinc.org#32423-6 
 
-// Cervix Study observation Inspection
-* code = http://loinc.org#12044-4
+* component[inspecao].code = http://loinc.org#12044-4
+* component[inspecao].valueCodeableConcept = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo#normal
+* component[dst].code = http://loinc.org#45687-1
+* component[dst].valueBoolean = true
 
-* subject = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb07)
-* effectiveDateTime = "2023-12-13"
-
-* valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo#normal
-
-
-Instance: exame-dst-02
-InstanceOf: Observation
-Usage: #inline
-Title: "DST (Bruna)"
-Description: "Exame clínico que identifica se há presença ou não de sinais de doença sexualmente transmissível"
-
-* status = #final
-
-// Sexually transmitted diseases
-* code = http://loinc.org#45687-1
-
-* subject = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb07)
-* effectiveDateTime = "2023-12-13"
-
-* valueBoolean = true
 
 // ------------------------------------------------------
 // Bruna (subject da composition)

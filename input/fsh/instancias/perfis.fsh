@@ -761,6 +761,8 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/diagnostico-citopatologico"
 
+* code = http://loinc.org#47528-5
+
 * meta 1..
 * meta ^short = "Metadados do laudo"
 * meta.extension ..0

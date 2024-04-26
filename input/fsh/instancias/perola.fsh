@@ -440,9 +440,7 @@ Description: "Laudo da requisição de exame da paciente Pérola. Veja a [ficha]
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/diagnostico-citopatologico"
 * status = #final
-* code.text = "Microscopic observation [Identifier] in Cervix by Cyto stain"
-* code.coding[0].system = "http://loinc.org"
-* code.coding[0].code = #10524-7
+* code = http://loinc.org#47528-5
 
 * identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/laboratorio"
 * identifier[0].value = "243623"

@@ -3,10 +3,62 @@
 // NamingSystem
 // ------------------------------------------------------
 
+Instance: ns-requisitante
+InstanceOf: NamingSystem
+Title: "Prontuário"
+Description: "Declaração do identificador de prontuário fornecido pelo estabelecimento requisitante de exame citopatológico."
+Usage: #definition
+
+* name = "RequisitanteProntuario"
+* status = #draft
+* kind = #identifier
+* date = "2024-04-15"
+* publisher = "Ministério da Saúde (INCA)"
+* contact[0].name = "Renata INCA"
+* contact[0]
+  * telecom[0]
+    * system = #phone
+    * value = "+55 62 98765-4321"
+    * use = #work
+    * rank = 1
+  * telecom[1]
+    * system = #email
+    * value = "renata@inca.gov.br"
+    * rank = 2
+
+* responsible = "Instituto Nacional do Câncer (SISCAN)"
+
+* type.coding[0].system = "http://terminology.hl7.org/CodeSystem/v2-0203"
+* type.coding[0].code = #FILL
+* type.text = "O número do prontuário fornecido pelo estabelecimento requisitante"
+
+* description = "Identificador do código único de prontuário fornecido pelo estabelecimento requisitante de exame citopatológico. Observe que o código correspondente é único para o estabelecimento e para o exame citopatológico."
+
+* useContext.code.system = "http://terminology.hl7.org/CodeSystem/usage-context-type"
+* useContext.code.code = #task
+* useContext.valueCodeableConcept.coding[0].system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+* useContext.valueCodeableConcept.coding[0].code = #LABOE
+
+* jurisdiction[0].coding[0].system = "urn:iso:std:iso:3166"
+* jurisdiction[0].coding[0].code = #BR
+* jurisdiction[0].text = "Em todo o território nacional (brasileiro)"
+
+* usage = "Código fornecido pelo estabelecimento requisitante para identificar o prontuário da paciente. Este código é único para o estabelecimento que faz a requisição."
+
+* uniqueId[0].type = #uri
+* uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ccu/sid/requisitante"
+* uniqueId[0].preferred = true
+* uniqueId[0].comment = "Criado pela ausência de catálogo nacional de identificadores. Este valor provavelmente será substituído por sequência produzida pela autoridade competente."
+* uniqueId[0].period.start = "2023-11-13"
+
+// ------------------------------------------------------
+// NamingSystem
+// ------------------------------------------------------
+
 Instance: ns-laboratorio
 InstanceOf: NamingSystem
-Title: "Identificador de exame gerado por laboratório"
-Description: "Declaração do identificador de código único de exame gerado por laboratório. Observe que este identificador não discrimina qual o laboratório em questão, ou seja, apenas sabe-se que se trata de um identificador gerado por um laboratório. O contexto em questão deve incluir a informação de qual laboratório o código faz parte."
+Title: "Número do exame"
+Description: "Declaração do identificador de exame gerado por laboratório. Observe que este identificador não discrimina qual o laboratório em questão, ou seja, apenas sabe-se que se trata de um identificador gerado por um laboratório. O contexto em questão deve incluir a informação de qual laboratório o código faz parte."
 Usage: #definition
 
 * name = "LaboratorioProtocolo"

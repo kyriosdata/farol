@@ -524,9 +524,13 @@ Description: "Laudo da requisição de exame da paciente Rosa"
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/diagnostico-citopatologico"
 * status = #final
-* code.text = "Microscopic observation [Identifier] in Cervix by Cyto stain"
+* code.text = "Laudo do exame citopatológico"
 * code.coding[0].system = "http://loinc.org"
 * code.coding[0].code = #10524-7
+* code.coding[0].display = "Microscopic observation [Identifier] in Cervix by Cyto stain"
+* code.coding[1].system = "http://loinc.org"
+* code.coding[1].code = #47528-5
+* code.coding[1].display = "Cytology report of Cervical or vaginal smear or scraping Cyto stain"
 
 * identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/laboratorio"
 * identifier[0].value = "cito-exame-123"

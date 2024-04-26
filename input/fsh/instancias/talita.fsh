@@ -206,10 +206,6 @@ Usage: #inline
   * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#N
   * text = "Tem ou teve algum sangramento após a menopausa? (não considerar o(s) sangramento(s) na vigência de reposição hormonal)"
 
-// * item[+]
-//   * linkId = "11"
-//   * answer[0].valueInteger = 24
-//   * text = "Qual a sua idade?"
 
 // ------------------------------------------------------
 //
@@ -450,9 +446,7 @@ Description: "Laudo da requisição de exame da paciente Talita. Veja a [ficha](
 
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/diagnostico-citopatologico"
 * status = #final
-* code.text = "Microscopic observation [Identifier] in Cervix by Cyto stain"
-* code.coding[0].system = "http://loinc.org"
-* code.coding[0].code = #10524-7
+* code = http://loinc.org#47528-5
 
 * identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/laboratorio"
 * identifier[0].value = "243623"

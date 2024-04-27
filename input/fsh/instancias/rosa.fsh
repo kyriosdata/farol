@@ -488,7 +488,7 @@ Description: "Laudo de exame citopatológico da paciente Rosa"
 // ------------------------------------------------------
 
 Instance: lab
-InstanceOf: Organization
+InstanceOf: Laboratorio
 Usage: #inline
 Title: "Laboratório Cito"
 Description: "Laboratório que emite o laudo de exame citopatológico"
@@ -496,10 +496,6 @@ Description: "Laboratório que emite o laudo de exame citopatológico"
 * name = "Laboratório Cito"
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
 * identifier.value = "654321"
-
-* type.coding.system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoEstabelecimentoSaude"
-* type.coding.code = #80
-* type.text = "LABORATORIO DE SAUDE PUBLICA"
 
 // ------------------------------------------------------
 // citopatologista

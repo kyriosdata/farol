@@ -371,7 +371,7 @@ Description: "Requisição de exame citopatológico (Talita). Veja a [ficha](tal
 // ------------------------------------------------------
 
 Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb12
-InstanceOf: Organization
+InstanceOf: Laboratorio
 Usage: #inline
 Title: "Laboratório Quali"
 Description: "Laboratório que emite o laudo de exame citopatológico"

@@ -419,7 +419,7 @@ Description: "Laudo de exame citopatológico da paciente Renata"
 // ------------------------------------------------------
 
 Instance: laboratorio-renata
-InstanceOf: Organization
+InstanceOf: Laboratorio
 Usage: #inline
 Title: "Laboratório Qualidade"
 Description: "Laboratório que emite o laudo de exame citopatológico"

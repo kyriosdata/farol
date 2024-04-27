@@ -458,7 +458,7 @@ Description: "Laudo de exame citopatológico da paciente Gabriela Gomes"
 // ------------------------------------------------------
 
 Instance: laboratorio-gabriela
-InstanceOf: Organization
+InstanceOf: Laboratorio
 Usage: #inline
 Title: "Laboratório Premium"
 Description: "Laboratório que emite o laudo de exame citopatológico"

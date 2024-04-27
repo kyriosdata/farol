@@ -229,6 +229,7 @@ Description: "Unidade de Saúde que produz laudo de Exame Citopatológico"
 * ^status = #draft
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/unidade-executante"
 
+// #44 (CNES)
 * identifier 1..1 
 * identifier.id 0..0
 * identifier.extension 0..0
@@ -239,6 +240,9 @@ Description: "Unidade de Saúde que produz laudo de Exame Citopatológico"
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes" (exactly)
 * identifier.value 1..1
 * identifier.value ^short = "O código CNES da unidade de saúde requisitante"
+
+// #46 (Nome do Laboratório)
+* name 1..1
 
 * active 0..0
 * type 0..0

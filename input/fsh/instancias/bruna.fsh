@@ -2,8 +2,6 @@ Alias: $racacoretnia = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRac
 Alias: $etniaindigena = http://www.saude.gov.br/fhir/r4/CodeSystem/BREtniaIndigena
 Alias: $nacionalidade = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade
 Alias: $cs-nacionalidade = http://www.saude.gov.br/fhir/r4/CodeSystem/BRNacionalidade
-Alias: $pontoreferencia = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator
-Alias: $cpf = https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf
 Alias: $motivos-exame = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivos-exame-citopatologico
 Alias: $anamnese-exame-citopatologico = https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico
 
@@ -199,8 +197,8 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 Instance: ExameClinicoBruna
 InstanceOf: ExameClinico
 Usage: #example
-Title: "Exame Clinico Rosa"
-Description: "Exame clínico da Rosa"
+Title: "Exame Clinico Bruna"
+Description: "Exame clínico da Bruna"
 * status = #final
 * code = http://loinc.org#32423-6 
 
@@ -245,7 +243,7 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 * gender = #female
 
 // CPF
-* identifier[1].system = $cpf
+* identifier[1].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
 * identifier[1].value = "61366462189"
 
 // Idade (binding para http://hl7.org/fhir/ValueSet/age-units)

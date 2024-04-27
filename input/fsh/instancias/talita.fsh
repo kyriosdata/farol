@@ -128,8 +128,8 @@ Usage: #inline
 Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb04
 InstanceOf: ExameClinico
 Usage: #example
-Title: "Exame Clinico Renata"
-Description: "Exame clínico da Renata"
+Title: "Exame Clinico Talita"
+Description: "Exame clínico da Talita"
 * status = #final
 * code = http://loinc.org#32423-6 
 

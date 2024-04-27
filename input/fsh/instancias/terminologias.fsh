@@ -6,7 +6,7 @@
 Instance: ns-requisitante
 InstanceOf: NamingSystem
 Title: "Prontuário"
-Description: "Declaração do identificador de prontuário fornecido pelo estabelecimento requisitante de exame citopatológico."
+Description: "O identificador de prontuário fornecido pelo estabelecimento requisitante de exame citopatológico."
 Usage: #definition
 
 * name = "RequisitanteProntuario"
@@ -58,7 +58,7 @@ Usage: #definition
 Instance: ns-laboratorio
 InstanceOf: NamingSystem
 Title: "Número do exame"
-Description: "Declaração do identificador de exame gerado por laboratório. Observe que este identificador não discrimina qual o laboratório em questão, ou seja, apenas sabe-se que se trata de um identificador gerado por um laboratório. O contexto em questão deve incluir a informação de qual laboratório o código faz parte."
+Description: "O identificador de exame gerado por laboratório. Observe que este identificador não discrimina qual o laboratório em questão, ou seja, apenas sabe-se que se trata de um identificador gerado por um laboratório. O contexto em questão deve incluir a informação de qual laboratório o código faz parte."
 Usage: #definition
 
 * name = "NumeroExame"
@@ -107,7 +107,7 @@ Usage: #definition
 Instance: ns-cnes
 InstanceOf: NamingSystem
 Title: "Identificador do Cadastro Nacional de Estabelecimentos de Saúde (CNES)"
-Description: "Declaração do identificador do Cadastro Nacional de Estabelecimentos de Saúde (CNES)"
+Description: "O identificador do estabelecimento no Cadastro Nacional de Estabelecimentos de Saúde (CNES)"
 Usage: #definition
 
 * name = "CNES"
@@ -156,7 +156,7 @@ Usage: #definition
 Instance: ns-cns
 InstanceOf: NamingSystem
 Title: "Identificador do Cartão Nacional de Saúde (CNS)"
-Description: "Declaração do identificador de números de Cartão Nacional de Saúde (CNS)"
+Description: "O identificador único de indivíduo ou Cartão Nacional de Saúde (CNS)"
 Usage: #definition
 
 * name = "CNS"
@@ -206,7 +206,7 @@ Usage: #definition
 Instance: ns-cpf
 InstanceOf: NamingSystem
 Title: "Identificador de Cadastro de Pessoa Física (CPF)"
-Description: "Declaração do identificador de números de inscrição no Cadastro de Pessoa Física (CPF)"
+Description: "O identificador de números de inscrição no Cadastro de Pessoa Física (CPF)"
 Usage: #definition
 
 * name = "CPF"
@@ -255,7 +255,7 @@ Usage: #definition
 Instance: loinc
 InstanceOf: NamingSystem
 Title: "LOINC"
-Description: "Terminologia LOINC (https://loinc.org)"
+Description: "O identificador único da terminologia LOINC"
 Usage: #definition
 
 * name = "LOINC"
@@ -310,7 +310,7 @@ de códigos e também um significativo conjunto de _ValueSets_.
 Instance: siscan
 InstanceOf: NamingSystem
 Title: "Identificador de protocolo (código único) gerado pelo SISCAN"
-Description: "Declaração do identificador de números únicos gerados pelo SISCAN"
+Description: "O identificador único de número de protoloco gerado pelo SISCAN"
 Usage: #definition
 
 * name = "SiscanProtocolo"

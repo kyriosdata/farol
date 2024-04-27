@@ -308,8 +308,8 @@ Usage: #inline
 Instance: ExameClinicoPerola
 InstanceOf: ExameClinico
 Usage: #example
-Title: "Exame Clinico Rosa"
-Description: "Exame clínico da Rosa"
+Title: "Exame Clinico Pérola"
+Description: "Exame clínico da Pérola"
 * status = #final
 * code = http://loinc.org#32423-6 
 

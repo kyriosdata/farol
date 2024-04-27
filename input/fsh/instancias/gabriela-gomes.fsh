@@ -206,8 +206,8 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 Instance: ExameClinicoGabriela
 InstanceOf: ExameClinico
 Usage: #example
-Title: "Exame Clinico Rosa"
-Description: "Exame clínico da Rosa"
+Title: "Exame Clinico Gabriela"
+Description: "Exame clínico da Gabriela"
 * status = #final
 * code = http://loinc.org#32423-6 
 

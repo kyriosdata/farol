@@ -1,4 +1,3 @@
-Alias: $tipodocumento = http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoDocumento
 Alias: $idade = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade
 Alias: $racacor = http://www.saude.gov.br/fhir/r4/CodeSystem/BRRacaCor
 Alias: $racacoretnia = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRacaCorEtnia-1.0
@@ -118,6 +117,10 @@ Usage: #inline
 
 * status = #draft
 * intent = #order
+
+* extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/identificador-prontuario"
+* extension[0].valueIdentifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/requisitante"
+* extension[0].valueIdentifier.value = "123.4444-34G456"
 
 // Data da coleta da amostra e dados da requisição
 * authoredOn = "2024-01-23"

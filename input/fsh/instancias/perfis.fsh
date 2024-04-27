@@ -11,6 +11,27 @@ Alias: $resultado-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/r
 Alias: $BRRacaCor-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRRacaCor-1.0
 Alias: $BREtniaIndigena-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BREtniaIndigena-1.0
 
+// -------------------------
+// Identificador de negócio: número do prontuário
+// -------------------------
+
+Extension: IdentificadorProntuario
+Id: identificador-prontuario
+Title: "Identificador de prontuário"
+Description: "Identificador do prontuário"
+Context: ServiceRequest
+* ^status = #draft
+* ^language = #pt-BR
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/identificador-prontuario"
+* . ..1
+* . ^short = "Identificador de prontuário"
+* . ^definition = "Código que unicamente identifica o prontuário pelo requisitante"
+
+* value[x] 1..1
+* value[x] only Identifier
+* valueIdentifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/requisitante"
+* valueIdentifier.value 1..1
+
 
 // --- AVISO
 // --- AJUSTE NA EXTENSÃO PRODUZIDA PELA RNDS  
@@ -117,6 +138,26 @@ Context: Patient
 * valueAge ^short = "A idade da paciente em anos"
 * valueAge.system = "http://unitsofmeasure.org" (exactly)
 * valueAge.code = #a (exactly)
+
+// ------------------------------------------------------
+// profissional (requisita ou emite laudo)
+// ------------------------------------------------------
+
+Profile: Profissional
+Parent: Practitioner
+Id: profissional
+Title: "Profissional"
+Description: "Responsável pela requisição ou emissão de laudo de exame citopatológico"
+
+* identifier ^slicing.discriminator.type = #value
+* identifier ^slicing.discriminator.path = "system"
+* identifier ^slicing.rules = #open
+
+* identifier contains cns 1..1
+
+* identifier[cns].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
+* identifier[cns].value 1..1
+
 
 // ------------------------------------------------------
 // estabelecimento (unidade de saúde)
@@ -234,6 +275,10 @@ Description: "Definição das informações que devem constar em toda e qualquer
 
 * . ^short = "Requisição de exame citopatológico"
 
+// #6
+* extension 0..1
+* extension only IdentificadorProntuario
+
 // Trata-se de uma ordem de serviço
 * intent = #order (exactly)
 * intent ^short = "Ordem de serviço"
@@ -252,6 +297,9 @@ Description: "Definição das informações que devem constar em toda e qualquer
 * supportingInfo only Reference(AnamneseQuestionario or ExameClinico)
 * supportingInfo 1..2
 
+// #43
+* requester 1..1
+* requester only Reference(Profissional)
 
 Profile: AnamneseQuestionario
 Parent: QuestionnaireResponse

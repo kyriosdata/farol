@@ -826,19 +826,18 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 
 * basedOn 1..1
 
-* identifier ..1
+* identifier 1..1
 * identifier ^label = "O rótulo (label)"
-* identifier ^short = "O identificador único atribuído pelo solicitante ao requerimento de exame citopatológico."
-* identifier ^definition = "O identificador único da requisição para o solicitante."
+* identifier ^short = "O identificador único atribuído pelo laboratório ao laudo"
+* identifier ^definition = "O identificador único do laudo no contexto do laboratório"
 * identifier ^comment = "Não há nenhum formato esperado para este identificador senão uma sequência de caracteres."
-* identifier ^requirements = "Este identificador é necessário para facilitar a identificação do requerimento no contexto em que é gerado."
-* identifier ^alias[0] = "protocolo"
-* identifier ^alias[+] = "número"
+* identifier ^requirements = "Este identificador unicamente identifica o laudo produzido pelo laboratório que o gerou"
 * identifier.id ..0
 * identifier.extension ..0
 * identifier.use ..0
 * identifier.system 1..1
-* identifier.system ^short = "O identificador do sistema de identificação"
+* identifier.system ^short = "O identificador do sistema de identificação do laboratório"
+* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/laboratorio"
 * identifier.value 1..1
 * identifier.value ^short = "O identificador único atribuído à requisição pelo solicitante usando o seu sistema de origem."
 * identifier.period ..0

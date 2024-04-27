@@ -483,12 +483,11 @@ Usage: #inline
 // ------------------------------------------------------
 
 Instance: diagnostico-02
-InstanceOf: DiagnosticReport
+InstanceOf: DiagnosticoCitopatologico
 Title: "Relatório (Bruna)"
 Usage: #inline
 Description: "Laudo da requisição de exame da paciente Bruna. Veja a [ficha](bruna-faria-laudo.jpg) correspondente ao laudo"
 
-* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/diagnostico-citopatologico"
 * status = #final
 * code = http://loinc.org#47528-5
 

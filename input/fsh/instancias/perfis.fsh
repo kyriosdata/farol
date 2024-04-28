@@ -483,9 +483,11 @@ Description: "Endereço"
 
 Profile: IdentificadorCNS
 Parent: Identifier
-Id: identificador-cns
+Id: cns
 Title: "Identificador CNS"
 Description: "O número do Cartão Nacional SUS"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/cns"
 * ^status = #draft
 * id 0..0
 * extension 0..0
@@ -499,7 +501,7 @@ Description: "O número do Cartão Nacional SUS"
 
 Profile: IdentificadorCPF
 Parent: Identifier
-Id: identificador-cpf
+Id: cpf
 Title: "CPF"
 Description: "O número do CPF da paciente"
 * ^status = #draft

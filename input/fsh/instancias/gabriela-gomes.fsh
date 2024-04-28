@@ -7,8 +7,6 @@ Alias: $etniaindigena = http://www.saude.gov.br/fhir/r4/CodeSystem/BREtniaIndige
 Alias: $nacionalidade = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade
 Alias: $cs-nacionalidade = http://www.saude.gov.br/fhir/r4/CodeSystem/BRNacionalidade
 Alias: $pontoreferencia = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator
-Alias: $cns = https://fhir.fabrica.inf.ufg.br/ccu/sid/cns
-Alias: $cpf = https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf
 Alias: $paciente-siscan = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente
 Alias: $motivos-exame = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivos-exame-citopatologico
 Alias: $cs-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo
@@ -236,7 +234,7 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 // ------------
 
 // Cartão SUS
-* identifier[0].system = $cns
+* identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
 * identifier[0].value = "7384287632"
 
 // Nome completo da mulher
@@ -254,7 +252,7 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 * gender = #female
 
 // CPF
-* identifier[1].system = $cpf
+* identifier[1].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
 * identifier[1].value = "03287297344"
 
 // Idade (binding para http://hl7.org/fhir/ValueSet/age-units)

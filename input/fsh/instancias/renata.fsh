@@ -333,6 +333,10 @@ Description: "Exame clínico da Renata"
 * component[dst].code = http://loinc.org#45687-1
 * component[dst].valueBoolean = false
 
+* subject = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb01)
+* performer = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb07)
+* effectiveDateTime = "2023-12-07"
+
 
 // ------------------------------------------------------
 // LAUDO

@@ -138,6 +138,9 @@ Description: "Exame clínico da Talita"
 * component[dst].code = http://loinc.org#45687-1
 * component[dst].valueBoolean = false
 
+* subject = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb01)
+* performer = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb07)
+* effectiveDateTime = "2023-12-07"
 
 // ------------------------------------------------------
 // anamnese

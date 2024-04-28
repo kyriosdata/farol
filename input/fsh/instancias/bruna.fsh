@@ -207,6 +207,10 @@ Description: "Exame clínico da Bruna"
 * component[dst].code = http://loinc.org#45687-1
 * component[dst].valueBoolean = true
 
+* subject = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb01)
+* performer = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb07)
+* effectiveDateTime = "2023-12-07"
+
 
 // ------------------------------------------------------
 // Bruna (subject da composition)

@@ -71,8 +71,7 @@ Description: "Requisição de Exame Citopatológico da paciente Pérola"
 
 * status = #final
 
-// LOINC para FORM  (desencorajado por ser genérico)
-* type = http://loinc.org#80568-9 
+* type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos#requisicao-citopatologico
 
 * author = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb07)
   
@@ -383,7 +382,7 @@ Description: "Laudo de exame citopatológico da paciente Renata"
 * status = #final
 
 // Laboratory report
-* type = http://loinc.org#11502-2
+* type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos#laudo-citopatologico
 
 * author = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb13)
 

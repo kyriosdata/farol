@@ -86,7 +86,7 @@ Description: "Requisição de Exame Citopatológico da paciente Rosa"
 
 * status = #final
 
-* type = http://loinc.org#80568-9 // LOINC para FORM  (desencorajado por ser genérico)
+* type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos#requisicao-citopatologico
 
 * author = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07)
   
@@ -441,7 +441,7 @@ Usage: #inline
 // LAUDO
 // ------------------------------------------------------
 
-Instance: composition-2
+Instance: laudo-rosa
 InstanceOf: Composition
 Usage: #inline
 Title: "Laudo (Rosa)"
@@ -449,8 +449,7 @@ Description: "Laudo de exame citopatológico da paciente Rosa"
 
 * status = #final
 
-// Laboratory report
-* type = http://loinc.org#11502-2
+* type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos#laudo-citopatologico
 
 * author = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07)
 

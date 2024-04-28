@@ -89,7 +89,7 @@ Description: "Requisição de Exame Citopatológico da paciente Gabriela"
 
 * status = #final
 
-* type = http://loinc.org#80568-9 // LOINC para FORM  (desencorajado por ser genérico)
+* type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos#requisicao-citopatologico
 
 * author = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb07)
   
@@ -399,7 +399,7 @@ Description: "Laudo de exame citopatológico (Gabriela). Veja a [ficha](gabriela
 // Composition (primeira entrada do bundle)
 * entry[+]
   * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb09"
-  * resource = composition-01-2
+  * resource = laudo-gabriela
 
 // Patient
 * entry[+]
@@ -427,7 +427,7 @@ Description: "Laudo de exame citopatológico (Gabriela). Veja a [ficha](gabriela
   * resource = citopatologista-01
 
 
-Instance: composition-01-2
+Instance: laudo-gabriela
 InstanceOf: Composition
 Usage: #inline
 Title: "Laudo (Gabriela Gomes)"
@@ -435,8 +435,7 @@ Description: "Laudo de exame citopatológico da paciente Gabriela Gomes"
 
 * status = #final
 
-// Laboratory report
-* type = http://loinc.org#11502-2
+* type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos#laudo-citopatologico
 
 * author = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb13)
 

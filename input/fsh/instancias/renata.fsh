@@ -22,7 +22,7 @@ Description: "Requisição de exame citopatológico (Renata). Veja a [ficha](ren
 // Composition (primeira entrada do bundle)
 * entry[+]
   * fullUrl = "urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb00"
-  * resource = composition-renata
+  * resource = requisicao-renata
 
 // renata (Patient)
 * entry[+]
@@ -63,7 +63,7 @@ Description: "Requisição de exame citopatológico (Renata). Veja a [ficha](ren
 // Composition (requisição)
 // ------------------------------------------------------
 
-Instance: composition-renata
+Instance: requisicao-renata
 InstanceOf: Composition
 Usage: #inline
 Title: "Requisição (Renata)"
@@ -71,7 +71,7 @@ Description: "Requisição de Exame Citopatológico da paciente Renata"
 
 * status = #final
 
-* type = http://loinc.org#80568-9 // LOINC para FORM  (desencorajado por ser genérico)
+* type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos#requisicao-citopatologico
 
 * author = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb07)
   
@@ -396,8 +396,7 @@ Description: "Laudo de exame citopatológico da paciente Renata"
 
 * status = #final
 
-// Laboratory report
-* type = http://loinc.org#11502-2
+* type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos#laudo-citopatologico
 
 * author = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb13)
 

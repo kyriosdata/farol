@@ -280,8 +280,7 @@ Description: "Requisição de Exame Citopatológico da paciente Talita"
 
 * status = #final
 
-// LOINC para FORM  (desencorajado por ser genérico)
-* type = http://loinc.org#80568-9 
+* type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos#requisicao-citopatologico
 
 * author = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb07)
   
@@ -480,7 +479,7 @@ Description: "Laudo da requisição de exame da paciente Talita. Veja a [ficha](
 // uma orientação para os vários componentes do documento.
 // ------------------------------------------------------
 
-Instance: composition-05-2
+Instance: laudo-talita
 InstanceOf: Composition
 Usage: #inline
 Title: "Laudo (Talita)"
@@ -488,8 +487,7 @@ Description: "Laudo de exame citopatológico da paciente Talita"
 
 * status = #final
 
-// Laboratory report
-* type = http://loinc.org#11502-2
+* type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos#laudo-citopatologico
 
 * author = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb13)
 
@@ -534,7 +532,7 @@ Description: "Laudo de exame citopatológico (Talita). Veja a [ficha](talita-mor
 // Composition (primeira entrada do bundle)
 * entry[+]
   * fullUrl = "urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb09"
-  * resource = composition-05-2
+  * resource = laudo-talita
 
 // Patient
 * entry[+]

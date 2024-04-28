@@ -64,7 +64,7 @@ Description: "Requisição de exame citopatológico (Renata). Veja a [ficha](ren
 // ------------------------------------------------------
 
 Instance: requisicao-renata
-InstanceOf: Composition
+InstanceOf: DocumentoRequisicao
 Usage: #inline
 Title: "Requisição (Renata)"
 Description: "Requisição de Exame Citopatológico da paciente Renata"
@@ -161,8 +161,8 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 // ------------
 
 // Cartão SUS
-* identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
-* identifier[0].value = "318376246"
+* identifier[cns].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
+* identifier[cns].value = "318376246"
 
 // Nome completo da mulher
 * name[0].text = "Renata Lima"
@@ -179,8 +179,8 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 * gender = #female
 
 // CPF
-* identifier[1].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
-* identifier[1].value = "32872436"
+* identifier[cpf].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
+* identifier[cpf].value = "32872436"
 
 // Idade (binding para http://hl7.org/fhir/ValueSet/age-units)
 * extension[1].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade"

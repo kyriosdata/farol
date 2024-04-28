@@ -80,7 +80,7 @@ Description: "Requisição de exame citopatológico (Gabriela). Veja a [ficha](g
 // ------------------------------------------------------
 
 Instance: requisicao-gabriela
-InstanceOf: Composition
+InstanceOf: DocumentoRequisicao
 Usage: #inline
 Title: "Requisição (Gabriela)"
 Description: "Requisição de Exame Citopatológico da paciente Gabriela"
@@ -234,8 +234,8 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 // ------------
 
 // Cartão SUS
-* identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
-* identifier[0].value = "7384287632"
+* identifier[cns].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
+* identifier[cns].value = "7384287632"
 
 // Nome completo da mulher
 * name[0].text = "Gabriela Gomes"
@@ -252,8 +252,8 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 * gender = #female
 
 // CPF
-* identifier[1].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
-* identifier[1].value = "03287297344"
+* identifier[cpf].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
+* identifier[cpf].value = "03287297344"
 
 // Idade (binding para http://hl7.org/fhir/ValueSet/age-units)
 * extension[1].url = $idade

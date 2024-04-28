@@ -79,7 +79,7 @@ Description: "Requisição de exame citopatológico (Rosa)."
 // ------------------------------------------------------
 
 Instance: requisicao-rosa
-InstanceOf: Composition
+InstanceOf: DocumentoRequisicao
 Usage: #inline
 Title: "Requisição (Rosa)"
 Description: "Requisição de Exame Citopatológico da paciente Rosa"
@@ -228,7 +228,7 @@ Description: "Exame clínico da Rosa"
 // ------------------------------------------------------
 
 Instance: rosa
-InstanceOf: Patient
+InstanceOf: Paciente
 Usage: #inline
 Title: "Paciente (Rosa)"
 Description: "Paciente para a qual há requisição e laudo de exame citopatológico"
@@ -240,8 +240,8 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 // ------------
 
 // Cartão SUS
-* identifier[0].system = $cns
-* identifier[0].value = "8934543431218990"
+* identifier[cns].system = $cns
+* identifier[cns].value = "8934543431218990"
 
 // Nome completo da mulher
 * name[0].text = "Rosa Silva"
@@ -266,8 +266,8 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 * name[1].text = "Rosinha"
 
 // CPF
-* identifier[1].system = $cpf
-* identifier[1].value = "12334534553"
+* identifier[cpf].system = $cpf
+* identifier[cpf].value = "12334534553"
 
 // Idade (binding para http://hl7.org/fhir/ValueSet/age-units)
 * extension[1].url = $idade

@@ -276,7 +276,7 @@ Usage: #inline
 // ------------------------------------------------------
 
 Instance: composition-talita
-InstanceOf: Composition
+InstanceOf: DocumentoRequisicao
 Usage: #inline
 Title: "Requisição (Talita)"
 Description: "Requisição de Exame Citopatológico da paciente Talita"

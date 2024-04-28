@@ -481,45 +481,6 @@ Description: "Endereço"
 // paciente
 // ------------------------------------------------------
 
-Profile: IdentificadorCNS
-Parent: Identifier
-Id: cns
-Title: "Identificador CNS"
-Description: "O número do Cartão Nacional SUS"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/cns"
-* ^status = #draft
-* id 0..0
-* extension 0..0
-* use 0..0
-* type 0..0
-* period 0..0
-* assigner 0..0
-* system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns" (exactly)
-* value 1..1
-* value ^short = "O número do cartão SUS da paciente"
-
-Profile: IdentificadorCPF
-Parent: Identifier
-Id: cpf
-Title: "CPF"
-Description: "O número do CPF da paciente"
-* ^status = #draft
-* id 0..0
-* extension 0..0
-* use 0..0
-* type 0..0
-* period 0..0
-* assigner 0..0
-* system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf" (exactly)
-* value 1..1
-* value ^short = "O número do CPF da paciente"
-
-Invariant: CNSObrigatorio
-Description: "O Cartão Nacional SUS da paciente é obrigatório"
-Expression: "identifier.where(system='https://fhir.fabrica.inf.ufg.br/ccu/sid/cns').exists()"
-Severity: #error
-
 Invariant: NomeOficialApelidoOpcional
 Description: "O nome oficial é obrigatório, o apelido é opcional"
 Expression: "name.select(use='official' or use='nickname').allTrue() and name.where(use='official').exists() and name.use.isDistinct()"
@@ -534,11 +495,24 @@ Description: "Dados demográficos de paciente"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente"
 
-* obeys CNSObrigatorio and NomeOficialApelidoOpcional
+* obeys NomeOficialApelidoOpcional
 
 * identifier ^short = "A identificação da paciente. É obrigatório o Cartão Nacional SUS, o CPF é opcional."
-* identifier 1..2
-* identifier only IdentificadorCNS or IdentificadorCPF // #7 e #11
+* identifier 1..*
+
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "system"
+* identifier ^slicing.rules = #open
+
+* identifier contains 
+    cns 1..1 and
+    cpf 0..1
+
+* identifier[cns].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
+* identifier[cns].value 1..1
+
+* identifier[cpf].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
+* identifier[cpf].value 1..1
 
 // #8 e #10
 * name ^short = "O nome completo da paciente e, possivelmente, o apelido"
@@ -753,6 +727,21 @@ informações pertinentes à requisição."""
 //   * repeats = false
 //   * readOnly = true
 //   * maxLength = 3
+
+Profile: DocumentoRequisicao
+Parent: Composition
+Id: documento-requisicao
+Title: "Documento Requisicao"
+Description: "Um documento que registra uma requisição"
+
+* type.coding ^slicing.discriminator.type = #pattern
+* type.coding ^slicing.discriminator.path = "system"
+* type.coding ^slicing.rules = #open
+
+* type.coding contains tipo 1..1
+
+* type.coding[tipo].system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos"
+* type.coding[tipo].code 1..1
 
 // ------------------------------------------------------
 // laudo-exame

@@ -64,7 +64,7 @@ Description: "Requisição de exame citopatológico (Pérola). Veja a [ficha](pe
 // ------------------------------------------------------
 
 Instance: composition-perola
-InstanceOf: Composition
+InstanceOf: DocumentoRequisicao
 Usage: #inline
 Title: "Requisição (Pérola)"
 Description: "Requisição de Exame Citopatológico da paciente Pérola"
@@ -162,8 +162,8 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 // ------------
 
 // Cartão SUS
-* identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
-* identifier[0].value = "23638763212"
+* identifier[cns].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
+* identifier[cns].value = "23638763212"
 
 // Nome completo da mulher
 * name[0].text = "Pérola Faria"
@@ -180,8 +180,8 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 * gender = #female
 
 // CPF
-* identifier[1].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
-* identifier[1].value = "61366389369"
+* identifier[cpf].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
+* identifier[cpf].value = "61366389369"
 
 // Idade (binding para http://hl7.org/fhir/ValueSet/age-units)
 * extension[1].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade"

@@ -73,14 +73,14 @@ Description: "Requisição de exame citopatológico (Bruna). Veja a [ficha](brun
 // ------------------------------------------------------
 
 Instance: requisicao-bruna
-InstanceOf: Composition
+InstanceOf: DocumentoRequisicao
 Usage: #inline
 Title: "Requisição (Bruna)"
 Description: "Requisição de Exame Citopatológico da paciente Bruna"
 
 * status = #final
 
-* type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos#requisicao-citopatologico
+* type.coding[tipo] = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos#requisicao-citopatologico
 
 * author = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb07)
   
@@ -227,8 +227,8 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 // ------------
 
 // Cartão SUS
-* identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
-* identifier[0].value = "72862374"
+* identifier[cns].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
+* identifier[cns].value = "72862374"
 
 // Nome completo da mulher
 * name[0].text = "Bruna Faria"
@@ -245,8 +245,8 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 * gender = #female
 
 // CPF
-* identifier[1].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
-* identifier[1].value = "61366462189"
+* identifier[cpf].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
+* identifier[cpf].value = "61366462189"
 
 // Idade (binding para http://hl7.org/fhir/ValueSet/age-units)
 * extension[1].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade"

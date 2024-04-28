@@ -319,7 +319,7 @@ Description: "Estrutura exigida da anamnese pela requisição de exame citopatol
 * status = #completed
 * basedOn 0..0
 * partOf 0..0
-* encounter 0..0
+* encounter 1..1
 * authored 0..0
 
 // ------------------------------------------------------

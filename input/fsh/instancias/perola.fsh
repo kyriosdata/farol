@@ -251,6 +251,7 @@ Usage: #inline
 * status = #completed
 * subject = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb01)
 * author = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb07)
+* encounter = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb08)
 
 * item[+]
   * linkId = "1"

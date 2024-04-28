@@ -147,12 +147,11 @@ Description: "Exame clínico da Talita"
 // ------------------------------------------------------
 
 Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb03
-InstanceOf: QuestionnaireResponse
+InstanceOf: AnamneseQuestionario
 Title: "Anamnese (Talita)"
 Description: "Anamnese da paciente Talita"
 Usage: #inline
 
-* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/anamnese-questionario"
 * questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico"
 
 * status = #completed

@@ -304,12 +304,11 @@ Usage: #inline
 // ------------------------------------------------------
 
 Instance: respostas-anamnese-02
-InstanceOf: QuestionnaireResponse
+InstanceOf: AnamneseQuestionario
 Title: "Anamnese (Bruna)"
 Description: "Anamnese da paciente Bruna"
 Usage: #inline
 
-* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/anamnese-questionario"
 * questionnaire = $anamnese-exame-citopatologico
 
 * status = #completed

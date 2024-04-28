@@ -226,12 +226,10 @@ Description: "Exame clínico da Gabriela"
 // ------------------------------------------------------
 
 Instance: gabriela
-InstanceOf: Patient
+InstanceOf: Paciente
 Usage: #inline
 Title: "Paciente (Gabriela Gomes)"
 Description: "Paciente para a qual há requisição e laudo de exame citopatológico"
-
-* meta.profile[0] = $paciente-siscan
 
 // ------------
 // OBRIGATÓRIOS 

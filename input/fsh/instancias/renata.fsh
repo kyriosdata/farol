@@ -149,7 +149,7 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 // ------------------------------------------------------
 
 Instance: renata
-InstanceOf: Patient
+InstanceOf: Paciente
 Usage: #inline
 Title: "Paciente (Renata)"
 Description: "Paciente para a qual há requisição e laudo de exame citopatológico"

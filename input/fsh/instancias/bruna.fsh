@@ -217,12 +217,10 @@ Description: "Exame clínico da Bruna"
 // ------------------------------------------------------
 
 Instance: bruna
-InstanceOf: Patient
+InstanceOf: Paciente
 Usage: #inline
 Title: "Paciente (Bruna)"
 Description: "Paciente para a qual há requisição e laudo de exame citopatológico"
-
-* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente"
 
 // ------------
 // OBRIGATÓRIOS 

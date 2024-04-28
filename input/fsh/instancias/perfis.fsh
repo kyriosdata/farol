@@ -326,52 +326,6 @@ Description: "Estrutura exigida da anamnese pela requisição de exame citopatol
 // exame-clinico (formado por duas observações)
 // ------------------------------------------------------
 
-Profile: InspecaoColo
-Parent: Observation
-Id: inspecao-colo
-Title: "Inspeção do colo"
-Description: "O resultado da inspeção do colo é elemento obrigatório
-da requisição de exame citopatológico e obtido do exame clínico da paciente."
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/inspecao-colo"
-
-* ^status = #draft
-
-* . ^short = "Registra resultado obtido da inspeção do colo"
-
-// Cervix Study observation Inspection (12044-4)
-* code.coding 1..1
-* code.coding = http://loinc.org#12044-4
-* code ^short = "Código para inspeção do colo"
-
-* value[x] 1..1
-* value[x] only CodeableConcept
-* value[x] ^short = "O código correspondente ao resultado da inspeção"
-* valueCodeableConcept from $resultado-inspecao-colo (required)
-* valueCodeableConcept.coding 1..1
-* valueCodeableConcept.coding ^short = "Código que caracteriza o resultado da inspeção do colo"
-
-
-Profile: PresencaDST
-Parent: Observation
-Id: presenca-dst
-Title: "Sinais sugestivos de DST"
-Description: "A presença ou não de sinais sugestivos de doença sexualmente 
-transmissível é parte do exame clínico realizado como parte da requisição
-de exame citopatológico."
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/presenca-dst"
-
-* ^status = #draft
-
-* . ^short = "Registra detecção de DST ao realizar inspeção de colo"
-* code.coding 1..1
-* code.coding = http://loinc.org#45687-1
-* code ^short = "Código para presença ou não de sinais de DST"
-* value[x] 1..1
-* value[x] ^short = "true se há sinal de doença sexualmente transmissível ou false, caso contrário"
-* value[x] only boolean
-
 Profile: ExameClinico
 Parent: Observation
 Id: exame-clinico

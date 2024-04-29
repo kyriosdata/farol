@@ -19,7 +19,7 @@ Extension: IdentificadorExame
 Id: numero-exame
 Title: "Número do exame"
 Description: "Número do exame pelo laboratório. Este valor deve ser único para exames citopatológicos emitidos pelo CNES em questão."
-Context: ServiceRequest
+Context: DiagnosticReport
 * ^status = #draft
 * ^language = #pt-BR
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/numero-exame"

@@ -239,12 +239,10 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 // ------------------------------------------------------
 
 Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb02
-InstanceOf: ServiceRequest
+InstanceOf: RequisicaoExameCitopatologico
 Title: "Requisição (Talita)"
 Description: "Requisição de exame citopatológico da Talita"
 Usage: #inline
-
-* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
 
 * status = #unknown
 * intent = #order

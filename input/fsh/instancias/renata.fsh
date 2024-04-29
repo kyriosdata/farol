@@ -98,8 +98,6 @@ Title: "Requisição (Renata)"
 Description: "Requisição de exame citopatológico da Renata"
 Usage: #inline
 
-* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
-
 * status = #unknown
 * intent = #order
 

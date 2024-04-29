@@ -93,12 +93,10 @@ Description: "Requisição de Exame Citopatológico da paciente Pérola"
 // ------------------------------------------------------
 
 Instance: requisicao-04
-InstanceOf: ServiceRequest
+InstanceOf: RequisicaoExameCitopatologico
 Title: "Requisição (Pérola)"
 Description: "Requisição de exame citopatológico da Pérola"
 Usage: #inline
-
-* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
 
 * status = #unknown
 * intent = #order

@@ -113,14 +113,11 @@ Title: "Requisição (Rosa)"
 Description: "Requisição de exame citopatológico da Rosa"
 Usage: #inline
 
-* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
-
 * status = #draft
 * intent = #order
 
 * extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/identificador-prontuario"
-* extension[0].valueIdentifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/requisitante"
-* extension[0].valueIdentifier.value = "123.4444-34G456"
+* extension[0].valueString = "123.4444-34G456"
 
 // Data da coleta da amostra e dados da requisição
 * authoredOn = "2024-01-23"

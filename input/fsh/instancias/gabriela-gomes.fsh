@@ -121,12 +121,10 @@ Description: "Requisição de Exame Citopatológico da paciente Gabriela"
 // ------------------------------------------------------
 
 Instance: requisicao-01
-InstanceOf: ServiceRequest
+InstanceOf: RequisicaoExameCitopatologico
 Title: "Requisição (Gabriela Gomes)"
 Description: "Requisição de exame citopatológico da Gabriela Gomes"
 Usage: #inline
-
-* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
 
 * status = #draft
 * intent = #order

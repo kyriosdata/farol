@@ -18,7 +18,7 @@ Alias: $BREtniaIndigena-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BREtniaIn
 Extension: IdentificadorProntuario
 Id: identificador-prontuario
 Title: "Identificador de prontuário"
-Description: "Identificador do prontuário"
+Description: "Identificador do prontuário pelo requisitante. Este valor deve ser único para requisições emitidas pelo CNES em questão."
 Context: ServiceRequest
 * ^status = #draft
 * ^language = #pt-BR
@@ -27,10 +27,8 @@ Context: ServiceRequest
 * . ^short = "Identificador de prontuário"
 * . ^definition = "Código que unicamente identifica o prontuário pelo requisitante"
 
-* value[x] 1..1
-* value[x] only Identifier
-* valueIdentifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/requisitante"
-* valueIdentifier.value 1..1
+* value[x] only string
+* valueString 1..1
 
 
 // --- AVISO

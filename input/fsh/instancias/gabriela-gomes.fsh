@@ -484,7 +484,7 @@ Usage: #inline
 // ------------------------------------------------------
 
 Instance: diagnostico-01
-InstanceOf: DiagnosticReport
+InstanceOf: DiagnosticoCitopatologico
 Title: "Relatório (Gabriela Gomes)"
 Usage: #inline
 Description: "Laudo da requisição de exame da paciente Gabriela Gomes. Veja a [ficha](gabriela-gomes-laudo.jpg) correspondente ao laudo"

@@ -15,6 +15,22 @@ Alias: $BREtniaIndigena-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BREtniaIn
 // Identificador de negócio: número do prontuário
 // -------------------------
 
+Extension: IdentificadorExame
+Id: numero-exame
+Title: "Número do exame"
+Description: "Número do exame pelo laboratório. Este valor deve ser único para exames citopatológicos emitidos pelo CNES em questão."
+Context: ServiceRequest
+* ^status = #draft
+* ^language = #pt-BR
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/numero-exame"
+* . ..1
+* . ^short = "Número do exame"
+* . ^definition = "Número do exame pelo laboratório"
+
+* value[x] only string
+* valueString 1..1
+
+
 Extension: IdentificadorProntuario
 Id: identificador-prontuario
 Title: "Identificador de prontuário"
@@ -24,8 +40,8 @@ Context: ServiceRequest
 * ^language = #pt-BR
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/identificador-prontuario"
 * . ..1
-* . ^short = "Identificador de prontuário"
-* . ^definition = "Código que unicamente identifica o prontuário pelo requisitante"
+* . ^short = "Prontuário"
+* . ^definition = "Código que unicamente identifica o prontuário para a requisição em questão pelo requisitante."
 
 * value[x] only string
 * valueString 1..1
@@ -757,6 +773,9 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/diagnostico-citopatologico"
 
 * code = http://loinc.org#47528-5
+
+* extension 1..1
+* extension only IdentificadorExame
 
 * meta 1..
 * meta ^short = "Metadados do laudo"

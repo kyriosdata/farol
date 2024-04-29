@@ -439,14 +439,16 @@ Description: "Itens que definem o laudo da paciente Talita"
 // ------------------------------------------------------
 
 Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb10
-InstanceOf: DiagnosticReport
+InstanceOf: DiagnosticoCitopatologico
 Title: "Relatório (Talita)"
 Usage: #inline
 Description: "Laudo da requisição de exame da paciente Talita. Veja a [ficha](talita-moreira-laudo.jpg) correspondente ao laudo"
 
-* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/diagnostico-citopatologico"
 * status = #final
 * code = http://loinc.org#47528-5
+
+* extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/numero-exame"
+* extension[0].valueString = "c1"
 
 * identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/laboratorio"
 * identifier[0].value = "243623"

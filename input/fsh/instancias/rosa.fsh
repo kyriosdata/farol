@@ -294,25 +294,25 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
   * city = #315780
   //* state = http://www.saude.gov.br/fhir/r4/CodeSystem/BRDivisaoGeograficaBrasil|2023-12-14#31
   * postalCode = "74000-000"  // Nao valida a máscara xxxxx-xxx
-  * line[0] = "Rua 3"
-  * line[0].extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/item-endereco"
-  * line[0].extension[0].valueCode = #logradouro
+  * line[logradouro] = "Rua 3"
+  * line[logradouro].extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/item-endereco"
+  * line[logradouro].extension[0].valueCode = #logradouro
 
-  * line[1] = "1441"
-  * line[1].extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/item-endereco"
-  * line[1].extension[0].valueCode = #numero
+  * line[numero] = "1441"
+  * line[numero].extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/item-endereco"
+  * line[numero].extension[0].valueCode = #numero
 
-  * line[2] = "São Leopoldo"
-  * line[2].extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/item-endereco"
-  * line[2].extension[0].valueCode = #bairro
+  * line[bairro] = "São Leopoldo"
+  * line[bairro].extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/item-endereco"
+  * line[bairro].extension[0].valueCode = #bairro
 
-  * line[3] = "bloco B, apto. 2345"
-  * line[3].extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/item-endereco"
-  * line[3].extension[0].valueCode = #complemento
+  * line[complemento] = "bloco B, apto. 2345"
+  * line[complemento].extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/item-endereco"
+  * line[complemento].extension[0].valueCode = #complemento
 
-  * line[4] = "Ao lado da Caixa"
-  * line[4].extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/item-endereco"
-  * line[4].extension[0].valueCode = #referencia
+  * line[referencia] = "Ao lado da Caixa"
+  * line[referencia].extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/item-endereco"
+  * line[referencia].extension[0].valueCode = #referencia
 
   
 * telecom[0]
@@ -516,20 +516,19 @@ Usage: #inline
 // ------------------------------------------------------
 
 Instance: diagnostico
-InstanceOf: DiagnosticReport
+InstanceOf: DiagnosticoCitopatologico
 Title: "Detalhes do laudo (Rosa)"
 Usage: #inline
 Description: "Laudo da requisição de exame da paciente Rosa"
 
-* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/diagnostico-citopatologico"
 * status = #final
 * code.text = "Laudo do exame citopatológico"
 * code.coding[0].system = "http://loinc.org"
-* code.coding[0].code = #10524-7
-* code.coding[0].display = "Microscopic observation [Identifier] in Cervix by Cyto stain"
-* code.coding[1].system = "http://loinc.org"
-* code.coding[1].code = #47528-5
-* code.coding[1].display = "Cytology report of Cervical or vaginal smear or scraping Cyto stain"
+* code.coding[0].code = #47528-5
+* code.coding[0].display = "Cytology report of Cervical or vaginal smear or scraping Cyto stain"
+
+* extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/numero-exame"
+* extension[0].valueString = "c1"
 
 * identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/laboratorio"
 * identifier[0].value = "cito-exame-123"

@@ -489,7 +489,6 @@ Title: "Relatório (Gabriela Gomes)"
 Usage: #inline
 Description: "Laudo da requisição de exame da paciente Gabriela Gomes. Veja a [ficha](gabriela-gomes-laudo.jpg) correspondente ao laudo"
 
-* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/diagnostico-citopatologico"
 * status = #final
 * code = http://loinc.org#47528-5
 

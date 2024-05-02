@@ -859,6 +859,11 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 // ------------------------------------------------------
 // componentes-laudo-citopatologico
 // ------------------------------------------------------
+Invariant: Executantes
+Description: "Apenas um profissional e um laboratório"
+Expression: "performer.resolve().type().name.isDistinct()"
+Severity: #error
+
 
 Profile: ComponentesLaudoCitopatologico
 Parent: Observation
@@ -873,7 +878,12 @@ Description: "Observação cujos componentes definem o resultado de laudo citopa
 * ^status = #draft
 * code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan#citopatologico
 
+// #44
+// #46
+// #59
+* obeys Executantes
 * performer only Reference(Laboratorio or Profissional)
+* performer 2..2 
 
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"

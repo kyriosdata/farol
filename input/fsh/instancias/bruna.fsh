@@ -423,6 +423,11 @@ Description: "Laudo de exame citopatológico (Bruna). Veja a [ficha](bruna-faria
   * fullUrl = "urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb13"
   * resource = citopatologista-02
 
+// laboratorio (Organization)
+* entry[+]
+  * fullUrl = "urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb14"
+  * resource = laboratorio-bruna
+
 
 Instance: composition-02-2
 InstanceOf: Composition
@@ -525,15 +530,14 @@ Description: "Laudo da requisição de exame da paciente Bruna. Veja a [ficha](b
 // ------------------------------------------------------
 
 Instance: laudo-componentes-02
-InstanceOf: Observation
+InstanceOf: ComponentesLaudoCitopatologico
 Usage: #inline
 Title: "Itens do laudo (Bruna)"
 Description: "Itens que definem o laudo da paciente Bruna"
 
-* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/componentes-laudo-citopatologico"
-
 * subject = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb13)
+* performer[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb13)
+* performer[1] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb14)
 * effectiveDateTime = "2023-12-14"
 
 * status = #final

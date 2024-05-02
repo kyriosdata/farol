@@ -525,15 +525,14 @@ Description: "Laudo da requisição de exame da paciente Gabriela Gomes. Veja a 
 // ------------------------------------------------------
 
 Instance: laudo-componentes-01
-InstanceOf: Observation
+InstanceOf: ComponentesLaudoCitopatologico
 Usage: #inline
 Title: "Itens do laudo (Gabriela Gomes)"
 Description: "Itens que definem o laudo da paciente Gabriela Gomes"
 
-* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/componentes-laudo-citopatologico"
-
 * subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb13)
+* performer[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb13)
+* performer[1] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb12)
 * effectiveDateTime = "2024-02-01T11:00:00Z"
 
 * status = #final

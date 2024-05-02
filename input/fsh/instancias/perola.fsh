@@ -484,7 +484,8 @@ Description: "Itens que definem o laudo da paciente Pérola"
 * meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/componentes-laudo-citopatologico"
 
 * subject = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb13)
+* performer[0] = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb13)
+* performer[1] = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb12)
 * effectiveDateTime = "2024-01-13"
 
 * status = #final

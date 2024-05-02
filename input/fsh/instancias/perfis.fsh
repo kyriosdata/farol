@@ -18,7 +18,7 @@ Alias: $BREtniaIndigena-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BREtniaIn
 Extension: RecebidoEm
 Id: recebido-em
 Title: "Recebido em"
-Description: "Data em que o pedido de exame é recebido pelo laboratório"
+Description: "Data em que o pedido de exame foi recebido pelo laboratório"
 Context: DiagnosticReport
 * ^status = #draft
 * ^language = #pt-BR
@@ -802,8 +802,9 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 
-* extension contains NumeroExame named numeroExame 1..1
-
+* extension contains 
+    NumeroExame named numeroExame 1..1 and
+    RecebidoEm named dataRecebido 1..1 
 
 * meta 1..
 * meta ^short = "Metadados do laudo"

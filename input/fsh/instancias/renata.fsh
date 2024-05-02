@@ -434,13 +434,13 @@ Description: "Laboratório que emite o laudo de exame citopatológico"
 // ------------------------------------------------------
 
 Instance: citopatologista-03
-InstanceOf: Practitioner
+InstanceOf: Profissional
 Title: "Citopatologista Pedro"
 Description: "Profissional responsável pelo laudo do exame citopatológico da paciente Renata"
 Usage: #inline
 
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sis/cns"
-* identifier.value = "2345234234234"
+* identifier[cns].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
+* identifier[cns].value = "2345234234234"
 * name.text = "Pedro Cândido"
 
 // ------------------------------------------------------
@@ -491,12 +491,10 @@ Description: "Laudo da requisição de exame da paciente Renata. Veja a [ficha](
 // ------------------------------------------------------
 
 Instance: laudo-componentes-03
-InstanceOf: Observation
+InstanceOf: ComponentesLaudoCitopatologico
 Usage: #inline
 Title: "Itens do laudo (Renata)"
 Description: "Itens que definem o laudo da paciente Renata"
-
-* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/componentes-laudo-citopatologico"
 
 * subject = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb01)
 * performer = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb13)

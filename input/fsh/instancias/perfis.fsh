@@ -181,6 +181,8 @@ Id: profissional
 Title: "Profissional"
 Description: "Responsável pela requisição ou emissão de laudo de exame citopatológico"
 
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/profissional"
+
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
@@ -870,6 +872,8 @@ Description: "Observação cujos componentes definem o resultado de laudo citopa
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/componentes-laudo-citopatologico"
 * ^status = #draft
 * code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan#citopatologico
+
+//* performer only Reference(Laboratorio or Profissional)
 
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"

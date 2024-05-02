@@ -803,8 +803,8 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 * extension ^slicing.rules = #open
 
 * extension contains 
-    NumeroExame named numeroExame 1..1 and
-    RecebidoEm named dataRecebido 1..1 
+    NumeroExame named numeroExame 1..1 and // #45
+    RecebidoEm named dataRecebido 1..1     // #47
 
 * meta 1..
 * meta ^short = "Metadados do laudo"
@@ -814,6 +814,8 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 * meta.profile ^short = "Perfil obrigatoriamente a ser atendido"
 * meta.profile = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/diagnostico-citopatologico"
 * contained ..0
+
+* issued 1..1 // #60
 
 * basedOn 1..1
 

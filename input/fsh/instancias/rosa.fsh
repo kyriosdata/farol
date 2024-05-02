@@ -527,8 +527,8 @@ Description: "Laudo da requisição de exame da paciente Rosa"
 * code.coding[0].code = #47528-5
 * code.coding[0].display = "Cytology report of Cervical or vaginal smear or scraping Cyto stain"
 
-* extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/numero-exame"
-* extension[0].valueString = "c1"
+* extension[numeroExame].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/numero-exame"
+* extension[numeroExame].valueString = "c1"
 
 * identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/laboratorio"
 * identifier[0].value = "cito-exame-123"

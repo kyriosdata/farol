@@ -493,8 +493,8 @@ Description: "Laudo da requisição de exame da paciente Gabriela Gomes. Veja a 
 * identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/laboratorio"
 * identifier[0].value = "cito-gabriela-gomes-123"
 
-* extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/numero-exame"
-* extension[0].valueString = "c1"
+* extension[numeroExame].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/numero-exame"
+* extension[numeroExame].valueString = "c1"
 
 * basedOn.identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/siscan"
 * basedOn.identifier.value = "codigo-siscan-requisicao-123"

@@ -12,10 +12,28 @@ Alias: $BRRacaCor-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRRacaCor-1.0
 Alias: $BREtniaIndigena-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BREtniaIndigena-1.0
 
 // -------------------------
+// Laudo (recebido em)
+// -------------------------
+
+Extension: RecebidoEm
+Id: recebido-em
+Title: "Recebido em"
+Description: "Data em que o pedido de exame é recebido pelo laboratório"
+Context: DiagnosticReport
+* ^status = #draft
+* ^language = #pt-BR
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/recebido-em"
+* . ^short = "Data em que pedido foi recebido"
+* . ^definition = "Data no formato AAAA-MM-DD de recebido do pedido"
+
+* value[x] only date
+* valueDate 1..1
+
+// -------------------------
 // Identificador de negócio: número do prontuário
 // -------------------------
 
-Extension: IdentificadorExame
+Extension: NumeroExame
 Id: numero-exame
 Title: "Número do exame"
 Description: "Número do exame pelo laboratório. Este valor deve ser único para exames citopatológicos emitidos pelo CNES em questão."
@@ -761,6 +779,11 @@ Description: "Um documento que registra uma requisição"
 // laudo-exame
 // ------------------------------------------------------
 
+Invariant: DataRecebimentoInvalida
+Description: "Data de recebimento do pedido não pode ser após data do laudo"
+Expression: "(address.where(use='home').period.start > @1974-12-25).not()"
+Severity: #error
+
 Profile: DiagnosticoCitopatologico
 Parent: DiagnosticReport
 Id: diagnostico-citopatologico
@@ -774,8 +797,13 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 
 * code = http://loinc.org#47528-5
 
-* extension 1..1
-* extension only IdentificadorExame
+// #45 (Número do exame, apenas o número o identificador seria "mais apropriado"?)
+* extension ^slicing.discriminator.type = #value
+* extension ^slicing.discriminator.path = "url"
+* extension ^slicing.rules = #open
+
+* extension contains NumeroExame named numeroExame 1..1
+
 
 * meta 1..
 * meta ^short = "Metadados do laudo"
@@ -788,18 +816,18 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 
 * basedOn 1..1
 
+// #45 (Número do exame)
 * identifier 1..1
 * identifier ^label = "O rótulo (label)"
-* identifier ^short = "O identificador único atribuído pelo laboratório ao laudo"
-* identifier ^definition = "O identificador único do laudo no contexto do laboratório"
-* identifier ^comment = "Não há nenhum formato esperado para este identificador senão uma sequência de caracteres."
+* identifier ^short = "O identificador único atribuído pelo laboratório ao laudo citopatológico que emitiu."
+* identifier ^definition = "O identificador único do laudo citopatológico no laboratório"
+* identifier ^comment = "Este identificador deve estar no formato https://fhir.fabrica.inf.ufg.br/ccu/sid/laudocito-{{identificador-solicitante}}"
 * identifier ^requirements = "Este identificador unicamente identifica o laudo produzido pelo laboratório que o gerou"
 * identifier.id ..0
 * identifier.extension ..0
 * identifier.use ..0
 * identifier.system 1..1
-* identifier.system ^short = "O identificador do sistema de identificação do laboratório"
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/laboratorio"
+* identifier.system ^short = "O identificador do sistema de identificação do laboratório que atribui códigos únicos aos laudos citopatológicos que emite. Este identificador deve estar no formato https://fhir.fabrica.inf.ufg.br/ccu/sid/laudocito-{{identificador-solicitante}}"
 * identifier.value 1..1
 * identifier.value ^short = "O identificador único atribuído à requisição pelo solicitante usando o seu sistema de origem."
 * identifier.period ..0
@@ -820,7 +848,7 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 * encounter ..0
 
 * result 1..1
-* result only Reference(componentes-laudo-citopatologico)
+* result only Reference(ComponentesLaudoCitopatologico)
 
 
 // ------------------------------------------------------

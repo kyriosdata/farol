@@ -873,7 +873,7 @@ Description: "Observação cujos componentes definem o resultado de laudo citopa
 * ^status = #draft
 * code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan#citopatologico
 
-//* performer only Reference(Laboratorio or Profissional)
+* performer only Reference(Laboratorio or Profissional)
 
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"

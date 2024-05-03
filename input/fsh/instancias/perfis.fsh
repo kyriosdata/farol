@@ -925,6 +925,7 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component[motivo].value[x] 1..1
 * component[motivo].value[x] only CodeableConcept
 * component[motivo].value[x] ^short = "O código que identifica o motivo da rejeição da amostra"
+// Pode ter apenas um motivo para rejeição, ou mais?
 * component[motivo].valueCodeableConcept.coding 1..1
 * component[motivo].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
 * component[motivo].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-rejeicao (required)

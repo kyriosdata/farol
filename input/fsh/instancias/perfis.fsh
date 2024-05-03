@@ -864,6 +864,15 @@ Description: "Apenas um profissional e um laboratório"
 Expression: "performer.resolve().type().name.isDistinct()"
 Severity: #error
 
+Invariant: DuplicidadeNaoAdmitida
+Description: "Não pode haver repetição"
+Expression: "coding.code.isDistinct()"
+Severity: #error
+
+Invariant: AmostraRejeitadaNaoAdmiteLaudo
+Description: "Se amostra é rejeitada, então este é o único componente permitido."
+Expression: "code.coding.where(code='motivo-rejeicao').exists() implies code.count() = 1"
+Severity: #error
 
 Profile: ComponentesLaudoCitopatologico
 Parent: Observation
@@ -881,6 +890,8 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * obeys Executantes
 * performer only Reference(Laboratorio or Profissional)
 * performer 2..2 
+
+* component obeys AmostraRejeitadaNaoAdmiteLaudo
 
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
@@ -925,8 +936,8 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component[motivo].value[x] 1..1
 * component[motivo].value[x] only CodeableConcept
 * component[motivo].value[x] ^short = "O código que identifica o motivo da rejeição da amostra"
-// Pode ter apenas um motivo para rejeição, ou mais?
-* component[motivo].valueCodeableConcept.coding 1..1
+* component[motivo].valueCodeableConcept.coding 1..4
+* component[motivo].valueCodeableConcept obeys DuplicidadeNaoAdmitida
 * component[motivo].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
 * component[motivo].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-rejeicao (required)
 * component[motivo].valueCodeableConcept.coding.code 1..1

@@ -869,10 +869,7 @@ Profile: ComponentesLaudoCitopatologico
 Parent: Observation
 Id: componentes-laudo-citopatologico
 Title: "Composição do laudo citopatológico"
-Description: "Observação cujos componentes definem o resultado de laudo citopatológico"
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Componentes de laudo citopatológico</div>"
+Description: "Observação cujos componentes definem o laudo citopatológico"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/componentes-laudo-citopatologico"
 * ^status = #draft

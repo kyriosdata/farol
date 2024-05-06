@@ -737,18 +737,16 @@ informações pertinentes à requisição."""
 
 * item[+]
   * linkId = "9"
-  * type = #choice
+  * type = #boolean
   * text = "Tem ou teve algum sangramento após relações sexuais? (não considerar a primeira relação sexual na vida)"
-  * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
   * required = true
   * repeats = false
   * readOnly = true
 
 * item[+]
   * linkId = "10"
-  * type = #choice
+  * type = #boolean
   * text = "Tem ou teve algum sangramento após a menopausa? (não considerar o(s) sangramento(s) na vigência de reposição hormonal)"
-  * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
   * required = true
   * repeats = false
   * readOnly = true

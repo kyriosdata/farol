@@ -425,12 +425,12 @@ Usage: #inline
 
 * item[9]
   * linkId = "9"
-  * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
+  * answer[0].valueBoolean = true
   * text = "Tem ou teve algum sangramento após relações sexuais? (não considerar a primeira relação sexual na vida)"
 
 * item[10]
   * linkId = "10"
-  * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
+  * answer[0].valueBoolean = true
   * text = "Tem ou teve algum sangramento após a menopausa? (não considerar o(s) sangramento(s) na vigência de reposição hormonal)"
 
 // * item[11]

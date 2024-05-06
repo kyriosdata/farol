@@ -663,7 +663,7 @@ informações pertinentes à requisição."""
     * question = "1"
     * operator = #=
     * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
-  * required = false
+  * required = true
   * repeats = false
 
 * item[+]
@@ -731,7 +731,7 @@ informações pertinentes à requisição."""
     * question = "8"
     * operator = #=
     * answerBoolean = true
-  * required = false
+  * required = true
   * repeats = false
   * readOnly = true
 

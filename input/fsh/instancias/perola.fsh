@@ -198,24 +198,14 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 // ------------------------------------------------------
 
 Instance: unidade-saude-04
-InstanceOf: Organization
+InstanceOf: Estabelecimento
 Usage: #inline
 Title: "UBS 4"
 Description: "A unidade de saúde na qual o exame citopatológico da paciente Pérola é requisitado"
 
-* name = "Unidade Básica 4"
-
 // CNES
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
 * identifier.value = "123456"
-
-// UF e município
-* address.city = "Goiânia"
-* address.state = "GO"
-
-* type.coding.system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoEstabelecimentoSaude"
-* type.coding.code = #1
-* type.text = "POSTO DE SAUDE"
 
 // ------------------------------------------------------
 // profissional

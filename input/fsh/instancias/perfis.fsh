@@ -215,14 +215,14 @@ Description: "Unidade de Saúde para Requisição de Exame Citopatológico"
 * ^status = #draft
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/unidade-requisitante"
 
-* identifier 0..1 
+* identifier 1..1 
 * identifier.extension 0..0
 * identifier.use 0..0
 * identifier.type 0..0
 * identifier.period 0..0
 * identifier.assigner 0..0
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes" (exactly)
-* identifier.value 1..1 // #2 (CNES)
+* identifier.value 1..1 
 * identifier.value ^short = "O código CNES da unidade de saúde requisitante"
 
 * active 0..0
@@ -230,18 +230,18 @@ Description: "Unidade de Saúde para Requisição de Exame Citopatológico"
 * alias 0..0
 * telecom 0..0
 
-* name 0..1 // #4 (Unidade de Saúde)
+* name 0..0
 
 * address 0..1
 * address.use 0..0
 * address.type 0..0
 * address.text 0..0
 * address.line 0..0
-* address.city 0..1 // #5 (Município)
+* address.city 0..0
 * address.city from $BRMunicipio-1.0 (required)
 * address.city ^short = "O código IBGE de 6 dígitos do município"
 * address.district 0..0
-* address.state 0..1  // #1 (UF)
+* address.state 0..0
 * address.state from $BRUnidadeFederativa-1.0 (required)
 * address.state ^short = "O código da unidade federativa"
 * address.postalCode 0..0

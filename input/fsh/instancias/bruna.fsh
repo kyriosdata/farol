@@ -268,17 +268,9 @@ Usage: #inline
 Title: "UBS Bem-estar"
 Description: "A unidade de saúde na qual o exame citopatológico da paciente Bruna é requisitado"
 
-* meta.profile = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/unidade-requisitante"
-
-* name = "Unidade Básica Bem-estar"
-
 // CNES
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
 * identifier.value = "123456"
-
-// UF e município
-* address.city = "520870" // IBGE para Goiânia
-* address.state = #52    // IBGE para Goiás
 
 // ------------------------------------------------------
 // profissional

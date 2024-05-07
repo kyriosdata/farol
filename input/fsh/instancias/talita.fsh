@@ -49,20 +49,14 @@ Description: "Paciente fictícia para requisição e laudo de exame citopatológ
 // ------------------------------------------------------
 
 Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb06
-InstanceOf: Organization
+InstanceOf: Estabelecimento
 Usage: #inline
 Title: "UBS 5"
 Description: "A unidade de saúde na qual o exame citopatológico da paciente Talita é requisitado"
 
-* name = "Unidade Básica 5"
-
 // CNES
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
 * identifier.value = "123456"
-
-// UF e município
-* address.city = "Goiânia"
-* address.state = "GO"
 
 // ------------------------------------------------------
 // profissional

@@ -187,10 +187,17 @@ Description: "Responsável pela requisição ou emissão de laudo de exame citop
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
 
-* identifier contains cns 1..1
+* identifier 1..2
+
+* identifier contains 
+    cns 0..1 and
+    cpf 0..1
 
 * identifier[cns].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
 * identifier[cns].value 1..1
+
+* identifier[cpf].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
+* identifier[cpf].value 1..1
 
 
 // ------------------------------------------------------
@@ -539,7 +546,7 @@ Description: "Dados demográficos de paciente"
 * identifier ^slicing.rules = #open
 
 * identifier contains 
-    cns 1..1 and
+    cns 0..1 and
     cpf 0..1
 
 * identifier[cns].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"

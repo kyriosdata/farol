@@ -181,6 +181,7 @@ Id: profissional
 Title: "Profissional"
 Description: "Responsável pela requisição ou emissão de laudo de exame citopatológico"
 
+* ^status = #draft
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/profissional"
 
 * identifier ^slicing.discriminator.type = #value
@@ -767,6 +768,8 @@ Parent: Composition
 Id: documento-requisicao
 Title: "Documento Requisicao"
 Description: "Um documento que registra uma requisição"
+
+* ^status = #draft
 
 * type.coding ^slicing.discriminator.type = #pattern
 * type.coding ^slicing.discriminator.path = "system"

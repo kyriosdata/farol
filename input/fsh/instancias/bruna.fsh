@@ -268,17 +268,9 @@ Usage: #inline
 Title: "UBS Bem-estar"
 Description: "A unidade de saúde na qual o exame citopatológico da paciente Bruna é requisitado"
 
-* meta.profile = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/unidade-requisitante"
-
-* name = "Unidade Básica Bem-estar"
-
 // CNES
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
 * identifier.value = "123456"
-
-// UF e município
-* address.city = "520870" // IBGE para Goiânia
-* address.state = #52    // IBGE para Goiás
 
 // ------------------------------------------------------
 // profissional
@@ -356,12 +348,12 @@ Usage: #inline
 
 * item[+]
   * linkId = "9"
-  * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
+  * answer[0].valueBoolean = true
   * text = "Tem ou teve algum sangramento após relações sexuais? (não considerar a primeira relação sexual na vida)"
 
 * item[+]
   * linkId = "10"
-  * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#N
+  * answer[0].valueBoolean = false
   * text = "Tem ou teve algum sangramento após a menopausa? (não considerar o(s) sangramento(s) na vigência de reposição hormonal)"
 
 // * item[+]

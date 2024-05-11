@@ -198,24 +198,14 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 // ------------------------------------------------------
 
 Instance: unidade-saude-04
-InstanceOf: Organization
+InstanceOf: Estabelecimento
 Usage: #inline
 Title: "UBS 4"
 Description: "A unidade de saúde na qual o exame citopatológico da paciente Pérola é requisitado"
 
-* name = "Unidade Básica 4"
-
 // CNES
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
 * identifier.value = "123456"
-
-// UF e município
-* address.city = "Goiânia"
-* address.state = "GO"
-
-* type.coding.system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoEstabelecimentoSaude"
-* type.coding.code = #1
-* type.text = "POSTO DE SAUDE"
 
 // ------------------------------------------------------
 // profissional
@@ -293,12 +283,12 @@ Usage: #inline
 
 * item[+]
   * linkId = "9"
-  * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
+  * answer[0].valueBoolean = true
   * text = "Tem ou teve algum sangramento após relações sexuais? (não considerar a primeira relação sexual na vida)"
 
 * item[+]
   * linkId = "10"
-  * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#N
+  * answer[0].valueBoolean = false
   * text = "Tem ou teve algum sangramento após a menopausa? (não considerar o(s) sangramento(s) na vigência de reposição hormonal)"
 
 

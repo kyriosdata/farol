@@ -188,10 +188,17 @@ Description: "Responsável pela requisição ou emissão de laudo de exame citop
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
 
-* identifier contains cns 1..1
+* identifier 1..2
+
+* identifier contains 
+    cns 0..1 and
+    cpf 0..1
 
 * identifier[cns].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
 * identifier[cns].value 1..1
+
+* identifier[cpf].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
+* identifier[cpf].value 1..1
 
 
 // ------------------------------------------------------
@@ -209,14 +216,14 @@ Description: "Unidade de Saúde para Requisição de Exame Citopatológico"
 * ^status = #draft
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/unidade-requisitante"
 
-* identifier 0..1 
+* identifier 1..1 
 * identifier.extension 0..0
 * identifier.use 0..0
 * identifier.type 0..0
 * identifier.period 0..0
 * identifier.assigner 0..0
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes" (exactly)
-* identifier.value 1..1 // #2 (CNES)
+* identifier.value 1..1 
 * identifier.value ^short = "O código CNES da unidade de saúde requisitante"
 
 * active 0..0
@@ -224,18 +231,18 @@ Description: "Unidade de Saúde para Requisição de Exame Citopatológico"
 * alias 0..0
 * telecom 0..0
 
-* name 0..1 // #4 (Unidade de Saúde)
+* name 0..0
 
 * address 0..1
 * address.use 0..0
 * address.type 0..0
 * address.text 0..0
 * address.line 0..0
-* address.city 0..1 // #5 (Município)
+* address.city 0..0
 * address.city from $BRMunicipio-1.0 (required)
 * address.city ^short = "O código IBGE de 6 dígitos do município"
 * address.district 0..0
-* address.state 0..1  // #1 (UF)
+* address.state 0..0
 * address.state from $BRUnidadeFederativa-1.0 (required)
 * address.state ^short = "O código da unidade federativa"
 * address.postalCode 0..0
@@ -540,7 +547,7 @@ Description: "Dados demográficos de paciente"
 * identifier ^slicing.rules = #open
 
 * identifier contains 
-    cns 1..1 and
+    cns 0..1 and
     cpf 0..1
 
 * identifier[cns].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
@@ -664,7 +671,7 @@ informações pertinentes à requisição."""
     * question = "1"
     * operator = #=
     * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
-  * required = false
+  * required = true
   * repeats = false
 
 * item[+]
@@ -732,24 +739,22 @@ informações pertinentes à requisição."""
     * question = "8"
     * operator = #=
     * answerBoolean = true
-  * required = false
+  * required = true
   * repeats = false
   * readOnly = true
 
 * item[+]
   * linkId = "9"
-  * type = #choice
+  * type = #boolean
   * text = "Tem ou teve algum sangramento após relações sexuais? (não considerar a primeira relação sexual na vida)"
-  * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
   * required = true
   * repeats = false
   * readOnly = true
 
 * item[+]
   * linkId = "10"
-  * type = #choice
+  * type = #boolean
   * text = "Tem ou teve algum sangramento após a menopausa? (não considerar o(s) sangramento(s) na vigência de reposição hormonal)"
-  * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
   * required = true
   * repeats = false
   * readOnly = true

@@ -981,15 +981,25 @@ Description: "Conjunto dos identificadores de tipos de documentos de interesse d
 
 CodeSystem: Genero
 Id: genero
-Title: "Definição de tipos de documentos"
-Description: "Identificação de documentos clínicos de interesse do INCA"
+Title: "Identidade de gênero"
+Description: """Identidade de gênero se refere à profunda convicção pessoal de s
+er homem, 
+mulher, uma mistura de ambos, ou nenhum dos dois. Essa identidade não necessaria
+mente corresponde ao sexo atribuído no nascimento. """
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/genero"
 * ^status = #draft
 * ^caseSensitive = true
 * ^experimental = false
-* #feminino "Feminino" "Feminino"
-* #homem-transgenero "Homem transgênero" "Homem transgênero"
+* #149 "Homem transgênero"
+* #150 "Mulher transgênero"
+* #156 "Travesti"
+* #200 "Homem cisgênero"
+* #201 "Mulher cisgênero"
+* #202 "Transgênero"
+* #203 "Não-binário"
+* #151 "Outro"
+
 
 ValueSet: Genero
 Id: genero
@@ -998,5 +1008,6 @@ Description: "Gêneros admitidos em ficha de requisição"
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/genero"
 * ^status = #draft
 * ^experimental = false
-* include codes from system Genero
+* https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/genero#149 "Homem transgênero"
+* https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/genero#201 "Mulher cisgênero"
 

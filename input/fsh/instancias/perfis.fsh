@@ -450,7 +450,7 @@ Description: "Exame clínico realizado durante coleta de material para exame cit
 
 * component contains 
     inspecao 1..1 and    // #16
-    dst 0..1
+    ist 0..1
 
 * component[inspecao].code ^short = "Resultado da inspeção do colo"
 * component[inspecao].code = http://loinc.org#12044-4
@@ -463,15 +463,15 @@ Description: "Exame clínico realizado durante coleta de material para exame cit
 * component[inspecao].value[x] ^short = "O código correspondente ao resultado da inspeção"
 * component[inspecao].valueCodeableConcept from $resultado-inspecao-colo (required)
 
-* component[dst].code ^short = "Código para presença ou não de sinais de DST"
-* component[dst].code = http://loinc.org#45687-1
-* component[dst].dataAbsentReason 0..0
-* component[dst].interpretation 0..0
-* component[dst].referenceRange 0..0
-* component[dst].modifierExtension 0..0
-* component[dst].value[x] only boolean
-* component[dst].value[x] 1..1
-* component[dst].value[x] ^short = "true se há sinal de doença sexualmente transmissível ou false, caso contrário"
+* component[ist].code ^short = "Indicação da presença de sinais sugestivos de Infecções Sexualmente Transmissíveis (IST)"
+* component[ist].code = http://loinc.org#45687-1
+* component[ist].dataAbsentReason 0..0
+* component[ist].interpretation 0..0
+* component[ist].referenceRange 0..0
+* component[ist].modifierExtension 0..0
+* component[ist].value[x] only boolean
+* component[ist].value[x] 1..1
+* component[ist].value[x] ^short = "true se há sinais sugestivos de infecções sexualmente transmissíveis ou false, caso contrário"
 
 
 // ------------------------------------------------------

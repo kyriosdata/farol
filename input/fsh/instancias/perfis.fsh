@@ -30,6 +30,23 @@ Context: DiagnosticReport
 * valueDate 1..1
 
 // -------------------------
+// Filiação
+// -------------------------
+
+Extension: Filiacao
+Id: filiacao
+Title: "Filiação"
+Description: "Filiação da paciente"
+Context: Patient
+* ^status = #draft
+* ^language = #pt-BR
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/filiacao"
+* . ^short = "Filiação da paciente"
+
+* value[x] only string
+* valueString 1..1
+
+// -------------------------
 // Identificador de negócio: número do prontuário
 // -------------------------
 
@@ -169,7 +186,7 @@ Context: Patient
 * valueCodeableConcept 1..1
 * valueCodeableConcept ^short = "Gênero"
 * valueCodeableConcept.coding 1..1 
-* valueCodeableConcept.coding.system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/genero" (exactly)
+* valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/genero (required)
 * valueCodeableConcept.coding.code 1..1
 
 // ------------------------------------------------------
@@ -588,15 +605,16 @@ Description: "Dados demográficos de paciente"
 // #15 (Raça/cor)
 // #27 (Nível educacional)
 
+* extension ^short = "Itens de informação acrescentados"
 * extension contains 
-    http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName named mae 1..1 MS and
+    https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/filiacao named filiacao 0..1 MS and
     http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade named pais 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade named idade 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/escolaridade named educacao 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/raca-etnia named etnia 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/genero named genero 0..1 MS
 
-* extension[mae] ^short = "O nome da mãe"
+* extension[filiacao] ^short = "Filiação"
 
 * ^status = #draft
 

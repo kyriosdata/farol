@@ -19,7 +19,7 @@ Description: "Paciente fictícia para requisição e laudo de exame citopatológ
 * name[0].use = #official
 
 // Nome da mãe
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName"
+* extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/filiacao"
 * extension[0].valueString = "Ana Paula Moreira"
 
 // Data de nascimento

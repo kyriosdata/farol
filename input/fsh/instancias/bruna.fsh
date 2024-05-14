@@ -233,7 +233,7 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 * name[0].use = #official
 
 // Nome da mãe
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName"
+* extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/filiacao"
 * extension[0].valueString = "Cleusa Faria"
 
 // Data de nascimento

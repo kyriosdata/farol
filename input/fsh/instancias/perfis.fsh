@@ -239,12 +239,8 @@ Description: "Unidade de Saúde para Requisição de Exame Citopatológico"
 * address.text 0..0
 * address.line 0..0
 * address.city 0..0
-* address.city from $BRMunicipio-1.0 (required)
-* address.city ^short = "O código IBGE de 6 dígitos do município"
 * address.district 0..0
 * address.state 0..0
-* address.state from $BRUnidadeFederativa-1.0 (required)
-* address.state ^short = "O código da unidade federativa"
 * address.postalCode 0..0
 * address.country 0..0
 * address.period 0..0
@@ -524,8 +520,8 @@ Description: "Endereço"
 // ------------------------------------------------------
 
 Invariant: NomeOficialApelidoOpcional
-Description: "O nome oficial é obrigatório, o apelido é opcional"
-Expression: "name.select(use='official' or use='nickname').allTrue() and name.where(use='official').exists() and name.use.isDistinct()"
+Description: "O nome pode ser oficial ou apelido"
+Expression: "name.select(use='official' or use='nickname').allTrue() and name.use.isDistinct()"
 Severity: #error
 
 
@@ -547,7 +543,7 @@ Description: "Dados demográficos de paciente"
 * identifier ^slicing.rules = #open
 
 * identifier contains 
-    cns 0..1 and
+    cns 1..1 and
     cpf 0..1
 
 * identifier[cns].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"

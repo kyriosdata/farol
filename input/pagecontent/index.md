@@ -1,7 +1,7 @@
 ### Contexto (processos e atores)
 
 A requisição e o laudo de exame citopatológico emprega uma [ficha](./ficha-numerada.pdf) 
-(formulário) cujo uso é apoiado eletronicamente pelo SISCAN (observe qe todos os itens de informação desta ficha estão enumerados apenas para facilitar a referência a cada um deles tanto pelo modelo de informação quanto pelo modelo computacional FHIR).
+(formulário) cujo uso é apoiado eletronicamente pelo SISCAN (observe que todos os itens de informação desta ficha estão numerados para facilitar a referência a cada um deles.
 
 De forma simplificada, uma requisição de exame citopatológico é criada por um profissional de saúde que
 coleta dados relevantes e material (amostra) enviados a um laboratório

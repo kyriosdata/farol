@@ -258,6 +258,10 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 * extension[2].extension[0].url = "race"
 * extension[2].extension[0].valueCode = #01 // BRANCA
 
+* extension[3].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/genero"
+* extension[3].valueCodeableConcept.coding.system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/genero"
+* extension[3].valueCodeableConcept.coding.code = #feminino
+
 // ------------------------------------------------------
 // unidade-saude
 // ------------------------------------------------------

@@ -152,6 +152,27 @@ Context: Address.line
 * valueCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/itens-endereco
 
 // ------------------------------------------------------
+// idade // #14 (gênero)
+// ------------------------------------------------------
+
+Extension: Genero
+Id: genero
+Title: "Gênero"
+Description: "Gênero da paciente"
+Context: Patient
+
+* ^status = #draft
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/genero"
+
+* value[x] only CodeableConcept
+* valueCodeableConcept 1..1
+* valueCodeableConcept ^short = "Gênero"
+* valueCodeableConcept.coding 1..1 
+* valueCodeableConcept.coding.system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/genero" (exactly)
+* valueCodeableConcept.coding.code 1..1
+
+// ------------------------------------------------------
 // idade // #14 (idade)
 // ------------------------------------------------------
 
@@ -572,7 +593,8 @@ Description: "Dados demográficos de paciente"
     http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade named pais 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade named idade 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/escolaridade named educacao 0..1 MS and
-    https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/raca-etnia named etnia 0..1 MS
+    https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/raca-etnia named etnia 0..1 MS and
+    https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/genero named genero 0..1 MS
 
 * extension[mae] ^short = "O nome da mãe"
 

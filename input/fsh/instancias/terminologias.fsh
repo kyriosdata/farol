@@ -974,3 +974,29 @@ Description: "Conjunto dos identificadores de tipos de documentos de interesse d
 * ^status = #draft
 * ^experimental = false
 * include codes from system TiposDocumentos
+
+// ------------------------------------------------------
+// Gênero
+// ------------------------------------------------------
+
+CodeSystem: Genero
+Id: genero
+Title: "Definição de tipos de documentos"
+Description: "Identificação de documentos clínicos de interesse do INCA"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/genero"
+* ^status = #draft
+* ^caseSensitive = true
+* ^experimental = false
+* #feminino "Feminino" "Feminino"
+* #homem-transgenero "Homem transgênero" "Homem transgênero"
+
+ValueSet: Genero
+Id: genero
+Title: "Conjunto gêneros"
+Description: "Gêneros admitidos em ficha de requisição"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/genero"
+* ^status = #draft
+* ^experimental = false
+* include codes from system Genero
+

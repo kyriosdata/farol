@@ -171,12 +171,12 @@ Usage: #inline
 * item[+]
   * linkId = "5"
   * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#N
-  * text = "Usa pílula anticoncepcional?"
+  * text = "Uso de anticoncepcional hormonal?"
 
 * item[+]
   * linkId = "6"
   * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#N
-  * text = "Usa hormônio/remédio para tratar a menopausa?"
+  * text = "Uso de reposição hormonal?"
 
 * item[+]
   * linkId = "7"
@@ -202,6 +202,11 @@ Usage: #inline
   * linkId = "10"
   * answer[0].valueBoolean = false
   * text = "Tem ou teve algum sangramento após a menopausa? (não considerar o(s) sangramento(s) na vigência de reposição hormonal)"
+
+* item[+]
+  * linkId = "11"
+  * answer[0].valueBoolean = false
+  * text = "Vacina contra HPV"
 
 
 // ------------------------------------------------------

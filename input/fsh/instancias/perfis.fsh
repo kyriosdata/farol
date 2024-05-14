@@ -531,6 +531,8 @@ Id: paciente
 Title: "Paciente"
 Description: "Dados demográficos de paciente"
 
+* . ^short = "Identificação da paciente. Apenas o CNS é obrigatório. Demais campos são opcionais."
+
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente"
 
 * obeys NomeOficialApelidoOpcional
@@ -553,8 +555,8 @@ Description: "Dados demográficos de paciente"
 * identifier[cpf].value 1..1
 
 // #8 e #10
-* name ^short = "O nome completo da paciente e, possivelmente, o apelido"
-* name 1..2
+* name ^short = "O nome completo da paciente e, possivelmente, o apelido. Nenhum deles é obrigatório."
+* name 0..2
 * name.text 1..1
 * name.use 1..1
 * name.use ^short = "Está restrito ao uso oficial (official) ou apelido (nickname)"
@@ -692,7 +694,7 @@ informações pertinentes à requisição."""
 * item[+]
   * linkId = "5"
   * type = #choice
-  * text = "Usa pílula anticoncepcional?"
+  * text = "Uso de anticoncepcional hormonal?"
   * code[0] = http://loinc.org#65931-8
   * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
   * required = true
@@ -702,7 +704,7 @@ informações pertinentes à requisição."""
 * item[+]
   * linkId = "6"
   * type = #choice
-  * text = "Usa hormônio/remédio para tratar a menopausa?"
+  * text = "Uso de reposição hormonal?"
   * code[0] = http://loinc.org#63873-4
   * answerValueSet = "http://hl7.org/fhir/ValueSet/yesnodontknow"
   * required = true
@@ -755,14 +757,14 @@ informações pertinentes à requisição."""
   * repeats = false
   * readOnly = true
 
-// * item[+]
-//   * linkId = "11"
-//   * type = #integer
-//   * text = "Qual a sua idade?"
-//   * required = true
-//   * repeats = false
-//   * readOnly = true
-//   * maxLength = 3
+* item[+]
+  * linkId = "11"
+  * type = #boolean
+  * text = "Vacina contra HPV"
+  * required = true
+  * repeats = false
+  * readOnly = true
+
 
 Profile: DocumentoRequisicao
 Parent: Composition

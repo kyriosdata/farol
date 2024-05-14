@@ -845,64 +845,6 @@ Description: "Tipos de avaliação de exame citopatológico"
 
 
 // ------------------------------------------------------
-// niveis-educacionais
-// ------------------------------------------------------
-
-CodeSystem: NivelEducacional
-Id: escolaridade
-Title: "Informações do laudo citopatológico"
-Description: "Tipos de avaliação de exame citopatológico"
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Itens avaliados no laudo de exame citopatológico</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/escolaridade"
-
-* ^status = #unknown
-* ^caseSensitive = true
-* ^experimental = false
-
-* #anafalbeto "Analfabeto"
-* #fundamental-incompleto "Ensino fundamental incompleto"
-* #fundamental "Ensino fundamental completo"
-* #medio "Ensino médio completo"
-* #superior "Ensino superior completo"
-
-ValueSet: NivelEducacional
-Id: niveis-educacionais
-Title: "Níveis educacionais"
-Description: """
-Identifica o nível educacional do paciente (maior obtido).
-"""
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos para classificação de níveis educacionais.</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/niveis-educacionais"
-
-* ^status = #draft
-* ^version = "1.0.0"
-* ^experimental = false
-* ^purpose = """Permite identificar o nível educacional do paciente e, desta forma, análises e ações decorrentes.
-Esta classificação foi realizada com base em códigos disponíveis LOINC. **IMPORTANTE**: ajuste para manter coerência com o Ministério da Educação pode ser necessário.
-"""
-
-* include codes from system NivelEducacional
-
-// Conforme https://www.hl7.org/fhir/loinc.html#4.3.3.2
-// * ^copyright = "This content LOINC® is copyright © 1995 Regenstrief Institute, Inc. and the LOINC Committee, and available at no cost under the license at http://loinc.org/terms-of-use"
-
-
-// * http://loinc.org#LA36-9 "Ensino infantil ou menos"
-// * http://loinc.org#LA12456-2 "Ensino fundamental"
-// * http://loinc.org#LA12457-0 "Ensino médio"
-// * http://loinc.org#LA12458-8 "Curso técnico"
-// * http://loinc.org#LA12460-4 "Graduação"
-// * http://loinc.org#LA12461-2 "Mestrado"
-// * http://loinc.org#LA12462-0 "Doutorado"
-// * http://loinc.org#LA4489-6 "Desconhecido"
-
-// ------------------------------------------------------
 // motivo-rejeicao
 // ------------------------------------------------------
 
@@ -1011,3 +953,62 @@ Description: "Gêneros admitidos em ficha de requisição"
 * https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/genero#149 "Homem transgênero"
 * https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/genero#201 "Mulher cisgênero"
 
+
+// ------------------------------------------------------
+// Escolaridade
+// ------------------------------------------------------
+
+
+CodeSystem: Escolaridade
+Id: escolaridade
+Title: "Escolaridade"
+Description: """
+Escolaridade se refere ao nível de educação formal alcançado por um indivíduo."""
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/escolaridade"
+
+* ^status = #active
+* ^experimental = false
+* ^caseSensitive = true
+
+* #1 "Creche" "Destina-se às crianças, geralmente com até três anos de idade, que frequentam estabelecimentos juridicamente regulamenta
+dos ou não, destinado a dar assistência diurna às crianças."
+* #2 "Pré-escola (exceto CA)" "Destina-se, geralmente, às crianças com quatro ou cinco anos de idade. Pode receber várias denominações 
+de acordo com a região e o nível alcançado pelas crianças: maternal, jardim de infância, jardim I etc."
+* #3 "Classe Alfabetizada - CA" "Curso destinado à alfabetização de crianças, para os estabelecimentos que ainda não implantaram o Ensi
+no Fundamental com duração de nove anos. Equivalente ao 1° ano no sistema com duração de nove anos."
+* #4 "Ensino Fundamental 1ª a 4ª séries" "Curso de Ensino Fundamental organizado em oito séries anuais, dividido em duas fases ou ciclo
+s, sendo esta a primeira fase (Brasil, 2010). Equivalente ao 2°, 3°, 4° e 5° ano no sistema com duração de nove anos."
+* #5 "Ensino Fundamental 5ª a 8ª séries" "Curso de Ensino Fundamental organizado em oito séries anuais, dividido em duas fases ou ciclo
+s, sendo esta a segunda fase (Brasil, 2010). Equivalente ao 6°, 7°, 8° e 9° ano no sistema com duração de nove anos."
+* #6 "Ensino Fundamental Completo" "Curso de Ensino Fundamental organizado em oito séries anuais, dividido em duas fases ou ciclos."
+* #7 "Ensino Fundamental Especial" "Atendimento educacional especializado no Ensino Fundamental regular, voltado a pessoas com necessid
+ades especiais originadas de deficiência ou altas habilidades/superdotação."
+* #8 "Ensino Fundamental EJA - séries iniciais (Supletivo 1ª a 4ª)" "Nova denominação para o curso supletivo de Ensino Fundamental ou d
+e 1º grau, seriado ou não."
+* #9 "Ensino Fundamental EJA - séries finais (Supletivo 5ª a 9ª)" "Nova denominação para o curso supletivo de Ensino Fundamental ou de 
+1º grau, seriado ou não"
+* #10 "Ensino Médio, Médio 2º Ciclo (Científico, Técnico e etc)" "Curso de Ensino Médio organizado em três ou quatro séries anuais ou e
+m regime de créditos, períodos letivos, semestres, fases, módulos, ciclos etc."
+* #11 "Ensino Médio Especial" "Atendimento educacional especializado no Ensino Médio regular, voltado a pessoas com necessidades especi
+ais originadas de deficiência ou altas habilidades/superdotação."
+* #12 "Ensino Médio EJA (Supletivo)" "Nova denominação para o curso supletivo de Ensino Médio ou de 2º grau, seriado ou não."
+* #13 "Superior, Aperfeiçoamento, Especialização, Mestrado, Doutorado" "Curso regular de graduação universitária, frequentado após o té
+rmino do Ensino Médio, que habilita a pessoa a exercer uma profissão, e cursos frequentados após a conclusão do Ensino Superior."
+* #14 "Alfabetização para Adultos (Mobral, etc)" "Curso destinado à alfabetização de jovens e adultos."
+* #15 "Nenhum" "Quando a pessoa não se enquadrar em nenhuma das descrições anteriores."
+
+ValueSet: Escolaridade
+Id: escolaridade
+Title: "Escolaridade"
+Description: "Escolaridade obtida"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/escolaridade"
+
+* ^status = #draft
+* ^experimental = false
+* https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/escolaridade#4 "Ensino fundamental incompleto"
+* https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/escolaridade#6 "Ensino fundamental completo"
+* https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/escolaridade#10 "Ensino médio completo"
+* https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/escolaridade#13 "Ensino superior completo"
+* https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/escolaridade#15 "Analfabeto" 

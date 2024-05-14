@@ -286,9 +286,9 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
   * system = $cs-nacionalidade
   * code = #B
 
-// Nível de escolaridade
+// Escolaridade
 * extension[4].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/escolaridade"
-* extension[4].valueCode = #fundamental-incompleto
+* extension[4].valueCode = #13
 
 * address
   * city = #315780

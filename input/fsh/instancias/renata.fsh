@@ -192,9 +192,9 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 * extension[2].extension[0].url = "race"
 * extension[2].extension[0].valueCode = #03 
 
-// Nível de escolaridade
+// Escolaridade
 * extension[3].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/escolaridade"
-* extension[3].valueCode = #fundamental-incompleto
+* extension[3].valueCode = #6
 
 // ------------------------------------------------------
 // unidade-saude

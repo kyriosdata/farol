@@ -4,7 +4,6 @@ Alias: $BRUnidadeFederativa-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRUni
 Alias: $BRMeioContato = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRMeioContato-1.0
 Alias: $laudo-tipo-item = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item
 Alias: $yesnodontknow = http://hl7.org/fhir/ValueSet/yesnodontknow
-Alias: $niveis-educacionais = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/niveis-educacionais
 Alias: $resultado-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/resultado-inspecao-colo
 
 
@@ -150,7 +149,7 @@ Identificação do maior nível educacional obtido pelo indivíduo.
 * value[x] only code
 * valueCode 1..1
 * valueCode ^short = "O nível educacional"
-* valueCode from $niveis-educacionais (required)
+* valueCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/escolaridade (required)
 
 // ------------------------------------------------------
 // item-endereco
@@ -610,7 +609,7 @@ Description: "Dados demográficos de paciente"
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/filiacao named filiacao 0..1 MS and
     http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade named pais 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade named idade 0..1 MS and
-    https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/escolaridade named educacao 0..1 MS and
+    https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/escolaridade named escolaridade 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/raca-etnia named etnia 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/genero named genero 0..1 MS
 

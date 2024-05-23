@@ -319,8 +319,8 @@ Description: "Exame clínico da Renata"
 
 * component[inspecao].code = http://loinc.org#12044-4
 * component[inspecao].valueCodeableConcept = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo#normal
-* component[dst].code = http://loinc.org#45687-1
-* component[dst].valueBoolean = false
+* component[ist].code = http://loinc.org#45687-1
+* component[ist].valueBoolean = false
 
 * subject = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb01)
 * performer = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb07)

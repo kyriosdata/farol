@@ -924,10 +924,9 @@ Description: "Conjunto dos identificadores de tipos de documentos de interesse d
 CodeSystem: Genero
 Id: genero
 Title: "Identidade de gênero"
-Description: """Identidade de gênero se refere à profunda convicção pessoal de s
-er homem, 
-mulher, uma mistura de ambos, ou nenhum dos dois. Essa identidade não necessaria
-mente corresponde ao sexo atribuído no nascimento. """
+Description: """Identidade de gênero se refere à profunda convicção pessoal de ser homem, 
+mulher, uma mistura de ambos, ou nenhum dos dois. Essa identidade não necessariamente 
+corresponde ao sexo atribuído no nascimento. """
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/genero"
 * ^status = #draft

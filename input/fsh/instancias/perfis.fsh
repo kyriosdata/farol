@@ -168,7 +168,7 @@ Context: Address.line
 * valueCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/itens-endereco
 
 // ------------------------------------------------------
-// idade // #14 (gênero)
+// gênero // #14 (gênero)
 // ------------------------------------------------------
 
 Extension: Genero

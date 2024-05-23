@@ -202,8 +202,8 @@ Description: "Exame clínico da Bruna"
 
 * component[inspecao].code = http://loinc.org#12044-4
 * component[inspecao].valueCodeableConcept = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo#normal
-* component[dst].code = http://loinc.org#45687-1
-* component[dst].valueBoolean = true
+* component[ist].code = http://loinc.org#45687-1
+* component[ist].valueBoolean = true
 
 * subject = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb01)
 * performer = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb07)
@@ -364,11 +364,6 @@ Usage: #inline
   * linkId = "11"
   * answer[0].valueBoolean = false
   * text = "Vacina contra HPV"
-
-// * item[+]
-//   * linkId = "11"
-//   * answer[0].valueInteger = 26
-//   * text = "Qual a sua idade?"
 
 
 // ------------------------------------------------------

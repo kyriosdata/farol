@@ -497,4 +497,4 @@ Description: "Itens que definem o laudo da paciente Renata"
 * code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan#citopatologico
 
 * component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#motivo-rejeicao
-* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-amostra-rejeitada#lamina-invalida
+* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-especime-rejeitado#lamina

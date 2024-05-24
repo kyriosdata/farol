@@ -209,6 +209,25 @@ Context: Patient
 * valueAge.code = #a (exactly)
 
 // ------------------------------------------------------
+// especificar
+// ------------------------------------------------------
+
+Extension: Especificacao
+Id: especificacao
+Title: "Idade informada pela paciente (em anos)"
+Description: "Idade fornecida no momento da requisição de exame citopatológico. Mantida apenas por conformidade com formulário impresso. A expectativa natural é que esta data seja calculada, por comodidade do usuário que a consulta, a partir da data de nascimento, em vez de ser informada."
+Context: Patient
+
+* ^status = #draft
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/especificacao"
+
+* value[x] only string
+* valueString 1..1
+* valueString ^short = "Especificar (detalhar)"
+
+
+// ------------------------------------------------------
 // profissional (requisita ou emite laudo)
 // ------------------------------------------------------
 
@@ -914,6 +933,21 @@ Description: "Não pode haver repetição"
 Expression: "coding.code.isDistinct()"
 Severity: #error
 
+Invariant: ExtensaoApenasOutros
+Description: "Apenas 'outras causas' exige detalhamento"
+Expression: "coding.where(code != 'outras').extension.exists().not()"
+Severity: #error
+
+Invariant: ExtensaoApenasParaEspecificar
+Description: "Apenas extensão para especificar (detalhar)"
+Expression: "coding.where(code = 'outras').exists() implies extension.where(url = 'https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/especificacao').exists()"
+Severity: #error
+
+Invariant: SoUmaExtensaoPermitida
+Description: "Uma única extensão (valor) é permida"
+Expression: "extension.count() < 2"
+Severity: #error
+
 Invariant: AmostraRejeitadaNaoAdmiteLaudo
 Description: "Se amostra é rejeitada, então este é o único componente permitido."
 Expression: "code.coding.where(code='motivo-rejeicao').exists() implies code.count() = 1"
@@ -974,17 +1008,17 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
     outrasMalignas 0..1 MS and
     endometriais 0..1 MS
 
-* component[motivo] ^short = "Registra o motivo da rejeição da amostra"
+* component[motivo] ^short = "Motivo pelo qual o espécime foi rejeitado (não processado)"
 * component[motivo].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#motivo-rejeicao
-* component[motivo].code ^short = "Identifica a informação fornecida: motivo da rejeição da amostra"
+* component[motivo].code ^short = "Identifica a informação fornecida: motivo da rejeição do espécime"
 * component[motivo].code.coding ^short = "Código definido por uma terminologia"
 * component[motivo].value[x] 1..1
 * component[motivo].value[x] only CodeableConcept
-* component[motivo].value[x] ^short = "O código que identifica o motivo da rejeição da amostra"
-* component[motivo].valueCodeableConcept.coding 1..4
-* component[motivo].valueCodeableConcept obeys DuplicidadeNaoAdmitida
+* component[motivo].value[x] ^short = "O código que identifica o motivo da rejeição do espécime"
+* component[motivo].valueCodeableConcept.coding 1..3
+* component[motivo].valueCodeableConcept obeys DuplicidadeNaoAdmitida and ExtensaoApenasOutros and SoUmaExtensaoPermitida
 * component[motivo].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
-* component[motivo].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-rejeicao (required)
+* component[motivo].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-especime-rejeitado (required)
 * component[motivo].valueCodeableConcept.coding.code 1..1
 * component[motivo].valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da rejeição da amostra"
 

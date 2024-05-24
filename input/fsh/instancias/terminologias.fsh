@@ -471,18 +471,15 @@ Description: "Possíveis motivos para requisição de exame citopatológico"
 * include codes from system MotivosExame
 
 // ------------------------------------------------------
-// motivo-amostra-rejeitada
+// motivo-especime-rejeitado
 // ------------------------------------------------------
 
-CodeSystem: MotivoAmostraRejeitada
-Id: motivo-amostra-rejeitada
-Title: "Motivo de rejeição da amostra"
-Description: "Motivo pelo qual a amostra é rejeitada e o laudo inviável."
+CodeSystem: MotivoEspecimeRejeitado
+Id: motivo-especime-rejeitado
+Title: "Motivo de rejeição do espécime"
+Description: "Motivo pelo qual o espécime é rejeitado (não processado)."
 
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos para os motivos pelos quais uma amostra pode ser rejeitada.</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-amostra-rejeitada"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-especime-rejeitado"
 
 * ^status = #unknown
 * ^caseSensitive = true
@@ -490,10 +487,25 @@ Description: "Motivo pelo qual a amostra é rejeitada e o laudo inviável."
 * ^date = "2024-04-15"
 * ^purpose = """**Propósito**. Identificação dos possíveis motivos pelos quais uma amostra pode ser rejeitada."""
 
-* #identificacao-invalida "falha na identificação" "Ausência ou erro na identificação da lâmina, frasco ou requisição"
-* #lamina-invalida "lâmina" "Lâmina danificada ou ausente"
-* #alheias "Causas alheias" "Causas alheias ao laboratório"
+* #identificacao "falha na identificação" "Ausência ou erro na identificação da lâmina, frasco ou formulário"
+* #lamina "lâmina" "Lâmina danificada ou ausente"
 * #outras "Outras causas" "Outras causas"
+
+// ------------------------------------------------------
+// motivo-rejeicao
+// ------------------------------------------------------
+
+ValueSet: MotivoEspecimeRejeitado
+Id: motivo-especime-rejeitado
+Title: "Motivo de rejeição de amostra"
+Description: "Possíveis motivos pelos quais uma amostra é rejeitada"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-especime-rejeitado"
+
+* ^status = #draft
+* ^experimental = false
+
+* include codes from system MotivoEspecimeRejeitado
 
 // ------------------------------------------------------
 // tipos-adequabilidade
@@ -843,25 +855,6 @@ Description: "Tipos de avaliação de exame citopatológico"
 * #neoplasias-malignas "Outras neoplasias malignas"
 * #celulas-endometriais "Presença de células endometriais (na pós-menopausa ou acima de 40 anos, fora do período menstrual)"
 
-
-// ------------------------------------------------------
-// motivo-rejeicao
-// ------------------------------------------------------
-
-ValueSet: MotivoRejeicao
-Id: motivo-rejeicao
-Title: "Motivo de rejeição de amostra"
-Description: "Possíveis motivos pelos quais uma amostra é rejeitada"
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para níveis educacionais.</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-rejeicao"
-
-* ^status = #draft
-* ^experimental = false
-
-* include codes from system MotivoAmostraRejeitada
 
 // ------------------------------------------------------
 // componentes-endereco

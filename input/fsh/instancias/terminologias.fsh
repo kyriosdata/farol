@@ -867,7 +867,7 @@ Description: "Tipos de amostra para laudo citopatológico"
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipo-amostra"
 * ^status = #draft
 * ^experimental = false
-* include codes from system ComponentesEndereco
+* include codes from system TipoAmostra
 
 
 // ------------------------------------------------------

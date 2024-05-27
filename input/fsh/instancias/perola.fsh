@@ -471,12 +471,10 @@ Description: "Laudo da requisição de exame da paciente Pérola. Veja a [ficha]
 // ------------------------------------------------------
 
 Instance: laudo-componentes-04
-InstanceOf: Observation
+InstanceOf: ComponentesLaudoCitopatologico
 Usage: #inline
 Title: "Itens do laudo (Pérola)"
 Description: "Itens que definem o laudo da paciente Pérola"
-
-* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/componentes-laudo-citopatologico"
 
 * subject = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb01)
 * performer[0] = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb13)
@@ -485,6 +483,9 @@ Description: "Itens que definem o laudo da paciente Pérola"
 
 * status = #final
 * code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan#citopatologico
+
+* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#tipo-amostra
+* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional
 
 * component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelio-escamoso-na-amostra
 * component[=].valueBoolean = true

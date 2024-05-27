@@ -978,7 +978,7 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component ^slicing.description = "Identificação dos componentes do laudo"
 
 * component contains 
-    tipo 0..1 MS and
+    tipo 1..1 MS and
     motivo 0..1 MS and 
     escamoso 0..1 MS and
     glandular 0..1 MS and

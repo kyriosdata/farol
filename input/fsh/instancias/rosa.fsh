@@ -544,20 +544,22 @@ Description: "Laudo da requisição de exame da paciente Rosa"
 // ------------------------------------------------------
 
 Instance: laudo-componentes
-InstanceOf: Observation
+InstanceOf: ComponentesLaudoCitopatologico
 Usage: #inline
 Title: "Itens do laudo (Rosa)"
 Description: "Itens que definem o laudo da paciente Rosa"
 
-* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/componentes-laudo-citopatologico"
-
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer.identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
-* performer.identifier.value = "234.234.567"
+* performer[+].identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
+* performer[=].identifier.value = "234.234.567"
+* performer[+] = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb12)
 * effectiveDateTime = "2023-11-10"
 
 * status = #final
 * code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan#citopatologico
+
+* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#tipo-amostra
+* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional
 
 * component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelio-escamoso-na-amostra
 * component[=].valueBoolean = true

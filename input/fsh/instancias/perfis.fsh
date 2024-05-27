@@ -978,11 +978,11 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component ^slicing.description = "Identificação dos componentes do laudo"
 
 * component contains 
+    tipo 0..1 MS and
     motivo 0..1 MS and 
     escamoso 0..1 MS and
     glandular 0..1 MS and
     metaplasico 0..1 MS and
-    adequabilidade 0..1 MS and
     normalidade 0..1 MS and
     benignaInflamacao 0..1 MS and
     benignaMetaplasia 0..1 MS and
@@ -1007,6 +1007,18 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
     glandulares 0..1 MS and
     outrasMalignas 0..1 MS and
     endometriais 0..1 MS
+
+* component[tipo] ^short = "Tipo de amostra"
+* component[tipo].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#tipo-amostra 
+* component[tipo].code ^short = "Identifica o tipo de amostra"
+* component[tipo].code.coding ^short = "Código definido por uma terminologia"
+* component[tipo].value[x] 1..1
+* component[tipo].value[x] only CodeableConcept
+* component[tipo].valueCodeableConcept.coding 1..1
+* component[tipo].valueCodeableConcept ^short = "O conjunto de códigos que identifica tipo de epitélio na amostra"
+* component[tipo].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipo-amostra (required)
+* component[tipo].valueCodeableConcept.coding.code 1..1
+* component[tipo].valueCodeableConcept.coding.code ^short = "Código correspondente à adequabilidade da amostra"
 
 * component[motivo] ^short = "Motivo pelo qual o espécime foi rejeitado (não processado)"
 * component[motivo].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#motivo-rejeicao
@@ -1045,18 +1057,6 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component[metaplasico].value[x] 1..1
 * component[metaplasico].value[x] only boolean
 * component[metaplasico].value[x] ^short = "true se há presença de epitélio metaplásico ou falso, caso contrário."
-
-* component[adequabilidade] ^short = "Adequabilidade do material"
-* component[adequabilidade].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#adequabilidade 
-* component[adequabilidade].code ^short = "Identifica a informação fornecida: adequabilidade do material"
-* component[adequabilidade].code.coding ^short = "Código definido por uma terminologia"
-* component[adequabilidade].value[x] 1..1
-* component[adequabilidade].value[x] only CodeableConcept
-* component[adequabilidade].valueCodeableConcept.coding 1..1
-* component[adequabilidade].valueCodeableConcept ^short = "O conjunto de códigos que identifica tipo de epitélio na amostra"
-* component[adequabilidade].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipo-adequabilidade (required)
-* component[adequabilidade].valueCodeableConcept.coding.code 1..1
-* component[adequabilidade].valueCodeableConcept.coding.code ^short = "Código correspondente à adequabilidade da amostra"
 
 * component[normalidade] ^short = "Dentro dos limites da normalidade no material"
 * component[normalidade].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#normalidade 

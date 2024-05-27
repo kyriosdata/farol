@@ -491,10 +491,6 @@ Description: "Motivo pelo qual o espécime é rejeitado (não processado)."
 * #lamina "lâmina" "Lâmina danificada ou ausente"
 * #outras "Outras causas" "Outras causas"
 
-// ------------------------------------------------------
-// motivo-rejeicao
-// ------------------------------------------------------
-
 ValueSet: MotivoEspecimeRejeitado
 Id: motivo-especime-rejeitado
 Title: "Motivo de rejeição de amostra"
@@ -508,18 +504,15 @@ Description: "Possíveis motivos pelos quais uma amostra é rejeitada"
 * include codes from system MotivoEspecimeRejeitado
 
 // ------------------------------------------------------
-// tipos-adequabilidade
+// insatisfatorio-para-avaliacao
 // ------------------------------------------------------
 
-CodeSystem: TiposAdequabilidade
-Id: tipos-adequabilidade
-Title: "Classificação da adequabilidade do material"
-Description: "Definição da classificação da adequabilidade do material (amostra)"
+CodeSystem: InsatisfatorioParaAvaliacao
+Id: insatisfatorio-para-avaliacao
+Title: "Espécime insatisfatório para avaliação"
+Description: "Motivo pelo qual o espécime é declarado insatisfatório para avaliação após processado e examinado."
 
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos para classificação da adequabilidade do material</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-adequabilidade"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/insatisfatorio-para-avaliacao"
 
 * ^status = #unknown
 * ^caseSensitive = true
@@ -527,7 +520,6 @@ Description: "Definição da classificação da adequabilidade do material (amos
 * ^date = "2024-04-15"
 * ^purpose = """**Propósito**. Definição do conjunto de resultados possíveis para a averiguação da adequabilidade da amostra."""
 
-* #satisfatoria "Satisfatória" "Satisfatória"
 * #material "Material acelular" "Material acelular em menos de 10% do esfregaço"
 * #sangue "Sangue" "Sangue em mais de 75% do esfregaço"
 * #piocitos "Piócitos" "Piócitos em mais de 75% do esfregaço"
@@ -536,24 +528,19 @@ Description: "Definição da classificação da adequabilidade do material (amos
 * #superposicao "Superposição" "Intensa superposição celular em mais de 75% do esfregaço"
 * #outros "Outros" "Outros motivos"
 
-// ------------------------------------------------------
-
-ValueSet: AdequabilidadeMaterial
-Id: tipo-adequabilidade
+ValueSet: InsatisfatorioParaAvaliacao
+Id: insatisfatorio-para-avaliacao
 Title: "Adequabilidade do material"
-Description: "Caracterização da adequabilidade do material"
+Description: "Motivo pelo qual o espécime é declarado insatisfatório para avaliação após processado e examinado."
 
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Domínio de valores admitido para adequabilidade de amostra de exame citopatológico.</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipo-adequabilidade"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/insatisfatorio-para-avaliacao"
 
 * ^status = #draft
 * ^experimental = false
 * ^date = "2024-04-15"
 * ^purpose = """**Propósito**. Definição dos possíveis valores admitidos como resultado da adequabilidade da amostra para o item correspondente da requisição de exame citopatológico."""
 
-* include codes from system TiposAdequabilidade
+* include codes from system InsatisfatorioParaAvaliacao
 
 // ------------------------------------------------------
 // alteracoes-celulares-benignas
@@ -824,6 +811,7 @@ Description: "Tipos de avaliação de exame citopatológico"
 * ^caseSensitive = true
 * ^experimental = false
 
+* #tipo-amostra "Tipo de amostra"
 * #motivo-rejeicao "Motivo de rejeição de amostra"
 * #epitelios-na-amostra "Epitélios representados na amostra"
 * #epitelio-escamoso-na-amostra "Epitélio escamoso representado na amostra?"
@@ -854,6 +842,32 @@ Description: "Tipos de avaliação de exame citopatológico"
 * #atipias-glandulares "Atipias em células glandulares"
 * #neoplasias-malignas "Outras neoplasias malignas"
 * #celulas-endometriais "Presença de células endometriais (na pós-menopausa ou acima de 40 anos, fora do período menstrual)"
+
+// ------------------------------------------------------
+// tipo-amostra
+// ------------------------------------------------------
+
+CodeSystem: TipoAmostra
+Id: tipo-amostra
+Title: "Tipos de amostra"
+Description: "Tipos de amostra para laudo citopatológico"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra"
+* ^status = #draft
+* ^caseSensitive = true
+* ^experimental = false
+* #convencional "convencional" "Convencional"
+* #liquido "líquido" "Em meio líquido"
+
+
+ValueSet: TipoAmostra
+Id: tipo-amostra
+Title: "Tipos de amostra"
+Description: "Tipos de amostra para laudo citopatológico"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipo-amostra"
+* ^status = #draft
+* ^experimental = false
+* include codes from system ComponentesEndereco
 
 
 // ------------------------------------------------------

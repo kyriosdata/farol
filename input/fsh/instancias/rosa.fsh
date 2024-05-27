@@ -569,7 +569,7 @@ Description: "Itens que definem o laudo da paciente Rosa"
 * component[=].valueBoolean = true
 
 * component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#adequabilidade
-* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-adequabilidade#outros
+* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/insatisfatorio-para-avaliacao#outros
 * component[=].valueCodeableConcept.text = "Aqui segue a especificação para o item 'Outros'"
 
 * component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#normalidade

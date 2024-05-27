@@ -214,9 +214,9 @@ Context: Patient
 
 Extension: Especificacao
 Id: especificacao
-Title: "Idade informada pela paciente (em anos)"
-Description: "Idade fornecida no momento da requisição de exame citopatológico. Mantida apenas por conformidade com formulário impresso. A expectativa natural é que esta data seja calculada, por comodidade do usuário que a consulta, a partir da data de nascimento, em vez de ser informada."
-Context: Patient
+Title: "Detalha item"
+Description: "Fornece detalhe ou especificação adicional sobre item de informação."
+Context: "Observation.component.valueCodeableConcept.coding.where(code = 'outras')"
 
 * ^status = #draft
 
@@ -949,8 +949,8 @@ Expression: "extension.count() < 2"
 Severity: #error
 
 Invariant: AmostraRejeitadaNaoAdmiteLaudo
-Description: "Se amostra é rejeitada, então este é o único componente permitido."
-Expression: "code.coding.where(code='motivo-rejeicao').exists() implies code.count() = 1"
+Description: "Se amostra é rejeitada, então este é o único componente permitido do laudo (além do tipo da amostra)"
+Expression: "component.code.coding.where(code='motivo-rejeicao').exists().not() or component.count() = 2"
 Severity: #error
 
 Profile: ComponentesLaudoCitopatologico
@@ -966,11 +966,10 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 // #44
 // #46
 // #59
-* obeys Executantes
+* obeys Executantes and AmostraRejeitadaNaoAdmiteLaudo
+
 * performer only Reference(Laboratorio or Profissional)
 * performer 2..2 
-
-* component obeys AmostraRejeitadaNaoAdmiteLaudo
 
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
@@ -978,8 +977,8 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component ^slicing.description = "Identificação dos componentes do laudo"
 
 * component contains 
-    tipo 1..1 MS and
-    motivo 0..1 MS and 
+    tipo 1..1 MS and       // ok
+    motivo 0..1 MS and     
     escamoso 0..1 MS and
     glandular 0..1 MS and
     metaplasico 0..1 MS and
@@ -1022,7 +1021,7 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 
 * component[motivo] ^short = "Motivo pelo qual o espécime foi rejeitado (não processado)"
 * component[motivo].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#motivo-rejeicao
-* component[motivo].code ^short = "Identifica a informação fornecida: motivo da rejeição do espécime"
+* component[motivo].code ^short = "Identifica, se for o casao, o motivo da rejeição do espécime"
 * component[motivo].code.coding ^short = "Código definido por uma terminologia"
 * component[motivo].value[x] 1..1
 * component[motivo].value[x] only CodeableConcept

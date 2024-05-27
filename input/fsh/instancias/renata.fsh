@@ -501,3 +501,5 @@ Description: "Itens que definem o laudo da paciente Renata"
 
 * component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#motivo-rejeicao
 * component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-especime-rejeitado#lamina
+* component[=].valueCodeableConcept.coding.extension.url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/especificacao"
+* component[=].valueCodeableConcept.coding.extension.valueString = "forneça aqui o motivo"

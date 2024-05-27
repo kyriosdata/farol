@@ -1015,7 +1015,7 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component[tipo].value[x] 1..1
 * component[tipo].value[x] only CodeableConcept
 * component[tipo].valueCodeableConcept.coding 1..1
-* component[tipo].valueCodeableConcept ^short = "O conjunto de códigos que identifica tipo de epitélio na amostra"
+* component[tipo].valueCodeableConcept ^short = "O da amostra (convencional ou em meio líquido)"
 * component[tipo].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipo-amostra (required)
 * component[tipo].valueCodeableConcept.coding.code 1..1
 * component[tipo].valueCodeableConcept.coding.code ^short = "Código correspondente à adequabilidade da amostra"

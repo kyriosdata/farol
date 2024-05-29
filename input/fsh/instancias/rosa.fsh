@@ -37,7 +37,7 @@ Description: "Requisição de exame citopatológico (Rosa)."
 // Composition (primeira entrada do bundle)
 * entry[+]
   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb00"
-  * resource = requisicao-rosa
+  * resource = RequisicaoRosa
 
 // rosa (Patient)
 * entry[+]
@@ -75,10 +75,10 @@ Description: "Requisição de exame citopatológico (Rosa)."
   * resource = encontro
 
 // ------------------------------------------------------
-// requisicao-rosa (requisição)
+// RequisicaoRosa (requisição)
 // ------------------------------------------------------
 
-Instance: requisicao-rosa
+Instance: RequisicaoRosa
 InstanceOf: DocumentoRequisicao
 Usage: #inline
 Title: "Requisição (Rosa)"
@@ -582,6 +582,5 @@ Description: "Itens que definem o laudo da paciente Rosa"
 
 * component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia-candida
 * component[=].valueBoolean = true
-
 
 * note[0].text = "Aqui seguem as observações gerais"

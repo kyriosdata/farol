@@ -216,7 +216,7 @@ Extension: Especificacao
 Id: especificacao
 Title: "Detalha item"
 Description: "Fornece detalhe ou especificação adicional sobre item de informação."
-Context: "Observation.component.valueCodeableConcept.coding.where(code = 'outras')"
+Context: "Observation.component.value.ofType(CodeableConcept).coding"
 
 * ^status = #draft
 
@@ -828,9 +828,10 @@ Profile: DocumentoRequisicao
 Parent: Composition
 Id: documento-requisicao
 Title: "Documento Requisicao"
-Description: "Um documento que registra uma requisição"
+Description: "Documento clínico de uma requisição de exame citopatológico"
 
 * ^status = #draft
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/documento-requisicao"
 
 * type.coding ^slicing.discriminator.type = #pattern
 * type.coding ^slicing.discriminator.path = "system"
@@ -978,7 +979,7 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 
 * component contains 
     tipo 1..1 MS and       // ok
-    motivo 0..1 MS and     
+    rejeicao 0..1 MS and     
     escamoso 0..1 MS and
     glandular 0..1 MS and
     metaplasico 0..1 MS and
@@ -1019,19 +1020,19 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component[tipo].valueCodeableConcept.coding.code 1..1
 * component[tipo].valueCodeableConcept.coding.code ^short = "Código correspondente à adequabilidade da amostra"
 
-* component[motivo] ^short = "Motivo pelo qual o espécime foi rejeitado (não processado)"
-* component[motivo].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#motivo-rejeicao
-* component[motivo].code ^short = "Identifica, se for o casao, o motivo da rejeição do espécime"
-* component[motivo].code.coding ^short = "Código definido por uma terminologia"
-* component[motivo].value[x] 1..1
-* component[motivo].value[x] only CodeableConcept
-* component[motivo].value[x] ^short = "O código que identifica o motivo da rejeição do espécime"
-* component[motivo].valueCodeableConcept.coding 1..3
-* component[motivo].valueCodeableConcept obeys DuplicidadeNaoAdmitida and ExtensaoApenasOutros and SoUmaExtensaoPermitida
-* component[motivo].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
-* component[motivo].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-especime-rejeitado (required)
-* component[motivo].valueCodeableConcept.coding.code 1..1
-* component[motivo].valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da rejeição da amostra"
+* component[rejeicao] ^short = "Motivo pelo qual o espécime foi rejeitado (não processado)"
+* component[rejeicao].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#motivo-rejeicao
+* component[rejeicao].code ^short = "Identifica, se for o casao, o motivo da rejeição do espécime"
+* component[rejeicao].code.coding ^short = "Código definido por uma terminologia"
+* component[rejeicao].value[x] 1..1
+* component[rejeicao].value[x] only CodeableConcept
+* component[rejeicao].value[x] ^short = "O código que identifica o motivo da rejeição do espécime"
+* component[rejeicao].valueCodeableConcept.coding 1..3
+* component[rejeicao].valueCodeableConcept obeys DuplicidadeNaoAdmitida and ExtensaoApenasOutros and SoUmaExtensaoPermitida
+* component[rejeicao].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
+* component[rejeicao].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-especime-rejeitado (required)
+* component[rejeicao].valueCodeableConcept.coding.code 1..1
+* component[rejeicao].valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da rejeição da amostra"
 
 * component[escamoso] ^short = "Registra presença ou não de epitélios escamoso na amostra"
 * component[escamoso].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelio-escamoso-na-amostra 

@@ -983,6 +983,7 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
     insatisfatorio 0..1 MS and // ok
     satisfatorio 0..1 MS and
     componente 0..1 MS and 
+    categorizacao 0..1 MS and 
     glandular 0..1 MS and
     metaplasico 0..1 MS and
     normalidade 0..1 MS and
@@ -1070,6 +1071,19 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component[componente].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/componente-endocervical (required)
 * component[componente].valueCodeableConcept.coding.code 1..1
 * component[componente].valueCodeableConcept.coding.code ^short = "Presença ou ausência"
+
+* component[categorizacao] ^short = "Componente endocervical / zona transformação"
+* component[categorizacao].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#categorizacao
+* component[categorizacao].code ^short = "Componente endocervical"
+* component[categorizacao].code.coding ^short = "Código definido por uma terminologia"
+* component[categorizacao].value[x] 1..1
+* component[categorizacao].value[x] only CodeableConcept
+* component[categorizacao].value[x] ^short = "Código para presença ou ausência"
+* component[categorizacao].valueCodeableConcept.coding 1..1
+* component[categorizacao].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
+* component[categorizacao].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/categorizacao-geral (required)
+* component[categorizacao].valueCodeableConcept.coding.code 1..1
+* component[categorizacao].valueCodeableConcept.coding.code ^short = "Presença ou ausência"
 
 * component[glandular] ^short = "Registra presença ou não de epitélios glandular na amostra"
 * component[glandular].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelio-glandular-na-amostra 

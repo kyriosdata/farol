@@ -510,7 +510,7 @@ Description: "Possíveis motivos pelos quais uma amostra é rejeitada"
 CodeSystem: InsatisfatorioParaAvaliacao
 Id: insatisfatorio-para-avaliacao
 Title: "Espécime insatisfatório para avaliação"
-Description: "Motivo pelo qual o espécime é declarado insatisfatório para avaliação após processado e examinado."
+Description: "Motivos pelos quais o espécime pode ser declarado insatisfatório para avaliação após processado e examinado."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/insatisfatorio-para-avaliacao"
 
@@ -520,25 +520,25 @@ Description: "Motivo pelo qual o espécime é declarado insatisfatório para ava
 * ^date = "2024-04-15"
 * ^purpose = """**Propósito**. Definição do conjunto de resultados possíveis para a averiguação da adequabilidade da amostra."""
 
-* #material "Material acelular" "Material acelular em menos de 10% do esfregaço"
-* #sangue "Sangue" "Sangue em mais de 75% do esfregaço"
-* #piocitos "Piócitos" "Piócitos em mais de 75% do esfregaço"
-* #dessecamento "Dessecamento" "Artefatos de dessecamento em mais de 75% do esfregaço"
-* #contaminantes "Contaminantes" "Contaminantes externos em mais de 75% do esfregaço"
-* #superposicao "Superposição" "Intensa superposição celular em mais de 75% do esfregaço"
-* #outros "Outros" "Outros motivos"
+* #material "Material acelular" "Material acelular ou hipocelular: células compõem < 10% da amostra"
+* #sangue "Sangue" "Sangue em mais de 75% da amostra"
+* #piocitos "Piócitos" "Piócitos em mais de 75% da amostra"
+* #dessecamento "Dessecamento" "Artefatos de dessecamento em mais de 75% da amostra"
+* #contaminantes "Contaminantes" "Contaminantes externos em mais de 75% da amostra"
+* #superposicao "Superposição" "Intensa superposição celular em mais de 75% da amostra"
+
 
 ValueSet: InsatisfatorioParaAvaliacao
 Id: insatisfatorio-para-avaliacao
-Title: "Adequabilidade do material"
-Description: "Motivo pelo qual o espécime é declarado insatisfatório para avaliação após processado e examinado."
+Title: "Códigos para espécime insatisfatório para avaliação"
+Description: "Motivos pelos quais o espécime pode ser declarado insatisfatório para avaliação após processado e examinado."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/insatisfatorio-para-avaliacao"
 
 * ^status = #draft
 * ^experimental = false
 * ^date = "2024-04-15"
-* ^purpose = """**Propósito**. Definição dos possíveis valores admitidos como resultado da adequabilidade da amostra para o item correspondente da requisição de exame citopatológico."""
+* ^purpose = """**Propósito**. Definição do conjunto de códigos possíveis para declarar uma amostra insatisfatória para avaliação."""
 
 * include codes from system InsatisfatorioParaAvaliacao
 
@@ -813,6 +813,7 @@ Description: "Tipos de avaliação de exame citopatológico"
 
 * #tipo-amostra "Tipo de amostra"
 * #motivo-rejeicao "Motivo de rejeição de amostra"
+* #insatisfatoria "Amostra processada e examinada, mas insatisfatória para avaliação"
 * #epitelios-na-amostra "Epitélios representados na amostra"
 * #epitelio-escamoso-na-amostra "Epitélio escamoso representado na amostra?"
 * #epitelio-glandular-na-amostra "Epitélio glandular representado na amostra?"

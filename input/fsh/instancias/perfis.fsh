@@ -979,8 +979,8 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 
 * component contains 
     tipo 1..1 MS and       // ok
-    rejeicao 0..1 MS and     
-    escamoso 0..1 MS and
+    rejeicao 0..1 MS and   // ok  
+    insatisfatorio 0..1 MS and // ok
     glandular 0..1 MS and
     metaplasico 0..1 MS and
     normalidade 0..1 MS and
@@ -1034,13 +1034,19 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component[rejeicao].valueCodeableConcept.coding.code 1..1
 * component[rejeicao].valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da rejeição da amostra"
 
-* component[escamoso] ^short = "Registra presença ou não de epitélios escamoso na amostra"
-* component[escamoso].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelio-escamoso-na-amostra 
-* component[escamoso].code ^short = "Identifica a informação fornecida: presença ou não de epitélio escamoso"
-* component[escamoso].code.coding ^short = "Código definido por uma terminologia"
-* component[escamoso].value[x] 1..1
-* component[escamoso].value[x] only boolean
-* component[escamoso].value[x] ^short = "true se há presença de epitélio escamoso ou falso, caso contrário."
+* component[insatisfatorio] ^short = "Registra motivo(s) pelo(s) qual(is) a amostra é insatisfatória para avaliação"
+* component[insatisfatorio].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#insatisfatoria
+* component[insatisfatorio].code ^short = "Amostra insatisfatória para avalaição por"
+* component[insatisfatorio].code.coding ^short = "Código definido por uma terminologia"
+* component[insatisfatorio].value[x] 1..1
+* component[insatisfatorio].value[x] only CodeableConcept
+* component[insatisfatorio].value[x] ^short = "Código para amostra insatisfatória para avaliação"
+* component[insatisfatorio].valueCodeableConcept.coding 1..6
+* component[insatisfatorio].valueCodeableConcept obeys DuplicidadeNaoAdmitida
+* component[insatisfatorio].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
+* component[insatisfatorio].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/insatisfatorio-para-avaliacao (required)
+* component[insatisfatorio].valueCodeableConcept.coding.code 1..1
+* component[insatisfatorio].valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da amostra ser insatisfatória"
 
 * component[glandular] ^short = "Registra presença ou não de epitélios glandular na amostra"
 * component[glandular].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelio-glandular-na-amostra 

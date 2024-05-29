@@ -561,26 +561,8 @@ Description: "Itens que definem o laudo da paciente Rosa"
 * component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#tipo-amostra
 * component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional
 
-* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelio-escamoso-na-amostra
-* component[=].valueBoolean = true
+* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#insatisfatoria
+* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/insatisfatorio-para-avaliacao#material
 
-* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelio-glandular-na-amostra
-* component[=].valueBoolean = true
-
-* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelio-metaplasico-na-amostra
-* component[=].valueBoolean = true
-
-* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#adequabilidade
-* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/insatisfatorio-para-avaliacao#outros
-* component[=].valueCodeableConcept.text = "Aqui segue a especificação para o item 'Outros'"
-
-* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#normalidade
-* component[=].valueBoolean = true
-
-* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#benigna-radiacao
-* component[=].valueCodeableConcept.text = "Raios Gama"
-
-* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia-candida
-* component[=].valueBoolean = true
 
 * note[0].text = "Aqui seguem as observações gerais"

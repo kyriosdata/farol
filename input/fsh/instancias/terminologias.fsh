@@ -814,6 +814,8 @@ Description: "Tipos de avaliação de exame citopatológico"
 * #tipo-amostra "Tipo de amostra"
 * #motivo-rejeicao "Motivo de rejeição de amostra"
 * #insatisfatoria "Amostra processada e examinada, mas insatisfatória para avaliação"
+* #satisfatorio "Espécime satisfatório para avaliação"
+* #componente "Indica presença ou ausência de componente endocervical"
 * #epitelios-na-amostra "Epitélios representados na amostra"
 * #epitelio-escamoso-na-amostra "Epitélio escamoso representado na amostra?"
 * #epitelio-glandular-na-amostra "Epitélio glandular representado na amostra?"
@@ -869,6 +871,58 @@ Description: "Tipos de amostra para laudo citopatológico"
 * ^status = #draft
 * ^experimental = false
 * include codes from system TipoAmostra
+
+// ------------------------------------------------------
+// componente-endocervical
+// ------------------------------------------------------
+
+CodeSystem: ComponenteEndocervical
+Id: componente-endocervical
+Title: "Componente endocervical"
+Description: "Identifica presença ou ausência de componente endocervical"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/componente-endocervical"
+* ^status = #draft
+* ^caseSensitive = true
+* ^experimental = false
+* #presente "Presente"
+* #ausente "Ausente"
+
+
+ValueSet: ComponenteEndocervical
+Id: componente-endocervical
+Title: "Tipos de amostra"
+Description: "Tipos de amostra para laudo citopatológico"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/componente-endocervical"
+* ^status = #draft
+* ^experimental = false
+* include codes from system ComponenteEndocervical
+
+// ------------------------------------------------------
+// categorizacao-geral
+// ------------------------------------------------------
+
+CodeSystem: CategorizacaoGeral
+Id: categorizacao-geral
+Title: "Categorização geral"
+Description: "Categorização geral do laudo"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/categorizacao-geral"
+* ^status = #draft
+* ^caseSensitive = true
+* ^experimental = false
+* #negativo "Negativo para lesão intraepitelial ou malignidade na amostra analisada"
+* #anormalidade "Anormalidade em células epiteliais"
+
+
+ValueSet: CategorizacaoGeral
+Id: categorizacao-geral
+Title: "Categorização geral"
+Description: "Categorização geral do laudo"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/categorizacao-geral"
+* ^status = #draft
+* ^experimental = false
+* include codes from system CategorizacaoGeral
 
 
 // ------------------------------------------------------

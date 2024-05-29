@@ -981,6 +981,8 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
     tipo 1..1 MS and       // ok
     rejeicao 0..1 MS and   // ok  
     insatisfatorio 0..1 MS and // ok
+    satisfatorio 0..1 MS and
+    componente 0..1 MS and 
     glandular 0..1 MS and
     metaplasico 0..1 MS and
     normalidade 0..1 MS and
@@ -1047,6 +1049,27 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component[insatisfatorio].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/insatisfatorio-para-avaliacao (required)
 * component[insatisfatorio].valueCodeableConcept.coding.code 1..1
 * component[insatisfatorio].valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da amostra ser insatisfatória"
+
+* component[satisfatorio] ^short = "Registra se espécime é satisfatório para avaliação"
+* component[satisfatorio].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#satisfatorio
+* component[satisfatorio].code ^short = "Identifica se espécime é satisfatório para avaliação"
+* component[satisfatorio].code.coding ^short = "Código definido por uma terminologia"
+* component[satisfatorio].value[x] 1..1
+* component[satisfatorio].value[x] only boolean
+* component[satisfatorio].value[x] ^short = "true se satisfatório para avaliação"
+
+* component[componente] ^short = "Componente endocervical / zona transformação"
+* component[componente].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#componente
+* component[componente].code ^short = "Componente endocervical"
+* component[componente].code.coding ^short = "Código definido por uma terminologia"
+* component[componente].value[x] 1..1
+* component[componente].value[x] only CodeableConcept
+* component[componente].value[x] ^short = "Código para presença ou ausência"
+* component[componente].valueCodeableConcept.coding 1..1
+* component[componente].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
+* component[componente].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/componente-endocervical (required)
+* component[componente].valueCodeableConcept.coding.code 1..1
+* component[componente].valueCodeableConcept.coding.code ^short = "Presença ou ausência"
 
 * component[glandular] ^short = "Registra presença ou não de epitélios glandular na amostra"
 * component[glandular].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelio-glandular-na-amostra 

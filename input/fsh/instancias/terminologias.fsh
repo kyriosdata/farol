@@ -471,7 +471,7 @@ Description: "Possíveis motivos para requisição de exame citopatológico"
 * include codes from system MotivosExame
 
 // ------------------------------------------------------
-// motivo-especime-rejeitado
+// motivo-especime-rejeitado // #6
 // ------------------------------------------------------
 
 CodeSystem: MotivoEspecimeRejeitado
@@ -504,7 +504,7 @@ Description: "Possíveis motivos pelos quais uma amostra é rejeitada"
 * include codes from system MotivoEspecimeRejeitado
 
 // ------------------------------------------------------
-// insatisfatorio-para-avaliacao
+// insatisfatorio-para-avaliacao // #7
 // ------------------------------------------------------
 
 CodeSystem: InsatisfatorioParaAvaliacao
@@ -854,7 +854,7 @@ Description: "Grupos de informação de resultado de exame citopatológico"
 * include codes from system ResultadoItem
 
 // ------------------------------------------------------
-// tipo-amostra
+// tipo-amostra // #5
 // ------------------------------------------------------
 
 CodeSystem: TipoAmostra
@@ -866,9 +866,9 @@ Description: "Tipos de amostra para laudo citopatológico"
 * ^status = #draft
 * ^caseSensitive = true
 * ^experimental = false
+* ^purpose = "Identifica e define os tipos de amostra para exame citopatológico."
 * #convencional "convencional" "Convencional"
 * #liquido "líquido" "Em meio líquido"
-
 
 ValueSet: TipoAmostra
 Id: tipo-amostra
@@ -877,6 +877,7 @@ Description: "Tipos de amostra para laudo citopatológico"
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipo-amostra"
 * ^status = #draft
 * ^experimental = false
+* ^purpose = "Valores possíveis para o tipo de amostra para exame citopatológico."
 * include codes from system TipoAmostra
 
 // ------------------------------------------------------

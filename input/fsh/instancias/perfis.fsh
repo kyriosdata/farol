@@ -2,7 +2,7 @@ Alias: $BRTipoLogradouro-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRTipoLo
 Alias: $BRMunicipio-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRMunicipio-1.0
 Alias: $BRUnidadeFederativa-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRUnidadeFederativa-1.0
 Alias: $BRMeioContato = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRMeioContato-1.0
-Alias: $laudo-tipo-item = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item
+Alias: $laudo-tipo-item = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item
 Alias: $yesnodontknow = http://hl7.org/fhir/ValueSet/yesnodontknow
 Alias: $resultado-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/resultado-inspecao-colo
 
@@ -1012,7 +1012,7 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
     endometriais 0..1 MS
 
 * component[tipo] ^short = "Tipo de amostra"
-* component[tipo].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#tipo-amostra 
+* component[tipo].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#tipo-amostra 
 * component[tipo].code ^short = "Identifica o tipo de amostra"
 * component[tipo].code.coding ^short = "Código definido por uma terminologia"
 * component[tipo].value[x] 1..1
@@ -1024,7 +1024,7 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component[tipo].valueCodeableConcept.coding.code ^short = "Código correspondente à adequabilidade da amostra"
 
 * component[rejeicao] ^short = "Motivo pelo qual o espécime foi rejeitado (não processado)"
-* component[rejeicao].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#motivo-rejeicao
+* component[rejeicao].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#motivo-rejeicao
 * component[rejeicao].code ^short = "Identifica, se for o casao, o motivo da rejeição do espécime"
 * component[rejeicao].code.coding ^short = "Código definido por uma terminologia"
 * component[rejeicao].value[x] 1..1
@@ -1038,7 +1038,7 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component[rejeicao].valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da rejeição da amostra"
 
 * component[insatisfatorio] ^short = "Registra motivo(s) pelo(s) qual(is) a amostra é insatisfatória para avaliação"
-* component[insatisfatorio].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#insatisfatoria
+* component[insatisfatorio].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#insatisfatoria
 * component[insatisfatorio].code ^short = "Amostra insatisfatória para avalaição por"
 * component[insatisfatorio].code.coding ^short = "Código definido por uma terminologia"
 * component[insatisfatorio].value[x] 1..1
@@ -1052,7 +1052,7 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component[insatisfatorio].valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da amostra ser insatisfatória"
 
 * component[satisfatorio] ^short = "Registra se espécime é satisfatório para avaliação"
-* component[satisfatorio].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#satisfatorio
+* component[satisfatorio].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#satisfatorio
 * component[satisfatorio].code ^short = "Identifica se espécime é satisfatório para avaliação"
 * component[satisfatorio].code.coding ^short = "Código definido por uma terminologia"
 * component[satisfatorio].value[x] 1..1
@@ -1060,7 +1060,7 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component[satisfatorio].value[x] ^short = "true se satisfatório para avaliação"
 
 * component[componente] ^short = "Componente endocervical / zona transformação"
-* component[componente].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#componente
+* component[componente].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#componente
 * component[componente].code ^short = "Componente endocervical"
 * component[componente].code.coding ^short = "Código definido por uma terminologia"
 * component[componente].value[x] 1..1
@@ -1073,7 +1073,7 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component[componente].valueCodeableConcept.coding.code ^short = "Presença ou ausência"
 
 * component[categorizacao] ^short = "Categorização geral"
-* component[categorizacao].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#categorizacao
+* component[categorizacao].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#categorizacao
 * component[categorizacao].code ^short = "Categorização geral"
 * component[categorizacao].code.coding ^short = "Código definido por uma terminologia"
 * component[categorizacao].value[x] 1..1
@@ -1086,7 +1086,7 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component[categorizacao].valueCodeableConcept.coding.code ^short = "negativo ou anormalidade"
 
 * component[glandular] ^short = "Registra presença ou não de epitélios glandular na amostra"
-* component[glandular].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelio-glandular-na-amostra 
+* component[glandular].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#epitelio-glandular-na-amostra 
 * component[glandular].code ^short = "Identifica a informação fornecida: presença ou não de epitélio glandular"
 * component[glandular].code.coding ^short = "Código definido por uma terminologia"
 * component[glandular].value[x] 1..1
@@ -1094,7 +1094,7 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component[glandular].value[x] ^short = "true se há presença de epitélio glandular ou falso, caso contrário."
 
 * component[metaplasico] ^short = "Registra presença ou não de epitélios metaplasico na amostra"
-* component[metaplasico].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#epitelio-metaplasico-na-amostra 
+* component[metaplasico].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#epitelio-metaplasico-na-amostra 
 * component[metaplasico].code ^short = "Identifica a informação fornecida: presença ou não de epitélio metaplásico"
 * component[metaplasico].code.coding ^short = "Código definido por uma terminologia"
 * component[metaplasico].value[x] 1..1
@@ -1102,42 +1102,42 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component[metaplasico].value[x] ^short = "true se há presença de epitélio metaplásico ou falso, caso contrário."
 
 * component[normalidade] ^short = "Dentro dos limites da normalidade no material"
-* component[normalidade].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#normalidade 
+* component[normalidade].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#normalidade 
 * component[normalidade].code ^short = "Identifica a informação fornecida: normalidade do material"
 * component[normalidade].code.coding ^short = "Código definido por uma terminologia"
 * component[normalidade].value[x] 1..1
 * component[normalidade].value[x] only boolean
 
 * component[benignaInflamacao] ^short = "Alterações celulares benignas reativas ou reparativas (inflamação)"
-* component[benignaInflamacao].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#benigna-inflamacao
+* component[benignaInflamacao].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#benigna-inflamacao
 * component[benignaInflamacao].code ^short = "Identifica a presença ou não de inflamação (alteração benigna)"
 * component[benignaInflamacao].code.coding ^short = "Código definido por uma terminologia"
 * component[benignaInflamacao].value[x] 0..1
 * component[benignaInflamacao].value[x] only boolean
 
 * component[benignaMetaplasia] ^short = "Alterações celulares benignas reativas ou reparativas (metaplasia)"
-* component[benignaMetaplasia].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#benigna-metaplasia
+* component[benignaMetaplasia].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#benigna-metaplasia
 * component[benignaMetaplasia].code ^short = "Identifica a presença ou não de metaplasia (alteração benigna)"
 * component[benignaMetaplasia].code.coding ^short = "Código definido por uma terminologia"
 * component[benignaMetaplasia].value[x] 0..1
 * component[benignaMetaplasia].value[x] only boolean
 
 * component[benignaReparacao] ^short = "Alterações celulares benignas reativas ou reparativas (reparação)"
-* component[benignaReparacao].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#benigna-reparacao
+* component[benignaReparacao].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#benigna-reparacao
 * component[benignaReparacao].code ^short = "Identifica a presença ou não de reparação (alteração benigna)"
 * component[benignaReparacao].code.coding ^short = "Código definido por uma terminologia"
 * component[benignaReparacao].value[x] 0..1
 * component[benignaReparacao].value[x] only boolean
 
 * component[benignaAtrofia] ^short = "Alterações celulares benignas reativas ou reparativas (atrofia com inflamação)"
-* component[benignaAtrofia].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#benigna-atrofia
+* component[benignaAtrofia].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#benigna-atrofia
 * component[benignaAtrofia].code ^short = "Identifica a presença ou não de atrofia com inflamação (alteração benigna)"
 * component[benignaAtrofia].code.coding ^short = "Código definido por uma terminologia"
 * component[benignaAtrofia].value[x] 0..1
 * component[benignaAtrofia].value[x] only boolean
 
 * component[benignaRadiacao] ^short = "Alterações celulares benignas reativas ou reparativas (radiação)"
-* component[benignaRadiacao].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#benigna-radiacao
+* component[benignaRadiacao].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#benigna-radiacao
 * component[benignaRadiacao].code ^short = "Identifica a presença ou não de atrofia com radiação (alteração benigna)"
 * component[benignaRadiacao].code.coding ^short = "Código definido por uma terminologia"
 * component[benignaRadiacao].value[x] 1..1
@@ -1148,7 +1148,7 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component[benignaRadiacao].valueCodeableConcept.text ^short = "Especificação da radiação" 
 
 * component[benignaOutra] ^short = "Alterações celulares benignas reativas ou reparativas (outra a ser especificada)"
-* component[benignaOutra].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#benigna-outra
+* component[benignaOutra].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#benigna-outra
 * component[benignaOutra].code ^short = "Identifica a presença ou não de outra alteração não especificada previamente (alteração benigna)"
 * component[benignaOutra].code.coding ^short = "Código definido por uma terminologia"
 * component[benignaOutra].value[x] 1..1
@@ -1159,63 +1159,63 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component[benignaOutra].valueCodeableConcept.text ^short = "Especificação da radiação" 
 
 * component[microbiologiaLactobaciluus] ^short = "Microbiologia - Lactobacillus sp"
-* component[microbiologiaLactobaciluus].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia-lactobacillus 
+* component[microbiologiaLactobaciluus].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#microbiologia-lactobacillus 
 * component[microbiologiaLactobaciluus].code ^short = "Identifica a informação fornecida: microbiologia"
 * component[microbiologiaLactobaciluus].code.coding ^short = "Código definido por uma terminologia"
 * component[microbiologiaLactobaciluus].value[x] 1..1
 * component[microbiologiaLactobaciluus].value[x] only boolean
 
 * component[microbiologiaCocos] ^short = "Microbiologia - Cocos"
-* component[microbiologiaCocos].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia-cocos 
+* component[microbiologiaCocos].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#microbiologia-cocos 
 * component[microbiologiaCocos].code ^short = "Identifica a informação fornecida: microbiologia"
 * component[microbiologiaCocos].code.coding ^short = "Código definido por uma terminologia"
 * component[microbiologiaCocos].value[x] 1..1
 * component[microbiologiaCocos].value[x] only boolean
 
 * component[microbiologiaChlamydia] ^short = "Microbiologia - Chlamydia"
-* component[microbiologiaChlamydia].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia-chlamydia 
+* component[microbiologiaChlamydia].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#microbiologia-chlamydia 
 * component[microbiologiaChlamydia].code ^short = "Identifica a informação fornecida: microbiologia"
 * component[microbiologiaChlamydia].code.coding ^short = "Código definido por uma terminologia"
 * component[microbiologiaChlamydia].value[x] 1..1
 * component[microbiologiaChlamydia].value[x] only boolean
 
 * component[microbiologiaActinomyces] ^short = "Microbiologia - Actinomyces"
-* component[microbiologiaActinomyces].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia-actinomyces 
+* component[microbiologiaActinomyces].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#microbiologia-actinomyces 
 * component[microbiologiaActinomyces].code ^short = "Identifica a informação fornecida: microbiologia"
 * component[microbiologiaActinomyces].code.coding ^short = "Código definido por uma terminologia"
 * component[microbiologiaActinomyces].value[x] 1..1
 * component[microbiologiaActinomyces].value[x] only boolean
 
 * component[microbiologiaCandida] ^short = "Microbiologia - Candida"
-* component[microbiologiaCandida].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia-candida 
+* component[microbiologiaCandida].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#microbiologia-candida 
 * component[microbiologiaCandida].code ^short = "Identifica a informação fornecida: microbiologia"
 * component[microbiologiaCandida].code.coding ^short = "Código definido por uma terminologia"
 * component[microbiologiaCandida].value[x] 1..1
 * component[microbiologiaCandida].value[x] only boolean
 
 * component[microbiologiaTrichomonas] ^short = "Microbiologia - Trichomonas"
-* component[microbiologiaTrichomonas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia-trichomonas
+* component[microbiologiaTrichomonas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#microbiologia-trichomonas
 * component[microbiologiaTrichomonas].code ^short = "Identifica a informação fornecida: microbiologia"
 * component[microbiologiaTrichomonas].code.coding ^short = "Código definido por uma terminologia"
 * component[microbiologiaTrichomonas].value[x] 1..1
 * component[microbiologiaTrichomonas].value[x] only boolean
 
 * component[microbiologiaHerpes] ^short = "Microbiologia - Herpes"
-* component[microbiologiaHerpes].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia-herpes 
+* component[microbiologiaHerpes].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#microbiologia-herpes 
 * component[microbiologiaHerpes].code ^short = "Identifica a informação fornecida: microbiologia"
 * component[microbiologiaHerpes].code.coding ^short = "Código definido por uma terminologia"
 * component[microbiologiaHerpes].value[x] 1..1
 * component[microbiologiaHerpes].value[x] only boolean
 
 * component[microbiologiaBacilos] ^short = "Microbiologia - Bacilos"
-* component[microbiologiaBacilos].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia-bacilos 
+* component[microbiologiaBacilos].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#microbiologia-bacilos 
 * component[microbiologiaBacilos].code ^short = "Identifica a informação fornecida: microbiologia"
 * component[microbiologiaBacilos].code.coding ^short = "Código definido por uma terminologia"
 * component[microbiologiaBacilos].value[x] 1..1
 * component[microbiologiaBacilos].value[x] only boolean
 
 * component[microbiologiaOutrosBacilos] ^short = "Microbiologia - Outros bacilos"
-* component[microbiologiaOutrosBacilos].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia-outros-bacilos 
+* component[microbiologiaOutrosBacilos].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#microbiologia-outros-bacilos 
 * component[microbiologiaOutrosBacilos].code ^short = "Identifica a informação fornecida: microbiologia"
 * component[microbiologiaOutrosBacilos].code.coding ^short = "Código definido por uma terminologia"
 * component[microbiologiaOutrosBacilos].value[x] 1..1
@@ -1226,7 +1226,7 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component[microbiologiaOutrosBacilos].valueCodeableConcept.text ^short = "Identificação dos outros bacilos"
 
 * component[microbiologiaOutros] ^short = "Microbiologia - Outros"
-* component[microbiologiaOutros].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#microbiologia-outros 
+* component[microbiologiaOutros].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#microbiologia-outros 
 * component[microbiologiaOutros].code ^short = "Identifica a informação fornecida: microbiologia"
 * component[microbiologiaOutros].code.coding ^short = "Código definido por uma terminologia"
 * component[microbiologiaOutros].value[x] 1..1
@@ -1237,7 +1237,7 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component[microbiologiaOutros].valueCodeableConcept.text ^short = "Identificação de outros elementos microbiológicos"
 
 * component[atipicasEscamosas] ^short = "Células atípicas escamosas de significado indeterminado"
-* component[atipicasEscamosas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#indeterminado-escamosas
+* component[atipicasEscamosas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#indeterminado-escamosas
 * component[atipicasEscamosas].code ^short = "Identifica a informação fornecida: células atípicas"
 * component[atipicasEscamosas].code.coding ^short = "Código definido por uma terminologia"
 * component[atipicasEscamosas].value[x] 1..1
@@ -1250,7 +1250,7 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component[atipicasEscamosas].valueCodeableConcept.text 0..0
 
 * component[atipicasGlandulares] ^short = "Células atípicas glandulares de significado indeterminado"
-* component[atipicasGlandulares].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#indeterminado-glandulares
+* component[atipicasGlandulares].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#indeterminado-glandulares
 * component[atipicasGlandulares].code ^short = "Identifica tipo de células atípicas glandulares de significado indeterminado"
 * component[atipicasGlandulares].code.coding ^short = "Código definido por uma terminologia"
 * component[atipicasGlandulares].value[x] 1..1
@@ -1263,7 +1263,7 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component[atipicasGlandulares].valueCodeableConcept.text 0..0
 
 * component[atipicasOrigemIndefinida] ^short = "Células atípicas de origem indefinida de significado indeterminado"
-* component[atipicasOrigemIndefinida].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#indeterminado-desconhecida
+* component[atipicasOrigemIndefinida].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#indeterminado-desconhecida
 * component[atipicasOrigemIndefinida].code ^short = "Identifica tipo de células atípicas de origem indefinida de significado indeterminado"
 * component[atipicasOrigemIndefinida].code.coding ^short = "Código definido por uma terminologia"
 * component[atipicasOrigemIndefinida].value[x] 1..1
@@ -1276,7 +1276,7 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component[atipicasOrigemIndefinida].valueCodeableConcept.text 0..0
 
 * component[escamosas] ^short = "Atipias em células escamosas"
-* component[escamosas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#atipias-escamosas 
+* component[escamosas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#atipias-escamosas 
 * component[escamosas].code ^short = "Identifica a informação fornecida: atipias em células escamosas"
 * component[escamosas].code.coding ^short = "Código definido por uma terminologia"
 * component[escamosas].value[x] 1..1
@@ -1289,7 +1289,7 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component[escamosas].valueCodeableConcept.text 0..0
 
 * component[glandulares] ^short = "Atipias em células glandulares"
-* component[glandulares].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#atipias-glandulares 
+* component[glandulares].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#atipias-glandulares 
 * component[glandulares].code ^short = "Identifica a informação fornecida: atipias em células escamosas"
 * component[glandulares].code.coding ^short = "Código definido por uma terminologia"
 * component[glandulares].value[x] 1..1
@@ -1302,14 +1302,14 @@ Description: "Observação cujos componentes definem o laudo citopatológico"
 * component[glandulares].valueCodeableConcept.text 0..0
 
 * component[outrasMalignas] ^short = "Outras neoplasias malignas"
-* component[outrasMalignas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#neoplasias-malignas 
+* component[outrasMalignas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#neoplasias-malignas 
 * component[outrasMalignas].code ^short = "Identifica a informação fornecida: outras neoplasias malignas"
 * component[outrasMalignas].code.coding ^short = "Código definido por uma terminologia"
 * component[outrasMalignas].value[x] 1..1
 * component[outrasMalignas].value[x] only string
 
 * component[endometriais] ^short = "Presença de células endometriais"
-* component[endometriais].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#celulas-endometriais 
+* component[endometriais].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#celulas-endometriais 
 * component[endometriais].code ^short = "Identifica presença ou não de células endometriais"
 * component[endometriais].code.coding ^short = "Código definido por uma terminologia"
 * component[endometriais].value[x] 1..1

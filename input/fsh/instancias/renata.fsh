@@ -496,10 +496,10 @@ Description: "Itens que definem o laudo da paciente Renata"
 * status = #final
 * code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan#citopatologico
 
-* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#tipo-amostra
+* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#tipo-amostra
 * component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional
 
-* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item#motivo-rejeicao
+* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#motivo-rejeicao
 * component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-especime-rejeitado#outras
 * component[=].valueCodeableConcept.coding.extension.url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/especificacao"
 * component[=].valueCodeableConcept.coding.extension.valueString = "forneça aqui o motivo"

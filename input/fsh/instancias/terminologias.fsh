@@ -794,18 +794,15 @@ Description: "Atipia em célula glandular"
 * include codes from system AtipiasGlandulares
 
 // ------------------------------------------------------
-// laudo-tipo-item
+// resultado-item
 // ------------------------------------------------------
 
-CodeSystem: LaudoTipoItem
-Id: laudo-tipo-item
-Title: "Informações do laudo citopatológico"
-Description: "Tipos de avaliação de exame citopatológico"
+CodeSystem: ResultadoItem
+Id: resultado-item
+Title: "Itens de resultado de exame citopatológico"
+Description: "Itens que compõem o resultado de exame citopatológico"
 
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Itens avaliados no laudo de exame citopatológico</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-tipo-item"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item"
 
 * ^status = #unknown
 * ^caseSensitive = true
@@ -846,6 +843,15 @@ Description: "Tipos de avaliação de exame citopatológico"
 * #atipias-glandulares "Atipias em células glandulares"
 * #neoplasias-malignas "Outras neoplasias malignas"
 * #celulas-endometriais "Presença de células endometriais (na pós-menopausa ou acima de 40 anos, fora do período menstrual)"
+
+ValueSet: ResultadoItem
+Id: resultado-item
+Title: "Itens de resultado de exame citopatológico"
+Description: "Grupos de informação de resultado de exame citopatológico"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/resultado-item"
+* ^status = #draft
+* ^experimental = false
+* include codes from system ResultadoItem
 
 // ------------------------------------------------------
 // tipo-amostra

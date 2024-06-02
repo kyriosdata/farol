@@ -567,9 +567,16 @@ Description: "Itens que definem o laudo da paciente Bruna"
 * note[0].text = "Amostra parcialmente dessecada."
 
 //------------
+// Motivo de rejeicao apenas se #unavailable (deve gerar erro)
 Instance: especime-bruna
 InstanceOf: Amostra
 
 * type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional
 * status = #available
 * receivedTime = "2024-01-01"
+
+* status.extension[0]
+  * url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-rejeicao"
+  * valueCodeableConcept.coding[0]
+    * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-especime-rejeitado"
+    * code = #identificacao

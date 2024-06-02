@@ -544,18 +544,18 @@ Description: "Possíveis motivos pelos quais o espécime pode ser declarado insa
 * include codes from system InsatisfatorioParaAvaliacao
 
 // ------------------------------------------------------
-// alteracoes-celulares-benignas
+// variacoes-nao-neoplasicas
 // ------------------------------------------------------
 
-CodeSystem: AlteracoesCelularesBenignas
-Id: alteracoes-celulares-benignas
+CodeSystem: VariacoesNaoNeoplasicas
+Id: variacoes-nao-neoplasicas
 Title: "Classificação da alterações celulares"
 Description: "Definição das várias alterações celulares benignas relevantes para o exame citopatológico"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos para classificação de alterações celulares benigcas</div>"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/alteracoes-celulares-benignas"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/variacoes-nao-neoplasicas"
 
 * ^status = #unknown
 * ^caseSensitive = true
@@ -563,31 +563,28 @@ Description: "Definição das várias alterações celulares benignas relevantes
 * ^date = "2024-04-15"
 * ^purpose = """**Propósito**. Definição das possíveis alterações celulares consideradas benignas presentes na amostra de exame citopatológico."""
 
-* #inflamacao "Inflamação" "Inflamação"
-* #metaplasia "Metaplasia" "Metaplasia escamosa imatura"
-* #reparacao "Reparação" "Reparação"
-* #atrofia "Atrofia" "Atrofia com inflamação"
-* #radiacao "Radiação" "Radiação"
-* #outros "Outros" "Outros"
+* #escamosa "Escamosa" "Metaplasia escamosa"
+* #ceratotica "Ceratótica" "Alterações ceratóticas"
+* #tubaria "Tubária" "Metaplasia tubária"
+* #atrofia "Atrofia" "Atrofia"
+* #gravidez "Gravidez" "Alterações relacionadas à gravidez"
 
-// ------------------------------------------------------
-
-ValueSet: AlteracaoCelularBenigna
-Id: alteracao-celular-benigna
+ValueSet: VariacoesNaoNeoplasicas
+Id: variacoes-nao-neoplasica
 Title: "Alteração celular benigna"
 Description: "Identifica alteração celular benigna relevante para exame citopatológico"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para alterações celulares benignas.</div>"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/alteracao-celular-benigna"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/variacoes-nao-neoplasica"
 
 * ^status = #draft
 * ^experimental = false
 * ^date = "2024-04-15"
 * ^purpose = """**Propósito**. Definição do conjunto de alterações celulares benignas admitidas para o item correspondente de laudo de exame citopatológico."""
 
-* include codes from system AlteracoesCelularesBenignas
+* include codes from system VariacoesNaoNeoplasicas
 
 // ------------------------------------------------------
 // microbiologias
@@ -882,18 +879,19 @@ Description: "Tipos de amostra para laudo citopatológico"
 * include codes from system TipoAmostra
 
 // ------------------------------------------------------
-// componente-endocervical
+// componente-endocervical // #9
 // ------------------------------------------------------
 
 CodeSystem: ComponenteEndocervical
 Id: componente-endocervical
 Title: "Componente endocervical"
-Description: "Identifica presença ou ausência de componente endocervical"
+Description: "Identifica e define presença ou ausência de componente endocervical."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/componente-endocervical"
 * ^status = #draft
 * ^caseSensitive = true
 * ^experimental = false
+* ^purpose = "**Propósito**. Identificar se há ou não componente endocervical na amostra avaliada."
 * #presente "Presente"
 * #ausente "Ausente"
 
@@ -905,18 +903,19 @@ Description: "Tipos de amostra para laudo citopatológico"
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/componente-endocervical"
 * ^status = #draft
 * ^experimental = false
+* ^purpose = "Conjunto de valores possíveis para registrar a presença ou não de componente endocervical na amostra."
 * include codes from system ComponenteEndocervical
 
 // ------------------------------------------------------
-// categorizacao-geral
+// categorizacao
 // ------------------------------------------------------
 
-CodeSystem: CategorizacaoGeral
-Id: categorizacao-geral
+CodeSystem: Categorizacao
+Id: categorizacao
 Title: "Categorização geral"
 Description: "Categorização geral do laudo"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/categorizacao-geral"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/categorizacao"
 * ^status = #draft
 * ^caseSensitive = true
 * ^experimental = false
@@ -924,14 +923,14 @@ Description: "Categorização geral do laudo"
 * #anormalidade "Anormalidade em células epiteliais"
 
 
-ValueSet: CategorizacaoGeral
-Id: categorizacao-geral
+ValueSet: Categorizacao
+Id: categorizacao
 Title: "Categorização geral"
 Description: "Categorização geral do laudo"
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/categorizacao-geral"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/categorizacao"
 * ^status = #draft
 * ^experimental = false
-* include codes from system CategorizacaoGeral
+* include codes from system Categorizacao
 
 
 // ------------------------------------------------------

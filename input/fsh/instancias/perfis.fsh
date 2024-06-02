@@ -1081,7 +1081,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[categorizacao].value[x] ^short = "Código para categorização geral"
 * component[categorizacao].valueCodeableConcept.coding 1..1
 * component[categorizacao].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
-* component[categorizacao].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/categorizacao-geral (required)
+* component[categorizacao].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/categorizacao (required)
 * component[categorizacao].valueCodeableConcept.coding.code 1..1
 * component[categorizacao].valueCodeableConcept.coding.code ^short = "negativo ou anormalidade"
 

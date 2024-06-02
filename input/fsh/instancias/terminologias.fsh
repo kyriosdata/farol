@@ -476,8 +476,8 @@ Description: "Possíveis motivos para requisição de exame citopatológico"
 
 CodeSystem: MotivoEspecimeRejeitado
 Id: motivo-especime-rejeitado
-Title: "Motivo de rejeição do espécime"
-Description: "Motivo pelo qual o espécime é rejeitado (não processado)."
+Title: "Rejeição de espécime"
+Description: "Identifica e define os motivos pelos quais um espécime é rejeitado (não processado)."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-especime-rejeitado"
 
@@ -485,7 +485,7 @@ Description: "Motivo pelo qual o espécime é rejeitado (não processado)."
 * ^caseSensitive = true
 * ^experimental = false
 * ^date = "2024-04-15"
-* ^purpose = """**Propósito**. Identificação dos possíveis motivos pelos quais uma amostra pode ser rejeitada."""
+* ^purpose = """**Propósito**. Identificar os possíveis motivos pelos quais uma amostra pode ser rejeitada."""
 
 * #identificacao "falha na identificação" "Ausência ou erro na identificação da lâmina, frasco ou formulário"
 * #lamina "lâmina" "Lâmina danificada ou ausente"
@@ -493,13 +493,14 @@ Description: "Motivo pelo qual o espécime é rejeitado (não processado)."
 
 ValueSet: MotivoEspecimeRejeitado
 Id: motivo-especime-rejeitado
-Title: "Motivo de rejeição de amostra"
-Description: "Possíveis motivos pelos quais uma amostra é rejeitada"
+Title: "Rejeição de espécime"
+Description: "Conjunto de possíveis motivos pelos quais um espécime é rejeitado."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-especime-rejeitado"
 
 * ^status = #draft
 * ^experimental = false
+* ^purpose = "**Propósito**. Definir as possibilidades para declarar um espécime rejeitado."
 
 * include codes from system MotivoEspecimeRejeitado
 
@@ -860,7 +861,7 @@ Description: "Grupos de informação de resultado de exame citopatológico"
 CodeSystem: TipoAmostra
 Id: tipo-amostra
 Title: "Tipos de amostra"
-Description: "Tipos de amostra para laudo citopatológico"
+Description: "Tipos de amostra para resultado de exame citopatológico"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra"
 * ^status = #draft

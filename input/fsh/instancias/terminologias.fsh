@@ -519,7 +519,7 @@ Description: "Motivos pelos quais o espécime pode ser declarado insatisfatório
 * ^caseSensitive = true
 * ^experimental = false
 * ^date = "2024-04-15"
-* ^purpose = """**Propósito**. Definição do conjunto de resultados possíveis para a averiguação da adequabilidade da amostra."""
+* ^purpose = """**Propósito**. Identificar e definir motivos pelos quais um espécime pode ser daclarado insatisfatório para avaliação."""
 
 * #material "Material acelular" "Material acelular ou hipocelular: células compõem < 10% da amostra"
 * #sangue "Sangue" "Sangue em mais de 75% da amostra"
@@ -531,15 +531,15 @@ Description: "Motivos pelos quais o espécime pode ser declarado insatisfatório
 
 ValueSet: InsatisfatorioParaAvaliacao
 Id: insatisfatorio-para-avaliacao
-Title: "Códigos para espécime insatisfatório para avaliação"
-Description: "Motivos pelos quais o espécime pode ser declarado insatisfatório para avaliação após processado e examinado."
+Title: "Espécime insatisfatório para avaliação"
+Description: "Possíveis motivos pelos quais o espécime pode ser declarado insatisfatório para avaliação após processado e examinado."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/insatisfatorio-para-avaliacao"
 
 * ^status = #draft
 * ^experimental = false
 * ^date = "2024-04-15"
-* ^purpose = """**Propósito**. Definição do conjunto de códigos possíveis para declarar uma amostra insatisfatória para avaliação."""
+* ^purpose = """**Propósito**. Definir o conjunto de códigos possíveis para declarar uma amostra insatisfatória para avaliação."""
 
 * include codes from system InsatisfatorioParaAvaliacao
 

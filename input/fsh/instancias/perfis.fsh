@@ -957,8 +957,8 @@ Severity: #error
 Profile: ComponentesLaudoCitopatologico
 Parent: Observation
 Id: componentes-laudo-citopatologico
-Title: "Composição do laudo citopatológico"
-Description: "Observação cujos componentes definem o laudo citopatológico"
+Title: "Componentes de resultado de exame citopatológico"
+Description: "Identificação e definição dos itens de dados que definem um resultado de exeme citopatológico."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/componentes-laudo-citopatologico"
 * ^status = #draft

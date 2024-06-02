@@ -1342,7 +1342,7 @@ Extension: MotivoRejeicao
 Id: motivo-rejeicao
 Title: "Motivo para rejeição de espécime"
 Description: "Detalha o motivo pelo qual um espécime é rejeitado para exame citopatológico."
-Context: Amostra
+Context: Amostra.status
 * ^status = #draft
 * ^language = #pt-BR
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-rejeicao"

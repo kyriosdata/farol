@@ -419,10 +419,10 @@ Description: "Laudo de exame citopatológico (Bruna). Veja a [ficha](bruna-faria
   * fullUrl = "urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb13"
   * resource = citopatologista-02
 
-// laboratorio (Organization)
+// espécime (Specimen)
 * entry[+]
-  * fullUrl = "urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb14"
-  * resource = laboratorio-bruna
+  * fullUrl = "urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb15"
+  * resource = especime-bruna
 
 
 Instance: composition-02-2
@@ -520,6 +520,7 @@ Description: "Laudo da requisição de exame da paciente Bruna. Veja a [ficha](b
 * performer[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb12)
 * resultsInterpreter[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb13)
 
+* specimen = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb15)
 
 // ------------------------------------------------------
 // componentes do laudo
@@ -532,8 +533,8 @@ Title: "Itens do laudo (Bruna)"
 Description: "Itens que definem o laudo da paciente Bruna"
 
 * subject = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb13)
-* performer[1] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb14)
+* performer[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb12)
+* performer[1] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb13)
 * effectiveDateTime = "2023-12-14"
 
 * status = #final
@@ -564,3 +565,11 @@ Description: "Itens que definem o laudo da paciente Bruna"
 * component[=].valueBoolean = true
 
 * note[0].text = "Amostra parcialmente dessecada."
+
+//------------
+Instance: especime-bruna
+InstanceOf: Amostra
+
+* type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional
+* status = #available
+* receivedTime = "2024-01-01"

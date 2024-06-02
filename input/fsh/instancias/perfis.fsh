@@ -856,6 +856,7 @@ Parent: DiagnosticReport
 Id: diagnostico-citopatologico
 Title: "Diagnóstico citopatológico"
 Description: "Diagnóstico de exame citopatológico em conformidade com padrão adotado pelo INCA."
+
 * ^meta.lastUpdated = "2015-02-07T13:28:17.239+02:00"
 * ^version = "1.0.0"
 * ^status = #draft
@@ -918,7 +919,7 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 * encounter ..0
 
 * specimen 1..1
-* specimen only Amostra
+* specimen only Reference(Amostra)
 
 * result 1..1
 * result only Reference(ComponentesLaudoCitopatologico)

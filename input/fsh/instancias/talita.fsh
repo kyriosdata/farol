@@ -477,7 +477,7 @@ Description: "Laudo da requisição de exame da paciente Talita. Veja a [ficha](
 // laboratório (organização) responsável pela conclusão do laudo
 * resultsInterpreter[0] = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb12)
 
-* specimen[0] = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb15)
+* specimen[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb15)
 
 // ------------------------------------------------------
 // Um documento FHIR é uma Composition que reúne os
@@ -567,7 +567,7 @@ Description: "Laudo de exame citopatológico (Talita). Veja a [ficha](talita-mor
 
 // espécime (Specimen)
 * entry[+]
-  * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb15"
+  * fullUrl = "urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb15"
   * resource = especime-talita
 
 // ------------

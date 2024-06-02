@@ -382,7 +382,7 @@ Description: "Laudo de exame citopatológico (Renata). Veja a [ficha](renata-lim
 
 // espécime (Specimen)
 * entry[+]
-  * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb15"
+  * fullUrl = "urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb15"
   * resource = especime-renata
 
 Instance: composition-03-2

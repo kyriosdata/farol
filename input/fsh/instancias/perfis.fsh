@@ -1320,3 +1320,16 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * note.author[x] 0..0
 * note.time 0..0
 
+Profile: Amostra
+Parent: Specimen
+Id: amostra
+Title: "Amostra de exame citopatológico"
+Description: "Informações sobre a amostra fornecidas pelo laboratório"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/amostra"
+* ^status = #draft
+* status 1..1
+* type 1..1
+* receivedTime 1..1
+* type from TipoAmostra
+

@@ -572,7 +572,7 @@ Instance: especime-bruna
 InstanceOf: Amostra
 
 * type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional
-* status = #available
+* status = #unavailable
 * receivedTime = "2024-01-01"
 
 * status.extension[0]

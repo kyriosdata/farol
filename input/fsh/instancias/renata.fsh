@@ -380,6 +380,10 @@ Description: "Laudo de exame citopatológico (Renata). Veja a [ficha](renata-lim
   * fullUrl = "urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb13"
   * resource = citopatologista-03
 
+// espécime (Specimen)
+* entry[+]
+  * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb15"
+  * resource = especime-renata
 
 Instance: composition-03-2
 InstanceOf: Composition
@@ -476,6 +480,7 @@ Description: "Laudo da requisição de exame da paciente Renata. Veja a [ficha](
 * performer[0] = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb12)
 * resultsInterpreter[0] = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb13)
 
+* specimen = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb15)
 
 // ------------------------------------------------------
 // componentes do laudo
@@ -503,3 +508,20 @@ Description: "Itens que definem o laudo da paciente Renata"
 * component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-especime-rejeitado#outras
 * component[=].valueCodeableConcept.coding.extension.url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/especificacao"
 * component[=].valueCodeableConcept.coding.extension.valueString = "forneça aqui o motivo"
+
+// ------------
+// especime
+// ------------
+
+Instance: especime-renata
+InstanceOf: Amostra
+
+* type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional
+* status = #unavailable
+* receivedTime = "2024-01-01"
+
+* status.extension[0]
+  * url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-rejeicao"
+  * valueCodeableConcept.coding[0]
+    * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-especime-rejeitado"
+    * code = #identificacao

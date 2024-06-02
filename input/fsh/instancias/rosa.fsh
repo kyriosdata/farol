@@ -474,6 +474,10 @@ Description: "Laudo de exame citopatológico da paciente Rosa"
   * title = "Unidade de Saúde Requisitante"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06)
 
+* section[+]
+  * title = "Espécime"
+  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb15)
+
 // ------------------------------------------------------
 // lab
 // ------------------------------------------------------
@@ -539,6 +543,9 @@ Description: "Laudo da requisição de exame da paciente Rosa"
 * performer[0] = Reference(lab)
 * resultsInterpreter[0] = Reference(citopatologista)
 
+* specimen[0] = Reference(especime-rosa)
+
+
 // ------------------------------------------------------
 // rejeicao
 // ------------------------------------------------------
@@ -566,3 +573,22 @@ Description: "Itens que definem o laudo da paciente Rosa"
 
 
 * note[0].text = "Aqui seguem as observações gerais"
+
+// ------------
+// especime
+// ------------
+
+Instance: especime-rosa
+InstanceOf: Specimen
+
+* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/amostra"
+
+* type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional
+* status = #unavailable
+* receivedTime = "2024-01-01"
+
+* status.extension[0]
+  * url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-rejeicao"
+  * valueCodeableConcept.coding[0]
+    * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-especime-rejeitado"
+    * code = #identificacao

@@ -414,6 +414,10 @@ Description: "Laudo de exame citopatológico (Gabriela). Veja a [ficha](gabriela
   * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb13"
   * resource = citopatologista-01
 
+// espécime (Specimen)
+* entry[+]
+  * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb15"
+  * resource = especime-gabriela
 
 Instance: laudo-gabriela
 InstanceOf: Composition
@@ -510,6 +514,7 @@ Description: "Laudo da requisição de exame da paciente Gabriela Gomes. Veja a 
 * performer[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb12)
 * resultsInterpreter[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb13)
 
+* specimen = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb15)
 
 // ------------------------------------------------------
 // componentes do laudo
@@ -548,3 +553,20 @@ Description: "Itens que definem o laudo da paciente Gabriela Gomes"
 * component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/celulas-atipicas#alto-grau
 
 * note[0].text = "Amostra parcialmente dessecada."
+
+// ------------
+// especime
+// ------------
+
+Instance: especime-gabriela
+InstanceOf: Amostra
+
+* type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional
+* status = #unavailable
+* receivedTime = "2024-01-01"
+
+* status.extension[0]
+  * url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-rejeicao"
+  * valueCodeableConcept.coding[0]
+    * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-especime-rejeitado"
+    * code = #identificacao

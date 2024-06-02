@@ -917,6 +917,9 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 * category.coding.display ..0
 * encounter ..0
 
+* specimen 1..1
+* specimen only Amostra
+
 * result 1..1
 * result only Reference(ComponentesLaudoCitopatologico)
 
@@ -971,6 +974,8 @@ Description: "Identificação e definição dos itens de dados que definem um re
 
 * performer only Reference(Laboratorio or Profissional)
 * performer 2..2 
+
+* specimen 0..0
 
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
@@ -1320,12 +1325,23 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * note.author[x] 0..0
 * note.time 0..0
 
+// -----------------
+// Amostra
+// -----------------
+
+Invariant: Satisfatorio
+Description: "Se espécime é satisfatório, então não pode ser fornecido motivo seja para insatisfação para avaliar ou seja para rejeitar o espécime."
+Expression: "status = 'available' implies status.extension.exists().not()"
+Severity: #error
+
 
 Profile: Amostra
 Parent: Specimen
 Id: amostra
 Title: "Amostra de exame citopatológico"
 Description: "Informações sobre a amostra fornecidas pelo laboratório"
+
+* obeys Satisfatorio
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/amostra"
 * ^status = #draft

@@ -1,5 +1,4 @@
 // ------------------------------------------------------
-//
 // Bundle de requisição de Exame Citopatológico
 // (neste mesmo arquivo segue o Bundle do Laudo) 
 // ------------------------------------------------------
@@ -368,6 +367,11 @@ Description: "Laudo de exame citopatológico (Pérola). Veja a [ficha](perola-fa
   * fullUrl = "urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb13"
   * resource = citopatologista-04
 
+// espécime (Specimen)
+* entry[+]
+  * fullUrl = "urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb15"
+  * resource = especime-perola
+
 
 Instance: composition-04-2
 InstanceOf: Composition
@@ -465,6 +469,8 @@ Description: "Laudo da requisição de exame da paciente Pérola. Veja a [ficha]
 * performer[0] = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb12)
 * resultsInterpreter[0] = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb13)
 
+* specimen[0] = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb15)
+
 
 // ------------------------------------------------------
 // componentes do laudo
@@ -503,3 +509,22 @@ Description: "Itens que definem o laudo da paciente Pérola"
 * component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/celulas-atipicas-escamosas#asc-h
 
 * note[0].text = "Amostra parcialmente obscurecida por sangue."
+
+// ------------
+// especime
+// ------------
+
+Instance: especime-perola
+InstanceOf: Specimen
+
+* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/amostra"
+
+* type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional
+* status = #unavailable
+* receivedTime = "2024-01-01"
+
+* status.extension[0]
+  * url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-rejeicao"
+  * valueCodeableConcept.coding[0]
+    * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-especime-rejeitado"
+    * code = #identificacao

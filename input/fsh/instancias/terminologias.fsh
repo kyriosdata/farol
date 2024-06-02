@@ -587,6 +587,42 @@ Description: "Identifica alteração celular benigna relevante para exame citopa
 * include codes from system VariacoesNaoNeoplasicas
 
 // ------------------------------------------------------
+// alteracoes-reativas // #12
+// ------------------------------------------------------
+
+CodeSystem: AlteracoesReativas
+Id: alteracoes-reativas
+Title: "Alterações celulares reativas"
+Description: "Identificação e definição das alterações celulares reativas para o resultado de exame citopatológico"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/alteracoes-reativas"
+
+* ^status = #unknown
+* ^caseSensitive = true
+* ^experimental = false
+* ^date = "2024-04-15"
+* ^purpose = """**Propósito**. Definição das possíveis alterações celulares reativas."""
+
+* #inflamacao "Inflamação" "Inflamação (inclui reparo típico)"
+* #cirvicite "Cervicite" "Cervicite linfocítica/folicular"
+* #radiacao "Radiação" "Radiação"
+* #diu "DIU" "Dispositivo intrauterino (DIU)"
+
+ValueSet: AlteracoesReativas
+Id: alteracoes-reativas
+Title: "Alterações celulares reativas"
+Description: "Conjunto das possíveis alterações celulares reativas relevantes para o resultado de exame citopatológico."
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/alteracoes-reativas"
+
+* ^status = #draft
+* ^experimental = false
+* ^date = "2024-04-15"
+* ^purpose = """**Propósito**. Definição do conjunto de alterações celulares reativas relevantes para o resultado de exame citopatológico."""
+
+* include codes from system AlteracoesReativas
+
+// ------------------------------------------------------
 // microbiologias
 // ------------------------------------------------------
 

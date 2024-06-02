@@ -1320,6 +1320,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * note.author[x] 0..0
 * note.time 0..0
 
+
 Profile: Amostra
 Parent: Specimen
 Id: amostra
@@ -1333,3 +1334,27 @@ Description: "Informações sobre a amostra fornecidas pelo laboratório"
 * receivedTime 1..1
 * type from TipoAmostra
 
+// -------------------------
+// motivo-especime-rejeitado
+// -------------------------
+
+Extension: MotivoRejeicao
+Id: motivo-rejeicao
+Title: "Motivo para rejeição de espécime"
+Description: "Detalha o motivo pelo qual um espécime é rejeitado para exame citopatológico."
+Context: Amostra
+* ^status = #draft
+* ^language = #pt-BR
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-rejeicao"
+* . ^short = "Motivo pelo qual o espécime foi rejeitado"
+* . ^definition = "O motivo pelo qual o espécimo foi rejeitado (não será avaliado)"
+
+* value[x] 1..1
+* value[x] only CodeableConcept
+* value[x] ^short = "O código que identifica o motivo da rejeição do espécime"
+* valueCodeableConcept.coding 1..3
+* valueCodeableConcept obeys DuplicidadeNaoAdmitida and ExtensaoApenasOutros and SoUmaExtensaoPermitida
+* valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
+* valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-especime-rejeitado (required)
+* valueCodeableConcept.coding.code 1..1
+* valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da rejeição da amostra"

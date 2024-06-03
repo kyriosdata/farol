@@ -1349,9 +1349,12 @@ Description: "Informações sobre a amostra identificadas pelo laboratório"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/amostra"
 * ^status = #draft
+
 * status 1..1
+* status ^short = "Indica se a amostra é satisfatória para avaliação, se é insatisfatória ou se é rejeitada."
 * type 1..1
 * receivedTime 1..1
+* receivedTime ^short = "Quando a amostra foi recebida pelo laboratório."
 * type from TipoAmostra
 
 // -------------------------

@@ -471,6 +471,9 @@ Description: "Laudo da requisição de exame da paciente Pérola. Veja a [ficha]
 
 * specimen[0] = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb15)
 
+* conclusionCode.coding
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/categorizacao"
+  * code = #negativo
 
 // ------------------------------------------------------
 // componentes do laudo
@@ -515,9 +518,8 @@ Description: "Itens que definem o laudo da paciente Pérola"
 // ------------
 
 Instance: especime-perola
-InstanceOf: Specimen
-
-* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/amostra"
+InstanceOf: Amostra
+Description: "Informações sobre a amostra identificadas pelo laboratório"
 
 * type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional
 * status = #unavailable

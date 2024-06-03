@@ -924,6 +924,9 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 * result 1..1
 * result only Reference(ComponentesLaudoCitopatologico)
 
+* conclusionCode 1..1
+* conclusionCode.coding 1..1
+* conclusionCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/categorizacao (required)
 
 // ------------------------------------------------------
 // componentes-laudo-citopatologico
@@ -1340,7 +1343,7 @@ Profile: Amostra
 Parent: Specimen
 Id: amostra
 Title: "Amostra de exame citopatológico"
-Description: "Informações sobre a amostra fornecidas pelo laboratório"
+Description: "Informações sobre a amostra identificadas pelo laboratório"
 
 * obeys Satisfatorio
 

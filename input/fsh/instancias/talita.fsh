@@ -479,6 +479,10 @@ Description: "Laudo da requisição de exame da paciente Talita. Veja a [ficha](
 
 * specimen[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb15)
 
+* conclusionCode.coding
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/categorizacao"
+  * code = #anormalidade
+
 // ------------------------------------------------------
 // Um documento FHIR é uma Composition que reúne os
 // elementos do documento. É a composição que oferece
@@ -576,6 +580,7 @@ Description: "Laudo de exame citopatológico (Talita). Veja a [ficha](talita-mor
 
 Instance: especime-talita
 InstanceOf: Amostra
+Description: "Informações sobre a amostra identificadas pelo laboratório"
 
 * type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional
 * status = #unavailable

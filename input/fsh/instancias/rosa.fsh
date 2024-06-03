@@ -545,6 +545,11 @@ Description: "Laudo da requisição de exame da paciente Rosa"
 
 * specimen[0] = Reference(especime-rosa)
 
+* conclusionCode.coding
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/categorizacao"
+  * code = #anormalidade
+
+
 
 // ------------------------------------------------------
 // rejeicao
@@ -579,9 +584,8 @@ Description: "Itens que definem o laudo da paciente Rosa"
 // ------------
 
 Instance: especime-rosa
-InstanceOf: Specimen
-
-* meta.profile[0] = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/amostra"
+InstanceOf: Amostra
+Description: "Informações sobre a amostra identificadas pelo laboratório"
 
 * type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional
 * status = #unavailable

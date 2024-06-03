@@ -521,6 +521,9 @@ Description: "Laudo da requisição de exame da paciente Bruna. Veja a [ficha](b
 * resultsInterpreter[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb13)
 
 * specimen = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb15)
+* conclusionCode.coding
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/categorizacao"
+  * code = #negativo
 
 // ------------------------------------------------------
 // componentes do laudo
@@ -570,6 +573,7 @@ Description: "Itens que definem o laudo da paciente Bruna"
 // Motivo de rejeicao apenas se #unavailable (deve gerar erro)
 Instance: especime-bruna
 InstanceOf: Amostra
+Description: "Informações sobre a amostra identificadas pelo laboratório"
 
 * type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional
 * status = #unavailable

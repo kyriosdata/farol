@@ -1381,3 +1381,29 @@ Context: Amostra.status
 * valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-especime-rejeitado (required)
 * valueCodeableConcept.coding.code 1..1
 * valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da rejeição da amostra"
+
+// -------------------------
+// motivo-instaisfatorio
+// -------------------------
+
+Extension: MotivoInsatisfatorio
+Id: motivo-insatisfatorio
+Title: "Motivo espécime insatisfatório"
+Description: "Detalha o motivo pelo qual um espécime é insatisfatório para avaliação."
+Context: Amostra.status
+* ^status = #draft
+* ^language = #pt-BR
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-insatisfatorio"
+* . ^short = "Motivo pelo qual o espécime foi rejeitado"
+* . ^definition = "O motivo pelo qual o espécimo foi rejeitado (não será avaliado)"
+
+* value[x] ^short = "Registra motivo(s) pelo(s) qual(is) a amostra é insatisfatória para avaliação"
+* value[x] 1..1
+* value[x] only CodeableConcept
+* value[x] ^short = "Código para amostra insatisfatória para avaliação"
+* valueCodeableConcept.coding 1..6
+* valueCodeableConcept obeys DuplicidadeNaoAdmitida
+* valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
+* valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/insatisfatorio-para-avaliacao (required)
+* valueCodeableConcept.coding.code 1..1
+* valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da amostra ser insatisfatória"

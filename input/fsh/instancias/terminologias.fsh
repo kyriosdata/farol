@@ -505,15 +505,15 @@ Description: "Conjunto de possíveis motivos pelos quais um espécime é rejeita
 * include codes from system MotivoEspecimeRejeitado
 
 // ------------------------------------------------------
-// insatisfatorio-para-avaliacao // #7
+// motivo-especime-insatisfatorio // #7
 // ------------------------------------------------------
 
-CodeSystem: InsatisfatorioParaAvaliacao
-Id: insatisfatorio-para-avaliacao
+CodeSystem: MotivoEspecimeInsatisfatorio
+Id: motivo-especime-insatisfatorio
 Title: "Espécime insatisfatório para avaliação"
 Description: "Motivos pelos quais o espécime pode ser declarado insatisfatório para avaliação após processado e examinado."
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/insatisfatorio-para-avaliacao"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-especime-insatisfatorio"
 
 * ^status = #unknown
 * ^caseSensitive = true
@@ -529,19 +529,19 @@ Description: "Motivos pelos quais o espécime pode ser declarado insatisfatório
 * #superposicao "Superposição" "Intensa superposição celular em mais de 75% da amostra"
 
 
-ValueSet: InsatisfatorioParaAvaliacao
-Id: insatisfatorio-para-avaliacao
+ValueSet: MotivoEspecimeInsatisfatorio
+Id: motivo-especime-insatisfatorio
 Title: "Espécime insatisfatório para avaliação"
 Description: "Possíveis motivos pelos quais o espécime pode ser declarado insatisfatório para avaliação após processado e examinado."
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/insatisfatorio-para-avaliacao"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-especime-insatisfatorio"
 
 * ^status = #draft
 * ^experimental = false
 * ^date = "2024-04-15"
 * ^purpose = """**Propósito**. Definir o conjunto de códigos possíveis para declarar uma amostra insatisfatória para avaliação."""
 
-* include codes from system InsatisfatorioParaAvaliacao
+* include codes from system MotivoEspecimeInsatisfatorio
 
 // ------------------------------------------------------
 // variacoes-nao-neoplasicas

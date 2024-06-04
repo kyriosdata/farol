@@ -1056,7 +1056,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[insatisfatorio].valueCodeableConcept.coding 1..6
 * component[insatisfatorio].valueCodeableConcept obeys DuplicidadeNaoAdmitida
 * component[insatisfatorio].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
-* component[insatisfatorio].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/insatisfatorio-para-avaliacao (required)
+* component[insatisfatorio].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-especime-insatisfatorio (required)
 * component[insatisfatorio].valueCodeableConcept.coding.code 1..1
 * component[insatisfatorio].valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da amostra ser insatisfatória"
 
@@ -1329,13 +1329,46 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * note.author[x] 0..0
 * note.time 0..0
 
+// ------------------------------------------------------
+// detalhar
+// ------------------------------------------------------
+
+Extension: Detalhar
+Id: detalhar
+Title: "Detalha item"
+Description: "Fornece detalhe ou especificação adicional sobre item de informação do resultado de exame citopatológico."
+Context: "CodeableConcept.coding"
+
+* ^status = #draft
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/detalhar"
+
+* value[x] only string
+* valueString 1..1
+* valueString ^short = "Especificar (detalhar)"
+
 // -----------------
 // Amostra
 // -----------------
 
 Invariant: Satisfatorio
-Description: "Se espécime é satisfatório, então não pode ser fornecido motivo seja para insatisfação para avaliar ou seja para rejeitar o espécime."
+Description: "Se espécime é satisfatório, então não pode ser fornecido motivo, seja para insatisfação ou seja para esclarecer a rejeição."
 Expression: "status = 'available' implies status.extension.exists().not()"
+Severity: #error
+
+Invariant: Rejeitado
+Description: "Se espécime é rejeitado, então deve fornecer motivo para rejeição."
+Expression: "status = 'unavailable' implies status.extension.where(url = 'https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-rejeicao').exists()"
+Severity: #error
+
+Invariant: Insatisfatorio
+Description: "Se espécime é insatisfatório, então deve fornecer motivo para insatisfação."
+Expression: "status = 'unsatisfactory' implies status.extension.where(url = 'https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-insatisfatorio').exists()"
+Severity: #error
+
+Invariant: OutraCausaDeveSerDetalhada
+Description: "Se amostra rejeitada por 'outras causas', então deve ser detalhada qual ou quais as causas."
+Expression: "code = 'outras' implies extension.where(url = 'https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/detalhar').exists()"
 Severity: #error
 
 
@@ -1345,7 +1378,7 @@ Id: amostra
 Title: "Amostra de exame citopatológico"
 Description: "Informações sobre a amostra identificadas pelo laboratório"
 
-* obeys Satisfatorio
+* obeys Satisfatorio and Rejeitado and Insatisfatorio
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/amostra"
 * ^status = #draft
@@ -1381,6 +1414,7 @@ Context: Amostra.status
 * valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-especime-rejeitado (required)
 * valueCodeableConcept.coding.code 1..1
 * valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da rejeição da amostra"
+* valueCodeableConcept.coding obeys OutraCausaDeveSerDetalhada
 
 // -------------------------
 // motivo-instaisfatorio
@@ -1404,6 +1438,6 @@ Context: Amostra.status
 * valueCodeableConcept.coding 1..6
 * valueCodeableConcept obeys DuplicidadeNaoAdmitida
 * valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
-* valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/insatisfatorio-para-avaliacao (required)
+* valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-especime-insatisfatorio (required)
 * valueCodeableConcept.coding.code 1..1
 * valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da amostra ser insatisfatória"

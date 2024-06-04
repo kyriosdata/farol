@@ -1337,7 +1337,7 @@ Extension: Detalhar
 Id: detalhar
 Title: "Detalha item"
 Description: "Fornece detalhe ou especificação adicional sobre item de informação do resultado de exame citopatológico."
-Context: "CodeableConcept.coding"
+Context: Coding
 
 * ^status = #draft
 

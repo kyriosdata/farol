@@ -145,7 +145,9 @@ Usage: #inline
 * supportingInfo[1] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04)
 
 // CNS do responsável
-* requester = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07)
+//* requester = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07)
+* requester.identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
+* requester.identifier.value = "123456"
 
 
 Instance: encontro

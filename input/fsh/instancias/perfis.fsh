@@ -379,7 +379,7 @@ Description: "Definição das informações que devem constar em toda e qualquer
 
 // #43
 * requester 1..1
-* requester only Reference(Profissional)
+* requester only ReferenciaUnidadeDeSaude
 
 Profile: AnamneseQuestionario
 Parent: QuestionnaireResponse

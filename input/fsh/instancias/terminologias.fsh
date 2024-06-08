@@ -6,7 +6,7 @@
 Instance: ns-requisitante
 InstanceOf: NamingSystem
 Title: "Prontuário"
-Description: "O identificador de prontuário fornecido pelo estabelecimento requisitante de exame citopatológico."
+Description: "O identificador de prontuário fornecido pela unidade de saúde requisitante de exame citopatológico."
 Usage: #definition
 
 * name = "RequisitanteProntuario"
@@ -30,9 +30,9 @@ Usage: #definition
 
 * type.coding[0].system = "http://terminology.hl7.org/CodeSystem/v2-0203"
 * type.coding[0].code = #FILL
-* type.text = "O número do prontuário fornecido pelo estabelecimento requisitante"
+* type.text = "O número do prontuário fornecido pela unidade de saúde requisitante"
 
-* description = "Identificador do código único de prontuário fornecido pelo estabelecimento requisitante de exame citopatológico. Observe que o código correspondente é único para o estabelecimento e para o exame citopatológico."
+* description = "Identificador do código único de prontuário fornecido unidade de saúde requisitante de exame citopatológico. Observe que o código correspondente é único para o estabelecimento e para o exame citopatológico."
 
 * useContext.code.system = "http://terminology.hl7.org/CodeSystem/usage-context-type"
 * useContext.code.code = #task
@@ -43,7 +43,7 @@ Usage: #definition
 * jurisdiction[0].coding[0].code = #BR
 * jurisdiction[0].text = "Em todo o território nacional (brasileiro)"
 
-* usage = "Código fornecido pelo estabelecimento requisitante para identificar o prontuário da paciente. Este código é único para o estabelecimento que faz a requisição."
+* usage = "Código fornecido unidade de saúde requisitante para identificar o prontuário da paciente. Este código é único para o estabelecimento que faz a requisição."
 
 * uniqueId[0].type = #uri
 * uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ccu/sid/requisitante"
@@ -107,7 +107,7 @@ Usage: #definition
 Instance: ns-cnes
 InstanceOf: NamingSystem
 Title: "Identificador do Cadastro Nacional de Estabelecimentos de Saúde (CNES)"
-Description: "O identificador do estabelecimento no Cadastro Nacional de Estabelecimentos de Saúde (CNES)"
+Description: "O identificador da unidade de saúde no Cadastro Nacional de Estabelecimentos de Saúde (CNES)"
 Usage: #definition
 
 * name = "CNES"
@@ -139,13 +139,13 @@ Usage: #definition
   * code.system = "http://terminology.hl7.org/CodeSystem/usage-context-type"
   * code.code = #workflow
   * valueCodeableConcept.coding = urn:iso:std:iso:3166#BRA
-  * valueCodeableConcept.text = "Identificação de estabelecimentos no território brasileiro"
+  * valueCodeableConcept.text = "Identificação de unidades de saúde no território brasileiro"
 
 * jurisdiction[0].coding[0].system = "urn:iso:std:iso:3166"
 * jurisdiction[0].coding[0].code = #BR
 * jurisdiction[0].text = "Em todo o território nacional (brasileiro)"
 
-* usage = "Usado quando se deseja indicar que um dado código é único e atribuído a um estabelecimento de saúde pelo Ministério da Saúde do Brasil."
+* usage = "Usado quando se deseja indicar que um dado código é único e atribuído a uma unidade de saúde pelo Ministério da Saúde do Brasil."
 
 * uniqueId[0].type = #uri
 * uniqueId[0].value = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"

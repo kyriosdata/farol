@@ -267,7 +267,7 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 // ------------------------------------------------------
 
 Instance: unidade-saude-02
-InstanceOf: Estabelecimento
+InstanceOf: UnidadeDeSaude
 Usage: #inline
 Title: "UBS Bem-estar"
 Description: "A unidade de saúde na qual o exame citopatológico da paciente Bruna é requisitado"
@@ -542,9 +542,6 @@ Description: "Itens que definem o laudo da paciente Bruna"
 
 * status = #final
 * code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan#citopatologico
-
-* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#tipo-amostra
-* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional
 
 * component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#componente
 * component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/componente-endocervical#presente

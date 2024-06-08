@@ -49,7 +49,7 @@ Description: "Paciente fictícia para requisição e laudo de exame citopatológ
 // ------------------------------------------------------
 
 Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb06
-InstanceOf: Estabelecimento
+InstanceOf: UnidadeDeSaude
 Usage: #inline
 Title: "UBS 5"
 Description: "A unidade de saúde na qual o exame citopatológico da paciente Talita é requisitado"
@@ -410,9 +410,6 @@ Description: "Itens que definem o laudo da paciente Talita"
 
 * status = #final
 * code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan#citopatologico
-
-* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#tipo-amostra
-* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional
 
 * component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#componente
 * component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/componente-endocervical#presente

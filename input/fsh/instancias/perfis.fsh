@@ -208,24 +208,6 @@ Context: Patient
 * valueAge.system = "http://unitsofmeasure.org" (exactly)
 * valueAge.code = #a (exactly)
 
-// ------------------------------------------------------
-// especificar
-// ------------------------------------------------------
-
-Extension: Especificacao
-Id: especificacao
-Title: "Detalha item"
-Description: "Fornece detalhe ou especificação adicional sobre item de informação."
-Context: "Observation.component.value.ofType(CodeableConcept).coding"
-
-* ^status = #draft
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/especificacao"
-
-* value[x] only string
-* valueString 1..1
-* valueString ^short = "Especificar (detalhar)"
-
 
 // ------------------------------------------------------
 // profissional (requisita ou emite laudo)
@@ -261,7 +243,7 @@ Description: "Responsável pela requisição ou emissão de laudo de exame citop
 // estabelecimento (unidade de saúde)
 // ------------------------------------------------------
 
-Profile: Estabelecimento
+Profile: UnidadeDeSaude
 Parent: Organization
 Id: unidade-requisitante
 Title: "Unidade requisitante"
@@ -371,7 +353,7 @@ Description: "Definição das informações que devem constar em toda e qualquer
 * code.coding.display = "EXAME CITOPATOLÓGICO CERVICO VAGINAL/MICROFLORA-RASTREAMENTO"
 * code.coding.userSelected 0..0
 
-* . ^short = "Requisição de exame citopatológico"
+* . ^short = "Requisição de exame citopatológico - Colo do Útero"
 
 // #6
 * extension 0..1
@@ -946,11 +928,6 @@ Description: "Apenas 'outras causas' exige detalhamento"
 Expression: "coding.where(code != 'outras').extension.exists().not()"
 Severity: #error
 
-Invariant: ExtensaoApenasParaEspecificar
-Description: "Apenas extensão para especificar (detalhar)"
-Expression: "coding.where(code = 'outras').exists() implies extension.where(url = 'https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/especificacao').exists()"
-Severity: #error
-
 Invariant: SoUmaExtensaoPermitida
 Description: "Uma única extensão (valor) é permida"
 Expression: "extension.count() < 2"
@@ -987,10 +964,6 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component ^slicing.description = "Identificação dos componentes do laudo"
 
 * component contains 
-    tipo 1..1 MS and       // ok
-    rejeicao 0..1 MS and   // ok  
-    insatisfatorio 0..1 MS and // ok
-    satisfatorio 0..1 MS and
     componente 0..1 MS and 
     categorizacao 0..1 MS and 
     glandular 0..1 MS and
@@ -1019,54 +992,6 @@ Description: "Identificação e definição dos itens de dados que definem um re
     glandulares 0..1 MS and
     outrasMalignas 0..1 MS and
     endometriais 0..1 MS
-
-* component[tipo] ^short = "Tipo de amostra"
-* component[tipo].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#tipo-amostra 
-* component[tipo].code ^short = "Identifica o tipo de amostra"
-* component[tipo].code.coding ^short = "Código definido por uma terminologia"
-* component[tipo].value[x] 1..1
-* component[tipo].value[x] only CodeableConcept
-* component[tipo].valueCodeableConcept.coding 1..1
-* component[tipo].valueCodeableConcept ^short = "O da amostra (convencional ou em meio líquido)"
-* component[tipo].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipo-amostra (required)
-* component[tipo].valueCodeableConcept.coding.code 1..1
-* component[tipo].valueCodeableConcept.coding.code ^short = "Código correspondente à adequabilidade da amostra"
-
-* component[rejeicao] ^short = "Motivo pelo qual o espécime foi rejeitado (não processado)"
-* component[rejeicao].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#motivo-rejeicao
-* component[rejeicao].code ^short = "Identifica, se for o casao, o motivo da rejeição do espécime"
-* component[rejeicao].code.coding ^short = "Código definido por uma terminologia"
-* component[rejeicao].value[x] 1..1
-* component[rejeicao].value[x] only CodeableConcept
-* component[rejeicao].value[x] ^short = "O código que identifica o motivo da rejeição do espécime"
-* component[rejeicao].valueCodeableConcept.coding 1..3
-* component[rejeicao].valueCodeableConcept obeys DuplicidadeNaoAdmitida and ExtensaoApenasOutros and SoUmaExtensaoPermitida
-* component[rejeicao].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
-* component[rejeicao].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-especime-rejeitado (required)
-* component[rejeicao].valueCodeableConcept.coding.code 1..1
-* component[rejeicao].valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da rejeição da amostra"
-
-* component[insatisfatorio] ^short = "Registra motivo(s) pelo(s) qual(is) a amostra é insatisfatória para avaliação"
-* component[insatisfatorio].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#insatisfatoria
-* component[insatisfatorio].code ^short = "Amostra insatisfatória para avalaição por"
-* component[insatisfatorio].code.coding ^short = "Código definido por uma terminologia"
-* component[insatisfatorio].value[x] 1..1
-* component[insatisfatorio].value[x] only CodeableConcept
-* component[insatisfatorio].value[x] ^short = "Código para amostra insatisfatória para avaliação"
-* component[insatisfatorio].valueCodeableConcept.coding 1..6
-* component[insatisfatorio].valueCodeableConcept obeys DuplicidadeNaoAdmitida
-* component[insatisfatorio].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
-* component[insatisfatorio].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-especime-insatisfatorio (required)
-* component[insatisfatorio].valueCodeableConcept.coding.code 1..1
-* component[insatisfatorio].valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da amostra ser insatisfatória"
-
-* component[satisfatorio] ^short = "Registra se espécime é satisfatório para avaliação"
-* component[satisfatorio].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#satisfatorio
-* component[satisfatorio].code ^short = "Identifica se espécime é satisfatório para avaliação"
-* component[satisfatorio].code.coding ^short = "Código definido por uma terminologia"
-* component[satisfatorio].value[x] 1..1
-* component[satisfatorio].value[x] only boolean
-* component[satisfatorio].value[x] ^short = "true se satisfatório para avaliação"
 
 * component[componente] ^short = "Componente endocervical / zona transformação"
 * component[componente].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#componente
@@ -1376,7 +1301,7 @@ Profile: Amostra
 Parent: Specimen
 Id: amostra
 Title: "Amostra de exame citopatológico"
-Description: "Informações sobre a amostra identificadas pelo laboratório"
+Description: "Informações identificadas pelo laboratório sobre a amostra"
 
 * obeys Satisfatorio and Rejeitado and Insatisfatorio
 
@@ -1417,7 +1342,7 @@ Context: Amostra.status
 * valueCodeableConcept.coding obeys OutraCausaDeveSerDetalhada
 
 // -------------------------
-// motivo-instaisfatorio
+// motivo-insatisfatorio
 // -------------------------
 
 Extension: MotivoInsatisfatorio

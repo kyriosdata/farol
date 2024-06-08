@@ -201,7 +201,7 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 // ------------------------------------------------------
 
 Instance: unidade-saude-03
-InstanceOf: Estabelecimento
+InstanceOf: UnidadeDeSaude
 Usage: #inline
 Title: "UBS 3"
 Description: "A unidade de saúde na qual o exame citopatológico da paciente Renata é requisitado"
@@ -505,13 +505,6 @@ Description: "Itens que definem o laudo da paciente Renata"
 * status = #final
 * code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan#citopatologico
 
-* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#tipo-amostra
-* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional
-
-* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#motivo-rejeicao
-* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-especime-rejeitado#outras
-* component[=].valueCodeableConcept.coding.extension.url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/especificacao"
-* component[=].valueCodeableConcept.coding.extension.valueString = "forneça aqui o motivo"
 
 // ------------
 // especime
@@ -529,4 +522,6 @@ Description: "Informações sobre a amostra identificadas pelo laboratório"
   * url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-rejeicao"
   * valueCodeableConcept.coding[0]
     * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-especime-rejeitado"
-    * code = #identificacao
+    * code = #outras
+    * extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/detalhar"
+    * extension[0].valueString = "A amostra se perdeu"

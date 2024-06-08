@@ -1366,3 +1366,32 @@ Context: Amostra.status
 * valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-especime-insatisfatorio (required)
 * valueCodeableConcept.coding.code 1..1
 * valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da amostra ser insatisfatória"
+
+// -----------------------------------
+// referencia para unidade de saúde
+// -----------------------------------
+
+Profile: ReferenciaUnidadeDeSaude
+Parent: Reference
+Id: referencia-unidade-de-saude
+Title: "Referência para unidade de saúde"
+Description: "Indicação de unidade de saúde pelo CNES"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/referencia-unidade-de-saude"
+* ^status = #draft
+
+* reference 0..0
+* type 0..0
+* display 0..0
+* identifier 1..1
+* identifier.assigner 0..0
+* identifier.extension 0..0
+* identifier.id 0..0
+* identifier.period 0..0
+* identifier.type 0..0
+* identifier.use 0..0
+* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes" (exactly)
+* identifier.value 1..1
+* identifier.value ^short = "O código CNES da unidade de saúde requisitante"
+
+

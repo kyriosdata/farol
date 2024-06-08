@@ -54,9 +54,9 @@ Description: "Requisição de exame citopatológico (Bruna). Veja a [ficha](brun
   * resource = ExameClinicoBruna
 
 // unidade-saude (Organization)
-* entry[+]
-  * fullUrl = "urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb06"
-  * resource = unidade-saude-02
+//* entry[+]
+//  * fullUrl = "urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb06"
+//  * resource = unidade-saude-02
 
 // profissional (Practitioner)
 * entry[+]
@@ -140,6 +140,8 @@ Usage: #inline
 Title: "Interação (Bruna)"
 Description: "Neste encontro foi coletada a amostra e criada a requisição de exame citopatológico da paciente Bruna"
 
+* contained[0] = unidade-saude-02
+
 * status = #finished
 * class.system = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
 
@@ -150,7 +152,7 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 * subject = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb01)
 
 // unidade de saúde na qual a requisição foi produzida
-* serviceProvider = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb06)
+* serviceProvider = Reference(unidade-saude-02)
 
 // ------------------------------------------------------
 // exame

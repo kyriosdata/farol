@@ -906,6 +906,14 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 * result 1..1
 * result only Reference(ComponentesLaudoCitopatologico)
 
+* performer 1..1
+* performer ^short = "A unidade de saúde"
+* performer only ReferenciaUnidadeDeSaude
+
+* resultsInterpreter 1..2
+* resultsInterpreter ^short = "Identificação do profissional de saúde"
+* resultsInterpreter only ReferenciaProfissional
+
 * conclusionCode 1..1
 * conclusionCode.coding 1..1
 * conclusionCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/categorizacao (required)
@@ -1393,5 +1401,32 @@ Description: "Indicação de unidade de saúde pelo CNES"
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes" (exactly)
 * identifier.value 1..1
 * identifier.value ^short = "O código CNES da unidade de saúde requisitante"
+
+// -----------------------------------
+// referencia para unidade de saúde
+// -----------------------------------
+
+Profile: ReferenciaProfissional
+Parent: Reference
+Id: referencia-profissional
+Title: "Referência para profissional de saúde"
+Description: "Indicação de profissional de saúde"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/referencia-profissional"
+* ^status = #draft
+
+* reference 0..0
+* type 0..0
+* display 0..0
+* identifier 1..1
+* identifier.assigner 0..0
+* identifier.extension 0..0
+* identifier.id 0..0
+* identifier.period 0..0
+* identifier.type 0..0
+* identifier.use 0..0
+* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf" (exactly)
+* identifier.value 1..1
+* identifier.value ^short = "O CPF do profissional de saúde"
 
 

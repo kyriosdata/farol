@@ -521,8 +521,13 @@ Description: "Laudo da requisição de exame da paciente Bruna. Veja a [ficha](b
 // Observation (componentes do laudo)
 * result[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb11)
 
-* performer[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb12)
-* resultsInterpreter[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb13)
+//* performer[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb12)
+* performer[0].identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
+* performer[0].identifier.value = "123456"
+
+//* resultsInterpreter[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb13)
+* resultsInterpreter[0].identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
+* resultsInterpreter[0].identifier.value = "123456"
 
 * specimen = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb15)
 * conclusionCode.coding

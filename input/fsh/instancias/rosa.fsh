@@ -542,8 +542,16 @@ Description: "Laudo da requisição de exame da paciente Rosa"
 
 * result[0] = Reference(laudo-componentes)
 
-* performer[0] = Reference(lab)
-* resultsInterpreter[0] = Reference(citopatologista)
+//* performer[0] = Reference(lab)
+//* resultsInterpreter[0] = Reference(citopatologista)
+
+//* performer[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb12)
+* performer[0].identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
+* performer[0].identifier.value = "123456"
+
+//* resultsInterpreter[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb13)
+* resultsInterpreter[0].identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
+* resultsInterpreter[0].identifier.value = "123456"
 
 * specimen[0] = Reference(especime-rosa)
 

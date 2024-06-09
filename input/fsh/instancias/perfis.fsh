@@ -375,7 +375,7 @@ Description: "Definição das informações que devem constar em toda e qualquer
 
 * supportingInfo ^short = "Informações que são empregadas para realização do laudo de exame citopatológico."
 * supportingInfo only Reference(AnamneseQuestionario or ExameClinico)
-* supportingInfo 1..2
+* supportingInfo 2..2
 
 // #43
 * requester 1..1

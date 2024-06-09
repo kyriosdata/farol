@@ -156,7 +156,7 @@ Usage: #inline
 * item[+]
   * linkId = "1"
   * answer[0].valueCoding = http://terminology.hl7.org/CodeSystem/v2-0136#N
-  * text = "Fez o exame preventivo (Papanicolaou) alguma vez?"
+  * text = "Fez exame preventivo anteriormente?"
 
 * item[+]
   * linkId = "3"

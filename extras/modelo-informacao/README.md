@@ -25,7 +25,7 @@ informação do Registro de Atendimento Clínico ([aqui](https://www.in.gov.br/e
 
 ## Anamnese
 
-1. Fez o exame preventivo (Papanicolaou) alguma vez? (Sim, não, não sabe). Se sim, preencher com o ano do último exame.
+1. Fez exame preventivo anteriormente? (Sim, não, não sabe). Se sim, preencher com o ano do último exame.
 1. Usa DIU (sim, não, não sabe).
 1. Está grávida (sim, não, não sabe).
 1. Usa píbula anticoncepcional (sim, não, não sabe)
@@ -157,7 +157,7 @@ https://loinc.org/LL836-8/
 
 Anamnese
 
-1. Fez o exame preventivo (Papanicolaou) alguma vez?
+1. Fez exame preventivo anteriormente?
    https://loinc.org/60432-2/
 
 2. Usa DIU (sim, não, não sabe)?

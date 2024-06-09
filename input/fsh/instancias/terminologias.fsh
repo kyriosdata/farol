@@ -390,7 +390,7 @@ Description: "As possibilidades da inspeção de colo visando o exame citopatol�
 ValueSet: ResultadoInspecaoColo
 Id: resultado-inspecao-colo
 Title: "Situação do colo"
-Description: "Situação do colo"
+Description: "Resultados para a inspeção do colo"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Código admitidos para resultado da inspeção do colo.</div>"

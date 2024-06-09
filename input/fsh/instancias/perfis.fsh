@@ -386,7 +386,7 @@ Description: "Definição das informações que devem constar em toda e qualquer
 Profile: AnamneseQuestionario
 Parent: QuestionnaireResponse
 Id: anamnese-questionario
-Title: "Informações sobre a anamnese"
+Title: "Respostas da anamnese"
 Description: "Estrutura exigida da anamnese pela requisição de exame citopatológico"
 
 * ^status = #draft
@@ -701,7 +701,7 @@ informações pertinentes à requisição."""
 * item[+]
   * linkId = "1"
   * type = #choice
-  * text = "Fez o exame preventivo (Papanicolaou) alguma vez?"
+  * text = "Fez exame preventivo anteriormente?"
   * answerValueSet = Canonical(http://hl7.org/fhir/ValueSet/yesnodontknow)
   * required = true
   * repeats = false

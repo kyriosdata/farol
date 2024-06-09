@@ -370,18 +370,19 @@ Description: "Definição das informações que devem constar em toda e qualquer
 * reasonCode.coding ^short = "Código que identifica o motivo do exame"
 * reasonCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-exame-citopatologico (required)
 
-// #42 (Data da coleta)
-* authoredOn 1..1
+* authoredOn 0..0
 
 * supportingInfo ^short = "Informações que são empregadas para realização do laudo de exame citopatológico."
 * supportingInfo only Reference(AnamneseQuestionario or ExameClinico)
 * supportingInfo 2..2
 
-// #43
 * requester 1..1
 * requester only Reference(Organization)
 * requester only ReferenciaUnidadeDeSaude
 * requester ^short = "A unidade de saúde na qual a requisição é criada."
+
+* specimen 1..1
+* specimen only Reference(AmostraRequisicao)
 
 Profile: AnamneseQuestionario
 Parent: QuestionnaireResponse
@@ -1434,5 +1435,49 @@ Description: "Indicação de profissional de saúde"
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf" (exactly)
 * identifier.value 1..1
 * identifier.value ^short = "O CPF do profissional de saúde"
+
+// -----------------------------------
+// amostra-requisicao
+// -----------------------------------
+
+Profile: AmostraRequisicao
+Parent: Specimen
+Id: amostra-requisicao
+Title: "Amostra coletada para exame citopatológico"
+Description: "Informações parciais sobre a amostra"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/amostra-requisicao"
+* ^status = #draft
+
+* identifier 0..0
+* accessionIdentifier 0..0
+* status 0..0
+* type 0..0
+* subject 0..0
+* receivedTime 0..0
+* parent 0..0
+* request 0..0
+* collection 1..1
+
+// #43 responsável pela coleta
+* collection.collector 1..1
+* collection.collector ^short = "Responsável pela coleta"
+* collection.collector only ReferenciaProfissional
+* collection.collector only Reference(Practitioner)
+
+// #42 (Data da coleta)
+* collection.collected[x] 1..1
+* collection.collected[x] only dateTime
+* collection.collectedDateTime ^short = "Data da coleta"
+
+* collection.duration 0..0
+* collection.quantity 0..0
+* collection.method 0..0
+* collection.bodySite 0..0
+* collection.fastingStatus[x] 0..0
+* processing 0..0
+* container 0..0
+* condition 0..0
+* note 0..0
 
 

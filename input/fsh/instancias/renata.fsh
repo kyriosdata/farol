@@ -89,6 +89,18 @@ Description: "Requisição de Exame Citopatológico da paciente Renata"
   * entry[0] = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb02)
 
 // ------------------------------------------------------
+// amostra-requisicao (Specimen)
+// ------------------------------------------------------
+
+Instance: amostra-requisicao-renata
+InstanceOf: AmostraRequisicao
+Usage: #inline
+* collection.collectedDateTime = "2023-10-01"
+* collection.collector.identifier
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
+  * value = "1234567"
+
+// ------------------------------------------------------
 // requisicao (ServiceRequest)
 // ------------------------------------------------------
 
@@ -98,11 +110,11 @@ Title: "Requisição (Renata)"
 Description: "Requisição de exame citopatológico da Renata"
 Usage: #inline
 
+* contained[0] = amostra-requisicao-renata
+* specimen = Reference(amostra-requisicao-renata)
+
 * status = #unknown
 * intent = #order
-
-// Data da coleta da amostra e dados da requisição
-* authoredOn = "2023-12-12"
 
 * code.coding[0]
   * code = #0203010086

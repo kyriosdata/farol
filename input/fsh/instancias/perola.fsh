@@ -88,6 +88,19 @@ Description: "Requisição de Exame Citopatológico da paciente Pérola"
   * entry[0] = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb02)
 
 // ------------------------------------------------------
+// amostra-requisicao (Specimen)
+// ------------------------------------------------------
+
+Instance: amostra-requisicao-perola
+InstanceOf: AmostraRequisicao
+Usage: #inline
+* collection.collectedDateTime = "2023-10-01"
+* collection.collector.identifier
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
+  * value = "1234567"
+
+
+// ------------------------------------------------------
 // requisicao (ServiceRequest)
 // ------------------------------------------------------
 
@@ -100,8 +113,8 @@ Usage: #inline
 * status = #unknown
 * intent = #order
 
-// Data da coleta da amostra e dados da requisição
-* authoredOn = "2023-12-14"
+* contained[0] = amostra-requisicao-perola
+* specimen = Reference(amostra-requisicao-perola)
 
 * code.coding[0]
   * code = #0203010086

@@ -104,6 +104,18 @@ Description: "Requisição de Exame Citopatológico da paciente Rosa"
   * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb02)
 
 // ------------------------------------------------------
+// amostra-requisicao (Specimen)
+// ------------------------------------------------------
+
+Instance: amostra-requisicao-rosa
+InstanceOf: AmostraRequisicao
+Usage: #inline
+* collection.collectedDateTime = "2023-10-01"
+* collection.collector.identifier
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
+  * value = "1234567"
+
+// ------------------------------------------------------
 // requisicao (ServiceRequest)
 // ------------------------------------------------------
 
@@ -113,14 +125,14 @@ Title: "Requisição (Rosa)"
 Description: "Requisição de exame citopatológico da Rosa"
 Usage: #inline
 
+* contained[0] = amostra-requisicao-rosa
+* specimen = Reference(amostra-requisicao-rosa)
+
 * status = #draft
 * intent = #order
 
 * extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/identificador-prontuario"
 * extension[0].valueString = "123.4444-34G456"
-
-// Data da coleta da amostra e dados da requisição
-* authoredOn = "2024-01-23"
 
 * code.coding[0]
   * code = #0203010086

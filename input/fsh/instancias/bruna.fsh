@@ -98,6 +98,18 @@ Description: "Requisição de Exame Citopatológico da paciente Bruna"
   * entry[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb02)
 
 // ------------------------------------------------------
+// amostra-requisicao (Specimen)
+// ------------------------------------------------------
+
+Instance: amostra-requisicao-bruna
+InstanceOf: AmostraRequisicao
+Usage: #inline
+* collection.collectedDateTime = "2023-10-01"
+* collection.collector.identifier
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
+  * value = "1234567"
+
+// ------------------------------------------------------
 // requisicao (ServiceRequest)
 // ------------------------------------------------------
 
@@ -110,8 +122,8 @@ Usage: #inline
 * status = #unknown
 * intent = #order
 
-// Data da coleta da amostra e dados da requisição
-* authoredOn = "2023-12-13"
+* contained[0] = amostra-requisicao-bruna
+* specimen = Reference(amostra-requisicao-bruna)
 
 * code.coding[0]
   * code = #0203010086

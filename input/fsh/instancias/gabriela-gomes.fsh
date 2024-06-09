@@ -117,6 +117,18 @@ Description: "Requisição de Exame Citopatológico da paciente Gabriela"
   * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb06)
 
 // ------------------------------------------------------
+// amostra-requisicao (Specimen)
+// ------------------------------------------------------
+
+Instance: amostra-requisicao-gabriela
+InstanceOf: AmostraRequisicao
+Usage: #inline
+* collection.collectedDateTime = "2023-10-01"
+* collection.collector.identifier
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
+  * value = "1234567"
+
+// ------------------------------------------------------
 // requisicao (ServiceRequest)
 // ------------------------------------------------------
 
@@ -129,8 +141,8 @@ Usage: #inline
 * status = #draft
 * intent = #order
 
-// Data da coleta da amostra e dados da requisição
-* authoredOn = "2023-12-23"
+* contained[0] = amostra-requisicao-gabriela
+* specimen = Reference(amostra-requisicao-gabriela)
 
 * code.coding[0]
   * code = #0203010086

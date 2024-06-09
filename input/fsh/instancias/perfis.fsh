@@ -567,7 +567,7 @@ Profile: Paciente
 Parent: Patient
 Id: paciente
 Title: "Paciente"
-Description: "Dados demográficos de paciente"
+Description: "Dados demográficos da paciente"
 
 * . ^short = "Identificação da paciente. Apenas o CNS é obrigatório. Demais campos são opcionais."
 
@@ -586,11 +586,15 @@ Description: "Dados demográficos de paciente"
     cns 1..1 and
     cpf 0..1
 
+* identifier[cns] ^short = "O Cartão Nacional de Saúde (CNS)"
 * identifier[cns].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
 * identifier[cns].value 1..1
+* identifier[cns].value ^short = "O CNS da paciente"
 
+* identifier[cpf] ^short = "O Cadastro de Pessoa Física (CPF)"
 * identifier[cpf].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
 * identifier[cpf].value 1..1
+* identifier[cpf].value ^short = "O CPF da paciente"
 
 // #8 e #10
 * name ^short = "O nome completo da paciente e, possivelmente, o apelido. Nenhum deles é obrigatório."

@@ -1050,7 +1050,7 @@ corresponde ao sexo atribuído no nascimento. """
 
 ValueSet: Genero
 Id: genero
-Title: "Conjunto gêneros"
+Title: "Conjunto de gêneros"
 Description: "Gêneros admitidos em ficha de requisição"
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/genero"
 * ^status = #draft

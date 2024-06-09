@@ -353,6 +353,11 @@ Description: "Definição das informações que devem constar em toda e qualquer
 * code.coding.display = "EXAME CITOPATOLÓGICO CERVICO VAGINAL/MICROFLORA-RASTREAMENTO"
 * code.coding.userSelected 0..0
 
+* identifier 0..1
+* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/siscan" (exactly)
+* identifier.value 1..1
+* identifier.value ^short = "O código único nacional para a requisição gerado pelo SISCAN"
+
 * . ^short = "Requisição de exame citopatológico - Colo do Útero"
 
 // #6

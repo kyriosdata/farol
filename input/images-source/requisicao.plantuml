@@ -1,7 +1,7 @@
-@startmindmap servicerequest
+@startmindmap requisicao
 
 + **Requisiçao de Exame Citopatológico**\n""ServiceRequest""
-++ **Unidade de Saúde**\n""Reference""
+++ **Unidade de Saúde**\n<&external-link>"" Reference""
 ++ **Paciente**\n""Patient""
 ++ **Anamnese**\n""QuestionnaireResponse""
 

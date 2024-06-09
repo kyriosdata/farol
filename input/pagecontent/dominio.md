@@ -4,7 +4,7 @@ pode desempenhar um ou mais pepéis, conforme ilustrado abaixo, identificando o 
 inclui pelo menos uma credencial definida por _username_ e _password_.
 
 <div>
-{% include conta.svg %}
+{% include requisicao.svg %}
 </div>
 
 O modelo abaixo inclui e relaciona os principais conceitos empregados na

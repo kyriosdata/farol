@@ -1,8 +1,14 @@
 @startmindmap requisicao
 
 + **Requisiçao de Exame Citopatológico**\n""ServiceRequest""
-++ **Unidade de Saúde**\n<&external-link>"" Reference""
+--[#White] **Unidade de Saúde** (2)\n""Reference.identifier""
+--[#White] **Número do protocolo** (3)\n""Identifier""
+--[#White] **Prontuário** (6)\n""Extension""
+--[#White] **Motivo do exame** (28)\n""Coding""
 ++ **Paciente**\n""Patient""
 ++ **Anamnese**\n""QuestionnaireResponse""
+++[#White] **Amostra**\n""Specimen""
++++[#White] **Data da coleta** (42)\n""dateTime""
++++[#White] **Responsável pela coleta** (43)\n""dateTime""
 
 @enduml

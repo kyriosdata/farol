@@ -577,13 +577,13 @@ Id: paciente
 Title: "Paciente"
 Description: "Dados demográficos da paciente"
 
-* . ^short = "Identificação da paciente. Apenas o CNS é obrigatório. Demais campos são opcionais."
+* . ^short = "Informações sobre a paciente. Apenas o CNS é obrigatório. Demais campos são opcionais."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente"
 
 * obeys NomeOficialApelidoOpcional
 
-* identifier ^short = "A identificação da paciente. É obrigatório o Cartão Nacional SUS, o CPF é opcional."
+* identifier ^short = "A identificação da paciente. É obrigatório o Cartão Nacional de Saúde (CNS), o CPF é opcional."
 * identifier 1..*
 
 * identifier ^slicing.discriminator.type = #pattern
@@ -612,7 +612,7 @@ Description: "Dados demográficos da paciente"
 * name.use ^short = "Está restrito ao uso oficial (official) ou apelido (nickname)"
 
 // #9 (Nome Completo da Mãe) extensão 'mae' abaixo
-// #12 (nacionalidade) extensão 'pais' abaixo
+// #12 (nacionalidade) extensão 'nacionalidade' abaixo
 // #14 (idade)
 // #15 (Raça/cor)
 // #27 (Nível educacional)
@@ -620,7 +620,7 @@ Description: "Dados demográficos da paciente"
 * extension ^short = "Itens de informação acrescentados"
 * extension contains 
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/filiacao named filiacao 0..1 MS and
-    http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade named pais 0..1 MS and
+    http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade named nacionalidade 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade named idade 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/escolaridade named escolaridade 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/raca-etnia named etnia 0..1 MS and

@@ -1,0 +1,16 @@
+@startmindmap paciente
+
++ **Paciente**\n""Patients""
+--[#White] **Cartão SUS** (7)\n""Identifier""
+--[#White] **Nome completo** (8)\n""HumanName""
+--[#White] **Filiação** (9)\n""Extension""
+--[#White] **Apelido** (10)\n""HumanName""
+--[#White] **CPF** (11)\n""Coding""
+--[#White] **Nacionalidade** (12)\n""Extension""
+++ **Paciente**\n""Patient""
+++ **Anamnese**\n""QuestionnaireResponse""
+++[#White] **Amostra**\n""Specimen""
++++[#White] **Data da coleta** (42)\n""dateTime""
++++[#White] **Responsável pela coleta** (43)\n""dateTime""
+
+@enduml

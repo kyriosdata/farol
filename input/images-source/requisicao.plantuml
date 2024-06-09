@@ -1,13 +1,13 @@
 @startmindmap requisicao
 
-+ **Requisiçao de Exame Citopatológico**\n""ServiceRequest""
++ **[[StructureDefinition-requisicao-exame-citopatologico.html Requisiçao de Exame Citopatológico]]**\n""ServiceRequest""
 --[#White] **Unidade de Saúde** (2)\n""Reference.identifier""
 --[#White] **Número do protocolo** (3)\n""Identifier""
 --[#White] **Prontuário** (6)\n""Extension""
 --[#White] **Motivo do exame** (28)\n""Coding""
-++ **Paciente**\n""Patient""
-++ **Anamnese**\n""QuestionnaireResponse""
-++[#White] **Amostra**\n""Specimen""
+++ **[[StructureDefinition-paciente.html Paciente]]**\n""Patient""
+++ **[[StructureDefinition-questionnarire-anamnese-exame-citopatologico.html Anamnese]]**\n""Questionnaire""
+++[#White] **[[StructureDefinition-amostra-requisicao.html Amostra]]**\n""Specimen""
 +++[#White] **Data da coleta** (42)\n""collectedDateTime""
 +++[#White] **Responsável pela coleta** (43)\n""Reference.identifier""
 

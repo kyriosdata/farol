@@ -8,7 +8,7 @@
 ++ **Paciente**\n""Patient""
 ++ **Anamnese**\n""QuestionnaireResponse""
 ++[#White] **Amostra**\n""Specimen""
-+++[#White] **Data da coleta** (42)\n""dateTime""
-+++[#White] **Responsável pela coleta** (43)\n""dateTime""
++++[#White] **Data da coleta** (42)\n""collectedDateTime""
++++[#White] **Responsável pela coleta** (43)\n""Reference.identifier""
 
 @enduml

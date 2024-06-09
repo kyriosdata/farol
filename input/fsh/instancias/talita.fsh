@@ -418,8 +418,7 @@ Title: "Itens do laudo (Talita)"
 Description: "Itens que definem o laudo da paciente Talita"
 
 * subject = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer[0] = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb13)
-* performer[1] = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb12)
+* performer[0] = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb12)
 * effectiveDateTime = "2024-01-12"
 
 * status = #final

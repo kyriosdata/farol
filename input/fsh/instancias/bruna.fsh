@@ -3,7 +3,7 @@ Alias: $etniaindigena = http://www.saude.gov.br/fhir/r4/CodeSystem/BREtniaIndige
 Alias: $nacionalidade = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade
 Alias: $cs-nacionalidade = http://www.saude.gov.br/fhir/r4/CodeSystem/BRNacionalidade
 Alias: $motivos-exame = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivos-exame-citopatologico
-Alias: $anamnese-exame-citopatologico = https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico
+
 
 // ------------------------------------------------------
 // 
@@ -319,7 +319,7 @@ Title: "Anamnese (Bruna)"
 Description: "Anamnese da paciente Bruna"
 Usage: #inline
 
-* questionnaire = $anamnese-exame-citopatologico
+* questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico"
 
 * status = #completed
 * subject = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb01)
@@ -558,7 +558,6 @@ Description: "Itens que definem o laudo da paciente Bruna"
 
 * subject = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb01)
 * performer[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb12)
-* performer[1] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb13)
 * effectiveDateTime = "2023-12-14"
 
 * status = #final

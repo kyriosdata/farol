@@ -509,8 +509,7 @@ Title: "Itens do laudo (Pérola)"
 Description: "Itens que definem o laudo da paciente Pérola"
 
 * subject = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer[0] = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb13)
-* performer[1] = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb12)
+* performer[0] = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb12)
 * effectiveDateTime = "2024-01-13"
 
 * status = #final

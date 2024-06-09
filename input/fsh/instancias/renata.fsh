@@ -519,8 +519,7 @@ Title: "Itens do laudo (Renata)"
 Description: "Itens que definem o laudo da paciente Renata"
 
 * subject = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer[0] = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb13)
-* performer[1] = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb12)
+* performer[0] = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb12)
 
 * effectiveDateTime = "2024-01-13"
 

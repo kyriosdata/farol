@@ -914,11 +914,11 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 * result only Reference(ComponentesLaudoCitopatologico)
 
 * performer 1..1
-* performer ^short = "A unidade de saúde"
+* performer ^short = "O laboratório responsável pelo serviço"
 * performer only ReferenciaUnidadeDeSaude
 
 * resultsInterpreter 1..2
-* resultsInterpreter ^short = "Identificação do profissional de saúde"
+* resultsInterpreter ^short = "O responsável pela interpretação/resultado do exame"
 * resultsInterpreter only ReferenciaProfissional
 
 * conclusionCode 1..1
@@ -968,8 +968,9 @@ Description: "Identificação e definição dos itens de dados que definem um re
 // #59
 * obeys Executantes and AmostraRejeitadaNaoAdmiteLaudo
 
-* performer only Reference(Laboratorio or Profissional)
-* performer 2..2 
+* performer only Reference(Laboratorio)
+* performer 1..1
+* performer ^short = "O laboratório responsável pelo resultado do exame"
 
 * specimen 0..0
 

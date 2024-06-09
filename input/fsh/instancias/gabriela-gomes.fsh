@@ -552,8 +552,7 @@ Title: "Itens do laudo (Gabriela Gomes)"
 Description: "Itens que definem o laudo da paciente Gabriela Gomes"
 
 * subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb13)
-* performer[1] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb12)
+* performer[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb12)
 * effectiveDateTime = "2024-02-01T11:00:00Z"
 
 * status = #final

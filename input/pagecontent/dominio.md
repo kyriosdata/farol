@@ -5,3 +5,6 @@ necessários são ilustrados abaixo.
 {% include requisicao.svg %}
 </div>
 
+<div>
+{% include paciente.svg %}
+</div>

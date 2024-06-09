@@ -75,7 +75,7 @@ Context: ServiceRequest
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/identificador-prontuario"
 * . ..1
 * . ^short = "Prontuário"
-* . ^definition = "Código que unicamente identifica o prontuário para a requisição em questão pelo requisitante."
+* . ^definition = "Código que unicamente identifica o prontuário pelo requisitante para a requisição."
 
 * value[x] only string
 * valueString 1..1
@@ -379,7 +379,9 @@ Description: "Definição das informações que devem constar em toda e qualquer
 
 // #43
 * requester 1..1
+* requester only Reference(Organization)
 * requester only ReferenciaUnidadeDeSaude
+* requester ^short = "A unidade de saúde na qual a requisição é criada."
 
 Profile: AnamneseQuestionario
 Parent: QuestionnaireResponse

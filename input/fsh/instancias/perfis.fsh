@@ -543,6 +543,8 @@ Description: "Endereço"
 * city ^short = "Município"
 * city ^definition = "Município do endereço."
 * city ^binding.description = "Municípios brasileiros"
+* city ^example.label = "para 'Goiânia'"
+* city ^example.valueString = "520870"
 
 * district 0..0
 
@@ -552,11 +554,14 @@ Description: "Endereço"
 * state ^short = "UF"
 * state ^definition = "Unidade Federativa (estados ou Distrito Federal) do endereço."
 * state ^binding.description = "Estados brasileiros"
+* state ^example.label = "para 'Goiás'"
+* state ^example.valueString = "52"
 
 // #23
 * postalCode 1.. MS
 * postalCode ^short = "CEP"
 * postalCode ^definition = "Código de Endereçamento Postal. Utilizar a máscara XXXXX-XXXX."
+* postalCode ^example.valueString = "742010-015"
 
 * country 0..0
 * period 0..0

@@ -3,7 +3,7 @@
 + **[[StructureDefinition-requisicao-exame-citopatologico.html Requisiçao de Exame Citopatológico]]**\n""ServiceRequest""
 --[#White] **Unidade de Saúde** (2)\n""Reference.identifier""
 --[#White] **Número do protocolo** (3)\n""Identifier""
---[#White] **Prontuário** (6)\n""Extension""
+--[#White] **[[StructureDefinition-identificador-prontuario.html Prontuário]]** (6)\n""Extension""
 --[#White] **Motivo do exame** (28)\n""Coding""
 -- **[[StructureDefinition-paciente.html Paciente]]**\n""Patient""
 ++ **[[Questionnaire-anamnese-exame-citopatologico.html Anamnese]]**\n""Questionnaire""

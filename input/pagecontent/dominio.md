@@ -8,3 +8,7 @@ necessários são ilustrados abaixo.
 <div>
 {% include paciente.svg %}
 </div>
+
+<div>
+{% include anamnese.svg %}
+</div>

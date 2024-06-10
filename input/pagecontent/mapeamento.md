@@ -28,3 +28,9 @@ A anamnese é formada por um conjunto de questões. Duas delas, convém destacar
 ### Documento clínico 
 
 Uma requisição de exame citopatológico é um documento clínico. Tal documento é representado no padrão FHIR como um conjunto de instâncias de recursos que não se alteram (são imutáveis). 
+
+Abaixo é ilustrado o documento clínico correspondente a uma requisição. O Bundle é um recurso quer reúne todos as instâncias de recursos em um único arquivo. 
+
+<div>
+{% include bundle.svg %}
+</div>

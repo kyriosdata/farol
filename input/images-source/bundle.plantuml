@@ -1,0 +1,30 @@
+@startuml conta
+
+skinparam packagestyle rectangle 
+
+hide circle
+hide methods
+hide empty members
+
+skinparam class {
+    BackgroundColor White
+    ArrowColor Black
+    BorderColor #505050
+}
+
+package "Bundle\n\n<size:12>Reúne todas as informações da requisição\n" <<Node>> { 
+    class Composition as "[[StructureDefinition-documento-requisicao.html Documento de requisição]]" <<Composition>>
+    class ServiceRequest as "[[StructureDefinition-requisicao-exame-citopatologico.html Requisiçao de Exame Citopatológico]]" <<ServiceRequest>>
+    class Paciente as "[[StructureDefinition-paciente.html Paciente]]" <<Patient>>
+    class Anamnese as "[[Questionnaire-anamnese-exame-citopatologico.html Anamnese]]" <<Questionnaire>>
+    class Exame as "[[StructureDefinition-exame-clinio.html Exame clínico]]" <<Observation>>
+    class Amostra as "[[StructureDefinition-amostra.html Amostra]]" <<Specimen>>
+    Composition --> ServiceRequest
+    ServiceRequest --> Paciente
+    ServiceRequest --> Anamnese
+    ServiceRequest --> Exame
+    ServiceRequest --> Amostra
+    
+}
+
+@enduml

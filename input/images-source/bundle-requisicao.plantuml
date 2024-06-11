@@ -1,4 +1,4 @@
-@startuml bundle
+@startuml bundle-requisicao
 
 skinparam packagestyle rectangle 
 
@@ -12,7 +12,7 @@ skinparam class {
     BorderColor #505050
 }
 
-package "Bundle\n\n<size:12>Reúne todas as informações da requisição\n" <<Node>> { 
+package "Bundle (requisição)\n\n<size:12>Reúne todas as informações da requisição\n" <<Node>> { 
     class Composition as "[[StructureDefinition-documento-requisicao.html Documento de requisição]]" <<Composition>>
     class ServiceRequest as "[[StructureDefinition-requisicao-exame-citopatologico.html Requisiçao de Exame Citopatológico]]" <<ServiceRequest>>
     class Paciente as "[[StructureDefinition-paciente.html Paciente]]" <<Patient>>

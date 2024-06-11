@@ -1,4 +1,14 @@
-Abaixo é apresentado no formato de mapa mental, principalmente para profissionais de saúde, a relação entre os itens de informação, tanto de uma requisição quanto de um laudo, todos eles numerados ([ficha](./ficha-numerada.pdf)), com os recursos e elementos correspondentes do padrão FHIR. Esta representação é informal. A modelagem FHIR definitiva e que é consultada por ferramentas está disponível em [artefatos](artifacts.html). 
+Abaixo é apresentado no formato de mapa mental, principalmente para profissionais de saúde, a relação entre os itens de informação, tanto de uma requisição quanto de um laudo, todos eles numerados na ([ficha](./ficha-numerada.pdf)), com os recursos e elementos correspondentes do padrão FHIR. Esta representação é informal. A modelagem FHIR definitiva e que é consultada por ferramentas está disponível em [artefatos](artifacts.html). 
+
+## Documento clínico (requisição)
+
+Uma requisição de exame citopatológico é um documento clínico. Tal documento é representado no padrão FHIR como um conjunto de instâncias de recursos que não se alteram (são imutáveis). 
+
+Abaixo é ilustrado o documento clínico correspondente a uma requisição. O Bundle é um recurso quer reúne todos as instâncias de recursos em um único arquivo. 
+
+<div>
+{% include bundle-requisicao.svg %}
+</div>
 
 ### Requisição
 
@@ -25,12 +35,3 @@ A anamnese é formada por um conjunto de questões. Duas delas, convém destacar
 {% include anamnese.svg %}
 </div>
 
-### Documento clínico 
-
-Uma requisição de exame citopatológico é um documento clínico. Tal documento é representado no padrão FHIR como um conjunto de instâncias de recursos que não se alteram (são imutáveis). 
-
-Abaixo é ilustrado o documento clínico correspondente a uma requisição. O Bundle é um recurso quer reúne todos as instâncias de recursos em um único arquivo. 
-
-<div>
-{% include bundle.svg %}
-</div>

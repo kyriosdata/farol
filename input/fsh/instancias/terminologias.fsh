@@ -967,6 +967,32 @@ Description: "Categorização geral do laudo"
 * ^experimental = false
 * include codes from system Categorizacao
 
+// ------------------------------------------------------
+// papel
+// ------------------------------------------------------
+
+CodeSystem: Papel
+Id: papel
+Title: "Papel"
+Description: "Papel desempenhado pelo profissional no laudo"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/papel"
+* ^status = #draft
+* ^caseSensitive = true
+* ^experimental = false
+* #screening "Citotécnico responsável pelo screening"
+* #resultado "Profissional responsável pelo resultado do exame"
+
+
+ValueSet: Papel
+Id: papel
+Title: "Papel"
+Description: "Papel desempenhado pelo profissional no laudo"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/papel"
+* ^status = #draft
+* ^experimental = false
+* include codes from system Papel
+
 
 // ------------------------------------------------------
 // componentes-endereco

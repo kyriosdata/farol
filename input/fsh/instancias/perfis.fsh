@@ -832,7 +832,7 @@ Severity: #error
 
 Invariant: NaoHaLaudoSeAmostraRejeitada
 Description: "Relação entre duas entradas distintas de uma mesma section"
-Expression: "specimen.resolve().status.exists() and results.resolve().exists()"
+Expression: "specimen.resolve().status.exists() and result.resolve().exists()"
 Severity: #error
 
 Profile: DiagnosticoCitopatologico
@@ -907,10 +907,13 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 * performer ^short = "O laboratório responsável pelo serviço"
 * performer only ReferenciaUnidadeDeSaude
 
+* resultsInterpreter ^short = "Profissional responsável e, opcionalmente, citotécnico responsável pelo screening."
 * resultsInterpreter 1..2
 * resultsInterpreter ^short = "O responsável pela interpretação/resultado do exame"
 * resultsInterpreter only ReferenciaProfissional
 
+// #10
+* conclusionCode ^short = "Categorização geral"
 * conclusionCode 1..1
 * conclusionCode.coding 1..1
 * conclusionCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/categorizacao (required)
@@ -1431,7 +1434,7 @@ Description: "Indicação de profissional de saúde"
 * identifier.use 0..0
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf" (exactly)
 * identifier.value 1..1
-* identifier.value ^short = "O CPF do profissional de saúde"
+* identifier.value ^short = "O CNS do profissional de saúde"
 
 // -----------------------------------
 // amostra-requisicao

@@ -114,6 +114,23 @@ Identificação do maior nível educacional obtido pelo indivíduo.
 * valueCode ^short = "O nível educacional"
 * valueCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/escolaridade (required)
 
+Extension: Papel
+Id:   papel
+Title:  "Papel"
+Description: """
+Papel desempenhado pelo profissional no laudo.
+"""
+Context: DiagnosticReport.resultsInterpreter
+
+* ^status = #draft
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/papel"
+
+* value[x] only code
+* valueCode 1..1
+* valueCode ^short = "O nível educacional"
+* valueCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/papel (required)
+
 // ------------------------------------------------------
 // item-endereco
 // ------------------------------------------------------

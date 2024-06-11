@@ -455,12 +455,6 @@ Description: "Laudo da requisição de exame da paciente Talita. Veja a [ficha](
 * status = #final
 * code = http://loinc.org#47528-5
 
-* extension[numeroExame].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/numero-exame"
-* extension[numeroExame].valueString = "c1"
-
-* extension[dataRecebido].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/recebido-em"
-* extension[dataRecebido].valueDate = "2024"
-
 * identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/laboratorio"
 * identifier[0].value = "243623"
 

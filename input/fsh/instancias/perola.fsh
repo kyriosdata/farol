@@ -389,7 +389,7 @@ Description: "Laudo de exame citopatológico (Pérola). Veja a [ficha](perola-fa
 
 
 Instance: composition-04-2
-InstanceOf: Composition
+InstanceOf: DocumentoLaudo
 Usage: #inline
 Title: "Laudo (Renata)"
 Description: "Laudo de exame citopatológico da paciente Renata"

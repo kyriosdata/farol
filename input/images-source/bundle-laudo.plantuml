@@ -1,0 +1,30 @@
+@startuml bundle-laudo
+
+skinparam packagestyle rectangle 
+
+hide circle
+hide methods
+hide empty members
+
+skinparam class {
+    BackgroundColor White
+    ArrowColor Black
+    BorderColor #505050
+}
+
+package "Bundle (laudo)\n\n<size:12>Reúne todas as informações de um laudo\n" <<Node>> { 
+    class Composition as "[[StructureDefinition-documento-laudo.html Documento de laudo]]" <<Composition>>
+    class DiagnosticReport as "[[StructureDefinition-diagnostico-citopatologico.html Diagnóstico citopatológico]]" <<DiagnosticReport>>
+    class Paciente as "[[StructureDefinition-paciente.html Paciente]]" <<Patient>>
+    class Anamnese as "[[Questionnaire-anamnese-exame-citopatologico.html Anamnese]]" <<Questionnaire>>
+    class Exame as "[[StructureDefinition-exame-clinico.html Exame clínico]]" <<Observation>>
+    class Amostra as "[[StructureDefinition-amostra.html Amostra]]" <<Specimen>>
+    Composition --> DiagnosticReport
+    DiagnosticReport --> Paciente
+    DiagnosticReport --> Anamnese
+    DiagnosticReport --> Exame
+    DiagnosticReport --> Amostra
+    
+}
+
+@enduml

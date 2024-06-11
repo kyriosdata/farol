@@ -842,6 +842,23 @@ Description: "Documento clínico de uma requisição de exame citopatológico"
 * type.coding[tipo].code 1..1
 
 // ------------------------------------------------------
+// documento-laudo
+// ------------------------------------------------------
+
+Profile: DocumentoLaudo
+Parent: Composition
+Id: documento-laudo
+Title: "Documento Resultado de Exame Citopatológico"
+Description: "Documento clínico de resultado de exame citopatológico"
+
+* ^status = #draft
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/documento-laudo"
+
+* section 1..1
+* section.section 0..0
+* section.entry 1..1
+
+// ------------------------------------------------------
 // laudo-exame
 // ------------------------------------------------------
 
@@ -1327,18 +1344,23 @@ Profile: Amostra
 Parent: Specimen
 Id: amostra
 Title: "Amostra de exame citopatológico"
-Description: "Informações identificadas pelo laboratório sobre a amostra"
+Description: "Informações da amostra pelo laboratório"
 
 * obeys Satisfatorio and Rejeitado and Insatisfatorio
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/amostra"
 * ^status = #draft
 
+// #6 #7 #8 (extensões para status definem os detalhes do status)
 * status 1..1
 * status ^short = "Indica se a amostra é satisfatória para avaliação, se é insatisfatória ou se é rejeitada."
-* type 1..1
+
+// #4
 * receivedTime 1..1
 * receivedTime ^short = "Quando a amostra foi recebida pelo laboratório."
+
+// #5
+* type 1..1
 * type from TipoAmostra
 
 // -------------------------
@@ -1350,6 +1372,7 @@ Id: motivo-rejeicao
 Title: "Motivo para rejeição de espécime"
 Description: "Detalha o motivo pelo qual um espécime é rejeitado para exame citopatológico."
 Context: Amostra.status
+
 * ^status = #draft
 * ^language = #pt-BR
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-rejeicao"
@@ -1359,7 +1382,7 @@ Context: Amostra.status
 * value[x] 1..1
 * value[x] only CodeableConcept
 * value[x] ^short = "O código que identifica o motivo da rejeição do espécime"
-* valueCodeableConcept.coding 1..3
+* valueCodeableConcept.coding 1..2
 * valueCodeableConcept obeys DuplicidadeNaoAdmitida and ExtensaoApenasOutros and SoUmaExtensaoPermitida
 * valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
 * valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-especime-rejeitado (required)

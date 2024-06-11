@@ -485,9 +485,8 @@ Description: "Identifica e define os motivos pelos quais um espécime é rejeita
 * ^caseSensitive = true
 * ^experimental = false
 * ^date = "2024-04-15"
-* ^purpose = """**Propósito**. Identificar os possíveis motivos pelos quais uma amostra pode ser rejeitada."""
+* ^purpose = """**Propósito**. Identificar os possíveis motivos pelos quais uma amostra pode ser rejeitada. Convém destacar que, se a rejeição é por ausência ou erro na identificação da lâmina, frasco ou formulário, então o tipo correspondente é 'entered-in-error'. Este tipo também torna o espécime 'rejeitado'."""
 
-* #identificacao "falha na identificação" "Ausência ou erro na identificação da lâmina, frasco ou formulário"
 * #lamina "lâmina" "Lâmina danificada ou ausente"
 * #outras "Outras causas" "Outras causas"
 

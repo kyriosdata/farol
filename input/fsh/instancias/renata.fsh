@@ -400,7 +400,7 @@ Description: "Laudo de exame citopatológico (Renata). Veja a [ficha](renata-lim
   * resource = especime-renata
 
 Instance: composition-03-2
-InstanceOf: Composition
+InstanceOf: DocumentoLaudo
 Usage: #inline
 Title: "Laudo (Renata)"
 Description: "Laudo de exame citopatológico da paciente Renata"

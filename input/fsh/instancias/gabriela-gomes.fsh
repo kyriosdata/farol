@@ -434,7 +434,7 @@ Description: "Laudo de exame citopatológico (Gabriela). Veja a [ficha](gabriela
   * resource = especime-gabriela
 
 Instance: laudo-gabriela
-InstanceOf: Composition
+InstanceOf: DocumentoLaudo
 Usage: #inline
 Title: "Laudo (Gabriela Gomes)"
 Description: "Laudo de exame citopatológico da paciente Gabriela Gomes"

@@ -508,7 +508,7 @@ Description: "Laudo da requisição de exame da paciente Talita. Veja a [ficha](
 // ------------------------------------------------------
 
 Instance: laudo-talita
-InstanceOf: Composition
+InstanceOf: DocumentoLaudo
 Usage: #inline
 Title: "Laudo (Talita)"
 Description: "Laudo de exame citopatológico da paciente Talita"
@@ -608,4 +608,4 @@ Description: "Informações sobre a amostra identificadas pelo laboratório"
   * url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-rejeicao"
   * valueCodeableConcept.coding[0]
     * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-especime-rejeitado"
-    * code = #identificacao
+    * code = #lamina

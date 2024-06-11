@@ -442,7 +442,7 @@ Description: "Laudo de exame citopatológico (Bruna). Veja a [ficha](bruna-faria
 
 
 Instance: composition-02-2
-InstanceOf: Composition
+InstanceOf: DocumentoLaudo
 Usage: #inline
 Title: "Laudo (Bruna)"
 Description: "Laudo de exame citopatológico da paciente Bruna"

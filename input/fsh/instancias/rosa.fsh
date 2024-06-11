@@ -448,7 +448,7 @@ Usage: #inline
 // ------------------------------------------------------
 
 Instance: laudo-rosa
-InstanceOf: Composition
+InstanceOf: DocumentoLaudo
 Usage: #inline
 Title: "Laudo (Rosa)"
 Description: "Laudo de exame citopatológico da paciente Rosa"
@@ -459,38 +459,18 @@ Description: "Laudo de exame citopatológico da paciente Rosa"
 
 * author = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07)
 
-* title = "Pacote contendo todos os dados da requisição de Exame Citopatológico para a paciente fictícia Rosa"
+* title = "Pacote contendo todos os dados da requisição de Exame Citopatológico para a paciente fictícia Talita"
 
 // Data em que a composição foi montada
-* date = "2024-01-20"
+* date = "2024-01-13"
 
 // Patient
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
 
-// ServiceRequest
+// DiagnosticReport
 * section[+]
-  * title = "Requisição de exame citopatológico"
-  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb02)
-
-* section[+]
-  * title = "Respostas do questionário da anamnese"
-  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb03)
-
-* section[+]
-  * title = "Exame clínico"
-  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb04)
-
-* section[+]
-  * title = "Sinais sugestivos de doenças sexualmente transmissíveis"
-  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb05)
-
-* section[+]
-  * title = "Unidade de Saúde Requisitante"
-  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06)
-
-* section[+]
-  * title = "Espécime"
-  * entry[0] = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb15)
+  * title = "Diagnóstico (Rosa)"
+  * entry[0] = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb10)
 
 // ------------------------------------------------------
 // lab

@@ -630,9 +630,6 @@ Id: organismos
 Title: "Organismos"
 Description: "Organismos"
 
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos para microbiologia</div>"
-
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/organismos"
 
 * ^status = #unknown
@@ -641,26 +638,17 @@ Description: "Organismos"
 * ^date = "2024-04-15"
 * ^purpose = """**Propósito**. Definição dos microorganismos encontrados na amostra de exame citopatológico."""
 
-* #lactobacillus "Lactobacillus sp"
-* #cocos "Cocos"
-* #chlamydia "Sugestivo de Chlamydia sp"
-* #actinomyces "Actinomyces sp"
-* #candida "Candida sp"
 * #trichomonas "Trichomonas vaginalis"
-* #herpes "Grupo Herpes" "Efeito citopático compatível com vírus do grupo Herpes"
-* #bacilos-supracitoplasmaticos "Bacilos" "Bacilos supracitoplasmáticos (sugestivos de Gardnerella/Mobiluncus)"
-* #outros-bacilos "Outros bacilos" "Outros bacilos"
-* #outros "Outros"
-
-// ------------------------------------------------------
+* #candida "Candida spp" "Organismos fúngicos morfologicamente consistentes com Candida spp"
+* #vaginose "Desvio da flora" "Desvio da flora sugestivo de vaginose bacteriana"
+* #actinomyces "Bactérias" "Bactérias morfologicamente consistentes com Actionmyces spp"
+* #herpes "Herpes" "Alterações celulares consistentes com vírus herpes simples"
+* #citomegalovirus "Citomegalovírus" "Alterações celulares consistentes com citomegalovírus"
 
 ValueSet: Organismos
 Id: organismos
 Title: "Organismos"
 Description: "Organismos"
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para microbiologia</div>"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/organismos"
 
@@ -670,6 +658,44 @@ Description: "Organismos"
 * ^purpose = """**Propósito**. Definição do conjunto de microorganismos encontrados e que podem ser registrados no item do laudo de exame citopatológico."""
 
 * include codes from system Organismos
+
+// ------------------------------------------------------
+// escamosas
+// ------------------------------------------------------
+
+CodeSystem: Escamosas
+Id: escamosas
+Title: "Escamosas"
+Description: "Escamosas"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/escamosas"
+
+* ^status = #unknown
+* ^caseSensitive = true
+* ^experimental = false
+* ^date = "2024-04-15"
+* ^purpose = """**Propósito**. Definição dos microorganismos encontrados na amostra de exame citopatológico."""
+
+* #asc-us "ASC-US" "Células escamosas atípicas de significado indeterminado (ASC-US)"
+* #asc-h "ASC-H" "Células escamosas atípicas, não sendo possível excluir Lesão intraepitelial de alto grau (ASC-H)"
+* #lsil "LSIL" "Lesão intraepitelial escamosa de baixo grau (LSIL)"
+* #hsil "HSIL" "Lesão intraepitelial escamosa de algo grau (HSIL)"
+* #invasao "Invasão" "Lesão intraepitelial escamosa de algo grau (HSIL) com características suspeitas de invasão"
+* #carcinoma "Carcinoma" "Carcinoma de células escamosas"
+
+ValueSet: Escamosas
+Id: escamosas
+Title: "Organismos"
+Description: "Organismos"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/escamosas"
+
+* ^status = #draft
+* ^experimental = false
+* ^date = "2024-04-15"
+* ^purpose = """**Propósito**. Definição do conjunto de microorganismos encontrados e que podem ser registrados no item do laudo de exame citopatológico."""
+
+* include codes from system Escamosas
 
 // ------------------------------------------------------
 // celulas-atipicas
@@ -849,7 +875,7 @@ Description: "Itens que compõem o resultado de exame citopatológico"
 * #categorizacao "Categorização geral"
 * #epitelios-na-amostra "Epitélios representados na amostra"
 * #epitelio-escamoso-na-amostra "Epitélio escamoso representado na amostra?"
-* #epitelio-glandular-na-amostra "Epitélio glandular representado na amostra?"
+* #celulas-glandulares "Epitélio glandular representado na amostra?"
 * #epitelio-metaplasico-na-amostra "Epitélio metaplásico representado na amostra?"
 * #adequabilidade "Adequabilidade do material"
 * #normalidade "Dentro dos limites da normalidade no material examinado?"
@@ -874,7 +900,7 @@ Description: "Itens que compõem o resultado de exame citopatológico"
 * #indeterminado-desconhecida "Células atípicas de significado indeterminado de origem indefinida"
 * #atipias-escamosas "Atipias em células escamosas"
 * #atipias-glandulares "Atipias em células glandulares"
-* #neoplasias-malignas "Outras neoplasias malignas"
+* #outras-neoplasias-malignas "Outras neoplasias malignas"
 * #celulas-endometriais "Presença de células endometriais (na pós-menopausa ou acima de 40 anos, fora do período menstrual)"
 
 ValueSet: ResultadoItem

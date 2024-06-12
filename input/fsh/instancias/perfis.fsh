@@ -1042,13 +1042,13 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[componente].valueCodeableConcept.coding.code 1..1
 * component[componente].valueCodeableConcept.coding.code ^short = "Presença ou ausência"
 
-* component[glandular] ^short = "Registra presença ou não de epitélios glandular na amostra"
-* component[glandular].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#epitelio-glandular-na-amostra 
-* component[glandular].code ^short = "Identifica a informação fornecida: presença ou não de epitélio glandular"
+* component[glandular] ^short = "Registra presença ou não de células glandulares pós-histerectomia."
+* component[glandular].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#celulas-glandulares 
+* component[glandular].code ^short = "Identifica se há ou não presença de células glandulares pós-histerectomia"
 * component[glandular].code.coding ^short = "Código definido por uma terminologia"
 * component[glandular].value[x] 1..1
 * component[glandular].value[x] only boolean
-* component[glandular].value[x] ^short = "true se há presença de epitélio glandular ou falso, caso contrário."
+* component[glandular].value[x] ^short = "true se há presença de células glandulares ou falso, caso contrário."
 
 * component[metaplasico] ^short = "Registra presença ou não de epitélios metaplasico na amostra"
 * component[metaplasico].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#epitelio-metaplasico-na-amostra 
@@ -1259,7 +1259,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[glandulares].valueCodeableConcept.text 0..0
 
 * component[outrasMalignas] ^short = "Outras neoplasias malignas"
-* component[outrasMalignas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#neoplasias-malignas 
+* component[outrasMalignas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#outras-neoplasias-malignas 
 * component[outrasMalignas].code ^short = "Identifica a informação fornecida: outras neoplasias malignas"
 * component[outrasMalignas].code.coding ^short = "Código definido por uma terminologia"
 * component[outrasMalignas].value[x] 1..1
@@ -1267,7 +1267,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
 
 * component[endometriais] ^short = "Presença de células endometriais"
 * component[endometriais].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#celulas-endometriais 
-* component[endometriais].code ^short = "Identifica presença ou não de células endometriais"
+* component[endometriais].code ^short = "Identifica presença ou não de células endometriais (em mulheres com idade igual ou superior a 45 anos)"
 * component[endometriais].code.coding ^short = "Código definido por uma terminologia"
 * component[endometriais].value[x] 1..1
 * component[endometriais].value[x] only boolean

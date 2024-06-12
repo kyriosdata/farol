@@ -622,18 +622,18 @@ Description: "Conjunto das possíveis alterações celulares reativas relevantes
 * include codes from system AlteracoesReativas
 
 // ------------------------------------------------------
-// microbiologias
+// organismos
 // ------------------------------------------------------
 
-CodeSystem: Microbiologias
-Id: microbiologias
-Title: "Microbiologias"
-Description: "Microbiologias"
+CodeSystem: Organismos
+Id: organismos
+Title: "Organismos"
+Description: "Organismos"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos para microbiologia</div>"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/microbiologias"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/organismos"
 
 * ^status = #unknown
 * ^caseSensitive = true
@@ -654,22 +654,22 @@ Description: "Microbiologias"
 
 // ------------------------------------------------------
 
-ValueSet: Microbiologia
-Id: microbiologia
-Title: "Microbiologia"
-Description: "Microbiologia"
+ValueSet: Organismos
+Id: organismos
+Title: "Organismos"
+Description: "Organismos"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para microbiologia</div>"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/microbiologia"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/organismos"
 
 * ^status = #draft
 * ^experimental = false
 * ^date = "2024-04-15"
 * ^purpose = """**Propósito**. Definição do conjunto de microorganismos encontrados e que podem ser registrados no item do laudo de exame citopatológico."""
 
-* include codes from system Microbiologias
+* include codes from system Organismos
 
 // ------------------------------------------------------
 // celulas-atipicas

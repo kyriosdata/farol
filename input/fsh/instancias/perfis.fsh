@@ -931,6 +931,8 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 * performer only ReferenciaUnidadeDeSaude
 
 // Responsável pelo laudo é obrigatório, screening é opcional
+// #20
+// #21
 * resultsInterpreter 1..2
 
 * resultsInterpreter obeys PapelObrigatorio
@@ -1000,7 +1002,6 @@ Description: "Identificação e definição dos itens de dados que definem um re
 
 * component contains 
     componente 0..1 MS and 
-    categorizacao 0..1 MS and 
     glandular 0..1 MS and
     metaplasico 0..1 MS and
     normalidade 0..1 MS and
@@ -1040,19 +1041,6 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[componente].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/componente-endocervical (required)
 * component[componente].valueCodeableConcept.coding.code 1..1
 * component[componente].valueCodeableConcept.coding.code ^short = "Presença ou ausência"
-
-* component[categorizacao] ^short = "Categorização geral"
-* component[categorizacao].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#categorizacao
-* component[categorizacao].code ^short = "Categorização geral"
-* component[categorizacao].code.coding ^short = "Código definido por uma terminologia"
-* component[categorizacao].value[x] 1..1
-* component[categorizacao].value[x] only CodeableConcept
-* component[categorizacao].value[x] ^short = "Código para categorização geral"
-* component[categorizacao].valueCodeableConcept.coding 1..1
-* component[categorizacao].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
-* component[categorizacao].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/categorizacao (required)
-* component[categorizacao].valueCodeableConcept.coding.code 1..1
-* component[categorizacao].valueCodeableConcept.coding.code ^short = "negativo ou anormalidade"
 
 * component[glandular] ^short = "Registra presença ou não de epitélios glandular na amostra"
 * component[glandular].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#epitelio-glandular-na-amostra 

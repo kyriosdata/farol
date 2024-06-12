@@ -42,7 +42,7 @@ Uma requisição de exame citopatológico é um documento clínico. Tal document
 Abaixo é ilustrado o documento clínico correspondente a uma requisição. O Bundle é um recurso quer reúne todos as instâncias de recursos em um único arquivo. 
 
 <div>
-{% include bundle-requisicao.svg %}
+{% include bundle-laudo.svg %}
 </div>
 
 ### Requisição

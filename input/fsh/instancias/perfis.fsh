@@ -120,7 +120,7 @@ Title:  "Papel"
 Description: """
 Papel desempenhado pelo profissional no laudo.
 """
-Context: DiagnosticReport.resultsInterpreter
+Context: Reference
 
 * ^status = #draft
 
@@ -852,6 +852,12 @@ Description: "Relação entre duas entradas distintas de uma mesma section"
 Expression: "specimen.resolve().status.exists() and result.resolve().exists()"
 Severity: #error
 
+Invariant: PapelObrigatorio
+Description: "O papel de cada profissional deve ser indicado"
+Expression: "$this.select(extension.count() = 1 and extension[0].url = 'https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/papel').allTrue()"
+Severity: #error
+
+
 Profile: DiagnosticoCitopatologico
 Parent: DiagnosticReport
 Id: diagnostico-citopatologico
@@ -924,8 +930,11 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 * performer ^short = "O laboratório responsável pelo serviço"
 * performer only ReferenciaUnidadeDeSaude
 
-* resultsInterpreter ^short = "Profissional responsável e, opcionalmente, citotécnico responsável pelo screening."
+// Responsável pelo laudo é obrigatório, screening é opcional
 * resultsInterpreter 1..2
+
+* resultsInterpreter obeys PapelObrigatorio
+* resultsInterpreter ^short = "Profissional responsável e, opcionalmente, citotécnico responsável pelo screening."
 * resultsInterpreter ^short = "O responsável pela interpretação/resultado do exame"
 * resultsInterpreter only ReferenciaProfissional
 
@@ -1444,14 +1453,13 @@ Description: "Indicação de profissional de saúde"
 * display 0..0
 * identifier 1..1
 * identifier.assigner 0..0
-* identifier.extension 0..0
 * identifier.id 0..0
 * identifier.period 0..0
 * identifier.type 0..0
 * identifier.use 0..0
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf" (exactly)
 * identifier.value 1..1
-* identifier.value ^short = "O CNS do profissional de saúde"
+* identifier.value ^short = "O CPF do profissional de saúde"
 
 // -----------------------------------
 // amostra-requisicao

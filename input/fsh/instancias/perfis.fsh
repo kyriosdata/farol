@@ -854,7 +854,7 @@ Severity: #error
 
 Invariant: PapelObrigatorio
 Description: "O papel de cada profissional deve ser indicado"
-Expression: "$this.select(extension.count() = 1 and extension[0].url = 'https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/papel').allTrue()"
+Expression: "extension.count() = 1 and extension.select(url = 'https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/papel').allTrue()"
 Severity: #error
 
 

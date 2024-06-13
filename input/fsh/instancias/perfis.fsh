@@ -1273,6 +1273,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[endometriais].value[x] only boolean
 * component[endometriais].valueBoolean ^short = "Se true, indica presença de células endometriais e false, caso contrário"
 
+// #19
 * note ^short = "Observaçõe gerais"
 * note.author[x] 0..0
 * note.time 0..0

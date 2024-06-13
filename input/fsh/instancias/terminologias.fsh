@@ -698,6 +698,49 @@ Description: "Organismos"
 * include codes from system Escamosas
 
 // ------------------------------------------------------
+// Glandulares
+// ------------------------------------------------------
+
+CodeSystem: Glandulares
+Id: glandulares
+Title: "Glandulares"
+Description: "Glandulares"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/glandulares"
+
+* ^status = #unknown
+* ^caseSensitive = true
+* ^experimental = false
+* ^date = "2024-04-15"
+* ^purpose = """**Propósito**. Definição dos microorganismos encontrados na amostra de exame citopatológico."""
+
+* #endocervicais "Endocervicais" "Células endocervicais atípicas, sem outras especificações (SOE)"
+* #endometriais "Endometriais" "Células endometriais atípicas, sem outras especificações (SOE)"
+* #glandulares "Glandulares" "Células glandulares atípicas, sem outras especificações (SOE)"
+* #endocervicais-neoplasia "Endocervicais" "Células endocervicais atípicas, favorecendo neoplasia"
+* #glandulares-neoplasia "Glandulares" "Células glandulares atípicas, favorecendo neoplasia"
+* #in-situ "Adenocarcinoma endocervical" "Adenocarcinoma endocervical 'in situ'" 
+* #adenocarcinoma-endocervical "Adenocarcinoma endocervical" "Adenocarcinoma endocervical" 
+* #adenocarcinoma-endometrial "Adenocarcinoma endometrial" "Adenocarcinoma endometrial" 
+* #adenocarcinoma-extrauterino "Adenocarcinoma extrauterino" "Adenocarcinoma extrauterino"
+* #adenocarcinoma "Adenocarcinoma" "Adnocarcinoma, sem outras especificações (SOE)" 
+
+
+ValueSet: Glandulares
+Id: glandulares
+Title: "Glandulares"
+Description: "Glandulares"
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/glandulares"
+
+* ^status = #draft
+* ^experimental = false
+* ^date = "2024-04-15"
+* ^purpose = """**Propósito**. Definição do conjunto de microorganismos encontrados e que podem ser registrados no item do laudo de exame citopatológico."""
+
+* include codes from system Glandulares
+
+// ------------------------------------------------------
 // celulas-atipicas
 // ------------------------------------------------------
 

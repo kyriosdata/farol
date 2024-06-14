@@ -939,6 +939,7 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 * resultsInterpreter ^short = "Profissional responsável e, opcionalmente, citotécnico responsável pelo screening."
 * resultsInterpreter ^short = "O responsável pela interpretação/resultado do exame"
 * resultsInterpreter only ReferenciaProfissional
+* resultsInterpreter only Reference(Practitioner)
 
 // #10
 * conclusionCode ^short = "Categorização geral"

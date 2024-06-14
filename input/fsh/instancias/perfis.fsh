@@ -1005,7 +1005,10 @@ Description: "Identificação e definição dos itens de dados que definem um re
     variacoesNaoNeoplasicas 0..1 MS and // #11
     alteracoesReativas 0..1 MS and // #12
     glandular 0..1 MS and // #13
+    organismos 0..1 MS and // #14
     endometriais 0..1 MS and // #15
+    escamosas 0..1 MS and // #16
+    glandulares 0..1 MS and // #17
     outrasMalignas 0..1 MS and // #18
     metaplasico 0..1 MS and
     normalidade 0..1 MS and
@@ -1027,9 +1030,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
     microbiologiaOutros 0..1 MS and
     atipicasEscamosas 0..1 MS and
     atipicasGlandulares 0..1 MS and
-    atipicasOrigemIndefinida 0..1 MS and
-    escamosas 0..1 MS and 
-    glandulares 0..1 MS
+    atipicasOrigemIndefinida 0..1 MS
 
 
 // #9
@@ -1083,6 +1084,20 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[glandular].value[x] only boolean
 * component[glandular].value[x] ^short = "true se há presença de células glandulares ou falso, caso contrário."
 
+// #14
+* component[organismos] ^short = "Organismos"
+* component[organismos].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#organismos
+* component[organismos].code ^short = "Alteração celular reativa"
+* component[organismos].code.coding ^short = "Código definido por uma terminologia"
+* component[organismos].value[x] 1..1
+* component[organismos].value[x] only CodeableConcept
+* component[organismos].value[x] ^short = "Código para a alteração celular reativa"
+* component[organismos].valueCodeableConcept.coding 1..1
+* component[organismos].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
+* component[organismos].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/organismos (required)
+* component[organismos].valueCodeableConcept.coding.code 1..1
+* component[organismos].valueCodeableConcept.coding.code ^short = "Código para a variação celular não neoplásica"
+
 // #15
 * component[endometriais] ^short = "Presença de células endometriais"
 * component[endometriais].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#celulas-endometriais 
@@ -1091,6 +1106,34 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[endometriais].value[x] 1..1
 * component[endometriais].value[x] only boolean
 * component[endometriais].valueBoolean ^short = "Se true, indica presença de células endometriais e false, caso contrário"
+
+// #16  
+* component[escamosas] ^short = "Anormalidades em células epiteliais escamosas"
+* component[escamosas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#escamosas
+* component[escamosas].code ^short = "Alteração celular reativa"
+* component[escamosas].code.coding ^short = "Código definido por uma terminologia"
+* component[escamosas].value[x] 1..1
+* component[escamosas].value[x] only CodeableConcept
+* component[escamosas].value[x] ^short = "Código para a alteração celular reativa"
+* component[escamosas].valueCodeableConcept.coding 1..1
+* component[escamosas].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
+* component[escamosas].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/escamosas (required)
+* component[escamosas].valueCodeableConcept.coding.code 1..1
+* component[escamosas].valueCodeableConcept.coding.code ^short = "Código para a variação celular não neoplásica"
+
+// #17
+* component[glandulares] ^short = "Anormalidades em células epiteliais glandulares"
+* component[glandulares].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#glandulares
+* component[glandulares].code ^short = "Alteração celular reativa"
+* component[glandulares].code.coding ^short = "Código definido por uma terminologia"
+* component[glandulares].value[x] 1..1
+* component[glandulares].value[x] only CodeableConcept
+* component[glandulares].value[x] ^short = "Código para a alteração celular reativa"
+* component[glandulares].valueCodeableConcept.coding 1..1
+* component[glandulares].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
+* component[glandulares].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/glandulares (required)
+* component[glandulares].valueCodeableConcept.coding.code 1..1
+* component[glandulares].valueCodeableConcept.coding.code ^short = "Código para a variação celular não neoplásica"
 
 // #18
 * component[outrasMalignas] ^short = "Outras neoplasias malignas"
@@ -1282,32 +1325,6 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[atipicasOrigemIndefinida].valueCodeableConcept.coding.code 1..1
 * component[atipicasOrigemIndefinida].valueCodeableConcept.coding.code ^short = "Código correspondente para tipo de célula atípica de significado indeterminado."
 * component[atipicasOrigemIndefinida].valueCodeableConcept.text 0..0
-
-* component[escamosas] ^short = "Atipias em células escamosas"
-* component[escamosas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#atipias-escamosas 
-* component[escamosas].code ^short = "Identifica a informação fornecida: atipias em células escamosas"
-* component[escamosas].code.coding ^short = "Código definido por uma terminologia"
-* component[escamosas].value[x] 1..1
-* component[escamosas].value[x] only CodeableConcept
-* component[escamosas].valueCodeableConcept.coding 1..1
-* component[escamosas].valueCodeableConcept ^short = "O conjunto de códigos que identifica tipo de epitélio na amostra"
-* component[escamosas].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/atipia-escamosa (required)
-* component[escamosas].valueCodeableConcept.coding.code 1..1
-* component[escamosas].valueCodeableConcept.coding.code ^short = "Código correspondente para a atipia celular escamosa"
-* component[escamosas].valueCodeableConcept.text 0..0
-
-* component[glandulares] ^short = "Atipias em células glandulares"
-* component[glandulares].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#atipias-glandulares 
-* component[glandulares].code ^short = "Identifica a informação fornecida: atipias em células escamosas"
-* component[glandulares].code.coding ^short = "Código definido por uma terminologia"
-* component[glandulares].value[x] 1..1
-* component[glandulares].value[x] only CodeableConcept
-* component[glandulares].valueCodeableConcept.coding 1..1
-* component[glandulares].valueCodeableConcept ^short = "O conjunto de códigos que identifica tipo de epitélio na amostra"
-* component[glandulares].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/atipia-glandular (required)
-* component[glandulares].valueCodeableConcept.coding.code 1..1
-* component[glandulares].valueCodeableConcept.coding.code ^short = "Código correspondente ao tipo de atipia celular glandular"
-* component[glandulares].valueCodeableConcept.text 0..0
 
 // #19
 * note ^short = "Observaçõe gerais"

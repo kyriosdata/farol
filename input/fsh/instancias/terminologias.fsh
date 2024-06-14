@@ -947,6 +947,11 @@ Description: "Itens que compõem o resultado de exame citopatológico"
 * #celulas-endometriais "Presença de células endometriais (na pós-menopausa ou acima de 40 anos, fora do período menstrual)"
 * #variacoes-nao-neoplasicas "Variações celulares" "Variações celulares não neoplásicas"
 * #alteracoes-reativas "Alterações celulares reativas" "Alterações celulares reativas"
+* #organismos "Organismos" "Organismos"
+* #escamosas "Escamosas" "Escamosas"
+* #glandulares "Glandulares" "Glandulares"
+
+
 
 ValueSet: ResultadoItem
 Id: resultado-item

@@ -929,6 +929,7 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 * performer 1..1
 * performer ^short = "O laboratório responsável pelo serviço"
 * performer only ReferenciaUnidadeDeSaude
+* performer only Reference(Organization)
 
 // Responsável pelo laudo é obrigatório, screening é opcional
 // #20

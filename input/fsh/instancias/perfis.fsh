@@ -1001,8 +1001,12 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component ^slicing.description = "Identificação dos componentes do laudo"
 
 * component contains 
-    componente 0..1 MS and 
-    glandular 0..1 MS and
+    componente 0..1 MS and // #9
+    variacoesNaoNeoplasicas 0..1 MS and // #11
+    alteracoesReativas 0..1 MS and // #12
+    glandular 0..1 MS and // #13
+    endometriais 0..1 MS and // #15
+    outrasMalignas 0..1 MS and // #18
     metaplasico 0..1 MS and
     normalidade 0..1 MS and
     benignaInflamacao 0..1 MS and
@@ -1025,10 +1029,10 @@ Description: "Identificação e definição dos itens de dados que definem um re
     atipicasGlandulares 0..1 MS and
     atipicasOrigemIndefinida 0..1 MS and
     escamosas 0..1 MS and 
-    glandulares 0..1 MS and
-    outrasMalignas 0..1 MS and
-    endometriais 0..1 MS
+    glandulares 0..1 MS
 
+
+// #9
 * component[componente] ^short = "Componente endocervical / zona transformação"
 * component[componente].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#componente
 * component[componente].code ^short = "Componente endocervical"
@@ -1042,6 +1046,35 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[componente].valueCodeableConcept.coding.code 1..1
 * component[componente].valueCodeableConcept.coding.code ^short = "Presença ou ausência"
 
+// #11
+* component[variacoesNaoNeoplasicas] ^short = "Variações celulares não neoplásicas"
+* component[variacoesNaoNeoplasicas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#variacoes-nao-neoplasicas
+* component[variacoesNaoNeoplasicas].code ^short = "Variação celular não neoplásica"
+* component[variacoesNaoNeoplasicas].code.coding ^short = "Código definido por uma terminologia"
+* component[variacoesNaoNeoplasicas].value[x] 1..1
+* component[variacoesNaoNeoplasicas].value[x] only CodeableConcept
+* component[variacoesNaoNeoplasicas].value[x] ^short = "Código para variação celular não neoplásica"
+* component[variacoesNaoNeoplasicas].valueCodeableConcept.coding 1..1
+* component[variacoesNaoNeoplasicas].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
+* component[variacoesNaoNeoplasicas].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/variacoes-nao-neoplasicas (required)
+* component[variacoesNaoNeoplasicas].valueCodeableConcept.coding.code 1..1
+* component[variacoesNaoNeoplasicas].valueCodeableConcept.coding.code ^short = "Código para a variação celular não neoplásica"
+
+// #12
+* component[alteracoesReativas] ^short = "Alterações celulares reativas"
+* component[alteracoesReativas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#alteracoes-reativas
+* component[alteracoesReativas].code ^short = "Alteração celular reativa"
+* component[alteracoesReativas].code.coding ^short = "Código definido por uma terminologia"
+* component[alteracoesReativas].value[x] 1..1
+* component[alteracoesReativas].value[x] only CodeableConcept
+* component[alteracoesReativas].value[x] ^short = "Código para a alteração celular reativa"
+* component[alteracoesReativas].valueCodeableConcept.coding 1..1
+* component[alteracoesReativas].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
+* component[alteracoesReativas].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/alteracoes-reativas (required)
+* component[alteracoesReativas].valueCodeableConcept.coding.code 1..1
+* component[alteracoesReativas].valueCodeableConcept.coding.code ^short = "Código para a variação celular não neoplásica"
+
+// #13
 * component[glandular] ^short = "Registra presença ou não de células glandulares pós-histerectomia."
 * component[glandular].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#celulas-glandulares 
 * component[glandular].code ^short = "Identifica se há ou não presença de células glandulares pós-histerectomia"
@@ -1049,6 +1082,24 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[glandular].value[x] 1..1
 * component[glandular].value[x] only boolean
 * component[glandular].value[x] ^short = "true se há presença de células glandulares ou falso, caso contrário."
+
+// #15
+* component[endometriais] ^short = "Presença de células endometriais"
+* component[endometriais].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#celulas-endometriais 
+* component[endometriais].code ^short = "Identifica presença ou não de células endometriais (em mulheres com idade igual ou superior a 45 anos)"
+* component[endometriais].code.coding ^short = "Código definido por uma terminologia"
+* component[endometriais].value[x] 1..1
+* component[endometriais].value[x] only boolean
+* component[endometriais].valueBoolean ^short = "Se true, indica presença de células endometriais e false, caso contrário"
+
+// #18
+* component[outrasMalignas] ^short = "Outras neoplasias malignas"
+* component[outrasMalignas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#outras-neoplasias-malignas 
+* component[outrasMalignas].code ^short = "Identifica a informação fornecida: outras neoplasias malignas"
+* component[outrasMalignas].code.coding ^short = "Código definido por uma terminologia"
+* component[outrasMalignas].value[x] 1..1
+* component[outrasMalignas].value[x] only string
+
 
 * component[metaplasico] ^short = "Registra presença ou não de epitélios metaplasico na amostra"
 * component[metaplasico].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#epitelio-metaplasico-na-amostra 
@@ -1257,21 +1308,6 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[glandulares].valueCodeableConcept.coding.code 1..1
 * component[glandulares].valueCodeableConcept.coding.code ^short = "Código correspondente ao tipo de atipia celular glandular"
 * component[glandulares].valueCodeableConcept.text 0..0
-
-* component[outrasMalignas] ^short = "Outras neoplasias malignas"
-* component[outrasMalignas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#outras-neoplasias-malignas 
-* component[outrasMalignas].code ^short = "Identifica a informação fornecida: outras neoplasias malignas"
-* component[outrasMalignas].code.coding ^short = "Código definido por uma terminologia"
-* component[outrasMalignas].value[x] 1..1
-* component[outrasMalignas].value[x] only string
-
-* component[endometriais] ^short = "Presença de células endometriais"
-* component[endometriais].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#celulas-endometriais 
-* component[endometriais].code ^short = "Identifica presença ou não de células endometriais (em mulheres com idade igual ou superior a 45 anos)"
-* component[endometriais].code.coding ^short = "Código definido por uma terminologia"
-* component[endometriais].value[x] 1..1
-* component[endometriais].value[x] only boolean
-* component[endometriais].valueBoolean ^short = "Se true, indica presença de células endometriais e false, caso contrário"
 
 // #19
 * note ^short = "Observaçõe gerais"

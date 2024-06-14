@@ -569,14 +569,14 @@ Description: "Definição das várias alterações celulares benignas relevantes
 * #gravidez "Gravidez" "Alterações relacionadas à gravidez"
 
 ValueSet: VariacoesNaoNeoplasicas
-Id: variacoes-nao-neoplasica
+Id: variacoes-nao-neoplasicas
 Title: "Alteração celular benigna"
 Description: "Identifica alteração celular benigna relevante para exame citopatológico"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para alterações celulares benignas.</div>"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/variacoes-nao-neoplasica"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/variacoes-nao-neoplasicas"
 
 * ^status = #draft
 * ^experimental = false
@@ -945,6 +945,8 @@ Description: "Itens que compõem o resultado de exame citopatológico"
 * #atipias-glandulares "Atipias em células glandulares"
 * #outras-neoplasias-malignas "Outras neoplasias malignas"
 * #celulas-endometriais "Presença de células endometriais (na pós-menopausa ou acima de 40 anos, fora do período menstrual)"
+* #variacoes-nao-neoplasicas "Variações celulares" "Variações celulares não neoplásicas"
+* #alteracoes-reativas "Alterações celulares reativas" "Alterações celulares reativas"
 
 ValueSet: ResultadoItem
 Id: resultado-item

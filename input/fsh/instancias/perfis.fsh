@@ -886,8 +886,11 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 * contained ..0
 
 * issued 1..1 // #22
+* issued ^short = "Data do resultado"
 
 * basedOn 1..1
+* basedOn only Reference(ServiceRequest)
+* basedOn ^short = "Número do protocolo da requisição (emitido pelo SISCAN)"
 
 // #45 (Número do exame)
 * identifier 1..1

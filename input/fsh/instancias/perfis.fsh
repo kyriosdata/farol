@@ -857,6 +857,20 @@ Description: "O papel de cada profissional deve ser indicado"
 Expression: "extension.count() = 1 and extension.select(url = 'https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/papel').allTrue()"
 Severity: #error
 
+Invariant: rn-1
+Description: "Nenhum item de anormalidade pode ser registrado se categorização geral é negativa para lesão ou malignidade."
+Expression: "conclusionCode.coding.code = 'negativo' implies result.resolve().component.select(code in ('escamosas' | 'glandulares' | 'outras-neoplasias-malignas')).allFalse()"
+Severity: #error
+
+Invariant: rn-2
+Description: "Nenhum achado não neoplásico deve ser fornecido se categorização geral indica anormalidade em células epiteiais."
+Expression: "conclusionCode.coding.code = 'anormalidade' implies result.resolve().component.select(code in ('variacoes-nao-neoplasicas' | 'alteracoes-reativas' | 'celulas-glandulares')).allFalse()"
+Severity: #error
+
+Invariant: rn-3
+Description: "Se a categorização geral aponta anormalidade, então esta deve ser detalhada."
+Expression: "conclusionCode.coding.code = 'anormalidade' implies result.resolve().component.select(code in ('escamosas' | 'glandulares' | 'outras-neoplasias-malignas')).anyTrue()"
+Severity: #error
 
 Profile: DiagnosticoCitopatologico
 Parent: DiagnosticReport
@@ -864,7 +878,7 @@ Id: diagnostico-citopatologico
 Title: "Diagnóstico citopatológico"
 Description: "Diagnóstico de exame citopatológico em conformidade com padrão adotado pelo INCA."
 
-* obeys NaoHaLaudoSeAmostraRejeitada
+* obeys NaoHaLaudoSeAmostraRejeitada and rn-1 and rn-2 and rn-3
 
 * ^meta.lastUpdated = "2015-02-07T13:28:17.239+02:00"
 * ^version = "1.0.0"
@@ -952,6 +966,7 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 * conclusionCode 1..1
 * conclusionCode.coding 1..1
 * conclusionCode.coding ^short = "Código que identifica a categorização geral"
+* conclusionCode.coding.code 1..1
 * conclusionCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/categorizacao (required)
 
 // ------------------------------------------------------
@@ -1009,7 +1024,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component ^slicing.description = "Identificação dos componentes do laudo"
 
 * component contains 
-    componente 0..1 MS and // #9
+    componente 1..1 MS and // #9
     variacoesNaoNeoplasicas 0..1 MS and // #11
     alteracoesReativas 0..1 MS and // #12
     celulasGlandulares 0..1 MS and // #13

@@ -566,6 +566,9 @@ Description: "Itens que definem o laudo da paciente Rosa"
 * status = #final
 * code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan#citopatologico
 
+* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#componente
+* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/componente-endocervical#presente
+
 * note[0].text = "Aqui seguem as observações gerais"
 
 // ------------

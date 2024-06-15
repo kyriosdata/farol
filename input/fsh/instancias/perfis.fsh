@@ -1386,7 +1386,7 @@ Profile: Amostra
 Parent: Specimen
 Id: amostra
 Title: "Amostra de exame citopatológico"
-Description: "Informações da amostra pelo laboratório"
+Description: "Informações sobre o espécime geradas pelo laboratório"
 
 * obeys Satisfatorio and Rejeitado and Insatisfatorio
 

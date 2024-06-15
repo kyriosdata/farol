@@ -37,12 +37,12 @@ A anamnese é formada por um conjunto de questões. Duas delas, convém destacar
 
 ## Documento clínico (laudo)
 
-Uma requisição de exame citopatológico é um documento clínico. Tal documento é representado no padrão FHIR como um conjunto de instâncias de recursos que não se alteram (são imutáveis). 
+Um resultado de exame citopatológico é um documento clínico. Tal documento é representado no padrão FHIR como um conjunto de instâncias de recursos que não se alteram (são imutáveis). Todas fornecidas em um Bundle. O primeiro elemento deste Bundle
+é uma Composition (o resultado). 
 
-Abaixo é ilustrado o documento clínico correspondente a uma requisição. O Bundle é um recurso quer reúne todos as instâncias de recursos em um único arquivo. 
+A principal instância desta Compositon é um DiagnosticReport. Este diagnóstico é produzido com base em uma requisição, por um laboratório (unidade de saúde) e por um profissional (opcionalmente um técnico responsável pelo _screening_). A investigação do espécime gera informações sobre o espécime propriamente dito e, em particular, observações sobre as quais o resultado do exame está baseado.
 
 <div>
 {% include bundle-laudo.svg %}
 </div>
 
-### Requisição

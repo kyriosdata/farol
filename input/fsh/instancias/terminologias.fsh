@@ -1075,7 +1075,7 @@ Title: "Definição de tipos de documentos"
 Description: "Identificação de documentos clínicos de interesse do INCA"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos"
-* ^status = #draft
+* ^status = #active
 * ^caseSensitive = true
 * ^experimental = false
 * #requisicao-citopatologico "Requisição de exame citopatológico" "Requisição de exame citopatológico"
@@ -1086,7 +1086,7 @@ Id: tipos-documentos
 Title: "Conjunto de tipos de documentos"
 Description: "Conjunto dos identificadores de tipos de documentos de interesse do INCA"
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipos-documentos"
-* ^status = #draft
+* ^status = #active
 * ^experimental = false
 * include codes from system TiposDocumentos
 

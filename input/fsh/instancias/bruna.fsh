@@ -80,7 +80,8 @@ Description: "Requisição de Exame Citopatológico da paciente Bruna"
 
 * status = #final
 
-* type.coding[tipo] = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos#requisicao-citopatologico
+* type = http://loinc.org#47528-5
+* category = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos#requisicao-citopatologico
 
 * author = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb07)
   
@@ -449,7 +450,9 @@ Description: "Laudo de exame citopatológico da paciente Bruna"
 
 * status = #final
 
-* type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos#laudo-citopatologico
+// Laboratory report
+* type = http://loinc.org#11502-2
+* category = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos#laudo-citopatologico
 
 * author = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb13)
 

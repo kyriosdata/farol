@@ -812,14 +812,9 @@ Description: "Documento clínico de uma requisição de exame citopatológico"
 * ^status = #draft
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/documento-requisicao"
 
-* type.coding ^slicing.discriminator.type = #pattern
-* type.coding ^slicing.discriminator.path = "system"
-* type.coding ^slicing.rules = #open
+* type = http://loinc.org#47528-5
 
-* type.coding contains tipo 1..1
-
-* type.coding[tipo].system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos"
-* type.coding[tipo].code 1..1
+* category from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipos-documentos (required)
 
 // ------------------------------------------------------
 // documento-laudo
@@ -833,6 +828,8 @@ Description: "Documento clínico de resultado de exame citopatológico"
 
 * ^status = #draft
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/documento-laudo"
+
+* type = http://loinc.org#11502-2
 
 * section 1..1
 * section.section 0..0
@@ -886,6 +883,7 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/diagnostico-citopatologico"
 
+// Cytology report of Cervical or vaginal smear or scraping Cyto stain
 * code = http://loinc.org#47528-5
 
 * extension 0..0

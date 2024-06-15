@@ -15,15 +15,17 @@ skinparam class {
 package "Bundle (laudo)\n\n<size:12>Reúne todas as informações de um laudo\n" <<Node>> { 
     class Composition as "[[StructureDefinition-documento-laudo.html Documento de laudo]]" <<Composition>>
     class DiagnosticReport as "[[StructureDefinition-diagnostico-citopatologico.html Diagnóstico citopatológico]]" <<DiagnosticReport>>
-    class Paciente as "[[StructureDefinition-paciente.html Paciente]]" <<Patient>>
-    class Anamnese as "[[Questionnaire-anamnese-exame-citopatologico.html Anamnese]]" <<Questionnaire>>
-    class Exame as "[[StructureDefinition-exame-clinico.html Exame clínico]]" <<Observation>>
+    class RequisicaoExameCitopatologico as "[[StructureDefinition-requisicao-exame-citopatologico.html Requisição de Exame Citopatológico]]" <<ServiceRequest>>
+    class ReferenciaUnidadeDeSaude as "[[StructureDefinition-referencia-unidade-de-saude.html Unidade de Saúde]]" <<Reference>>
+    class ReferenciaProfissional as "[[StructureDefinition-referencia-profissional.html Profissional]]" <<Reference>>
     class Amostra as "[[StructureDefinition-amostra.html Amostra]]" <<Specimen>>
+    class ComponentesLaudoCitopatologico as "[[StructureDefinition-componentes-laudo-citopatologico.html Resultado]]" <<Observation>>
     Composition --> DiagnosticReport
-    DiagnosticReport --> Paciente
-    DiagnosticReport --> Anamnese
-    DiagnosticReport --> Exame
+    DiagnosticReport --> RequisicaoExameCitopatologico
+    DiagnosticReport --> ReferenciaUnidadeDeSaude
+    DiagnosticReport --> ReferenciaProfissional
     DiagnosticReport --> Amostra
+    DiagnosticReport --> ComponentesLaudoCitopatologico
     
 }
 

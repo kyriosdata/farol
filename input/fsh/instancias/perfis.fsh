@@ -925,9 +925,11 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 
 * specimen 1..1
 * specimen only Reference(Amostra)
+* specimen ^short = "Espécime no qual o resultado está baseado"
 
 * result 1..1
 * result only Reference(ComponentesLaudoCitopatologico)
+* result ^short = "Observação para a interpretação/resultado"
 
 * performer 1..1
 * performer ^short = "O laboratório responsável pelo serviço"
@@ -949,6 +951,7 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 * conclusionCode ^short = "Categorização geral"
 * conclusionCode 1..1
 * conclusionCode.coding 1..1
+* conclusionCode.coding ^short = "Código que identifica a categorização geral"
 * conclusionCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/categorizacao (required)
 
 // ------------------------------------------------------

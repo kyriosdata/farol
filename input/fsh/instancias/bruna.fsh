@@ -210,7 +210,7 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 
 Instance: ExameClinicoBruna
 InstanceOf: ExameClinico
-Usage: #example
+Usage: #inline
 Title: "Exame Clinico Bruna"
 Description: "Exame clínico da Bruna"
 * status = #final
@@ -569,6 +569,7 @@ Description: "Itens que definem o laudo da paciente Bruna"
 // Motivo de rejeicao apenas se #unavailable (deve gerar erro)
 Instance: especime-bruna
 InstanceOf: Amostra
+Usage: #inline
 Description: "Informações sobre a amostra identificadas pelo laboratório"
 
 * type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional

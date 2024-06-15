@@ -313,7 +313,7 @@ Usage: #inline
 
 Instance: ExameClinicoPerola
 InstanceOf: ExameClinico
-Usage: #example
+Usage: #inline
 Title: "Exame Clinico Pérola"
 Description: "Exame clínico da Pérola"
 * status = #final
@@ -522,6 +522,7 @@ Description: "Itens que definem o laudo da paciente Pérola"
 
 Instance: especime-perola
 InstanceOf: Amostra
+Usage: #inline
 Description: "Informações sobre a amostra identificadas pelo laboratório"
 
 * type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional

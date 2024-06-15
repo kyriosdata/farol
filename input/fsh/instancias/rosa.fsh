@@ -574,6 +574,7 @@ Description: "Itens que definem o laudo da paciente Rosa"
 
 Instance: especime-rosa
 InstanceOf: Amostra
+Usage: #inline
 Description: "Informações sobre a amostra identificadas pelo laboratório"
 
 * type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional

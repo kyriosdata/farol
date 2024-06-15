@@ -325,7 +325,7 @@ Usage: #inline
 
 Instance: ExameClinicoRenata
 InstanceOf: ExameClinico
-Usage: #example
+Usage: #inline
 Title: "Exame Clinico Renata"
 Description: "Exame clínico da Renata"
 * status = #final
@@ -529,6 +529,7 @@ Description: "Itens que definem o laudo da paciente Renata"
 
 Instance: especime-renata
 InstanceOf: Amostra
+Usage: #inline
 Description: "Informações sobre a amostra identificadas pelo laboratório"
 
 * type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional

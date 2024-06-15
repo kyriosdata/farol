@@ -121,7 +121,7 @@ Usage: #inline
 
 Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb04
 InstanceOf: ExameClinico
-Usage: #example
+Usage: #inline
 Title: "Exame Clinico Talita"
 Description: "Exame clínico da Talita"
 * status = #final
@@ -579,6 +579,7 @@ Description: "Laudo de exame citopatológico (Talita). Veja a [ficha](talita-mor
 
 Instance: especime-talita
 InstanceOf: Amostra
+Usage: #inline
 Description: "Informações sobre a amostra identificadas pelo laboratório"
 
 * type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional

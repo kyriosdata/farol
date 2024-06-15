@@ -215,7 +215,7 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 
 Instance: ExameClinicoGabriela
 InstanceOf: ExameClinico
-Usage: #example
+Usage: #inline
 Title: "Exame Clinico Gabriela"
 Description: "Exame clínico da Gabriela"
 * status = #final
@@ -565,6 +565,7 @@ Description: "Itens que definem o laudo da paciente Gabriela Gomes"
 
 Instance: especime-gabriela
 InstanceOf: Amostra
+Usage: #inline
 Description: "Informações sobre a amostra identificadas pelo laboratório"
 
 * type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional

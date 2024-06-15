@@ -557,18 +557,6 @@ Description: "Itens que definem o laudo da paciente Gabriela Gomes"
 * component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#componente
 * component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/componente-endocervical#presente
 
-* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#epitelio-metaplasico-na-amostra
-* component[=].valueBoolean = true
-
-* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#normalidade
-* component[=].valueBoolean = false
-
-* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#indeterminado-escamosas
-* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/celulas-atipicas-escamosas#asc-h
-
-* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#indeterminado-glandulares
-* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/celulas-atipicas#alto-grau
-
 * note[0].text = "Amostra parcialmente dessecada."
 
 // ------------

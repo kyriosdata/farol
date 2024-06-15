@@ -427,21 +427,6 @@ Description: "Itens que definem o laudo da paciente Talita"
 * component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#componente
 * component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/componente-endocervical#presente
 
-* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#epitelio-metaplasico-na-amostra
-* component[=].valueBoolean = true
-
-* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#normalidade
-* component[=].valueBoolean = false
-
-* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#benigna-inflamacao
-* component[=].valueBoolean = true
-
-* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#microbiologia-actinomyces
-* component[=].valueBoolean = true
-
-* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#microbiologia-bacilos
-* component[=].valueBoolean = true
-
 // ------------------------------------------------------
 // diagnostico (o contexto do laudo, o relatório diagnóstico)
 // ------------------------------------------------------

@@ -187,7 +187,7 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 // * performer = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb07)
 // * effectiveDateTime = "2023-12-13"
 
-// * valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo#normal
+// * valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-inspecao-colo#normal
 
 
 // Instance: exame-dst-02
@@ -217,7 +217,7 @@ Description: "Exame clínico da Bruna"
 * code = http://loinc.org#32423-6 
 
 * component[inspecao].code = http://loinc.org#12044-4
-* component[inspecao].valueCodeableConcept = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo#normal
+* component[inspecao].valueCodeableConcept = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-inspecao-colo#normal
 * component[ist].code = http://loinc.org#45687-1
 * component[ist].valueBoolean = true
 

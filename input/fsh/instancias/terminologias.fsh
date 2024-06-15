@@ -361,20 +361,20 @@ se refere a uma requisição unicamente identificada pelo SISCAN.
 
 
 // ------------------------------------------------------
-// resultados-inspecao-colo
+// resultado-inspecao-colo
 // ------------------------------------------------------
 
-CodeSystem: ResultadosInspecaoColo
-Id: resultados-inspecao-colo
+CodeSystem: ResultadoInspecaoColo
+Id: resultado-inspecao-colo
 Title: "Resultado da inspeção do colo"
 Description: "As possibilidades da inspeção de colo visando o exame citopatológico."
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Código para resultado da inspeção do colo.</div>"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-inspecao-colo"
 
-* ^status = #unknown
+* ^status = #active
 * ^caseSensitive = true
 * ^experimental = false
 * ^date = "2024-04-15"
@@ -385,24 +385,19 @@ Description: "As possibilidades da inspeção de colo visando o exame citopatol�
 * #alterado "Alterado" "Alterado"
 * #nao-visualizado "Colo não visualizado" "Colo não visualizado"
 
-// ------------------------------------------------------
-
 ValueSet: ResultadoInspecaoColo
 Id: resultado-inspecao-colo
 Title: "Situação do colo"
 Description: "Resultados para a inspeção do colo"
 
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Código admitidos para resultado da inspeção do colo.</div>"
-
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/resultado-inspecao-colo"
 
-* ^status = #draft
+* ^status = #active
 * ^experimental = false
 * ^date = "2024-04-15"
 * ^purpose = "**Propósito**. Definição do conjunto de valores para resultado da inspeção de colo admitido para o item em questão da requisição de exame citopatológico."
 
-* include codes from system ResultadosInspecaoColo
+* include codes from system ResultadoInspecaoColo
 
 // ------------------------------------------------------
 // laudos-siscan
@@ -940,7 +935,7 @@ Title: "Tipos de amostra"
 Description: "Tipos de amostra para resultado de exame citopatológico"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra"
-* ^status = #draft
+* ^status = #active
 * ^caseSensitive = true
 * ^experimental = false
 * ^purpose = "Identifica e define os tipos de amostra para exame citopatológico."
@@ -952,7 +947,7 @@ Id: tipo-amostra
 Title: "Tipos de amostra"
 Description: "Tipos de amostra para laudo citopatológico"
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipo-amostra"
-* ^status = #draft
+* ^status = #active
 * ^experimental = false
 * ^purpose = "Valores possíveis para o tipo de amostra para exame citopatológico."
 * include codes from system TipoAmostra
@@ -967,7 +962,7 @@ Title: "Componente endocervical"
 Description: "Identifica e define presença ou ausência de componente endocervical."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/componente-endocervical"
-* ^status = #draft
+* ^status = #active
 * ^caseSensitive = true
 * ^experimental = false
 * ^purpose = "**Propósito**. Identificar se há ou não componente endocervical na amostra avaliada."
@@ -980,7 +975,7 @@ Id: componente-endocervical
 Title: "Tipos de amostra"
 Description: "Tipos de amostra para laudo citopatológico"
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/componente-endocervical"
-* ^status = #draft
+* ^status = #active
 * ^experimental = false
 * ^purpose = "Conjunto de valores possíveis para registrar a presença ou não de componente endocervical na amostra."
 * include codes from system ComponenteEndocervical
@@ -992,10 +987,13 @@ Description: "Tipos de amostra para laudo citopatológico"
 CodeSystem: Categorizacao
 Id: categorizacao
 Title: "Categorização geral"
-Description: "Categorização geral do laudo"
+Description: "A categorização geral do resultado"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/categorizacao"
-* ^status = #draft
+
+* ^purpose = "A conclusão do resultado."
+
+* ^status = #active
 * ^caseSensitive = true
 * ^experimental = false
 * #negativo "Negativo para lesão intraepitelial ou malignidade na amostra analisada"
@@ -1104,7 +1102,7 @@ mulher, uma mistura de ambos, ou nenhum dos dois. Essa identidade não necessari
 corresponde ao sexo atribuído no nascimento. """
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/genero"
-* ^status = #draft
+* ^status = #active
 * ^caseSensitive = true
 * ^experimental = false
 * #149 "Homem transgênero"
@@ -1122,7 +1120,7 @@ Id: genero
 Title: "Conjunto de gêneros"
 Description: "Gêneros admitidos em ficha de requisição"
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/genero"
-* ^status = #draft
+* ^status = #active
 * ^experimental = false
 * https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/genero#149 "Homem transgênero"
 * https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/genero#201 "Mulher cisgênero"

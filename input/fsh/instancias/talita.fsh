@@ -94,7 +94,7 @@ Usage: #inline
 // * performer = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb07)
 // * effectiveDateTime = "2023-12-07"
 
-// * valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo#normal
+// * valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-inspecao-colo#normal
 
 
 // Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb05
@@ -128,7 +128,7 @@ Description: "Exame clínico da Talita"
 * code = http://loinc.org#32423-6 
 
 * component[inspecao].code = http://loinc.org#12044-4
-* component[inspecao].valueCodeableConcept = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo#normal
+* component[inspecao].valueCodeableConcept = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-inspecao-colo#normal
 * component[ist].code = http://loinc.org#45687-1
 * component[ist].valueBoolean = false
 
@@ -426,6 +426,9 @@ Description: "Itens que definem o laudo da paciente Talita"
 
 * component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#componente
 * component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/componente-endocervical#presente
+
+* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#outras-neoplasias-malignas
+* component[=].valueString = "outra"
 
 // ------------------------------------------------------
 // diagnostico (o contexto do laudo, o relatório diagnóstico)

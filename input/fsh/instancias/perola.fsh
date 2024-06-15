@@ -320,7 +320,7 @@ Description: "Exame clínico da Pérola"
 * code = http://loinc.org#32423-6 
 
 * component[inspecao].code = http://loinc.org#12044-4
-* component[inspecao].valueCodeableConcept = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultados-inspecao-colo#normal
+* component[inspecao].valueCodeableConcept = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-inspecao-colo#normal
 * component[ist].code = http://loinc.org#45687-1
 * component[ist].valueBoolean = false
 

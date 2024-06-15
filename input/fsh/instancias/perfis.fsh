@@ -859,17 +859,17 @@ Severity: #error
 
 Invariant: rn-1
 Description: "Nenhum item de anormalidade pode ser registrado se categorização geral é negativa para lesão ou malignidade."
-Expression: "conclusionCode.coding.code = 'negativo' implies result.resolve().component.select(code in ('escamosas' | 'glandulares' | 'outras-neoplasias-malignas')).allFalse()"
+Expression: "'negativo' in conclusionCode.coding.code implies result.resolve().component.select(code in ('escamosas' | 'glandulares' | 'outras-neoplasias-malignas')).allFalse()"
 Severity: #error
 
 Invariant: rn-2
 Description: "Nenhum achado não neoplásico deve ser fornecido se categorização geral indica anormalidade em células epiteiais."
-Expression: "conclusionCode.coding.code = 'anormalidade' implies result.resolve().component.select(code in ('variacoes-nao-neoplasicas' | 'alteracoes-reativas' | 'celulas-glandulares')).allFalse()"
+Expression: "'anormalidade' in conclusionCode.coding.code implies result.resolve().component.select(code in ('variacoes-nao-neoplasicas' | 'alteracoes-reativas' | 'celulas-glandulares')).allFalse()"
 Severity: #error
 
 Invariant: rn-3
 Description: "Se a categorização geral aponta anormalidade, então esta deve ser detalhada."
-Expression: "conclusionCode.coding.code = 'anormalidade' implies result.resolve().component.select(code in ('escamosas' | 'glandulares' | 'outras-neoplasias-malignas')).anyTrue()"
+Expression: "'anormalidade' in conclusionCode.coding.code implies result.resolve().component.select(code in ('escamosas' | 'glandulares' | 'outras-neoplasias-malignas')).anyTrue()"
 Severity: #error
 
 Profile: DiagnosticoCitopatologico
@@ -878,7 +878,7 @@ Id: diagnostico-citopatologico
 Title: "Diagnóstico citopatológico"
 Description: "Diagnóstico de exame citopatológico em conformidade com padrão adotado pelo INCA."
 
-* obeys NaoHaLaudoSeAmostraRejeitada and rn-1 and rn-2 and rn-3
+* obeys NaoHaLaudoSeAmostraRejeitada and rn-1 and rn-2
 
 * ^meta.lastUpdated = "2015-02-07T13:28:17.239+02:00"
 * ^version = "1.0.0"
@@ -1144,6 +1144,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[outrasMalignas].code.coding ^short = "Código definido por uma terminologia"
 * component[outrasMalignas].value[x] 1..1
 * component[outrasMalignas].value[x] only string
+* component[outrasMalignas].valueString ^short = "Especificar as neoplasias"
 
 // #19
 * note ^short = "Observaçõe gerais"

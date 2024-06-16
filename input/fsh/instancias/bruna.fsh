@@ -576,7 +576,7 @@ Description: "Laudo da requisição de exame da paciente Bruna. Veja a [ficha](b
 
 * conclusionCode.coding
   * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/categorizacao"
-  * code = #negativo
+  * code = #anormalidade
 
 // ------------------------------------------------------
 // componentes do laudo

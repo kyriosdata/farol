@@ -852,18 +852,19 @@ Severity: #error
 
 Invariant: rn-1
 Description: "Nenhum item de anormalidade pode ser registrado se categorização geral é negativa para lesão ou malignidade."
-Expression: "'negativo' in conclusionCode.coding.code implies result.resolve().component.select(code in ('escamosas' | 'glandulares' | 'outras-neoplasias-malignas')).allFalse()"
+Expression: "'negativo' in conclusionCode.coding.code implies result[0].resolve().component.code.coding.select(code in ('escamosas' | 'glandulares' | 'outras-neoplasias-malignas')).allFalse()"
 Severity: #error
 
 Invariant: rn-2
 Description: "Nenhum achado não neoplásico deve ser fornecido se categorização geral indica anormalidade em células epiteiais."
-Expression: "'anormalidade' in conclusionCode.coding.code implies result.resolve().component.select(code in ('variacoes-nao-neoplasicas' | 'alteracoes-reativas' | 'celulas-glandulares')).allFalse()"
+Expression: "'anormalidade' in conclusionCode.coding.code implies result[0].resolve().component.code.coding.select(code in ('variacoes-nao-neoplasicas' | 'alteracoes-reativas' | 'celulas-glandulares')).allFalse()"
 Severity: #error
 
 Invariant: rn-3
 Description: "Se a categorização geral aponta anormalidade, então esta deve ser detalhada."
-Expression: "'anormalidade' in conclusionCode.coding.code implies result.resolve().component.select(code in ('escamosas' | 'glandulares' | 'outras-neoplasias-malignas')).anyTrue()"
+Expression: "'anormalidade' in conclusionCode.coding.code implies result[0].resolve().component.code.coding.select(code in ('escamosas' | 'glandulares' | 'outras-neoplasias-malignas')).anyTrue()"
 Severity: #error
+
 
 Profile: DiagnosticoCitopatologico
 Parent: DiagnosticReport

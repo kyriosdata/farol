@@ -114,6 +114,7 @@ Identificação do maior nível educacional obtido pelo indivíduo.
 * valueCode ^short = "O nível educacional"
 * valueCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/escolaridades (required)
 
+
 Extension: Responsabilidade
 Id:   responsabilidade
 Title:  "Responsabilidade"
@@ -152,14 +153,14 @@ Context: Address.line
 // ------------------------------------------------------
 
 Extension: Genero
-Id: genero
+Id: extension-genero
 Title: "Gênero"
 Description: "Gênero da paciente"
 Context: Patient
 
 * ^status = #draft
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/genero"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/extension-genero"
 
 * value[x] only CodeableConcept
 * valueCodeableConcept 1..1
@@ -607,9 +608,9 @@ Description: "Dados demográficos da paciente"
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/filiacao named filiacao 0..1 MS and
     http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade named nacionalidade 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade named idade 0..1 MS and
-    https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/escolaridade named escolaridade 0..1 MS and
+    https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional named escolaridade 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/raca-etnia named etnia 0..1 MS and
-    https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/genero named genero 0..1 MS
+    https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/extension-genero named genero 0..1 MS
 
 * extension[filiacao] ^short = "Filiação"
 
@@ -846,7 +847,7 @@ Severity: #error
 
 Invariant: PapelObrigatorio
 Description: "O papel de cada profissional deve ser indicado"
-Expression: "extension.count() = 1 and extension.select(url = 'https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/papel').allTrue()"
+Expression: "extension.count() = 1 and extension.select(url = 'https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/responsabilidade').allTrue()"
 Severity: #error
 
 Invariant: rn-1

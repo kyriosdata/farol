@@ -1,6 +1,6 @@
 Alias: $tipodocumento = http://www.saude.gov.br/fhir/r4/CodeSystem/BRTipoDocumento
 Alias: $idade = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade
-Alias: $escolaridade = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/escolaridade
+Alias: $escolaridade = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional
 Alias: $racacor = http://www.saude.gov.br/fhir/r4/CodeSystem/BRRacaCor
 Alias: $racacoretnia = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRacaCorEtnia-1.0
 Alias: $etniaindigena = http://www.saude.gov.br/fhir/r4/CodeSystem/BREtniaIndigena

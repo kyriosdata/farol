@@ -4,7 +4,7 @@ Alias: $BRUnidadeFederativa-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRUni
 Alias: $BRMeioContato = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRMeioContato-1.0
 Alias: $laudo-tipo-item = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item
 Alias: $yesnodontknow = http://hl7.org/fhir/ValueSet/yesnodontknow
-Alias: $resultado-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/resultado-inspecao-colo
+Alias: $resultado-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/resultados-inspecao-colo
 
 
 Alias: $BRRacaCor-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRRacaCor-1.0
@@ -95,8 +95,8 @@ Context: Patient
 * extension[indigenousEthnicity].valueCode from $BREtniaIndigena-1.0 (required)
 
 
-Extension: Escolaridade
-Id:   escolaridade
+Extension: NivelEducacional
+Id:   nivel-educacional
 Title:  "Escolaridade"
 Description: """
 Identificação do maior nível educacional obtido pelo indivíduo.
@@ -104,7 +104,7 @@ Identificação do maior nível educacional obtido pelo indivíduo.
 
 * ^status = #draft
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/escolaridade"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional"
 
 * ^context[0].type = #element
 * ^context[0].expression = "Patient"
@@ -112,11 +112,11 @@ Identificação do maior nível educacional obtido pelo indivíduo.
 * value[x] only code
 * valueCode 1..1
 * valueCode ^short = "O nível educacional"
-* valueCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/escolaridade (required)
+* valueCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/escolaridades (required)
 
-Extension: Papel
-Id:   papel
-Title:  "Papel"
+Extension: Responsabilidade
+Id:   responsabilidade
+Title:  "Responsabilidade"
 Description: """
 Papel desempenhado pelo profissional no laudo.
 """
@@ -124,12 +124,12 @@ Context: Reference
 
 * ^status = #draft
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/papel"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/responsabilidade"
 
 * value[x] only code
 * valueCode 1..1
-* valueCode ^short = "O nível educacional"
-* valueCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/papel (required)
+* valueCode ^short = "O papel desempenhado pelo profissional"
+* valueCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/papeis (required)
 
 // ------------------------------------------------------
 // item-endereco
@@ -145,7 +145,7 @@ Context: Address.line
 
 * value[x] only code
 * valueCode 1..1
-* valueCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/itens-endereco
+* valueCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/componentes-endereco
 
 // ------------------------------------------------------
 // gênero // #14 (gênero)
@@ -165,7 +165,7 @@ Context: Patient
 * valueCodeableConcept 1..1
 * valueCodeableConcept ^short = "Gênero"
 * valueCodeableConcept.coding 1..1 
-* valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/genero (required)
+* valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/generos (required)
 * valueCodeableConcept.coding.code 1..1
 
 // ------------------------------------------------------
@@ -353,7 +353,7 @@ Description: "Definição das informações que devem constar em toda e qualquer
 * reasonCode ^short = "Motivo do exame"
 * reasonCode.coding 1..1
 * reasonCode.coding ^short = "Código que identifica o motivo do exame"
-* reasonCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-exame-citopatologico (required)
+* reasonCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivos-exame-citopatologico (required)
 
 * authoredOn 0..0
 
@@ -844,11 +844,6 @@ Description: "Data de recebimento do pedido não pode ser após data do laudo"
 Expression: "(address.where(use='home').period.start > @1974-12-25).not()"
 Severity: #error
 
-Invariant: NaoHaLaudoSeAmostraRejeitada
-Description: "Relação entre duas entradas distintas de uma mesma section"
-Expression: "specimen.resolve().status.exists() and result.resolve().exists()"
-Severity: #error
-
 Invariant: PapelObrigatorio
 Description: "O papel de cada profissional deve ser indicado"
 Expression: "extension.count() = 1 and extension.select(url = 'https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/papel').allTrue()"
@@ -875,7 +870,7 @@ Id: diagnostico-citopatologico
 Title: "Diagnóstico citopatológico"
 Description: "Diagnóstico de exame citopatológico em conformidade com padrão adotado pelo INCA."
 
-* obeys NaoHaLaudoSeAmostraRejeitada and rn-1 and rn-2
+* obeys rn-1 and rn-2 and rn-3
 
 * ^meta.lastUpdated = "2015-02-07T13:28:17.239+02:00"
 * ^version = "1.0.0"
@@ -965,7 +960,7 @@ Description: "Diagnóstico de exame citopatológico em conformidade com padrão 
 * conclusionCode.coding 1..1
 * conclusionCode.coding ^short = "Código que identifica a categorização geral"
 * conclusionCode.coding.code 1..1
-* conclusionCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/categorizacao (required)
+* conclusionCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/categorizacoes (required)
 
 // ------------------------------------------------------
 // componentes-laudo-citopatologico
@@ -1003,7 +998,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/componentes-laudo-citopatologico"
 * ^status = #draft
-* code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan#citopatologico
+* code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-siscan#citopatologico
 
 // #44
 // #46
@@ -1043,7 +1038,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[componente].value[x] ^short = "Código para presença ou ausência"
 * component[componente].valueCodeableConcept.coding 1..1
 * component[componente].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
-* component[componente].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/componente-endocervical (required)
+* component[componente].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/componentes-endocervicais (required)
 * component[componente].valueCodeableConcept.coding.code 1..1
 * component[componente].valueCodeableConcept.coding.code ^short = "Presença ou ausência"
 
@@ -1213,7 +1208,7 @@ Description: "Informações sobre o espécime geradas pelo laboratório"
 
 // #5
 * type 1..1
-* type from TipoAmostra
+* type from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipos-amostra (required)
 
 // -------------------------
 // motivo-especime-rejeitado
@@ -1237,7 +1232,7 @@ Context: Amostra.status
 * valueCodeableConcept.coding 1..2
 * valueCodeableConcept obeys DuplicidadeNaoAdmitida and ExtensaoApenasOutros and SoUmaExtensaoPermitida
 * valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
-* valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-especime-rejeitado (required)
+* valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivos-especime-rejeitado (required)
 * valueCodeableConcept.coding.code 1..1
 * valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da rejeição da amostra"
 * valueCodeableConcept.coding obeys OutraCausaDeveSerDetalhada
@@ -1264,7 +1259,7 @@ Context: Amostra.status
 * valueCodeableConcept.coding 1..6
 * valueCodeableConcept obeys DuplicidadeNaoAdmitida
 * valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
-* valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-especime-insatisfatorio (required)
+* valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivos-especime-insatisfatorio (required)
 * valueCodeableConcept.coding.code 1..1
 * valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da amostra ser insatisfatória"
 

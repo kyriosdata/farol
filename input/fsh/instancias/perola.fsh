@@ -71,7 +71,7 @@ Description: "Requisição de Exame Citopatológico da paciente Pérola"
 * status = #final
 
 * type = http://loinc.org#47528-5
-* category = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos#requisicao-citopatologico
+* category = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-documento#requisicao-citopatologico
 
 * author = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb07)
   
@@ -122,7 +122,7 @@ Usage: #inline
   * system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTabelaSUS"
 
 * subject = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb01)
-* reasonCode[0].coding[0] = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivos-exame-citopatologico#seguimento
+* reasonCode[0].coding[0] = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-exame-citopatologico#seguimento
 
 // Permite identificar o local (unidade requisitante)
 * encounter = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb08)
@@ -399,7 +399,7 @@ Description: "Laudo de exame citopatológico da paciente Renata"
 
 // Laboratory report
 * type = http://loinc.org#11502-2
-* category = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos#laudo-citopatologico
+* category = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-documento#laudo-citopatologico
 
 * author = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb13)
 
@@ -511,7 +511,7 @@ Description: "Itens que definem o laudo da paciente Pérola"
 * effectiveDateTime = "2024-01-13"
 
 * status = #final
-* code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan#citopatologico
+* code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-siscan#citopatologico
 
 * component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#componente
 * component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/componente-endocervical#presente

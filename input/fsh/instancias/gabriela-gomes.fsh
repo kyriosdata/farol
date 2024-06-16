@@ -8,7 +8,7 @@ Alias: $nacionalidade = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNa
 Alias: $cs-nacionalidade = http://www.saude.gov.br/fhir/r4/CodeSystem/BRNacionalidade
 Alias: $pontoreferencia = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator
 Alias: $paciente-siscan = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente
-Alias: $motivos-exame = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivos-exame-citopatologico
+Alias: $motivos-exame = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-exame-citopatologico
 Alias: $cs-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-inspecao-colo
 Alias: $anamnese-exame-citopatologico = https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico
 
@@ -88,7 +88,7 @@ Description: "Requisição de Exame Citopatológico da paciente Gabriela"
 * status = #final
 
 * type = http://loinc.org#47528-5
-* category = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos#requisicao-citopatologico
+* category = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-documento#requisicao-citopatologico
 
 * author = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb07)
   
@@ -444,7 +444,7 @@ Description: "Laudo de exame citopatológico da paciente Gabriela Gomes"
 
 // Laboratory report
 * type = http://loinc.org#11502-2
-* category = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos#laudo-citopatologico
+* category = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-documento#laudo-citopatologico
 
 * author = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb13)
 
@@ -555,7 +555,7 @@ Description: "Itens que definem o laudo da paciente Gabriela Gomes"
 * effectiveDateTime = "2024-02-01T11:00:00Z"
 
 * status = #final
-* code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan#citopatologico
+* code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-siscan#citopatologico
 
 * component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#componente
 * component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/componente-endocervical#presente

@@ -2,8 +2,19 @@ Alias: $racacoretnia = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRac
 Alias: $etniaindigena = http://www.saude.gov.br/fhir/r4/CodeSystem/BREtniaIndigena
 Alias: $nacionalidade = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade
 Alias: $cs-nacionalidade = http://www.saude.gov.br/fhir/r4/CodeSystem/BRNacionalidade
-Alias: $motivos-exame = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivos-exame-citopatologico
-
+Alias: $motivos-exame = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-exame-citopatologico
+Alias: $documentoRequisicao = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/documento-requisicao
+Alias: $documentoLaudo = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/documento-laudo
+Alias: $unidadeDeSaude = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/unidade-requisitante
+Alias: $laboratorio = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/unidade-executante
+Alias: $amostraRequisicao = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/amostra-requisicao
+Alias: $amostra = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/amostra
+Alias: $componentesLaudoCitopatologico = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/componentes-laudo-citopatologico
+Alias: $requisicaoExameCitopatologico = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico
+Alias: $exameClinico = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/exame-clinico
+Alias: $paciente = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente
+Alias: $anamneseQuestionario = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/anamnese-questionario
+Alias: $diagnosticoCitopatologico = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/diagnostico-citopatologico
 
 // ------------------------------------------------------
 // 
@@ -73,15 +84,17 @@ Description: "Requisição de exame citopatológico (Bruna). Veja a [ficha](brun
 // ------------------------------------------------------
 
 Instance: requisicao-bruna
-InstanceOf: DocumentoRequisicao
+InstanceOf: Composition
 Usage: #inline
 Title: "Requisição (Bruna)"
 Description: "Requisição de Exame Citopatológico da paciente Bruna"
 
 * status = #final
 
+* meta.profile = $documentoRequisicao
+
 * type = http://loinc.org#47528-5
-* category = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos#requisicao-citopatologico
+* category = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-documento#requisicao-citopatologico
 
 * author = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb07)
   
@@ -103,8 +116,11 @@ Description: "Requisição de Exame Citopatológico da paciente Bruna"
 // ------------------------------------------------------
 
 Instance: amostra-requisicao-bruna
-InstanceOf: AmostraRequisicao
+InstanceOf: Specimen
 Usage: #inline
+
+* meta.profile = $amostraRequisicao
+
 * collection.collectedDateTime = "2023-10-01"
 * collection.collector.identifier
   * system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
@@ -115,10 +131,12 @@ Usage: #inline
 // ------------------------------------------------------
 
 Instance: requisicao-02
-InstanceOf: RequisicaoExameCitopatologico
+InstanceOf: ServiceRequest
 Title: "Requisição (Bruna)"
 Description: "Requisição de exame citopatológico da Bruna"
 Usage: #inline
+
+* meta.profile = $requisicaoExameCitopatologico
 
 * status = #unknown
 * intent = #order
@@ -210,17 +228,20 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 
 
 Instance: ExameClinicoBruna
-InstanceOf: ExameClinico
+InstanceOf: Observation
 Usage: #inline
 Title: "Exame Clinico Bruna"
 Description: "Exame clínico da Bruna"
+
+* meta.profile = $exameClinico
+
 * status = #final
 * code = http://loinc.org#32423-6 
 
-* component[inspecao].code = http://loinc.org#12044-4
-* component[inspecao].valueCodeableConcept = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-inspecao-colo#normal
-* component[ist].code = http://loinc.org#45687-1
-* component[ist].valueBoolean = true
+* component[0].code = http://loinc.org#12044-4
+* component[0].valueCodeableConcept = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-inspecao-colo#normal
+* component[1].code = http://loinc.org#45687-1
+* component[1].valueBoolean = true
 
 * subject = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb01)
 * performer = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb07)
@@ -232,18 +253,20 @@ Description: "Exame clínico da Bruna"
 // ------------------------------------------------------
 
 Instance: bruna
-InstanceOf: Paciente
+InstanceOf: Patient
 Usage: #inline
 Title: "Paciente (Bruna)"
 Description: "Paciente para a qual há requisição e laudo de exame citopatológico"
+
+* meta.profile = $paciente
 
 // ------------
 // OBRIGATÓRIOS 
 // ------------
 
 // Cartão SUS
-* identifier[cns].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
-* identifier[cns].value = "72862374"
+* identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
+* identifier[0].value = "72862374"
 
 // Nome completo da mulher
 * name[0].text = "Bruna Faria"
@@ -260,8 +283,8 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 * gender = #female
 
 // CPF
-* identifier[cpf].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
-* identifier[cpf].value = "61366462189"
+* identifier[1].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
+* identifier[1].value = "61366462189"
 
 // Idade (binding para http://hl7.org/fhir/ValueSet/age-units)
 * extension[1].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade"
@@ -284,10 +307,12 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 // ------------------------------------------------------
 
 Instance: unidade-saude-02
-InstanceOf: UnidadeDeSaude
+InstanceOf: Organization
 Usage: #inline
 Title: "UBS Bem-estar"
 Description: "A unidade de saúde na qual o exame citopatológico da paciente Bruna é requisitado"
+
+* meta.profile = $unidadeDeSaude
 
 // CNES
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
@@ -315,10 +340,12 @@ Usage: #inline
 // ------------------------------------------------------
 
 Instance: respostas-anamnese-02
-InstanceOf: AnamneseQuestionario
+InstanceOf: QuestionnaireResponse
 Title: "Anamnese (Bruna)"
 Description: "Anamnese da paciente Bruna"
 Usage: #inline
+
+* meta.profile = $anamneseQuestionario
 
 * questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico"
 
@@ -443,16 +470,18 @@ Description: "Laudo de exame citopatológico (Bruna). Veja a [ficha](bruna-faria
 
 
 Instance: composition-02-2
-InstanceOf: DocumentoLaudo
+InstanceOf: Composition
 Usage: #inline
 Title: "Laudo (Bruna)"
 Description: "Laudo de exame citopatológico da paciente Bruna"
+
+* meta.profile = $documentoLaudo
 
 * status = #final
 
 // Laboratory report
 * type = http://loinc.org#11502-2
-* category = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos#laudo-citopatologico
+* category = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-documento#laudo-citopatologico
 
 * author = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb13)
 
@@ -474,10 +503,12 @@ Description: "Laudo de exame citopatológico da paciente Bruna"
 // ------------------------------------------------------
 
 Instance: laboratorio-bruna
-InstanceOf: Laboratorio
+InstanceOf: Organization
 Usage: #inline
 Title: "Laboratório Qualidade"
 Description: "Laboratório que emite o laudo de exame citopatológico"
+
+* meta.profile = $laboratorio
 
 * name = "Laboratório Cito Quality"
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
@@ -502,11 +533,12 @@ Usage: #inline
 // ------------------------------------------------------
 
 Instance: diagnostico-02
-InstanceOf: DiagnosticoCitopatologico
+InstanceOf: DiagnosticReport
 Title: "Relatório (Bruna)"
 Usage: #inline
 Description: "Laudo da requisição de exame da paciente Bruna. Veja a [ficha](bruna-faria-laudo.jpg) correspondente ao laudo"
 
+* meta.profile = $diagnosticoCitopatologico
 * status = #final
 * code = http://loinc.org#47528-5
 
@@ -540,7 +572,8 @@ Description: "Laudo da requisição de exame da paciente Bruna. Veja a [ficha](b
 * resultsInterpreter[0].extension.url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/papel"
 * resultsInterpreter[0].extension.valueCode = #screening
 
-* specimen = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb15)
+* specimen[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb15)
+
 * conclusionCode.coding
   * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/categorizacao"
   * code = #negativo
@@ -550,30 +583,36 @@ Description: "Laudo da requisição de exame da paciente Bruna. Veja a [ficha](b
 // ------------------------------------------------------
 
 Instance: laudo-componentes-02
-InstanceOf: ComponentesLaudoCitopatologico
+InstanceOf: Observation
 Usage: #inline
 Title: "Itens do laudo (Bruna)"
 Description: "Itens que definem o laudo da paciente Bruna"
+
+* meta.profile = $componentesLaudoCitopatologico
 
 * subject = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb01)
 * performer[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb12)
 * effectiveDateTime = "2023-12-14"
 
 * status = #final
-* code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan#citopatologico
+* code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-siscan#citopatologico
 
 * component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#componente
 * component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/componente-endocervical#presente
 
+* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#escamosas
+* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/escamosa#asc-us
 
 * note[0].text = "Amostra parcialmente dessecada."
 
 //------------
 // Motivo de rejeicao apenas se #unavailable (deve gerar erro)
 Instance: especime-bruna
-InstanceOf: Amostra
+InstanceOf: Specimen
 Usage: #inline
 Description: "Informações sobre a amostra identificadas pelo laboratório"
+
+*  meta.profile = $amostra
 
 * type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional
 * status = #unsatisfactory

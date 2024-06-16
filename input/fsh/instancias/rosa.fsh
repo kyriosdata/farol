@@ -7,7 +7,7 @@ Alias: $cs-nacionalidade = http://www.saude.gov.br/fhir/r4/CodeSystem/BRNacional
 Alias: $cns = https://fhir.fabrica.inf.ufg.br/ccu/sid/cns
 Alias: $cpf = https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf
 Alias: $paciente-siscan = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/paciente
-Alias: $motivos-exame = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivos-exame-citopatologico
+Alias: $motivos-exame = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-exame-citopatologico
 Alias: $anamnese-exame-citopatologico = https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico
 
 // ------------------------------------------------------
@@ -87,7 +87,7 @@ Description: "Requisição de Exame Citopatológico da paciente Rosa"
 * status = #final
 
 * type = http://loinc.org#47528-5
-* category = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos#requisicao-citopatologico
+* category = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-documento#requisicao-citopatologico
 
 * author = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07)
   
@@ -457,7 +457,7 @@ Description: "Laudo de exame citopatológico da paciente Rosa"
 * status = #final
 
 * type = http://loinc.org#11502-2
-* category = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos#laudo-citopatologico
+* category = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-documento#laudo-citopatologico
 
 * author = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07)
 
@@ -566,7 +566,7 @@ Description: "Itens que definem o laudo da paciente Rosa"
 * effectiveDateTime = "2023-11-10"
 
 * status = #final
-* code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan#citopatologico
+* code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-siscan#citopatologico
 
 * component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#componente
 * component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/componente-endocervical#presente

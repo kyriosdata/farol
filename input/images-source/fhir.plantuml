@@ -11,13 +11,13 @@ skinparam class {
 }
 
 class "inspecao-colo" as InspecaoColo <<CodeSystem>> {}
-class "motivos-exame" as MotivosExame <<CodeSystem>> {}
+class "motivos-exame" as MotivoExame <<CodeSystem>> {}
 class "vs-inspecao-colo" as VsInspecaoColo <<ValueSet>> {}
 class "motivo-exame" as MotivoExame <<ValueSet>> {}
 class "questoes-anamnese" as QuestoesAnamnese <<ValueSet>> {}
 
 VsInspecaoColo .up.> InspecaoColo
-MotivoExame .up.> MotivosExame
+MotivoExame .up.> MotivoExame
 
 class CNES <<NamingSystem>> {}
 class CPF <<NamingSystem>> {}

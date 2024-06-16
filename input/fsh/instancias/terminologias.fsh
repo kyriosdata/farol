@@ -385,12 +385,12 @@ Description: "As possibilidades da inspeção de colo visando o exame citopatol�
 * #alterado "Alterado" "Alterado"
 * #nao-visualizado "Colo não visualizado" "Colo não visualizado"
 
-ValueSet: ResultadoInspecaoColo
-Id: resultado-inspecao-colo
+ValueSet: ResultadosInspecaoColo
+Id: resultados-inspecao-colo
 Title: "Situação do colo"
 Description: "Resultados para a inspeção do colo"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/resultado-inspecao-colo"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/resultados-inspecao-colo"
 
 * ^status = #active
 * ^experimental = false
@@ -400,10 +400,10 @@ Description: "Resultados para a inspeção do colo"
 * include codes from system ResultadoInspecaoColo
 
 // ------------------------------------------------------
-// laudos-siscan
+// laudo-siscan
 // ------------------------------------------------------
 
-CodeSystem: LaudosSiscan
+CodeSystem: LaudoSiscan
 Id: laudos-siscan
 Title: "Laudos gerenciados pelo SISCAN"
 Description: "Tipos de laudos gerenciados pelo SISCAN"
@@ -411,7 +411,7 @@ Description: "Tipos de laudos gerenciados pelo SISCAN"
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de tipos de laudos gerenciados pelo SISCAN</div>"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudos-siscan"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-siscan"
 
 * ^status = #unknown
 * ^caseSensitive = true
@@ -425,15 +425,15 @@ Description: "Tipos de laudos gerenciados pelo SISCAN"
 // motivos-exame
 // ------------------------------------------------------
 
-CodeSystem: MotivosExame
-Id: motivos-exame-citopatologico
+CodeSystem: MotivoExame
+Id: motivo-exame-citopatologico
 Title: "Motivo do exame citopatológico"
 Description: "Define os motivos pelos quais uma requisição de exame citopatológico é realizada"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos para motivo de exame citopatológico.</div>"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivos-exame-citopatologico"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-exame-citopatologico"
 
 * ^status = #unknown
 * ^caseSensitive = true
@@ -448,22 +448,22 @@ para a implementação do rastreamento ágil."""
 
 // --------------------------
 
-ValueSet: MotivoExame
-Id: motivo-exame-citopatologico
+ValueSet: MotivosExame
+Id: motivos-exame-citopatologico
 Title: "Motivo exame"
 Description: "Possíveis motivos para requisição de exame citopatológico"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos admitidos para motivo de exame citopatológico.</div>"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-exame-citopatologico"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivos-exame-citopatologico"
 
 * ^status = #draft
 * ^experimental = false
 * ^date = "2024-04-15"
 * ^purpose = "**Propósito**. Definição de valores possíveis para o motivo do exame do item pertinente da requisição de exame citopatológico."
 
-* include codes from system MotivosExame
+* include codes from system MotivoExame
 
 // ------------------------------------------------------
 // motivo-especime-rejeitado // #6
@@ -485,12 +485,12 @@ Description: "Identifica e define os motivos pelos quais um espécime é rejeita
 * #lamina "lâmina" "Lâmina danificada ou ausente"
 * #outras "Outras causas" "Outras causas"
 
-ValueSet: MotivoEspecimeRejeitado
-Id: motivo-especime-rejeitado
+ValueSet: MotivosEspecimeRejeitado
+Id: motivos-especime-rejeitado
 Title: "Rejeição de espécime"
 Description: "Conjunto de possíveis motivos pelos quais um espécime é rejeitado."
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-especime-rejeitado"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivos-especime-rejeitado"
 
 * ^status = #draft
 * ^experimental = false
@@ -523,12 +523,12 @@ Description: "Motivos pelos quais o espécime pode ser declarado insatisfatório
 * #superposicao "Superposição" "Intensa superposição celular em mais de 75% da amostra"
 
 
-ValueSet: MotivoEspecimeInsatisfatorio
-Id: motivo-especime-insatisfatorio
+ValueSet: MotivosEspecimeInsatisfatorio
+Id: motivos-especime-insatisfatorio
 Title: "Espécime insatisfatório para avaliação"
 Description: "Possíveis motivos pelos quais o espécime pode ser declarado insatisfatório para avaliação após processado e examinado."
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivo-especime-insatisfatorio"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivos-especime-insatisfatorio"
 
 * ^status = #draft
 * ^experimental = false
@@ -538,18 +538,18 @@ Description: "Possíveis motivos pelos quais o espécime pode ser declarado insa
 * include codes from system MotivoEspecimeInsatisfatorio
 
 // ------------------------------------------------------
-// variacoes-nao-neoplasicas
+// variacao-nao-neoplasica
 // ------------------------------------------------------
 
-CodeSystem: VariacoesNaoNeoplasicas
-Id: variacoes-nao-neoplasicas
+CodeSystem: VariacaoNaoNeoplasica
+Id: variacao-nao-neoplasica
 Title: "Classificação da alterações celulares"
 Description: "Definição das várias alterações celulares benignas relevantes para o exame citopatológico"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos para classificação de alterações celulares benigcas</div>"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/variacoes-nao-neoplasicas"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/variacao-nao-neoplasica"
 
 * ^status = #unknown
 * ^caseSensitive = true
@@ -578,18 +578,18 @@ Description: "Identifica alteração celular benigna relevante para exame citopa
 * ^date = "2024-04-15"
 * ^purpose = """**Propósito**. Definição do conjunto de alterações celulares benignas admitidas para o item correspondente de laudo de exame citopatológico."""
 
-* include codes from system VariacoesNaoNeoplasicas
+* include codes from system VariacaoNaoNeoplasica
 
 // ------------------------------------------------------
 // alteracoes-reativas // #12
 // ------------------------------------------------------
 
-CodeSystem: AlteracoesReativas
-Id: alteracoes-reativas
+CodeSystem: AlteracaoReativa
+Id: alteracao-reativa
 Title: "Alterações celulares reativas"
 Description: "Identificação e definição das alterações celulares reativas para o resultado de exame citopatológico"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/alteracoes-reativas"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/alteracao-reativa"
 
 * ^status = #unknown
 * ^caseSensitive = true
@@ -614,18 +614,18 @@ Description: "Conjunto das possíveis alterações celulares reativas relevantes
 * ^date = "2024-04-15"
 * ^purpose = """**Propósito**. Definição do conjunto de alterações celulares reativas relevantes para o resultado de exame citopatológico."""
 
-* include codes from system AlteracoesReativas
+* include codes from system AlteracaoReativa
 
 // ------------------------------------------------------
 // organismos
 // ------------------------------------------------------
 
-CodeSystem: Organismos
-Id: organismos
+CodeSystem: Organismo
+Id: organismo
 Title: "Organismos"
 Description: "Organismos"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/organismos"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/organismo"
 
 * ^status = #unknown
 * ^caseSensitive = true
@@ -652,18 +652,18 @@ Description: "Organismos"
 * ^date = "2024-04-15"
 * ^purpose = """**Propósito**. Definição do conjunto de microorganismos encontrados e que podem ser registrados no item do laudo de exame citopatológico."""
 
-* include codes from system Organismos
+* include codes from system Organismo
 
 // ------------------------------------------------------
 // escamosas
 // ------------------------------------------------------
 
-CodeSystem: Escamosas
-Id: escamosas
-Title: "Escamosas"
-Description: "Escamosas"
+CodeSystem: Escamosa
+Id: escamosa
+Title: "Escamosa"
+Description: "Escamosa"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/escamosas"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/escamosa"
 
 * ^status = #unknown
 * ^caseSensitive = true
@@ -680,8 +680,8 @@ Description: "Escamosas"
 
 ValueSet: Escamosas
 Id: escamosas
-Title: "Organismos"
-Description: "Organismos"
+Title: "Escamosas"
+Description: "Escamosas"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/escamosas"
 
@@ -690,18 +690,18 @@ Description: "Organismos"
 * ^date = "2024-04-15"
 * ^purpose = """**Propósito**. Definição do conjunto de microorganismos encontrados e que podem ser registrados no item do laudo de exame citopatológico."""
 
-* include codes from system Escamosas
+* include codes from system Escamosa
 
 // ------------------------------------------------------
-// Glandulares
+// Glandular
 // ------------------------------------------------------
 
-CodeSystem: Glandulares
-Id: glandulares
+CodeSystem: Glandular
+Id: glandular
 Title: "Glandulares"
 Description: "Glandulares"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/glandulares"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/glandular"
 
 * ^status = #unknown
 * ^caseSensitive = true
@@ -733,21 +733,21 @@ Description: "Glandulares"
 * ^date = "2024-04-15"
 * ^purpose = """**Propósito**. Definição do conjunto de microorganismos encontrados e que podem ser registrados no item do laudo de exame citopatológico."""
 
-* include codes from system Glandulares
+* include codes from system Glandular
 
 // ------------------------------------------------------
 // celulas-atipicas
 // ------------------------------------------------------
 
-CodeSystem: CelulasAtipicas
-Id: celulas-atipicas
+CodeSystem: CelulaAtipica
+Id: celula-atipica
 Title: "Células atípicas"
 Description: "Células atípicas"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos para classificação de células atípicas.</div>"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/celulas-atipicas"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/celula-atipica"
 
 * ^status = #unknown
 * ^caseSensitive = true
@@ -760,95 +760,21 @@ Description: "Células atípicas"
 
 // ------------------------------------------------------
 
-ValueSet: CelulaAtipica
-Id: celula-atipica
+ValueSet: CelulasAtipicas
+Id: celulas-atipicas
 Title: "Célula atípica"
-Description: "Célula atípica"
+Description: "Células atípicas"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para células atípicas.</div>"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/celula-atipica"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/celulas-atipicas"
 
 * ^status = #draft
 * ^experimental = false
 
-* include codes from system CelulasAtipicas
+* include codes from system CelulaAtipica
 
-
-CodeSystem: CelulasAtipicasEscamosas
-Id: celulas-atipicas-escamosas
-Title: "Classificação de células atípicas escamosas"
-Description: "Tipos de células atípicas escamosas"
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos para classificação de células atípicas escamosas.</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/celulas-atipicas-escamosas"
-
-* ^status = #unknown
-* ^caseSensitive = true
-* ^experimental = false
-
-* #asc-us "Possivelmente não neoplásicas (ASC-US)"
-* #asc-h "Não se pode afastar lesão de alto grau (ASC-H)"
-
-// ------------------------------------------------------
-
-ValueSet: CelulaAtipicaEscamosa
-Id: celula-atipica-escamosa
-Title: "Célula atípica escamosa"
-Description: "Célula atípica escamosa"
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para células atípicas escamosas.</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/celula-atipica-escamosa"
-
-* ^status = #draft
-* ^experimental = false
-
-* include codes from system CelulasAtipicasEscamosas
-
-// ------------------------------------------------------
-// atipias-escamosas
-// ------------------------------------------------------
-
-CodeSystem: AtipiasEscamosas
-Id: atipias-escamosas
-Title: "Atipias em células escamosas"
-Description: "Classificação de atipias em células escamosas"
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Classificação de atipias em células escamosas.</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/atipias-escamosas"
-
-* ^status = #unknown
-* ^caseSensitive = true
-* ^experimental = false
-
-* #baixo "Lesão baixo grau" "Lesão intra-epitelial de baixo grau (compreendendo efeito citopático pelo HPV e neoplasia intra-epitelial cervical grau I)"
-* #alto "Lesão alto grau" "Lesão intra-epitelial de alto grau (compreendendo neoplasias intraepiteliais cervicais graus II e III)"
-* #possivel-microinvasao "Lesão intra-epitelial de alto grau , não podendo excluir micro-invasão"
-* #carcinoma "Carcinoma" "Carcinoma epidermóide invasor"
-
-// ------------------------------------------------------
-
-ValueSet: AtipiaEscamosa
-Id: atipia-escamosa
-Title: "Atipia"
-Description: "Atipia"
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para atipias em células escamosas.</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/atipia-escamosa"
-
-* ^status = #draft
-* ^experimental = false
-
-* include codes from system AtipiasEscamosas
 
 // ------------------------------------------------------
 // atipias-glandulares
@@ -916,11 +842,11 @@ Description: "Itens que compõem o resultado de exame citopatológico"
 * #outras-neoplasias-malignas "Outras neoplasias malignas" "Outras neoplasias malignas"
 
 
-ValueSet: ResultadoItem
-Id: resultado-item
+ValueSet: ResultadosItem
+Id: resultados-itens
 Title: "Itens de resultado de exame citopatológico"
 Description: "Grupos de informação de resultado de exame citopatológico"
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/resultado-item"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/resultados-itens"
 * ^status = #draft
 * ^experimental = false
 * include codes from system ResultadoItem
@@ -942,11 +868,11 @@ Description: "Tipos de amostra para resultado de exame citopatológico"
 * #convencional "convencional" "Convencional"
 * #liquido "líquido" "Em meio líquido"
 
-ValueSet: TipoAmostra
-Id: tipo-amostra
+ValueSet: TiposAmostra
+Id: tipos-amostra
 Title: "Tipos de amostra"
 Description: "Tipos de amostra para laudo citopatológico"
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipo-amostra"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipos-amostra"
 * ^status = #active
 * ^experimental = false
 * ^purpose = "Valores possíveis para o tipo de amostra para exame citopatológico."
@@ -970,11 +896,11 @@ Description: "Identifica e define presença ou ausência de componente endocervi
 * #ausente "Ausente"
 
 
-ValueSet: ComponenteEndocervical
-Id: componente-endocervical
+ValueSet: ComponentesEndocervicais
+Id: componentes-endocervicais
 Title: "Tipos de amostra"
 Description: "Tipos de amostra para laudo citopatológico"
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/componente-endocervical"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/componentes-endocervicais"
 * ^status = #active
 * ^experimental = false
 * ^purpose = "Conjunto de valores possíveis para registrar a presença ou não de componente endocervical na amostra."
@@ -1000,11 +926,11 @@ Description: "A categorização geral do resultado"
 * #anormalidade "Anormalidade em células epiteliais"
 
 
-ValueSet: Categorizacao
-Id: categorizacao
+ValueSet: Categorizacoes
+Id: categorizacoes
 Title: "Categorização geral"
 Description: "Categorização geral do laudo"
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/categorizacao"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/categorizacoes"
 * ^status = #draft
 * ^experimental = false
 * include codes from system Categorizacao
@@ -1026,11 +952,11 @@ Description: "Papel desempenhado pelo profissional no laudo"
 * #resultado "Profissional responsável pelo resultado do exame"
 
 
-ValueSet: Papel
-Id: papel
+ValueSet: Papeis
+Id: papeis
 Title: "Papel"
 Description: "Papel desempenhado pelo profissional no laudo"
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/papel"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/papeis"
 * ^status = #draft
 * ^experimental = false
 * include codes from system Papel
@@ -1040,12 +966,12 @@ Description: "Papel desempenhado pelo profissional no laudo"
 // componentes-endereco
 // ------------------------------------------------------
 
-CodeSystem: ComponentesEndereco
-Id: componentes-endereco
+CodeSystem: ComponenteEndereco
+Id: componente-endereco
 Title: "Componentes de endereço"
 Description: "Componentes que fazem parte de um endereço"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/componentes-endereco"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/componente-endereco"
 * ^status = #draft
 * ^caseSensitive = true
 * ^experimental = false
@@ -1056,25 +982,25 @@ Description: "Componentes que fazem parte de um endereço"
 * #referencia "ponto de referência" "Ponto de referência"
 
 
-ValueSet: ItensEndereco
-Id: itens-endereco
+ValueSet: ComponentesEndereco
+Id: componentes-endereco
 Title: "Itens de endereço"
 Description: "Tipos de itens de endereço que compõem um endereço"
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/itens-endereco"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/componentes-endereco"
 * ^status = #draft
 * ^experimental = false
-* include codes from system ComponentesEndereco
+* include codes from system ComponenteEndereco
 
 // ------------------------------------------------------
 // tipos de documentos do INCA
 // ------------------------------------------------------
 
-CodeSystem: TiposDocumentos
-Id: tipos-documentos
+CodeSystem: TipoDocumento
+Id: tipo-documento
 Title: "Definição de tipos de documentos"
 Description: "Identificação de documentos clínicos de interesse do INCA"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipos-documentos"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-documento"
 * ^status = #active
 * ^caseSensitive = true
 * ^experimental = false
@@ -1088,7 +1014,7 @@ Description: "Conjunto dos identificadores de tipos de documentos de interesse d
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipos-documentos"
 * ^status = #active
 * ^experimental = false
-* include codes from system TiposDocumentos
+* include codes from system TipoDocumento
 
 // ------------------------------------------------------
 // Gênero
@@ -1115,11 +1041,11 @@ corresponde ao sexo atribuído no nascimento. """
 * #151 "Outro"
 
 
-ValueSet: Genero
-Id: genero
+ValueSet: Generos
+Id: generos
 Title: "Conjunto de gêneros"
 Description: "Gêneros admitidos em ficha de requisição"
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/genero"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/generos"
 * ^status = #active
 * ^experimental = false
 * https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/genero#149 "Homem transgênero"
@@ -1129,7 +1055,6 @@ Description: "Gêneros admitidos em ficha de requisição"
 // ------------------------------------------------------
 // Escolaridade
 // ------------------------------------------------------
-
 
 CodeSystem: Escolaridade
 Id: escolaridade
@@ -1170,12 +1095,12 @@ rmino do Ensino Médio, que habilita a pessoa a exercer uma profissão, e cursos
 * #14 "Alfabetização para Adultos (Mobral, etc)" "Curso destinado à alfabetização de jovens e adultos."
 * #15 "Nenhum" "Quando a pessoa não se enquadrar em nenhuma das descrições anteriores."
 
-ValueSet: Escolaridade
-Id: escolaridade
+ValueSet: Escolaridades
+Id: escolaridades
 Title: "Escolaridade"
 Description: "Escolaridade obtida"
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/escolaridade"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/escolaridades"
 
 * ^status = #draft
 * ^experimental = false

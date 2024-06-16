@@ -302,7 +302,7 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
   * code = #B
 
 // Escolaridade
-* extension[4].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/escolaridade"
+* extension[4].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional"
 * extension[4].valueCode = #13
 
 * address
@@ -540,7 +540,7 @@ Description: "Laudo da requisição de exame da paciente Rosa"
 //* resultsInterpreter[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb13)
 * resultsInterpreter[0].identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
 * resultsInterpreter[0].identifier.value = "123456"
-* resultsInterpreter[0].extension.url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/papel"
+* resultsInterpreter[0].extension.url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/responsabilidade"
 * resultsInterpreter[0].extension.valueCode = #resultado
 
 * specimen[0] = Reference(especime-rosa)

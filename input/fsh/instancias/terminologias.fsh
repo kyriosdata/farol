@@ -404,7 +404,7 @@ Description: "Resultados para a inspeção do colo"
 // ------------------------------------------------------
 
 CodeSystem: LaudoSiscan
-Id: laudos-siscan
+Id: laudo-siscan
 Title: "Laudos gerenciados pelo SISCAN"
 Description: "Tipos de laudos gerenciados pelo SISCAN"
 

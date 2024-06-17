@@ -27,11 +27,17 @@ Context: Patient
 * value[x] only string
 * valueString 1..1
 
+Invariant: rn-5
+Description: "Identificador de prontuário não pode ser vazio"
+Expression: "$this.trim().length() > 0"
+Severity: #error
 
+
+//#6 
 Extension: IdentificadorProntuario
 Id: identificador-prontuario
 Title: "Identificador de prontuário"
-Description: "Identificador do prontuário pelo requisitante. Este valor deve ser único para requisições emitidas pelo CNES em questão."
+Description: "Identificador do prontuário conforme atribuído pelo requisitante. Este valor deve ser único para requisições emitidas pelo CNES em questão."
 Context: ServiceRequest
 * ^status = #draft
 * ^language = #pt-BR
@@ -42,6 +48,7 @@ Context: ServiceRequest
 
 * value[x] only string
 * valueString 1..1
+* valueString obeys rn-5
 
 
 // --- AVISO

@@ -807,7 +807,7 @@ informações pertinentes à requisição."""
 Profile: DocumentoRequisicao
 Parent: Composition
 Id: documento-requisicao
-Title: "Documento Requisicao"
+Title: "Documento de Requisicao de Exame Citopatológico"
 Description: "Documento clínico de uma requisição de exame citopatológico"
 
 * ^status = #draft
@@ -824,7 +824,7 @@ Description: "Documento clínico de uma requisição de exame citopatológico"
 Profile: DocumentoLaudo
 Parent: Composition
 Id: documento-laudo
-Title: "Documento Resultado de Exame Citopatológico"
+Title: "Documento de Resultado de Exame Citopatológico"
 Description: "Documento clínico de resultado de exame citopatológico"
 
 * ^status = #draft
@@ -1192,7 +1192,7 @@ Severity: #error
 Profile: Amostra
 Parent: Specimen
 Id: amostra
-Title: "Amostra de exame citopatológico"
+Title: "Anotações sobre a amostra"
 Description: "Informações sobre o espécime geradas pelo laboratório"
 
 * obeys Satisfatorio and Rejeitado and Insatisfatorio

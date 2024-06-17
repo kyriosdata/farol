@@ -851,12 +851,12 @@ Expression: "extension.count() = 1 and extension.select(url = 'https://fhir.fabr
 Severity: #error
 
 Invariant: rn-1
-Description: "Nenhum item de anormalidade pode ser registrado se categorização geral é negativa para lesão ou malignidade."
+Description: "Anormalidade não pode ser registrada se a categorização geral é negativa para lesão ou malignidade."
 Expression: "'negativo' in conclusionCode.coding.code implies result[0].resolve().component.code.coding.select(code in ('escamosas' | 'glandulares' | 'outras-neoplasias-malignas')).allFalse()"
 Severity: #error
 
 Invariant: rn-2
-Description: "Nenhum achado não neoplásico deve ser fornecido se categorização geral indica anormalidade em células epiteiais."
+Description: "Achado não neoplásico não pode registrado se categorização geral indica anormalidade em células epiteiais."
 Expression: "'anormalidade' in conclusionCode.coding.code implies result[0].resolve().component.code.coding.select(code in ('variacoes-nao-neoplasicas' | 'alteracoes-reativas' | 'celulas-glandulares')).allFalse()"
 Severity: #error
 
@@ -865,6 +865,10 @@ Description: "Se a categorização geral aponta anormalidade, então esta deve s
 Expression: "'anormalidade' in conclusionCode.coding.code implies result[0].resolve().component.code.coding.select(code in ('escamosas' | 'glandulares' | 'outras-neoplasias-malignas')).anyTrue()"
 Severity: #error
 
+Invariant: rn-4
+Description: "Se identificada anormalidade glandular, então necessariamente o componente endocervical está presente."
+Expression: "result[0].resolve().component.code.coding.select(code = 'glandulares').exists() implies (result[0].resolve().component.where(code.coding.code = 'componente').valueCodeableConcept.coding.code = 'presente').exists()"
+Severity: #error
 
 Profile: DiagnosticoCitopatologico
 Parent: DiagnosticReport
@@ -872,7 +876,7 @@ Id: diagnostico-citopatologico
 Title: "Diagnóstico citopatológico"
 Description: "Diagnóstico de exame citopatológico em conformidade com padrão adotado pelo INCA."
 
-* obeys rn-1 and rn-2 and rn-3
+* obeys rn-1 and rn-2 and rn-3 and rn-4
 
 * ^meta.lastUpdated = "2015-02-07T13:28:17.239+02:00"
 * ^version = "1.0.0"

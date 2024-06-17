@@ -1056,7 +1056,8 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[variacoesNaoNeoplasicas].value[x] 1..1
 * component[variacoesNaoNeoplasicas].value[x] only CodeableConcept
 * component[variacoesNaoNeoplasicas].value[x] ^short = "Código para variação celular não neoplásica"
-* component[variacoesNaoNeoplasicas].valueCodeableConcept.coding 1..1
+* component[variacoesNaoNeoplasicas].valueCodeableConcept obeys DuplicidadeNaoAdmitida
+* component[variacoesNaoNeoplasicas].valueCodeableConcept.coding 1..5
 * component[variacoesNaoNeoplasicas].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
 * component[variacoesNaoNeoplasicas].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/variacoes-nao-neoplasicas (required)
 * component[variacoesNaoNeoplasicas].valueCodeableConcept.coding.code 1..1
@@ -1070,7 +1071,8 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[alteracoesReativas].value[x] 1..1
 * component[alteracoesReativas].value[x] only CodeableConcept
 * component[alteracoesReativas].value[x] ^short = "Código para a alteração celular reativa"
-* component[alteracoesReativas].valueCodeableConcept.coding 1..1
+* component[alteracoesReativas].valueCodeableConcept obeys DuplicidadeNaoAdmitida
+* component[alteracoesReativas].valueCodeableConcept.coding 1..4
 * component[alteracoesReativas].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
 * component[alteracoesReativas].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/alteracoes-reativas (required)
 * component[alteracoesReativas].valueCodeableConcept.coding.code 1..1
@@ -1093,7 +1095,8 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[organismos].value[x] 1..1
 * component[organismos].value[x] only CodeableConcept
 * component[organismos].value[x] ^short = "Código para a alteração celular reativa"
-* component[organismos].valueCodeableConcept.coding 1..1
+* component[organismos].valueCodeableConcept obeys DuplicidadeNaoAdmitida
+* component[organismos].valueCodeableConcept.coding 1..6
 * component[organismos].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
 * component[organismos].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/organismos (required)
 * component[organismos].valueCodeableConcept.coding.code 1..1
@@ -1204,7 +1207,8 @@ Description: "Informações sobre o espécime geradas pelo laboratório"
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/amostra"
 * ^status = #draft
 
-// #6 #7 #8 (extensões para status definem os detalhes do status)
+// #6 #7 #8
+// Extensões aplicáveis a 'status': MotivoRejeicao e MotivoInsatisfatorio
 * status 1..1
 * status ^short = "Indica se a amostra é satisfatória para avaliação, se é insatisfatória ou se é rejeitada."
 

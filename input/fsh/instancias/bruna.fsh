@@ -598,10 +598,10 @@ Description: "Itens que definem o laudo da paciente Bruna"
 * code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-siscan#citopatologico
 
 * component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#componente
-* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/componente-endocervical#ausente
+* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/componente-endocervical#presente
 
 * component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#glandulares
-* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/glandular#endocervicais
+* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/glandular#endometriais
 
 * note[0].text = "Amostra parcialmente dessecada."
 

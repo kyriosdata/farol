@@ -867,7 +867,7 @@ Severity: #error
 
 Invariant: rn-4
 Description: "Se identificada anormalidade glandular, então necessariamente o componente endocervical está presente."
-Expression: "result[0].resolve().component.code.coding.select(code = 'glandulares').exists() implies (result[0].resolve().component.where(code.coding.code = 'componente').valueCodeableConcept.coding.code = 'presente').exists()"
+Expression: "iif(result[0].resolve().component.code.coding.select(code = 'glandulares').exists(), result[0].resolve().component.where(code.coding.code = 'componente').value.ofType(CodeableConcept).coding.select(system = 'https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/componente-endocervical' and code = 'presente').anyTrue(), false)"
 Severity: #error
 
 Profile: DiagnosticoCitopatologico

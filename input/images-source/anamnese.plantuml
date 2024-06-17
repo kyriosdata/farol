@@ -1,6 +1,6 @@
 @startmindmap anamnese
 
-+ **[[Questionnaire-anamnese-exame-citopatologico.html Anamnese]]**\n""Questionnaire""
++ **[[StructureDefinition-anamnese-questionario.html Anamnese]]**\n""Questionnaire""
 --[#White] **Fez exame preventivo anteriormente?** (29)\n""Coding""
 --[#White] **Quando fez o último exame?** (30)\n""date""
 --[#White] **Usa DIU?** (31)\n""Coding""

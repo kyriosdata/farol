@@ -373,7 +373,7 @@ Description: "Definição das informações que devem constar em toda e qualquer
 Profile: AnamneseQuestionario
 Parent: QuestionnaireResponse
 Id: anamnese-questionario
-Title: "Respostas da anamnese"
+Title: "Estrutura do questionário da anamnese"
 Description: "Estrutura exigida da anamnese pela requisição de exame citopatológico"
 
 * ^status = #draft

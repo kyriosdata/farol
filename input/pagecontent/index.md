@@ -47,30 +47,6 @@ Interpretação: o SISCAN não é substituído, mas passa a operar com uma nova 
 > território nacional no que diz respeito à requisição e disponibilidade de laudo de 
 > exame citopatológico. 
 
-### Processo em andamento
-
-Os <a href="requisitos.html">casos de uso</a> a serem atendidos,
-no contexto dos <a href="processos.html">processos</a>
-considerados, resultou na divisão da [ficha](./nova-requisicao-anotada.pdf) em duas partes: a requisição de exame (primeira "folha" da ficha) e o laudo correspondente ("verso").
-
-Cada uma destas partes foi analisada, o que resultou
-nos modelos de informação correspondentes, ou seja, o
-modelo de informação da <a href="requisicao.html">requisição</a>
-e o modelo de informação do <a href="resultado.html">resultado</a>.
-Estes modelos seguem a mesma estrutura
-de outros já formalmente publicados por portarias do Ministério da Saúde.
-
-Tais modelos foram empregados na produção de artefatos tecnológicos 
-conforme o uso esperado do padrão FHIR, estabelecido pela HL7, conhecido por
-_Guia de Implementação_. Em tempo, FHIR é o padrão
-adotado pelo Ministério da Saúde para troca de dados em saúde. 
-
-O _Guia de Implementação_ é um documento. Para os requisitos citados acima
-serem realizados é preciso produzir software correspondente. 
-O _design_ de uma integração
-da implementação deste Guia com o SISCAN também foi proposta, e uma 
-prova de conceito se encontra em análise para posterior desenvolvimento.
-
 ### Organização
 
 - <a href="requisitos.html">Requisitos</a> definem casos de uso e requisitos de usuário.
@@ -82,4 +58,3 @@ prova de conceito se encontra em análise para posterior desenvolvimento.
 
 - [CGIS](https://cgis.ufg.br/)
 - [INCA](https://www.inca.gov.br/)
-- [Secretaria Municipal de Saúde de Goiânia](https://saude.goiania.go.gov.br/)

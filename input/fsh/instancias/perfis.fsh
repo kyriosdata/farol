@@ -625,6 +625,7 @@ Description: "Dados demográficos da paciente"
 
 * address 0..1
 * address only Endereco
+* address ^short = "O endereço da paciente"
 
 * birthDate ^short = "A data de nascimento (por exemplo, 2015-01-31)"
 * birthDate 1..1 // #13
@@ -1307,9 +1308,9 @@ Description: "Indicação de unidade de saúde pelo CNES"
 * identifier.value 1..1
 * identifier.value ^short = "O código CNES da unidade de saúde requisitante"
 
-// -----------------------------------
-// referencia para unidade de saúde
-// -----------------------------------
+// -------------------------------------
+// referência para profissional de saúde
+// -------------------------------------
 
 Profile: ReferenciaProfissional
 Parent: Reference

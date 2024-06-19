@@ -1169,7 +1169,7 @@ Extension: Detalhar
 Id: detalhar
 Title: "Detalha item"
 Description: "Fornece detalhe ou especificação adicional sobre item de informação do resultado de exame citopatológico."
-Context: Coding
+Context: Coding, Amostra.status
 
 * ^status = #draft
 
@@ -1183,24 +1183,10 @@ Context: Coding
 // Amostra
 // -----------------
 
-Invariant: Satisfatorio
-Description: "Se espécime é satisfatório, então não pode ser fornecido motivo, seja para insatisfação ou seja para esclarecer a rejeição."
-Expression: "status = 'available' implies status.extension.exists().not()"
-Severity: #error
 
-Invariant: Rejeitado
-Description: "Se espécime é rejeitado, então deve fornecer motivo para rejeição."
-Expression: "status = 'unavailable' implies status.extension.where(url = 'https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-rejeicao').exists()"
-Severity: #error
-
-Invariant: Insatisfatorio
-Description: "Se espécime é insatisfatório, então deve fornecer motivo para insatisfação."
-Expression: "status = 'unsatisfactory' implies status.extension.where(url = 'https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-insatisfatorio').exists()"
-Severity: #error
-
-Invariant: OutraCausaDeveSerDetalhada
-Description: "Se amostra rejeitada por 'outras causas', então deve ser detalhada qual ou quais as causas."
-Expression: "code = 'outras' implies extension.where(url = 'https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/detalhar').exists()"
+Invariant: rn-6
+Description: "Se indicada que a amostra é rejeitada por 'outras causas', então deve ser detalhada(s) a(s) causa(s)."
+Expression: "$this = 'unsatisfactory' implies extension.where(url = 'https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/detalhar').exists()"
 Severity: #error
 
 
@@ -1210,15 +1196,17 @@ Id: amostra
 Title: "Anotações sobre a amostra"
 Description: "Informações sobre o espécime geradas pelo laboratório"
 
-* obeys Satisfatorio and Rejeitado and Insatisfatorio
-
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/amostra"
 * ^status = #draft
 
 // #6 #7 #8
 // Extensões aplicáveis a 'status': MotivoRejeicao e MotivoInsatisfatorio
 * status 1..1
-* status ^short = "Indica se a amostra é satisfatória para avaliação, se é insatisfatória ou se é rejeitada."
+* status ^short = "Adequação da amostra"
+* status obeys rn-6
+
+// No máximo uma única extensão (ver rn-6)
+* status.extension 0..1
 
 // #4
 * receivedTime 1..1
@@ -1232,28 +1220,28 @@ Description: "Informações sobre o espécime geradas pelo laboratório"
 // motivo-especime-rejeitado
 // -------------------------
 
-Extension: MotivoRejeicao
-Id: motivo-rejeicao
-Title: "Motivo para rejeição de espécime"
-Description: "Detalha o motivo pelo qual um espécime é rejeitado para exame citopatológico."
-Context: Amostra.status
+// Extension: MotivoRejeicao
+// Id: motivo-rejeicao
+// Title: "Motivo para rejeição do espécime"
+// Description: "Detalha o motivo pelo qual o espécime é rejeitado para exame citopatológico por 'outras causas'."
+// Context: Amostra.status
 
-* ^status = #draft
-* ^language = #pt-BR
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-rejeicao"
-* . ^short = "Motivo pelo qual o espécime foi rejeitado"
-* . ^definition = "O motivo pelo qual o espécimo foi rejeitado (não será avaliado)"
+// * ^status = #draft
+// * ^language = #pt-BR
+// * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-rejeicao"
+// * . ^short = "Motivo pelo qual o espécime foi rejeitado"
+// * . ^definition = "O motivo pelo qual o espécimo foi rejeitado (não será avaliado)"
 
-* value[x] 1..1
-* value[x] only CodeableConcept
-* value[x] ^short = "O código que identifica o motivo da rejeição do espécime"
-* valueCodeableConcept.coding 1..2
-* valueCodeableConcept obeys DuplicidadeNaoAdmitida and ExtensaoApenasOutros and SoUmaExtensaoPermitida
-* valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
-* valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivos-especime-rejeitado (required)
-* valueCodeableConcept.coding.code 1..1
-* valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da rejeição da amostra"
-* valueCodeableConcept.coding obeys OutraCausaDeveSerDetalhada
+// * value[x] 1..1
+// * value[x] only CodeableConcept
+// * value[x] ^short = "O código que identifica o motivo da rejeição do espécime"
+// * valueCodeableConcept.coding 1..2
+// * valueCodeableConcept obeys DuplicidadeNaoAdmitida and ExtensaoApenasOutros and SoUmaExtensaoPermitida
+// * valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
+// * valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivos-especime-rejeitado (required)
+// * valueCodeableConcept.coding.code 1..1
+// * valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da rejeição da amostra"
+// * valueCodeableConcept.coding obeys OutraCausaDeveSerDetalhada
 
 // -------------------------
 // motivo-insatisfatorio

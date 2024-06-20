@@ -195,132 +195,6 @@ Context: Patient
 * valueAge.system = "http://unitsofmeasure.org" (exactly)
 * valueAge.code = #a (exactly)
 
-
-// // ------------------------------------------------------
-// // profissional (requisita ou emite laudo)
-// // ------------------------------------------------------
-
-// Profile: Profissional
-// Parent: Practitioner
-// Id: profissional
-// Title: "Profissional"
-// Description: "Responsável pela requisição ou emissão de laudo de exame citopatológico"
-
-// * ^status = #draft
-// * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/profissional"
-
-// * identifier ^slicing.discriminator.type = #value
-// * identifier ^slicing.discriminator.path = "system"
-// * identifier ^slicing.rules = #open
-
-// * identifier 1..2
-
-// * identifier contains 
-//     cns 0..1 and
-//     cpf 0..1
-
-// * identifier[cns].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
-// * identifier[cns].value 1..1
-
-// * identifier[cpf].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
-// * identifier[cpf].value 1..1
-
-
-// ------------------------------------------------------
-// estabelecimento (unidade de saúde)
-// ------------------------------------------------------
-
-Profile: UnidadeDeSaude
-Parent: Organization
-Id: unidade-requisitante
-Title: "Unidade requisitante"
-Description: "Unidade de Saúde para Requisição de Exame Citopatológico"
-
-* . ^short = "A unidade de saúde que requisita exame citopatológico."
-* ^description = "Unidade de Saúde que requisita exame citopatológico"
-* ^status = #draft
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/unidade-requisitante"
-
-* identifier 1..1 
-* identifier.extension 0..0
-* identifier.use 0..0
-* identifier.type 0..0
-* identifier.period 0..0
-* identifier.assigner 0..0
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes" (exactly)
-* identifier.value 1..1 
-* identifier.value ^short = "O código CNES da unidade de saúde requisitante"
-
-* active 0..0
-* type 0..0
-* alias 0..0
-* telecom 0..0
-
-* name 0..0
-
-* address 0..1
-* address.use 0..0
-* address.type 0..0
-* address.text 0..0
-* address.line 0..0
-* address.city 0..0
-* address.district 0..0
-* address.state 0..0
-* address.postalCode 0..0
-* address.country 0..0
-* address.period 0..0
-* address.extension 0..0
-* address.id 0..0
-
-* partOf 0..0
-* contact 0..0
-* endpoint 0..0
-* contained 0..0
-* extension 0..0
-* implicitRules 0..0
-* language 0..0
-* modifierExtension 0..0
-
-Profile: Laboratorio
-Parent: Organization
-Id: unidade-executante
-Title: "Laboratório"
-Description: "Unidade de Saúde que produz laudo de Exame Citopatológico"
-
-* . ^short = "A unidade de saúde executante, aquela que produz o laudo de exame citopatológico, identificada pelo CNES."
-* ^description = "Laboratório que produz laudo de exame citopatológico."
-* ^status = #draft
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/unidade-executante"
-
-// #44 (CNES)
-* identifier 1..1 
-* identifier.id 0..0
-* identifier.extension 0..0
-* identifier.use 0..0
-* identifier.type 0..0
-* identifier.period 0..0
-* identifier.assigner 0..0
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes" (exactly)
-* identifier.value 1..1
-* identifier.value ^short = "O código CNES da unidade de saúde requisitante"
-
-// #46 (Nome do Laboratório)
-* name 1..1
-
-* active 0..0
-* type 0..0
-* alias 0..0
-* telecom 0..0
-* address 0..0
-* partOf 0..0
-* contact 0..0
-* endpoint 0..0
-* contained 0..0
-* extension 0..0
-* implicitRules 0..0
-* language 0..0
-* modifierExtension 0..0
-
 // ------------------------------------------------------
 // requisicao-exame-citopatologico
 // ------------------------------------------------------
@@ -390,7 +264,7 @@ Description: "Estrutura exigida da anamnese pela requisição de exame citopatol
 * status = #completed
 * basedOn 0..0
 * partOf 0..0
-* encounter 1..1
+//* encounter 0..1
 * authored 0..0
 
 // ------------------------------------------------------
@@ -1018,7 +892,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
 // #59
 * obeys Executantes and AmostraRejeitadaNaoAdmiteLaudo
 
-* performer only Reference(Laboratorio)
+* performer only Reference(Organization)
 * performer 1..1
 * performer ^short = "O laboratório responsável pelo resultado do exame"
 

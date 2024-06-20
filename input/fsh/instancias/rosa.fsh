@@ -60,9 +60,9 @@ Description: "Requisição de exame citopatológico (Rosa)."
   * resource = ExameClinicoRosa
 
 // unidade-saude (Organization)
-* entry[+]
-  * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06"
-  * resource = unidade-saude
+// * entry[+]
+//   * fullUrl = "urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06"
+//   * resource = unidade-saude
 
 // profissional (Practitioner)
 * entry[+]
@@ -172,7 +172,9 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 * status = #finished
 * class.system = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
-* serviceProvider = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb06)
+* serviceProvider
+  * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
+  * identifier.value = "123456"
 
 // ------------------------------------------------------
 // exame
@@ -339,15 +341,15 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 // unidade-saude
 // ------------------------------------------------------
 
-Instance: unidade-saude
-InstanceOf: UnidadeDeSaude
-Usage: #inline
-Title: "UBS"
-Description: "A unidade de saúde na qual o exame citopatológico da paciente Rosa é requisitado"
+// Instance: unidade-saude
+// InstanceOf: UnidadeDeSaude
+// Usage: #inline
+// Title: "UBS"
+// Description: "A unidade de saúde na qual o exame citopatológico da paciente Rosa é requisitado"
 
-// CNES
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
-* identifier.value = "123456"
+// // CNES
+// * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
+// * identifier.value = "123456"
 
 
 // ------------------------------------------------------
@@ -478,15 +480,15 @@ Description: "Laudo de exame citopatológico da paciente Rosa"
 // lab
 // ------------------------------------------------------
 
-Instance: lab
-InstanceOf: Laboratorio
-Usage: #inline
-Title: "Laboratório Cito"
-Description: "Laboratório que emite o laudo de exame citopatológico"
+// Instance: lab
+// InstanceOf: Laboratorio
+// Usage: #inline
+// Title: "Laboratório Cito"
+// Description: "Laboratório que emite o laudo de exame citopatológico"
 
-* name = "Laboratório Cito"
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
-* identifier.value = "654321"
+// * name = "Laboratório Cito"
+// * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
+// * identifier.value = "654321"
 
 // ------------------------------------------------------
 // citopatologista

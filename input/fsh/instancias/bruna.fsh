@@ -64,21 +64,6 @@ Description: "Requisição de exame citopatológico (Bruna). Veja a [ficha](brun
   * fullUrl = "urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb04"
   * resource = ExameClinicoBruna
 
-// unidade-saude (Organization)
-//* entry[+]
-//  * fullUrl = "urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb06"
-//  * resource = unidade-saude-02
-
-// profissional (Practitioner)
-// * entry[+]
-//   * fullUrl = "urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb07"
-//   * resource = profissional-02
-
-// encontro (Encounter)
-* entry[+]
-  * fullUrl = "urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb08"
-  * resource = encontro-02
-
 // ------------------------------------------------------
 // Composition (requisição)
 // ------------------------------------------------------
@@ -119,6 +104,7 @@ Description: "Requisição de Exame Citopatológico da paciente Bruna"
 
 Instance: amostra-requisicao-bruna
 InstanceOf: Specimen
+Title: "Amostra (requisição) (Bruna)"
 Description: "Informação sobre a data da coleta e do responsável pela coleta da amostra."
 Usage: #example
 
@@ -156,9 +142,6 @@ Usage: #example
 
 * reasonCode[0].coding[0] = $motivos-exame#rastreamento
 
-// Permite identificar o local (unidade requisitante)
-* encounter = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb08)
-
 // respostas-anamnese
 * supportingInfo[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb03)
 
@@ -170,31 +153,11 @@ Usage: #example
 * requester.identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
 * requester.identifier.value = "123456"
 
-Instance: encontro-02
-InstanceOf: Encounter
-Usage: #example
-Title: "Interação (Bruna)"
-Description: "Neste encontro foi coletada a amostra e criada a requisição de exame citopatológico da paciente Bruna"
-
-* contained[0] = unidade-saude-02
-
-* status = #finished
-* class.system = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
-
-// Data do encontro (poderia incluir o horário)
-* period.start = "2023-12-13"
-
-// paciente Bruna
-* subject = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb01)
-
-// unidade de saúde na qual a requisição foi produzida
-* serviceProvider = Reference(unidade-saude-02)
-
 
 Instance: ExameClinicoBruna
 InstanceOf: Observation
 Usage: #example
-Title: "Exame Clinico Bruna"
+Title: "Exame Clínico (Bruna)"
 Description: "Exame clínico da Bruna"
 
 * meta.profile = $exameClinico
@@ -269,39 +232,6 @@ Description: "Dados demográficos da paciente Bruna"
 * extension[3].valueCodeableConcept.coding.code = #201
 
 // ------------------------------------------------------
-// unidade-saude
-// ------------------------------------------------------
-
-Instance: unidade-saude-02
-InstanceOf: Organization
-Usage: #example
-Title: "UBS Bem-estar"
-Description: "A unidade de saúde na qual o exame citopatológico da paciente Bruna é requisitado"
-
-* meta.profile = $unidadeDeSaude
-
-// CNES
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
-* identifier.value = "123456"
-
-// ------------------------------------------------------
-// profissional
-// ------------------------------------------------------
-
-// Instance: profissional-02
-// InstanceOf: Practitioner
-// Title: "Requisitante (Renata)"
-// Description: "Profissional responsável pela requisição do exame citopatológico"
-// Usage: #example
-
-// * identifier[0]
-//   * use = #official
-//   * system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
-//   * value = "234.234.567"
-
-// * name[0].text = "Renata Sampaio"
-
-// ------------------------------------------------------
 // anamnese-exame-citopatologico
 // ------------------------------------------------------
 
@@ -320,7 +250,6 @@ Usage: #example
 * author.identifier
   * system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
   * value = "234.234.567"
-* encounter = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb08)
 
 * item[+]
   * linkId = "1"
@@ -421,16 +350,6 @@ Description: "Laudo de exame citopatológico (Bruna). Veja a [ficha](bruna-faria
   * fullUrl = "urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb11"
   * resource = laudo-componentes-02
 
-// laboratorio (Organization)
-* entry[+]
-  * fullUrl = "urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb12"
-  * resource = laboratorio-bruna
-
-// citopatologista (Practitioner)
-// * entry[+]
-//   * fullUrl = "urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb13"
-//   * resource = citopatologista-02
-
 // espécime (Specimen)
 * entry[+]
   * fullUrl = "urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb15"
@@ -466,36 +385,6 @@ Description: "Laudo de exame citopatológico da paciente Bruna"
 * section[+]
   * title = "Laudo (Bruna)"
   * entry[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb10)
-
-// ------------------------------------------------------
-// laboratorio
-// ------------------------------------------------------
-
-Instance: laboratorio-bruna
-InstanceOf: Organization
-Usage: #example
-Title: "Laboratório Qualidade"
-Description: "Laboratório que emite o laudo de exame citopatológico"
-
-* meta.profile = $laboratorio
-
-* name = "Laboratório Cito Quality"
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
-* identifier.value = "654321"
-
-// ------------------------------------------------------
-// citopatologista
-// ------------------------------------------------------
-
-// Instance: citopatologista-02
-// InstanceOf: Practitioner
-// Title: "Citopatologista Joana"
-// Description: "Profissional responsável pelo laudo do exame citopatológico da paciente Rosa"
-// Usage: #example
-
-// * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
-// * identifier.value = "2345234234234"
-// * name.text = "Joana Silva"
 
 // ------------------------------------------------------
 // diagnostico
@@ -556,13 +445,15 @@ Description: "Laudo da requisição de exame da paciente Bruna. Veja a [ficha](b
 Instance: laudo-componentes-02
 InstanceOf: Observation
 Usage: #example
-Title: "Itens do laudo (Bruna)"
-Description: "Itens que definem o laudo da paciente Bruna"
+Title: "Observações do laudo (Bruna)"
+Description: "Observações que definem o laudo da paciente Bruna"
 
 * meta.profile = $componentesLaudoCitopatologico
 
 * subject = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb12)
+* performer[0]
+  * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
+  * identifier.value = "654321"
 * effectiveDateTime = "2023-12-14"
 
 * status = #final
@@ -577,10 +468,11 @@ Description: "Itens que definem o laudo da paciente Bruna"
 * note[0].text = "Amostra parcialmente dessecada."
 
 //------------
-// Motivo de rejeicao apenas se #unavailable (deve gerar erro)
+
 Instance: especime-bruna
 InstanceOf: Specimen
 Usage: #example
+Title: "Amostra (laudo) (Bruna)"
 Description: "Informações sobre a amostra identificadas pelo laboratório"
 
 *  meta.profile = $amostra

@@ -39,9 +39,9 @@ Description: "Requisição de exame citopatológico (Pérola). Veja a [ficha](pe
   * resource = respostas-anamnese-04
 
 // unidade-saude (Organization)
-* entry[+]
-  * fullUrl = "urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb06"
-  * resource = unidade-saude-04
+// * entry[+]
+//   * fullUrl = "urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb06"
+//   * resource = unidade-saude-04
 
 // profissional (Practitioner)
 * entry[+]
@@ -155,7 +155,9 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 * subject = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb01)
 
 // unidade de saúde na qual a requisição foi produzida
-* serviceProvider = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb06)
+* serviceProvider
+  * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
+  * identifier.value = "123456"
 
 
 // ------------------------------------------------------
@@ -212,15 +214,15 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 // unidade-saude
 // ------------------------------------------------------
 
-Instance: unidade-saude-04
-InstanceOf: UnidadeDeSaude
-Usage: #inline
-Title: "UBS 4"
-Description: "A unidade de saúde na qual o exame citopatológico da paciente Pérola é requisitado"
+// Instance: unidade-saude-04
+// InstanceOf: UnidadeDeSaude
+// Usage: #inline
+// Title: "UBS 4"
+// Description: "A unidade de saúde na qual o exame citopatológico da paciente Pérola é requisitado"
 
-// CNES
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
-* identifier.value = "123456"
+// // CNES
+// * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
+// * identifier.value = "123456"
 
 // ------------------------------------------------------
 // profissional
@@ -373,11 +375,6 @@ Description: "Laudo de exame citopatológico (Pérola). Veja a [ficha](perola-fa
   * fullUrl = "urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb11"
   * resource = laudo-componentes-04
 
-// laboratorio (Organization)
-* entry[+]
-  * fullUrl = "urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb12"
-  * resource = laboratorio-perola
-
 // citopatologista (Practitioner)
 * entry[+]
   * fullUrl = "urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb13"
@@ -420,15 +417,15 @@ Description: "Laudo de exame citopatológico da paciente Renata"
 // laboratorio
 // ------------------------------------------------------
 
-Instance: laboratorio-perola
-InstanceOf: Laboratorio
-Usage: #inline
-Title: "Laboratório Qualidade"
-Description: "Laboratório que emite o laudo de exame citopatológico"
+// Instance: laboratorio-perola
+// InstanceOf: Laboratorio
+// Usage: #inline
+// Title: "Laboratório Qualidade"
+// Description: "Laboratório que emite o laudo de exame citopatológico"
 
-* name = "Prevenção"
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
-* identifier.value = "654321"
+// * name = "Prevenção"
+// * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
+// * identifier.value = "654321"
 
 // ------------------------------------------------------
 // citopatologista
@@ -477,10 +474,6 @@ Description: "Laudo da requisição de exame da paciente Pérola. Veja a [ficha]
 // Observation (componentes do laudo)
 * result[0] = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb11)
 
-//* performer[0] = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb12)
-//* resultsInterpreter[0] = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb13)
-
-//* performer[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb12)
 * performer[0].identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
 * performer[0].identifier.value = "123456"
 
@@ -507,7 +500,9 @@ Title: "Itens do laudo (Pérola)"
 Description: "Itens que definem o laudo da paciente Pérola"
 
 * subject = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer[0] = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb12)
+* performer[0]
+  * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
+  * identifier.value = "654321"
 * effectiveDateTime = "2024-01-13"
 
 * status = #final

@@ -40,9 +40,9 @@ Description: "Requisição de exame citopatológico (Renata). Veja a [ficha](ren
   * resource = respostas-anamnese-03
 
 // unidade-saude (Organization)
-* entry[+]
-  * fullUrl = "urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb06"
-  * resource = unidade-saude-03
+// * entry[+]
+//   * fullUrl = "urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb06"
+//   * resource = unidade-saude-03
 
 // profissional (Practitioner)
 * entry[+]
@@ -154,7 +154,9 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 * subject = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb01)
 
 // unidade de saúde na qual a requisição foi produzida
-* serviceProvider = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb06)
+* serviceProvider
+  * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
+  * identifier.value = "123456"
 
 
 // ------------------------------------------------------
@@ -215,15 +217,15 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 // unidade-saude
 // ------------------------------------------------------
 
-Instance: unidade-saude-03
-InstanceOf: UnidadeDeSaude
-Usage: #inline
-Title: "UBS 3"
-Description: "A unidade de saúde na qual o exame citopatológico da paciente Renata é requisitado"
+// Instance: unidade-saude-03
+// InstanceOf: UnidadeDeSaude
+// Usage: #inline
+// Title: "UBS 3"
+// Description: "A unidade de saúde na qual o exame citopatológico da paciente Renata é requisitado"
 
-// CNES
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
-* identifier.value = "123456"
+// // CNES
+// * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
+// * identifier.value = "123456"
 
 // ------------------------------------------------------
 // profissional
@@ -386,9 +388,9 @@ Description: "Laudo de exame citopatológico (Renata). Veja a [ficha](renata-lim
   * resource = laudo-componentes-03
 
 // laboratorio (Organization)
-* entry[+]
-  * fullUrl = "urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb12"
-  * resource = laboratorio-renata
+// * entry[+]
+//   * fullUrl = "urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb12"
+//   * resource = laboratorio-renata
 
 // citopatologista (Practitioner)
 * entry[+]
@@ -431,15 +433,15 @@ Description: "Laudo de exame citopatológico da paciente Renata"
 // laboratorio
 // ------------------------------------------------------
 
-Instance: laboratorio-renata
-InstanceOf: Laboratorio
-Usage: #inline
-Title: "Laboratório Qualidade"
-Description: "Laboratório que emite o laudo de exame citopatológico"
+// Instance: laboratorio-renata
+// InstanceOf: Laboratorio
+// Usage: #inline
+// Title: "Laboratório Qualidade"
+// Description: "Laboratório que emite o laudo de exame citopatológico"
 
-* name = "Laboratório Qualidade"
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
-* identifier.value = "654321"
+// * name = "Laboratório Qualidade"
+// * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
+// * identifier.value = "654321"
 
 // ------------------------------------------------------
 // citopatologista
@@ -518,7 +520,9 @@ Title: "Itens do laudo (Renata)"
 Description: "Itens que definem o laudo da paciente Renata"
 
 * subject = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer[0] = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb12)
+* performer[0]
+  * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
+  * identifier.value = "654321"
 
 * effectiveDateTime = "2024-01-13"
 

@@ -48,15 +48,15 @@ Description: "Paciente fictícia para requisição e laudo de exame citopatológ
 // unidade requisitante
 // ------------------------------------------------------
 
-Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb06
-InstanceOf: UnidadeDeSaude
-Usage: #inline
-Title: "UBS 5"
-Description: "A unidade de saúde na qual o exame citopatológico da paciente Talita é requisitado"
+// Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb06
+// InstanceOf: UnidadeDeSaude
+// Usage: #inline
+// Title: "UBS 5"
+// Description: "A unidade de saúde na qual o exame citopatológico da paciente Talita é requisitado"
 
-// CNES
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
-* identifier.value = "123456"
+// // CNES
+// * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
+// * identifier.value = "123456"
 
 // ------------------------------------------------------
 // profissional
@@ -231,7 +231,9 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 * subject = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb01)
 
 // unidade de saúde na qual a requisição foi produzida
-* serviceProvider = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb06)
+* serviceProvider
+  * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
+  * identifier.value = "123456"
 
 // ------------------------------------------------------
 // amostra-requisicao (Specimen)
@@ -359,9 +361,9 @@ Description: "Requisição de exame citopatológico (Talita). Veja a [ficha](tal
   * resource = 0542d5cf-6316-4ddd-b398-168af8aaeb04
 
 // unidade-saude (Organization)
-* entry[+]
-  * fullUrl = "urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb06"
-  * resource = 0542d5cf-6316-4ddd-b398-168af8aaeb06
+// * entry[+]
+//   * fullUrl = "urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb06"
+//   * resource = 0542d5cf-6316-4ddd-b398-168af8aaeb06
 
 // profissional (Practitioner)
 * entry[+]
@@ -379,20 +381,6 @@ Description: "Requisição de exame citopatológico (Talita). Veja a [ficha](tal
 // LAUDO
 // 
 // ------------------------------------------------------
-
-// ------------------------------------------------------
-// laboratorio que emite o laudo
-// ------------------------------------------------------
-
-Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb12
-InstanceOf: Laboratorio
-Usage: #inline
-Title: "Laboratório Quali"
-Description: "Laboratório que emite o laudo de exame citopatológico"
-
-* name = "Prevenção"
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
-* identifier.value = "654321"
 
 // ------------------------------------------------------
 // citopatologista que assina o laudo
@@ -419,7 +407,10 @@ Title: "Itens do laudo (Talita)"
 Description: "Itens que definem o laudo da paciente Talita"
 
 * subject = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer[0] = Reference(urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb12)
+* performer[0]
+  * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
+  * identifier.value = "654321"
+
 * effectiveDateTime = "2024-01-12"
 
 * status = #final
@@ -566,9 +557,9 @@ Description: "Laudo de exame citopatológico (Talita). Veja a [ficha](talita-mor
   * resource = 0542d5cf-6316-4ddd-b398-168af8aaeb11
 
 // laboratorio (Organization)
-* entry[+]
-  * fullUrl = "urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb12"
-  * resource = 0542d5cf-6316-4ddd-b398-168af8aaeb12
+// * entry[+]
+//   * fullUrl = "urn:uuid:0542d5cf-6316-4ddd-b398-168af8aaeb12"
+//   * resource = 0542d5cf-6316-4ddd-b398-168af8aaeb12
 
 // citopatologista (Practitioner)
 * entry[+]

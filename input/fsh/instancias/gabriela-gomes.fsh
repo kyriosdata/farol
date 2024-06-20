@@ -61,9 +61,9 @@ Description: "Requisição de exame citopatológico (Gabriela). Veja a [ficha](g
   * resource = ExameClinicoGabriela
 
 // unidade-saude (Organization)
-* entry[+]
-  * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb06"
-  * resource = unidade-saude-01
+// * entry[+]
+//   * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb06"
+//   * resource = unidade-saude-01
 
 // profissional (Practitioner)
 * entry[+]
@@ -113,9 +113,9 @@ Description: "Requisição de Exame Citopatológico da paciente Gabriela"
   * title = "Exame clínico"
   * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb04)
 
-* section[+]
-  * title = "UBS (Gabriela Gomes)"
-  * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb06)
+// * section[+]
+//   * title = "UBS (Gabriela Gomes)"
+//   * entry[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb06)
 
 // ------------------------------------------------------
 // amostra-requisicao (Specimen)
@@ -174,7 +174,10 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 * status = #finished
 * class.system = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
 * subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
-* serviceProvider = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb06)
+* serviceProvider
+  * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
+  * identifier.value = "123456"
+
 
 // ------------------------------------------------------
 // exame
@@ -284,15 +287,15 @@ Description: "Paciente para a qual há requisição e laudo de exame citopatoló
 // unidade-saude
 // ------------------------------------------------------
 
-Instance: unidade-saude-01
-InstanceOf: UnidadeDeSaude
-Usage: #inline
-Title: "UBS Vida Saudável"
-Description: "A unidade de saúde na qual o exame citopatológico da paciente Gabriela Gomes é requisitado"
+// Instance: unidade-saude-01
+// InstanceOf: UnidadeDeSaude
+// Usage: #inline
+// Title: "UBS Vida Saudável"
+// Description: "A unidade de saúde na qual o exame citopatológico da paciente Gabriela Gomes é requisitado"
 
-// CNES
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
-* identifier.value = "123456"
+// // CNES
+// * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
+// * identifier.value = "123456"
 
 // ------------------------------------------------------
 // profissional
@@ -420,9 +423,9 @@ Description: "Laudo de exame citopatológico (Gabriela). Veja a [ficha](gabriela
   * resource = laudo-componentes-01
 
 // laboratorio (Organization)
-* entry[+]
-  * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb12"
-  * resource = laboratorio-gabriela
+// * entry[+]
+//   * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb12"
+//   * resource = laboratorio-gabriela
 
 // citopatologista (Practitioner)
 * entry[+]
@@ -465,15 +468,15 @@ Description: "Laudo de exame citopatológico da paciente Gabriela Gomes"
 // laboratorio
 // ------------------------------------------------------
 
-Instance: laboratorio-gabriela
-InstanceOf: Laboratorio
-Usage: #inline
-Title: "Laboratório Premium"
-Description: "Laboratório que emite o laudo de exame citopatológico"
+// Instance: laboratorio-gabriela
+// InstanceOf: Laboratorio
+// Usage: #inline
+// Title: "Laboratório Premium"
+// Description: "Laboratório que emite o laudo de exame citopatológico"
 
-* name = "Laboratório Cito"
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
-* identifier.value = "654321"
+// * name = "Laboratório Cito"
+// * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
+// * identifier.value = "654321"
 
 // ------------------------------------------------------
 // citopatologista
@@ -551,7 +554,9 @@ Title: "Itens do laudo (Gabriela Gomes)"
 Description: "Itens que definem o laudo da paciente Gabriela Gomes"
 
 * subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb12)
+* performer[0]
+  * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
+  * identifier.value = "654321"
 * effectiveDateTime = "2024-02-01T11:00:00Z"
 
 * status = #final

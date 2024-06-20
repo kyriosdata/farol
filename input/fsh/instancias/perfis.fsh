@@ -22,9 +22,12 @@ Context: Patient
 * ^language = #pt-BR
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/filiacao"
 * . ^short = "Filiação da paciente"
+* ^purpose = "Permite acrescentar a filiação às informações pessoais da paciente. Observe que não é possível identificar o tipo de relacionamento com a paciente."
 
 * value[x] only string
 * valueString 1..1
+* valueString ^short = "O nome do pai ou da mãe da paciente."
+
 
 Invariant: rn-5
 Description: "Identificador de prontuário não pode ser vazio"
@@ -44,7 +47,7 @@ Context: ServiceRequest
 * . ..1
 * . ^short = "Prontuário"
 * . ^definition = "Código que unicamente identifica o prontuário pelo requisitante para a requisição."
-
+* ^purpose = "O prontuário não é um identificador da requisição, mas uma informação fornecida e relevante para funções de interesse do requisitante."
 * value[x] only string
 * valueString 1..1
 * valueString obeys rn-5
@@ -59,7 +62,7 @@ Context: ServiceRequest
 // Adicionalmente foram estabelecidas regras para fornecimento
 // de valor para etnia apenas conforme valor para raça/cor.
 
-Invariant: EtniaApenasSeRacaCorForIndigena
+Invariant: etnia-1
 Description: "Se etnia indígena é fornecida, então obrigatoriamente a indicação da raça/cor deve ser indígena."
 Expression: "iif('indigenousEthinicity' in extension.url, '05' in extension.where(url = 'race').value, true)"
 Severity: #error
@@ -78,7 +81,7 @@ Context: Patient
 * . ^definition = "Dados relacionados à raça/cor e etnia de um indivíduo."
 
 // Regra acrescentada
-* extension obeys EtniaApenasSeRacaCorForIndigena
+* extension obeys etnia-1
 
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
@@ -1110,59 +1113,6 @@ Description: "Informações sobre o espécime geradas pelo laboratório"
 * condition.coding.code 1..1
 * condition obeys rn-8
 
-// -------------------------
-// motivo-especime-rejeitado
-// -------------------------
-
-// Extension: MotivoRejeicao
-// Id: motivo-rejeicao
-// Title: "Motivo para rejeição do espécime"
-// Description: "Detalha o motivo pelo qual o espécime é rejeitado para exame citopatológico por 'outras causas'."
-// Context: Amostra.status
-
-// * ^status = #draft
-// * ^language = #pt-BR
-// * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-rejeicao"
-// * . ^short = "Motivo pelo qual o espécime foi rejeitado"
-// * . ^definition = "O motivo pelo qual o espécimo foi rejeitado (não será avaliado)"
-
-// * value[x] 1..1
-// * value[x] only CodeableConcept
-// * value[x] ^short = "O código que identifica o motivo da rejeição do espécime"
-// * valueCodeableConcept.coding 1..2
-// * valueCodeableConcept obeys DuplicidadeNaoAdmitida and ExtensaoApenasOutros and SoUmaExtensaoPermitida
-// * valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
-// * valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivos-especime-rejeitado (required)
-// * valueCodeableConcept.coding.code 1..1
-// * valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da rejeição da amostra"
-// * valueCodeableConcept.coding obeys OutraCausaDeveSerDetalhada
-
-// // -------------------------
-// // motivo-insatisfatorio
-// // -------------------------
-
-// Extension: MotivoInsatisfatorio
-// Id: motivo-insatisfatorio
-// Title: "Motivo espécime insatisfatório"
-// Description: "Detalha o motivo pelo qual um espécime é insatisfatório para avaliação."
-// Context: Amostra.status
-// * ^status = #draft
-// * ^language = #pt-BR
-// * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-insatisfatorio"
-// * . ^short = "Motivo pelo qual o espécime foi rejeitado"
-// * . ^definition = "O motivo pelo qual o espécimo foi rejeitado (não será avaliado)"
-
-// * value[x] ^short = "Registra motivo(s) pelo(s) qual(is) a amostra é insatisfatória para avaliação"
-// * value[x] 1..1
-// * value[x] only CodeableConcept
-// * value[x] ^short = "Código para amostra insatisfatória para avaliação"
-// * valueCodeableConcept.coding 1..6
-// * valueCodeableConcept obeys DuplicidadeNaoAdmitida
-// * valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
-// * valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivos-especime-insatisfatorio (required)
-// * valueCodeableConcept.coding.code 1..1
-// * valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da amostra ser insatisfatória"
-
 // -----------------------------------
 // referencia para unidade de saúde
 // -----------------------------------
@@ -1228,6 +1178,8 @@ Description: "Informações parciais sobre a amostra"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/amostra-requisicao"
 * ^status = #draft
+
+* ^purpose = "Este perfil foi criado para o registro de duas informações pertinentes à amostra que fazem parte da requisição de exame citopatológico: a data da coleta e o responsável pela coleta."
 
 * identifier 0..0
 * accessionIdentifier 0..0

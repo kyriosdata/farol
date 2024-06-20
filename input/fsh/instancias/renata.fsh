@@ -446,13 +446,13 @@ Description: "Laboratório que emite o laudo de exame citopatológico"
 // ------------------------------------------------------
 
 Instance: citopatologista-03
-InstanceOf: Profissional
+InstanceOf: Practitioner
 Title: "Citopatologista Pedro"
 Description: "Profissional responsável pelo laudo do exame citopatológico da paciente Renata"
 Usage: #inline
 
-* identifier[cns].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
-* identifier[cns].value = "2345234234234"
+* identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
+* identifier[0].value = "2345234234234"
 * name.text = "Pedro Cândido"
 
 // ------------------------------------------------------

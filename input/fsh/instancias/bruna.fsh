@@ -85,7 +85,7 @@ Description: "Requisição de exame citopatológico (Bruna). Veja a [ficha](brun
 
 Instance: requisicao-bruna
 InstanceOf: Composition
-Usage: #inline
+Usage: #example
 Title: "Requisição (Bruna)"
 Description: "Requisição de Exame Citopatológico da paciente Bruna"
 
@@ -117,7 +117,8 @@ Description: "Requisição de Exame Citopatológico da paciente Bruna"
 
 Instance: amostra-requisicao-bruna
 InstanceOf: Specimen
-Usage: #inline
+Description: "Informação sobre a data da coleta e do responsável pela coleta da amostra."
+Usage: #example
 
 * meta.profile = $amostraRequisicao
 
@@ -134,7 +135,7 @@ Instance: requisicao-02
 InstanceOf: ServiceRequest
 Title: "Requisição (Bruna)"
 Description: "Requisição de exame citopatológico da Bruna"
-Usage: #inline
+Usage: #example
 
 * meta.profile = $requisicaoExameCitopatologico
 
@@ -169,7 +170,7 @@ Usage: #inline
 
 Instance: encontro-02
 InstanceOf: Encounter
-Usage: #inline
+Usage: #example
 Title: "Interação (Bruna)"
 Description: "Neste encontro foi coletada a amostra e criada a requisição de exame citopatológico da paciente Bruna"
 
@@ -187,49 +188,10 @@ Description: "Neste encontro foi coletada a amostra e criada a requisição de e
 // unidade de saúde na qual a requisição foi produzida
 * serviceProvider = Reference(unidade-saude-02)
 
-// ------------------------------------------------------
-// exame
-// ------------------------------------------------------
-
-// Instance: exame-inspecao-02
-// InstanceOf: Observation
-// Usage: #inline
-// Title: "Inspeção colo (Bruna)"
-// Description: "Resultado da inspeção do colo uterino da paciente Bruna"
-
-// * status = #final
-
-// // Cervix Study observation Inspection
-// * code = http://loinc.org#12044-4
-
-// * subject = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb01)
-// * performer = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb07)
-// * effectiveDateTime = "2023-12-13"
-
-// * valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-inspecao-colo#normal
-
-
-// Instance: exame-dst-02
-// InstanceOf: Observation
-// Usage: #inline
-// Title: "DST (Bruna)"
-// Description: "Exame clínico que identifica se há presença ou não de sinais de doença sexualmente transmissível"
-
-// * status = #final
-
-// // Sexually transmitted diseases
-// * code = http://loinc.org#45687-1
-
-// * subject = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb01)
-// * performer = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb07)
-// * effectiveDateTime = "2023-12-13"
-
-// * valueBoolean = true
-
 
 Instance: ExameClinicoBruna
 InstanceOf: Observation
-Usage: #inline
+Usage: #example
 Title: "Exame Clinico Bruna"
 Description: "Exame clínico da Bruna"
 
@@ -254,7 +216,7 @@ Description: "Exame clínico da Bruna"
 
 Instance: bruna
 InstanceOf: Patient
-Usage: #inline
+Usage: #example
 Title: "Paciente (Bruna)"
 Description: "Dados demográficos da paciente Bruna"
 
@@ -308,7 +270,7 @@ Description: "Dados demográficos da paciente Bruna"
 
 Instance: unidade-saude-02
 InstanceOf: Organization
-Usage: #inline
+Usage: #example
 Title: "UBS Bem-estar"
 Description: "A unidade de saúde na qual o exame citopatológico da paciente Bruna é requisitado"
 
@@ -326,7 +288,7 @@ Instance: profissional-02
 InstanceOf: Practitioner
 Title: "Requisitante (Renata)"
 Description: "Profissional responsável pela requisição do exame citopatológico"
-Usage: #inline
+Usage: #example
 
 * identifier[0]
   * use = #official
@@ -343,7 +305,7 @@ Instance: respostas-anamnese-02
 InstanceOf: QuestionnaireResponse
 Title: "Anamnese (Bruna)"
 Description: "Anamnese da paciente Bruna"
-Usage: #inline
+Usage: #example
 
 * meta.profile = $anamneseQuestionario
 
@@ -471,7 +433,7 @@ Description: "Laudo de exame citopatológico (Bruna). Veja a [ficha](bruna-faria
 
 Instance: composition-02-2
 InstanceOf: Composition
-Usage: #inline
+Usage: #example
 Title: "Laudo (Bruna)"
 Description: "Laudo de exame citopatológico da paciente Bruna"
 
@@ -504,7 +466,7 @@ Description: "Laudo de exame citopatológico da paciente Bruna"
 
 Instance: laboratorio-bruna
 InstanceOf: Organization
-Usage: #inline
+Usage: #example
 Title: "Laboratório Qualidade"
 Description: "Laboratório que emite o laudo de exame citopatológico"
 
@@ -522,7 +484,7 @@ Instance: citopatologista-02
 InstanceOf: Practitioner
 Title: "Citopatologista Joana"
 Description: "Profissional responsável pelo laudo do exame citopatológico da paciente Rosa"
-Usage: #inline
+Usage: #example
 
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
 * identifier.value = "2345234234234"
@@ -586,7 +548,7 @@ Description: "Laudo da requisição de exame da paciente Bruna. Veja a [ficha](b
 
 Instance: laudo-componentes-02
 InstanceOf: Observation
-Usage: #inline
+Usage: #example
 Title: "Itens do laudo (Bruna)"
 Description: "Itens que definem o laudo da paciente Bruna"
 
@@ -611,7 +573,7 @@ Description: "Itens que definem o laudo da paciente Bruna"
 // Motivo de rejeicao apenas se #unavailable (deve gerar erro)
 Instance: especime-bruna
 InstanceOf: Specimen
-Usage: #inline
+Usage: #example
 Description: "Informações sobre a amostra identificadas pelo laboratório"
 
 *  meta.profile = $amostra

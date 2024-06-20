@@ -1,14 +1,13 @@
-Alias: $BRTipoLogradouro-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRTipoLogradouro-1.0
 Alias: $BRMunicipio-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRMunicipio-1.0
 Alias: $BRUnidadeFederativa-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRUnidadeFederativa-1.0
-Alias: $BRMeioContato = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRMeioContato-1.0
+Alias: $tabelaSus = http://www.saude.gov.br/fhir/r4/CodeSystem/BRTabelaSUS
+Alias: $nacionalidade = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade
+Alias: $BRRacaCor-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRRacaCor-1.0
+Alias: $BREtniaIndigena-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BREtniaIndigena-1.0
+
 Alias: $laudo-tipo-item = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item
 Alias: $yesnodontknow = http://hl7.org/fhir/ValueSet/yesnodontknow
 Alias: $resultado-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/resultados-inspecao-colo
-
-
-Alias: $BRRacaCor-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BRRacaCor-1.0
-Alias: $BREtniaIndigena-1.0 = http://www.saude.gov.br/fhir/r4/ValueSet/BREtniaIndigena-1.0
 
 // -------------------------
 // Filiação
@@ -197,34 +196,34 @@ Context: Patient
 * valueAge.code = #a (exactly)
 
 
-// ------------------------------------------------------
-// profissional (requisita ou emite laudo)
-// ------------------------------------------------------
+// // ------------------------------------------------------
+// // profissional (requisita ou emite laudo)
+// // ------------------------------------------------------
 
-Profile: Profissional
-Parent: Practitioner
-Id: profissional
-Title: "Profissional"
-Description: "Responsável pela requisição ou emissão de laudo de exame citopatológico"
+// Profile: Profissional
+// Parent: Practitioner
+// Id: profissional
+// Title: "Profissional"
+// Description: "Responsável pela requisição ou emissão de laudo de exame citopatológico"
 
-* ^status = #draft
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/profissional"
+// * ^status = #draft
+// * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/profissional"
 
-* identifier ^slicing.discriminator.type = #value
-* identifier ^slicing.discriminator.path = "system"
-* identifier ^slicing.rules = #open
+// * identifier ^slicing.discriminator.type = #value
+// * identifier ^slicing.discriminator.path = "system"
+// * identifier ^slicing.rules = #open
 
-* identifier 1..2
+// * identifier 1..2
 
-* identifier contains 
-    cns 0..1 and
-    cpf 0..1
+// * identifier contains 
+//     cns 0..1 and
+//     cpf 0..1
 
-* identifier[cns].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
-* identifier[cns].value 1..1
+// * identifier[cns].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
+// * identifier[cns].value 1..1
 
-* identifier[cpf].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
-* identifier[cpf].value 1..1
+// * identifier[cpf].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
+// * identifier[cpf].value 1..1
 
 
 // ------------------------------------------------------
@@ -337,7 +336,7 @@ Description: "Definição das informações que devem constar em toda e qualquer
 
 * code ^short = "A identificação precisa do serviço requisitado."
 * code.coding 1..1
-* code.coding = http://www.saude.gov.br/fhir/r4/CodeSystem/BRTabelaSUS#0203010086
+* code.coding = $tabelaSus#0203010086
 * code.coding.display = "EXAME CITOPATOLÓGICO CERVICO VAGINAL/MICROFLORA-RASTREAMENTO"
 * code.coding.userSelected 0..0
 
@@ -613,7 +612,7 @@ Description: "Dados demográficos da paciente"
 * extension ^short = "Itens de informação acrescentados"
 * extension contains 
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/filiacao named filiacao 0..1 MS and
-    http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade named nacionalidade 0..1 MS and
+    $nacionalidade named nacionalidade 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade named idade 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/nivel-educacional named escolaridade 0..1 MS and
     https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/raca-etnia named etnia 0..1 MS and

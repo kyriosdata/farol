@@ -10,8 +10,23 @@ Alias: $yesnodontknow = http://hl7.org/fhir/ValueSet/yesnodontknow
 Alias: $resultado-inspecao-colo = https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/resultados-inspecao-colo
 
 // -------------------------
-// Filiação
+// Extensões
 // -------------------------
+
+Extension: Detalhar
+Id: detalhar
+Title: "Detalhe"
+Description: "Fornece detalhe ou especificação adicional sobre item de informação do resultado de exame citopatológico."
+Context: Coding, Specimen.status
+
+* ^status = #draft
+
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/detalhar"
+* ^purpose = "Permite acrescentar detalhe a item de informação."
+* value[x] only string
+* valueString 1..1
+* valueString ^short = "Especificar (detalhar)"
+
 
 Extension: Filiacao
 Id: filiacao
@@ -47,10 +62,11 @@ Context: ServiceRequest
 * . ..1
 * . ^short = "Prontuário"
 * . ^definition = "Código que unicamente identifica o prontuário pelo requisitante para a requisição."
-* ^purpose = "O prontuário não é um identificador da requisição, mas uma informação fornecida e relevante para funções de interesse do requisitante."
+* ^purpose = "Registrar informação de interesse do requisitante no contexto da requisição."
 * value[x] only string
 * valueString 1..1
 * valueString obeys rn-5
+* valueString ^short = "O identificador do prontuário (pelo requisitante)"
 
 
 // --- AVISO
@@ -79,6 +95,7 @@ Context: Patient
 * . ..1
 * . ^short = "Identificação da raça/Cor e da etnia indígena."
 * . ^definition = "Dados relacionados à raça/cor e etnia de um indivíduo."
+* ^purpose = "O registro da raça/etnia da paciente"
 
 // Regra acrescentada
 * extension obeys etnia-1
@@ -117,6 +134,7 @@ Identificação do maior nível educacional obtido pelo indivíduo.
 
 * ^context[0].type = #element
 * ^context[0].expression = "Patient"
+* ^purpose = "O nível educacional é utilizado para fins de comunicação com a paciente."
 
 * value[x] only code
 * valueCode 1..1
@@ -126,7 +144,7 @@ Identificação do maior nível educacional obtido pelo indivíduo.
 
 Extension: Responsabilidade
 Id:   responsabilidade
-Title:  "Responsabilidade"
+Title:  "Papel"
 Description: """
 Papel desempenhado pelo profissional no laudo.
 """
@@ -135,6 +153,7 @@ Context: Reference
 * ^status = #draft
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/responsabilidade"
+* ^purpose = "O laudo é de responsabilidade de um profissional de saúde e, adicionalmente, pode participar um citotécnico responsável pelo screening. Esta extensão permite identificar qual destes papéis é realizado pelos profissionais associados ao laudo."
 
 * value[x] only code
 * valueCode 1..1
@@ -156,6 +175,7 @@ Context: Address.line
 * value[x] only code
 * valueCode 1..1
 * valueCode from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/componentes-endereco
+* ^purpose = "O endereço é fornecido por várias sequências de caracteres e o presente código é utilizado em conjunto com cada sequência para identificar o conteúdo de cada uma delas."
 
 // ------------------------------------------------------
 // gênero // #14 (gênero)
@@ -170,6 +190,7 @@ Context: Patient
 * ^status = #draft
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/extension-genero"
+* ^purpose = "Permite XXX"
 
 * value[x] only CodeableConcept
 * valueCodeableConcept 1..1
@@ -184,13 +205,14 @@ Context: Patient
 
 Extension: Idade
 Id: idade
-Title: "Idade informada pela paciente (em anos)"
-Description: "Idade fornecida no momento da requisição de exame citopatológico. Mantida apenas por conformidade com formulário impresso. A expectativa natural é que esta data seja calculada, por comodidade do usuário que a consulta, a partir da data de nascimento, em vez de ser informada."
+Title: "Idade"
+Description: "Idade (em anos) fornecida no momento da requisição de exame citopatológico. Mantida apenas por conformidade com formulário impresso. A expectativa natural é que esta data seja calculada, por comodidade do usuário que a consulta, a partir da data de nascimento, em vez de ser informada."
 Context: Patient
 
 * ^status = #draft
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade"
+* ^purpose = "Permite o registro da idade."
 
 * value[x] only Age
 * valueAge 1..1
@@ -1037,23 +1059,6 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * note.author[x] 0..0
 * note.time 0..0
 
-// ------------------------------------------------------
-// detalhar
-// ------------------------------------------------------
-
-Extension: Detalhar
-Id: detalhar
-Title: "Detalha item"
-Description: "Fornece detalhe ou especificação adicional sobre item de informação do resultado de exame citopatológico."
-Context: Coding, Specimen.status
-
-* ^status = #draft
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/detalhar"
-
-* value[x] only string
-* valueString 1..1
-* valueString ^short = "Especificar (detalhar)"
 
 // -----------------
 // Amostra

@@ -70,9 +70,9 @@ Description: "Requisição de exame citopatológico (Bruna). Veja a [ficha](brun
 //  * resource = unidade-saude-02
 
 // profissional (Practitioner)
-* entry[+]
-  * fullUrl = "urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb07"
-  * resource = profissional-02
+// * entry[+]
+//   * fullUrl = "urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb07"
+//   * resource = profissional-02
 
 // encontro (Encounter)
 * entry[+]
@@ -96,8 +96,10 @@ Description: "Requisição de Exame Citopatológico da paciente Bruna"
 * type = http://loinc.org#47528-5
 * category = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-documento#requisicao-citopatologico
 
-* author = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb07)
-  
+* author.identifier
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
+  * value = "234.234.567"  
+
 * title = "Pacote contendo todos os dados da requisição de Exame Citopatológico para a paciente fictícia Bruna"
 
 // Data em que a composição foi montada
@@ -206,7 +208,9 @@ Description: "Exame clínico da Bruna"
 * component[1].valueBoolean = true
 
 * subject = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb07)
+* performer.identifier
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
+  * value = "234.234.567"
 * effectiveDateTime = "2023-12-07"
 
 
@@ -284,18 +288,18 @@ Description: "A unidade de saúde na qual o exame citopatológico da paciente Br
 // profissional
 // ------------------------------------------------------
 
-Instance: profissional-02
-InstanceOf: Practitioner
-Title: "Requisitante (Renata)"
-Description: "Profissional responsável pela requisição do exame citopatológico"
-Usage: #example
+// Instance: profissional-02
+// InstanceOf: Practitioner
+// Title: "Requisitante (Renata)"
+// Description: "Profissional responsável pela requisição do exame citopatológico"
+// Usage: #example
 
-* identifier[0]
-  * use = #official
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
-  * value = "234.234.567"
+// * identifier[0]
+//   * use = #official
+//   * system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
+//   * value = "234.234.567"
 
-* name[0].text = "Renata Sampaio"
+// * name[0].text = "Renata Sampaio"
 
 // ------------------------------------------------------
 // anamnese-exame-citopatologico
@@ -313,7 +317,9 @@ Usage: #example
 
 * status = #completed
 * subject = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb01)
-* author = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb07)
+* author.identifier
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
+  * value = "234.234.567"
 * encounter = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb08)
 
 * item[+]
@@ -398,7 +404,7 @@ Description: "Laudo de exame citopatológico (Bruna). Veja a [ficha](bruna-faria
 // Composition (primeira entrada do bundle)
 * entry[+]
   * fullUrl = "urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb09"
-  * resource = composition-02-2
+  * resource = composition-bruna
 
 // Patient
 * entry[+]
@@ -421,9 +427,9 @@ Description: "Laudo de exame citopatológico (Bruna). Veja a [ficha](bruna-faria
   * resource = laboratorio-bruna
 
 // citopatologista (Practitioner)
-* entry[+]
-  * fullUrl = "urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb13"
-  * resource = citopatologista-02
+// * entry[+]
+//   * fullUrl = "urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb13"
+//   * resource = citopatologista-02
 
 // espécime (Specimen)
 * entry[+]
@@ -431,7 +437,7 @@ Description: "Laudo de exame citopatológico (Bruna). Veja a [ficha](bruna-faria
   * resource = especime-bruna
 
 
-Instance: composition-02-2
+Instance: composition-bruna
 InstanceOf: Composition
 Usage: #example
 Title: "Laudo (Bruna)"
@@ -445,7 +451,8 @@ Description: "Laudo de exame citopatológico da paciente Bruna"
 * type = http://loinc.org#11502-2
 * category = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-documento#laudo-citopatologico
 
-* author = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb13)
+* author.identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
+* author.identifier.value = "123456"
 
 * title = "Pacote contendo todos os dados da requisição de Exame Citopatológico para a paciente fictícia Bruna"
 
@@ -480,15 +487,15 @@ Description: "Laboratório que emite o laudo de exame citopatológico"
 // citopatologista
 // ------------------------------------------------------
 
-Instance: citopatologista-02
-InstanceOf: Practitioner
-Title: "Citopatologista Joana"
-Description: "Profissional responsável pelo laudo do exame citopatológico da paciente Rosa"
-Usage: #example
+// Instance: citopatologista-02
+// InstanceOf: Practitioner
+// Title: "Citopatologista Joana"
+// Description: "Profissional responsável pelo laudo do exame citopatológico da paciente Rosa"
+// Usage: #example
 
-* identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
-* identifier.value = "2345234234234"
-* name.text = "Joana Silva"
+// * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
+// * identifier.value = "2345234234234"
+// * name.text = "Joana Silva"
 
 // ------------------------------------------------------
 // diagnostico

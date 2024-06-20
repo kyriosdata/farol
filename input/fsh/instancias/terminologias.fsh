@@ -543,8 +543,8 @@ Description: "Possíveis motivos pelos quais o espécime pode ser declarado insa
 
 CodeSystem: VariacaoNaoNeoplasica
 Id: variacao-nao-neoplasica
-Title: "Classificação da alterações celulares"
-Description: "Definição das várias alterações celulares benignas relevantes para o exame citopatológico"
+Title: "Definição das variações celulares não neoplásicas"
+Description: "Definição das várias variações celulares relevantes para o exame citopatológico"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos para classificação de alterações celulares benigcas</div>"
@@ -555,7 +555,7 @@ Description: "Definição das várias alterações celulares benignas relevantes
 * ^caseSensitive = true
 * ^experimental = false
 * ^date = "2024-04-15"
-* ^purpose = """**Propósito**. Definição das possíveis alterações celulares consideradas benignas presentes na amostra de exame citopatológico."""
+* ^purpose = """Definição das variações celulares relevantes para o laudo de exame citopatológico."""
 
 * #escamosa "Escamosa" "Metaplasia escamosa"
 * #ceratotica "Ceratótica" "Alterações ceratóticas"
@@ -565,7 +565,7 @@ Description: "Definição das várias alterações celulares benignas relevantes
 
 ValueSet: VariacoesNaoNeoplasicas
 Id: variacoes-nao-neoplasicas
-Title: "Alteração celular benigna"
+Title: "Conjunto das variações não neoplásicas"
 Description: "Identifica alteração celular benigna relevante para exame citopatológico"
 
 * ^text.status = #empty
@@ -576,7 +576,7 @@ Description: "Identifica alteração celular benigna relevante para exame citopa
 * ^status = #draft
 * ^experimental = false
 * ^date = "2024-04-15"
-* ^purpose = """**Propósito**. Definição do conjunto de alterações celulares benignas admitidas para o item correspondente de laudo de exame citopatológico."""
+* ^purpose = """**Propósito**. Definição do conjunto de variações celulares não neoplásicas relevantes para o resultado de exame citopatológico."""
 
 * include codes from system VariacaoNaoNeoplasica
 

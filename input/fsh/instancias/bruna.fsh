@@ -1,12 +1,6 @@
-Alias: $racacoretnia = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRRacaCorEtnia-1.0
-Alias: $etniaindigena = http://www.saude.gov.br/fhir/r4/CodeSystem/BREtniaIndigena
-Alias: $nacionalidade = http://www.saude.gov.br/fhir/r4/StructureDefinition/BRNacionalidade
-Alias: $cs-nacionalidade = http://www.saude.gov.br/fhir/r4/CodeSystem/BRNacionalidade
 Alias: $motivos-exame = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-exame-citopatologico
 Alias: $documentoRequisicao = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/documento-requisicao
 Alias: $documentoLaudo = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/documento-laudo
-Alias: $unidadeDeSaude = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/unidade-requisitante
-Alias: $laboratorio = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/unidade-executante
 Alias: $amostraRequisicao = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/amostra-requisicao
 Alias: $amostra = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/amostra
 Alias: $componentesLaudoCitopatologico = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/componentes-laudo-citopatologico
@@ -16,13 +10,6 @@ Alias: $paciente = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/pacie
 Alias: $anamneseQuestionario = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/anamnese-questionario
 Alias: $diagnosticoCitopatologico = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/diagnostico-citopatologico
 
-// ------------------------------------------------------
-// 
-// Bundle de requisição de Exame Citopatológico
-// Conforme https://www.hl7.org/fhir/r4/bundle.html#bundle-unique
-// Where a resource is not assigned a persistent identity that can be used in the Bundle, 
-// a UUID should be used (urn:uuid:...).
-// ------------------------------------------------------
 
 Instance: bundle-bruna
 InstanceOf: Bundle
@@ -34,7 +21,7 @@ Description: "Requisição de exame citopatológico (Bruna). Veja a [ficha](brun
 
 // Protocolo SISCAN
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/siscan"
-* identifier.value = "000.000.002"
+* identifier.value = "000.000.001"
 
 // Data e hora em que o bundle foi montado
 * timestamp = "2023-12-13T08:00:00-03:00"
@@ -57,7 +44,7 @@ Description: "Requisição de exame citopatológico (Bruna). Veja a [ficha](brun
 // respostas - anamnese (QuestionnaireResponse)
 * entry[+]
   * fullUrl = "urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb03"
-  * resource = respostas-anamnese-02
+  * resource = anamnese-bruna
 
 // exame (Observation)
 * entry[+]
@@ -85,7 +72,7 @@ Description: "Requisição de Exame Citopatológico da paciente Bruna"
   * system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
   * value = "234.234.567"  
 
-* title = "Pacote contendo todos os dados da requisição de Exame Citopatológico para a paciente fictícia Bruna"
+* title = "Conjunto de informações pertinente à requisição de Exame Citopatológico para a paciente fictícia Bruna"
 
 // Data em que a composição foi montada
 * date = "2023-12-13"
@@ -93,7 +80,7 @@ Description: "Requisição de Exame Citopatológico da paciente Bruna"
 // Patient (Bruna)
 * subject = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb01)
 
-// ServiceRequest
+// ServiceRequest (a requisição)
 * section[+]
   * title = "Detalhes da requisição (Bruna)"
   * entry[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb02)
@@ -137,48 +124,25 @@ Usage: #example
   * code = #0203010086
   * system = "http://www.saude.gov.br/fhir/r4/CodeSystem/BRTabelaSUS"
 
-// bruna
+// informações pessoais
 * subject = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb01)
 
+// motivo do exame
 * reasonCode[0].coding[0] = $motivos-exame#rastreamento
 
-// respostas-anamnese
+// dados da anamnese
 * supportingInfo[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb03)
 
-// ExameClinicoBruna
+// exame clínico
 * supportingInfo[1] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb04)
 
-// CNS do responsável
-//* requester = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb07)
+// CNS da Unidade de Saúde
 * requester.identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
 * requester.identifier.value = "123456"
 
 
-Instance: ExameClinicoBruna
-InstanceOf: Observation
-Usage: #example
-Title: "Exame Clínico (Bruna)"
-Description: "Exame clínico da Bruna"
-
-* meta.profile = $exameClinico
-
-* status = #final
-* code = http://loinc.org#32423-6 
-
-* component[0].code = http://loinc.org#12044-4
-* component[0].valueCodeableConcept = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-inspecao-colo#normal
-* component[1].code = http://loinc.org#45687-1
-* component[1].valueBoolean = true
-
-* subject = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer.identifier
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
-  * value = "234.234.567"
-* effectiveDateTime = "2023-12-07"
-
-
 // ------------------------------------------------------
-// Bruna (subject da composition)
+// informações pessoais
 // ------------------------------------------------------
 
 Instance: bruna
@@ -188,10 +152,6 @@ Title: "Paciente (Bruna)"
 Description: "Dados demográficos da paciente Bruna"
 
 * meta.profile = $paciente
-
-// ------------
-// OBRIGATÓRIOS 
-// ------------
 
 // Cartão SUS
 * identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
@@ -232,10 +192,10 @@ Description: "Dados demográficos da paciente Bruna"
 * extension[3].valueCodeableConcept.coding.code = #201
 
 // ------------------------------------------------------
-// anamnese-exame-citopatologico
+// dados da anamnese
 // ------------------------------------------------------
 
-Instance: respostas-anamnese-02
+Instance: anamnese-bruna
 InstanceOf: QuestionnaireResponse
 Title: "Anamnese (Bruna)"
 Description: "Anamnese da paciente Bruna"
@@ -305,6 +265,32 @@ Usage: #example
   * linkId = "11"
   * answer[0].valueBoolean = false
   * text = "Vacina contra HPV"
+
+// ------------------------------------------------------
+// exame clínico
+// ------------------------------------------------------
+
+Instance: ExameClinicoBruna
+InstanceOf: Observation
+Usage: #example
+Title: "Exame Clínico (Bruna)"
+Description: "Exame clínico da Bruna"
+
+* meta.profile = $exameClinico
+
+* status = #final
+* code = http://loinc.org#32423-6 
+
+* component[0].code = http://loinc.org#12044-4
+* component[0].valueCodeableConcept = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-inspecao-colo#normal
+* component[1].code = http://loinc.org#45687-1
+* component[1].valueBoolean = true
+
+* subject = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb01)
+* performer.identifier
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
+  * value = "234.234.567"
+* effectiveDateTime = "2023-12-07"
 
 
 // ------------------------------------------------------
@@ -405,7 +391,7 @@ Description: "Laudo da requisição de exame da paciente Bruna. Veja a [ficha](b
 * identifier[0].value = "243623"
 
 * basedOn.identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/siscan"
-* basedOn.identifier.value = "codigo-siscan-requisicao-002"
+* basedOn.identifier.value = "000.000.001"
 
 * category.coding = http://terminology.hl7.org/CodeSystem/v2-0074#CP
 

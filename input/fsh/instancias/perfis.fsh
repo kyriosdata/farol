@@ -153,7 +153,7 @@ Context: Reference
 * ^status = #draft
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/responsabilidade"
-* ^purpose = "O laudo é de responsabilidade de um profissional de saúde e, adicionalmente, pode participar um citotécnico responsável pelo screening. Esta extensão permite identificar qual destes papéis é realizado pelos profissionais associados ao laudo."
+* ^purpose = "O laudo é de responsabilidade de um profissional de saúde e, adicionalmente, pode participar um citotécnico responsável pelo screening. Esta extensão permite identificar qual destes papéis é realizado por cada um dosprofissionais associados ao laudo. Observe que não é relevante para o contexto detalhes adicionais como aqueles fornecidos pelo recurso PractitionerRole."
 
 * value[x] only code
 * valueCode 1..1

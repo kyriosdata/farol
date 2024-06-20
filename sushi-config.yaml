@@ -11,7 +11,7 @@ description: >-
 license: CC0-1.0
 version: 0.0.1
 fhirVersion: 4.0.1
-copyright: 'Todos os direitos reservados. INCA/UFG.'
+copyright: 'Ministério da Saúde. Produzido pelo INCA/UFG.'
 copyrightYear: 2022+
 releaseLabel: preliminar
 jurisdiction: urn:iso:std:iso:3166#BR "Brazil"

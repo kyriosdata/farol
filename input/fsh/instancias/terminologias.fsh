@@ -499,15 +499,15 @@ Description: "Conjunto de possíveis motivos pelos quais um espécime é rejeita
 * include codes from system MotivoEspecimeRejeitado
 
 // ------------------------------------------------------
-// motivo-especime-insatisfatorio // #7
+// condicao-especime // #7
 // ------------------------------------------------------
 
-CodeSystem: MotivoEspecimeInsatisfatorio
-Id: motivo-especime-insatisfatorio
-Title: "Espécime insatisfatório para avaliação"
-Description: "Motivos pelos quais o espécime pode ser declarado insatisfatório para avaliação após processado e examinado."
+CodeSystem: CondicaoEspecime
+Id: condicao-especime
+Title: "Condição do espécime para a avaliação"
+Description: "Indica se o espécime é adequado para avaliação ou cada um dos motivos pelos quais não é adequado."
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-especime-insatisfatorio"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/condicao-especime"
 
 * ^status = #unknown
 * ^caseSensitive = true
@@ -521,21 +521,21 @@ Description: "Motivos pelos quais o espécime pode ser declarado insatisfatório
 * #dessecamento "Dessecamento" "Artefatos de dessecamento em mais de 75% da amostra"
 * #contaminantes "Contaminantes" "Contaminantes externos em mais de 75% da amostra"
 * #superposicao "Superposição" "Intensa superposição celular em mais de 75% da amostra"
+* #satisfatorio "Satisfatório para avaliação" "Satisfatório para avaliação"
 
-
-ValueSet: MotivosEspecimeInsatisfatorio
-Id: motivos-especime-insatisfatorio
+ValueSet: CondicoesEspecime
+Id: condicoes-especime
 Title: "Espécime insatisfatório para avaliação"
 Description: "Possíveis motivos pelos quais o espécime pode ser declarado insatisfatório para avaliação após processado e examinado."
 
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivos-especime-insatisfatorio"
+* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/condicoes-especime"
 
 * ^status = #draft
 * ^experimental = false
 * ^date = "2024-04-15"
 * ^purpose = """**Propósito**. Definir o conjunto de códigos possíveis para declarar uma amostra insatisfatória para avaliação."""
 
-* include codes from system MotivoEspecimeInsatisfatorio
+* include codes from system CondicaoEspecime
 
 // ------------------------------------------------------
 // variacao-nao-neoplasica

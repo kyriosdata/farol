@@ -542,6 +542,7 @@ Description: "Laudo da requisição de exame da paciente Bruna. Veja a [ficha](b
 * status = #final
 * code = http://loinc.org#47528-5
 
+// Número do Exame
 * identifier[0].system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/laboratorio"
 * identifier[0].value = "243623"
 
@@ -562,16 +563,17 @@ Description: "Laudo da requisição de exame da paciente Bruna. Veja a [ficha](b
 // Observation (componentes do laudo)
 * result[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb11)
 
-//* performer[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb12)
+// CNES do laboratório
 * performer[0].identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
 * performer[0].identifier.value = "123456"
 
-//* resultsInterpreter[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb13)
+// Interpretação / resultado
 * resultsInterpreter[0].identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
 * resultsInterpreter[0].identifier.value = "123456"
 * resultsInterpreter[0].extension.url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/responsabilidade"
 * resultsInterpreter[0].extension.valueCode = #screening
 
+// Informações sobre a amostra
 * specimen[0] = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb15)
 
 * conclusionCode.coding
@@ -615,9 +617,13 @@ Description: "Informações sobre a amostra identificadas pelo laboratório"
 *  meta.profile = $amostra
 
 * type = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra#convencional
-* status = #unsatisfactory
+* status = #available
 * receivedTime = "2024-01-01"
 
 * status.extension[0]
   * url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/detalhar"
   * valueString = "causa para rejeição aqui"
+
+* condition[0]
+  * coding[0].system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/condicao-especime"
+  * coding[0].code = #material

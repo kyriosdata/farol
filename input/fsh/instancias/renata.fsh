@@ -545,9 +545,5 @@ Description: "Informações sobre a amostra identificadas pelo laboratório"
 * receivedTime = "2024-01-01"
 
 * status.extension[0]
-  * url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-rejeicao"
-  * valueCodeableConcept.coding[0]
-    * system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-especime-rejeitado"
-    * code = #outras
-    * extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/detalhar"
-    * extension[0].valueString = "A amostra se perdeu"
+  * url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/detalhar"
+  * valueString = "A amostra se perdeu"

@@ -1039,7 +1039,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
     celulasEndometriais 0..1 MS and // #15
     escamosas 0..1 MS and // #16
     glandulares 0..1 MS and // #17
-    outrasMalignas 0..1 MS // #18
+    outrasNeoplasias 0..1 MS // #18
     
 
 // #9
@@ -1148,13 +1148,13 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[glandulares].valueCodeableConcept.coding.code ^short = "Código para a variação celular não neoplásica"
 
 // #18
-* component[outrasMalignas] ^short = "Outras neoplasias malignas"
-* component[outrasMalignas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#outras-neoplasias-malignas 
-* component[outrasMalignas].code ^short = "Identifica a informação fornecida: outras neoplasias malignas"
-* component[outrasMalignas].code.coding ^short = "Código definido por uma terminologia"
-* component[outrasMalignas].value[x] 1..1
-* component[outrasMalignas].value[x] only string
-* component[outrasMalignas].valueString ^short = "Especificar as neoplasias"
+* component[outrasNeoplasias] ^short = "Outras neoplasias malignas"
+* component[outrasNeoplasias].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#outras-neoplasias-malignas 
+* component[outrasNeoplasias].code ^short = "Identifica a informação fornecida: outras neoplasias malignas"
+* component[outrasNeoplasias].code.coding ^short = "Código definido por uma terminologia"
+* component[outrasNeoplasias].value[x] 1..1
+* component[outrasNeoplasias].value[x] only string
+* component[outrasNeoplasias].valueString ^short = "Especificar as neoplasias"
 
 // #19
 * note ^short = "Observaçõe gerais"
@@ -1169,7 +1169,7 @@ Extension: Detalhar
 Id: detalhar
 Title: "Detalha item"
 Description: "Fornece detalhe ou especificação adicional sobre item de informação do resultado de exame citopatológico."
-Context: Coding, Amostra.status
+Context: Coding, Specimen.status
 
 * ^status = #draft
 
@@ -1185,9 +1185,20 @@ Context: Coding, Amostra.status
 
 
 Invariant: rn-6
-Description: "Se indicada que a amostra é rejeitada por 'outras causas', então deve ser detalhada(s) a(s) causa(s)."
+Description: "Se a amostra é rejeitada por 'outras causas', então deve ser detalhada(s) a(s) causa(s)."
 Expression: "$this = 'unsatisfactory' implies extension.where(url = 'https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/detalhar').exists()"
 Severity: #error
+
+Invariant: rn-7
+Description: "Se a amostra é rejeitada, então a condição da amostra não deve ser fornecida."
+Expression: "(status = 'available').not() implies condition.exists().not()"
+Severity: #error
+
+Invariant: rn-8
+Description: "Se há motivo para amostra insatisfatória, então a condição não pode ser satisfatória."
+Expression: "coding.code.count() > 1 implies ('satisfatorio' in coding.code).not()"
+Severity: #error
+
 
 
 Profile: Amostra
@@ -1198,6 +1209,8 @@ Description: "Informações sobre o espécime geradas pelo laboratório"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/amostra"
 * ^status = #draft
+
+* obeys rn-7
 
 // #6 #7 #8
 // Extensões aplicáveis a 'status': MotivoRejeicao e MotivoInsatisfatorio
@@ -1215,6 +1228,14 @@ Description: "Informações sobre o espécime geradas pelo laboratório"
 // #5
 * type 1..1
 * type from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipos-amostra (required)
+
+* condition 0..1
+* condition.coding 1..6
+* condition.coding ^short = "Indentifica a condição da amostra, se satisfatória para a avaliação ou, se for o caso, cada motivo pelo qual a amostra é considerada insatisfatória para o exame citopatológico." 
+* condition.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/condicoes-especime (required)
+* condition.coding.system 1..1
+* condition.coding.code 1..1
+* condition obeys rn-8
 
 // -------------------------
 // motivo-especime-rejeitado
@@ -1243,31 +1264,31 @@ Description: "Informações sobre o espécime geradas pelo laboratório"
 // * valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da rejeição da amostra"
 // * valueCodeableConcept.coding obeys OutraCausaDeveSerDetalhada
 
-// -------------------------
-// motivo-insatisfatorio
-// -------------------------
+// // -------------------------
+// // motivo-insatisfatorio
+// // -------------------------
 
-Extension: MotivoInsatisfatorio
-Id: motivo-insatisfatorio
-Title: "Motivo espécime insatisfatório"
-Description: "Detalha o motivo pelo qual um espécime é insatisfatório para avaliação."
-Context: Amostra.status
-* ^status = #draft
-* ^language = #pt-BR
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-insatisfatorio"
-* . ^short = "Motivo pelo qual o espécime foi rejeitado"
-* . ^definition = "O motivo pelo qual o espécimo foi rejeitado (não será avaliado)"
+// Extension: MotivoInsatisfatorio
+// Id: motivo-insatisfatorio
+// Title: "Motivo espécime insatisfatório"
+// Description: "Detalha o motivo pelo qual um espécime é insatisfatório para avaliação."
+// Context: Amostra.status
+// * ^status = #draft
+// * ^language = #pt-BR
+// * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/motivo-insatisfatorio"
+// * . ^short = "Motivo pelo qual o espécime foi rejeitado"
+// * . ^definition = "O motivo pelo qual o espécimo foi rejeitado (não será avaliado)"
 
-* value[x] ^short = "Registra motivo(s) pelo(s) qual(is) a amostra é insatisfatória para avaliação"
-* value[x] 1..1
-* value[x] only CodeableConcept
-* value[x] ^short = "Código para amostra insatisfatória para avaliação"
-* valueCodeableConcept.coding 1..6
-* valueCodeableConcept obeys DuplicidadeNaoAdmitida
-* valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
-* valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivos-especime-insatisfatorio (required)
-* valueCodeableConcept.coding.code 1..1
-* valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da amostra ser insatisfatória"
+// * value[x] ^short = "Registra motivo(s) pelo(s) qual(is) a amostra é insatisfatória para avaliação"
+// * value[x] 1..1
+// * value[x] only CodeableConcept
+// * value[x] ^short = "Código para amostra insatisfatória para avaliação"
+// * valueCodeableConcept.coding 1..6
+// * valueCodeableConcept obeys DuplicidadeNaoAdmitida
+// * valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
+// * valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivos-especime-insatisfatorio (required)
+// * valueCodeableConcept.coding.code 1..1
+// * valueCodeableConcept.coding.code ^short = "Código correspondente ao motivo da amostra ser insatisfatória"
 
 // -----------------------------------
 // referencia para unidade de saúde

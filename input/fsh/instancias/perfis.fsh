@@ -192,12 +192,27 @@ Context: Patient
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/extension-genero"
 * ^purpose = "Permite XXX"
 
+* id 0..0
+
 * value[x] only CodeableConcept
+* value[x].id 0..0
+* value[x].extension 0..0
 * valueCodeableConcept 1..1
 * valueCodeableConcept ^short = "Gênero"
+* valueCodeableConcept.text 0..0 
 * valueCodeableConcept.coding 1..1 
-* valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/generos (required)
+* valueCodeableConcept.coding.id 0..0 
+* valueCodeableConcept.coding ^short = "Restrito aos códigos pertinentes para mulher cisgênero e homem transgênero"
+* valueCodeableConcept.coding.extension 0..0 
+//* valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/generos (required)
+* valueCodeableConcept.coding.system ^short = "Identificador do sistema de codificação."
+* valueCodeableConcept.coding.system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/genero" (exactly)
 * valueCodeableConcept.coding.code 1..1
+* valueCodeableConcept.coding.code ^short = "Neste caso estão disponíveis apenas os códigos 149 e 201"
+* valueCodeableConcept.coding.version 0..0 
+* valueCodeableConcept.coding.display 0..0 
+* valueCodeableConcept.coding.userSelected 0..0 
+
 
 // ------------------------------------------------------
 // idade // #14 (idade)

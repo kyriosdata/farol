@@ -1,12 +1,10 @@
 As primeiras versões deste guia contou com a colaboração de vários profissionais.
 
-### Semântica e interpretação
-
-#### UFG
+### UFG
 - Leonarda Silvestre Faria de Morais
 - Rita Goreti Amaral 
 
-#### INCA
+### INCA
 
 - Caroline Madalena Ribeiro
 - Itamar Bento Claro

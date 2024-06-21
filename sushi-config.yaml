@@ -11,7 +11,7 @@ description: >-
 license: CC0-1.0
 version: 0.0.1
 fhirVersion: 4.0.1
-copyright: 'Ministério da Saúde. Produzido pelo INCA/UFG.'
+copyright: 'Ministério da Saúde. Produzido pela UFG em parceria com o INCA.'
 copyrightYear: 2022+
 releaseLabel: preliminar
 jurisdiction: urn:iso:std:iso:3166#BR "Brazil"
@@ -48,6 +48,8 @@ pages:
     title: Artefatos
   history.md:
     title: Histórico
+  creditos.md:
+    title: Créditos
 
 menu:
   Principal: index.html
@@ -60,9 +62,10 @@ menu:
   Artefatos: artifacts.html
   Integrador: integrador.html
   Outros:
-    FHIR: http://hl7.org/fhir/R4/index.html
+    FHIR 4.0.1: http://hl7.org/fhir/R4/index.html
     Github: https://github.com/kyriosdata/farol
-  Índice: toc.html
+    Índice: toc.html
+    Créditos: creditos.html
   Histórico: history.html
 
 dependencies:

@@ -1,5 +1,5 @@
 Esta página oferece orientações para o desenvolvedor
-de software responsável pela integração com o SISCAN. 
+de software responsável pela integração com o SISCAN via FHIR. 
 
 A seção abaixo sugere um fluxo de atividades. As seções posteriores fornecem detalhes adicionais.
 
@@ -54,14 +54,14 @@ arquivos citados anteriormente [aqui](full-ig.zip).
 Todo o conteúdo do presente Guia foi desenvolvido e está disponível no repositório
 [https://github.com/kyriosdata/farol](https://github.com/kyriosdata/farol). 
 
-### Cross Version Analysis
+### Versões
 {% include cross-version-analysis.xhtml %}
 
-### Dependency Table
+### Tabela de dependências
 {% include dependency-table.xhtml %}
 
 ### Globals Table
 {% include globals-table.xhtml %}
 
-### IP Statements
+### Propriedade intelectual
 {% include ip-statements.xhtml %}

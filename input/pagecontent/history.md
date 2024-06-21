@@ -9,6 +9,9 @@
 ### Versões
 {% include cross-version-analysis.xhtml %}
 
-
 ### Tabela de dependências
 {% include dependency-table.xhtml %}
+
+
+### Globals Table
+{% include globals-table.html %}

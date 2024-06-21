@@ -21,6 +21,3 @@ estão ilustradas por vários mecanismos:
 - Postman
 - Código fonte disponível em: Java, C# e JavaScript. 
 
-
-### Globals Table
-{% include globals-table.html %}

@@ -46,6 +46,8 @@ pages:
   requisitos.md:
   artifacts.html:
     title: Artefatos
+  history.md:
+    title: Histórico
 
 menu:
   Principal: index.html
@@ -61,6 +63,7 @@ menu:
     FHIR: http://hl7.org/fhir/R4/index.html
     Github: https://github.com/kyriosdata/farol
   Índice: toc.html
+  Histórico: history.html
 
 dependencies:
   br.ufg.cgis.rnds-lite: 0.1.7

@@ -208,7 +208,7 @@ Context: Patient
 * valueCodeableConcept.coding.system ^short = "Identificador do sistema de codificação."
 * valueCodeableConcept.coding.system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/genero" (exactly)
 * valueCodeableConcept.coding.code 1..1
-* valueCodeableConcept.coding.code ^short = "Neste caso estão disponíveis apenas os códigos 149 e 201"
+* valueCodeableConcept.coding.code ^short = "Neste caso estão disponíveis apenas os códigos 149 e 201, onde 149 é para 'mulher cisgênero' e 201 para 'homem transgênero'"
 * valueCodeableConcept.coding.version 0..0 
 * valueCodeableConcept.coding.display 0..0 
 * valueCodeableConcept.coding.userSelected 0..0 

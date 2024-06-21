@@ -50,6 +50,8 @@ pages:
     title: Histórico
   creditos.md:
     title: Créditos
+  downloads.md:
+    title: Baixar
 
 menu:
   Principal: index.html
@@ -60,7 +62,9 @@ menu:
     Resultado (laudo): resultado.html
     Mapeamento FHIR: mapeamento.html
   Artefatos: artifacts.html
-  Integrador: integrador.html
+  Integrador: 
+    Visão geral: integrador.html
+    Downloads: downloads.html
   Outros:
     FHIR 4.0.1: http://hl7.org/fhir/R4/index.html
     Github: https://github.com/kyriosdata/farol

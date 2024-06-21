@@ -1,10 +1,11 @@
 As primeiras versões deste guia contou com a colaboração de vários profissionais.
 
-### UFG
+### Universidade Federal de Goiás (UFG)
+
 - Leonarda Silvestre Faria de Morais
 - Rita Goreti Amaral 
 
-### INCA
+### Instituto Nacional de Câncer (INCA)
 
 - Caroline Madalena Ribeiro
 - Itamar Bento Claro
@@ -17,3 +18,7 @@ As primeiras versões deste guia contou com a colaboração de vários profissio
 - Fábio Nogueira de Lucena
 - Mariana Soller Ramada
 - Murilo Lopes da Luz
+
+
+### Propriedade intelectual
+{% include ip-statements.xhtml %}

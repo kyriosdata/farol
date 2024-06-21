@@ -5,3 +5,10 @@
 
 ### 0.0.0 (21/10/2022)
 - Esboço inicial do Guia de Implementação
+
+### Versões
+{% include cross-version-analysis.xhtml %}
+
+
+### Tabela de dependências
+{% include dependency-table.xhtml %}

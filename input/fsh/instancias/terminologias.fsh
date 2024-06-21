@@ -598,7 +598,7 @@ Description: "Identificação e definição das alterações celulares reativas 
 * ^purpose = """**Propósito**. Definição das possíveis alterações celulares reativas."""
 
 * #inflamacao "Inflamação" "Inflamação (inclui reparo típico)"
-* #cirvicite "Cervicite" "Cervicite linfocítica/folicular"
+* #cervicite "Cervicite" "Cervicite linfocítica/folicular"
 * #radiacao "Radiação" "Radiação"
 * #diu "DIU" "Dispositivo intrauterino (DIU)"
 

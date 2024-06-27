@@ -204,7 +204,6 @@ Context: Patient
 * valueCodeableConcept.coding.id 0..0 
 * valueCodeableConcept.coding ^short = "Restrito aos códigos pertinentes para mulher cisgênero e homem transgênero"
 * valueCodeableConcept.coding.extension 0..0 
-//* valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/generos (required)
 * valueCodeableConcept.coding.system ^short = "Identificador do sistema de codificação."
 * valueCodeableConcept.coding.system = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/genero" (exactly)
 * valueCodeableConcept.coding.code 1..1
@@ -1103,6 +1102,8 @@ Id: amostra
 Title: "Anotações sobre a amostra"
 Description: "Informações sobre o espécime geradas pelo laboratório"
 
+* ^purpose = "É identificado se o espécime é satisfatório para a avaliação. Caso contrário, o motivo da rejeição. Caso não seja rejeitado, então a condição que o torna insatisfatório para o exame."
+
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/amostra"
 * ^status = #draft
 
@@ -1126,6 +1127,7 @@ Description: "Informações sobre o espécime geradas pelo laboratório"
 * type from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipos-amostra (required)
 
 * condition 0..1
+* condition ^short = "Código que identifica a condição da amostra"
 * condition.coding 1..6
 * condition.coding ^short = "Indentifica a condição da amostra, se satisfatória para a avaliação ou, se for o caso, cada motivo pelo qual a amostra é considerada insatisfatória para o exame citopatológico." 
 * condition.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/condicoes-especime (required)

@@ -11,7 +11,7 @@ Alias: $anamneseQuestionario = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefi
 Alias: $diagnosticoCitopatologico = https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/diagnostico-citopatologico
 
 
-Instance: bundle-bruna
+Instance: bruna-requisicao
 InstanceOf: Bundle
 Usage: #example
 Title: "Requisição (Bruna)"
@@ -297,7 +297,7 @@ Description: "Exame clínico da Bruna"
 // LAUDO
 // ------------------------------------------------------
 
-Instance: bundle-bruna-laudo
+Instance: bruna-laudo
 InstanceOf: Bundle
 Usage: #example
 Title: "Laudo (Bruna)"

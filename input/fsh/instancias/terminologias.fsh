@@ -794,10 +794,10 @@ Description: "Classificação de atipias em células glandulares"
 * ^caseSensitive = true
 * ^experimental = false
 
-* #in-situ "Adenocarcinoma in situ"
-* #cervical "Adenocarcinoma invasor cervical"
-* #endometrial "Adenocarcinoma invasor endometrial"
-* #sem-especificacao "Adenocarcinoma sem outras especificações"
+* #in-situ "Adenocarcinoma in situ" "Adenocarcinoma in situ"
+* #cervical "Adenocarcinoma invasor cervical" "Adenocarcinoma invasor cervical"
+* #endometrial "Adenocarcinoma invasor endometrial" "Adenocarcinoma invasor endometrial"
+* #sem-especificacao "Adenocarcinoma sem outras especificações" "Adenocarcinoma sem outras especificações"
 
 // ------------------------------------------------------
 

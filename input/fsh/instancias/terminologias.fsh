@@ -413,7 +413,7 @@ Description: "Tipos de laudos gerenciados pelo SISCAN"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/laudo-siscan"
 
-* ^status = #unknown
+* ^status = #active
 * ^caseSensitive = true
 * ^experimental = false
 * ^date = "2024-04-15"
@@ -435,7 +435,7 @@ Description: "Define os motivos pelos quais uma requisição de exame citopatol�
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-exame-citopatologico"
 
-* ^status = #unknown
+* ^status = #active
 * ^caseSensitive = true
 * ^experimental = false
 * ^date = "2024-04-15"
@@ -476,7 +476,7 @@ Description: "Identifica e define os motivos pelos quais um espécime é rejeita
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-especime-rejeitado"
 
-* ^status = #unknown
+* ^status = #active
 * ^caseSensitive = true
 * ^experimental = false
 * ^date = "2024-04-15"
@@ -509,7 +509,7 @@ Description: "Indica se o espécime é adequado para avaliação ou cada um dos 
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/condicao-especime"
 
-* ^status = #unknown
+* ^status = #active
 * ^caseSensitive = true
 * ^experimental = false
 * ^date = "2024-04-15"
@@ -551,7 +551,7 @@ Description: "Definição das várias variações celulares relevantes para o ex
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/variacao-nao-neoplasica"
 
-* ^status = #unknown
+* ^status = #active
 * ^caseSensitive = true
 * ^experimental = false
 * ^date = "2024-04-15"
@@ -591,7 +591,7 @@ Description: "Identificação e definição das alterações celulares reativas 
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/alteracao-reativa"
 
-* ^status = #unknown
+* ^status = #active
 * ^caseSensitive = true
 * ^experimental = false
 * ^date = "2024-04-15"
@@ -627,7 +627,7 @@ Description: "Organismos"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/organismo"
 
-* ^status = #unknown
+* ^status = #active
 * ^caseSensitive = true
 * ^experimental = false
 * ^date = "2024-04-15"
@@ -665,7 +665,7 @@ Description: "Escamosa"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/escamosa"
 
-* ^status = #unknown
+* ^status = #active
 * ^caseSensitive = true
 * ^experimental = false
 * ^date = "2024-04-15"
@@ -703,7 +703,7 @@ Description: "Glandulares"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/glandular"
 
-* ^status = #unknown
+* ^status = #active
 * ^caseSensitive = true
 * ^experimental = false
 * ^date = "2024-04-15"
@@ -749,7 +749,7 @@ Description: "Células atípicas"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/celula-atipica"
 
-* ^status = #unknown
+* ^status = #active
 * ^caseSensitive = true
 * ^experimental = false
 * ^date = "2024-04-15"
@@ -786,7 +786,7 @@ Description: "Itens que compõem o resultado de exame citopatológico"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item"
 
-* ^status = #unknown
+* ^status = #active
 * ^caseSensitive = true
 * ^experimental = false
 

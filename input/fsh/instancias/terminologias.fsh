@@ -775,47 +775,6 @@ Description: "Células atípicas"
 
 * include codes from system CelulaAtipica
 
-
-// ------------------------------------------------------
-// atipias-glandulares
-// ------------------------------------------------------
-
-CodeSystem: AtipiasGlandulares
-Id: atipias-glandulares
-Title: "Atipias em células glandulares"
-Description: "Classificação de atipias em células glandulares"
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Classificação de atipias em células glandulares.</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/atipias-glandulares"
-
-* ^status = #unknown
-* ^caseSensitive = true
-* ^experimental = false
-
-* #in-situ "Adenocarcinoma in situ" "Adenocarcinoma in situ"
-* #cervical "Adenocarcinoma invasor cervical" "Adenocarcinoma invasor cervical"
-* #endometrial "Adenocarcinoma invasor endometrial" "Adenocarcinoma invasor endometrial"
-* #sem-especificacao "Adenocarcinoma sem outras especificações" "Adenocarcinoma sem outras especificações"
-
-// ------------------------------------------------------
-
-ValueSet: AtipiaGlandular
-Id: atipia-glandular
-Title: "Atipia em célula glandular"
-Description: "Atipia em célula glandular"
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para atipias em células glandulares.</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/atipia-glandular"
-
-* ^status = #draft
-* ^experimental = false
-
-* include codes from system AtipiasGlandulares
-
 // ------------------------------------------------------
 // resultado-item
 // ------------------------------------------------------

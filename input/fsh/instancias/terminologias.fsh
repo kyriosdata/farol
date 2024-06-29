@@ -405,8 +405,8 @@ Description: "Resultados para a inspeção do colo"
 
 CodeSystem: LaudoSiscan
 Id: laudo-siscan
-Title: "Laudos gerenciados pelo SISCAN"
-Description: "Tipos de laudos gerenciados pelo SISCAN"
+Title: "Laudo gerenciado pelo SISCAN"
+Description: "Definição de laudo gerido pelo SISCAN"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de tipos de laudos gerenciados pelo SISCAN</div>"
@@ -428,7 +428,7 @@ Description: "Tipos de laudos gerenciados pelo SISCAN"
 CodeSystem: MotivoExame
 Id: motivo-exame-citopatologico
 Title: "Motivo do exame citopatológico"
-Description: "Define os motivos pelos quais uma requisição de exame citopatológico é realizada"
+Description: "Define motivo pelo qual uma requisição de exame citopatológico é realizada"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos para motivo de exame citopatológico.</div>"
@@ -472,7 +472,7 @@ Description: "Possíveis motivos para requisição de exame citopatológico"
 CodeSystem: MotivoEspecimeRejeitado
 Id: motivo-especime-rejeitado
 Title: "Rejeição de espécime"
-Description: "Identifica e define os motivos pelos quais um espécime é rejeitado (não processado)."
+Description: "Identifica e define motivo pelo qual um espécime é rejeitado (não processado)."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-especime-rejeitado"
 
@@ -586,7 +586,7 @@ Description: "Identifica alteração celular benigna relevante para exame citopa
 
 CodeSystem: AlteracaoReativa
 Id: alteracao-reativa
-Title: "Alterações celulares reativas"
+Title: "Alteração celular reativa"
 Description: "Identificação e definição das alterações celulares reativas para o resultado de exame citopatológico"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/alteracao-reativa"
@@ -622,8 +622,8 @@ Description: "Conjunto das possíveis alterações celulares reativas relevantes
 
 CodeSystem: Organismo
 Id: organismo
-Title: "Organismos"
-Description: "Organismos"
+Title: "Organismo"
+Description: "Organismo"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/organismo"
 
@@ -698,8 +698,8 @@ Description: "Escamosas"
 
 CodeSystem: Glandular
 Id: glandular
-Title: "Glandulares"
-Description: "Glandulares"
+Title: "Glandular"
+Description: "Glandular"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/glandular"
 
@@ -741,8 +741,8 @@ Description: "Glandulares"
 
 CodeSystem: CelulaAtipica
 Id: celula-atipica
-Title: "Células atípicas"
-Description: "Células atípicas"
+Title: "Célula atípica"
+Description: "Célula atípica"
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos para classificação de células atípicas.</div>"
@@ -781,8 +781,8 @@ Description: "Células atípicas"
 
 CodeSystem: ResultadoItem
 Id: resultado-item
-Title: "Itens de resultado de exame citopatológico"
-Description: "Itens que compõem o resultado de exame citopatológico"
+Title: "Item de resultado de exame citopatológico"
+Description: "Item que compõem o resultado de exame citopatológico"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item"
 
@@ -816,8 +816,8 @@ Description: "Grupos de informação de resultado de exame citopatológico"
 
 CodeSystem: TipoAmostra
 Id: tipo-amostra
-Title: "Tipos de amostra"
-Description: "Tipos de amostra para resultado de exame citopatológico"
+Title: "Tipo de amostra"
+Description: "Tipo de amostra para resultado de exame citopatológico"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra"
 * ^status = #active
@@ -858,7 +858,7 @@ Description: "Identifica e define presença ou ausência de componente endocervi
 ValueSet: ComponentesEndocervicais
 Id: componentes-endocervicais
 Title: "Componentes endocervicais"
-Description: "Tipos de amostra para laudo citopatológico"
+Description: "Componentes endocervicais"
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/componentes-endocervicais"
 * ^status = #active
 * ^experimental = false
@@ -927,8 +927,8 @@ Description: "Papel desempenhado pelo profissional no laudo"
 
 CodeSystem: ComponenteEndereco
 Id: componente-endereco
-Title: "Componentes de endereço"
-Description: "Componentes que fazem parte de um endereço"
+Title: "Componente de endereço"
+Description: "Componente que faz parte de um endereço"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/componente-endereco"
 * ^status = #draft
@@ -956,7 +956,7 @@ Description: "Tipos de itens de endereço que compõem um endereço"
 
 CodeSystem: TipoDocumento
 Id: tipo-documento
-Title: "Definição de tipos de documentos"
+Title: "Tipo de documentos"
 Description: "Identificação de documentos clínicos de interesse do INCA"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-documento"
@@ -1057,7 +1057,7 @@ rmino do Ensino Médio, que habilita a pessoa a exercer uma profissão, e cursos
 ValueSet: Escolaridades
 Id: escolaridades
 Title: "Escolaridades"
-Description: "Escolaridade obtida"
+Description: "Escolaridades"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/escolaridades"
 

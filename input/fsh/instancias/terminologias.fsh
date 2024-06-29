@@ -387,7 +387,7 @@ Description: "As possibilidades da inspeção de colo visando o exame citopatol�
 
 ValueSet: ResultadosInspecaoColo
 Id: resultados-inspecao-colo
-Title: "Situação do colo"
+Title: "Resultados da inspeção"
 Description: "Resultados para a inspeção do colo"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/resultados-inspecao-colo"
@@ -450,7 +450,7 @@ para a implementação do rastreamento ágil."""
 
 ValueSet: MotivosExame
 Id: motivos-exame-citopatologico
-Title: "Motivo exame"
+Title: "Motivos para exame"
 Description: "Possíveis motivos para requisição de exame citopatológico"
 
 * ^text.status = #empty
@@ -487,7 +487,7 @@ Description: "Identifica e define os motivos pelos quais um espécime é rejeita
 
 ValueSet: MotivosEspecimeRejeitado
 Id: motivos-especime-rejeitado
-Title: "Rejeição de espécime"
+Title: "Motivos para rejeição de espécime"
 Description: "Conjunto de possíveis motivos pelos quais um espécime é rejeitado."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivos-especime-rejeitado"
@@ -525,7 +525,7 @@ Description: "Indica se o espécime é adequado para avaliação ou cada um dos 
 
 ValueSet: CondicoesEspecime
 Id: condicoes-especime
-Title: "Espécime insatisfatório para avaliação"
+Title: "Condições de espécime insatisfatório"
 Description: "Possíveis motivos pelos quais o espécime pode ser declarado insatisfatório para avaliação após processado e examinado."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/condicoes-especime"
@@ -565,7 +565,7 @@ Description: "Definição das várias variações celulares relevantes para o ex
 
 ValueSet: VariacoesNaoNeoplasicas
 Id: variacoes-nao-neoplasicas
-Title: "Conjunto das variações não neoplásicas"
+Title: "Variações não neoplásicas"
 Description: "Identifica alteração celular benigna relevante para exame citopatológico"
 
 * ^text.status = #empty
@@ -762,7 +762,7 @@ Description: "Células atípicas"
 
 ValueSet: CelulasAtipicas
 Id: celulas-atipicas
-Title: "Célula atípica"
+Title: "Células atípicas"
 Description: "Células atípicas"
 
 * ^text.status = #empty
@@ -803,7 +803,7 @@ Description: "Itens que compõem o resultado de exame citopatológico"
 
 ValueSet: ResultadosItem
 Id: resultados-itens
-Title: "Itens de resultado de exame citopatológico"
+Title: "Componentes de resultado de exame"
 Description: "Grupos de informação de resultado de exame citopatológico"
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/resultados-itens"
 * ^status = #draft
@@ -857,7 +857,7 @@ Description: "Identifica e define presença ou ausência de componente endocervi
 
 ValueSet: ComponentesEndocervicais
 Id: componentes-endocervicais
-Title: "Tipos de amostra"
+Title: "Componentes endocervicais"
 Description: "Tipos de amostra para laudo citopatológico"
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/componentes-endocervicais"
 * ^status = #active
@@ -887,7 +887,7 @@ Description: "A categorização geral do resultado"
 
 ValueSet: Categorizacoes
 Id: categorizacoes
-Title: "Categorização geral"
+Title: "Categorias de resultado"
 Description: "Categorização geral do laudo"
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/categorizacoes"
 * ^status = #draft
@@ -913,7 +913,7 @@ Description: "Papel desempenhado pelo profissional no laudo"
 
 ValueSet: Papeis
 Id: papeis
-Title: "Papel"
+Title: "Papéis"
 Description: "Papel desempenhado pelo profissional no laudo"
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/papeis"
 * ^status = #draft
@@ -943,7 +943,7 @@ Description: "Componentes que fazem parte de um endereço"
 
 ValueSet: ComponentesEndereco
 Id: componentes-endereco
-Title: "Itens de endereço"
+Title: "Componentes de endereço"
 Description: "Tipos de itens de endereço que compõem um endereço"
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/componentes-endereco"
 * ^status = #draft
@@ -968,7 +968,7 @@ Description: "Identificação de documentos clínicos de interesse do INCA"
 
 ValueSet: TiposDocumentos
 Id: tipos-documentos
-Title: "Conjunto de tipos de documentos"
+Title: "Tipos de documentos"
 Description: "Conjunto dos identificadores de tipos de documentos de interesse do INCA"
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipos-documentos"
 * ^status = #active
@@ -1002,7 +1002,7 @@ corresponde ao sexo atribuído no nascimento. """
 
 ValueSet: Generos
 Id: generos
-Title: "Conjunto de gêneros"
+Title: "Gêneros"
 Description: "Gêneros admitidos em ficha de requisição"
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/generos"
 * ^status = #active
@@ -1056,7 +1056,7 @@ rmino do Ensino Médio, que habilita a pessoa a exercer uma profissão, e cursos
 
 ValueSet: Escolaridades
 Id: escolaridades
-Title: "Escolaridade"
+Title: "Escolaridades"
 Description: "Escolaridade obtida"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/escolaridades"

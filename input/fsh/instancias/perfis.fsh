@@ -242,7 +242,7 @@ Profile: RequisicaoExameCitopatologico
 Parent: ServiceRequest
 Id: requisicao-exame-citopatologico
 Title: "Requisicao de exame citopatológico"
-Description: "Definição das informações que devem constar em toda e qualquer requisição de exame citopatológico conforme orientações do INCA (MS)."
+Description: "Definição das informações que devem constar em toda e qualquer requisição de exame citopatológico do colo do útero."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
 * ^status = #draft
@@ -406,7 +406,7 @@ Description: "Endereço"
 * ^status = #active
 * ^meta.lastUpdated = "2020-03-11T04:06:40.866+00:00"
 * ^language = #pt-BR
-* ^description = "Endereço formado por logradouro, número, complemente, bairro, município, unidade da federação, CEP e ponto de referência."
+* ^description = "Endereço formado por logradouro, número, complemento, bairro, município, unidade da federação, CEP e ponto de referência."
 * . MS
 * . ^short = "Dados do endereço"
 * . ^definition = "Dados do endereço da paciente."
@@ -794,7 +794,7 @@ Profile: DiagnosticoCitopatologico
 Parent: DiagnosticReport
 Id: diagnostico-citopatologico
 Title: "Diagnóstico citopatológico"
-Description: "Diagnóstico de exame citopatológico em conformidade com padrão adotado pelo INCA."
+Description: "Diagnóstico de exame citopatológico em conformidade com a Nomenclatura Brasileira para Laudos citopatológicos cervicais."
 
 * obeys rn-1 and rn-2 and rn-3 and rn-4
 
@@ -920,7 +920,7 @@ Profile: ComponentesLaudoCitopatologico
 Parent: Observation
 Id: componentes-laudo-citopatologico
 Title: "Componentes de resultado de exame citopatológico"
-Description: "Identificação e definição dos itens de dados que definem um resultado de exeme citopatológico."
+Description: "Identificação e definição dos itens de dados que definem um resultado de exame citopatológico."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/componentes-laudo-citopatologico"
 * ^status = #draft
@@ -1170,7 +1170,7 @@ Profile: ReferenciaProfissional
 Parent: Reference
 Id: referencia-profissional
 Title: "Referência para profissional de saúde"
-Description: "Indicação de profissional de saúde"
+Description: "Indicação de profissional responsável pela coleta ou exame."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/referencia-profissional"
 * ^status = #draft

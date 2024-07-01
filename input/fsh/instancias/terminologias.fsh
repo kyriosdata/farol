@@ -525,7 +525,7 @@ Description: "Indica se o espécime é adequado para avaliação ou cada um dos 
 
 ValueSet: CondicoesEspecime
 Id: condicoes-especime
-Title: "Condições de espécime insatisfatório"
+Title: "Condições do espécime"
 Description: "Possíveis motivos pelos quais o espécime pode ser declarado insatisfatório para avaliação após processado e examinado."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/condicoes-especime"
@@ -661,7 +661,7 @@ Description: "Organismos"
 CodeSystem: Escamosa
 Id: escamosa
 Title: "Escamosa"
-Description: "Escamosa"
+Description: "Anormalidade em células epiteliais escamosas"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/escamosa"
 
@@ -681,7 +681,7 @@ Description: "Escamosa"
 ValueSet: Escamosas
 Id: escamosas
 Title: "Escamosas"
-Description: "Escamosas"
+Description: "Anormalidade em células epiteliais escamosas"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/escamosas"
 
@@ -699,7 +699,7 @@ Description: "Escamosas"
 CodeSystem: Glandular
 Id: glandular
 Title: "Glandular"
-Description: "Glandular"
+Description: "Anormalidade em células glandulares"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/glandular"
 

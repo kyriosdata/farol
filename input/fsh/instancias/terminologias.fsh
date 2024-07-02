@@ -466,39 +466,6 @@ Description: "Possíveis motivos para requisição de exame citopatológico"
 * include codes from system MotivoExame
 
 // ------------------------------------------------------
-// motivo-especime-rejeitado // #6
-// ------------------------------------------------------
-
-CodeSystem: MotivoEspecimeRejeitado
-Id: motivo-especime-rejeitado
-Title: "Rejeição de espécime"
-Description: "Identifica e define motivo pelo qual um espécime é rejeitado (não processado)."
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-especime-rejeitado"
-
-* ^status = #active
-* ^caseSensitive = true
-* ^experimental = false
-* ^date = "2024-04-15"
-* ^purpose = """**Propósito**. Identificar os possíveis motivos pelos quais uma amostra pode ser rejeitada. Convém destacar que, se a rejeição é por ausência ou erro na identificação da lâmina, frasco ou formulário, então o tipo correspondente é 'entered-in-error'. Este tipo também torna o espécime 'rejeitado'."""
-
-* #lamina "lâmina" "Lâmina danificada ou ausente"
-* #outras "Outras causas" "Outras causas"
-
-ValueSet: MotivosEspecimeRejeitado
-Id: motivos-especime-rejeitado
-Title: "Motivos para rejeição de espécime"
-Description: "Conjunto de possíveis motivos pelos quais um espécime é rejeitado."
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/motivos-especime-rejeitado"
-
-* ^status = #draft
-* ^experimental = false
-* ^purpose = "**Propósito**. Definir as possibilidades para declarar um espécime rejeitado."
-
-* include codes from system MotivoEspecimeRejeitado
-
-// ------------------------------------------------------
 // condicao-especime // #7
 // ------------------------------------------------------
 

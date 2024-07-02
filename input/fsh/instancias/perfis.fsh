@@ -247,6 +247,8 @@ Description: "Definição das informações que devem constar em toda e qualquer
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
 * ^status = #draft
 
+* subject only Reference(Paciente)
+
 * code ^short = "A identificação precisa do serviço requisitado."
 * code.coding 1..1
 * code.coding = $tabelaSus#0203010086

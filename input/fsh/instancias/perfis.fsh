@@ -248,6 +248,7 @@ Description: "Definição das informações que devem constar em toda e qualquer
 * ^status = #draft
 
 * subject only Reference(Paciente)
+* subject ^short = "A(o) paciente sujeito da requisição."
 
 * code ^short = "A identificação precisa do serviço requisitado."
 * code.coding 1..1
@@ -294,7 +295,7 @@ Description: "Definição das informações que devem constar em toda e qualquer
 Profile: AnamneseQuestionario
 Parent: QuestionnaireResponse
 Id: anamnese-questionario
-Title: "Estrutura do questionário da anamnese"
+Title: "Estrutura das resposas da anamnese"
 Description: "Estrutura exigida da anamnese pela requisição de exame citopatológico"
 
 * ^status = #draft
@@ -315,7 +316,7 @@ Description: "Estrutura exigida da anamnese pela requisição de exame citopatol
 Profile: ExameClinico
 Parent: Observation
 Id: exame-clinico
-Title: "Exame Clinico"
+Title: "Exame Clínico"
 Description: "Exame clínico realizado durante coleta de material para exame citopatológico"
 
 * implicitRules 0..0
@@ -482,7 +483,7 @@ Profile: Paciente
 Parent: Patient
 Id: paciente
 Title: "Paciente"
-Description: "Dados demográficos da paciente"
+Description: "Dados demográficos do indivíduo"
 
 * . ^short = "Informações sobre a paciente. Apenas o CNS é obrigatório. Demais campos são opcionais."
 
@@ -730,12 +731,15 @@ Profile: DocumentoRequisicao
 Parent: Composition
 Id: documento-requisicao
 Title: "Documento de Requisicao de Exame Citopatológico"
-Description: "Documento clínico de uma requisição de exame citopatológico"
+Description: "Documento clínico de uma requisição de exame citopatológico para o INCA"
+
+* ^title = "Requisição de Exame Citopatológico"
 
 * ^status = #draft
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/documento-requisicao"
 
 * type = http://loinc.org#47528-5
+* type ^short = "A identificação do tipo de documento. Neste caso, um relatório citopatológico, conforme o LOINC: Cytology report of Cervical or vaginal smear or scraping Cyto stain."
 
 * category from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipos-documentos (required)
 
@@ -749,9 +753,10 @@ Id: documento-laudo
 Title: "Documento de Resultado de Exame Citopatológico"
 Description: "Documento clínico de resultado de exame citopatológico"
 
+* ^title = "Resultado de Exame Citopatológico"
+
 * ^status = #draft
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/documento-laudo"
-
 * type = http://loinc.org#11502-2
 
 * section 1..1

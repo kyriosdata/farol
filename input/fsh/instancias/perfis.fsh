@@ -734,6 +734,7 @@ Title: "Documento de Requisicao de Exame Citopatológico"
 Description: "Documento clínico de uma requisição de exame citopatológico para o INCA"
 
 * ^title = "Requisição de Exame Citopatológico"
+* title ^short = "Deve ter como valor 'Requisicação de Exame Citopatológico'."
 
 * ^status = #draft
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/documento-requisicao"
@@ -754,6 +755,7 @@ Title: "Documento de Resultado de Exame Citopatológico"
 Description: "Documento clínico de resultado de exame citopatológico"
 
 * ^title = "Resultado de Exame Citopatológico"
+* title ^short = "Deve ter como valor 'Resultado de Exame Citopatológico'"
 
 * ^status = #draft
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/documento-laudo"

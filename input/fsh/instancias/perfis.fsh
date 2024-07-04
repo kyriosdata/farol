@@ -1106,7 +1106,7 @@ Severity: #error
 Profile: Amostra
 Parent: Specimen
 Id: amostra
-Title: "Anotações sobre a amostra"
+Title: "Amostra (laudo)"
 Description: "Informações sobre o espécime geradas pelo laboratório"
 
 * ^purpose = "É identificado se o espécime é satisfatório para a avaliação. Caso contrário, o motivo da rejeição. Caso não seja rejeitado, então a condição que o torna insatisfatório para o exame."
@@ -1202,8 +1202,8 @@ Description: "Indicação de profissional responsável pela coleta ou exame."
 Profile: AmostraRequisicao
 Parent: Specimen
 Id: amostra-requisicao
-Title: "Amostra coletada para exame citopatológico"
-Description: "Informações parciais sobre a amostra"
+Title: "Amostra (requisição)"
+Description: "Apenas a data da coleta e o responsável pela amostra. Mantidas neste recurso por precisão semântica."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/amostra-requisicao"
 * ^status = #draft

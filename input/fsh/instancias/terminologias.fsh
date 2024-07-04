@@ -252,7 +252,7 @@ Usage: #definition
 * uniqueId[0].comment = "Criado pela ausência de catálogo nacional de identificadores. Este valor provavelmente será substituído por sequência produzida pela autoridade competente."
 * uniqueId[0].period.start = "2023-11-13"
 
-Instance: loinc
+Instance: ns-loinc
 InstanceOf: NamingSystem
 Title: "LOINC"
 Description: "O identificador único da terminologia LOINC"
@@ -307,7 +307,7 @@ de códigos e também um significativo conjunto de _ValueSets_.
 * uniqueId[1].preferred = true
 
 
-Instance: siscan
+Instance: ns-siscan
 InstanceOf: NamingSystem
 Title: "Identificador de protocolo (código único) gerado pelo SISCAN"
 Description: "O identificador único de número de protoloco gerado pelo SISCAN"

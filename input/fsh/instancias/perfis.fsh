@@ -241,7 +241,7 @@ Context: Patient
 Profile: RequisicaoExameCitopatologico
 Parent: ServiceRequest
 Id: requisicao-exame-citopatologico
-Title: "Requisicao de exame citopatológico"
+Title: "Requisição de exame citopatológico"
 Description: "Definição das informações que devem constar em toda e qualquer requisição de exame citopatológico do colo do útero."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
@@ -730,8 +730,8 @@ informações pertinentes à requisição."""
 Profile: DocumentoRequisicao
 Parent: Composition
 Id: documento-requisicao
-Title: "Documento de Requisicao de Exame Citopatológico"
-Description: "Documento clínico de uma requisição de exame citopatológico para o INCA"
+Title: "Documento de Requisição de Exame Citopatológico"
+Description: "Documento clínico de uma requisição de exame citopatológico"
 
 * title ^short = "Deve ter como valor 'Requisicação de Exame Citopatológico'."
 

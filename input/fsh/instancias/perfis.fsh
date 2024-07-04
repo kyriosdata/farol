@@ -1111,7 +1111,9 @@ Description: "Informações sobre o espécime geradas pelo laboratório"
 
 * ^purpose = """
 Registra informações sobre a amostra pelo laboratório. Em particular, os elementos 
-_status_ e _condition_ merecem esclarecimentos. A tabela facilita a compreensão
+_status_ e _condition_ merecem esclarecimentos. 
+
+A tabela abaixo documenta as opções para o elemento _status_, o que facilita a compreensão
 dos códigos e, adicionalmente, a relação deles com as opções contidas na [ficha](nova-requisicao-exame-citopatologico.pdf)
 de requisição.
 
@@ -1120,8 +1122,11 @@ de requisição.
 | ---------------- | ------------- |
 | **entered-in-error** | Indica que há erro na identificação da lâmina, frasco ou formulário. |
 | **unavailable**      | Indica que a lâmina está danificada ou ausente.      |
-| **unsatisfactory**   | A amostra é rejeitada, mas por outro motivo diferente dos dois anteriores. Neste caso, deve ser detalhado o motivo da reijeição por meio de uma extensão para este código ([Detalhar](StructureDefinition-detalhar.html)).      |
+| **unsatisfactory**   | A amostra é rejeitada, mas por motivo diferente dos dois anteriores. Neste caso, deve ser detalhado o motivo da reijeição por meio de uma extensão para este código ([Detalhar](StructureDefinition-detalhar.html)).      |
 | **available**        | A amostra não é rejeitada. Uma amostra rejeitada é indicada por um dos códigos anteriores.            |
+
+O elemento _condition_, conforme regra (**al-7**), só pode ser preenchido se a amostra não é rejeitada, ou seja,
+o código de _status_ deve ser **available**. 
 """
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/amostra"
@@ -1145,6 +1150,7 @@ de requisição.
 // #5
 * type 1..1
 * type from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipos-amostra (required)
+* type ^short = "Identifica de coleta da amostra"
 
 * condition 0..1
 * condition ^short = "Código que identifica a condição da amostra"

@@ -493,14 +493,14 @@ Description: "Indica se o espécime é adequado para avaliação ou cada um dos 
 ValueSet: CondicoesEspecime
 Id: condicoes-especime
 Title: "Condições do espécime"
-Description: "Possíveis motivos pelos quais o espécime pode ser declarado insatisfatório para avaliação após processado e examinado."
+Description: "Possíveis motivos pelos quais o espécime pode ser declarado insatisfatório para avaliação após processado e examinado. Se nenhum destes motivos é utilizado, então a amostra é declarada satisfatória."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/condicoes-especime"
 
 * ^status = #draft
 * ^experimental = false
 * ^date = "2024-04-15"
-* ^purpose = """**Propósito**. Definir o conjunto de códigos possíveis para declarar uma amostra insatisfatória para avaliação."""
+* ^purpose = """**Propósito**. Define o conjunto de causas pelas quais a amostra é declarada insatisfatória para avaliação ou, que é considerada satisfatória."""
 
 * include codes from system CondicaoEspecime
 

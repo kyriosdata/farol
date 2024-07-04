@@ -1086,17 +1086,17 @@ Description: "Identificação e definição dos itens de dados que definem um re
 // -----------------
 
 
-Invariant: rn-6
+Invariant: al-6
 Description: "Se a amostra é rejeitada por 'outras causas', então deve ser detalhada(s) a(s) causa(s)."
 Expression: "$this = 'unsatisfactory' implies extension.where(url = 'https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/detalhar').exists()"
 Severity: #error
 
-Invariant: rn-7
+Invariant: al-7
 Description: "Se a amostra é rejeitada, então a condição da amostra não deve ser fornecida."
 Expression: "(status = 'available').not() implies condition.exists().not()"
 Severity: #error
 
-Invariant: rn-8
+Invariant: al-8
 Description: "Se há motivo para amostra insatisfatória, então a condição não pode ser satisfatória."
 Expression: "coding.code.count() > 1 implies ('satisfatorio' in coding.code).not()"
 Severity: #error
@@ -1114,13 +1114,13 @@ Description: "Informações sobre o espécime geradas pelo laboratório"
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/amostra"
 * ^status = #draft
 
-* obeys rn-7
+* obeys al-7
 
 // #6 #7 #8
 // Extensões aplicáveis a 'status': MotivoRejeicao e MotivoInsatisfatorio
 * status 1..1
 * status ^short = "Adequação da amostra"
-* status obeys rn-6
+* status obeys al-6
 
 // No máximo uma única extensão (ver rn-6)
 * status.extension 0..1
@@ -1140,7 +1140,7 @@ Description: "Informações sobre o espécime geradas pelo laboratório"
 * condition.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/condicoes-especime (required)
 * condition.coding.system 1..1
 * condition.coding.code 1..1
-* condition obeys rn-8
+* condition obeys al-8
 
 // -----------------------------------
 // referencia para unidade de saúde

@@ -1109,7 +1109,20 @@ Id: amostra
 Title: "Amostra (laudo)"
 Description: "Informações sobre o espécime geradas pelo laboratório"
 
-* ^purpose = "É identificado se o espécime é satisfatório para a avaliação. Caso contrário, o motivo da rejeição. Caso não seja rejeitado, então a condição que o torna insatisfatório para o exame."
+* ^purpose = """
+Registra informações sobre a amostra pelo laboratório. Em particular, os elementos 
+_status_ e _condition_ merecem esclarecimentos. A tabela facilita a compreensão
+dos códigos e, adicionalmente, a relação deles com as opções contidas na [ficha](nova-requisicao-exame-citopatologico.pdf)
+de requisição.
+
+
+| Código           | Interpretação |
+| ---------------- | ------------- |
+| **entered-in-error** | Indica que há erro na identificação da lâmina, frasco ou formulário. |
+| **unavailable**      | Indica que a lâmina está danificada ou ausente.      |
+| **unsatisfactory**   | A amostra é rejeitada, mas por outro motivo diferente dos dois anteriores. Neste caso, deve ser detalhado o motivo da reijeição por meio de uma extensão para este código ([Detalhar](StructureDefinition-detalhar.html)).      |
+| **available**        | A amostra não é rejeitada. Uma amostra rejeitada é indicada por um dos códigos anteriores.            |
+"""
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/amostra"
 * ^status = #draft

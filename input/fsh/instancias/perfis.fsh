@@ -945,6 +945,13 @@ Description: "Identificação e definição dos itens de dados que definem um re
 
 * specimen 0..0
 
+* effective[x] ^short = "Data em que a observação foi feita"
+* effective[x] 1..1
+* effective[x] only dateTime
+
+* subject ^short = "A(o) paciente"
+* subject 1..1
+
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #closed

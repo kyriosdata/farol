@@ -949,6 +949,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * effective[x] 1..1
 * effective[x] only dateTime
 
+* subject only Reference(Paciente)
 * subject ^short = "A(o) paciente"
 * subject 1..1
 

@@ -926,7 +926,7 @@ Severity: #error
 Profile: ComponentesLaudoCitopatologico
 Parent: Observation
 Id: componentes-laudo-citopatologico
-Title: "Componentes de resultado de exame citopatológico"
+Title: "Observações sobre a amostra"
 Description: "Identificação e definição dos itens de dados que definem um resultado de exame citopatológico."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/componentes-laudo-citopatologico"
@@ -939,6 +939,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * obeys Executantes and AmostraRejeitadaNaoAdmiteLaudo
 
 * performer only Reference(Organization)
+* performer only ReferenciaUnidadeDeSaude
 * performer 1..1
 * performer ^short = "O laboratório responsável pelo resultado do exame"
 

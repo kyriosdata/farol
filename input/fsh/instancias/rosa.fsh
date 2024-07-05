@@ -564,7 +564,10 @@ Title: "Itens do laudo (Rosa)"
 Description: "Itens que definem o laudo da paciente Rosa"
 
 * subject = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer[+] = Reference(urn:uuid:0342d5cf-6316-4ddd-b398-168af8aaeb12)
+* performer[0]
+  * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
+  * identifier.value = "654321"
+
 * effectiveDateTime = "2023-11-10"
 
 * status = #final

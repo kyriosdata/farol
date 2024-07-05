@@ -975,6 +975,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[componente].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#componente
 * component[componente].code ^short = "Componente endocervical"
 * component[componente].code.coding ^short = "Código definido por uma terminologia"
+* component[componente].code.coding 1..1
 * component[componente].value[x] 1..1
 * component[componente].value[x] only CodeableConcept
 * component[componente].value[x] ^short = "Código para presença ou ausência"

@@ -898,17 +898,13 @@ Description: "Diagnóstico de exame citopatológico em conformidade com a Nomenc
 // ------------------------------------------------------
 // componentes-laudo-citopatologico
 // ------------------------------------------------------
-Invariant: Executantes
-Description: "Apenas um profissional e um laboratório"
-Expression: "performer.resolve().type().name.isDistinct()"
-Severity: #error
 
-Invariant: obs-1
+Invariant: lau-1
 Description: "Não pode haver repetição"
 Expression: "coding.code.isDistinct()"
 Severity: #error
 
-Invariant: obs-2
+Invariant: lau-2
 Description: "Ou há indicação de achados não epiteliais ou de anormalidades, exclusivamente."
 Expression: "component.code.coding.code.intersect('variacoes-nao-neoplasicas' | 'alteracoes-reativas' | 'celulas-glandulares').exists() xor component.code.coding.code.intersect('escamosas' | 'glandulares' | 'outras-neoplasias-malignas').exists()"
 Severity: #error
@@ -923,7 +919,7 @@ Description: "Uma única extensão (valor) é permida"
 Expression: "extension.count() < 2"
 Severity: #error
 
-Invariant: AmostraRejeitadaNaoAdmiteLaudo
+Invariant: lau-3
 Description: "Se amostra é rejeitada, então este é o único componente permitido do laudo (além do tipo da amostra)"
 Expression: "component.code.coding.where(code='motivo-rejeicao').exists().not() or component.count() = 2"
 Severity: #error
@@ -941,7 +937,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
 // #44
 // #46
 // #59
-* obeys Executantes and AmostraRejeitadaNaoAdmiteLaudo and obs-2
+* obeys lau-2 and lau-3
 
 * performer only Reference(Organization)
 * performer only ReferenciaUnidadeDeSaude
@@ -999,7 +995,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[variacoesNaoNeoplasicas].value[x] 1..1
 * component[variacoesNaoNeoplasicas].value[x] only CodeableConcept
 * component[variacoesNaoNeoplasicas].value[x] ^short = "Código para variação celular não neoplásica"
-* component[variacoesNaoNeoplasicas].valueCodeableConcept obeys obs-1
+* component[variacoesNaoNeoplasicas].valueCodeableConcept obeys lau-1
 * component[variacoesNaoNeoplasicas].valueCodeableConcept.coding 1..5
 * component[variacoesNaoNeoplasicas].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
 * component[variacoesNaoNeoplasicas].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/variacoes-nao-neoplasicas (required)
@@ -1015,7 +1011,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[alteracoesReativas].value[x] 1..1
 * component[alteracoesReativas].value[x] only CodeableConcept
 * component[alteracoesReativas].value[x] ^short = "Código para a alteração celular reativa"
-* component[alteracoesReativas].valueCodeableConcept obeys obs-1
+* component[alteracoesReativas].valueCodeableConcept obeys lau-1
 * component[alteracoesReativas].valueCodeableConcept.coding 1..4
 * component[alteracoesReativas].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
 * component[alteracoesReativas].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/alteracoes-reativas (required)
@@ -1041,7 +1037,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[organismos].value[x] 1..1
 * component[organismos].value[x] only CodeableConcept
 * component[organismos].value[x] ^short = "Código para a alteração celular reativa"
-* component[organismos].valueCodeableConcept obeys obs-1
+* component[organismos].valueCodeableConcept obeys lau-1
 * component[organismos].valueCodeableConcept.coding 1..6
 * component[organismos].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
 * component[organismos].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/organismos (required)

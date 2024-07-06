@@ -1142,7 +1142,7 @@ dos códigos e, adicionalmente, a relação deles com as opções contidas na [f
 de requisição.
 
 
-| Código           | Interpretação |
+| Código para status          | Interpretação |
 | ---------------- | ------------- |
 | **entered-in-error** | Indica que há erro na identificação da lâmina, frasco ou formulário. |
 | **unavailable**      | Indica que a lâmina está danificada ou ausente.      |

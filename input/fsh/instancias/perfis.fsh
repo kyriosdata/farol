@@ -1176,6 +1176,9 @@ o código de _status_ deve ser **available**.
 * type from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipos-amostra (required)
 * type ^short = "Identifica tipo de coleta da amostra"
 
+// Não pode haver duplicidade
+* condition obeys lau-1
+
 * condition 0..1
 * condition ^short = "Código que identifica a condição da amostra"
 * condition.coding 1..6

@@ -908,6 +908,11 @@ Description: "Não pode haver repetição"
 Expression: "coding.code.isDistinct()"
 Severity: #error
 
+Invariant: obs-2
+Description: "Ou há indicação de achados não epiteliais ou de anormalidades, exclusivamente."
+Expression: "component.code.coding.code.intersect('variacoes-nao-neoplasicas' | 'alteracoes-reativas' | 'celulas-glandulares').exists() xor component.code.coding.code.intersect('escamosas' | 'glandulares' | 'outras-neoplasias-malignas').exists()"
+Severity: #error
+
 Invariant: ExtensaoApenasOutros
 Description: "Apenas 'outras causas' exige detalhamento"
 Expression: "coding.where(code != 'outras').extension.exists().not()"
@@ -936,7 +941,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
 // #44
 // #46
 // #59
-* obeys Executantes and AmostraRejeitadaNaoAdmiteLaudo
+* obeys Executantes and AmostraRejeitadaNaoAdmiteLaudo and obs-2
 
 * performer only Reference(Organization)
 * performer only ReferenciaUnidadeDeSaude

@@ -418,9 +418,9 @@ Description: "Laudo de exame citopatológico (Gabriela). Veja a [ficha](gabriela
   * resource = diagnostico-01
 
 // laudo (Observation - componentes do laudo)
-* entry[+]
-  * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb11"
-  * resource = laudo-componentes-01
+//* entry[+]
+//  * fullUrl = "urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb11"
+//  * resource = laudo-componentes-01
 
 // laboratorio (Organization)
 // * entry[+]
@@ -523,7 +523,7 @@ Description: "Laudo da requisição de exame da paciente Gabriela Gomes. Veja a 
 * issued = "2024-02-01T11:00:00Z"
 
 // Observation (componentes do laudo)
-* result[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb11)
+* result[0] = Reference(laudo-componentes-01)
 
 //* performer[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb12)
 //* resultsInterpreter[0] = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb13)
@@ -554,6 +554,7 @@ Title: "Itens do laudo (Gabriela Gomes)"
 Description: "Itens que definem o laudo da paciente Gabriela Gomes"
 
 * subject = Reference(urn:uuid:0142d5cf-6316-4ddd-b398-168af8aaeb01)
+
 * performer[0]
   * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes"
   * identifier.value = "654321"

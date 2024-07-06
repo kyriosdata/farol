@@ -511,6 +511,10 @@ Description: "Itens que definem o laudo da paciente Pérola"
 * component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#componente
 * component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/componente-endocervical#presente
 
+* component[+].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#variacoes-nao-neoplasicas
+* component[=].valueCodeableConcept.coding = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/variacao-nao-neoplasica#escamosa
+
+
 * note[0].text = "Amostra parcialmente obscurecida por sangue."
 
 // ------------

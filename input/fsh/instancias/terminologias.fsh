@@ -749,7 +749,7 @@ Description: "Células atípicas"
 CodeSystem: ResultadoItem
 Id: resultado-item
 Title: "Item de resultado de exame citopatológico"
-Description: "Item que compõem o resultado de exame citopatológico"
+Description: "Identifica unicamente cada um dos itens que compõem o resultado de exame citopatológico"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item"
 
@@ -757,15 +757,15 @@ Description: "Item que compõem o resultado de exame citopatológico"
 * ^caseSensitive = true
 * ^experimental = false
 
-* #componente "Indica presença ou ausência de componente endocervical"
-* #variacoes-nao-neoplasicas "Variações não neoplásicas" "Variações não neoplásicas"
-* #alteracoes-reativas "Alterações reativas" "Alterações reativas"
-* #celulas-glandulares "Epitélio glandular representado na amostra?"
-* #organismos "Organismos" "Organismos"
-* #celulas-endometriais "Células endometriais" "Células endometriais"
-* #escamosas "Escamosas" "Escamosas"
-* #glandulares "Glandulares" "Glandulares"
-* #outras-neoplasias-malignas "Outras neoplasias malignas" "Outras neoplasias malignas"
+* #componente "Componente endocervical / zona transformação" "Código que identifica o item de resultado que registra a presença ou ausência de componente endocervical / zona transformação."
+* #variacoes-nao-neoplasicas "Variações não neoplásicas" "Código que identifica o item de resultado no qual são fornecidas as variações celulares não neoplásicas."
+* #alteracoes-reativas "Alterações reativas" "Código único que identifica o item de resultado no qual são registradas as alterações celulares reativas identificadas na amostra."
+* #celulas-glandulares "Epitélio glandular representado na amostra?" "Código único que identifica o item de resultado no qual é registrada a presença de céluas glandulares pós-histerectoma ou não, na amostra."
+* #organismos "Organismos" "Código único que identifica o item de resultado que registra a presença de organismos na amostra."
+* #celulas-endometriais "Células endometriais" "Código único que identifica o item de resultado que registra a presença ou não de céluas endometriais na amostra."
+* #escamosas "Escamosas" "Código único que identifica o item de resultado que registra a presença de anormalidade escamosa."
+* #glandulares "Glandulares" "Código único que identifica o item de resultado que registra a presença de anormalidade glandular."
+* #outras-neoplasias-malignas "Outras neoplasias malignas" "Código único que identifica o item de resultado que registra outras neoplasias malignas presentes na amostra."
 
 
 ValueSet: ResultadosItem

@@ -961,8 +961,8 @@ Description: "Identificação e definição dos itens de dados que definem um re
 
 * component contains 
     componente 1..1 MS and // #9
-    variacoesNaoNeoplasicas 0..1 MS and // #11
-    alteracoesReativas 0..1 MS and // #12
+    variacoes 0..1 MS and // #11
+    alteracoes 0..1 MS and // #12
     celulasGlandulares 0..1 MS and // #13
     organismos 0..1 MS and // #14
     celulasEndometriais 0..1 MS and // #15
@@ -987,36 +987,36 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[componente].valueCodeableConcept.coding.code ^short = "Presença ou ausência"
 
 // #11
-* component[variacoesNaoNeoplasicas] ^short = "Variações celulares não neoplásicas"
-* component[variacoesNaoNeoplasicas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#variacoes-nao-neoplasicas
-* component[variacoesNaoNeoplasicas].code ^short = "Variação celular não neoplásica"
-* component[variacoesNaoNeoplasicas].code.coding 1..1
-* component[variacoesNaoNeoplasicas].code.coding ^short = "Código definido por uma terminologia"
-* component[variacoesNaoNeoplasicas].value[x] 1..1
-* component[variacoesNaoNeoplasicas].value[x] only CodeableConcept
-* component[variacoesNaoNeoplasicas].value[x] ^short = "Código para variação celular não neoplásica"
-* component[variacoesNaoNeoplasicas].valueCodeableConcept obeys lau-1
-* component[variacoesNaoNeoplasicas].valueCodeableConcept.coding 1..5
-* component[variacoesNaoNeoplasicas].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
-* component[variacoesNaoNeoplasicas].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/variacoes-nao-neoplasicas (required)
-* component[variacoesNaoNeoplasicas].valueCodeableConcept.coding.code 1..1
-* component[variacoesNaoNeoplasicas].valueCodeableConcept.coding.code ^short = "Código para a variação celular não neoplásica"
+* component[variacoes] ^short = "Variações celulares não neoplásicas"
+* component[variacoes].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#variacoes-nao-neoplasicas
+* component[variacoes].code ^short = "Variação celular não neoplásica"
+* component[variacoes].code.coding 1..1
+* component[variacoes].code.coding ^short = "Código definido por uma terminologia"
+* component[variacoes].value[x] 1..1
+* component[variacoes].value[x] only CodeableConcept
+* component[variacoes].value[x] ^short = "Código para variação celular não neoplásica"
+* component[variacoes].valueCodeableConcept obeys lau-1
+* component[variacoes].valueCodeableConcept.coding 1..5
+* component[variacoes].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
+* component[variacoes].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/variacoes-nao-neoplasicas (required)
+* component[variacoes].valueCodeableConcept.coding.code 1..1
+* component[variacoes].valueCodeableConcept.coding.code ^short = "Código para a variação celular não neoplásica"
 
 // #12
-* component[alteracoesReativas] ^short = "Alterações celulares reativas"
-* component[alteracoesReativas].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#alteracoes-reativas
-* component[alteracoesReativas].code ^short = "Alteração celular reativa"
-* component[alteracoesReativas].code.coding 1..1
-* component[alteracoesReativas].code.coding ^short = "Código definido por uma terminologia"
-* component[alteracoesReativas].value[x] 1..1
-* component[alteracoesReativas].value[x] only CodeableConcept
-* component[alteracoesReativas].value[x] ^short = "Código para a alteração celular reativa"
-* component[alteracoesReativas].valueCodeableConcept obeys lau-1
-* component[alteracoesReativas].valueCodeableConcept.coding 1..4
-* component[alteracoesReativas].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
-* component[alteracoesReativas].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/alteracoes-reativas (required)
-* component[alteracoesReativas].valueCodeableConcept.coding.code 1..1
-* component[alteracoesReativas].valueCodeableConcept.coding.code ^short = "Código para a variação celular não neoplásica"
+* component[alteracoes] ^short = "Alterações celulares reativas"
+* component[alteracoes].code = https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item#alteracoes-reativas
+* component[alteracoes].code ^short = "Alteração celular reativa"
+* component[alteracoes].code.coding 1..1
+* component[alteracoes].code.coding ^short = "Código definido por uma terminologia"
+* component[alteracoes].value[x] 1..1
+* component[alteracoes].value[x] only CodeableConcept
+* component[alteracoes].value[x] ^short = "Código para a alteração celular reativa"
+* component[alteracoes].valueCodeableConcept obeys lau-1
+* component[alteracoes].valueCodeableConcept.coding 1..4
+* component[alteracoes].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
+* component[alteracoes].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/alteracoes-reativas (required)
+* component[alteracoes].valueCodeableConcept.coding.code 1..1
+* component[alteracoes].valueCodeableConcept.coding.code ^short = "Código para a variação celular não neoplásica"
 
 // #13
 * component[celulasGlandulares] ^short = "Registra presença ou não de células glandulares pós-histerectomia."

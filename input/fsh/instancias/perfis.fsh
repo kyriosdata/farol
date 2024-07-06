@@ -1121,10 +1121,9 @@ Expression: "(status = 'available').not() implies condition.exists().not()"
 Severity: #error
 
 Invariant: al-8
-Description: "Se há motivo para amostra insatisfatória, então a condição não pode ser satisfatória."
-Expression: "coding.code.count() > 1 implies ('satisfatorio' in coding.code).not()"
+Description: "Se mais de uma condição é definida, então nenhuma delas deve ser 'satisfatoria'."
+Expression: "coding.code.count() = 1 or ('satisfatorio' in coding.code).not()"
 Severity: #error
-
 
 
 Profile: Amostra

@@ -928,7 +928,12 @@ Profile: ComponentesLaudoCitopatologico
 Parent: Observation
 Id: componentes-laudo-citopatologico
 Title: "Observações sobre a amostra"
-Description: "Identificação e definição dos itens de dados que definem um resultado de exame citopatológico."
+Description: "Observações sobre a amostra que definem um resultado de exame citopatológico."
+
+* ^purpose = """
+Várias observações são realizadas sobre a amostra. Cada uma delas é identificada por
+um código único de ([resultado](CodeSystem-resultado-item.html)).
+"""
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/componentes-laudo-citopatologico"
 * ^status = #draft
@@ -994,7 +999,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[variacoes].code.coding ^short = "Código definido por uma terminologia"
 * component[variacoes].value[x] 1..1
 * component[variacoes].value[x] only CodeableConcept
-* component[variacoes].value[x] ^short = "Código para variação celular não neoplásica"
+* component[variacoes].value[x] ^short = "Indicação de cada uma das variações celulares não neoplásicas identificadas."
 * component[variacoes].valueCodeableConcept obeys lau-1
 * component[variacoes].valueCodeableConcept.coding 1..5
 * component[variacoes].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
@@ -1010,7 +1015,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[alteracoes].code.coding ^short = "Código definido por uma terminologia"
 * component[alteracoes].value[x] 1..1
 * component[alteracoes].value[x] only CodeableConcept
-* component[alteracoes].value[x] ^short = "Código para a alteração celular reativa"
+* component[alteracoes].value[x] ^short = "Indicação de cada uma das alterações celulares reativas identificadas"
 * component[alteracoes].valueCodeableConcept obeys lau-1
 * component[alteracoes].valueCodeableConcept.coding 1..4
 * component[alteracoes].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
@@ -1036,7 +1041,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[organismos].code.coding ^short = "Código definido por uma terminologia"
 * component[organismos].value[x] 1..1
 * component[organismos].value[x] only CodeableConcept
-* component[organismos].value[x] ^short = "Código para a alteração celular reativa"
+* component[organismos].value[x] ^short = "Indicação de cada um dos organismos identificados"
 * component[organismos].valueCodeableConcept obeys lau-1
 * component[organismos].valueCodeableConcept.coding 1..6
 * component[organismos].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
@@ -1062,7 +1067,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[escamosas].code.coding ^short = "Código definido por uma terminologia"
 * component[escamosas].value[x] 1..1
 * component[escamosas].value[x] only CodeableConcept
-* component[escamosas].value[x] ^short = "Código para a alteração celular reativa"
+* component[escamosas].value[x] ^short = "Identificação da anormalidade escamosa identificada em células epiteliais"
 * component[escamosas].valueCodeableConcept.coding 1..1
 * component[escamosas].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
 * component[escamosas].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/escamosas (required)
@@ -1077,7 +1082,7 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[glandulares].code.coding ^short = "Código definido por uma terminologia"
 * component[glandulares].value[x] 1..1
 * component[glandulares].value[x] only CodeableConcept
-* component[glandulares].value[x] ^short = "Código para a alteração celular reativa"
+* component[glandulares].value[x] ^short = "Identificação da anormalidade glandular identificada em células epiteliais"
 * component[glandulares].valueCodeableConcept.coding 1..1
 * component[glandulares].valueCodeableConcept.coding ^short = "Um dos códigos definidos no conjunto"
 * component[glandulares].valueCodeableConcept.coding from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/glandulares (required)
@@ -1092,10 +1097,10 @@ Description: "Identificação e definição dos itens de dados que definem um re
 * component[outrasNeoplasias].code.coding ^short = "Código definido por uma terminologia"
 * component[outrasNeoplasias].value[x] 1..1
 * component[outrasNeoplasias].value[x] only string
-* component[outrasNeoplasias].valueString ^short = "Especificar as neoplasias"
+* component[outrasNeoplasias].valueString ^short = "Especificação das outras neoplasias malignas identificadas"
 
 // #19
-* note ^short = "Observaçõe gerais"
+* note ^short = "Observação que ajuda na conclusão (insumo para o laudo)"
 * note.author[x] 0..0
 * note.time 0..0
 

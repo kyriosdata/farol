@@ -139,7 +139,7 @@ Title: "Requisição (Gabriela Gomes)"
 Description: "Requisição de exame citopatológico da Gabriela Gomes"
 Usage: #inline
 
-* status = #draft
+* status = #active
 * intent = #order
 
 * contained[0] = amostra-requisicao-gabriela

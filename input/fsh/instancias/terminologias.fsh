@@ -10,7 +10,7 @@ Description: "O identificador de prontuário fornecido pela unidade de saúde re
 Usage: #definition
 
 * name = "RequisitanteProntuario"
-* status = #draft
+* status = #active
 * kind = #identifier
 * date = "2024-04-15"
 * publisher = "Ministério da Saúde (INCA)"
@@ -62,7 +62,7 @@ Description: "O identificador de exame gerado por laboratório. Observe que este
 Usage: #definition
 
 * name = "NumeroExame"
-* status = #draft
+* status = #active
 * kind = #identifier
 * date = "2024-04-15"
 * publisher = "Ministério da Saúde (INCA)"
@@ -111,7 +111,7 @@ Description: "O identificador da unidade de saúde no Cadastro Nacional de Estab
 Usage: #definition
 
 * name = "CNES"
-* status = #draft
+* status = #active
 * kind = #identifier
 * date = "2024-04-15"
 * publisher = "Ministério da Saúde do Brasil"
@@ -160,7 +160,7 @@ Description: "O identificador único de indivíduo ou Cartão Nacional de Saúde
 Usage: #definition
 
 * name = "CNS"
-* status = #draft
+* status = #active
 * kind = #identifier
 * date = "2024-04-15"
 * publisher = "Ministério da Saúde do Brasil"
@@ -210,7 +210,7 @@ Description: "O identificador de números de inscrição no Cadastro de Pessoa F
 Usage: #definition
 
 * name = "CPF"
-* status = #draft
+* status = #active
 * kind = #identifier
 * date = "2024-04-15"
 * publisher = "Receita Federal do Brasil"
@@ -314,7 +314,7 @@ Description: "O identificador único de número de protoloco gerado pelo SISCAN"
 Usage: #definition
 
 * name = "SiscanProtocolo"
-* status = #draft
+* status = #active
 * kind = #identifier
 * date = "2024-04-15"
 * publisher = "Ministério da Saúde (INCA)"

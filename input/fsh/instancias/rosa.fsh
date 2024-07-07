@@ -129,7 +129,7 @@ Usage: #inline
 * contained[0] = amostra-requisicao-rosa
 * specimen = Reference(amostra-requisicao-rosa)
 
-* status = #draft
+* status = #active
 * intent = #order
 
 * extension[0].url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/identificador-prontuario"

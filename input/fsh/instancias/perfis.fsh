@@ -247,6 +247,7 @@ Description: "Definição das informações que devem constar em toda e qualquer
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
 * ^status = #draft
 
+* status = #active (exactly)
 * subject only Reference(Paciente)
 * subject ^short = "A(o) paciente sujeito da requisição."
 
@@ -303,7 +304,7 @@ Description: "Estrutura exigida da anamnese pela requisição de exame citopatol
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/anamnese-questionario"
 
 * questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico"
-* status = #completed
+* status = #completed (exactly)
 * basedOn 0..0
 * partOf 0..0
 //* encounter 0..1
@@ -578,7 +579,7 @@ pelo INCA, disponível [aqui](nova-requisicao-exame-citopatologico.pdf)."
 * version = "0.0.1"
 * name = "Anamnese"
 * title = "Anamnese para requisição de exame citopatológico"
-* status = #draft
+* status = #active
 * experimental = false
 * subjectType = #Patient
 * date = "2024-01-20"

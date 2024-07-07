@@ -114,7 +114,7 @@ Usage: #example
 
 * meta.profile = $requisicaoExameCitopatologico
 
-* status = #unknown
+* status = #active
 * intent = #order
 
 * contained[0] = amostra-requisicao-bruna

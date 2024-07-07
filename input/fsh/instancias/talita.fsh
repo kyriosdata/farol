@@ -260,7 +260,7 @@ Usage: #inline
 * contained[0] = amostra-requisicao-talita
 * specimen = Reference(amostra-requisicao-talita)
 
-* status = #unknown
+* status = #active
 * intent = #order
 
 * code.coding[0]

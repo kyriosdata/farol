@@ -114,7 +114,7 @@ Usage: #inline
 * contained[0] = amostra-requisicao-renata
 * specimen = Reference(amostra-requisicao-renata)
 
-* status = #unknown
+* status = #active
 * intent = #order
 
 * code.coding[0]

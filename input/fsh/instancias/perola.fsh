@@ -111,7 +111,7 @@ Title: "Requisição (Pérola)"
 Description: "Requisição de exame citopatológico da Pérola"
 Usage: #inline
 
-* status = #unknown
+* status = #active
 * intent = #order
 
 * contained[0] = amostra-requisicao-perola

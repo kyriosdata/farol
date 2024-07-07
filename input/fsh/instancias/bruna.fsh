@@ -14,7 +14,7 @@ Alias: $diagnosticoCitopatologico = https://fhir.fabrica.inf.ufg.br/ccu/Structur
 Instance: bruna-requisicao
 InstanceOf: Bundle
 Usage: #example
-Title: "Requisição (Bruna)"
+Title: "Bundle requisição (Bruna)"
 Description: "Requisição de exame citopatológico (Bruna). Veja a [ficha](bruna-faria.jpg) de requisição correspondente."
 
 * type = #document
@@ -58,7 +58,7 @@ Description: "Requisição de exame citopatológico (Bruna). Veja a [ficha](brun
 Instance: requisicao-bruna
 InstanceOf: Composition
 Usage: #example
-Title: "Requisição (Bruna)"
+Title: "Composition requisição (Bruna)"
 Description: "Requisição de Exame Citopatológico da paciente Bruna"
 
 * status = #final
@@ -300,7 +300,7 @@ Description: "Exame clínico da Bruna"
 Instance: bruna-laudo
 InstanceOf: Bundle
 Usage: #example
-Title: "Laudo (Bruna)"
+Title: "Bundle laudo (Bruna)"
 Description: "Laudo de exame citopatológico (Bruna). Veja a [ficha](bruna-faria-laudo.jpg) correspondente."
 
 * type = #document
@@ -345,7 +345,7 @@ Description: "Laudo de exame citopatológico (Bruna). Veja a [ficha](bruna-faria
 Instance: composition-bruna
 InstanceOf: Composition
 Usage: #example
-Title: "Laudo (Bruna)"
+Title: "Composition laudo (Bruna)"
 Description: "Laudo de exame citopatológico da paciente Bruna"
 
 * meta.profile = $documentoLaudo
@@ -378,7 +378,7 @@ Description: "Laudo de exame citopatológico da paciente Bruna"
 
 Instance: diagnostico-02
 InstanceOf: DiagnosticReport
-Title: "Relatório (Bruna)"
+Title: "Laudo (Bruna)"
 Usage: #inline
 Description: "Laudo da requisição de exame da paciente Bruna. Veja a [ficha](bruna-faria-laudo.jpg) correspondente ao laudo"
 

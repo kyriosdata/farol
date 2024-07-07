@@ -7,7 +7,7 @@
 Instance: bundle-renata
 InstanceOf: Bundle
 Usage: #example
-Title: "Requisição (Renata)"
+Title: "Bundle requisição (Renata)"
 Description: "Requisição de exame citopatológico (Renata). Veja a [ficha](renata-lima.jpg) correspondente."
 
 * type = #document
@@ -351,7 +351,7 @@ Description: "Exame clínico da Renata"
 Instance: bundle-renata-laudo
 InstanceOf: Bundle
 Usage: #example
-Title: "Laudo (Renata)"
+Title: "Bundle laudo (Renata)"
 Description: "Laudo de exame citopatológico (Renata). Veja a [ficha](renata-lima-laudo.jpg) correspondente."
 
 * type = #document
@@ -463,7 +463,7 @@ Usage: #inline
 
 Instance: diagnostico-renata
 InstanceOf: DiagnosticoCitopatologico
-Title: "Relatório (Renata)"
+Title: "Laudo (Renata)"
 Usage: #inline
 Description: "Laudo da requisição de exame da paciente Renata. Veja a [ficha](renata-lima-laudo.jpg) correspondente ao laudo"
 

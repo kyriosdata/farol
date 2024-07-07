@@ -23,7 +23,7 @@ Alias: $anamnese-exame-citopatologico = https://fhir.fabrica.inf.ufg.br/ccu/Ques
 Instance: bundle-gabriela-gomes
 InstanceOf: Bundle
 Usage: #example
-Title: "Requisição (Gabriela)"
+Title: "Bundle requisição (Gabriela)"
 Description: "Requisição de exame citopatológico (Gabriela). Veja a [ficha](gabriela-gomes.jpg) correspondente."
 
 * type = #document
@@ -82,7 +82,7 @@ Description: "Requisição de exame citopatológico (Gabriela). Veja a [ficha](g
 Instance: requisicao-gabriela
 InstanceOf: DocumentoRequisicao
 Usage: #inline
-Title: "Requisição (Gabriela)"
+Title: "Composition requisição (Gabriela)"
 Description: "Requisição de Exame Citopatológico da paciente Gabriela"
 
 * status = #final
@@ -390,7 +390,7 @@ Usage: #inline
 Instance: bundle-gabriela-gomes-laudo
 InstanceOf: Bundle
 Usage: #example
-Title: "Laudo (Gabriela)"
+Title: "Bundle laudo (Gabriela)"
 Description: "Laudo de exame citopatológico (Gabriela). Veja a [ficha](gabriela-gomes-laudo.jpg) correspondente."
 
 * type = #document
@@ -440,7 +440,7 @@ Description: "Laudo de exame citopatológico (Gabriela). Veja a [ficha](gabriela
 Instance: laudo-gabriela
 InstanceOf: DocumentoLaudo
 Usage: #inline
-Title: "Laudo (Gabriela Gomes)"
+Title: "Composition laudo (Gabriela Gomes)"
 Description: "Laudo de exame citopatológico da paciente Gabriela Gomes"
 
 * status = #final
@@ -498,7 +498,7 @@ Usage: #inline
 
 Instance: diagnostico-01
 InstanceOf: DiagnosticoCitopatologico
-Title: "Relatório (Gabriela Gomes)"
+Title: "Laudo (Gabriela Gomes)"
 Usage: #inline
 Description: "Laudo da requisição de exame da paciente Gabriela Gomes. Veja a [ficha](gabriela-gomes-laudo.jpg) correspondente ao laudo"
 

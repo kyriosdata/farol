@@ -291,7 +291,7 @@ Usage: #inline
 Instance: composition-talita
 InstanceOf: DocumentoRequisicao
 Usage: #inline
-Title: "Requisição (Talita)"
+Title: "Composition requisição (Talita)"
 Description: "Requisição de Exame Citopatológico da paciente Talita"
 
 * status = #final
@@ -323,7 +323,7 @@ Description: "Requisição de Exame Citopatológico da paciente Talita"
 Instance: bundle-talita
 InstanceOf: Bundle
 Usage: #example
-Title: "Requisição (Talita)"
+Title: "Bundle requisição (Talita)"
 Description: "Requisição de exame citopatológico (Talita). Veja a [ficha](talita-moreira.jpg) correspondente."
 
 * type = #document
@@ -428,7 +428,7 @@ Description: "Itens que definem o laudo da paciente Talita"
 
 Instance: 0542d5cf-6316-4ddd-b398-168af8aaeb10
 InstanceOf: DiagnosticoCitopatologico
-Title: "Relatório (Talita)"
+Title: "Laudo (Talita)"
 Usage: #inline
 Description: "Laudo da requisição de exame da paciente Talita. Veja a [ficha](talita-moreira-laudo.jpg) correspondente ao laudo"
 
@@ -486,7 +486,7 @@ Description: "Laudo da requisição de exame da paciente Talita. Veja a [ficha](
 Instance: laudo-talita
 InstanceOf: DocumentoLaudo
 Usage: #inline
-Title: "Laudo (Talita)"
+Title: "Composition laudo (Talita)"
 Description: "Laudo de exame citopatológico da paciente Talita"
 
 * status = #final
@@ -520,7 +520,7 @@ Description: "Laudo de exame citopatológico da paciente Talita"
 Instance: bundle-talita-laudo
 InstanceOf: Bundle
 Usage: #example
-Title: "Laudo (Talita)"
+Title: "Bundle laudo (Talita)"
 Description: "Laudo de exame citopatológico (Talita). Veja a [ficha](talita-moreira-laudo.jpg) correspondente."
 
 * type = #document

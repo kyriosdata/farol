@@ -82,7 +82,7 @@ Description: "Requisição de exame citopatológico (Gabriela). Veja a [ficha](g
 Instance: requisicao-gabriela
 InstanceOf: DocumentoRequisicao
 Usage: #inline
-Title: "Composition requisição (Gabriela)"
+Title: "Documento de requisição (Gabriela)"
 Description: "Requisição de Exame Citopatológico da paciente Gabriela"
 
 * status = #final
@@ -440,7 +440,7 @@ Description: "Laudo de exame citopatológico (Gabriela). Veja a [ficha](gabriela
 Instance: laudo-gabriela
 InstanceOf: DocumentoLaudo
 Usage: #inline
-Title: "Composition laudo (Gabriela Gomes)"
+Title: "Documento do laudo (Gabriela Gomes)"
 Description: "Laudo de exame citopatológico da paciente Gabriela Gomes"
 
 * status = #final

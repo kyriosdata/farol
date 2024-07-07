@@ -81,7 +81,7 @@ Description: "Requisição de exame citopatológico (Rosa)."
 Instance: RequisicaoRosa
 InstanceOf: DocumentoRequisicao
 Usage: #inline
-Title: "Requisição (Rosa)"
+Title: "Documento de requisição (Rosa)"
 Description: "Requisição de Exame Citopatológico da paciente Rosa"
 
 * status = #final
@@ -453,7 +453,7 @@ Usage: #inline
 Instance: laudo-rosa
 InstanceOf: DocumentoLaudo
 Usage: #inline
-Title: "Laudo (Rosa)"
+Title: "Documento do laudo (Rosa)"
 Description: "Laudo de exame citopatológico da paciente Rosa"
 
 * status = #final

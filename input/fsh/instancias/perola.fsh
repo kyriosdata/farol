@@ -6,7 +6,7 @@
 Instance: bundle-perola
 InstanceOf: Bundle
 Usage: #example
-Title: "Requisição (Pérola)"
+Title: "Bundle requisição (Pérola)"
 Description: "Requisição de exame citopatológico (Pérola). Veja a [ficha](perola-faria.jpg) correspondente."
 
 * type = #document
@@ -65,7 +65,7 @@ Description: "Requisição de exame citopatológico (Pérola). Veja a [ficha](pe
 Instance: composition-perola
 InstanceOf: DocumentoRequisicao
 Usage: #inline
-Title: "Requisição (Pérola)"
+Title: "Documento de requisição (Pérola)"
 Description: "Requisição de Exame Citopatológico da paciente Pérola"
 
 * status = #final
@@ -339,7 +339,7 @@ Description: "Exame clínico da Pérola"
 Instance: bundle-perola-laudo
 InstanceOf: Bundle
 Usage: #example
-Title: "Laudo (Pérola)"
+Title: "Bundle laudo (Pérola)"
 Description: "Laudo de exame citopatológico (Pérola). Veja a [ficha](perola-faria-laudo.jpg) correspondente."
 
 * type = #document
@@ -389,7 +389,7 @@ Description: "Laudo de exame citopatológico (Pérola). Veja a [ficha](perola-fa
 Instance: composition-04-2
 InstanceOf: DocumentoLaudo
 Usage: #inline
-Title: "Laudo (Renata)"
+Title: "Documento do laudo (Renata)"
 Description: "Laudo de exame citopatológico da paciente Renata"
 
 * status = #final

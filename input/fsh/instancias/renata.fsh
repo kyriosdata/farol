@@ -66,7 +66,7 @@ Description: "Requisição de exame citopatológico (Renata). Veja a [ficha](ren
 Instance: requisicao-renata
 InstanceOf: DocumentoRequisicao
 Usage: #inline
-Title: "Requisição (Renata)"
+Title: "Documento de requisição (Renata)"
 Description: "Requisição de Exame Citopatológico da paciente Renata"
 
 * status = #final
@@ -405,7 +405,7 @@ Description: "Laudo de exame citopatológico (Renata). Veja a [ficha](renata-lim
 Instance: composition-03-2
 InstanceOf: DocumentoLaudo
 Usage: #inline
-Title: "Laudo (Renata)"
+Title: "Documento do laudo (Renata)"
 Description: "Laudo de exame citopatológico da paciente Renata"
 
 * status = #final

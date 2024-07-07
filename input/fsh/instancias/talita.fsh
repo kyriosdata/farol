@@ -291,7 +291,7 @@ Usage: #inline
 Instance: composition-talita
 InstanceOf: DocumentoRequisicao
 Usage: #inline
-Title: "Composition requisição (Talita)"
+Title: "Documento de requisição (Talita)"
 Description: "Requisição de Exame Citopatológico da paciente Talita"
 
 * status = #final
@@ -486,7 +486,7 @@ Description: "Laudo da requisição de exame da paciente Talita. Veja a [ficha](
 Instance: laudo-talita
 InstanceOf: DocumentoLaudo
 Usage: #inline
-Title: "Composition laudo (Talita)"
+Title: "Documento do laudo (Talita)"
 Description: "Laudo de exame citopatológico da paciente Talita"
 
 * status = #final

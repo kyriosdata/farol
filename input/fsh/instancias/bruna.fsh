@@ -58,7 +58,7 @@ Description: "Requisição de exame citopatológico (Bruna). Veja a [ficha](brun
 Instance: requisicao-bruna
 InstanceOf: Composition
 Usage: #example
-Title: "Composition requisição (Bruna)"
+Title: "Documento de requisição (Bruna)"
 Description: "Requisição de Exame Citopatológico da paciente Bruna"
 
 * status = #final
@@ -345,7 +345,7 @@ Description: "Laudo de exame citopatológico (Bruna). Veja a [ficha](bruna-faria
 Instance: composition-bruna
 InstanceOf: Composition
 Usage: #example
-Title: "Composition laudo (Bruna)"
+Title: "Documento de laudo (Bruna)"
 Description: "Laudo de exame citopatológico da paciente Bruna"
 
 * meta.profile = $documentoLaudo

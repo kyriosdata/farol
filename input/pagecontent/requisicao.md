@@ -1,4 +1,4 @@
-Este modelo de informação foi produzido a partir da Ficha de Requisição de Exame Citopatológico - Colo do Útero. Uma versão desta ficha onde cada item de informação segue enumerado encontra-se disponível [aqui](./nova-requisicao-enumerada.pdf). A enumeração é utilizada para relacionar o item de informação da ficha
+Este modelo de informação foi produzido a partir da Ficha de Requisição de Exame Citopatológico - Colo do Útero. Uma versão desta ficha onde cada item de informação segue enumerado encontra-se disponível [aqui](./ficha-numerada.pdf). A enumeração é utilizada para relacionar o item de informação da ficha
 com o mapeamento apresentado abaixo. 
 
 

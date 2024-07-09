@@ -628,7 +628,7 @@ Description: "Organismos"
 CodeSystem: Escamosa
 Id: escamosa
 Title: "Escamosa"
-Description: "Anormalidade em células epiteliais escamosas"
+Description: "Definição de anormalidade em células epiteliais escamosas."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/escamosa"
 
@@ -666,7 +666,7 @@ Description: "Anormalidade em células epiteliais escamosas"
 CodeSystem: Glandular
 Id: glandular
 Title: "Glandular"
-Description: "Anormalidade em células glandulares"
+Description: "Definição de anormalidades em células glandulares."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/glandular"
 
@@ -703,53 +703,13 @@ Description: "Glandulares"
 * include codes from system Glandular
 
 // ------------------------------------------------------
-// celulas-atipicas
-// ------------------------------------------------------
-
-CodeSystem: CelulaAtipica
-Id: celula-atipica
-Title: "Célula atípica"
-Description: "Célula atípica"
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos para classificação de células atípicas.</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/celula-atipica"
-
-* ^status = #active
-* ^caseSensitive = true
-* ^experimental = false
-* ^date = "2024-04-15"
-* ^purpose = """**Propósito**. Definição das possíveis células atípicas de significado indeterminado relevantes para o laudo de exame citopatológico."""
-
-* #neoplasicas "Possivelmente não neoplásicas"
-* #alto-grau "Não se pode afastar lesão de alto grau"
-
-// ------------------------------------------------------
-
-ValueSet: CelulasAtipicas
-Id: celulas-atipicas
-Title: "Células atípicas"
-Description: "Células atípicas"
-
-* ^text.status = #empty
-* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Conjunto de valores admitidos para células atípicas.</div>"
-
-* ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/celulas-atipicas"
-
-* ^status = #draft
-* ^experimental = false
-
-* include codes from system CelulaAtipica
-
-// ------------------------------------------------------
 // resultado-item
 // ------------------------------------------------------
 
 CodeSystem: ResultadoItem
 Id: resultado-item
 Title: "Item de resultado de exame citopatológico"
-Description: "Identifica unicamente cada um dos itens que compõem o resultado de exame citopatológico"
+Description: "Identifica unicamente cada um dos itens que compõem o resultado de exame citopatológico."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/resultado-item"
 
@@ -770,8 +730,8 @@ Description: "Identifica unicamente cada um dos itens que compõem o resultado d
 
 ValueSet: ResultadosItem
 Id: resultados-itens
-Title: "Componentes de resultado de exame"
-Description: "Grupos de informação de resultado de exame citopatológico"
+Title: "Grupos de informação"
+Description: "Grupos de informação de resultado de exame citopatológico."
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/resultados-itens"
 * ^status = #draft
 * ^experimental = false
@@ -784,7 +744,7 @@ Description: "Grupos de informação de resultado de exame citopatológico"
 CodeSystem: TipoAmostra
 Id: tipo-amostra
 Title: "Tipo de amostra"
-Description: "Tipo de amostra para resultado de exame citopatológico"
+Description: "Definição de tipos de amostra para resultado de exame citopatológico."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-amostra"
 * ^status = #active
@@ -825,7 +785,7 @@ Description: "Identifica e define presença ou ausência de componente endocervi
 ValueSet: ComponentesEndocervicais
 Id: componentes-endocervicais
 Title: "Componentes endocervicais"
-Description: "Componentes endocervicais"
+Description: "Componentes endocervicais."
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/componentes-endocervicais"
 * ^status = #active
 * ^experimental = false
@@ -839,7 +799,7 @@ Description: "Componentes endocervicais"
 CodeSystem: Categorizacao
 Id: categorizacao
 Title: "Categorização geral"
-Description: "A categorização geral do resultado"
+Description: "Definição das categorizações do resultado de exame citopatológico."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/categorizacao"
 
@@ -855,7 +815,7 @@ Description: "A categorização geral do resultado"
 ValueSet: Categorizacoes
 Id: categorizacoes
 Title: "Categorias de resultado"
-Description: "Categorização geral do laudo"
+Description: "Categorização geral do laudo."
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/categorizacoes"
 * ^status = #draft
 * ^experimental = false
@@ -868,7 +828,7 @@ Description: "Categorização geral do laudo"
 CodeSystem: Papel
 Id: papel
 Title: "Papel"
-Description: "Papel desempenhado pelo profissional no laudo"
+Description: "Definição dos papéis desempenhados por profissionais em um laudo de exame citopatológico."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/papel"
 * ^status = #draft
@@ -895,7 +855,7 @@ Description: "Papel desempenhado pelo profissional no laudo"
 CodeSystem: ComponenteEndereco
 Id: componente-endereco
 Title: "Componente de endereço"
-Description: "Componente que faz parte de um endereço"
+Description: "Definição dos itens de informação que poem compor um endereço."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/componente-endereco"
 * ^status = #draft
@@ -911,7 +871,7 @@ Description: "Componente que faz parte de um endereço"
 ValueSet: ComponentesEndereco
 Id: componentes-endereco
 Title: "Componentes de endereço"
-Description: "Tipos de itens de endereço que compõem um endereço"
+Description: "Tipos de informação que compõem um endereço."
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/componentes-endereco"
 * ^status = #draft
 * ^experimental = false
@@ -924,7 +884,7 @@ Description: "Tipos de itens de endereço que compõem um endereço"
 CodeSystem: TipoDocumento
 Id: tipo-documento
 Title: "Tipo de documentos"
-Description: "Identificação de documentos clínicos de interesse do INCA"
+Description: "Definição dos tipos de documentos clínicos de interesse do INCA"
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-documento"
 * ^status = #active
@@ -949,7 +909,7 @@ Description: "Conjunto dos identificadores de tipos de documentos de interesse d
 CodeSystem: Genero
 Id: genero
 Title: "Identidade de gênero"
-Description: """Identidade de gênero se refere à profunda convicção pessoal de ser homem, 
+Description: """Definição de identidades de gênero, ou seja, à convicção pessoal de ser homem, 
 mulher, uma mistura de ambos, ou nenhum dos dois. Essa identidade não necessariamente 
 corresponde ao sexo atribuído no nascimento. """
 
@@ -970,7 +930,7 @@ corresponde ao sexo atribuído no nascimento. """
 ValueSet: Generos
 Id: generos
 Title: "Gêneros"
-Description: "Gêneros admitidos em ficha de requisição"
+Description: "Conjunto de identidades de gêneros admitidos em ficha de requisição de exame citopatológico."
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/generos"
 * ^status = #active
 * ^experimental = false
@@ -986,7 +946,7 @@ CodeSystem: Escolaridade
 Id: escolaridade
 Title: "Escolaridade"
 Description: """
-Escolaridade se refere ao nível de educação formal alcançado por um indivíduo."""
+Definição dos níveis de escolaridade (educação formal) que podem ser obtidos por um indivíduo."""
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/escolaridade"
 
@@ -1024,7 +984,7 @@ rmino do Ensino Médio, que habilita a pessoa a exercer uma profissão, e cursos
 ValueSet: Escolaridades
 Id: escolaridades
 Title: "Escolaridades"
-Description: "Escolaridades"
+Description: "Conjunto de níveis de escolaridade para uso na requisição de exame citopatológico."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/escolaridades"
 

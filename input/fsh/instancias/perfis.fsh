@@ -31,7 +31,7 @@ Context: Coding, Specimen.status
 Extension: Filiacao
 Id: filiacao
 Title: "Filiação"
-Description: "Filiação da paciente"
+Description: "Filiação da(o) paciente."
 Context: Patient
 * ^status = #draft
 * ^language = #pt-BR
@@ -146,7 +146,7 @@ Extension: Responsabilidade
 Id:   responsabilidade
 Title:  "Papel"
 Description: """
-Papel desempenhado pelo profissional no laudo.
+Papel desempenhado por profissional no laudo.
 """
 Context: Reference
 
@@ -167,7 +167,7 @@ Context: Reference
 Extension: ItemEndereco
 Id: item-endereco
 Title: "Item de endereço"
-Description: "Definição dos tipos de itens que podem compor um endereço"
+Description: "Definição dos itens que podem compor um endereço."
 Context: Address.line
 * ^status = #draft
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/item-endereco"
@@ -184,7 +184,7 @@ Context: Address.line
 Extension: Genero
 Id: extension-genero
 Title: "Gênero"
-Description: "Gênero da paciente"
+Description: "Identidade de gênero da(o) paciente."
 Context: Patient
 
 * ^status = #draft
@@ -242,7 +242,7 @@ Profile: RequisicaoExameCitopatologico
 Parent: ServiceRequest
 Id: requisicao-exame-citopatologico
 Title: "Requisição de exame citopatológico"
-Description: "Definição das informações que devem constar em toda e qualquer requisição de exame citopatológico do colo do útero."
+Description: "Requisição de exame citopatológico do colo do útero."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/requisicao-exame-citopatologico"
 * ^status = #draft
@@ -297,7 +297,7 @@ Profile: AnamneseQuestionario
 Parent: QuestionnaireResponse
 Id: anamnese-questionario
 Title: "Estrutura das resposas da anamnese"
-Description: "Estrutura exigida da anamnese pela requisição de exame citopatológico"
+Description: "Estrutura exigida da anamnese para a requisição de exame citopatológico."
 
 * ^status = #draft
 
@@ -318,7 +318,7 @@ Profile: ExameClinico
 Parent: Observation
 Id: exame-clinico
 Title: "Exame Clínico"
-Description: "Exame clínico realizado durante coleta de material para exame citopatológico"
+Description: "Exame clínico realizado durante coleta de amostra para exame citopatológico."
 
 * implicitRules 0..0
 * modifierExtension 0..0
@@ -484,7 +484,7 @@ Profile: Paciente
 Parent: Patient
 Id: paciente
 Title: "Paciente"
-Description: "Dados demográficos do indivíduo"
+Description: "Dados demográficos do indivíduo."
 
 * . ^short = "Informações sobre a paciente. Apenas o CNS é obrigatório. Demais campos são opcionais."
 
@@ -572,7 +572,7 @@ Usage: #definition
 Title: "Anamnese"
 Description: "Anamnese definida conforme
 a seção 'Dados da anamnese' da ficha de Requisição de Exame Citopatológico - Colo do útero mantida 
-pelo INCA, disponível [aqui](nova-requisicao-exame-citopatologico.pdf)."
+pelo INCA, disponível [aqui](ficha-numerada.pdf)."
 
 * url = "https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico"
 
@@ -732,7 +732,7 @@ Profile: DocumentoRequisicao
 Parent: Composition
 Id: documento-requisicao
 Title: "Documento de Requisição de Exame Citopatológico"
-Description: "Documento clínico de uma requisição de exame citopatológico"
+Description: "Documento clínico de uma requisição de exame citopatológico."
 
 * title ^short = "Deve ter como valor 'Requisicação de Exame Citopatológico'."
 
@@ -752,7 +752,7 @@ Profile: DocumentoLaudo
 Parent: Composition
 Id: documento-laudo
 Title: "Documento de Resultado de Exame Citopatológico"
-Description: "Documento clínico de resultado de exame citopatológico"
+Description: "Documento clínico de resultado de exame citopatológico."
 
 * title ^short = "Deve ter como valor 'Resultado de Exame Citopatológico'"
 
@@ -1131,14 +1131,14 @@ Profile: Amostra
 Parent: Specimen
 Id: amostra
 Title: "Amostra (laudo)"
-Description: "Informações sobre o espécime geradas pelo laboratório"
+Description: "Informações sobre o espécime geradas pelo laboratório."
 
 * ^purpose = """
 Registra informações sobre a amostra pelo laboratório. Em particular, os elementos 
 _status_ e _condition_ merecem esclarecimentos. 
 
 A tabela abaixo documenta as opções para o elemento _status_, o que facilita a compreensão
-dos códigos e, adicionalmente, a relação deles com as opções contidas na [ficha](nova-requisicao-exame-citopatologico.pdf)
+dos códigos e, adicionalmente, a relação deles com as opções contidas na [ficha](ficha-numerada.pdf)
 de requisição.
 
 
@@ -1196,7 +1196,7 @@ Profile: ReferenciaUnidadeDeSaude
 Parent: Reference
 Id: referencia-unidade-de-saude
 Title: "Referência para unidade de saúde"
-Description: "Indicação de unidade de saúde pelo CNES"
+Description: "Indicação de unidade de saúde pelo CNES."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/referencia-unidade-de-saude"
 * ^status = #draft
@@ -1249,7 +1249,7 @@ Profile: AmostraRequisicao
 Parent: Specimen
 Id: amostra-requisicao
 Title: "Amostra (requisição)"
-Description: "Apenas a data da coleta e o responsável pela amostra. Mantidas neste recurso por precisão semântica."
+Description: "A data e o responsável pela coleta da amostra."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/amostra-requisicao"
 * ^status = #draft

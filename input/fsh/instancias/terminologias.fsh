@@ -367,7 +367,7 @@ se refere a uma requisição unicamente identificada pelo SISCAN.
 CodeSystem: ResultadoInspecaoColo
 Id: resultado-inspecao-colo
 Title: "Resultado da inspeção do colo"
-Description: "As possibilidades da inspeção de colo visando o exame citopatológico."
+Description: "Definição dos resultados para a inspeção de colo."
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Código para resultado da inspeção do colo.</div>"
@@ -388,14 +388,14 @@ Description: "As possibilidades da inspeção de colo visando o exame citopatol�
 ValueSet: ResultadosInspecaoColo
 Id: resultados-inspecao-colo
 Title: "Resultados da inspeção"
-Description: "Resultados para a inspeção do colo"
+Description: "Conjunto de resultados para a inspeção do colo."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/resultados-inspecao-colo"
 
 * ^status = #active
 * ^experimental = false
 * ^date = "2024-04-15"
-* ^purpose = "**Propósito**. Definição do conjunto de valores para resultado da inspeção de colo admitido para o item em questão da requisição de exame citopatológico."
+* ^purpose = "**Propósito**. Definição do conjunto de valores para resultado da inspeção de colo."
 
 * include codes from system ResultadoInspecaoColo
 
@@ -451,7 +451,7 @@ para a implementação do rastreamento ágil."""
 ValueSet: MotivosExame
 Id: motivos-exame-citopatologico
 Title: "Motivos para exame"
-Description: "Possíveis motivos para requisição de exame citopatológico"
+Description: "Conjunto de motivos para requisição de exame citopatológico."
 
 * ^text.status = #empty
 * ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Códigos admitidos para motivo de exame citopatológico.</div>"
@@ -590,7 +590,7 @@ Description: "Conjunto das possíveis alterações celulares reativas relevantes
 CodeSystem: Organismo
 Id: organismo
 Title: "Organismo"
-Description: "Organismo"
+Description: "Definição de organismos presentes na amostra."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/organismo"
 
@@ -610,7 +610,7 @@ Description: "Organismo"
 ValueSet: Organismos
 Id: organismos
 Title: "Organismos"
-Description: "Organismos"
+Description: "Conjunto de organismos presentes na amostra."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/organismos"
 
@@ -648,7 +648,7 @@ Description: "Definição de anormalidade em células epiteliais escamosas."
 ValueSet: Escamosas
 Id: escamosas
 Title: "Escamosas"
-Description: "Anormalidade em células epiteliais escamosas"
+Description: "Conjunto de anormalidade em células epiteliais escamosas."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/escamosas"
 
@@ -691,7 +691,7 @@ Description: "Definição de anormalidades em células glandulares."
 ValueSet: Glandulares
 Id: glandulares
 Title: "Glandulares"
-Description: "Glandulares"
+Description: "Conjunto de anormalidades em células glandulares."
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/glandulares"
 
@@ -757,7 +757,7 @@ Description: "Definição de tipos de amostra para resultado de exame citopatol�
 ValueSet: TiposAmostra
 Id: tipos-amostra
 Title: "Tipos de amostra"
-Description: "Tipos de amostra para laudo citopatológico"
+Description: "Conjunto de tipos de amostra para laudo citopatológico."
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipos-amostra"
 * ^status = #active
 * ^experimental = false
@@ -871,7 +871,7 @@ Description: "Definição dos itens de informação que poem compor um endereço
 ValueSet: ComponentesEndereco
 Id: componentes-endereco
 Title: "Componentes de endereço"
-Description: "Tipos de informação que compõem um endereço."
+Description: "Conjunto de tipos de informação que compõem um endereço."
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/componentes-endereco"
 * ^status = #draft
 * ^experimental = false

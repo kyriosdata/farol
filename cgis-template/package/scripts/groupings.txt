@@ -1,49 +1,49 @@
 <grouping xmlns="http://hl7.org/fhir" id="-req-actordefinition">
-  <name value="Requirements: Actor Definitions"/>
+  <name value="Requisitos: Actor Definitions"/>
   <description value="The following artifacts define the types of individuals and/or systems that will interact as part of the use cases covered by this implementation guide."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-req-requirements">
-  <name value="Requirements: Formal Requirements"/>
+  <name value="Requisitos: Formal Requirements"/>
   <description value="The following artifacts describe the specific requirements to be met by systems compliant with the implementation guide."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-dyn-capabilitystatement">
-  <name value="Behavior: Capability Statements"/>
+  <name value="Comportamento: Capability Statements"/>
   <description value="The following artifacts define the specific capabilities that different types of systems are expected to have in order to comply with this implementation guide.  Systems conforming to this implementation guide are expected to declare conformance to one or more of the following capability statements."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-dyn-operationdefinition">
-  <name value="Behavior: Operation Definitions"/>
+  <name value="Comportamento: Operation Definitions"/>
   <description value="These are custom operations that can be supported by and/or invoked by systems conforming to this implementation guide."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-dyn-messagedefinition">
-  <name value="Behavior: Message Definitions"/>
+  <name value="Comportamento: Message Definitions"/>
   <description value="These define the types of messages that can be sent and/or received by systems conforming to this implementation guide."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-dyn-searchparameter">
-  <name value="Behavior: Search Parameters"/>
+  <name value="Comportamento: Search Parameters"/>
   <description value="These define the properties by which a RESTful server can be searched.  They can also be used for sorting and including related resources."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-ka-activitydefinition">
-  <name value="Knowledge Artifacts: Activity Definitions"/>
+  <name value="Artefatos de conhecimento: Activity Definitions"/>
   <description value="These define activities that can be performed as part of content in this implementation guide."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-ka-plandefinition">
-  <name value="Knowledge Artifacts: Plan Definitions"/>
+  <name value="Artefatos de conhecimento: Plan Definitions"/>
   <description value="These define workflows, rules, strategies, or protocols as part of content in this implementation guide."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-ka-measure">
-  <name value="Knowledge Artifacts: Measure"/>
+  <name value="Artefatos de conhecimento: Measure"/>
   <description value="These define measures as part of content in this implementation guide."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-ka-library">
-  <name value="Knowledge Artifacts: Libraries"/>
+  <name value="Artefatos de conhecimento: Libraries"/>
   <description value="These define logic, asset collections and other libraries as part of content in this implementation guide."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-str-graphdefinition">
-  <name value="Estruturas: Graph Definitions"/>
+  <name value="Estruturas: Definições de grafo"/>
   <description value="These define collections of interrelated resources that are useful to pass around as a group."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-str-logicalmodel">
-  <name value="Estruturas: Logical Models"/>
+  <name value="Estruturas: Modelos lógicos"/>
   <description value="These define data models that represent the domain covered by this implementation guide in more business-friendly terms than the underlying FHIR resources."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-str-questionnaire">
@@ -87,15 +87,15 @@
   <description value="These define transformations to convert between codes by systems conforming with this implementation guide."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-test-testplan">
-  <name value="Testing Artifacts: TestPlans"/>
+  <name value="Artefatos de teste: TestPlans"/>
   <description value="These test plans are available to verify test coverage for this implementation guide"/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-test-testscript">
-  <name value="Testing Artifacts: TestScripts"/>
+  <name value="Artefatos de teste: TestScripts"/>
   <description value="These test definitions are available to FHIR test engines to verify systems are conforming to this implementation guide"/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-ex-examplescenario">
-  <name value="Example: Example Scenarios"/>
+  <name value="Exemplo: Example Scenarios"/>
   <description value="These define groups of interrelated examples that demonstrate one or more of the workflows supported by this implementation guide."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-ex-example">
@@ -103,7 +103,7 @@
   <description value="Instâncias que ilustram dados produzidos e consumidos por sistemas em conformidade com este Guia. **TODOS OS EXEMPLOS SÃO FICTÍCIOS**. Foram fabricados arbitrariamente. Qualquer semelhança com algum cenário real será mera coincidência."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-ex-examplesup">
-  <name value="Example: Example Supporting Instances"/>
+  <name value="Exemplo: Example Supporting Instances"/>
   <description value="These are example instances that are not governed by this implementation guide, but which are necessary to support other examples defined in the IG."/>
 </grouping>
 <grouping xmlns="http://hl7.org/fhir" id="-other">

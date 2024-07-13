@@ -72,4 +72,4 @@ menu:
   Histórico: history.html
 
 dependencies:
-  br.ufg.cgis.rnds-lite: 0.1.7
+  br.ufg.cgis.rnds-lite: 0.2.1

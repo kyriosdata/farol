@@ -4,12 +4,12 @@ definido pelo presente Guia.
 
 Para tal são utilizadas ferramentas para ilustrar tarefas típicas de interesse do integrador; a forma de validar instâncias de recursos; como subir um servidor FHIR para testes e, por último, como submeter requisições que contemplam os casos de uso do pretente Guia para o servidor colocado em funcionamento. 
 
-#### Ferramentas
+### Ferramentas
 - Java ou ([JDK](https://openjdk.org/)) e [Maven](https://maven.apache.org/).
 - Efetuar requisições [http](https://httpie.io/) via linha de comandos [Postman](https://www.postman.com/).
 - [git](https://git-scm.com/).
 
-#### Validação de instâncias (payload)
+### Validação de instâncias (payload)
 A informação em saúde correspondente a uma requisição ou laudo de exame citopatológico, em ambos os casos, precisa ser "empacotada" em uma instância do recurso Bundle. Para verificar se a montagem desta instância foi realizada de forma satisfatória seguem as seguintes orientações.
 
 - Os [artefatos](artifacts.html) definem como registrar requisições e laudos em instâncias de recursos FHIR. Ou seja, definem o "esquema" dos documentos JSON, tanto para requisição quanto para laudo. Há exemplos no formato de sua preferência, [XML](examples.xml.zip), [JSON](examples.json.zip) ou [TTL](examples.ttl.zip). Você pode empregá-los para se familiarizar com o _payload_ de requisições e laudos citopatológicos. 
@@ -39,9 +39,10 @@ Done. Times: Loading: 00:30.054, validation: 00:14.263. Max Memory = 11Gb
 fabio@s130:/tmp/teste$ 
 ```
 
-#### Servidor FHIR para uso local
-Se o _payload_ de uma requisição/laudo está sendo construído corretamente, o que pode ser verificado conforme apresentado na seção anterior, então a instância de Bundle correspondente pode ser submetida para um servidor FHIR. Naturalmente, uma instância com erro, se submetida, deve resultar em falha da submissão correspondente.
+### Disponibilizar Servidor FHIR (uso local)
+Se o _payload_ de uma requisição/laudo está sendo construído co rretamente, o que pode ser verificado conforme apresentado na seção anterior, então a instância de Bundle correspondente pode ser submetida para um servidor FHIR. Naturalmente, uma instância com erro, se submetida, deve resultar em falha da submissão correspondente.
 
+#### Gerar o servidor HAPI FHIR
 Para gerar um servidor FHIR para testes, a partir do código fonte, podem ser empregados os seguintes passos, que depositam, no diretório _target_, o arquivo **ROOT.war** (o servidor HAPI FHIR). 
 
 ```
@@ -49,12 +50,20 @@ git clone https://github.com/hapifhir/hapi-fhir-jpaserver-starter.git
 cd hapi-fhir-jpaserver-starter
 mvn package spring-boot:repackage -Pboot -DskipTests
 ```
-Para iniciar o servidor já configurado com NPM Package do Guia, uma opção é fazer uso do arquivo [application.properties](application.properties), cujo conteúdo segue abaixo.
+
+Os comandos acima produzem o arquivo **ROOT.war** (implementação do Servidor HAPI FHIR) no diretório `hapi-fhir-jpaserver-starter/target`. Copie este arquivo para o seu diretório de trabalho, digamos, `hapi`. 
+
+#### Configurar o servidor HAPI FHIR
+
+Para iniciar este servidor já configurado com NPM Package do Guia, copie o arquivo [application.properties](application.properties) e o arquivo **ROOT.war** para o diretório de trabalho de sua preferência. O conteúdo do arquivo de propriedades que fornecem informações para o servidor HAPI FHIR segue abaixo.
 
 ```
+hapi.fhir.implementationguides.rnds.name=br.ufg.cgis.rnds-lite
+hapi.fhir.implementationguides.rnds.version=0.1.8
+
 hapi.fhir.implementationguides.ccu.name=br.gov.saude.ccu
 hapi.fhir.implementationguides.ccu.version=0.0.1
-hapi.fhir.implementationguides.ccu.packageUrl=file:///package.tgz
+hapi.fhir.implementationguides.ccu.packageUrl=https://build.fhir.org/ig/kyriosdata/farol/package.tgz
 ```
 Dado este conteúdo disponível no diretório corrente, então o comando
 abaixo disponibiliza o servidor HAPI FHIR já configurado com os artefatos
@@ -64,7 +73,7 @@ do presente Guia.
 java -jar ROOT.war
 ```
 
-#### Submissão de requisição/laudo
+### Submissão de requisição/laudo
 - Linha de comandos
 - Postman
 - Código fonte disponível em: Java, C# e JavaScript. 

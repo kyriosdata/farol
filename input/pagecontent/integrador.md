@@ -6,7 +6,7 @@ Para tal são utilizadas ferramentas para ilustrar tarefas típicas de interesse
 
 ### Ferramentas
 - Java ou ([JDK](https://openjdk.org/)) e [Maven](https://maven.apache.org/).
-- Efetuar requisições [http](https://httpie.io/) via linha de comandos [Postman](https://www.postman.com/).
+- Submeter requisições para o servidor FHIR via linha de comandos usando [http](https://httpie.io/) ou por interface gráfica usando o [Postman](https://www.postman.com/).
 - [git](https://git-scm.com/).
 
 ### Validação de instâncias (payload)
@@ -22,10 +22,11 @@ Os passos sugeridos acima podem ser executados conforme abaixo:
 ```
 http --download https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar > validator_cli.jar
 http --download https://build.fhir.org/ig/kyriosdata/farol/package.tgz > package.tgz
+http --download https://build.fhir.org/ig/kyriosdata/farol/Bundle-bruna-requisicao.json > Bundle-bruna-requisicao.json
 java -jar validator_cli.jar -version 4.0.1 -ig package.tgz Bundle-bruna-requisicao.json
 ```
 
-Parte do resultado é exibida abaixo, em particular, a indicação de que nenhum erro, nem mesmo um aviso foi gerado pela validação da requisição que, desta forma, 
+Parte final do resultado é exibida abaixo, em particular, a indicação de que nenhum erro, nem mesmo um aviso foi gerado pela validação da requisição que, desta forma, 
 encontra-se em conformidade com o definido pelo Guia.
 
 ```
@@ -40,10 +41,14 @@ fabio@s130:/tmp/teste$
 ```
 
 ### Disponibilizar Servidor FHIR (uso local)
-Se o _payload_ de uma requisição/laudo está sendo construído co rretamente, o que pode ser verificado conforme apresentado na seção anterior, então a instância de Bundle correspondente pode ser submetida para um servidor FHIR. Naturalmente, uma instância com erro, se submetida, deve resultar em falha da submissão correspondente.
+Se o _payload_ de uma requisição/laudo está sendo construído corretamente, 
+o que pode ser verificado conforme apresentado na seção anterior, 
+então a instância de Bundle correspondente pode ser submetida para um servidor FHIR. 
+Naturalmente, uma instância com erro, se submetida, deve resultar em falha da 
+submissão correspondente. De qualquer forma, é preciso disponibilizar o servidor FHIR.
 
 #### Gerar o servidor HAPI FHIR
-Para gerar um servidor FHIR para testes, a partir do código fonte, podem ser empregados os seguintes passos, que depositam, no diretório _target_, o arquivo **ROOT.war** (o servidor HAPI FHIR). 
+Para gerar um servidor FHIR para testes, a partir do código fonte, siga os passos abaixo. 
 
 ```
 git clone https://github.com/hapifhir/hapi-fhir-jpaserver-starter.git
@@ -55,7 +60,8 @@ Os comandos acima produzem o arquivo **ROOT.war** (implementação do Servidor H
 
 #### Configurar o servidor HAPI FHIR
 
-Para iniciar este servidor já configurado com NPM Package do Guia, copie o arquivo [application.properties](application.properties) e o arquivo **ROOT.war** para o diretório de trabalho de sua preferência. O conteúdo do arquivo de propriedades que fornecem informações para o servidor HAPI FHIR segue abaixo.
+Para iniciar este servidor já configurado com NPM Package do presente Guia, copie o arquivo [application.properties](application.properties) para o diretório de trabalho de sua preferência (conforme acima, o diretório `hapi`). O conteúdo do arquivo de propriedades segue abaixo. Observe que este Guia depende 
+de outro Guia que contém perfis utilizados pela RNDS.
 
 ```
 hapi.fhir.implementationguides.rnds.name=br.ufg.cgis.rnds-lite
@@ -65,15 +71,22 @@ hapi.fhir.implementationguides.ccu.name=br.gov.saude.ccu
 hapi.fhir.implementationguides.ccu.version=0.0.1
 hapi.fhir.implementationguides.ccu.packageUrl=https://build.fhir.org/ig/kyriosdata/farol/package.tgz
 ```
-Dado este conteúdo disponível no diretório corrente, então o comando
-abaixo disponibiliza o servidor HAPI FHIR já configurado com os artefatos
-do presente Guia.
+
+Dado que o arquivo de propriedades e o arquivo **ROOT.war** estão
+disponíveis no diretório corrente, conforme acima, o diretório
+`hapi`, então o comando abaixo inicia o servidor HAPI FHIR já
+pronto para testes. 
 
 ```
 java -jar ROOT.war
 ```
 
 ### Submissão de requisição/laudo
+O servidor HAPI FHIR pronto para testes pode ser exercitado de várias formas. 
+
+#### Linha de comandos
+
+- 
 - Linha de comandos
 - Postman
 - Código fonte disponível em: Java, C# e JavaScript. 

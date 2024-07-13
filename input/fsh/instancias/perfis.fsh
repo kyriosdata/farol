@@ -303,6 +303,7 @@ Description: "Estrutura exigida da anamnese para a requisição de exame citopat
 
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/anamnese-questionario"
 
+* questionnaire 1..1
 * questionnaire = "https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico"
 * status = #completed (exactly)
 * basedOn 0..0
@@ -367,6 +368,7 @@ Description: "Exame clínico realizado durante coleta de amostra para exame cito
 
 * component[inspecao].code ^short = "Resultado da inspeção do colo"
 * component[inspecao].code = http://loinc.org#12044-4
+* component[inspecao].code.coding 1..1
 * component[inspecao].dataAbsentReason 0..0
 * component[inspecao].interpretation 0..0
 * component[inspecao].referenceRange 0..0
@@ -378,6 +380,7 @@ Description: "Exame clínico realizado durante coleta de amostra para exame cito
 
 * component[ist].code ^short = "Indicação da presença de sinais sugestivos de Infecções Sexualmente Transmissíveis (IST)"
 * component[ist].code = http://loinc.org#45687-1
+* component[ist].code.coding 1..1
 * component[ist].dataAbsentReason 0..0
 * component[ist].interpretation 0..0
 * component[ist].referenceRange 0..0
@@ -1211,6 +1214,7 @@ Description: "Indicação de unidade de saúde pelo CNES."
 * identifier.period 0..0
 * identifier.type 0..0
 * identifier.use 0..0
+* identifier.system 1..1
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cnes" (exactly)
 * identifier.value 1..1
 * identifier.value ^short = "O código CNES da unidade de saúde requisitante"
@@ -1237,6 +1241,7 @@ Description: "Indicação de profissional responsável pela coleta ou exame."
 * identifier.period 0..0
 * identifier.type 0..0
 * identifier.use 0..0
+* identifier.system 1..1
 * identifier.system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf" (exactly)
 * identifier.value 1..1
 * identifier.value ^short = "O CPF do profissional de saúde"

@@ -44,22 +44,17 @@ fabio@s130:/tmp/teste$
 O servidor HAPI FHIR pronto para testes pode ser exercitado de várias formas. 
 
 #### Linha de comandos
+Para submeter uma instância do recurso Bundle, contendo uma requisição ou um laudo, o comando é o mesmo, conforme abaixo.
 
-- `http http://localhost:8080/Bundle < requisicao.json` (submeter uma requisição)
-- `http http://localhost:8080/Bundle < laudo.json` (submeter um laudo)
+```
+http http://localhost:8080/Bundle < instancia.json
+```
 
 #### Postman
 Há um conjunto de requisições disponíveis no Postman ([aqui](https://documenter.getpostman.com/view/36481009/2sA3e5f8uc)).
 
 
 ### Disponibilizando um servidor FHIR
-A construção, submissão e disponibilização de um servidor FHIR são contemplados abaixo. 
-
-Se o _payload_ de uma requisição/laudo está sendo construído corretamente, 
-o que pode ser verificado conforme apresentado na seção anterior, 
-então a instância de Bundle correspondente pode ser submetida para um servidor FHIR. 
-Naturalmente, uma instância com erro, se submetida, deve resultar em falha da 
-submissão correspondente. De qualquer forma, é preciso disponibilizar o servidor FHIR.
 
 #### Gerar o servidor HAPI FHIR
 Para gerar um servidor FHIR para testes, a partir do código fonte, siga os passos abaixo. 
@@ -72,9 +67,9 @@ mvn package spring-boot:repackage -Pboot -DskipTests
 
 Os comandos acima produzem o arquivo **ROOT.war** (implementação do Servidor HAPI FHIR) no diretório `hapi-fhir-jpaserver-starter/target`. Copie este arquivo para o seu diretório de trabalho, digamos, `hapi`. 
 
-#### Configurar o servidor HAPI FHIR
+#### Iniciar o servidor HAPI FHIR
 
-Para iniciar este servidor é preciso configurar com NPM Package do presente Guia. A configuração está disponível no arquivo [application.properties](application.properties).
+A configuração do servidor HAPI FHIR contemplando o presente Guia está disponível no arquivo [application.properties](application.properties).
 
 Para obter este arquivo, execute o comando abaixo no diretório de trabalho, acima identificado por `hapi`.
 

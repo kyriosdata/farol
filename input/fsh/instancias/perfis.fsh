@@ -579,7 +579,6 @@ pelo INCA, disponível [aqui](ficha-numerada.pdf)."
 
 * url = "https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico"
 
-* version = "0.0.1"
 * name = "Anamnese"
 * title = "Anamnese para requisição de exame citopatológico"
 * status = #active

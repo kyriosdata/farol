@@ -39,8 +39,29 @@ public class Main {
         var exame = exameClinico("normal", true, profissional);
         exame.setSubject(refpaciente);
 
-        String json = parser.encodeResourceToString(anamnese(profissional, refpaciente));
+        QuestionnaireResponse anamnese = anamnese(profissional, refpaciente);
+
+        String json = parser.encodeResourceToString(paciente);
         System.out.println(json);
+    }
+
+    public static Patient paciente() {
+        Patient subject = new Patient();
+        subject.setId(UUID.randomUUID().toString());
+
+        Extension filiacao = subject.addExtension();
+        filiacao.setUrl("https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/filiacao");
+        filiacao.setValue(new StringType("Cleusa Faria"));
+
+        Extension idade = subject.addExtension();
+        idade.setUrl("https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/idade");
+        Age age = new Age();
+        age.setSystem("http://unitsofmeasure.org");
+        age.setValue(26);
+        age.setCode("a");
+        idade.setValue(age);
+
+        return subject;
     }
 
     public static QuestionnaireResponse anamnese(Reference profissional, Reference paciente) {
@@ -182,11 +203,5 @@ public class Main {
         ref.setIdentifier(id);
 
         return ref;
-    }
-
-    private static Patient paciente() {
-        Patient subject = new Patient();
-        subject.setId(UUID.randomUUID().toString());
-        return subject;
     }
 }

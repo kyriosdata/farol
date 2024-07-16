@@ -21,23 +21,31 @@ public class Main {
         exame.setSubject(refpaciente);
         QuestionnaireResponse anamnese = anamnese(profissional, refpaciente);
 
-        String srId = serviceRequest(refpaciente, exame, anamnese, amostra);
-        Composition composition = composicao(refpaciente, profissional, srId);
-
-        Bundle.BundleEntryComponent entry = new Bundle.BundleEntryComponent();
-        entry.setFullUrl("urn:uuid:" + composition.getIdPart());
-        entry.setResource(composition);
+        ServiceRequest pedido = serviceRequest(refpaciente, exame, anamnese, amostra);
+        Composition composition = composicao(refpaciente, profissional, pedido.getIdPart());
 
         BundleBuilder builder = new BundleBuilder(ctx);
         Bundle requisicao = (Bundle) builder.getBundle();
-        requisicao.addEntry(entry);
+
+        requisicao.addEntry(newEntry(composition));
+        requisicao.addEntry(newEntry(paciente));
+        requisicao.addEntry(newEntry(pedido));
+        requisicao.addEntry(newEntry(anamnese));
+        requisicao.addEntry(newEntry(exame));
 
         IParser parser = ctx.newJsonParser().setPrettyPrint(true);
         String json = parser.encodeResourceToString(requisicao);
         System.out.println(json);
     }
 
-    private static String serviceRequest(Reference refpaciente, Observation exame, QuestionnaireResponse anamnese, Specimen amostra) {
+    private static Bundle.BundleEntryComponent newEntry(Resource resource) {
+        Bundle.BundleEntryComponent entry = new Bundle.BundleEntryComponent();
+        entry.setFullUrl("urn:uuid:" + resource.getIdPart());
+        entry.setResource(resource);
+        return entry;
+    }
+
+    private static ServiceRequest serviceRequest(Reference refpaciente, Observation exame, QuestionnaireResponse anamnese, Specimen amostra) {
         ServiceRequest pedido = new ServiceRequest();
         String srId = UUID.randomUUID().toString();
         pedido.setId(srId);
@@ -66,7 +74,7 @@ public class Main {
 
         pedido.addContained(amostra);
         pedido.addSpecimen(new Reference("#" + amostra.getIdPart()));
-        return srId;
+        return pedido;
     }
 
     private static Composition composicao(Reference refpaciente, Reference profissional, String srId) {

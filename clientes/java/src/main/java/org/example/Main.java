@@ -2,7 +2,11 @@ package org.example;
 
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.parser.IParser;
+import ca.uhn.fhir.rest.api.MethodOutcome;
+import ca.uhn.fhir.rest.client.api.IGenericClient;
 import ca.uhn.fhir.util.BundleBuilder;
+import ca.uhn.fhir.util.OperationOutcomeUtil;
+import org.hl7.fhir.instance.model.api.IBaseBundle;
 import org.hl7.fhir.r4.model.*;
 
 import java.util.List;
@@ -25,9 +29,9 @@ public class Main {
         Composition composition = composicao(refpaciente, profissional, pedido.getIdPart());
 
         BundleBuilder builder = new BundleBuilder(ctx);
+        builder.addDocumentEntry(composition);
         Bundle requisicao = (Bundle) builder.getBundle();
 
-        requisicao.addEntry(newEntry(composition));
         requisicao.addEntry(newEntry(paciente));
         requisicao.addEntry(newEntry(pedido));
         requisicao.addEntry(newEntry(anamnese));
@@ -36,6 +40,11 @@ public class Main {
         IParser parser = ctx.newJsonParser().setPrettyPrint(true);
         String json = parser.encodeResourceToString(requisicao);
         System.out.println(json);
+
+        IGenericClient cliente = ctx.newRestfulGenericClient("http://hapi.fhir.org/baseR4");
+        MethodOutcome outcome = cliente.create().resource(requisicao).execute();
+        System.out.println(outcome);
+
     }
 
     private static Bundle.BundleEntryComponent newEntry(Resource resource) {

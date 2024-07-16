@@ -353,7 +353,7 @@ Description: "Exame clínico realizado durante coleta de amostra para exame cito
 
 * code.coding 1..1
 * code.coding = http://loinc.org#32423-6
-* code.coding.display = "Pysical findings of Cervix"
+* code.coding.display = "Physical findings of Cervix"
 
 * component 1..2
 * component.modifierExtension 0..0

@@ -752,7 +752,8 @@ Description: "Documento clínico de uma requisição de exame citopatológico."
 * type.coding
   * system = "http://loinc.org"
   * code = #47528-5
-  * display = "Cytology report of Cervical or vaginal smear or scraping Cyto stain"
+* type.coding.system ^short = "O identificador do LOINC"
+* type.coding.code ^short = "O código LOINC para 'Cytology report of Cervical or vaginal smear or scraping Cyto stain'"
 * type.coding.display 0..0
 
 * type ^short = "A identificação do tipo de documento."

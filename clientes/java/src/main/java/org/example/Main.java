@@ -18,8 +18,26 @@ public class Main {
 
         Specimen amostra = amostra("1234-5678", "2024-02-03");
         Observation exame = exameClinico("normal", true, profissional);
+        exame.setSubject(refpaciente);
         QuestionnaireResponse anamnese = anamnese(profissional, refpaciente);
 
+        String srId = serviceRequest(refpaciente, exame, anamnese, amostra);
+        Composition composition = composicao(refpaciente, profissional, srId);
+
+        Bundle.BundleEntryComponent entry = new Bundle.BundleEntryComponent();
+        entry.setFullUrl("urn:uuid:" + composition.getIdPart());
+        entry.setResource(composition);
+
+        BundleBuilder builder = new BundleBuilder(ctx);
+        Bundle requisicao = (Bundle) builder.getBundle();
+        requisicao.addEntry(entry);
+
+        IParser parser = ctx.newJsonParser().setPrettyPrint(true);
+        String json = parser.encodeResourceToString(requisicao);
+        System.out.println(json);
+    }
+
+    private static String serviceRequest(Reference refpaciente, Observation exame, QuestionnaireResponse anamnese, Specimen amostra) {
         ServiceRequest pedido = new ServiceRequest();
         String srId = UUID.randomUUID().toString();
         pedido.setId(srId);
@@ -48,8 +66,12 @@ public class Main {
 
         pedido.addContained(amostra);
         pedido.addSpecimen(new Reference("#" + amostra.getIdPart()));
+        return srId;
+    }
 
+    private static Composition composicao(Reference refpaciente, Reference profissional, String srId) {
         Composition composition = new Composition();
+        composition.setId(UUID.randomUUID().toString());
 
         Coding com = new Coding();
         com.setSystem("http://loinc.org");
@@ -68,22 +90,8 @@ public class Main {
         composition.setTitle("Requisição de Exame Citopatológico");
 
         Composition.SectionComponent section = composition.addSection();
-        section.addEntry(new Reference(pedido));
-
-        Bundle.BundleEntryComponent entry = new Bundle.BundleEntryComponent();
-        entry.setFullUrl(newUrn());
-        entry.setResource(composition);
-        BundleBuilder builder = new BundleBuilder(ctx);
-        Bundle requisicao = (Bundle) builder.getBundle();
-        requisicao.addEntry(entry);
-
-        IParser parser = ctx.newJsonParser().setPrettyPrint(true);
-
-        exame.setSubject(refpaciente);
-
-
-        String json = parser.encodeResourceToString(composition);
-        System.out.println(json);
+        section.addEntry(new Reference("urn:uuid:" + srId));
+        return composition;
     }
 
     public static Patient paciente() {

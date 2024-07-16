@@ -328,7 +328,10 @@ Description: "Exame clínico da Pérola"
 * component[ist].valueBoolean = false
 
 * subject = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb01)
-* performer = Reference(urn:uuid:0442d5cf-6316-4ddd-b398-168af8aaeb07)
+* performer.identifier
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
+  * value = "234.234.567"
+  
 * effectiveDateTime = "2023-12-07"
 
 

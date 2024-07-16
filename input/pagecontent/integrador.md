@@ -7,7 +7,7 @@ Neste processo, instâncias precisam ser construídas ([Criação de instâncias
 ### Criação de instâncias
 A informação em saúde correspondente a uma requisição ou laudo de exame citopatológico precisa ser "empacotada" em uma instância do recurso Bundle. Uma [requisição](Bundle-bruna-requisicao.json) e um [laudo](Bundle-bruna-laudo.json) ilustram o tipo de instância que precisa ser construída. Há muitos exemplos no formato de sua preferência, [XML](examples.xml.zip), [JSON](examples.json.zip) ou [TTL](examples.ttl.zip). Você pode empregá-los para se familiarizar com o _payload_ de requisições e laudos citopatológicos. 
 
-A construção das instâncias de requisição e de laudo, citadas acima, é ilustrada por código em [Java](Criar.java), [C#](Criar.cs) e [JavaScript](Criar.js).
+A construção das instâncias de requisição e de laudo, citadas acima, é ilustrada por código. Consulte [clientes](https://github.com/kyriosdata/farol/tree/main/clientes) para exemplos.
 
 ### Validação de instâncias (payload)
 Para verificar se a montagem de instância atende as exigências do Guia, veja as orientações abaixo.

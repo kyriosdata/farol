@@ -288,7 +288,7 @@ Description: "Exame clínico da Bruna"
 
 * subject = Reference(urn:uuid:0242d5cf-6316-4ddd-b398-168af8aaeb01)
 * performer.identifier
-  * system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
+  * system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf"
   * value = "234.234.567"
 * effectiveDateTime = "2023-12-07"
 

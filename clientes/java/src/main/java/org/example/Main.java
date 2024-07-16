@@ -1,12 +1,9 @@
 package org.example;
 
 import ca.uhn.fhir.context.FhirContext;
-import ca.uhn.fhir.model.base.composite.BaseCodingDt;
 import ca.uhn.fhir.parser.IParser;
 import ca.uhn.fhir.util.BundleBuilder;
 import org.hl7.fhir.r4.model.*;
-import org.hl7.fhir.r4.utils.CodingUtilities;
-import org.hl7.fhir.r4.utils.ResourceUtilities;
 
 import java.util.List;
 import java.util.UUID;
@@ -15,6 +12,10 @@ public class Main {
     public static void main(String[] args) {
         FhirContext ctx = FhirContext.forR4();
         Patient paciente = paciente();
+        Reference refpaciente = new Reference();
+        refpaciente.setReference("urn:uuid:" + paciente.getIdElement().getIdPart());
+        Reference profissional = profissional("1234567");
+
         Specimen amostra = amostra("1234-5678", "2024-02-03");
 
 
@@ -35,33 +36,58 @@ public class Main {
 
         IParser parser = ctx.newJsonParser().setPrettyPrint(true);
 
-        var exame = exameClinico("normal", true);
-        Reference refPaciente = new Reference();
-        refPaciente.setReference("urn:uuid:" + paciente.getIdElement().getIdPart());
-        exame.setSubject(refPaciente);
+        var exame = exameClinico("normal", true, profissional);
+        exame.setSubject(refpaciente);
 
-        String json = parser.encodeResourceToString(anamnese());
+        String json = parser.encodeResourceToString(anamnese(profissional, refpaciente));
         System.out.println(json);
     }
 
-    public static QuestionnaireResponse anamnese() {
+    public static QuestionnaireResponse anamnese(Reference profissional, Reference paciente) {
         QuestionnaireResponse resp = new QuestionnaireResponse();
         resp.setQuestionnaire("https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico");
         resp.setStatus(QuestionnaireResponse.QuestionnaireResponseStatus.COMPLETED);
+        resp.setAuthor(profissional);
+        resp.setSubject(paciente);
 
-        var item1 = resp.addItem();
-        var answerItem1 = item1.addAnswer();
+        Boolean r1 = Boolean.TRUE;
+        DateType r2 = new DateType("2021");
+        Boolean r3 = Boolean.TRUE;
+        Boolean r4 = Boolean.FALSE;
+        Boolean r5 = Boolean.TRUE;
+        Boolean r6 = Boolean.FALSE;
+        Boolean r7 = Boolean.FALSE;
+        BooleanType r8 = new BooleanType(false);
+        BooleanType r9 = new BooleanType(true);
+        BooleanType r10 = new BooleanType(false);
+        BooleanType r11 = new BooleanType(false);
 
-        Coding coding = new Coding();
-        coding.setSystem("http://question.com/www");
-        coding.setCode("code");
+        adicionaItem(resp, "1", simNaoNaoSei(r1));
 
-        answerItem1.setProperty("value[x]", coding);
+        if (r1) {
+            adicionaItem(resp,"2", r2);
+        }
+
+        adicionaItem(resp, "3", simNaoNaoSei(r3));
+        adicionaItem(resp, "4", simNaoNaoSei(r4));
+        adicionaItem(resp, "5", simNaoNaoSei(r5));
+        adicionaItem(resp, "6", simNaoNaoSei(r6));
+        adicionaItem(resp, "7", simNaoNaoSei(r7));
+        adicionaItem(resp, "8", r8);
+        adicionaItem(resp, "9", r9);
+        adicionaItem(resp, "10", r10);
+        adicionaItem(resp, "11", r11);
 
         return resp;
     }
 
-    private Coding answerSimNaoNaoSei(Boolean resposta) {
+    private static void adicionaItem(QuestionnaireResponse resp, String item, Base valor) {
+        var novo = resp.addItem();
+        novo.setLinkId(item);
+        novo.addAnswer().setProperty("value[x]", valor);
+    }
+
+    private static Coding simNaoNaoSei(Boolean resposta) {
         Coding ans = new Coding();
         if (resposta == null) {
             ans.setSystem("http://terminology.hl7.org/CodeSystem/data-absent-reason");
@@ -74,13 +100,13 @@ public class Main {
         return ans;
     }
 
-    public static Observation exameClinico(String inspecao, boolean presenca) {
+    public static Observation exameClinico(String inspecao, boolean presenca, Reference profissional) {
         Coding code = new Coding();
         code.setSystem("http://loinc.org");
         code.setCode("32423-6");
 
         Observation ec = new Observation();
-        ec.setPerformer(List.of(profissional("1234567")));
+        ec.setPerformer(List.of(profissional));
         ec.setEffective(new DateTimeType("2023-12-07"));
 
         ec.setStatus(Observation.ObservationStatus.FINAL);

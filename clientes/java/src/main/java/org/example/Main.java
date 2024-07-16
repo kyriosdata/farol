@@ -17,13 +17,45 @@ public class Main {
         Reference profissional = profissional("1234567");
 
         Specimen amostra = amostra("1234-5678", "2024-02-03");
-
+        Observation exame = exameClinico("normal", true, profissional);
+        QuestionnaireResponse anamnese = anamnese(profissional, refpaciente);
 
         ServiceRequest pedido = new ServiceRequest();
-        var uriType = new UriType(UUID.randomUUID().toString());
-        var id = uriType.getId();
-        pedido.setId(id);
+        String srId = UUID.randomUUID().toString();
+        pedido.setId(srId);
+
+        pedido.setStatus(ServiceRequest.ServiceRequestStatus.ACTIVE);
+        pedido.setIntent(ServiceRequest.ServiceRequestIntent.ORDER);
+
+        Coding codingcc = new Coding();
+        codingcc.setSystem("http://www.saude.gov.br/fhir/r4/CodeSystem/BRTabelaSUS");
+        codingcc.setCode("0203010086");
+        CodeableConcept codecc = new CodeableConcept(codingcc);
+        pedido.setCode(codecc);
+
+        pedido.setSubject(refpaciente);
+        pedido.setRequester(estabelecimento("123456"));
+
+        Coding motivo = new Coding();
+        motivo.setSystem("https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/motivo-exame-citopatologico");
+        motivo.setCode("rastreamento");
+        pedido.addReasonCode(new CodeableConcept(motivo));
+
+        Reference sie = new Reference("urn:uuid:" + exame.getIdPart());
+        Reference sia = new Reference("urn:uuid:" + anamnese.getIdPart());
+        pedido.addSupportingInfo(sie);
+        pedido.addSupportingInfo(sia);
+
+        pedido.addContained(amostra);
+        pedido.addSpecimen(new Reference("#" + amostra.getIdPart()));
+
         Composition composition = new Composition();
+
+        Coding com = new Coding();
+        com.setSystem("http://loinc.org");
+        com.setCode("47528-5");
+        composition.setType(new CodeableConcept(com));
+
         Composition.SectionComponent section = composition.addSection();
         section.addEntry(new Reference(pedido));
 
@@ -36,12 +68,10 @@ public class Main {
 
         IParser parser = ctx.newJsonParser().setPrettyPrint(true);
 
-        var exame = exameClinico("normal", true, profissional);
         exame.setSubject(refpaciente);
 
-        QuestionnaireResponse anamnese = anamnese(profissional, refpaciente);
 
-        String json = parser.encodeResourceToString(paciente);
+        String json = parser.encodeResourceToString(composition);
         System.out.println(json);
     }
 
@@ -61,11 +91,45 @@ public class Main {
         age.setCode("a");
         idade.setValue(age);
 
+        Extension racaEtnia = subject.addExtension();
+        racaEtnia.setUrl("https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/raca-etnia");
+        Extension raca = racaEtnia.addExtension();
+        raca.setUrl("race");
+        raca.setValue(new CodeType("01"));
+
+        Extension genero = subject.addExtension();
+        genero.setUrl("https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/extension-genero");
+        Coding codingg = new Coding();
+        codingg.setSystem("https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/genero");
+        codingg.setCode("201");
+        CodeableConcept cg = new CodeableConcept(codingg);
+        genero.setValue(cg);
+
+        Identifier cns = new Identifier();
+        cns.setSystem("https://fhir.fabrica.inf.ufg.br/ccu/sid/cns");
+        cns.setValue("1234567890");
+
+        Identifier cpf = new Identifier();
+        cpf.setSystem("https://fhir.fabrica.inf.ufg.br/ccu/sid/cpf");
+        cpf.setValue("123.234.443-00");
+
+        subject.addIdentifier(cns);
+        subject.addIdentifier(cpf);
+
+        HumanName name = new HumanName();
+        name.setUse(HumanName.NameUse.OFFICIAL);
+        name.setText("Bruna Faria");
+
+        subject.addName(name);
+        subject.setGender(Enumerations.AdministrativeGender.FEMALE);
+        subject.setBirthDateElement(new DateType("1997-07-17"));
+
         return subject;
     }
 
     public static QuestionnaireResponse anamnese(Reference profissional, Reference paciente) {
         QuestionnaireResponse resp = new QuestionnaireResponse();
+        resp.setId(UUID.randomUUID().toString());
         resp.setQuestionnaire("https://fhir.fabrica.inf.ufg.br/ccu/Questionnaire/anamnese-exame-citopatologico");
         resp.setStatus(QuestionnaireResponse.QuestionnaireResponseStatus.COMPLETED);
         resp.setAuthor(profissional);
@@ -127,6 +191,7 @@ public class Main {
         code.setCode("32423-6");
 
         Observation ec = new Observation();
+        ec.setId(UUID.randomUUID().toString());
         ec.setPerformer(List.of(profissional));
         ec.setEffective(new DateTimeType("2023-12-07"));
 
@@ -150,6 +215,7 @@ public class Main {
         scc.setCollector(responsavelColeta);
 
         Specimen amostra = new Specimen();
+        amostra.setId("amostra-requisicao-bruna");
         amostra.setCollection(scc);
 
         return amostra;
@@ -198,6 +264,17 @@ public class Main {
         Identifier id = new Identifier();
         id.setSystem("http://fhir.fabrica.inf.ufg.br/ccu/sid/cns");
         id.setValue(cns);
+
+        Reference ref = new Reference();
+        ref.setIdentifier(id);
+
+        return ref;
+    }
+
+    private static Reference estabelecimento(String cnes) {
+        Identifier id = new Identifier();
+        id.setSystem("http://fhir.fabrica.inf.ufg.br/ccu/sid/cnes");
+        id.setValue(cnes);
 
         Reference ref = new Reference();
         ref.setIdentifier(id);

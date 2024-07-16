@@ -72,7 +72,7 @@ Description: "Requisição de Exame Citopatológico da paciente Bruna"
   * system = "https://fhir.fabrica.inf.ufg.br/ccu/sid/cns"
   * value = "234.234.567"  
 
-* title = "Conjunto de informações pertinente à requisição de Exame Citopatológico para a paciente fictícia Bruna"
+* title = "Requisição de Exame Citopatológico"
 
 // Data em que a composição foi montada
 * date = "2023-12-13"

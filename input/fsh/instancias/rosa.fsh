@@ -91,7 +91,7 @@ Description: "Requisição de Exame Citopatológico da paciente Rosa"
 
 * author = Reference(urn:uuid:f142d5cf-6316-4ddd-b398-168af8aaeb07)
   
-* title = "Pacote contendo todos os dados da requisição de Exame Citopatológico para a paciente fictícia Rosa"
+* title = "Requisição de Exame Citopatológico"
 
 // Data em que a composição foi montada
 * date = "2024-01-20"

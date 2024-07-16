@@ -251,10 +251,12 @@ Description: "Requisição de exame citopatológico do colo do útero."
 * subject only Reference(Paciente)
 * subject ^short = "A(o) paciente sujeito da requisição."
 
-* code ^short = "A identificação precisa do serviço requisitado."
+* code 1..1
+* code ^short = "A identificação da requisição de exame pelo SIGTAP."
 * code.coding 1..1
 * code.coding = $tabelaSus#0203010086
 * code.coding.display = "EXAME CITOPATOLÓGICO CERVICO VAGINAL/MICROFLORA-RASTREAMENTO"
+* code.coding.display ^short = "Não é necessário fornecer o 'display'. Abaixo segue apenas para facilitar o consumo desta documentação."
 * code.coding.userSelected 0..0
 
 * identifier 0..1
@@ -739,11 +741,14 @@ Id: documento-requisicao
 Title: "Documento de Requisição de Exame Citopatológico"
 Description: "Documento clínico de uma requisição de exame citopatológico."
 
+* title = "Requisição de Exame Citopatológico" (exactly)
 * title ^short = "Deve ter como valor 'Requisicação de Exame Citopatológico'."
 
 * ^status = #draft
 * ^url = "https://fhir.fabrica.inf.ufg.br/ccu/StructureDefinition/documento-requisicao"
 
+* status = #final
+* status ^short = "Indica que a instância está completa"
 * type = http://loinc.org#47528-5
 * type ^short = "A identificação do tipo de documento. Neste caso, um relatório citopatológico, conforme o LOINC: Cytology report of Cervical or vaginal smear or scraping Cyto stain."
 
@@ -819,6 +824,8 @@ Description: "Diagnóstico de exame citopatológico em conformidade com a Nomenc
 
 // Cytology report of Cervical or vaginal smear or scraping Cyto stain
 * code = http://loinc.org#47528-5
+
+* subject 1..1
 
 * extension 0..0
 

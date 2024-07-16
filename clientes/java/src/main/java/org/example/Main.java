@@ -56,6 +56,17 @@ public class Main {
         com.setCode("47528-5");
         composition.setType(new CodeableConcept(com));
 
+        Coding cat = new Coding();
+        cat.setSystem("https://fhir.fabrica.inf.ufg.br/ccu/CodeSystem/tipo-documento");
+        cat.setCode("requisicao-citopatologico");
+        composition.setCategory(List.of(new CodeableConcept(cat)));
+
+        composition.setSubject(refpaciente);
+        composition.setDateElement(new DateTimeType("2023-12-13"));
+
+        composition.setAuthor(List.of(profissional));
+        composition.setTitle("Requisição de Exame Citopatológico");
+
         Composition.SectionComponent section = composition.addSection();
         section.addEntry(new Reference(pedido));
 

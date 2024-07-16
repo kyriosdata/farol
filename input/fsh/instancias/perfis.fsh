@@ -749,10 +749,16 @@ Description: "Documento clínico de uma requisição de exame citopatológico."
 
 * status = #final
 * status ^short = "Indica que a instância está completa"
-* type = http://loinc.org#47528-5
-* type ^short = "A identificação do tipo de documento. Neste caso, um relatório citopatológico, conforme o LOINC: Cytology report of Cervical or vaginal smear or scraping Cyto stain."
+* type.coding
+  * system = "http://loinc.org"
+  * code = #47528-5
+  * display = "Cytology report of Cervical or vaginal smear or scraping Cyto stain"
+* type.coding.display 0..0
+
+* type ^short = "A identificação do tipo de documento."
 
 * category from https://fhir.fabrica.inf.ufg.br/ccu/ValueSet/tipos-documentos (required)
+* category ^short = ""
 
 // ------------------------------------------------------
 // documento-laudo

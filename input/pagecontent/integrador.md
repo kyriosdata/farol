@@ -4,12 +4,12 @@ definido pelo presente Guia.
 
 Neste processo, instâncias precisam ser construídas ([Criação de instâncias](#criação-de-instâncias)) e validadas ([Validação de instâncias](#validação-de-instâncias-payload)). Naturalmente precisam ser enviadas ([Submissão de requisições](#submissão-de-requisições)) e, para tal, um servidor FHIR pode ser disponibilizado ([Disponibilizando um servidor FHIR](#disponibilizando-um-servidor-fhir)).
 
-### Criação de instâncias
+## Criação de instâncias
 A informação em saúde correspondente a uma requisição ou laudo de exame citopatológico precisa ser "empacotada" em uma instância do recurso Bundle. Uma [requisição](Bundle-bruna-requisicao.json) e um [laudo](Bundle-bruna-laudo.json) ilustram o tipo de instância que precisa ser construída. Há muitos exemplos no formato de sua preferência, [XML](examples.xml.zip), [JSON](examples.json.zip) ou [TTL](examples.ttl.zip). Você pode empregá-los para se familiarizar com o _payload_ de requisições e laudos citopatológicos. 
 
 A construção das instâncias de requisição e de laudo, citadas acima, é ilustrada por código. Consulte [clientes](https://github.com/kyriosdata/farol/tree/main/clientes) para exemplos.
 
-### Validação de instâncias (payload)
+## Validação de instâncias (payload)
 Para verificar se a montagem de instância atende as exigências do Guia, veja as orientações abaixo.
 
 - Os [artefatos](artifacts.html) definem como registrar requisições e laudos em instâncias de recursos FHIR. Ou seja, definem o "esquema" dos documentos JSON, tanto para requisição quanto para laudo. 
@@ -40,18 +40,19 @@ Done. Times: Loading: 00:30.054, validation: 00:14.263. Max Memory = 11Gb
 fabio@s130:/tmp/teste$ 
 ```
 
-### Submissão de requisições
-O servidor HAPI FHIR pronto para testes pode ser exercitado de várias formas. 
+## Submissão de requisições
+O servidor HAPI FHIR pronto para testes pode ser exercitado de várias formas: 
 
-#### Linha de comandos
-Para submeter uma instância do recurso Bundle, contendo uma requisição ou um laudo, o comando é o mesmo, conforme abaixo.
+**Linha de comandos**. Para submeter uma instância do recurso Bundle, contendo uma requisição, o comando é fornecido abaixo.
 
 ```
 http http://localhost:8080/Bundle < instancia.json
 ```
 
-#### Postman
-Há um conjunto de requisições disponíveis no Postman ([aqui](https://documenter.getpostman.com/view/36481009/2sA3e5f8uc)).
+**Postman**. Há um conjunto de requisições disponíveis no Postman ([aqui](https://documenter.getpostman.com/view/36481009/2sA3e5f8uc)).
+
+**Software**. Em cenário clássico sistemas existentes serão desenvolvidos ou integrados à RNDS por meio de código criado para esta finalidade.
+A montagem e submissão de requisições está ilustrada em [clientes](https://github.com/kyriosdata/farol/tree/main/clientes).
 
 
 ### Disponibilizando um servidor FHIR

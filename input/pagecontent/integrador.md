@@ -71,8 +71,6 @@ Os comandos acima produzem o arquivo **ROOT.war** (implementação do Servidor H
 
 A configuração do servidor HAPI FHIR contemplando o presente Guia está disponível no arquivo [application.properties](application.properties).
 
-Para obter este arquivo, execute o comando abaixo no diretório de trabalho, acima identificado por `hapi`.
-
 ```
 http --download https://build.fhir.org/ig/kyriosdata/farol/application.properties > application.properties
 ```
@@ -80,18 +78,23 @@ http --download https://build.fhir.org/ig/kyriosdata/farol/application.propertie
 O conteúdo deste arquivo é fornecido abaixo. Observe que são definidas duas dependência, uma para o conteúdo do presente Guia e outra para o NPM Package **br.ufg.cgis.rnds-lite**. Este último contém perfis utilizados pela RNDS.
 
 ```
+management.endpoint.endpoints.enabled-by-default=false
+management.endpoints.web.exposure.include=*
+
+hapi.fhir.fhirpath_interceptor_enabled=true
+
 hapi.fhir.implementationguides.rnds.name=br.ufg.cgis.rnds-lite
 hapi.fhir.implementationguides.rnds.version=0.2.1
+hapi.fhir.implementationguides.rnds.installMode=STORE_AND_INSTALL
 
 hapi.fhir.implementationguides.ccu.name=br.gov.saude.ccu
 hapi.fhir.implementationguides.ccu.version=0.0.1
 hapi.fhir.implementationguides.ccu.packageUrl=https://build.fhir.org/ig/kyriosdata/farol/package.tgz
+hapi.fhir.implementationguides.ccu.installMode=STORE_AND_INSTALL
 ```
 
-Dado que o arquivo de propriedades e o arquivo **ROOT.war** estão
-disponíveis no diretório corrente, conforme acima, o diretório
-`hapi`, então o comando abaixo inicia o servidor HAPI FHIR já
-pronto para testes. 
+Copie o arquivo **ROOT.war** e **application.properties** para 
+um mesmo diretório e, neste diretório, execute o comando abaixo.
 
 ```
 java -jar ROOT.war

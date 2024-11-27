@@ -20,7 +20,7 @@ submissão de requisições e de laudos de exame citopatológico.
 O uso do FHIR não diz como sistemas de informação em saúde devem ser 
 construídos ou desenvolvidos, qual tecnologia deve ser empregada ou não. 
 O _Guia de Implementação_ aqui definido diz como a interação destes sistemas
-com o SISCAN deve ocorrer.
+com o SISCAN (RNDS) deve ocorrer.
 
 ## Resultados
 

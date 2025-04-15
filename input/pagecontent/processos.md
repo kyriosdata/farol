@@ -23,7 +23,7 @@ O citopatologista tem suas atribuições ampliadas. Abaixo segue o que é acresc
 atividades destacadas, além do que este profissional já faz atualmente por meio do SISCAN.
 
 <div>
-<img src="citopatologista.png" width="700px">
+<img src="citopatologista.svg" width="700px">
 </div>
 <br clear="all"/>
 
